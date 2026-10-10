@@ -1,8 +1,8 @@
 {
-  "$id": "https://maqs.dev/schemas/way-0.1.3.json",
+  "$id": "https://maqs.dev/schemas/way-0.1.4.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "MAQS-Way v0.1.3 Machine-Readable Standard - Hardened",
-  "version": "0.1.3",
+  "title": "MAQS-Way v0.1.4 Machine-Readable Standard - Hardened",
+  "version": "0.1.4",
   "license": "Apache-2.0",
   "description": "Three-layer standard: Principles / Architecture / Verification. Thresholds split into min_threshold (CI gate) and target_threshold (engineering goal). Includes semantic masking, temporal priority, hardened OTel.",
   "maqs_core_reference": "MAQS v1.6 (2026-10-09) remains audit core. Way items reference MAQS sections 0-J as implementation evidence.",
@@ -149,7 +149,7 @@
   ],
   "data_model": {
     "$ref": "./schemas/memory-item.schema.json",
-    "$ref_status": "provisional_TODO_v0.2 - file not yet supplied, validator will not run until provided",
+    "$ref_status": "active - schemas/memory-item.schema.json supplied, validator runs via schemas/check_conformance.py",
     "required_fields": [
       "id",
       "type",

@@ -1,6 +1,6 @@
-# MAQS-Way v0.1.3 — Common Path from Policies to Implementation for Long-Term AI Memory
+# MAQS-Way v0.1.4 — Common Path from Policies to Implementation for Long-Term AI Memory
 
-**Status:** v0.1.3 — experimental, normative file name `SPEC.md`, revision date 2026-10-10
+**Status:** v0.1.4 — experimental, normative file name `SPEC.md`, revision date 2026-10-10
 **Author:** Aleksandr Kossarev
 **Relation to MAQS:** MAQS v1.6 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
 **License note:** Sources referenced under their respective licenses. This spec is Apache-2.0.
@@ -253,7 +253,7 @@ Each Ed25519-signed receipt, replayable. Deletion_log zero PII.
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
-standard_version: MAQS 1.6 + Way 0.1.3
+standard_version: MAQS 1.6 + Way 0.1.4
 test_scenarios: LoCoMo/LongMemEval/MemoryAgentBench + negative + deletion lattice + restore drill + round-trip
 results: per-metric + per-invariance + limitations
 exceptions: documented per-item with justification
@@ -290,7 +290,7 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 
 ## 6. Next Steps
 
-1. This file is `SPEC.md` v0.1.3 — normative file name, status experimental but versioned.
+1. This file is `SPEC.md` v0.1.4 — normative file name, status experimental but versioned.
 2. Backlog v0.2:
    - Formal `schemas/memory-item.schema.json` extending OMPS — required
    - `identity_signature`: Ed25519 over canonical JSON — full specification (moved out of data-model example, §2.1)
@@ -307,5 +307,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1 → v0.1.1 (2026-10-10):** external review (way.md) + internal review incorporated. Section 0.1 deduplicated to landscape.md reference; file name/status conflict resolved; incidents added to all 8 principles; thresholds marked indicative; P/V/E pattern applied to Principles layer; embedding provenance added; conflict resolution policy per profile; temporal priority documented; lifecycle completed; Policy Broker split into decision+mode; scope notation canonicalized; legal_hold added; logging retention justified; latency cost documented; Recoverability/Portability added to golden set; licenses note added; subject enum introduced; confidence_after added; links extended; title «Universal» → «Common»; deletion_marker separated from live record; broker appeal path added; D9 explained.
 - **v0.1.1 → v0.1.2 (2026-10-10):** internal review: §2 header restored (ARCHITECTURE Layer); `status` returned as derived view (not stored field); lifecycle completed with EXPIRED → ARCHIVED and ARCHIVED → ACTIVE (restore); inline `(fixes Cx)` references replaced by §7 Change Log; Profile C P6 collision fixed (MAQS P6 isolation test + Way/MAQS numbering note); Author line added to header; §3 claim scoped honestly; `operator` role defined in §2.3 (matrix — TODO v0.2); `identity_signature` TODO removed from JSON example, moved to Backlog §6.2.
 - **v0.1.2 → v0.1.3 (2026-10-10):** hardening sync with `maqs-way-standard.json`. Thresholds split into CI gate / target pair (§1 P3, §1 P8, §3.2) — canon from JSON `verification_suite.metrics`; values remain expert/indicative until first real run. `provenance.visible_to` added (§2.1) as mechanism for semantic masking. New §2.2 *Temporal priority* section added, closes dangling reference from §2.1; step-3 correction (`invalid_at < now` → `EXPIRED`, not `SUPERSEDED`) mirrored in JSON. `operator` SLA 72h added (§2.3). OTel allowed/forbidden keys added (§3.4). `shared_fact_visibility_leak` added to negative scenarios (§1 P8). `masked` as lifecycle state — **rejected**; masking is a visibility operation (`visible_to`), not a state. `schema_version` → `omps-0.1.0+way-v0.1.3`. CRIT sync (direct, sanctioned): G1 (fixtures §2.3 + JSON negative_scenarios +3), I13 (credential-in-URL redactor §3.4 + JSON sanitization), D8 (§2.5), F8 (§2.4), E12 (§2.4), H5 (§2.5 + evals), J3 (§3.5 j3_guard).
+- **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 
 > Check not that the mechanism exists. Check that it works.

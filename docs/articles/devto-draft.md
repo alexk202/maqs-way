@@ -33,7 +33,7 @@ We scanned open field:
 
 None of them alone is the path. Together they form it.
 
-## MAQS-Way v0.1.3 — Three layers
+## MAQS-Way v0.1.4 — Three layers
 
 ### 1. Principles (8 immutable)
 

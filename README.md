@@ -1,6 +1,6 @@
 # MAQS-Way — Common Path from Policies to Implementation
 
-**Status:** v0.1.3 — experimental path layer
+**Status:** v0.1.4 — experimental path layer
 **Core:** MAQS v1.6 remains audit core: https://github.com/alexk202/memory-architecture-standard
 
 > **Formula:** MAQS = practical audit of architecture and typical failures (how to verify)
@@ -42,9 +42,9 @@ Without path, policies are written by lawyers, audits are done ad-hoc by enginee
 ## Repo structure
 
 ```
-SPEC.md — main spec v0.1.3 EN
-SPEC-RU.md — RU version v0.1.3
-maqs-way-standard.json — machine-readable v0.1.3 (8 principles P1-P8)
+SPEC.md — main spec v0.1.4 EN
+SPEC-RU.md — RU version v0.1.4
+maqs-way-standard.json — machine-readable v0.1.4 (8 principles P1-P8)
 conformance/ — valid/invalid vectors + manifest.json
 evals/ — how to run LoCoMo/LongMemEval
 docs/ — mapping to MAQS, landscape, outreach drafts, articles
