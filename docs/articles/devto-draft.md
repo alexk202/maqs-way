@@ -2,7 +2,7 @@
 title: "MAQS-Way: The Path Layer MAQS Was Missing — From Policies to Measurable Memory"
 published: false
 tags: ai, llm, memory, architecture, governance, maqs, omps, amsp, oamp
-canonical_url: https://github.com/your-account/maqs-way
+canonical_url: https://github.com/alexk202/maqs-way
 ---
 
 # MAQS-Way: The Path Layer MAQS Was Missing
@@ -75,7 +75,7 @@ Logging: EU AI Act Art12 required fields + OTel `gen_ai.conversation.id` + tampe
 Two repos, one coordinate system.
 
 MAQS: https://github.com/alexk202/memory-architecture-standard
-Way: https://github.com/your-account/maqs-way
+Way: https://github.com/alexk202/maqs-way
 
 - maqs-way-standard.json — machine-readable 8 principles P1-P8
 - conformance/valid/invalid + manifest.json — 7 vectors (no-agent-id, model-output-as-trusted, cross-tenant, native-delete-residue, deletion-tombstone)
