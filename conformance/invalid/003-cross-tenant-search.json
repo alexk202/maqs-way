@@ -1,0 +1,9 @@
+{
+  "scenario": "User B search returns User A memory",
+  "query_user": "user_B",
+  "returned_memory": {
+    "subject": {
+      "id": "user_A"
+    }
+  }
+}

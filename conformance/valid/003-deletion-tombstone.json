@@ -1,0 +1,30 @@
+{
+  "artifact": "governance_tombstone",
+  "schema_version": "omps-0.1.0+way-v0.1.3",
+  "of_record": "mem_fact_002",
+  "cleared": {
+    "content.value": null,
+    "embedding.vector": null,
+    "subject_PII": null
+  },
+  "preserved": {
+    "deletion_log": {
+      "request_id": "del_req_9f31",
+      "timestamp": "2026-10-10T12:00:00Z",
+      "scope": "team-shared",
+      "layer_counts": {
+        "graph_edges": 3,
+        "nodes": 1,
+        "embeddings_fk": 1,
+        "facts_fk": 1,
+        "artifacts": 0,
+        "rounds": 2
+      },
+      "requestor_hash": "sha256:req_hash_opaque"
+    },
+    "hash_chain_prev": "sha256:prev_tombstone_hash",
+    "ed25519_signature": "ed25519:signature_opaque_provisional_v0.2"
+  },
+  "zero_PII": true,
+  "gdpr_art17_note": "hard compaction removed all residual links after retention of governance tombstone"
+}

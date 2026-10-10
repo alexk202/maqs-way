@@ -1,0 +1,73 @@
+{
+  "schema_version": "omps-0.1.0+way-v0.1.3",
+  "id": "mem_pref_001",
+  "type": "preference",
+  "subject": {
+    "type": "user",
+    "id": "user_123"
+  },
+  "scope": {
+    "type": "user-portable"
+  },
+  "content": {
+    "format": "text/plain",
+    "value": "User prefers concise English answers.",
+    "language": "en"
+  },
+  "sensitivity": "low",
+  "consent": {
+    "basis": "explicit_user_request",
+    "exportable": true,
+    "shareable_with_agents": true,
+    "usable_for_personalization": true,
+    "usable_for_training": false,
+    "requires_confirmation_before_use": false
+  },
+  "retention": {
+    "mode": "until_deleted",
+    "valid_from": "2026-06-23T00:00:00Z",
+    "valid_to": null
+  },
+  "provenance": {
+    "created_at": "2026-06-23T00:00:00Z",
+    "created_by": {
+      "type": "agent",
+      "id": "agent_001"
+    },
+    "source": {
+      "type": "conversation",
+      "ref": "conv_001",
+      "hash": "sha256:001"
+    },
+    "policy_id": "policy_v2",
+    "policy_version": "1.3",
+    "confidence": 1.0,
+    "confidence_after": 1.0,
+    "transformation_history": [],
+    "sources": [
+      {
+        "agent_id": "agent_001",
+        "session_id": "sess_001",
+        "task_id": "task_001",
+        "timestamp": "2026-06-23T00:00:00Z"
+      }
+    ],
+    "visible_to": [
+      "user_123",
+      "agent_001"
+    ]
+  },
+  "embedding": {
+    "model": "qwen3-1024",
+    "version": "1.0",
+    "derived_from_trust": "low",
+    "vector_id": "vec_pref_001"
+  },
+  "revision": 1,
+  "links": {
+    "supersedes": null,
+    "derived_from": [],
+    "invalidated_by": null,
+    "contested_by": null
+  }
+}

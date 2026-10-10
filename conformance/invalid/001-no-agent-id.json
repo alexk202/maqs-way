@@ -1,0 +1,12 @@
+{
+  "id": "mem_bad_001",
+  "type": "semantic",
+  "subject": {
+    "type": "user",
+    "id": "user_123"
+  },
+  "content": {
+    "value": "No provenance"
+  },
+  "status": "active"
+}

@@ -1,0 +1,545 @@
+{
+  "$id": "https://maqs.dev/schemas/way-0.1.3.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MAQS-Way v0.1.3 Machine-Readable Standard - Hardened",
+  "version": "0.1.3",
+  "license": "Apache-2.0",
+  "description": "Three-layer standard: Principles / Architecture / Verification. Thresholds split into min_threshold (CI gate) and target_threshold (engineering goal). Includes semantic masking, temporal priority, hardened OTel.",
+  "maqs_core_reference": "MAQS v1.6 (2026-10-09) remains audit core. Way items reference MAQS sections 0-J as implementation evidence.",
+  "attribution": "Sources referenced under their respective licenses: OMPS (Apache-2.0), AMSP (Apache-2.0), OAMP (MIT), Zep/Graphiti, MemoryOps, Tombstone",
+  "principles": [
+    {
+      "id": "P1",
+      "name": "Veracity",
+      "property": "Every memory record is data, not instruction. Model output must be typed as model_output and must not increase trust on summarization.",
+      "maqs_ref": [
+        "E6",
+        "F7",
+        "F1-F8"
+      ],
+      "verification": {
+        "method": "injection_probe",
+        "spec": "OWASP ASI06-001/002",
+        "threshold": "BLOCK rate 100%",
+        "indicative": true
+      },
+      "example": "Fenced <retrieved_context type=model_output> + policy broker BLOCK"
+    },
+    {
+      "id": "P2",
+      "name": "Provenance",
+      "property": "Each record carries who created, when, source ref+hash, policy_id/version, confidence, transformation history. Mutations append provenance.",
+      "maqs_ref": [
+        "B",
+        "0"
+      ],
+      "verification": {
+        "method": "schema_validation",
+        "schema": "omps memory-item.schema.json (provisional, see data_model.$ref TODO)",
+        "binding": "OAMP §4.3 agent_id mandatory"
+      },
+      "example": "OMPS provenance + OAMP agent_id, session_id, source_hash"
+    },
+    {
+      "id": "P3",
+      "name": "Controlled Aging",
+      "property": "Memory must decay stale, refresh on use, supersede on contradiction, expire on TTL, without displacing relevant.",
+      "maqs_ref": [
+        "C",
+        "D"
+      ],
+      "verification": {
+        "method": "golden_set",
+        "benchmarks": [
+          "LoCoMo temporal",
+          "LongMemEval knowledge_updates"
+        ],
+        "metric": "temporal_accuracy >= 0.75",
+        "indicative": true
+      },
+      "example": "Graphiti valid_at/invalid_at + t'_created/t'_expired"
+    },
+    {
+      "id": "P4",
+      "name": "Isolation",
+      "property": "Tenant/user/project/agent boundaries enforced, verified by negative tests including vector path.",
+      "maqs_ref": [
+        "G"
+      ],
+      "verification": {
+        "method": "negative_test",
+        "test": "cross_tenant_retrieval_returns_0",
+        "threshold": 0
+      },
+      "example": "MemoryOps invariant #1, AMSP scope model"
+    },
+    {
+      "id": "P5",
+      "name": "Deletability",
+      "property": "Deletion propagates to all replicas, vector indexes, caches, derived summaries. Tombstone preserved with zero PII.",
+      "maqs_ref": [
+        "B",
+        "G"
+      ],
+      "verification": {
+        "method": "deletion_lattice",
+        "levels": [
+          "LOGICAL",
+          "PHYSICAL",
+          "SEMANTIC",
+          "MODEL"
+        ],
+        "bench": "tombstone bench residue 0.0% indicative",
+        "indicative": true
+      },
+      "example": "6-tier cascade + deletion_log signed"
+    },
+    {
+      "id": "P6",
+      "name": "Recoverability",
+      "property": "Backup, versioning of schemas/embeddings, idempotent migrations, verified restore.",
+      "maqs_ref": [
+        "H",
+        "I"
+      ],
+      "verification": {
+        "method": "restore_drill",
+        "frequency": "quarterly",
+        "check": "hash equality of restored store vs backup manifest"
+      },
+      "example": "Backup + versioned embedding model"
+    },
+    {
+      "id": "P7",
+      "name": "Portability",
+      "property": "User memory is exportable/importable without transformation, with consent and sensitivity preserved.",
+      "maqs_ref": [
+        "OMPS",
+        "AMSP"
+      ],
+      "verification": {
+        "method": "roundtrip_test",
+        "schemas": [
+          "OMPS bundle",
+          "AMSP export/import"
+        ],
+        "check": "0 provenance loss"
+      },
+      "example": "OMPS memory-bundle.schema.json"
+    },
+    {
+      "id": "P8",
+      "name": "Measurability",
+      "property": "Quality is measured on representative tasks including negative cases, not by mechanism existence.",
+      "maqs_ref": [
+        "D9"
+      ],
+      "verification": {
+        "method": "eval_harness",
+        "benchmarks": [
+          "LoCoMo",
+          "LongMemEval",
+          "MemoryAgentBench"
+        ],
+        "min_R_at_5": 0.8,
+        "indicative": true
+      },
+      "example": "Golden set + LLM-judge + R@k"
+    }
+  ],
+  "data_model": {
+    "$ref": "./schemas/memory-item.schema.json",
+    "$ref_status": "provisional_TODO_v0.2 - file not yet supplied, validator will not run until provided",
+    "required_fields": [
+      "id",
+      "type",
+      "subject",
+      "scope",
+      "content",
+      "sensitivity",
+      "consent",
+      "retention",
+      "provenance",
+      "embedding",
+      "links",
+      "schema_version",
+      "revision"
+    ],
+    "status_derived_from": "lifecycle_events",
+    "status_note": "status is derived view, not stored field - see lifecycle.states",
+    "type_enum": [
+      "preference",
+      "episode",
+      "semantic",
+      "procedural",
+      "project",
+      "system"
+    ],
+    "subject_type_enum": [
+      "user",
+      "agent",
+      "team",
+      "org",
+      "system"
+    ],
+    "scope_enum": [
+      "local-session",
+      "agent-private",
+      "user-portable",
+      "team-shared",
+      "org-shared"
+    ],
+    "scope_mapping_note": "canonical AMSP notation user-portable etc; legacy user.portable accepted via mapping table",
+    "status_enum": [
+      "active",
+      "stale",
+      "archived",
+      "contested",
+      "superseded",
+      "expired",
+      "deleted",
+      "tombstone"
+    ],
+    "retention_enum": [
+      "until_deleted",
+      "ttl",
+      "sliding_window",
+      "legal_hold"
+    ],
+    "sensitivity_enum": [
+      "low",
+      "medium",
+      "high",
+      "secret"
+    ]
+  },
+  "lifecycle": {
+    "states": [
+      "active",
+      "stale",
+      "contested",
+      "superseded",
+      "expired",
+      "archived",
+      "deleted",
+      "tombstone"
+    ],
+    "bitemporal": {
+      "valid_time": "valid_at/invalid_at - when fact true in world (Graphiti)",
+      "transaction_time": "t_created/t_expired - when we learned it",
+      "retention_time": "retention.valid_from/valid_to - when we store it, priority: valid_time for reasoning, retention_time for lifecycle"
+    },
+    "deletion_cascade": [
+      "graph_edges",
+      "nodes_if_sole_provenance",
+      "embeddings_fk",
+      "facts_fk",
+      "artifacts",
+      "rounds"
+    ],
+    "deletion_policy_note": "cascade only if sole provenance, else edge removed node kept; tombstone preserves governance tombstone with zero PII",
+    "transitions": [
+      {
+        "from": "active",
+        "to": "stale",
+        "trigger": "decay"
+      },
+      {
+        "from": "stale",
+        "to": "active",
+        "trigger": "refresh"
+      },
+      {
+        "from": "stale",
+        "to": "expired",
+        "trigger": "ttl"
+      },
+      {
+        "from": "active",
+        "to": "contested",
+        "trigger": "conflict"
+      },
+      {
+        "from": "contested",
+        "to": "superseded",
+        "trigger": "resolve"
+      },
+      {
+        "from": "active",
+        "to": "expired",
+        "trigger": "ttl"
+      },
+      {
+        "from": "expired",
+        "to": "archived",
+        "trigger": "archive"
+      },
+      {
+        "from": "archived",
+        "to": "active",
+        "trigger": "restore",
+        "note": "resurrection allowed via explicit user request, provenance appended"
+      },
+      {
+        "from": [
+          "active",
+          "stale",
+          "contested",
+          "archived",
+          "expired",
+          "superseded"
+        ],
+        "to": "deleted",
+        "trigger": "user_delete_or_GDPR_Art17",
+        "except": "legal_hold"
+      },
+      {
+        "from": "deleted",
+        "to": "tombstone",
+        "trigger": "soft_delete"
+      },
+      {
+        "from": "tombstone",
+        "to": "null",
+        "trigger": "compaction",
+        "note": "content+embedding cleared, governance tombstone preserved with zero PII"
+      }
+    ],
+    "temporal_priority_algorithm": {
+      "description": "Resolution when valid_time vs retention_time conflict",
+      "steps": [
+        "1. If retention.mode == legal_hold -> keep regardless of valid_time, deletion blocked",
+        "2. If retention.valid_to < now -> state = expired, retrieval excludes unless explicit restore",
+        "3. Else if valid_at/invalid_at indicates fact no longer true (invalid_at < now) -> state = expired",
+        "4. Else active/stale based on last access decay",
+        "5. For reasoning, filter: retention.valid_to must be future AND (valid_at is null or valid_at <= now) AND (invalid_at is null or invalid_at > now)"
+      ]
+    },
+    "deletion_policy": {
+      "sole_provenance": "physical delete node if sole provenance",
+      "shared_provenance": "semantic masking: edge removed, node kept but visibility list removes requestor, retrieval filters by visibility = [subject_ids]",
+      "visibility_field": "provenance.visible_to: array of subject ids, upon delete remove requestor, if empty -> physical delete"
+    }
+  },
+  "conflict_resolution": {
+    "personal_assistant": "User Wins - new fact supersedes contested with link supersedes, provenance appended",
+    "enterprise_agent": {
+      "decision": "SAVE|PENDING_APPROVAL|BLOCK|DROP_LOW_UTILITY",
+      "mode": "APPEND|UPDATE_EXISTING|MERGE_WITH_EXISTING",
+      "appeal": "escalate to operator (human review), outcome appends provenance, no silent override of broker entry"
+    },
+    "ephemeral": "no contest - no writes"
+  },
+  "operator": {
+    "role": "reviewer of escalated/appealed broker decisions and contested records (see SPEC §2.3)",
+    "appeal_path": "contest -> policy broker -> operator review (human) -> outcome appends provenance (no silent override)",
+    "links": [
+      "invalidated_by",
+      "contested_by",
+      "supersedes",
+      "derived_from"
+    ],
+    "sla": "operator review within 72h for enterprise Profile B"
+  },
+  "verification_suite": {
+    "golden_sets": [
+      "LoCoMo",
+      "LongMemEval",
+      "MemoryAgentBench"
+    ],
+    "negative_scenarios": [
+      "cross_tenant_leak",
+      "prompt_injection_via_memory",
+      "feedback_contamination",
+      "stale_overrides_fresh",
+      "shared_fact_visibility_leak",
+      "wrong_scope_leak",
+      "readonly_write_block",
+      "revoked_access_leak"
+    ],
+    "metrics_note": "Numeric thresholds unified; each metric has min_threshold for CI gate and target_threshold for engineering goal. Non-numeric checks left as string.",
+    "metrics": {
+      "R_at_5": {
+        "dataset": "LongMemEval oracle",
+        "min_threshold": 0.7,
+        "target_threshold": 0.85,
+        "operator": ">=",
+        "ci_gate": "R_at_5 >= min_threshold"
+      },
+      "temporal_accuracy": {
+        "min_threshold": 0.65,
+        "target_threshold": 0.8,
+        "operator": ">="
+      },
+      "abstention_rate": {
+        "condition": "when_no_evidence",
+        "min_threshold": 0.8,
+        "target_threshold": 0.9,
+        "operator": ">="
+      },
+      "duplicate_rate": {
+        "max_threshold": 0.05,
+        "target_threshold": 0.02,
+        "operator": "<="
+      },
+      "contamination_rate": {
+        "max_threshold": 0.01,
+        "target_threshold": 0.0,
+        "operator": "<=",
+        "note": "CI gate 1% for real LLMs, target 0% for Profile B"
+      },
+      "deletion_residue": {
+        "max_threshold": 0.0,
+        "target_threshold": 0.0,
+        "operator": "=="
+      },
+      "recoverability_restore_hash": {
+        "check": "hash equality",
+        "method": "restore_drill"
+      },
+      "portability_roundtrip_loss": {
+        "max": 0,
+        "check": "0 provenance loss"
+      },
+      "shared_fact_masking_leak": {
+        "max_threshold": 0,
+        "target_threshold": 0,
+        "operator": "==",
+        "test": "after delete of shared fact, requestor cannot retrieve via semantic search"
+      }
+    },
+    "deletion_lattice": {
+      "LOGICAL": "search() returns 0 for deleted",
+      "PHYSICAL": "file scan shows 0 residue after DELETE+REINDEX+VACUUM / rebuild",
+      "SEMANTIC": "embedding similarity < 0.3, MIA fails",
+      "MODEL": "extraction probe fails"
+    },
+    "tombstone_definition": {
+      "zero_PII": true,
+      "cleared": [
+        "content.value",
+        "embedding.vector",
+        "subject PII"
+      ],
+      "preserved": [
+        "deletion_log.request_id",
+        "deletion_log.timestamp",
+        "deletion_log.scope",
+        "deletion_log.layer_counts",
+        "deletion_log.requestor_hash",
+        "hash_chain_prev",
+        "ed25519_signature"
+      ],
+      "note": "tombstone must not retain link to user ID or hash chain that can be de-anonymized; request_id is opaque, not user-identifiable",
+      "gdpr_art17_compliance": "hard compaction removes all residual links after retention of governance tombstone"
+    },
+    "deletion_marker_ref": "OMPS deletion-marker.schema.json per SPEC §2.1"
+  },
+  "logging": {
+    "eu_ai_act_ref": "Art 12, 13, 19",
+    "required_fields": [
+      "period_start_end",
+      "reference_db_checked",
+      "input_leading_to_match",
+      "natural_persons_involved",
+      "agent_id",
+      "policy_id_version",
+      "classification",
+      "outcome",
+      "timestamp",
+      "ed25519_signature"
+    ],
+    "canonicalization_for_signature": {
+      "status": "TODO_v0.2 - identity_signature Ed25519 over canonical JSON to be defined; currently noted as gap",
+      "proposed": "JCS RFC8785 canonical JSON + Ed25519",
+      "note": "Until defined, ed25519_signature is provisional and must not be relied for tamper-evidence"
+    },
+    "otel_mapping": [
+      "gen_ai.operation.name",
+      "gen_ai.conversation.id",
+      "gen_ai.tool.name",
+      "gen_ai.usage.*",
+      "gen_ai.client.inference.operation.details"
+    ],
+    "otel_mapping_note": "synced with SPEC §3.4, previous input_tokens->usage.* and duration->operation.details fixed",
+    "retention": {
+      "default_months": 12,
+      "regulated_years": 6,
+      "min_by_art12": "6 months min per Art12, Way extends to 12/6y for regulated Profile B",
+      "tamper_evident": "hash_chained"
+    },
+    "latency_cost": "~5-15ms - committed before response returns, adds latency",
+    "WORM_lock": "for regulated tenants",
+    "otel_mapping_hardened": {
+      "gen_ai.client.inference.operation.details": {
+        "allowed": [
+          "tool_args_sanitized",
+          "retrieval_count",
+          "policy_decision",
+          "latency_ms"
+        ],
+        "forbidden": [
+          "raw_content",
+          "secret",
+          "PII",
+          "embedding_vector"
+        ],
+        "sanitization": "secret/PII filter before logging, same as Policy Broker; credential-in-URL (?token=..., bot<id>:AA... in path) masked by redactor before write (MAQS I13)"
+      }
+    }
+  },
+  "profiles": {
+    "personal_assistant": {
+      "scopes": [
+        "user-portable",
+        "local-session"
+      ],
+      "evals": [
+        "LoCoMo",
+        "LongMemEval"
+      ],
+      "deletion": [
+        "LOGICAL",
+        "PHYSICAL"
+      ],
+      "conflict": "User Wins"
+    },
+    "enterprise_agent": {
+      "scopes": [
+        "team-shared",
+        "org-shared",
+        "user-portable"
+      ],
+      "invariants": 10,
+      "logging": "full Art12 + OTel",
+      "deletion": [
+        "LOGICAL",
+        "PHYSICAL",
+        "SEMANTIC",
+        "MODEL"
+      ],
+      "retention_modes": [
+        "until_deleted",
+        "ttl",
+        "sliding_window",
+        "legal_hold"
+      ]
+    },
+    "ephemeral": {
+      "scopes": [
+        "local-session"
+      ],
+      "write": false,
+      "read": false,
+      "verification": "MAQS P6 test isolation"
+    }
+  },
+  "backlog_v0_2": [
+    "formal schemas/memory-item.schema.json extending OMPS",
+    "maqs-way audit CLI with conformance vectors (12 vectors)",
+    "identity_signature canonical JSON definition (JCS + Ed25519)",
+    "live verification of all 11 external links in docs/landscape.md",
+    "behavioral test for D9 golden set",
+    "embedding provenance inheritance enforcement"
+  ]
+}

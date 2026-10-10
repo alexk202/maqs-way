@@ -1,0 +1,5 @@
+{
+  "scenario": "native vectorstore.delete() without compaction",
+  "vector_db": "Chroma",
+  "recoverable_percent": 99.8
+}

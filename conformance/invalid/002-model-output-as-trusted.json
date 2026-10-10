@@ -1,0 +1,27 @@
+{
+  "id": "mem_bad_002",
+  "type": "semantic",
+  "subject": {
+    "type": "user",
+    "id": "user_123"
+  },
+  "scope": {
+    "type": "user.portable"
+  },
+  "content": {
+    "value": "User secret is 12345"
+  },
+  "provenance": {
+    "created_at": "2026-10-10T00:00:00Z",
+    "created_by": {
+      "type": "agent",
+      "id": "agent_001"
+    },
+    "source": {
+      "type": "model_output",
+      "ref": "llm_response"
+    },
+    "confidence": 1.0
+  },
+  "status": "active"
+}

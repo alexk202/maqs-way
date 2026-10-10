@@ -1,0 +1,69 @@
+[
+  {
+    "id": "valid-001-minimal-preference",
+    "file": "valid/001-minimal-preference.omps.json",
+    "expected": "PASS",
+    "rules": [
+      "P2",
+      "P7"
+    ],
+    "reason": ""
+  },
+  {
+    "id": "valid-002-bitemporal-fact",
+    "file": "valid/002-bitemporal-fact.json",
+    "expected": "PASS",
+    "rules": [
+      "P2",
+      "P3"
+    ],
+    "reason": ""
+  },
+  {
+    "id": "valid-003-deletion-tombstone",
+    "file": "valid/003-deletion-tombstone.json",
+    "expected": "PASS",
+    "rules": [
+      "P5"
+    ],
+    "reason": ""
+  },
+  {
+    "id": "invalid-001-no-agent-id",
+    "file": "invalid/001-no-agent-id.json",
+    "expected": "FAIL",
+    "rules": [
+      "P2"
+    ],
+    "reason": "Missing OAMP §4.3 agent_id binding"
+  },
+  {
+    "id": "invalid-002-model-output-as-trusted",
+    "file": "invalid/002-model-output-as-trusted.json",
+    "expected": "FAIL",
+    "rules": [
+      "P1",
+      "F7"
+    ],
+    "reason": "Model output typed as trusted, no policy broker BLOCK"
+  },
+  {
+    "id": "invalid-003-cross-tenant",
+    "file": "invalid/003-cross-tenant-search.json",
+    "expected": "FAIL",
+    "rules": [
+      "P4",
+      "G"
+    ],
+    "reason": "Tenant isolation breach"
+  },
+  {
+    "id": "invalid-004-native-delete-residue",
+    "file": "invalid/004-native-delete-residue.json",
+    "expected": "FAIL",
+    "rules": [
+      "P5"
+    ],
+    "reason": "Native delete leaves 92-100% recoverable, need tombstone compaction"
+  }
+]
