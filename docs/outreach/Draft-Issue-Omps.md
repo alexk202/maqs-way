@@ -14,11 +14,11 @@ We are building a complementary layer that directly uses OMPS schemas: **MAQS-Wa
 - MAQS v1.6 is an audit checklist (Map, Input validation, Write integrity, Growth, Retrieval, Assembly, Feedback contamination, Isolation, Concurrency, Observability, Change Management) where each CRIT item is backed by a production incident (20k tracebacks, secret leakage, volume doubling, embedding mismatch).
 - External review `way.md` pointed out: checklist proves mechanism exists, but not that memory actually works. Suggested three layers: Principles / Architecture / Verification.
 
-**What is MAQS-Way v0.1:**
+**What is MAQS-Way v0.1.3:**
 - **Principles**: 8 immutable (Veracity, Provenance, Controlled Aging, Isolation, Deletability, Recoverability, Portability, Measurability)
 - **Architecture**: adopts OMPS `memory-item` as base, extends with OAMP §4.3 `agent_id` binding mandatory, bitemporal `valid_at/invalid_at + t_created/t_expired` from Graphiti, 6-tier deletion cascade `graph_edges → nodes_if_sole_provenance → embeddings_fk → facts_fk → artifacts → rounds` from tombstone spec
 - **Verification**: This is where OMPS could benefit:
-  - Your conformance corpus validates structure. MAQS-Way adds behavioral verification: LoCoMo / LongMemEval / MemoryAgentBench golden sets (R@5≥0.8, temporal≥0.75, abstention≥0.9)
+  - Your conformance corpus validates structure. MAQS-Way adds behavioral verification: LoCoMo / LongMemEval / MemoryAgentBench golden sets (CI gate / target: R@5 ≥0.7 / ≥0.85, temporal ≥0.65 / ≥0.8, abstention ≥0.8 / ≥0.9)
   - Deletion lattice from `poojan6216/tombstone`: LOGICAL (search returns 0), PHYSICAL (DELETE+REINDEX+VACUUM / rebuild survivors, 0 residue — bench shows native delete leaves 92-100% recoverable), SEMANTIC (Ghost Echoes, MIA fails), MODEL (extraction probe fails), each Ed25519-signed
   - Security: OWASP ASI06-001 false-fact injection, ASI06-002 privilege elevation via summary
 
@@ -40,9 +40,9 @@ Concretely:
 - Conformance: OMPS `valid/invalid` vectors + MAQS-Way vectors `invalid-001-no-agent-id`, `invalid-002-model-output-as-trusted` (F7), `invalid-003-cross-tenant`, `invalid-004-native-delete-residue` can be merged into one manifest
 
 **Artifacts ready:**
-- `MAQS-Way v0.1 EN` (full scan of OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel)
+- `MAQS-Way v0.1.3 EN` (full scan of OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel)
 - `maqs-way-standard.json`
-- `conformance/manifest.json` with 6 vectors
+- `conformance/manifest.json` with 7 vectors
 
 **Ask:**
 Would you accept a PR that:

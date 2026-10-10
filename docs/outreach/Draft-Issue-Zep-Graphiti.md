@@ -8,7 +8,7 @@ Hi Zep team (Daniel, Preston, Pavlo),
 
 Graphiti is the closest to what we are calling **MAQS-Way** — bitemporal knowledge graph with Timeline T (event time) and T' (ingestion time), edge fields `t'_created, t'_expired, valid_at, invalid_at`, invalidation-on-contradiction, and Episode→Entity→Community (Louvain). Paper arXiv:2501.13956 and benchmarks DMR 94.8%, LongMemEval +18.5% with 90% latency cut are impressive.
 
-We are standardizing the missing middle between policies and implementation: **MAQS-Way v0.1**.
+We are standardizing the missing middle between policies and implementation: **MAQS-Way v0.1.3**.
 
 **What we adopted from Graphiti:**
 
@@ -38,12 +38,12 @@ For GDPR Art17 and EU AI Act Art12, regulators require verifiable deletion. Tomb
 
 2. **Scope model from AMSP**
 
-Graphiti has user_id grouping. AMSP scope model `local-session, agent-private, user-private, user-portable, team-shared, org-shared, public-reference` gives formal boundaries. Way P4 Isolation verification: negative test cross-tenant retrieval returns 0, including vector path.
+Graphiti has user_id grouping. AMSP scope model `local-session, agent-private, user-private, user-portable, team-shared, org-shared, public-reference` gives formal boundaries (Way canon uses the 5-value subset). Way P4 Isolation verification: negative test cross-tenant retrieval returns 0, including vector path.
 
 3. **Measurable verification**
 
 You have `benchmarks/` LoCoMo, LongMemEval. Way adds:
-- Metrics: R@5≥80% on oracle, temporal accuracy, abstention ≥0.9
+- Metrics as CI gate / target pairs: R@5 ≥0.7 / ≥0.85 on oracle, temporal accuracy ≥0.65 / ≥0.8, abstention ≥0.8 / ≥0.9
 - Security: OWASP Agentic ASI06-001 false-fact injection via memory, ASI06-002 privilege elevation via summary manipulation — Graphiti's citation to source episode is natural defense, but needs BLOCK test
 
 **Composition:**
@@ -57,9 +57,9 @@ MAQS v1.6 (audit of edge failures) → Way Verification (how to prove deletion/i
 ```
 
 **Artifacts ready:**
-- `MAQS-Way v0.1 EN` — full landscape OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel
+- `MAQS-Way v0.1.3 EN` — full landscape OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel
 - `maqs-way-standard.json` — 8 principles P1-P8 with property/verification/example separated, lifecycle with your bitemporal fields
-- 6 conformance vectors including `valid-002-bitemporal-fact` using `valid_at + t_created`
+- 7 conformance vectors including `valid-002-bitemporal-fact` using `valid_at + t_created`
 
 **Ask:**
 

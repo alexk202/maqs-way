@@ -8,7 +8,7 @@ Hi,
 
 Huge respect for MemoryOps AI — you are one of the few who treat memory not as a vector DB, but as **governed state** with a full lifecycle.
 
-We audited your invariants and they map 1:1 to what we are standardizing in **MAQS-Way v0.1**:
+We audited your invariants and they map 1:1 to what we are standardizing in **MAQS-Way v0.1.3**:
 
 Your 10 invariants:
 1. Tenant isolation — User A's memory never returned to User B
@@ -43,8 +43,8 @@ We adopted this in Way lifecycle: `ACTIVE→STALE→CONTESTED→SUPERSEDED→EXP
 
 3. **Evaluation — from golden set to measurable R@k**
 You have eval harness scaffolding. Way adds concrete metrics from LoCoMo/LongMemEval/MemoryAgentBench:
-- R@5 ≥80% on LongMemEval oracle, temporal accuracy ≥75%, abstention rate ≥0.9 when no evidence, duplicate rate <2%, contamination rate =0
-- Negative scenarios: cross_tenant_leak, prompt_injection_via_memory (OWASP ASI06-001), feedback_contamination (MAQS F)
+- R@5 ≥0.7 / ≥0.85 on LongMemEval oracle, temporal accuracy ≥0.65 / ≥0.8, abstention rate ≥0.8 / ≥0.9 when no evidence, duplicate rate ≤5% / ≤2%, contamination rate ≤1% / 0 (CI gate / target)
+- Negative scenarios: cross_tenant_leak, prompt_injection_via_memory (OWASP ASI06-001), feedback_contamination (MAQS F), stale_overrides_fresh, shared_fact_visibility_leak
 
 4. **Logging — EU AI Act Art12**
 You have append-only audit log. Way adds Art12 required fields: period of use, reference DB checked, input leading to match, natural persons, agent_id, policy_version, outcome, timestamp, ed25519 signature + OTel `gen_ai.conversation.id` mapping. Retention 12 months default, 6 years regulated, WORM lock.
@@ -53,10 +53,10 @@ You have append-only audit log. Way adds Art12 required fields: period of use, r
 
 - Keep MemoryOps as reference implementation of governed memory.
 - Use `maqs-way-standard.json` (8 principles P1-P8 with property/verification/example separated) as machine-readable spec for your invariant evidence gate in CI.
-- Add our 6 conformance vectors (valid/invalid) to your `evals/` — especially `invalid-004-native-delete-residue` that fails if physical purge not verified.
+- Add our 7 conformance vectors (valid/invalid) to your `evals/` — especially `invalid-004-native-delete-residue` that fails if physical purge not verified.
 
 Artifacts ready:
-- `MAQS-Way v0.1 EN` spec (full scan OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel)
+- `MAQS-Way v0.1.3 EN` spec (full scan OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel)
 - `maqs-way-standard.json`
 - `conformance/manifest.json`
 
