@@ -47,7 +47,8 @@ SPEC-RU.md — RU version v0.1.3
 maqs-way-standard.json — machine-readable v0.1.3 (8 principles P1-P8)
 conformance/ — valid/invalid vectors + manifest.json
 evals/ — how to run LoCoMo/LongMemEval
-docs/ — mapping to MAQS, landscape
+docs/ — mapping to MAQS, landscape, outreach drafts, articles
+proposals/ — v0.1 roadmap snapshot (historical)
 ```
 
 ## Relation to MAQS
@@ -60,11 +61,13 @@ Two repos, one coordinate system. MAQS stays clean.
 ## Quick start
 
 ```bash
-# validate a memory item against Way
-python -m jsonschema -i your-item.json maqs-way-standard.json
-# run conformance
+# inspect the machine-readable standard (valid JSON)
+python -m json.tool maqs-way-standard.json
+# conformance corpus (expected verdicts + rule_ids)
 cat conformance/manifest.json
 ```
+
+> Full validator (`maqs-way audit CLI`: schema validation + vector run) — planned, v0.2 (see SPEC §6 Backlog). `data_model.$ref` is provisional until `schemas/memory-item.schema.json` lands, so no validate-against-Way command is advertised yet.
 
 See `docs/articles/devto-draft.md` for DevTo article.
 
