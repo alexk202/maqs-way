@@ -1,0 +1,65 @@
+[
+  {
+    "id": "feedback_loop",
+    "symptom": "Model analyzes its own reports/responses",
+    "maqs": "F",
+    "rules": ["P1"]
+  },
+  {
+    "id": "input_validation_leak",
+    "symptom": "Discovered secrets surface in responses",
+    "maqs": "A",
+    "rules": ["P1"]
+  },
+  {
+    "id": "write_duplication",
+    "symptom": "Same data repeats in context",
+    "maqs": "B",
+    "rules": ["P2"]
+  },
+  {
+    "id": "growth_after_rebuild",
+    "symptom": "Storage volume grew drastically after rebuild",
+    "maqs": "C",
+    "rules": ["P3"]
+  },
+  {
+    "id": "retrieval_empty",
+    "symptom": "Data exists in storage, retrieval is empty",
+    "maqs": "D",
+    "rules": ["P8"]
+  },
+  {
+    "id": "stale_displaces_fresh",
+    "symptom": "Old irrelevant displaces new",
+    "maqs": "D",
+    "rules": ["P3", "P8"]
+  },
+  {
+    "id": "isolation_breach",
+    "symptom": "Responses carry traces of unrelated topics/agents",
+    "maqs": "G",
+    "rules": ["P4"]
+  },
+  {
+    "id": "blind_truncation",
+    "symptom": "Response content is cut off mid-word",
+    "maqs": "E",
+    "rules": ["P1"]
+  },
+  {
+    "id": "native_delete_residue",
+    "symptom": "GDPR deletion removed row but embedding recoverable",
+    "maqs": "B/G",
+    "rules": ["P5"]
+  },
+  {
+    "id": "recovery_loop_without_diagnosis",
+    "symptom": "Service restarts every hour, nobody knows why",
+    "maqs": "I11",
+    "rules": [],
+    "known_gap": true,
+    "owner": "I11",
+    "closes_in": "package 1.6 (I10-I15), before release v0.2"
+  }
+]
