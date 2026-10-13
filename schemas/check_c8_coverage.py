@@ -35,6 +35,15 @@ def main() -> int:
     standard = json.loads(STANDARD.read_text())
     known = {p["id"] for p in standard["principles"]}
 
+    # Lockstep guard (adversarial control): the whitelist and the fixture must
+    # name EXACTLY the same set — no silent growth on either side.
+    fixture_gaps = {c["id"] for c in classes if c.get("known_gap")}
+    if fixture_gaps != KNOWN_GAPS:
+        print(f"GATE RED — whitelist/fixture mismatch:")
+        print(f"  whitelist ({len(KNOWN_GAPS)}): {sorted(KNOWN_GAPS)}")
+        print(f"  fixture   ({len(fixture_gaps)}): {sorted(fixture_gaps)}")
+        return 1
+
     covered, gaps, reds, unknowns, bypass = [], [], [], [], []
     for c in classes:
         rules = c.get("rules", [])
