@@ -12,6 +12,13 @@
 - Статья опубликована и проверена живой: https://dev.to/aleksandr_kossarev_e23623/maqs-way-the-path-layer-maqs-was-missing-from-policies-to-measurable-memory-2dif
 - canonical_url → GitHub-репозиторий (связка взаимная: статья → репо, README → статья).
 
+## Outreach (отправлено владельцем)
+- OMPS: https://github.com/rdh073/OMPS/issues/2
+- AMSP: https://github.com/sanej/amsp/issues/1
+- OAMP: https://github.com/deep-thinking-lab/open-agent-memory-protocol/issues/33
+- MemoryOps: https://github.com/patibandlavenkatamanideep/memoryops-ai/issues/165
+- Graphiti: https://github.com/getzep/graphiti/issues/1998
+
 ## Дальше
 - Outreach-отправка и DevTo-публикация — после решения пользователя.
 - v0.2-пакеты по одному с тестом. Старый PAT из remote MAQS убран (отзыв на стороне GitHub — по доступу).
