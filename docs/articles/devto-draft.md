@@ -1,7 +1,7 @@
 ---
 title: "MAQS-Way: The Path Layer MAQS Was Missing — From Policies to Measurable Memory"
-published: false
-tags: ai, llm, memory, architecture, governance, maqs, omps, amsp, oamp
+published: true
+tags: ai, omps, oamp, maqs
 canonical_url: https://github.com/alexk202/maqs-way
 ---
 
