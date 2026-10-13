@@ -24,18 +24,30 @@ ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "schemas" / "c8_classes.json"
 STANDARD = ROOT / "maqs-way-standard.json"
 
+# Closed whitelist (Prima control): ONLY these ids may be known gaps.
+# Any other class marked known_gap is a bypass attempt -> RED.
+# When I11 closes the gap, remove it here AND in the fixture in one package.
+KNOWN_GAPS = {"recovery_loop_without_diagnosis"}
+
 
 def main() -> int:
     classes = json.loads(FIXTURE.read_text())
     standard = json.loads(STANDARD.read_text())
     known = {p["id"] for p in standard["principles"]}
 
-    covered, gaps, reds, unknowns = [], [], [], []
+    covered, gaps, reds, unknowns, bypass = [], [], [], [], []
     for c in classes:
         rules = c.get("rules", [])
         if not rules:
-            if c.get("known_gap") and c.get("owner") and c.get("closes_in"):
+            if (
+                c["id"] in KNOWN_GAPS
+                and c.get("known_gap")
+                and c.get("owner")
+                and c.get("closes_in")
+            ):
                 gaps.append(c)
+            elif c.get("known_gap"):
+                bypass.append(c["id"])
             else:
                 reds.append(c["id"])
             continue
@@ -55,8 +67,10 @@ def main() -> int:
         print(f"UNKNOWN RULES in {cid}: {', '.join(bad)}")
     for cid in reds:
         print(f"UNCOVERED (no owner): {cid}")
+    for cid in bypass:
+        print(f"BYPASS ATTEMPT (known_gap not in whitelist): {cid}")
 
-    if reds or unknowns:
+    if reds or unknowns or bypass:
         print("GATE RED")
         return 1
     if gaps:
