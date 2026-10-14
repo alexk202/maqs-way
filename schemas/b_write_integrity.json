@@ -1,0 +1,48 @@
+[
+  {
+    "id": "B1",
+    "requirement": "Writing is idempotent: repeated delivery of an event (retry, update duplication, double invocation) does not create a duplicate.",
+    "maqs": "B1 [CRIT]",
+    "rules": ["P2"],
+    "note": "P2 only. §2.5 idempotency covers schema migrations, not runtime writes (different axis) — P6 excluded by literal text."
+  },
+  {
+    "id": "B2",
+    "requirement": "Deduplication direction is correct: the current record is preserved, the old duplicate is suppressed (not the reverse).",
+    "maqs": "B2 [CRIT]",
+    "rules": ["P3"],
+    "note": "P3 supersession on contradiction + links.supersedes (§2.2)."
+  },
+  {
+    "id": "B3",
+    "requirement": "Deduplication is by semantic/content key, not by source. Source diversity is preserved as provenance, not as duplicated memory.",
+    "maqs": "B3 [IMP]",
+    "rules": ["P2", "P8"],
+    "note": "P2 gives source-as-provenance, P8 gives duplicate_rate metric (§3.2); only their intersection is the content key."
+  },
+  {
+    "id": "B4",
+    "requirement": "Writing to multiple stores (message + vector + index) is transactional or compensable: partial writes are excluded.",
+    "maqs": "B4 [IMP]",
+    "rules": [],
+    "known_gap": true,
+    "owner": "SPEC §2.5",
+    "closes_in": "v0.2 (write atomicity/compensation requirement)",
+    "adjacent": ["P6"],
+    "note": "P6 covers contracts/versioning of format, not atomicity/compensation. Adjacent, not covering — honest gap."
+  },
+  {
+    "id": "B5",
+    "requirement": "Write failures are not silent: logged, metricked, retried with backoff; silent return without observability is unacceptable.",
+    "maqs": "B5 [CRIT]",
+    "rules": ["LOG-3.4", "P8"],
+    "note": "LOG-3.4 primary (Art12 mandatory logging + OTel §3.4); P8 secondary (measurability spirit + J3 regression guard §3.5). P8 literal text is eval-harness only, so LOG carries the claim."
+  },
+  {
+    "id": "B6",
+    "requirement": "Compressed representation (summary) and original are written consistently; an empty/failed compression does not replace the original.",
+    "maqs": "B6 [CRIT]",
+    "rules": ["P1", "P2"],
+    "note": "P1 confidence_after <= confidence_before + F8 ceiling (§2.4); P2 append-only transformation_history."
+  }
+]
