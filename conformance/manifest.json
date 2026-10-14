@@ -4,8 +4,8 @@
     "file": "valid/001-minimal-preference.omps.json",
     "expected": "PASS",
     "rules": [
-      "P2",
-      "P7"
+      "Way:P2",
+      "Way:P7"
     ],
     "reason": ""
   },
@@ -14,8 +14,8 @@
     "file": "valid/002-bitemporal-fact.json",
     "expected": "PASS",
     "rules": [
-      "P2",
-      "P3"
+      "Way:P2",
+      "Way:P3"
     ],
     "reason": ""
   },
@@ -24,7 +24,7 @@
     "file": "valid/003-deletion-tombstone.json",
     "expected": "PASS",
     "rules": [
-      "P5"
+      "Way:P5"
     ],
     "reason": "Governance tombstone validated by schemas/deletion-marker.schema.json (package 1.3)"
   },
@@ -33,7 +33,7 @@
     "file": "invalid/001-no-agent-id.json",
     "expected": "FAIL",
     "rules": [
-      "P2"
+      "Way:P2"
     ],
     "reason": "Missing OAMP §4.3 agent_id binding"
   },
@@ -43,8 +43,8 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P1",
-      "F7"
+      "Way:P1",
+      "MAQS:F7"
     ],
     "reason": "Model output typed as trusted, no policy broker BLOCK (semantic: passes schema, caught by policy layer)"
   },
@@ -54,8 +54,8 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P4",
-      "G"
+      "Way:P4",
+      "MAQS:G"
     ],
     "reason": "Tenant isolation breach"
   },
@@ -65,7 +65,7 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P5"
+      "Way:P5"
     ],
     "reason": "Native delete leaves 92-100% recoverable, need tombstone compaction"
   },
@@ -75,8 +75,8 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P4",
-      "G1"
+      "Way:P4",
+      "MAQS:G1"
     ],
     "reason": "Shared fact still visible after delete (similarity threshold per canon SPEC §3.3)"
   },
@@ -86,8 +86,8 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P4",
-      "G1"
+      "Way:P4",
+      "MAQS:G1"
     ],
     "reason": "G1 fixture: wrong or omitted scope must BLOCK"
   },
@@ -97,8 +97,8 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P4",
-      "G1"
+      "Way:P4",
+      "MAQS:G1"
     ],
     "reason": "G1 fixture: read-only caller attempting write must BLOCK"
   },
@@ -108,8 +108,8 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P4",
-      "P5"
+      "Way:P4",
+      "Way:P5"
     ],
     "reason": "G1 fixture: access after membership revocation must BLOCK"
   },
@@ -119,9 +119,9 @@
     "expected": "FAIL",
     "status": "declared",
     "rules": [
-      "P1",
-      "P3",
-      "F"
+      "Way:P1",
+      "Way:P3",
+      "MAQS:F"
     ],
     "reason": "Stale summary displaces fresh fact"
   }
