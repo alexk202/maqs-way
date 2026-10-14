@@ -1,0 +1,24 @@
+[
+  {
+    "id": "E10",
+    "requirement": "Alive memory: emotionally significant records protected from summarization and decay; maximum number of protected records is capped.",
+    "maqs": "E10 [REC]",
+    "rules": [],
+    "known_gap": true,
+    "owner": "1.5-formulation (proposals/e10-e11-assembly.md)",
+    "closes_in": "v0.2 canonization (owner signature)",
+    "anchor": "No alive/protected/cap construct in canon v0.1.4 (verified by grep); P3 governs decay mechanics, not exemption-with-cap.",
+    "formulation": "proposals/e10-e11-assembly.md#e10cap---alive-memory-cap-maqs-e10-rec-indicative"
+  },
+  {
+    "id": "E11",
+    "requirement": "Critical information placed at the beginning and end of the context window, not in the middle; placement verified for long contexts (Liu et al., lost-in-the-middle).",
+    "maqs": "E11 [IMP]",
+    "rules": [],
+    "known_gap": true,
+    "owner": "1.5-formulation (proposals/e10-e11-assembly.md)",
+    "closes_in": "v0.2 canonization (owner signature)",
+    "anchor": "SPEC §2.4 mentions 'positioning' as a topic; sets no norm (no subject/predicate/condition). Word-as-rule mapping rejected (rule #5).",
+    "formulation": "proposals/e10-e11-assembly.md#e11critical---declared-critical-labels-maqs-e11-imp"
+  }
+]
