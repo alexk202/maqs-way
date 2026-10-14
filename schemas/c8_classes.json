@@ -57,9 +57,10 @@
     "id": "recovery_loop_without_diagnosis",
     "symptom": "Service restarts every hour, nobody knows why",
     "maqs": "I11",
-    "rules": [],
+    "rules": ["MAQS:I11", "LOG-3.4"],
     "known_gap": true,
     "owner": "I11",
-    "closes_in": "package 1.6 (I10-I15), before release v0.2"
+    "closes_in": "1.6a (bridge) → v0.2 canonization (owner signature)",
+    "bridged_by": "proposals/i10-i12-counters.md + schemas/check_i_counters.py (package 1.6a)"
   }
 ]

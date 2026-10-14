@@ -26,8 +26,19 @@ STANDARD = ROOT / "maqs-way-standard.json"
 
 # Closed whitelist (Prima control): ONLY these ids may be known gaps.
 # Any other class marked known_gap is a bypass attempt -> RED.
-# When I11 closes the gap, remove it here AND in the fixture in one package.
+# Bridge consolidation (package 1.6a): a gap entry WITH anchor rules is
+# BRIDGED (subject moved to the owning formulation), NOT covered and NOT
+# closed — I11 stays a gap until v0.2 canonization. Covered count MUST NOT
+# absorb bridged entries (no false green).
 KNOWN_GAPS = {"recovery_loop_without_diagnosis"}
+
+# Local MAQS namespace mirror (CLI maqs_way_audit.py holds its own copy;
+# consolidate in 1.8. Extension only by commit, never silently.)
+MAQS_VALID = {
+    "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P",
+    "E6", "F1", "F7", "G1", "I11",
+}
+LEGIT_NONP = {"LOG-3.4": "logging"}
 
 
 def main() -> int:
@@ -44,7 +55,7 @@ def main() -> int:
         print(f"  fixture   ({len(fixture_gaps)}): {sorted(fixture_gaps)}")
         return 1
 
-    covered, gaps, reds, unknowns, bypass = [], [], [], [], []
+    covered, gaps, bridged, reds, unknowns, bypass = [], [], [], [], [], []
     for c in classes:
         rules = c.get("rules", [])
         if not rules:
@@ -60,9 +71,12 @@ def main() -> int:
             else:
                 reds.append(c["id"])
             continue
-        bad = [r for r in rules if r not in known]
+        bad = [r for r in rules if r not in known and r not in LEGIT_NONP
+               and not (r.startswith("MAQS:") and r[5:] in MAQS_VALID)]
         if bad:
             unknowns.append((c["id"], bad))
+        elif c.get("known_gap") and c["id"] in KNOWN_GAPS:
+            bridged.append(c)
         else:
             covered.append(c["id"])
 
@@ -71,6 +85,12 @@ def main() -> int:
         print(
             f"KNOWN GAP: {g['id']} (maqs {g.get('maqs')}) "
             f"-> owner {g['owner']}, closes in {g['closes_in']}"
+        )
+    for g in bridged:
+        print(
+            f"BRIDGED (not covered, not closed): {g['id']} (maqs {g.get('maqs')}) "
+            f"-> consolidated to {g.get('owner')}, closes in {g.get('closes_in')}; "
+            f"anchor rules: {', '.join(g.get('rules', []))}"
         )
     for cid, bad in unknowns:
         print(f"UNKNOWN RULES in {cid}: {', '.join(bad)}")
@@ -82,8 +102,12 @@ def main() -> int:
     if reds or unknowns or bypass:
         print("GATE RED")
         return 1
-    if gaps:
+    if gaps and bridged:
+        print("GATE GREEN with known gap(s) + bridged gap(s) — see owners above")
+    elif gaps:
         print("GATE GREEN with known gap(s) — see owners above")
+    elif bridged:
+        print("GATE GREEN with bridged gap(s) — consolidated, not closed; see above")
     else:
         print("GATE GREEN — full coverage")
     return 0
