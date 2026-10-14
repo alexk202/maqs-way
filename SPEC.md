@@ -296,7 +296,7 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
    - `identity_signature`: Ed25519 over canonical JSON — full specification (moved out of data-model example, §2.1)
    - `operator` role: full permission matrix for §2.3 (review, appeal, override boundaries)
    - Expand `maqs-way-standard.json` to include deletion_marker (as separate artifact per 2.1 note) + embedding provenance
-   - `maqs-way audit CLI` using OMPS validator + conformance vectors (already 7 vectors exist, extend to 12)
+   - `maqs-way audit CLI` v0.1 shipped (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) + conformance vectors (12 in manifest: schema 4/4, behavioral-declared 8/8; executable harness → v0.2)
    - Behavioral test for D9 (MAQS D9 — agent self-report diagnostic): golden set from LoCoMo/LongMemEval (closest point where mechanism meets result)
    - Live verification of all 11 external links in `docs/landscape.md` + per-row `verified: ✅/⏳/❌` column
    - P/V/E alignment for Architecture and Verification layers (§2, §3)
