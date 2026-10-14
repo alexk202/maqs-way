@@ -67,7 +67,7 @@ python -m json.tool maqs-way-standard.json
 cat conformance/manifest.json
 ```
 
-> Full validator (`maqs-way audit CLI`: schema validation + vector run) — planned, v0.2 (see SPEC §6 Backlog). `data_model.$ref` is provisional until `schemas/memory-item.schema.json` lands, so no validate-against-Way command is advertised yet.
+> Audit CLI v0.1 ships (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) — run `python3 schemas/maqs_way_audit.py all`. `data_model.$ref` is active (`schemas/memory-item.schema.json` landed, gate green). Executable behavioral harness — planned, v0.2 (see SPEC §6 Backlog).
 
 See `docs/articles/devto-draft.md` for DevTo article.
 
