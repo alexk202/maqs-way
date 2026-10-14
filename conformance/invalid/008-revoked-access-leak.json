@@ -1,0 +1,13 @@
+{
+  "scenario": "revoked_access_leak - access after revocation",
+  "type": "negative_behavioral",
+  "maqs_ref": "G1",
+  "way_rule": "P4 Isolation + P5 deletion cascade",
+  "steps": [
+    "grant user_123 team-shared read",
+    "revoke",
+    "search as user_123",
+    "also check graph reconciliation best-effort"
+  ],
+  "expected": "FAIL if any search returns data after revocation - LOGICAL residue 0, deletion_log with scope=team-shared"
+}

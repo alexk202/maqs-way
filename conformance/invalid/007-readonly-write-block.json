@@ -1,0 +1,15 @@
+{
+  "scenario": "readonly_write_block - read-only session attempts write",
+  "type": "negative_behavioral",
+  "maqs_ref": "G1 + MemoryOps invariant #6",
+  "way_rule": "P4 + Profile C ephemeral",
+  "session": {
+    "type": "temporary_chat",
+    "write_attempt": {
+      "id": "mem_ephemeral_001",
+      "scope": "local-session"
+    }
+  },
+  "expected": "FAIL if write succeeds - must BLOCK, no artifact created",
+  "check": "conformance/valid/001 must not appear after this"
+}

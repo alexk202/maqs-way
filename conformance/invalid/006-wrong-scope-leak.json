@@ -1,0 +1,14 @@
+{
+  "scenario": "wrong_scope_leak - AMSP G1 fixture wrong/omitted scope",
+  "type": "negative_behavioral",
+  "maqs_ref": "G1",
+  "way_rule": "P4 Isolation - 4 fixtures",
+  "query": {
+    "caller": "agent_002",
+    "scope_claimed": "user-portable",
+    "actual_memory_scope": "agent-private",
+    "owner": "agent_001"
+  },
+  "expected": "FAIL if retrieval returns memory when scope mismatch or scope omitted",
+  "otel_expected": "gen_ai.tool.name=memory.search, policy_decision=BLOCK, scope_check=failed"
+}

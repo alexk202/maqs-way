@@ -1,0 +1,19 @@
+{
+  "scenario": "shared_fact_visibility_leak - after delete of shared fact, requestor cannot retrieve via semantic search",
+  "type": "negative_behavioral",
+  "maqs_ref": "G",
+  "way_rule": "P4 + visible_to masking",
+  "steps": [
+    "create team-shared fact visible_to=[user_123, user_456] subject=user_123",
+    "delete request by user_123",
+    "search as user_456 with embedding similarity >= 0.3 must return 0 (SEMANTIC threshold, canon SPEC §3.3: similarity < 0.3)",
+    "search as user_123 should return 0 LOGICAL"
+  ],
+  "expected": "FAIL if leak >0 - current tombstone must clear edge, keep node only if NOT sole provenance",
+  "fixture": {
+    "shared_fact_id": "mem_shared_001",
+    "deleter": "user_123",
+    "other_reader": "user_456",
+    "similarity_threshold": 0.3
+  }
+}

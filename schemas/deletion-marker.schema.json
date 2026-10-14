@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://maqs.dev/schemas/way-0.1.4/deletion-marker.schema.json",
+  "title": "MAQS-Way deletion marker / governance tombstone",
+  "description": "Separate artifact per SPEC §2.1, zero PII, preserves deletion_log + hash chain + Ed25519. Compatible with OMPS deletion-marker.schema.json",
+  "$comment": "schema_version pins the DATA MODEL (way-v0.1.3, frozen). $id pins the RELEASE (way-0.1.4). Model frozen, release grows — by design (repo rule: release stamp and model version are intentionally different).",
+  "type": "object",
+  "required": [
+    "artifact",
+    "schema_version",
+    "of_record",
+    "cleared",
+    "zero_PII",
+    "preserved"
+  ],
+  "properties": {
+    "artifact": {
+      "const": "governance_tombstone"
+    },
+    "schema_version": {
+      "const": "omps-0.1.0+way-v0.1.3"
+    },
+    "of_record": {
+      "type": "string",
+      "description": "id of memory-item being tombstoned"
+    },
+    "cleared": {
+      "type": "object",
+      "description": "PII cleared fields",
+      "properties": {
+        "content.value": {
+          "type": [
+            "null"
+          ]
+        },
+        "embedding.vector": {
+          "type": [
+            "null"
+          ]
+        },
+        "subject_PII": {
+          "type": [
+            "null"
+          ]
+        }
+      }
+    },
+    "preserved": {
+      "type": "object",
+      "required": [
+        "deletion_log",
+        "hash_chain_prev",
+        "ed25519_signature"
+      ],
+      "properties": {
+        "deletion_log": {
+          "type": "object",
+          "required": [
+            "request_id",
+            "timestamp",
+            "scope",
+            "layer_counts",
+            "requestor_hash"
+          ],
+          "properties": {
+            "request_id": {
+              "type": "string"
+            },
+            "timestamp": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "scope": {
+              "type": "string"
+            },
+            "layer_counts": {
+              "type": "object",
+              "properties": {
+                "graph_edges": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "nodes": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "embeddings_fk": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "facts_fk": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "artifacts": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "rounds": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              }
+            },
+            "requestor_hash": {
+              "type": "string"
+            }
+          }
+        },
+        "hash_chain_prev": {
+          "type": "string"
+        },
+        "ed25519_signature": {
+          "type": "string",
+          "description": "provisional until JCS RFC8785 defined in v0.2"
+        }
+      }
+    },
+    "zero_PII": {
+      "const": true
+    },
+    "gdpr_art17_note": {
+      "type": "string"
+    }
+  }
+}
