@@ -1,0 +1,11 @@
+[
+  {
+    "id": "I13",
+    "requirement": "Secret exposure guard: secrets must never appear in plain text in logs, error messages, or diagnostic output; masker/redactor applied before write, including credential-in-URL (query form and path-embedded form).",
+    "maqs": "I13 [CRIT]",
+    "rules": ["LOG-3.4"],
+    "entailment": "LOG-3.4 alone entails both classes: SPEC §3.4 single bullet carries secret/PII filter AND credential-in-URL (both forms); JSON logging.otel_mapping_hardened.*.sanitization carries the same single node. Proof recorded; P8 excluded (metrics-quality vs boundary-invariant).",
+    "anchor": "SPEC.md §3.4 'masked by redactor before write (MAQS I13 [CRIT])'",
+    "status": "covered-by-canon (test proves, not introduces)"
+  }
+]
