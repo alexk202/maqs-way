@@ -1,0 +1,24 @@
+[
+  {
+    "id": "P9",
+    "requirement": "Controlled artifact experiment with one-sided probes (canary/decoy/echo): positive = proof, negative = inconclusive, never pass.",
+    "maqs": "P9 (procedure step)",
+    "rules": [],
+    "known_gap": true,
+    "owner": "1.7a-formulation (proposals/p9-p10-audit.md)",
+    "closes_in": "v0.2 canonization (owner signature)",
+    "anchor": "No probe procedure in canon v0.1.4 (verified by grep).",
+    "formulation": "proposals/p9-p10-audit.md#p9--controlled-artifact-experiment-one-sided"
+  },
+  {
+    "id": "P10",
+    "requirement": "External auditor isolation: the auditor is read-only; verified by snapshot-run-verify including untracked files.",
+    "maqs": "P10 (procedure step)",
+    "rules": [],
+    "known_gap": true,
+    "owner": "1.7a-formulation (proposals/p9-p10-audit.md)",
+    "closes_in": "v0.2 canonization (owner signature)",
+    "anchor": "No auditor-isolation procedure in canon v0.1.4 (verified by grep).",
+    "formulation": "proposals/p9-p10-audit.md#p10--external-auditor-isolation-read-only-verified-by-fact"
+  }
+]
