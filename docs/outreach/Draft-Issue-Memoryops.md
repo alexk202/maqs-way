@@ -8,7 +8,7 @@ Hi,
 
 Huge respect for MemoryOps AI — you are one of the few who treat memory not as a vector DB, but as **governed state** with a full lifecycle.
 
-We audited your invariants and they map 1:1 to what we are standardizing in **MAQS-Way v0.1.3**:
+We audited your invariants and they map 1:1 to what we are standardizing in **MAQS-Way v0.2**:
 
 Your 10 invariants:
 1. Tenant isolation — User A's memory never returned to User B
@@ -53,10 +53,10 @@ You have append-only audit log. Way adds Art12 required fields: period of use, r
 
 - Keep MemoryOps as reference implementation of governed memory.
 - Use `maqs-way-standard.json` (8 principles P1-P8 with property/verification/example separated) as machine-readable spec for your invariant evidence gate in CI.
-- Add our 7 conformance vectors (valid/invalid) to your `evals/` — especially `invalid-004-native-delete-residue` that fails if physical purge not verified.
+- Add our 12 conformance vectors (valid/invalid) to your `evals/` — especially `invalid-004-native-delete-residue` that fails if physical purge not verified.
 
 Artifacts ready:
-- `MAQS-Way v0.1.3 EN` spec (full scan OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel)
+- `MAQS-Way v0.2 EN` spec (full scan OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel)
 - `maqs-way-standard.json`
 - `conformance/manifest.json`
 

@@ -15,7 +15,7 @@ We are working on a complementary layer: **MAQS-Way** — the path from policies
 
 - **way.md external review** of MAQS identified the gap: checklist proves mechanism exists (relevance threshold, dedup), but does not prove memory *actually* recalls needed, forgets outdated, and doesn't contaminate. Suggested three layers: Principles / Architecture / Verification.
 
-- **MAQS-Way v0.1.3** implements those three layers and is intentionally complementary to AMSP/OMPS/OAMP.
+- **MAQS-Way v0.2** implements those three layers and is intentionally complementary to AMSP/OMPS/OAMP.
 
 **Why this fits AMSP:**
 
@@ -38,9 +38,9 @@ MAQS-Way adds what AMSP lists as open questions:
 3. Map: AMSP scope model → MAQS G Isolation negative tests; AMSP lifecycle → MAQS B/C + tombstone cascade; AMSP export/import → MAQS-Way portability profile.
 
 We have draft artifacts:
-- `MAQS-Way v0.1.3 EN` spec
+- `MAQS-Way v0.2 EN` spec
 - `maqs-way-standard.json` machine-readable (8 principles P1-P8 with property/verification/example separated)
-- 7 conformance vectors valid/invalid + manifest.json
+- 12 conformance vectors valid/invalid + manifest.json
 
 Would you be open to a PR that adds a `docs/verification-with-maqs.md` referencing MAQS as optional verification layer? Or we could co-author a short RFC: "AMSP + MAQS-Way composition".
 

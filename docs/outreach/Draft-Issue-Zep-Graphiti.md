@@ -8,7 +8,7 @@ Hi Zep team (Daniel, Preston, Pavlo),
 
 Graphiti is the closest to what we are calling **MAQS-Way** — bitemporal knowledge graph with Timeline T (event time) and T' (ingestion time), edge fields `t'_created, t'_expired, valid_at, invalid_at`, invalidation-on-contradiction, and Episode→Entity→Community (Louvain). Paper arXiv:2501.13956 and benchmarks DMR 94.8%, LongMemEval +18.5% with 90% latency cut are impressive.
 
-We are standardizing the missing middle between policies and implementation: **MAQS-Way v0.1.3**.
+We are standardizing the missing middle between policies and implementation: **MAQS-Way v0.2**.
 
 **What we adopted from Graphiti:**
 
@@ -57,9 +57,9 @@ MAQS v1.6 (audit of edge failures) → Way Verification (how to prove deletion/i
 ```
 
 **Artifacts ready:**
-- `MAQS-Way v0.1.3 EN` — full landscape OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel
+- `MAQS-Way v0.2 EN` — full landscape OMPS/AMSP/OAMP/Mem0/Zep/Tombstone/Eval/OWASP/OTel
 - `maqs-way-standard.json` — 8 principles P1-P8 with property/verification/example separated, lifecycle with your bitemporal fields
-- 7 conformance vectors including `valid-002-bitemporal-fact` using `valid_at + t_created`
+- 12 conformance vectors including `valid-002-bitemporal-fact` using `valid_at + t_created`
 
 **Ask:**
 
