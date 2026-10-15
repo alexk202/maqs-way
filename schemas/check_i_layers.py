@@ -9,7 +9,7 @@ No declaration -> unknown (loud) -> interpretation suspended.
 
 Probes:
 (a) undeclared layer -> unknown, never a guess;
-(b) cross-layer verdict ( чуж expectation on чуж answer) -> RED;
+(b) cross-layer verdict (foreign expectation on foreign answer) -> RED;
 (c) bypass marker in fixture -> RED;
 (d) silent default substitution (quiet session) -> RED;
 (e) inference attempt (heuristic guessing) -> RED.
