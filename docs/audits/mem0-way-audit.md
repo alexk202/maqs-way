@@ -1,68 +1,70 @@
-# Way-аудит Mem0 OSS (пример применения MAQS-Way v0.2)
+# Way-audit of Mem0 OSS (MAQS-Way v0.2 application example)
 
-> Статус: draft примера аудита, НЕ часть канона. Тон — помощь, не разнос.
-> Метод: статическое чтение кода (без запуска, без инфры).
-> Аудируемый код: `mem0ai/mem0` @ `0724291` (2026-10-14), shallow clone.
-> Аудитор: MAQS-Way v0.2 (принципы P1–P8 + write integrity B1–B6).
-> Правило: только факты из кода/документации с путями; чего не проверено — так и написано.
+> Status: draft audit example, NOT part of the canon. Tone — help, not a roast.
+> Method: static code reading (no execution, no infra).
+> Audited code: `mem0ai/mem0` @ `0724291` (2026-10-14), shallow clone.
+> Auditor: MAQS-Way v0.2 (principles P1–P8 + write integrity B1–B6).
+> Rule: only facts from code/docs, with paths; whatever was not verified is stated as such.
 
-## Сводка
+## Summary
 
-| Свойство Way | Вердикт | Одна строка |
+| Way property | Verdict | One line |
 |---|---|---|
-| P4 Isolation | COVERED | Фильтры tenant до top-k, ключи не подделать через metadata |
-| P2 Provenance | PARTIAL | actor/role в history есть; нет source ref, policy, confidence на записи |
-| P3 Aging | PARTIAL | expiration opt-in есть; decay — только platform, не OSS |
-| P5 Deletability | PARTIAL | delete чистит вектор + пишет history; history остаётся читаемой, tombstone нет |
-| B Write integrity | PARTIAL | Дедуп md5 на уровне приложения, без UNIQUE и транзакций; есть тихие пути |
-| P1 Veracity | GAP | Нет типизации model_output / trust-ceiling на саммаризацию |
-| P8 Measurability | GAP (in-tree) | `evaluation/` — пустой сабмодуль, harness не вендорирован |
-| Logging (§3.4-like) | PARTIAL | Ближайшее к audit trail — SQLite history; structured sink нет |
+| P4 Isolation | COVERED | Tenant filters before top-k, keys unspoofable via metadata |
+| P2 Provenance | PARTIAL | Actor/role in history; no source ref, policy, or confidence on the record |
+| P3 Aging | PARTIAL | Opt-in expiration exists; decay is platform-only, not OSS |
+| P5 Deletability | PARTIAL | Delete clears the vector + writes history; history stays queryable, no tombstone |
+| B Write integrity | PARTIAL | App-level md5 dedup, no UNIQUE constraints or transactions; silent paths exist |
+| P1 Veracity | GAP | No model_output typing / trust ceiling on summarization |
+| P8 Measurability | GAP (in-tree) | `evaluation/` is an empty submodule, harness not vendored |
+| Logging (§3.4-like) | PARTIAL | Closest to an audit trail is SQLite history; no structured sink |
 
-## Что сделано хорошо (и стоит отметить)
+## Done well (worth crediting)
 
-1. **Изоляция (P4) — образцово.** `mem0/memory/main.py:1471-1475` — `search/get_all`
-   требуют tenant-фильтр (`user_id|agent_id|run_id`), иначе `ValueError`;
-   фильтры уходят в `query_filter` векторного стора до top-k
-   (`qdrant.py:428-434`, over-fetch `max(limit*4,60)`); подделка ключей через
-   `metadata` отсекается `_strip_identity_keys()` (`main.py:138-162`). Это ровно
-   паттерн «граница доказывается попытками нарушений», который требует MAQS G1.
-2. **History как audit trail.** SQLite `history` (`storage.py:150-191`) хранит
-   `old/new_memory, event, actor_id, role, is_deleted` — происхождение мутаций
-   прослеживаемо, `created_at` сохраняется при update (`main.py:2072-2080`).
-3. **Expiration opt-in.** `expiration_date + _payload_is_expired()`
-   (`main.py:427-451`) —TTL-механика есть, пусть и скрывающая, а не чистящая.
+1. **Isolation (P4) — exemplary.** `mem0/memory/main.py:1471-1475` — `search/get_all`
+   require a tenant filter (`user_id|agent_id|run_id`), else `ValueError`;
+   filters go into the vector store `query_filter` before top-k
+   (`qdrant.py:428-434`, over-fetch `max(limit*4,60)`); key spoofing via
+   `metadata` is cut off by `_strip_identity_keys()` (`main.py:138-162`). This is
+   exactly the "boundary proven by violation attempts" pattern that MAQS G1 requires.
+2. **History as audit trail.** SQLite `history` (`storage.py:150-191`) keeps
+   `old/new_memory, event, actor_id, role, is_deleted` — mutation provenance is
+   traceable, `created_at` survives update (`main.py:2072-2080`).
+3. **Opt-in expiration.** `expiration_date + _payload_is_expired()`
+   (`main.py:427-451`) — a TTL mechanism exists, even if hiding rather than purging.
 
-## Gap'ы с конкретикой (что улучшить, по файлам)
+## Gaps with specifics (what to improve, per file)
 
-1. **P1 — типизировать model_output.** LLM-извлечённые факты пишутся как
-   `payload["data"]` напрямую (`main.py:1031-1034`); процедурное требование
-   «каждый вывод агента записывать дословно» (`configs/prompts.py:327,352`) —
-   без trust-ceiling. Предложение: поле `source.type` + потолок доверия до
-   подтверждения внешним источником (паттерн MAQS F8).
-2. **P2 — source ref + confidence на записи.** `MemoryItem` (`configs/base.py:16-26`)
-   не несёт source ref/URL, policy/version, confidence. History это частично
-   закрывает, но сама запись — нет.
-3. **P5 — residue history.** Удалённая запись остаётся читаемой через `history()`
-   (`storage.py:227-255`); векторного tombstone и purge кэша нет. Для GDPR-строгости
-   нужен cascade + governance tombstone (паттерн Way P5).
-4. **B — транзакционность и тишина.** `vector_store.insert`, затем `batch_add_history`
-   в разных `try` (`main.py:1056-1098`): частичная запись возможна. Тихие пути:
-   JSON-парс → `return []` (`984-991`); entity-upsert проглочен в warning/debug
-   (`649-663`). Предложение: outbox/компенсация + метрики на каждый silent-путь (B5).
-5. **P3 — decay только в platform** (`client/project.py:400-412`, ранжирование при
-   поиске); OSS `notices.py:134` прямо говорит «не поддерживается». Честная
-   граница продукта, но для OSS-юзера decay нет вообще.
+1. **P1 — type model output.** LLM-extracted facts are written as
+   `payload["data"]` directly (`main.py:1031-1034`); the procedural requirement
+   "record every agent output verbatim" (`configs/prompts.py:327,352`) has
+   no trust ceiling. Suggestion: a `source.type` field + confidence ceiling
+   until external confirmation (MAQS F8 pattern).
+2. **P2 — source ref + confidence on the record.** `MemoryItem`
+   (`configs/base.py:16-26`) carries no source ref/URL, policy/version, or
+   confidence. History partly covers this, but the record itself does not.
+3. **P5 — history residue.** A deleted record stays queryable via `history()`
+   (`storage.py:227-255`); no vector tombstone, no cache purge. For strict
+   GDPR posture, a cascade + governance tombstone is needed (Way P5 pattern).
+4. **B — atomicity and silence.** `vector_store.insert` followed by
+   `batch_add_history` in separate `try` blocks (`main.py:1056-1098`): partial
+   writes are possible. Silent paths: JSON parse error → `return []`
+   (`984-991`); entity upsert swallowed into warning/debug (`649-663`).
+   Suggestion: outbox/compensation + metrics on every silent path (B5).
+5. **P3 — decay is platform-only** (`client/project.py:400-412`, search-time
+   ranking); OSS `notices.py:134` states plainly it is unsupported. An honest
+   product boundary — but OSS users get no decay at all.
 
-## Честные границы этого аудита
+## Honest boundaries of this audit
 
-- Не запускалось: поведение рантайма, реальный residue векторов, метрики —
-  не проверены (нужен bench, не чтение).
-- Platform-код (decay, linked_memory_ids) виден частично — вердикты только про OSS.
-- Бенчмарки — во внешнем репозитории-сабмодуле, не инициализирован: что там —
-  не утверждаю.
+- Nothing was executed: runtime behavior, real vector residue, metrics —
+  not verified (that needs a bench, not reading).
+- Platform code (decay, linked_memory_ids) is only partly visible — verdicts
+  cover OSS only.
+- Benchmarks live in an external submodule repo, not initialized: no claims
+  about its contents.
 
-## Что дальше
+## Next steps
 
-- Показать отчёт авторам Mem0 через issue, дать время ответить (план, шаг 4).
-- Их правки/возражения — в этот файл вторым коммитом, не переписывая находки.
+- Show the report to Mem0 authors via issue, give them time to respond (plan, step 4).
+- Their corrections/responses go in as a second commit to this file, findings are not rewritten.
