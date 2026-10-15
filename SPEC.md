@@ -1,6 +1,6 @@
-# MAQS-Way v0.1.4 — Common Path from Policies to Implementation for Long-Term AI Memory
+# MAQS-Way v0.2 — Common Path from Policies to Implementation for Long-Term AI Memory
 
-**Status:** v0.1.4 — experimental, normative file name `SPEC.md`, revision date 2026-10-10
+**Status:** v0.2 — experimental minor (honest: open known gaps listed in §7), normative file name `SPEC.md`, revision date 2026-10-15
 **Author:** Aleksandr Kossarev
 **Relation to MAQS:** MAQS v1.6 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
 **License note:** Sources referenced under their respective licenses. This spec is Apache-2.0.
@@ -253,7 +253,7 @@ Each Ed25519-signed receipt, replayable. Deletion_log zero PII.
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
-standard_version: MAQS 1.6 + Way 0.1.4
+standard_version: MAQS 1.6 + Way 0.2
 test_scenarios: LoCoMo/LongMemEval/MemoryAgentBench + negative + deletion lattice + restore drill + round-trip
 results: per-metric + per-invariance + limitations
 exceptions: documented per-item with justification
@@ -290,14 +290,13 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 
 ## 6. Next Steps
 
-1. This file is `SPEC.md` v0.1.4 — normative file name, status experimental but versioned.
-2. Backlog v0.2:
-   - Formal `schemas/memory-item.schema.json` extending OMPS — required
+1. This file is `SPEC.md` v0.2 — normative file name, status experimental minor (open gaps listed in §7).
+2. Backlog v0.3 (retargeted from v0.2 by release decision 1.8 — no silent rollover):
+   - Canonization of formulations with owner signature: B4 write atomicity (§2.5), E10/E11, I10/I11/I12, I14, I15, P9/P10, 0.5a/0.6a drift thresholds
+   - `deletion_marker` in JSON data_model: confirm obsolete-by-separation (§2.1 note) or specify (open question, not silently dropped)
    - `identity_signature`: Ed25519 over canonical JSON — full specification (moved out of data-model example, §2.1)
    - `operator` role: full permission matrix for §2.3 (review, appeal, override boundaries)
-   - Expand `maqs-way-standard.json` to include deletion_marker (as separate artifact per 2.1 note) + embedding provenance
-   - `maqs-way audit CLI` v0.1 shipped (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) + conformance vectors (12 in manifest: schema 4/4, behavioral-declared 8/8; executable harness → v0.2)
-   - Behavioral test for D9 (MAQS D9 — agent self-report diagnostic): golden set from LoCoMo/LongMemEval (closest point where mechanism meets result)
+   - Executable behavioral harness (LoCoMo/LongMemEval runs) + D9 behavioral test
    - Live verification of all 11 external links in `docs/landscape.md` + per-row `verified: ✅/⏳/❌` column
    - P/V/E alignment for Architecture and Verification layers (§2, §3)
 3. Open discussions with OMPS/AMSP/OAMP authors — propose MAQS as verification layer
@@ -308,5 +307,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.1 → v0.1.2 (2026-10-10):** internal review: §2 header restored (ARCHITECTURE Layer); `status` returned as derived view (not stored field); lifecycle completed with EXPIRED → ARCHIVED and ARCHIVED → ACTIVE (restore); inline `(fixes Cx)` references replaced by §7 Change Log; Profile C P6 collision fixed (MAQS P6 isolation test + Way/MAQS numbering note); Author line added to header; §3 claim scoped honestly; `operator` role defined in §2.3 (matrix — TODO v0.2); `identity_signature` TODO removed from JSON example, moved to Backlog §6.2.
 - **v0.1.2 → v0.1.3 (2026-10-10):** hardening sync with `maqs-way-standard.json`. Thresholds split into CI gate / target pair (§1 P3, §1 P8, §3.2) — canon from JSON `verification_suite.metrics`; values remain expert/indicative until first real run. `provenance.visible_to` added (§2.1) as mechanism for semantic masking. New §2.2 *Temporal priority* section added, closes dangling reference from §2.1; step-3 correction (`invalid_at < now` → `EXPIRED`, not `SUPERSEDED`) mirrored in JSON. `operator` SLA 72h added (§2.3). OTel allowed/forbidden keys added (§3.4). `shared_fact_visibility_leak` added to negative scenarios (§1 P8). `masked` as lifecycle state — **rejected**; masking is a visibility operation (`visible_to`), not a state. `schema_version` → `omps-0.1.0+way-v0.1.3`. CRIT sync (direct, sanctioned): G1 (fixtures §2.3 + JSON negative_scenarios +3), I13 (credential-in-URL redactor §3.4 + JSON sanitization), D8 (§2.5), F8 (§2.4), E12 (§2.4), H5 (§2.5 + evals), J3 (§3.5 j3_guard).
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
+- **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder ступень 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.6a drift thresholds. `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 
 > Check not that the mechanism exists. Check that it works.
