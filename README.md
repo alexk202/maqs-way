@@ -67,7 +67,7 @@ python -m json.tool maqs-way-standard.json
 cat conformance/manifest.json
 ```
 
-> Audit CLI v0.1 ships (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) — run `python3 schemas/maqs_way_audit.py all`. `data_model.$ref` is active (`schemas/memory-item.schema.json` landed, gate green). Executable behavioral harness — planned, v0.2 (see SPEC §6 Backlog).
+> Audit CLI v0.1 ships (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) — run `python3 schemas/maqs_way_audit.py all`. `data_model.$ref` is active (`schemas/memory-item.schema.json` landed, gate green). Executable behavioral harness — planned, v0.3 (see SPEC §6 Backlog). `schema_version` (`omps-0.1.0+way-v0.1.3`) pins the data model, not the release (v0.2): the model is frozen since v0.1.3, the release grows — by design.
 
 See `docs/articles/devto-draft.md` for DevTo article.
 
