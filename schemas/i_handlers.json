@@ -6,20 +6,46 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.6c-formulation (proposals/i14-handlers.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
+    "closes_in": "v0.3 canonization (owner signature)",
     "anchor": "No handler/registry construct in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/i14-handlers.md"
+    "formulation": "proposals/i14-handlers.md",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   },
   "catalog_scope": "declared synthetic list; completeness NOT claimed and NOT gated (I14 is REC/advisory). Extension by commit only (precedent: MAQS-whitelist 740c304), never silently at runtime. Each new class enters with source and owner.",
-  "recipients": ["owner", "operator"],
+  "recipients": [
+    "owner",
+    "operator"
+  ],
   "standalone_handlers": [],
   "classes": [
-    {"class": "syn.conn_timeout", "reaction": {"handler": "retry_with_backoff"},
-     "source": "synthetic", "owner": "1.6c"},
-    {"class": "syn.bad_token", "reaction": {"handler": "drop_and_audit",
-     "escalation_path": {"target": "owner"}},
-     "source": "synthetic", "owner": "1.6c"},
-    {"class": "syn.disk_full", "reaction": {"escalation_path": {"target": "operator"}},
-     "source": "synthetic", "owner": "1.6c"}
+    {
+      "class": "syn.conn_timeout",
+      "reaction": {
+        "handler": "retry_with_backoff"
+      },
+      "source": "synthetic",
+      "owner": "1.6c"
+    },
+    {
+      "class": "syn.bad_token",
+      "reaction": {
+        "handler": "drop_and_audit",
+        "escalation_path": {
+          "target": "owner"
+        }
+      },
+      "source": "synthetic",
+      "owner": "1.6c"
+    },
+    {
+      "class": "syn.disk_full",
+      "reaction": {
+        "escalation_path": {
+          "target": "operator"
+        }
+      },
+      "source": "synthetic",
+      "owner": "1.6c"
+    }
   ]
 }

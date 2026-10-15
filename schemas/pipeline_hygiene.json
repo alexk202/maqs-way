@@ -6,9 +6,10 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.7b-formulation (proposals/pipeline-hygiene-05a-06a.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
+    "closes_in": "v0.3 canonization (owner signature)",
     "anchor": "No call-graph requirement in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/pipeline-hygiene-05a-06a.md#05a--dead-code-crit"
+    "formulation": "proposals/pipeline-hygiene-05a-06a.md#05a--dead-code-crit",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   },
   {
     "id": "0.6a",
@@ -17,8 +18,9 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.7b-formulation (proposals/pipeline-hygiene-05a-06a.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
+    "closes_in": "v0.3 canonization (owner signature)",
     "anchor": "No baseline construct in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/pipeline-hygiene-05a-06a.md#06a--local-baselines-imp"
+    "formulation": "proposals/pipeline-hygiene-05a-06a.md#06a--local-baselines-imp",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   }
 ]

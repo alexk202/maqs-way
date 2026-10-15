@@ -3,64 +3,87 @@
     "id": "feedback_loop",
     "symptom": "Model analyzes its own reports/responses",
     "maqs": "F",
-    "rules": ["P1"]
+    "rules": [
+      "P1"
+    ]
   },
   {
     "id": "input_validation_leak",
     "symptom": "Discovered secrets surface in responses",
     "maqs": "A",
-    "rules": ["P1"]
+    "rules": [
+      "P1"
+    ]
   },
   {
     "id": "write_duplication",
     "symptom": "Same data repeats in context",
     "maqs": "B",
-    "rules": ["P2"]
+    "rules": [
+      "P2"
+    ]
   },
   {
     "id": "growth_after_rebuild",
     "symptom": "Storage volume grew drastically after rebuild",
     "maqs": "C",
-    "rules": ["P3"]
+    "rules": [
+      "P3"
+    ]
   },
   {
     "id": "retrieval_empty",
     "symptom": "Data exists in storage, retrieval is empty",
     "maqs": "D",
-    "rules": ["P8"]
+    "rules": [
+      "P8"
+    ]
   },
   {
     "id": "stale_displaces_fresh",
     "symptom": "Old irrelevant displaces new",
     "maqs": "D",
-    "rules": ["P3", "P8"]
+    "rules": [
+      "P3",
+      "P8"
+    ]
   },
   {
     "id": "isolation_breach",
     "symptom": "Responses carry traces of unrelated topics/agents",
     "maqs": "G",
-    "rules": ["P4"]
+    "rules": [
+      "P4"
+    ]
   },
   {
     "id": "blind_truncation",
     "symptom": "Response content is cut off mid-word",
     "maqs": "E",
-    "rules": ["P1"]
+    "rules": [
+      "P1"
+    ]
   },
   {
     "id": "native_delete_residue",
     "symptom": "GDPR deletion removed row but embedding recoverable",
     "maqs": "B/G",
-    "rules": ["P5"]
+    "rules": [
+      "P5"
+    ]
   },
   {
     "id": "recovery_loop_without_diagnosis",
     "symptom": "Service restarts every hour, nobody knows why",
     "maqs": "I11",
-    "rules": ["MAQS:I11", "LOG-3.4"],
+    "rules": [
+      "MAQS:I11",
+      "LOG-3.4"
+    ],
     "known_gap": true,
     "owner": "I11",
-    "closes_in": "1.6a (bridge) → v0.2 canonization (owner signature)",
-    "bridged_by": "proposals/i10-i12-counters.md + schemas/check_i_counters.py (package 1.6a)"
+    "closes_in": "1.6a (bridge) → v0.3 canonization (owner signature)",
+    "bridged_by": "proposals/i10-i12-counters.md + schemas/check_i_counters.py (package 1.6a)",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   }
 ]

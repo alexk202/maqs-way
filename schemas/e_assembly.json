@@ -6,9 +6,10 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.5-formulation (proposals/e10-e11-assembly.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
+    "closes_in": "v0.3 canonization (owner signature)",
     "anchor": "No alive/protected/cap construct in canon v0.1.4 (verified by grep); P3 governs decay mechanics, not exemption-with-cap.",
-    "formulation": "proposals/e10-e11-assembly.md#e10cap---alive-memory-cap-maqs-e10-rec-indicative"
+    "formulation": "proposals/e10-e11-assembly.md#e10cap---alive-memory-cap-maqs-e10-rec-indicative",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   },
   {
     "id": "E11",
@@ -17,8 +18,9 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.5-formulation (proposals/e10-e11-assembly.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
+    "closes_in": "v0.3 canonization (owner signature)",
     "anchor": "SPEC §2.4 mentions 'positioning' as a topic; sets no norm (no subject/predicate/condition). Word-as-rule mapping rejected (rule #5).",
-    "formulation": "proposals/e10-e11-assembly.md#e11critical---declared-critical-labels-maqs-e11-imp"
+    "formulation": "proposals/e10-e11-assembly.md#e11critical---declared-critical-labels-maqs-e11-imp",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   }
 ]

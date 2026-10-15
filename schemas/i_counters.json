@@ -6,10 +6,18 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.6a-formulation (proposals/i10-i12-counters.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
-    "declared": {"threshold": 3, "window": {"type": "sliding", "size": "5m"},
-                 "key": "warning text", "action": "aggregate"},
-    "formulation": "proposals/i10-i12-counters.md#i10--noise-budget-maqs-i10-imp"
+    "closes_in": "v0.3 canonization (owner signature)",
+    "declared": {
+      "threshold": 3,
+      "window": {
+        "type": "sliding",
+        "size": "5m"
+      },
+      "key": "warning text",
+      "action": "aggregate"
+    },
+    "formulation": "proposals/i10-i12-counters.md#i10--noise-budget-maqs-i10-imp",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   },
   {
     "id": "I11",
@@ -18,10 +26,18 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.6a-formulation (proposals/i10-i12-counters.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
-    "declared": {"threshold": 3, "window": {"type": "sliding", "size": "10m"},
-                 "key": "exit code", "action": "halt+alert"},
-    "formulation": "proposals/i10-i12-counters.md#i11--recovery-loop-maqs-i11-crit"
+    "closes_in": "v0.3 canonization (owner signature)",
+    "declared": {
+      "threshold": 3,
+      "window": {
+        "type": "sliding",
+        "size": "10m"
+      },
+      "key": "exit code",
+      "action": "halt+alert"
+    },
+    "formulation": "proposals/i10-i12-counters.md#i11--recovery-loop-maqs-i11-crit",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   },
   {
     "id": "I12",
@@ -30,10 +46,18 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.6a-formulation (proposals/i10-i12-counters.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
-    "declared": {"threshold": 3, "window": {"type": "sliding", "size": "1h"},
-                 "key": "dependency + error code", "action": "escalate"},
+    "closes_in": "v0.3 canonization (owner signature)",
+    "declared": {
+      "threshold": 3,
+      "window": {
+        "type": "sliding",
+        "size": "1h"
+      },
+      "key": "dependency + error code",
+      "action": "escalate"
+    },
     "adjacent": "SPEC §2.3 appeal-escalation (vocabulary only, not covering)",
-    "formulation": "proposals/i10-i12-counters.md#i12--escalation-budget-maqs-i12-crit"
+    "formulation": "proposals/i10-i12-counters.md#i12--escalation-budget-maqs-i12-crit",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   }
 ]

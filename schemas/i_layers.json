@@ -6,11 +6,16 @@
     "rules": [],
     "known_gap": true,
     "owner": "1.6d-formulation (proposals/i15-layers.md)",
-    "closes_in": "v0.2 canonization (owner signature)",
+    "closes_in": "v0.3 canonization (owner signature)",
     "anchor": "No layer construct in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/i15-layers.md"
+    "formulation": "proposals/i15-layers.md",
+    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
   },
-  "layers": ["persistent", "session", "transient"],
+  "layers": [
+    "persistent",
+    "session",
+    "transient"
+  ],
   "taxonomy": "closed enum; extension by owner decision only",
   "assignment": "declared field on query/record; inference rejected in v0.1",
   "expectations": {
