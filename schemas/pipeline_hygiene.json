@@ -1,0 +1,24 @@
+[
+  {
+    "id": "0.5a",
+    "requirement": "Dead-code detection: every tested feature is actually called in the production pipeline; green tests without a caller are false safety.",
+    "maqs": "0.5a [CRIT]",
+    "rules": [],
+    "known_gap": true,
+    "owner": "1.7b-formulation (proposals/pipeline-hygiene-05a-06a.md)",
+    "closes_in": "v0.2 canonization (owner signature)",
+    "anchor": "No call-graph requirement in canon v0.1.4 (verified by grep).",
+    "formulation": "proposals/pipeline-hygiene-05a-06a.md#05a--dead-code-crit"
+  },
+  {
+    "id": "0.6a",
+    "requirement": "Local baselines per store/context; anomalies defined relative to the system's own baseline, not universal numbers.",
+    "maqs": "0.6a [IMP]",
+    "rules": [],
+    "known_gap": true,
+    "owner": "1.7b-formulation (proposals/pipeline-hygiene-05a-06a.md)",
+    "closes_in": "v0.2 canonization (owner signature)",
+    "anchor": "No baseline construct in canon v0.1.4 (verified by grep).",
+    "formulation": "proposals/pipeline-hygiene-05a-06a.md#06a--local-baselines-imp"
+  }
+]
