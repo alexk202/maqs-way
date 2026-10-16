@@ -71,5 +71,6 @@ cat conformance/manifest.json
 
 See `docs/articles/devto-draft.md` for the first DevTo article (v0.1.4).
 v0.2 article (live): https://dev.to/aleksandr_kossarev_e23623/maqs-way-v02-shipping-a-standard-with-open-gaps-and-naming-them-5cef
+Worked audit examples: [Mem0](docs/audits/mem0-way-audit.md) · [Graphiti](docs/audits/graphiti-way-audit.md) · [Letta](docs/audits/letta-way-audit.md).
 
 > Check not that the mechanism exists. Check that it works.
