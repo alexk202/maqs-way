@@ -20,7 +20,7 @@ The pin READS the canon at run time (SPEC.md parsed, not a duplicated constant):
 canon source missing/unparseable -> RED, not skip.
 
 Usage:
-  python3 schemas/maqs_way_audit.py [schema|manifest|lint|coverage|all|namespaces|pin]
+  python3 schemas/maqs_way_audit.py [schema|manifest|lint|coverage|all|namespaces|pin|replay]
       [--format text|json]
 Exit 0 = green, 1 = red.
 """
@@ -38,6 +38,7 @@ sys.path.insert(0, str(ROOT / "schemas"))
 import check_b_coverage
 import check_c8_coverage
 import check_conformance
+import replay_vectors
 
 STANDARD = ROOT / "maqs-way-standard.json"
 SPEC = ROOT / "SPEC.md"
@@ -160,9 +161,11 @@ def run_all(quiet=False):
     declared_total = sum(1 for e in manifest if e.get("status") == "declared")
     ns_bad = check_namespaces()
     pin_ok, pin_detail = check_pin()
+    rep_ok, rep_total, rep_err, rep_details = replay_vectors.run_all()
     gaps = collect_gaps()
     green = (schema_ok == schema_total and not manifest_red
-             and not ns_bad and pin_ok and b_rc == 0 and c8_rc == 0)
+             and not ns_bad and pin_ok and b_rc == 0 and c8_rc == 0
+             and rep_err == 0 and rep_total > 0 and rep_ok == rep_total)
     vector_status = {}
     for e in manifest:
         st = "declared" if e.get("status") == "declared" else "schema"
@@ -175,7 +178,9 @@ def run_all(quiet=False):
         "manifest": {"passed": manifest_ok, "total": manifest_total},
         "behavioral": {"status": "declared", "passed": declared_ok, "total": declared_total},
         "executed": {"canon-pin": {"passed": 1 if pin_ok else 0, "total": 1,
-                                   "detail": pin_detail}},
+                                   "detail": pin_detail},
+                     "vectors": {"passed": rep_ok, "total": rep_total,
+                                 "errors": rep_err, "detail": rep_details}},
         "namespaces": "ok" if not ns_bad else f"RED: {ns_bad}",
         "coverage": {"b_gate": "green-with-gap" if b_rc == 0 else "RED",
                      "c8_gate": "green-with-gap" if c8_rc == 0 else "RED",
@@ -190,7 +195,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="MAQS-Way audit CLI v0.1")
     ap.add_argument("command", nargs="?", default="all",
                     choices=["schema", "manifest", "lint", "coverage", "all",
-                             "namespaces", "pin"])
+                             "namespaces", "pin", "replay"])
     ap.add_argument("--format", default="text", choices=["text", "json"])
     args = ap.parse_args(argv)
 
@@ -249,6 +254,18 @@ def main(argv=None) -> int:
         else:
             print(f"executed (canon-pin) {1 if ok else 0}/1: {detail}")
         return 0 if ok else 1
+    if args.command == "replay":
+        ok, total, err, details = replay_vectors.run_all()
+        rc = 0 if (err == 0 and total > 0 and ok == total) else 1
+        if args.format == "json":
+            print(json.dumps({"executed": {"vectors": {"passed": ok, "total": total,
+                                                        "errors": err, "detail": details}},
+                              "verdict": "GATE GREEN" if rc == 0 else "GATE RED"}))
+        else:
+            for d in details:
+                print(f"{d['state'].upper()} {d['id']}: {d['detail']}")
+            print(f"replay-vectors {ok}/{total} (errors {err})")
+        return rc
     # all
     rep = run_all(quiet=(args.format == "json"))
     green = rep.pop("_green")
@@ -257,8 +274,9 @@ def main(argv=None) -> int:
     else:
         s, m, b, x = rep["schema"], rep["manifest"], rep["behavioral"], rep["executed"]
         print(f"schema {s['passed']}/{s['total']} + manifest {m['passed']}/{m['total']} "
-              f"+ declared {b['passed']}/{b['total']} (005 ∈ declared, constants executed) "
+              f"+ declared {b['passed']}/{b['total']} "
               f"+ executed (canon-pin) {x['canon-pin']['passed']}/{x['canon-pin']['total']} "
+              f"+ replay-vectors {x['vectors']['passed']}/{x['vectors']['total']} "
               f"+ namespaces {rep['namespaces']}")
         for g in rep["coverage"]["gaps"]:
             print(f"GAP (enumerated, not folded): {g['id']} -> owner {g['owner']}, "

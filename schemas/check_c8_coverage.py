@@ -125,8 +125,13 @@ def main() -> int:
             dangling.append((g["id"], g.get("owner")))
     for cid, owner in dangling:
         print(f"DANGLING OWNER in {cid}: {owner!r} resolves to nothing (SPEC manifest / MAQS / principles)")
+    targets = manifest.get("release_targets", [])
+    dangling_targets = [(g["id"], g.get("closes_in")) for g in gaps + bridged
+                        if not any(t in (g.get("closes_in") or "") for t in targets)]
+    for cid, ci in dangling_targets:
+        print(f"DANGLING closes_in in {cid}: {ci!r} matches no release_targets {targets}")
 
-    if reds or unknowns or bypass or dangling:
+    if reds or unknowns or bypass or dangling or dangling_targets:
         print("GATE RED")
         return 1
     if gaps and bridged:

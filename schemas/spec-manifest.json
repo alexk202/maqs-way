@@ -3,7 +3,7 @@
   "title": "MAQS-Way SPEC section index (owner-resolution target)",
   "version": "0.2.0",
   "spec_ref": "SPEC.md v0.2 (2026-10-15)",
-  "note": "Single source for SPEC section ids. Coverage gates resolve known-gap `owner` fields against this list (SPEC-style) or against MAQS/principle ids (bare tokens). Mismatch -> RED (dangling owner).",
+  "note": "Single source for SPEC section ids. Coverage gates resolve known-gap `owner` fields against this list (SPEC-style) or against MAQS/principle ids (bare tokens). Mismatch -> RED (dangling owner). `release_targets` does the same for `closes_in` (fourth lockstep).",
   "sections": [
     "0",
     "0.1",
@@ -24,5 +24,8 @@
     "5",
     "6",
     "7"
+  ],
+  "release_targets": [
+    "v0.3"
   ]
 }
