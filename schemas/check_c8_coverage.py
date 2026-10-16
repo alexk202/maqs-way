@@ -23,6 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "schemas" / "c8_classes.json"
 STANDARD = ROOT / "maqs-way-standard.json"
+SPEC_MANIFEST = ROOT / "schemas" / "spec-manifest.json"
 
 # Closed whitelist (Prima control): ONLY these ids may be known gaps.
 # Any other class marked known_gap is a bypass attempt -> RED.
@@ -41,10 +42,31 @@ MAQS_VALID = {
 LEGIT_NONP = {"LOG-3.4": "logging"}
 
 
+def _resolve_owner(owner, sections, principles):
+    """True iff owner resolves: SPEC-style to manifest sections, else bare
+    token to principles / MAQS_VALID / LEGIT_NONP. Free-text otherwise."""
+    if not isinstance(owner, str) or not owner.strip():
+        return False
+    o = owner.strip()
+    for prefix in ("SPEC §", "SPEC ", "§"):
+        if o.startswith(prefix):
+            return o[len(prefix):].strip().rstrip(".") in sections
+    parts = [p.strip() for p in o.split(",")]
+    return all(p in principles or p in MAQS_VALID or p in LEGIT_NONP
+               for p in parts)
+
+
 def main() -> int:
     classes = json.loads(FIXTURE.read_text())
     standard = json.loads(STANDARD.read_text())
+    manifest = json.loads(SPEC_MANIFEST.read_text())
     known = {p["id"] for p in standard["principles"]}
+    sections = set(manifest.get("sections", []))
+
+    # Version lockstep: manifest must track the release stamp, else it rots.
+    if manifest.get("version") != standard.get("version"):
+        print(f"GATE RED — spec-manifest {manifest.get('version')} != standard {standard.get('version')}")
+        return 1
 
     # Lockstep guard (adversarial control): the whitelist and the fixture must
     # name EXACTLY the same set — no silent growth on either side.
@@ -55,7 +77,7 @@ def main() -> int:
         print(f"  fixture   ({len(fixture_gaps)}): {sorted(fixture_gaps)}")
         return 1
 
-    covered, gaps, bridged, reds, unknowns, bypass = [], [], [], [], [], []
+    covered, gaps, bridged, reds, unknowns, bypass, dangling = [], [], [], [], [], [], []
     for c in classes:
         rules = c.get("rules", [])
         if not rules:
@@ -98,8 +120,13 @@ def main() -> int:
         print(f"UNCOVERED (no owner): {cid}")
     for cid in bypass:
         print(f"BYPASS ATTEMPT (known_gap not in whitelist): {cid}")
+    for g in gaps + bridged:
+        if not _resolve_owner(g.get("owner"), sections, known):
+            dangling.append((g["id"], g.get("owner")))
+    for cid, owner in dangling:
+        print(f"DANGLING OWNER in {cid}: {owner!r} resolves to nothing (SPEC manifest / MAQS / principles)")
 
-    if reds or unknowns or bypass:
+    if reds or unknowns or bypass or dangling:
         print("GATE RED")
         return 1
     if gaps and bridged:
