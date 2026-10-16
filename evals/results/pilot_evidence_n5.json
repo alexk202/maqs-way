@@ -1,0 +1,266 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
+    "metric": "1a evidence-session retrieval R@5 (no generation)",
+    "date": "2026-10-16T23:28:13+00:00",
+    "n": 5,
+    "label": "n=5 pilot, NOT normative, single-point"
+  },
+  "R_at_5_evidence": 1.0,
+  "substr_rate": 0.0,
+  "ingest_total_s": 245.3,
+  "extrapolation_50q_min": 40.9,
+  "extrapolation_500q_h": 6.8,
+  "results": [
+    {
+      "q_id": "gpt4_2655b836",
+      "q_type": "temporal-reasoning",
+      "answer": "GPS system not functioning correctly",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 64.4,
+      "retrieve_s": 0.0,
+      "tagged": 31,
+      "top5": [
+        {
+          "id": "bfc95e4c-6fdf-4868-97e8-2d28c2c49057",
+          "sessions": [
+            "answer_4be1b6b4_3"
+          ],
+          "text": "User recently had an issue with their car's GPS system on 3/22 and had to take i"
+        },
+        {
+          "id": "a0a205bc-366f-4eff-8654-599ffb2636e0",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is planning to take their car to a local car wash and detailing shop or con"
+        },
+        {
+          "id": "38940883-28e8-43c2-b0b5-e1cb607fbbfd",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is considering getting a ceramic coating, paint correction, or interior det"
+        },
+        {
+          "id": "ff570faf-8575-4d1a-8dc0-8e3448e5a0ad",
+          "sessions": [
+            "answer_4be1b6b4_3"
+          ],
+          "text": "User is considering taking their car to a detailer and wants to know what to loo"
+        },
+        {
+          "id": "584b9ed7-f42b-449a-b98b-e9a3c302bec6",
+          "sessions": [
+            "answer_4be1b6b4_2"
+          ],
+          "text": "User is happy with their new car accessories and they've added a nice touch to t"
+        }
+      ]
+    },
+    {
+      "q_id": "0a995998",
+      "q_type": "multi-session",
+      "answer": 3,
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 93.1,
+      "retrieve_s": 0.0,
+      "tagged": 27,
+      "top5": [
+        {
+          "id": "9a723dc2-4c19-49a9-92e8-704fb0377446",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User is decluttering their closet and considering letting go of clothes that don"
+        },
+        {
+          "id": "10dbd1c4-f9c6-4e36-a33e-8ca70718ec6b",
+          "sessions": [
+            "answer_afa9873b_1"
+          ],
+          "text": "User is planning to store out-of-season clothes in boxes or bins and will free u"
+        },
+        {
+          "id": "580ad9de-442c-4857-9c52-96586ff2c8db",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User is considering letting go of clothes that don't fit or are no longer worn a"
+        },
+        {
+          "id": "008166fa-99a8-400c-92fa-cf8d789a92e4",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User needs help organizing their closet and decluttering their clothes, includin"
+        },
+        {
+          "id": "a7675b64-26cc-4ad8-b3f3-414e955006ff",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User is planning to start with their short-sleeve shirts and will sort them into"
+        }
+      ]
+    },
+    {
+      "q_id": "6a1eabeb",
+      "q_type": "knowledge-update",
+      "answer": "25 minutes and 50 seconds (or 25:50)",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 53.7,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "e878bbae-3dea-4fec-9527-3adfcd044ec1",
+          "sessions": [
+            "answer_a25d4a91_2"
+          ],
+          "text": "User is training for another charity 5K run coming up and is hoping to beat thei"
+        },
+        {
+          "id": "66e5dd22-bc9c-4e9c-a872-84fc0c68ba17",
+          "sessions": [
+            "answer_a25d4a91_2"
+          ],
+          "text": "User is planning to participate in a charity 5K run and is preparing physically,"
+        },
+        {
+          "id": "af3bdc81-3b9a-43e6-86b3-14abf51e1dfb",
+          "sessions": [
+            "answer_a25d4a91_2"
+          ],
+          "text": "User is incorporating interval training, increasing weekly mileage, and focusing"
+        },
+        {
+          "id": "d5624abb-aa2c-4a0e-b0ff-55affbd49406",
+          "sessions": [
+            "answer_a25d4a91_2"
+          ],
+          "text": "User is working on their strength training, including squats, lunges, deadlifts,"
+        },
+        {
+          "id": "b6899cf1-fdad-444f-918d-bbfa9ea926e3",
+          "sessions": [
+            "answer_a25d4a91_2"
+          ],
+          "text": "User is working on their strength training, including calf raises, step-ups, and"
+        }
+      ]
+    },
+    {
+      "q_id": "e47becba",
+      "q_type": "single-session-user",
+      "answer": "Business Administration",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 20.1,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "784d763a-6db5-47a4-b2e0-c3cc8c8cda03",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is training for a charity 5K run and wants to improve their endurance, aimi"
+        },
+        {
+          "id": "681a84ac-b048-4c74-b19a-fac060c9a8ea",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is implementing a system to track personal expenses using apps like Mint an"
+        },
+        {
+          "id": "cde2266e-153c-4873-af3b-0c40170ebce5",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is interested in meal prep containers and tools like glass containers, BPA-"
+        },
+        {
+          "id": "2c59db28-a113-45aa-9d4c-55216211e5a1",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is considering using a cooler bag to transport meal prep containers"
+        },
+        {
+          "id": "14551018-78b4-44f0-a855-48fc995a0ad8",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is trying to organize their life better and wants to know about task manage"
+        }
+      ]
+    },
+    {
+      "q_id": "7161e7e2",
+      "q_type": "single-session-assistant",
+      "answer": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 14.0,
+      "retrieve_s": 0.0,
+      "tagged": 7,
+      "top5": [
+        {
+          "id": "98ae944e-e302-442f-b4e2-2048ceed116e",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "Assistant created a shift rotation sheet for GM social media agents with 7 agent"
+        },
+        {
+          "id": "87fa29ff-ed5d-4240-b877-c7d1ade4520d",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "Shift rotation sheet for GM social media agents includes Admon, Magdy, Ehab, Sar"
+        },
+        {
+          "id": "e1eb0786-0cb6-4ce7-974b-5e88580d1dce",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "User is looking for tips on creating a routine for their new job including estab"
+        },
+        {
+          "id": "9b56c2da-b0f7-412e-b513-92a9131b3c04",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "User graduated with a degree in Business Administration which has helped in thei"
+        },
+        {
+          "id": "457054e2-989a-42e3-b761-128cd3b0edc3",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "User is trying to organize their life better by using task management apps like "
+        }
+      ]
+    }
+  ]
+}
