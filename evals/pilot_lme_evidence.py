@@ -116,6 +116,14 @@ def main() -> int:
         })
         print(f"[{qi+1}/{N}] {q['question_type']} evidence_hit={ev_hit} "
               f"substr={substr_hit} ingest={t_ing:.0f}s")
+        # Incremental checkpoint: a 9h run must not die with zero evidence.
+        OUT.mkdir(exist_ok=True)
+        (OUT / "pilot_evidence_partial.json").write_text(json.dumps({
+            "checkpoint": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "completed": len(results), "of": N,
+            "evidence_hits": sum(1 for r in results if r["evidence_hit"]),
+            "results": results,
+        }, indent=2, ensure_ascii=False))
     r5 = sum(1 for r in results if r["evidence_hit"]) / len(results)
     rs = sum(1 for r in results if r["substr_hit"]) / len(results)
     total_ing = sum(r["ingest_s"] for r in results)

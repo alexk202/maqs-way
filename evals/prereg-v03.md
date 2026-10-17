@@ -32,7 +32,7 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - INFRASTRUCTURE NOTES (env-provenance class): LM Studio update flipped Vulkan numbering (Vulkan0=iGPU, Vulkan1=RTX) -> own :8085 pinned to Vulkan1; MEM0_TELEMETRY=False removes PostHog noise AND the ~/.mem0/migrations_qdrant lock that breaks multi-Memory processes; max_tokens=400 truncated extraction JSON mid-list (silent 0-fact adds) -> 1200; qdrant-local needs one path per process.
 - RUNNER-GREEN (2026-10-17, scratch-runner gate CLOSED): promotion repo pipeline.yml green on real Actions runner (run 39020475401, 9s) — canon GREEN + 3 RED branches + shapes + evaluator e2e all passed remotely. Runner evidence: python 3.12.3 | jsonschema 4.10.3 vs local 3.12.2 | 4.23.0 — versions in-range, verdict identical to local baseline: no environment-dependent behavior. CI fix recorded: canon repo name alexk202/maqs-way (MAQS_Way was wrong), ref main until next canon tag. Meta-point (Prima r4): first runner-baseline data point collected.
 
-## Expected orders of magnitude (guess, to be confronted)
+## Expected orders of magnitude (guess, to be confronted) — PRE-GATE ERA, grandfathered, do not edit
 - R@5 LongMemEval oracle: [0.4, 0.9] (gate 0.7 / target 0.85)
 - temporal_accuracy: [0.4, 0.9] (gate 0.65 / target 0.8)
 - abstention_rate: [0.5, 1.0] (gate 0.8 / target 0.9)
@@ -40,6 +40,10 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - contamination_rate: [0.0, 0.1] (gate ≤1% / target 0)
 - deletion_residue: exactly 0.0 by construction (tombstone cascade)
 - cross_tenant_leak: exactly 0 (negative test, not a distribution)
+
+## Expectations (bound) — post-gate era, checked by evals/check_conditions.py --prereg
+- evidence-R@5 expected [0.90, 1.00] under oracle-subset, full-500 in committed order, evidence-session metric 1a (tightens the Wilson CI of the 0.98/49-50 point from [0.895,0.997] to ~[0.97,0.995]; NOT answer-accuracy, NOT SPEC §3.2 gate)
+- substr-rate expected [0.10, 0.30] under oracle-subset (paraphrase lower bound, transparency only)
 
 ## Required env provenance per number (no number without it)
 {model_id, quantization, context_len, runner, date, seeds, dataset_commit}
