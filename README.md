@@ -51,6 +51,11 @@ docs/ — mapping to MAQS, landscape, outreach drafts, articles
 proposals/ — v0.1 roadmap snapshot (historical)
 ```
 
+## Companion artifacts
+
+Self-audit evaluator, cheatsheets (P1–P8 + worked patterns), wired RED self-tests, GitHub Action template:
+https://github.com/alexk202/maqs-way-evidence — derived from canon, nothing there rewrites it.
+
 ## Relation to MAQS
 
 - MAQS v1.6 = audit checklist you put on table, CRIT/IMP/REC verdict, backed by incidents
