@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """(b2) per Lumín: single-session slice (156 q), FIX config (max_tokens 2000),
-finish_reason counter ON — clean systemic truncation percent, unmasked.
+finish_reason counter ON — post-fix comparison against (b1) on the same base.
 
 Primary number: finish_reason=length share (systemic truncation, finally visible).
 Secondary: evidence-R@5, empty-collection count (each empty = guaranteed miss).
