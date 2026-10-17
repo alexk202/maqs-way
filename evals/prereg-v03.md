@@ -71,7 +71,8 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - DENOMINATOR RULE (per Lumín): out-of-scope is NOT subtracted from 500. n_total: 500; out_of_scope: N (policy); in_scope: 500−N — separate line, never the headline denominator.
 - STRUCTURAL CEILING (posthoc_finding, declared after fix verification): structural ceiling below 1.000 exists (policy + summarization loss). Expectation [0.90,1.00] NOT rewritten — we simply know more, and say when we learned it.
 - BASELINE_CHANGED (per Lumín): extraction fix alters memory composition (49 memories where 0 existed) — pre/post numbers are NOT directly comparable; any post-fix full run is a new run on a new base, not "progress on 0.992".
-- (b) ORDER (per Lumín): FIRST (b) on OLD code (max_tokens 1200) with the NEW finish_reason counter — clean systemic percent unmasked, on the original base; THEN the fix run. Otherwise there is nothing to compare — the base changes.
+- (b) ORDER (per Lumín): FIRST (b1) on OLD code (max_tokens 1200) with the NEW finish_reason counter — clean systemic percent unmasked, on the original base; THEN (b2) the fix run. Otherwise there is nothing to compare — the base changes.
+- (b1)/(b2) COMPARISON RULES (per Lumín, 17.10): identical question order (committed dataset order), identical session texts, temp 0; the ONLY delta = max_tokens. Nature split: `finish_reason=length share` — deterministic fact, compare strictly; `R@5` — noisy (GPU nondet acknowledged), compare coarsely, never by the third decimal. Do not mix the two in one conclusion.
 
 ## Required env provenance per number (no number without it)
 {model_id, quantization, context_len, runner, date, seeds, dataset_commit}
