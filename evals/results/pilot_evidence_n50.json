@@ -1,0 +1,2471 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
+    "metric": "1a evidence-session retrieval R@5 (no generation)",
+    "date": "2026-10-17T00:24:30+00:00",
+    "n": 50,
+    "label": "n=5 pilot, NOT normative, single-point"
+  },
+  "R_at_5_evidence": 1.0,
+  "substr_rate": 0.2,
+  "ingest_total_s": 3236.9,
+  "extrapolation_50q_min": 53.9,
+  "extrapolation_500q_h": 9.0,
+  "results": [
+    {
+      "q_id": "gpt4_2655b836",
+      "q_type": "temporal-reasoning",
+      "answer": "GPS system not functioning correctly",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 64.4,
+      "retrieve_s": 0.0,
+      "tagged": 31,
+      "top5": [
+        {
+          "id": "6b376613-5e67-41ae-a0f6-09fe61560970",
+          "sessions": [
+            "answer_4be1b6b4_3"
+          ],
+          "text": "User recently had an issue with their car's GPS system on 3/22 and had to take i"
+        },
+        {
+          "id": "b3759e38-069e-491d-8656-a87d4181f0f3",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is planning to take their car to a local car wash and detailing shop or con"
+        },
+        {
+          "id": "cc6386e3-1091-4e4f-9034-7bbf78aaf461",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is considering getting a ceramic coating, paint correction, or interior det"
+        },
+        {
+          "id": "16a0f6ae-f1a5-420f-8ee3-539caff3e32b",
+          "sessions": [
+            "answer_4be1b6b4_3"
+          ],
+          "text": "User is considering taking their car to a detailer and wants to know what to loo"
+        },
+        {
+          "id": "df871940-b825-4bc3-989d-d4248a49d406",
+          "sessions": [
+            "answer_4be1b6b4_2"
+          ],
+          "text": "User is happy with their new car accessories and they've added a nice touch to t"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2487a7cb",
+      "q_type": "temporal-reasoning",
+      "answer": "'Data Analysis using Python' webinar",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 40.5,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "8fc99d64-eaaf-45d1-8886-8a26b499c1ea",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is trying out both Tableau and Power BI's free trials to get a feel for the"
+        },
+        {
+          "id": "d8981892-c180-4ec6-a105-060d5799c281",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is trying to work on a project that involves data analysis, and is looking "
+        },
+        {
+          "id": "b5fba65a-3b92-4ecd-8b9d-aa3b25a9d60b",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is planning to use Python to connect to the data source and create the dash"
+        },
+        {
+          "id": "3ea7d9da-ca50-4e04-b05b-14ca1d6cb6af",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is considering using Seaborn for data visualization in Python, and is looki"
+        },
+        {
+          "id": "be39e448-b505-4e40-a01d-eef9789cfe61",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is thinking of creating a dashboard to track key metrics for their project,"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_76048e76",
+      "q_type": "temporal-reasoning",
+      "answer": "bike",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 50.9,
+      "retrieve_s": 0.0,
+      "tagged": 13,
+      "top5": [
+        {
+          "id": "da103b23-a3ec-4c48-b1d7-00a738177f5b",
+          "sessions": [
+            "answer_b535969f_1"
+          ],
+          "text": "User recently had to take their bike in for repairs, which made them realize how"
+        },
+        {
+          "id": "a0c97506-b589-43d7-a0ab-0cce38e0083e",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "User's bike was repaired in mid-February due to gear issues, but it has been run"
+        },
+        {
+          "id": "f79d7824-ffe9-4ae7-aecd-ebc95ae0b209",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "User has a hybrid bike that is a bit on the heavier side, which is a key factor "
+        },
+        {
+          "id": "6dbe24ef-166f-4bbb-bf65-b13aa1629746",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "User is considering a Kuat Transfer bike rack for their Toyota Corolla due to it"
+        },
+        {
+          "id": "a269a520-6f3f-4226-8216-59d207391588",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "The Kuat Transfer provides excellent bike protection in terms of stability, prot"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2312f94c",
+      "q_type": "temporal-reasoning",
+      "answer": "Samsung Galaxy S22",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 82.1,
+      "retrieve_s": 0.0,
+      "tagged": 8,
+      "top5": [
+        {
+          "id": "4a35b9da-f570-4108-9f0f-9200a4633457",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User recently got a new Samsung Galaxy S22 from Best Buy and is excited to captu"
+        },
+        {
+          "id": "9b537f3f-c838-4330-ad67-68751ed41abb",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning to use their new phone to track fitness goals and capture stunn"
+        },
+        {
+          "id": "a98b4a2e-cb25-49ed-aba6-c9165ef53ac3",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning to use a portable power bank, Anker PowerCore 20000, to keep de"
+        },
+        {
+          "id": "f412f5f8-f21e-49bb-82c1-6bbd14a590b4",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning a trip to Hawaii and wants to ensure their new phone stays char"
+        },
+        {
+          "id": "40b3cb99-a05b-4122-b5f6-0a68d2513a5b",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning to visit the Haleakala National Park on Maui and wants to know "
+        }
+      ]
+    },
+    {
+      "q_id": "0bb5a684",
+      "q_type": "temporal-reasoning",
+      "answer": "7 days. 8 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 61.4,
+      "retrieve_s": 0.0,
+      "tagged": 23,
+      "top5": [
+        {
+          "id": "65583633-b374-4089-b204-894dd5571a1d",
+          "sessions": [
+            "answer_e936197f_1"
+          ],
+          "text": "User attended a workshop on 'Effective Communication in the Workplace' on Januar"
+        },
+        {
+          "id": "1cb106ee-57ac-43b7-85e2-ba735b3332cd",
+          "sessions": [
+            "answer_e936197f_1"
+          ],
+          "text": "User is reflecting on the workshop they attended on 'Effective Communication in "
+        },
+        {
+          "id": "a325f122-7523-4a05-8992-b9a2c72e5117",
+          "sessions": [
+            "answer_e936197f_2"
+          ],
+          "text": "User is preparing for an upcoming team meeting on January 17th and wants to prac"
+        },
+        {
+          "id": "ecf95720-900b-41a7-b5a9-627b5ed2fe7e",
+          "sessions": [
+            "answer_e936197f_2"
+          ],
+          "text": "User is preparing for an upcoming team meeting and wants to make sure they're we"
+        },
+        {
+          "id": "62feb729-1da4-42d1-b6c3-144a138dba2a",
+          "sessions": [
+            "answer_e936197f_1"
+          ],
+          "text": "User is preparing for an upcoming meeting with their team and wants to make sure"
+        }
+      ]
+    },
+    {
+      "q_id": "08f4fc43",
+      "q_type": "temporal-reasoning",
+      "answer": "30 days. 31 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 62.5,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "45e2768f-ebda-402c-857b-bb90916a73ef",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was recommended to confirm the details of the soup kitchen before going, in"
+        },
+        {
+          "id": "298984ed-22a2-485a-b6a6-b76b9116d0d0",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was provided with information about the types of housing and shelter servic"
+        },
+        {
+          "id": "02054b02-9414-4d74-8da1-1858ba5462cb",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was provided with information about the entrepreneurship training program p"
+        },
+        {
+          "id": "e79d5eed-423e-49af-ab5e-64ecc1eb0a9b",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User is interested in learning more about the housing and shelter services provi"
+        },
+        {
+          "id": "861ee851-bfc2-41dd-a8e3-7f1e03b0fd98",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was provided with information about the job training and education services"
+        }
+      ]
+    },
+    {
+      "q_id": "2c63a862",
+      "q_type": "temporal-reasoning",
+      "answer": "14 days. 15 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 71.1,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "b5d034c3-ac8c-47ab-9d4d-8fb9ca261e09",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User has been working with a real estate agent named Rachel to find a home that "
+        },
+        {
+          "id": "20bb7b1c-c5df-4e67-bc0b-113d51aa5bd9",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User is considering making an offer on a house they saw on March 1st and is look"
+        },
+        {
+          "id": "74ec34ca-42d0-4eb9-a7ae-445b24c6a7fd",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User is planning to make an offer of $320,000 on the house they saw on March 1st"
+        },
+        {
+          "id": "a2521d1f-4bfc-4baa-979b-be52415c3f3b",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "Assistant wished the user good luck and reminded them to stay patient and flexib"
+        },
+        {
+          "id": "5a05a67f-694a-4834-8103-ef67901f6b18",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User is considering neighborhoods within a 30-minute drive from their office in "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_385a5000",
+      "q_type": "temporal-reasoning",
+      "answer": "Tomatoes",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 61.7,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "d2ad3449-bd71-4d43-9107-a78d8b77aee5",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "A hybrid approach of individual stem ties and a twine grid can provide comprehen"
+        },
+        {
+          "id": "5beffe1a-bcb0-40d4-903e-b6c73a180dbe",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "User is using a mix of peat moss, vermiculite, and perlite for their potting soi"
+        },
+        {
+          "id": "e86994d6-09af-44ba-b53a-7966332ff316",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "A mix of peat moss, vermiculite, and perlite is a good starting point for seedli"
+        },
+        {
+          "id": "5b96dcba-e1b7-4285-b3a7-91263293a1e0",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "User is thinking of using a combination of stakes and twine to provide support f"
+        },
+        {
+          "id": "186c9355-57c3-493b-b37d-0ade077109ee",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "User is planning to transplant their seedlings, including marigolds, into larger"
+        }
+      ]
+    },
+    {
+      "q_id": "2a1811e2",
+      "q_type": "temporal-reasoning",
+      "answer": "21 days. 22 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 55.1,
+      "retrieve_s": 0.0,
+      "tagged": 23,
+      "top5": [
+        {
+          "id": "660e7864-edde-4b4d-b527-056fd1fc3ddd",
+          "sessions": [
+            "answer_1cc3cd0c_2"
+          ],
+          "text": "User just got back from Sunday mass at St. Mary's Church on March 19th where Fat"
+        },
+        {
+          "id": "3bcbc544-a24a-4163-9c08-1381e19923f8",
+          "sessions": [
+            "answer_1cc3cd0c_1"
+          ],
+          "text": "User is interested in learning more about other Hindu festivals or traditions, s"
+        },
+        {
+          "id": "2b0f9191-cf7a-4531-a8f8-32b2a8f4bf80",
+          "sessions": [
+            "answer_1cc3cd0c_1"
+          ],
+          "text": "User is looking for some information on Hindu festivals and wants to know more a"
+        },
+        {
+          "id": "f0812fa8-4edb-4498-b498-cf191f6aac83",
+          "sessions": [
+            "answer_1cc3cd0c_2"
+          ],
+          "text": "User caught up with their cousin Emma at St. Mary's Church last Sunday and they "
+        },
+        {
+          "id": "8ef49f16-0612-4b22-9d4f-182c4b5c0327",
+          "sessions": [
+            "answer_1cc3cd0c_1"
+          ],
+          "text": "User is happy to help with recipes for traditional Indian sweets like gujiyas or"
+        }
+      ]
+    },
+    {
+      "q_id": "bbf86515",
+      "q_type": "temporal-reasoning",
+      "answer": "4 days.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 67.9,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "fb9a2498-8a0a-4cf7-be64-247d43793da4",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User achieved a personal best time of 12.8 seconds in the quarter-mile drag race"
+        },
+        {
+          "id": "a8ad41b2-a1c5-4dd4-a6eb-f2053db9e594",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User is planning to attend the 'Racing Nationals' event in August, but it's not "
+        },
+        {
+          "id": "78e4dda7-156e-470e-a67c-05514a821ca9",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User attended the Holi celebration at their local temple on February 26th and ha"
+        },
+        {
+          "id": "14e3e9ac-5e1f-44e3-8df7-6b9cb4ccbcfb",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User had a great time at the local temple, especially trying the Gujarati snacks"
+        },
+        {
+          "id": "bc590df3-fac9-4666-81ed-2e7b571c6cac",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User was recommended recipes for traditional Gujarati snacks like fafdas, dhokla"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_5dcc0aab",
+      "q_type": "temporal-reasoning",
+      "answer": "white Adidas sneakers",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 5,
+      "add_calls": 5,
+      "ingest_s": 151.9,
+      "retrieve_s": 0.0,
+      "tagged": 42,
+      "top5": [
+        {
+          "id": "20b8bd8a-877c-457a-921d-f854d312e9f9",
+          "sessions": [
+            "answer_099c1b6c_1"
+          ],
+          "text": "User is glad they finally got around to cleaning their white Adidas sneakers las"
+        },
+        {
+          "id": "2ee837a9-0645-4cca-ab65-eafa9d386e24",
+          "sessions": [
+            "answer_099c1b6c_3"
+          ],
+          "text": "User is looking for tips on how to maintain their brown leather dress shoes, inc"
+        },
+        {
+          "id": "d58a8bb5-67b0-4011-a06a-cafcfe00cd2f",
+          "sessions": [
+            "answer_099c1b6c_3"
+          ],
+          "text": "User is looking for general tips on maintaining their running shoes, including c"
+        },
+        {
+          "id": "49ecbbba-66a6-4de0-9e8c-d30454f2ef8f",
+          "sessions": [
+            "answer_099c1b6c_4"
+          ],
+          "text": "User needs to remember to take their brown leather dress shoes to the cobbler to"
+        },
+        {
+          "id": "96bca308-cf77-460a-8c69-53ae6964f200",
+          "sessions": [
+            "answer_099c1b6c_4"
+          ],
+          "text": "User needs to remember to take their brown leather dress shoes to the cobbler th"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_0b2f1d21",
+      "q_type": "temporal-reasoning",
+      "answer": "The malfunction of the stand mixer",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 74.8,
+      "retrieve_s": 0.0,
+      "tagged": 10,
+      "top5": [
+        {
+          "id": "2287189b-4400-4d3e-a877-9327a45cdb2c",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User had to take their stand mixer to a repair shop last month and it took two w"
+        },
+        {
+          "id": "952f6c1f-cd38-4a03-abc8-fcaf4ca2b3e1",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User got their stand mixer back from the repair shop and had to bake a few thing"
+        },
+        {
+          "id": "4948cec0-d721-488b-91b3-fce0f9ae8b2e",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User is looking for some new recipes to try out, especially desserts, and wants "
+        },
+        {
+          "id": "7ff8441f-6cc4-4deb-852a-d94f46c72439",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User is thinking of making some desserts for their dinner party and wants to use"
+        },
+        {
+          "id": "b6acd92d-6990-422b-a0d7-b635695c02b9",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User is thinking of organizing a dinner party soon and wants to make sure they h"
+        }
+      ]
+    },
+    {
+      "q_id": "f0853d11",
+      "q_type": "temporal-reasoning",
+      "answer": "14 days. 8 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 69.0,
+      "retrieve_s": 0.0,
+      "tagged": 37,
+      "top5": [
+        {
+          "id": "32264761-9769-4d1b-824a-73d9ffb900cb",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User recently volunteered at the Coastal Cleanup event on March 7th and found it"
+        },
+        {
+          "id": "7ecc6d77-4c81-4f3b-bd3f-02f9ce6e7323",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User recently participated in the 'Walk for Hunger' 5K walk on February 21st and"
+        },
+        {
+          "id": "18145af7-451f-465e-b91d-2642272156ee",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User is glad they volunteered at the Coastal Cleanup event on March 7th and feel"
+        },
+        {
+          "id": "e920c01e-2004-44b2-8292-659ac35354cb",
+          "sessions": [
+            "answer_932ea3bf_2"
+          ],
+          "text": "User volunteered at the Coastal Cleanup event on March 7th and is interested in "
+        },
+        {
+          "id": "e49e2735-9c5e-4b86-9776-e04fb5b3c951",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "The Pancreatic Cancer Action Network's PurpleStride event is a 5K walk/run event"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_6ed717ea",
+      "q_type": "temporal-reasoning",
+      "answer": "Training pads for Luna",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 77.6,
+      "retrieve_s": 0.0,
+      "tagged": 33,
+      "top5": [
+        {
+          "id": "290505f9-ba96-4c73-8f91-fd962a48b102",
+          "sessions": [
+            "answer_d50a8a33_1"
+          ],
+          "text": "User is considering getting a new Orthopedic Memory Foam dog bed for Max to help"
+        },
+        {
+          "id": "205d70d0-409d-451a-a7ba-2fa35c67cdbe",
+          "sessions": [
+            "answer_d50a8a33_1"
+          ],
+          "text": "User was recommended various healthy chews for Max, including Bully Sticks, antl"
+        },
+        {
+          "id": "97f4cd2e-0414-462c-b7df-75ae5f56915d",
+          "sessions": [
+            "answer_d50a8a33_1"
+          ],
+          "text": "User was recommended various durable, long-lasting chew toys for Max, including "
+        },
+        {
+          "id": "15666ab9-d094-4b89-8f8f-3b15f4bbfaf9",
+          "sessions": [
+            "answer_d50a8a33_2"
+          ],
+          "text": "User is interested in getting a better handle on flea and tick prevention for bo"
+        },
+        {
+          "id": "780121e3-b7c3-4625-ae54-c9f1d06eef26",
+          "sessions": [
+            "answer_d50a8a33_1"
+          ],
+          "text": "User is trying to get Max to lose weight and is looking for recommendations for "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_70e84552",
+      "q_type": "temporal-reasoning",
+      "answer": "Fixing the fence",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 77.9,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "8e533c16-bb4e-467b-b54f-1c544da36369",
+          "sessions": [
+            "answer_b3070ec4_1"
+          ],
+          "text": "User is planning a farm open house event and wants to create a petting zoo area "
+        },
+        {
+          "id": "ffe3fbed-094c-422d-9111-eabb1815831c",
+          "sessions": [
+            "answer_b3070ec4_1"
+          ],
+          "text": "User is considering hosting a farm open house event and wants to create a pettin"
+        },
+        {
+          "id": "39ccd9fd-2bbb-436d-8c4f-5021184b38e0",
+          "sessions": [
+            "answer_b3070ec4_1"
+          ],
+          "text": "User is considering planning for the long-term commitment involved in dairy farm"
+        },
+        {
+          "id": "f27287f7-9b06-45fc-b7bd-b5ca599e1fc2",
+          "sessions": [
+            "answer_b3070ec4_1"
+          ],
+          "text": "User is considering providing high-quality feed, shelter, and health care for th"
+        },
+        {
+          "id": "bd67094b-650d-4e9d-b592-db3cb8479667",
+          "sessions": [
+            "answer_b3070ec4_1"
+          ],
+          "text": "User is planning to plan for the long-term commitment involved in dairy farming,"
+        }
+      ]
+    },
+    {
+      "q_id": "a3838d2b",
+      "q_type": "temporal-reasoning",
+      "answer": "4",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 6,
+      "add_calls": 6,
+      "ingest_s": 165.5,
+      "retrieve_s": 0.0,
+      "tagged": 58,
+      "top5": [
+        {
+          "id": "f95db65c-c46d-4535-8f51-edd46d29ba53",
+          "sessions": [
+            "answer_4ffa04a2_1"
+          ],
+          "text": "User participated in the 'Run for the Cure' event on October 15th, 2023, and ran"
+        },
+        {
+          "id": "20821b54-075b-4452-8908-cea7cc4f00f2",
+          "sessions": [
+            "answer_4ffa04a2_5"
+          ],
+          "text": "User is looking for information on local charity events happening in the next fe"
+        },
+        {
+          "id": "f2ee8af7-a2e7-4cbe-9fcf-b58c222fc1f7",
+          "sessions": [
+            "answer_4ffa04a2_2"
+          ],
+          "text": "User is looking for information on local charity events happening in the next fe"
+        },
+        {
+          "id": "bd394af4-0595-4d3e-b49a-21dfddd22737",
+          "sessions": [
+            "answer_4ffa04a2_1"
+          ],
+          "text": "User is interested in participating in more charity events, including cycling an"
+        },
+        {
+          "id": "34edeb6b-eeb0-42cf-ad02-08f9eb083928",
+          "sessions": [
+            "answer_4ffa04a2_6"
+          ],
+          "text": "User participated in the 'Dance for a Cause' event on May 1st, 2023, where they "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_93159ced",
+      "q_type": "temporal-reasoning",
+      "answer": "4 years and 9 months",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 50.2,
+      "retrieve_s": 0.0,
+      "tagged": 22,
+      "top5": [
+        {
+          "id": "328ea2bc-d8b4-4ddd-a720-7a89ce577ca2",
+          "sessions": [
+            "answer_e5131a1b_2"
+          ],
+          "text": "User has been working at NovaTech for about 4 years and 3 months now."
+        },
+        {
+          "id": "e8b54174-158a-4ffe-8c7c-473d9c40d485",
+          "sessions": [
+            "answer_e5131a1b_2"
+          ],
+          "text": "User is a software engineer, specifically a backend developer, with 4+ years of "
+        },
+        {
+          "id": "7f631fd4-c08f-439e-9089-f190e237716e",
+          "sessions": [
+            "answer_e5131a1b_1"
+          ],
+          "text": "User is looking to get advice on managing their time more efficiently and has be"
+        },
+        {
+          "id": "4385724b-7614-475e-aa4a-71df6584ebf3",
+          "sessions": [
+            "answer_e5131a1b_2"
+          ],
+          "text": "User will provide comprehensive training for their team, covering New Relic's fe"
+        },
+        {
+          "id": "1062b49b-bc17-4c62-ac68-1a28c9d2f1eb",
+          "sessions": [
+            "answer_e5131a1b_1"
+          ],
+          "text": "User is considering pricing their project management and consulting services bas"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2d58bcd6",
+      "q_type": "temporal-reasoning",
+      "answer": "'The Hate U Give'",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 63.0,
+      "retrieve_s": 0.0,
+      "tagged": 21,
+      "top5": [
+        {
+          "id": "ede1a4e8-26bc-4426-82be-940dc2ed7b3c",
+          "sessions": [
+            "answer_3e11e0ae_1"
+          ],
+          "text": "User is glad they liked 'The Hate U Give' and has been trying to read more diver"
+        },
+        {
+          "id": "3e6b6d3f-b36b-40cd-a870-e7e6b072a147",
+          "sessions": [
+            "answer_3e11e0ae_1"
+          ],
+          "text": "User thinks the narrator's performance in 'The Hate U Give' helped them connect "
+        },
+        {
+          "id": "6dfcb5ab-4799-4582-aa84-1b11f947ab5a",
+          "sessions": [
+            "answer_3e11e0ae_1"
+          ],
+          "text": "User is looking for book recommendations, specifically similar books to 'The Hat"
+        },
+        {
+          "id": "80f53456-fc3f-40c8-ab93-0dd2c32ce132",
+          "sessions": [
+            "answer_3e11e0ae_1"
+          ],
+          "text": "User finished reading three fiction novels last weekend - 'The Seven Husbands of"
+        },
+        {
+          "id": "50cbe53d-1d54-4fb4-86c4-be2a4624aa43",
+          "sessions": [
+            "answer_3e11e0ae_2"
+          ],
+          "text": "User was recommended 'Daisy Jones and The Six' by Taylor Jenkins Reid, 'The Roya"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_65aabe59",
+      "q_type": "temporal-reasoning",
+      "answer": "Smart thermostat",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 57.6,
+      "retrieve_s": 0.0,
+      "tagged": 19,
+      "top5": [
+        {
+          "id": "ce8a5165-7b9a-4bf3-9782-f034f5f5e0c6",
+          "sessions": [
+            "answer_30dfe889_1"
+          ],
+          "text": "User wants to prioritize a desktop computer that can handle their internet conne"
+        },
+        {
+          "id": "0ae5da96-44c9-4453-9016-8734be008474",
+          "sessions": [
+            "answer_30dfe889_2"
+          ],
+          "text": "User has been trying to reduce their energy bills and has set up a new smart the"
+        },
+        {
+          "id": "58c725e9-3317-4e92-bbae-96663392b4fd",
+          "sessions": [
+            "answer_30dfe889_1"
+          ],
+          "text": "User is having issues with their desktop computer, which has been freezing up on"
+        },
+        {
+          "id": "8b654d68-984b-4e44-bc00-6cff84c4e4a4",
+          "sessions": [
+            "answer_30dfe889_2"
+          ],
+          "text": "User is leaning towards the HP Pavilion 24-inch All-in-One Desktop due to its la"
+        },
+        {
+          "id": "7d8b7592-783e-4aed-b426-53566ff59125",
+          "sessions": [
+            "answer_30dfe889_1"
+          ],
+          "text": "User is considering a build with an Intel Core i5-11400F CPU, ASRock B450M Steel"
+        }
+      ]
+    },
+    {
+      "q_id": "982b5123",
+      "q_type": "temporal-reasoning",
+      "answer": "Five months ago",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 67.8,
+      "retrieve_s": 0.0,
+      "tagged": 26,
+      "top5": [
+        {
+          "id": "927b780a-bbe7-4989-ba84-f8c39afd0735",
+          "sessions": [
+            "answer_ab603dd5_1"
+          ],
+          "text": "User has had a great experience with Airbnb in the past, like when they stayed i"
+        },
+        {
+          "id": "d4721471-e301-4a88-b113-83d6772120d4",
+          "sessions": [
+            "answer_ab603dd5_1"
+          ],
+          "text": "User is planning to take BART and then a short taxi ride to their Airbnb in Haig"
+        },
+        {
+          "id": "d784b001-57e2-454b-bc51-bc4f451d212a",
+          "sessions": [
+            "answer_ab603dd5_1"
+          ],
+          "text": "San Francisco is an amazing city! I'd be happy to help you find a great neighbor"
+        },
+        {
+          "id": "9bff720e-fc16-4a31-962c-e4db1523c1c2",
+          "sessions": [
+            "answer_ab603dd5_2"
+          ],
+          "text": "User is planning a trip to San Francisco and is looking for restaurant recommend"
+        },
+        {
+          "id": "a99a3d24-3622-4d0c-8013-5b34a67d86df",
+          "sessions": [
+            "answer_ab603dd5_1"
+          ],
+          "text": "User is planning a trip to San Francisco and was wondering if you could recommen"
+        }
+      ]
+    },
+    {
+      "q_id": "b9cfe692",
+      "q_type": "temporal-reasoning",
+      "answer": "5.5 weeks",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 95.9,
+      "retrieve_s": 0.0,
+      "tagged": 24,
+      "top5": [
+        {
+          "id": "bb4e6d5e-9266-447e-bd8d-1d90aa59f901",
+          "sessions": [
+            "answer_5e3bb940_2"
+          ],
+          "text": "User finished 'The Seven Husbands of Evelyn Hugo' in two and a half weeks and is"
+        },
+        {
+          "id": "b072441b-ad98-4a5e-b6bb-781aa513c948",
+          "sessions": [
+            "answer_5e3bb940_3"
+          ],
+          "text": "User asked for recommendations for other historical fiction books similar to 'Th"
+        },
+        {
+          "id": "a4b6d720-7929-4174-8c90-9fc7dd83255c",
+          "sessions": [
+            "answer_5e3bb940_2"
+          ],
+          "text": "User asked for recommendations for other historical fiction books similar to 'Th"
+        },
+        {
+          "id": "b8762395-c47b-48a9-8138-a6b69d436748",
+          "sessions": [
+            "answer_5e3bb940_2"
+          ],
+          "text": "Assistant recommended 10 historical fiction audiobooks similar to 'The Nightinga"
+        },
+        {
+          "id": "a72d5fdb-16ec-49f0-8c5c-d67f36d1fb00",
+          "sessions": [
+            "answer_5e3bb940_3"
+          ],
+          "text": "User enjoyed 'The Nightingale' by Kristin Hannah and is looking for similar hist"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_4edbafa2",
+      "q_type": "temporal-reasoning",
+      "answer": "June 3rd",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 60.2,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "76e7c040-da65-442c-8255-e6ce6f1efd51",
+          "sessions": [
+            "answer_0a00c163_2"
+          ],
+          "text": "User is looking for tips on how to plan a successful BBQ party, including creati"
+        },
+        {
+          "id": "81371d09-c829-4d42-98db-03f83d907f9a",
+          "sessions": [
+            "answer_0a00c163_2"
+          ],
+          "text": "User is considering hosting a BBQ party with a variety of dishes, including Kore"
+        },
+        {
+          "id": "5905a301-ea0d-40fb-846a-12797e421e06",
+          "sessions": [
+            "answer_0a00c163_1"
+          ],
+          "text": "User is planning to host a BBQ party and is looking for recommendations on veget"
+        },
+        {
+          "id": "333432d9-c9f6-4edb-ada0-855bc9fe1c57",
+          "sessions": [
+            "answer_0a00c163_1"
+          ],
+          "text": "User is considering serving a variety of BBQ dishes at their party, including so"
+        },
+        {
+          "id": "5f8bc771-f02b-4753-9253-7c606fcf3db2",
+          "sessions": [
+            "answer_0a00c163_1"
+          ],
+          "text": "User is considering serving Korean-style BBQ dishes at their party, including bu"
+        }
+      ]
+    },
+    {
+      "q_id": "c8090214",
+      "q_type": "temporal-reasoning",
+      "answer": "7 days. 8 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 54.7,
+      "retrieve_s": 0.0,
+      "tagged": 17,
+      "top5": [
+        {
+          "id": "4027e46b-d548-49d7-9d92-fd8771ea7a3d",
+          "sessions": [
+            "answer_70dc7d08_2"
+          ],
+          "text": "User got their iPhone 13 Pro at a discounted price of $800 from Best Buy on Blac"
+        },
+        {
+          "id": "b485b09f-f92b-4d4a-b1bb-b76ec4e1e472",
+          "sessions": [
+            "answer_70dc7d08_1"
+          ],
+          "text": "User is planning to go back to the Holiday Market to take a closer look at the j"
+        },
+        {
+          "id": "a22606bf-f7ef-4310-bd9b-e4bf0a976ee9",
+          "sessions": [
+            "answer_70dc7d08_1"
+          ],
+          "text": "User is planning to go back to the Holiday Market to find the perfect piece of h"
+        },
+        {
+          "id": "95462aca-cf15-459e-9664-c3d4a981f255",
+          "sessions": [
+            "answer_70dc7d08_1"
+          ],
+          "text": "User attended the annual Holiday Market at the local mall a week before Black Fr"
+        },
+        {
+          "id": "65f1d60d-041a-4336-931e-105fd8d89cec",
+          "sessions": [
+            "answer_70dc7d08_2"
+          ],
+          "text": "User is looking to upgrade their phone case and screen protector and is consider"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_483dd43c",
+      "q_type": "temporal-reasoning",
+      "answer": "'Game of Thrones'",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 87.2,
+      "retrieve_s": 0.0,
+      "tagged": 19,
+      "top5": [
+        {
+          "id": "388d5596-daa5-4645-961f-23eb9d228009",
+          "sessions": [
+            "answer_fb793c87_1"
+          ],
+          "text": "User recently finished watching the third season of 'The Crown' on Netflix and i"
+        },
+        {
+          "id": "f9e3099d-5620-4545-838d-05f04a0f9b44",
+          "sessions": [
+            "answer_fb793c87_1"
+          ],
+          "text": "User is looking for recommendations for fantasy shows similar to 'Game of Throne"
+        },
+        {
+          "id": "79849e55-5187-4f09-9f17-6b85aa6dc9a5",
+          "sessions": [
+            "answer_fb793c87_1"
+          ],
+          "text": "User recently finished watching the third season of 'The Crown' on Netflix and i"
+        },
+        {
+          "id": "cf285e5a-536f-413c-86f3-0c777644defd",
+          "sessions": [
+            "answer_fb793c87_1"
+          ],
+          "text": "User is looking for recommendations for fantasy shows similar to 'Game of Throne"
+        },
+        {
+          "id": "985b60b8-10f5-40f6-95d4-a486fc34e3aa",
+          "sessions": [
+            "answer_fb793c87_1"
+          ],
+          "text": "User recently discovered that Amazon Prime Video has a lot of great original con"
+        }
+      ]
+    },
+    {
+      "q_id": "e4e14d04",
+      "q_type": "temporal-reasoning",
+      "answer": "Two weeks",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 37.1,
+      "retrieve_s": 0.0,
+      "tagged": 13,
+      "top5": [
+        {
+          "id": "cac4aa25-8927-46a9-842d-223bac12b38d",
+          "sessions": [
+            "answer_cf425855_1"
+          ],
+          "text": "User is looking for book recommendations and has joined a Facebook group called "
+        },
+        {
+          "id": "060735a2-37a3-4e7a-982c-564b506eb4db",
+          "sessions": [
+            "answer_cf425855_1"
+          ],
+          "text": "User is looking for some book recommendations in the thriller genre and has been"
+        },
+        {
+          "id": "1354467c-9403-4f52-a324-d776acb0ace3",
+          "sessions": [
+            "answer_cf425855_1"
+          ],
+          "text": "User is asking the members of 'Book Lovers Unite' to come prepared to discuss th"
+        },
+        {
+          "id": "61de4757-5848-4c5d-9d97-6ff95a7f88b8",
+          "sessions": [
+            "answer_cf425855_1"
+          ],
+          "text": "User is planning to discuss the theme of marriage and relationships in 'Gone Gir"
+        },
+        {
+          "id": "0dfc6007-94b4-49a8-a0fc-7114b173b916",
+          "sessions": [
+            "answer_cf425855_1"
+          ],
+          "text": "User has joined Goodreads groups dedicated to Michael Connelly and legal thrille"
+        }
+      ]
+    },
+    {
+      "q_id": "c9f37c46",
+      "q_type": "temporal-reasoning",
+      "answer": "2 months",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 49.0,
+      "retrieve_s": 0.0,
+      "tagged": 19,
+      "top5": [
+        {
+          "id": "a4f80e8f-d8e4-43ff-bf9a-5ef4d4cb59e7",
+          "sessions": [
+            "answer_cdba3d9f_1"
+          ],
+          "text": "User enjoys watching stand-up comedy and recently started watching stand-up spec"
+        },
+        {
+          "id": "20884b7f-eede-4db4-bdc4-bbe12114a410",
+          "sessions": [
+            "answer_cdba3d9f_2"
+          ],
+          "text": "User enjoys watching stand-up comedy and recently started watching stand-up spec"
+        },
+        {
+          "id": "03ab007d-19af-4113-a740-13d7354c7fed",
+          "sessions": [
+            "answer_cdba3d9f_2"
+          ],
+          "text": "User attended an open mic night at a local comedy club last month and was inspir"
+        },
+        {
+          "id": "fb297d6a-def5-4ea7-aea2-8c4aaa3366e8",
+          "sessions": [
+            "answer_cdba3d9f_1"
+          ],
+          "text": "User is considering taking a comedy class to improve their stand-up skills and i"
+        },
+        {
+          "id": "41bb3a85-c6b8-4271-9477-c298f1a08d9e",
+          "sessions": [
+            "answer_cdba3d9f_2"
+          ],
+          "text": "User is considering taking a comedy class to improve their stand-up skills and i"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2c50253f",
+      "q_type": "temporal-reasoning",
+      "answer": "6:45 AM",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 47.2,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "b95f6c19-0e42-447b-ad4a-8e298fce4a8c",
+          "sessions": [
+            "answer_9af4e346_2"
+          ],
+          "text": "User has recently started waking up 15 minutes earlier to meditate and practice "
+        },
+        {
+          "id": "d2581256-f995-433e-a1ef-eac60457be32",
+          "sessions": [
+            "answer_9af4e346_1"
+          ],
+          "text": "User is planning to listen to music or podcasts during their morning walk, such "
+        },
+        {
+          "id": "f4256a49-ed20-4c7b-8124-389d88e9f57e",
+          "sessions": [
+            "answer_9af4e346_1"
+          ],
+          "text": "User is planning to try out some new ways to make their morning walk more enjoya"
+        },
+        {
+          "id": "b25c8ad8-6ec3-4385-8be6-4d250e5c986a",
+          "sessions": [
+            "answer_9af4e346_2"
+          ],
+          "text": "User is looking for healthy breakfast ideas that can be prepped the night before"
+        },
+        {
+          "id": "68069fb1-2c8f-4c9f-ae6f-8eed2b04b66d",
+          "sessions": [
+            "answer_9af4e346_1"
+          ],
+          "text": "User is considering setting a goal to walk a certain distance or complete a cert"
+        }
+      ]
+    },
+    {
+      "q_id": "dcfa8644",
+      "q_type": "temporal-reasoning",
+      "answer": "14 days. 15 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 51.9,
+      "retrieve_s": 0.0,
+      "tagged": 22,
+      "top5": [
+        {
+          "id": "bd7ecee9-72af-47c4-a4be-cced78124d2e",
+          "sessions": [
+            "answer_5e3eeb12_1"
+          ],
+          "text": "User has recently gotten a new pair of Adidas running shoes on January 10th and "
+        },
+        {
+          "id": "305d1a11-cd32-4c6b-823b-9179e76a9acf",
+          "sessions": [
+            "answer_5e3eeb12_2"
+          ],
+          "text": "User lent their favorite pair of Vans to their brother and they returned on Febr"
+        },
+        {
+          "id": "5d5052ac-26d3-4b1f-8ecf-139dea73229f",
+          "sessions": [
+            "answer_5e3eeb12_1"
+          ],
+          "text": "User had a great time at the outlet mall on January 10th when they bought their "
+        },
+        {
+          "id": "a343b186-6ea2-4f22-80ff-5f5c99b99bed",
+          "sessions": [
+            "answer_5e3eeb12_1"
+          ],
+          "text": "User has worn their sneakers to play basketball with friends on February 1st and"
+        },
+        {
+          "id": "5587fd5e-6902-4e1d-8f12-019e752d2203",
+          "sessions": [
+            "answer_5e3eeb12_1"
+          ],
+          "text": "User is thinking of getting their sneakers cleaned at home or taking them to a p"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_b4a80587",
+      "q_type": "temporal-reasoning",
+      "answer": "The arrival of the new prime lens",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 54.2,
+      "retrieve_s": 0.0,
+      "tagged": 22,
+      "top5": [
+        {
+          "id": "81cd2c9a-9f87-44e3-a642-0d3c898f9dac",
+          "sessions": [
+            "answer_b9d9150e_2"
+          ],
+          "text": "User took their 50mm f/1.8 lens on a coastal trip and got some great portraits o"
+        },
+        {
+          "id": "614a40c0-b23a-4e83-89cf-431dde3f0749",
+          "sessions": [
+            "answer_b9d9150e_2"
+          ],
+          "text": "User is planning to print and frame one of their favorite shots from the coastal"
+        },
+        {
+          "id": "83d7dc98-4634-4e47-a9d2-4805bf5fb244",
+          "sessions": [
+            "answer_b9d9150e_2"
+          ],
+          "text": "User is planning to use a traditional print and frame for their favorite shot fr"
+        },
+        {
+          "id": "2d82db34-fd9a-4f1c-8199-f7d11c34e38d",
+          "sessions": [
+            "answer_b9d9150e_2"
+          ],
+          "text": "User lent their favorite pair of Vans to their brother and they were returned on"
+        },
+        {
+          "id": "db4a9dd8-949b-432e-87ad-049ac6482b0a",
+          "sessions": [
+            "answer_b9d9150e_2"
+          ],
+          "text": "User is considering using a matte finish and a rustic or coastal-themed frame to"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_9a159967",
+      "q_type": "temporal-reasoning",
+      "answer": "United Airlines",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 91.4,
+      "retrieve_s": 0.0,
+      "tagged": 37,
+      "top5": [
+        {
+          "id": "5e7cc8d4-42c2-4cef-8d1e-59dffd31df6f",
+          "sessions": [
+            "answer_8a42fedf_3"
+          ],
+          "text": "User took a direct flight with Southwest Airlines from their hometown to Las Veg"
+        },
+        {
+          "id": "bb5c6ade-df3b-41a0-b672-99a49a075875",
+          "sessions": [
+            "answer_8a42fedf_2"
+          ],
+          "text": "User took a direct flight with Southwest Airlines from their hometown to Las Veg"
+        },
+        {
+          "id": "49ffcdb1-d66f-460c-853f-52cec40cbbd4",
+          "sessions": [
+            "answer_8a42fedf_2"
+          ],
+          "text": "User has been flying a lot lately and is trying to accumulate airline miles"
+        },
+        {
+          "id": "ac889ed9-d1b7-4a9b-8de0-60ae3192b4bf",
+          "sessions": [
+            "answer_8a42fedf_3"
+          ],
+          "text": "User has accumulated a decent amount of miles on United Airlines and American Ai"
+        },
+        {
+          "id": "251df17e-a000-49e7-8978-f9fb94331785",
+          "sessions": [
+            "answer_8a42fedf_3"
+          ],
+          "text": "User is planning to travel to San Francisco from the 10th to the 14th of next mo"
+        }
+      ]
+    },
+    {
+      "q_id": "cc6d1ec1",
+      "q_type": "temporal-reasoning",
+      "answer": "Two months",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 66.7,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "908566ce-8817-4081-8221-c9419c4c163a",
+          "sessions": [
+            "answer_be73098b_2"
+          ],
+          "text": "User recently attended a bird watching workshop at the local Audubon society and"
+        },
+        {
+          "id": "ccd64afe-2dd7-4260-b7fb-e6fc49a1bfcb",
+          "sessions": [
+            "answer_be73098b_2"
+          ],
+          "text": "User is attending a birder's meetup and is looking forward to learning more abou"
+        },
+        {
+          "id": "3034c4bd-26ab-453b-b052-63f4b91cf652",
+          "sessions": [
+            "answer_be73098b_2"
+          ],
+          "text": "User is attending a birder's meetup next weekend and is looking forward to learn"
+        },
+        {
+          "id": "3ea29c34-b3b6-41dd-916a-9a405529b45c",
+          "sessions": [
+            "answer_be73098b_2"
+          ],
+          "text": "User has been listening to recordings on their phone to help them identify birds"
+        },
+        {
+          "id": "d96d456f-5aa6-42e3-a22a-ea8f714e5ebd",
+          "sessions": [
+            "answer_be73098b_2"
+          ],
+          "text": "User is excited to go on a guided walk at a local nature preserve and is looking"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_8c8961ae",
+      "q_type": "temporal-reasoning",
+      "answer": "The solo trip to Thailand",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 57.3,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "480cb8d2-22bb-4d6a-9fa3-5772c275c42a",
+          "sessions": [
+            "answer_72d9aa58_1"
+          ],
+          "text": "User's parents were tired from walking and sightseeing in Europe, but still had "
+        },
+        {
+          "id": "eb6c8273-e79f-438a-bc87-b50e4a2a1612",
+          "sessions": [
+            "answer_72d9aa58_1"
+          ],
+          "text": "User's parents were impressed with the scenic beauty of Europe, especially in Ro"
+        },
+        {
+          "id": "3e4fbae4-1923-4357-ac81-202b547e5c3a",
+          "sessions": [
+            "answer_72d9aa58_2"
+          ],
+          "text": "The Galapagos Islands can be visited as a solo traveler, but it may require more"
+        },
+        {
+          "id": "97506612-9086-4d39-b791-dc025fc9c574",
+          "sessions": [
+            "answer_72d9aa58_2"
+          ],
+          "text": "The Galapagos Islands are an amazing destination, and it's definitely possible t"
+        },
+        {
+          "id": "ae9b9ca5-e8b2-481e-b2fa-f5bbfcdc2b8c",
+          "sessions": [
+            "answer_72d9aa58_2"
+          ],
+          "text": "User is thinking of visiting the Galapagos Islands, but is unsure if it's feasib"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_d9af6064",
+      "q_type": "temporal-reasoning",
+      "answer": "new router",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 35.9,
+      "retrieve_s": 0.0,
+      "tagged": 15,
+      "top5": [
+        {
+          "id": "47bb3889-ab4a-4e3f-878e-1b526f35807b",
+          "sessions": [
+            "answer_da704e79_2"
+          ],
+          "text": "User recently got a new router on January 15th, which has improved their Wi-Fi s"
+        },
+        {
+          "id": "82839c89-8044-4edc-bb5c-bbe0e34bce8a",
+          "sessions": [
+            "answer_da704e79_1"
+          ],
+          "text": "User is exploring router analytics and network monitoring tools to better unders"
+        },
+        {
+          "id": "083ee10c-b8e3-4576-925b-42f3c4b201b2",
+          "sessions": [
+            "answer_da704e79_2"
+          ],
+          "text": "User is exploring their smart speaker's features and is considering integrating "
+        },
+        {
+          "id": "dc95b545-8131-43b4-bb2d-26baa3b3047e",
+          "sessions": [
+            "answer_da704e79_1"
+          ],
+          "text": "User's smart speaker is consuming some bandwidth in the background, and user is "
+        },
+        {
+          "id": "0efca0c0-75d7-43c2-888d-276a5657b767",
+          "sessions": [
+            "answer_da704e79_2"
+          ],
+          "text": "User is creating custom routines on their smart speaker to automate tasks, such "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_7de946e7",
+      "q_type": "temporal-reasoning",
+      "answer": "Persistent cough",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 44.4,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "6d85af30-03cf-4d4f-ad4f-8b8b0f5ab361",
+          "sessions": [
+            "answer_6a78e959_2"
+          ],
+          "text": "User is trying to get their health back on track after a few setbacks, including"
+        },
+        {
+          "id": "b098e1a7-b031-4be7-ad80-f248bd1fd1b1",
+          "sessions": [
+            "answer_6a78e959_1"
+          ],
+          "text": "User has been diagnosed with bronchitis and pneumonia and has been taking antibi"
+        },
+        {
+          "id": "4eb8695e-d6dd-4bd7-813d-4dc79e9c66ec",
+          "sessions": [
+            "answer_6a78e959_1"
+          ],
+          "text": "User has been experiencing stomach issues, including bloating and gassiness, and"
+        },
+        {
+          "id": "26d04fd8-5370-4c58-939a-5be2f2d5e0db",
+          "sessions": [
+            "answer_6a78e959_1"
+          ],
+          "text": "User's grandmother was recently hospitalized due to the flu in January and User "
+        },
+        {
+          "id": "c425e9e7-a064-48e5-a7f8-f725cc3c75b3",
+          "sessions": [
+            "answer_6a78e959_1"
+          ],
+          "text": "User is taking extra precautions to ensure her grandmother's safety, including e"
+        }
+      ]
+    },
+    {
+      "q_id": "d01c6aa8",
+      "q_type": "temporal-reasoning",
+      "answer": "27",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 68.0,
+      "retrieve_s": 0.0,
+      "tagged": 24,
+      "top5": [
+        {
+          "id": "fbc2a0ae-9e93-45fa-9226-36ffa36f7b47",
+          "sessions": [
+            "answer_991d55e5_2"
+          ],
+          "text": "User is trying to gather information on the green card application process and h"
+        },
+        {
+          "id": "0da22d81-2338-4173-a852-d429ba3dc7fe",
+          "sessions": [
+            "answer_991d55e5_2"
+          ],
+          "text": "User is trying to understand the vaccination requirements for the green card app"
+        },
+        {
+          "id": "9bb4fef7-e186-428c-90e8-bcdc2f436e32",
+          "sessions": [
+            "answer_991d55e5_1"
+          ],
+          "text": "User is asked about his long-term plans in the United States and wants to know h"
+        },
+        {
+          "id": "1168fa49-bdb2-4270-9886-073735ca9ef4",
+          "sessions": [
+            "answer_991d55e5_2"
+          ],
+          "text": "User has been living in the United States for the past five years on a work visa"
+        },
+        {
+          "id": "e515d124-d516-4892-9319-870468395dcf",
+          "sessions": [
+            "answer_991d55e5_1"
+          ],
+          "text": "User is a data scientist with a master's degree from NYU and is applying for an "
+        }
+      ]
+    },
+    {
+      "q_id": "993da5e2",
+      "q_type": "temporal-reasoning",
+      "answer": "One week. Answers ranging from 7 days to 10 days are also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 68.9,
+      "retrieve_s": 0.0,
+      "tagged": 19,
+      "top5": [
+        {
+          "id": "c779e6fc-2e65-4120-a8e6-7ed5d8679559",
+          "sessions": [
+            "answer_54f0d6f9_2"
+          ],
+          "text": "User is looking for decorative items for their living room, specifically vases o"
+        },
+        {
+          "id": "bc801a08-d662-4649-8a1b-d74289b20f72",
+          "sessions": [
+            "answer_54f0d6f9_2"
+          ],
+          "text": "User's living room has a relaxed, cozy vibe and a mix of modern and traditional "
+        },
+        {
+          "id": "2540eef8-f35a-4f97-806a-b27466f43b6f",
+          "sessions": [
+            "answer_54f0d6f9_1"
+          ],
+          "text": "User is planning to get throw pillows in complementary colors to complete the lo"
+        },
+        {
+          "id": "bf8dad6a-cc30-4808-b7ff-2d3339e939f5",
+          "sessions": [
+            "answer_54f0d6f9_1"
+          ],
+          "text": "User is considering adding throw pillows with deep coral color to their space to"
+        },
+        {
+          "id": "0228cd37-bd1b-4938-a980-1700a34b08b8",
+          "sessions": [
+            "answer_54f0d6f9_1"
+          ],
+          "text": "User is looking for throw pillows with deep coral color to add a pop of color to"
+        }
+      ]
+    },
+    {
+      "q_id": "a3045048",
+      "q_type": "temporal-reasoning",
+      "answer": "7 days. 8 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 40.3,
+      "retrieve_s": 0.0,
+      "tagged": 21,
+      "top5": [
+        {
+          "id": "d632dcd1-f1a8-4a06-943a-156ae0715d7a",
+          "sessions": [
+            "answer_016f6bd4_2"
+          ],
+          "text": "User is planning to get a gift for their brother's birthday in June and is consi"
+        },
+        {
+          "id": "5fac846d-7718-4065-9294-5c7804fd2113",
+          "sessions": [
+            "answer_016f6bd4_2"
+          ],
+          "text": "User is considering other gift ideas for their brother's birthday, besides a wat"
+        },
+        {
+          "id": "54edea6a-424d-4ce5-80bf-6e566a7e3088",
+          "sessions": [
+            "answer_016f6bd4_1"
+          ],
+          "text": "User is thinking of getting a customized necklace for their mom's Mother's Day g"
+        },
+        {
+          "id": "0e7e61ee-5473-47dc-913b-de873704efb7",
+          "sessions": [
+            "answer_016f6bd4_1"
+          ],
+          "text": "User is planning to get a Skagen Ancher watch for their brother's birthday and i"
+        },
+        {
+          "id": "689df833-058d-407f-8005-c70c17984c16",
+          "sessions": [
+            "answer_016f6bd4_2"
+          ],
+          "text": "Assistant suggests tech accessories, personalized items, grooming essentials, ex"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_d31cdae3",
+      "q_type": "temporal-reasoning",
+      "answer": "The family road trip across the American Southwest",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 42.9,
+      "retrieve_s": 0.0,
+      "tagged": 21,
+      "top5": [
+        {
+          "id": "44186fe3-baa1-4383-add7-ddd3d15aa9d8",
+          "sessions": [
+            "answer_8464304d_1"
+          ],
+          "text": "User is reminiscing about their solo trip to Europe last summer and is glad they"
+        },
+        {
+          "id": "ac186dd2-c3ce-4977-8970-45a21da5b0ad",
+          "sessions": [
+            "answer_8464304d_2"
+          ],
+          "text": "User is excited to explore the American Southwest on their own and is looking fo"
+        },
+        {
+          "id": "5eb459f6-cbc5-4abb-9e6c-d1b15056a7d3",
+          "sessions": [
+            "answer_8464304d_2"
+          ],
+          "text": "User is driving from Monument Valley to the Hoover Dam, and then from the dam to"
+        },
+        {
+          "id": "c726f675-3357-46c3-b481-b084ac8c450a",
+          "sessions": [
+            "answer_8464304d_2"
+          ],
+          "text": "User is considering skipping the Hoover Dam and heading straight back to Phoenix"
+        },
+        {
+          "id": "b0174518-6711-4fb4-add9-32cad860b45a",
+          "sessions": [
+            "answer_8464304d_2"
+          ],
+          "text": "User is considering staying in Sedona for 4-5 days and then heading to Monument "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_cd90e484",
+      "q_type": "temporal-reasoning",
+      "answer": "Two weeks",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 54.5,
+      "retrieve_s": 0.0,
+      "tagged": 17,
+      "top5": [
+        {
+          "id": "94f83454-a0ab-4b02-b313-67e432f2cd88",
+          "sessions": [
+            "answer_aa930b56_2"
+          ],
+          "text": "User has been noticing the return of American goldfinches to their area, which i"
+        },
+        {
+          "id": "756731bf-d563-42cf-8d14-bf26bbf3b78f",
+          "sessions": [
+            "answer_aa930b56_1"
+          ],
+          "text": "User has been trying to focus on bird shapes and silhouettes, as suggested, and "
+        },
+        {
+          "id": "3e762bd4-26a2-422a-93e0-65bb14d326a5",
+          "sessions": [
+            "answer_aa930b56_2"
+          ],
+          "text": "User has seen common yellowthroats at the nearby nature reserve, and is keeping "
+        },
+        {
+          "id": "978c2590-f0b6-4a9a-8502-6cfa7393c281",
+          "sessions": [
+            "answer_aa930b56_1"
+          ],
+          "text": "User is considering getting a Celestron Ultima 80 Angled Spotting Scope, a Vorte"
+        },
+        {
+          "id": "80957754-79d0-449b-8d4c-74f6392c3b71",
+          "sessions": [
+            "answer_aa930b56_2"
+          ],
+          "text": "User is having trouble distinguishing common yellowthroats from other warblers, "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_88806d6e",
+      "q_type": "temporal-reasoning",
+      "answer": "Tom",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 60.2,
+      "retrieve_s": 0.0,
+      "tagged": 8,
+      "top5": [
+        {
+          "id": "e26f743a-c160-4c7a-b9ab-120a91bcbcb4",
+          "sessions": [
+            "answer_e60a93ff_2"
+          ],
+          "text": "User is planning to follow up with Sophia, a woman they met at a networking even"
+        },
+        {
+          "id": "61f5128f-627a-4f50-a0a6-ffcfbbff53f3",
+          "sessions": [
+            "answer_e60a93ff_2"
+          ],
+          "text": "User is planning to reach out to Rachel, a woman they met at a music festival la"
+        },
+        {
+          "id": "3eeb89ac-492e-4c5e-90ce-4a55023521a9",
+          "sessions": [
+            "answer_e60a93ff_2"
+          ],
+          "text": "User is thinking of suggesting a specific location for brunch with Rachel or let"
+        },
+        {
+          "id": "c4170b50-7899-4410-838f-03782930ccc6",
+          "sessions": [
+            "answer_e60a93ff_2"
+          ],
+          "text": "User met a freelance writer at a coffee shop near their office last week and exc"
+        },
+        {
+          "id": "a563ca15-10df-40bc-8de4-9d77b3a9fe89",
+          "sessions": [
+            "answer_e60a93ff_2"
+          ],
+          "text": "User is considering sending Sophia a follow-up email to discuss the potential co"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_4cd9eba1",
+      "q_type": "temporal-reasoning",
+      "answer": "one week",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 42.2,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "5b58801b-0e63-4c84-a241-039c6291773b",
+          "sessions": [
+            "answer_5fcca8bc_1"
+          ],
+          "text": "User has already applied for a visa and had an interview at the US embassy on Ap"
+        },
+        {
+          "id": "6f75b8db-d73e-44fd-a454-98221c8d0e43",
+          "sessions": [
+            "answer_5fcca8bc_1"
+          ],
+          "text": "User is preparing for their semester abroad at UC Berkeley and is looking for ti"
+        },
+        {
+          "id": "6fea13d0-74ad-4a49-a5cc-9847a8fb1187",
+          "sessions": [
+            "answer_5fcca8bc_1"
+          ],
+          "text": "User is excited to get involved in the photography club and volunteer at the loc"
+        },
+        {
+          "id": "35645ad4-08a0-4f37-9b8e-8fe3848817fc",
+          "sessions": [
+            "answer_5fcca8bc_2"
+          ],
+          "text": "User is heading to the US for a semester abroad and is looking for help with pac"
+        },
+        {
+          "id": "95a4b09c-38b9-48ee-9f3e-64ca22c5961b",
+          "sessions": [
+            "answer_5fcca8bc_1"
+          ],
+          "text": "User is heading to the US for a semester abroad at the University of California,"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_93f6379c",
+      "q_type": "temporal-reasoning",
+      "answer": "Page Turners",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 103.1,
+      "retrieve_s": 0.0,
+      "tagged": 48,
+      "top5": [
+        {
+          "id": "d0dc9906-4906-4d94-9dc9-1722d43348d6",
+          "sessions": [
+            "answer_544fe66c_2"
+          ],
+          "text": "User is interested in learning more about debut authors and the publishing proce"
+        },
+        {
+          "id": "e1905a71-5cc3-4e56-a0f7-5f2936ae4e67",
+          "sessions": [
+            "answer_544fe66c_1"
+          ],
+          "text": "User is thinking of creating a 'Language Learner of the Month' or 'Native Speake"
+        },
+        {
+          "id": "cffeecdf-a974-4bbf-98b3-d9c7d856853e",
+          "sessions": [
+            "answer_544fe66c_2"
+          ],
+          "text": "Debut authors often face unique challenges, such as establishing their author pl"
+        },
+        {
+          "id": "f27dba5c-3890-4b9f-9bd8-35d66b0a43a1",
+          "sessions": [
+            "answer_544fe66c_1"
+          ],
+          "text": "User is planning to create a 'Cultural Insights' section within their Facebook g"
+        },
+        {
+          "id": "6f6d9bdc-b999-4ba7-9dbc-e3946e932cb6",
+          "sessions": [
+            "answer_544fe66c_1"
+          ],
+          "text": "User is thinking of creating a 'Language Learner Spotlight' section within their"
+        }
+      ]
+    },
+    {
+      "q_id": "b29f3365",
+      "q_type": "temporal-reasoning",
+      "answer": "Four weeks",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 46.2,
+      "retrieve_s": 0.0,
+      "tagged": 16,
+      "top5": [
+        {
+          "id": "fd09f437-cfd7-4dad-985d-17e3aef88cb2",
+          "sessions": [
+            "answer_436d4309_1"
+          ],
+          "text": "User has been using a metronome to help with timing and has recently bought a ne"
+        },
+        {
+          "id": "e2f610c3-7bf0-444d-b0da-38acf4728cbd",
+          "sessions": [
+            "answer_436d4309_2"
+          ],
+          "text": "User has been trying to learn more about music theory, specifically chord progre"
+        },
+        {
+          "id": "b1365305-8111-4bf0-b161-770f2579ed44",
+          "sessions": [
+            "answer_436d4309_1"
+          ],
+          "text": "User is trying to learn more about music theory, specifically chord progressions"
+        },
+        {
+          "id": "744d867e-41b3-4640-8d0a-5eec9b8eee25",
+          "sessions": [
+            "answer_436d4309_1"
+          ],
+          "text": "User has been practicing with a metronome to improve timing and rhythm in blues "
+        },
+        {
+          "id": "a144ea14-1e24-4604-a80a-48bdcdc3924d",
+          "sessions": [
+            "answer_436d4309_2"
+          ],
+          "text": "User is looking for advice on choosing the right guitar strings and has recently"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2f56ae70",
+      "q_type": "temporal-reasoning",
+      "answer": "Disney+",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 52.3,
+      "retrieve_s": 0.0,
+      "tagged": 22,
+      "top5": [
+        {
+          "id": "35d1797a-0a1b-438d-bbc2-b36b913a372b",
+          "sessions": [
+            "answer_7a36e820_2"
+          ],
+          "text": "User decides to add HBO to their Amazon Prime membership to access 'Westworld' a"
+        },
+        {
+          "id": "b4422063-8af7-4ed1-811e-cb35bbdd848b",
+          "sessions": [
+            "answer_7a36e820_2"
+          ],
+          "text": "User is interested in watching 'Westworld' on HBO, but is unsure if they have ac"
+        },
+        {
+          "id": "70623c1e-9af0-41af-9424-4ec41566e8c1",
+          "sessions": [
+            "answer_7a36e820_2"
+          ],
+          "text": "User has an Amazon Prime membership and can add HBO as a channel to their subscr"
+        },
+        {
+          "id": "ecc2c8f9-5b85-4c7e-a783-c084a05d90f0",
+          "sessions": [
+            "answer_7a36e820_3"
+          ],
+          "text": "Assistant is continuing to search for Disney+ exclusive documentaries that match"
+        },
+        {
+          "id": "2413f7e1-55dd-41a1-82d7-2c9970724cc3",
+          "sessions": [
+            "answer_7a36e820_3"
+          ],
+          "text": "User mentions that the documentary might be a Disney+ exclusive, which leads the"
+        }
+      ]
+    },
+    {
+      "q_id": "6613b389",
+      "q_type": "temporal-reasoning",
+      "answer": "2",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 84.8,
+      "retrieve_s": 0.0,
+      "tagged": 26,
+      "top5": [
+        {
+          "id": "257af5f2-1008-47cc-8f0e-2e62aa73ed20",
+          "sessions": [
+            "answer_aaf71ce2_2"
+          ],
+          "text": "User is thinking of writing a heartfelt letter to Rachel to commemorate her enga"
+        },
+        {
+          "id": "a6824338-d7b5-44c9-8ada-f1d6633ece3b",
+          "sessions": [
+            "answer_aaf71ce2_2"
+          ],
+          "text": "User is planning a romantic staycation to celebrate their upcoming wedding anniv"
+        },
+        {
+          "id": "3219f4c4-2328-4c2e-9599-ba1e57743a36",
+          "sessions": [
+            "answer_aaf71ce2_2"
+          ],
+          "text": "User is planning a gift for their sister-in-law's sister, who got married last D"
+        },
+        {
+          "id": "ab78ce60-1350-46b5-a001-865cd402f3dc",
+          "sessions": [
+            "answer_aaf71ce2_3"
+          ],
+          "text": "User is planning a romantic getaway to celebrate their upcoming wedding annivers"
+        },
+        {
+          "id": "35cc16a1-f956-4158-b0aa-f28d1ebbfa23",
+          "sessions": [
+            "answer_aaf71ce2_3"
+          ],
+          "text": "User is planning a romantic getaway to celebrate their upcoming wedding annivers"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_78cf46a3",
+      "q_type": "temporal-reasoning",
+      "answer": "Receiving the new phone case",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 44.1,
+      "retrieve_s": 0.0,
+      "tagged": 26,
+      "top5": [
+        {
+          "id": "8f6379fa-ec38-4fb4-ae0f-3d1999a6fab5",
+          "sessions": [
+            "answer_5a78688d_2"
+          ],
+          "text": "User is planning to buy a new phone charger after losing their old one at the gy"
+        },
+        {
+          "id": "d2244b85-f458-4d78-a6ae-219704a376fe",
+          "sessions": [
+            "answer_5a78688d_1"
+          ],
+          "text": "User is happy with their new phone case and mentions it has been doing a great j"
+        },
+        {
+          "id": "7fcf471e-ac7a-4f2a-976c-7e7bdc0830ed",
+          "sessions": [
+            "answer_5a78688d_2"
+          ],
+          "text": "Assistant recommended several phone chargers with different features and benefit"
+        },
+        {
+          "id": "60dff3e8-0554-47a8-a5fd-e3031fa13f91",
+          "sessions": [
+            "answer_5a78688d_2"
+          ],
+          "text": "User is considering getting a portable power bank due to their phone's battery l"
+        },
+        {
+          "id": "0d80a346-2017-4c35-9311-3443a6e882aa",
+          "sessions": [
+            "answer_5a78688d_1"
+          ],
+          "text": "Assistant reminds user to set up automatic backups on their phone so that their "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_0a05b494",
+      "q_type": "temporal-reasoning",
+      "answer": "the woman selling jam at the farmer's market",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 49.1,
+      "retrieve_s": 0.0,
+      "tagged": 16,
+      "top5": [
+        {
+          "id": "cf722121-51b8-47e7-afe2-f34de7682cf8",
+          "sessions": [
+            "answer_a68db5db_2"
+          ],
+          "text": "User met a tourist from Australia on the subway and helped him navigate the subw"
+        },
+        {
+          "id": "0434a565-6810-40ad-bd3b-0ce14cb11e57",
+          "sessions": [
+            "answer_a68db5db_2"
+          ],
+          "text": "User met a woman at a networking event for professionals in their industry and t"
+        },
+        {
+          "id": "5dcf5c3d-b935-4945-91b7-5c69afe2fee0",
+          "sessions": [
+            "answer_a68db5db_2"
+          ],
+          "text": "User is planning a trip to Australia and is looking for travel recommendations f"
+        },
+        {
+          "id": "b3a998fa-300d-4c1c-9373-0076199b5d77",
+          "sessions": [
+            "answer_a68db5db_2"
+          ],
+          "text": "User is planning to try out some of the local coffee shops in Sydney, including "
+        },
+        {
+          "id": "9d1287e1-5fb4-4fe5-aefe-ee8cd3b11615",
+          "sessions": [
+            "answer_a68db5db_1"
+          ],
+          "text": "User is planning to express gratitude and show appreciation to the woman they me"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_1a1dc16d",
+      "q_type": "temporal-reasoning",
+      "answer": "The meeting with Rachel",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 51.6,
+      "retrieve_s": 0.0,
+      "tagged": 23,
+      "top5": [
+        {
+          "id": "3600356f-6044-4e90-a2ea-4288e017a186",
+          "sessions": [
+            "answer_faad7d7a_2"
+          ],
+          "text": "User attended the pride parade on May 1st and realized the importance of diversi"
+        },
+        {
+          "id": "a89e4b5d-a331-4380-9af4-b5167668e65b",
+          "sessions": [
+            "answer_faad7d7a_1"
+          ],
+          "text": "User is planning to discuss diversity and inclusion initiatives with their mento"
+        },
+        {
+          "id": "f3e7f302-1be8-4920-8c6a-4b1153299908",
+          "sessions": [
+            "answer_faad7d7a_1"
+          ],
+          "text": "User is planning to discuss potential challenges and obstacles to implementing d"
+        },
+        {
+          "id": "a391ce75-fb6f-4442-b809-e062636b7770",
+          "sessions": [
+            "answer_faad7d7a_1"
+          ],
+          "text": "User is planning to discuss the importance of creating a more inclusive culture "
+        },
+        {
+          "id": "a9f85d83-d0b7-4e9e-8f70-88b2dbf82778",
+          "sessions": [
+            "answer_faad7d7a_1"
+          ],
+          "text": "User is planning to discuss potential challenges and obstacles to implementing d"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2f584639",
+      "q_type": "temporal-reasoning",
+      "answer": "the photo album for my mom",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 57.1,
+      "retrieve_s": 0.0,
+      "tagged": 17,
+      "top5": [
+        {
+          "id": "092bd8bb-24a3-4cf5-b8e5-37cabfdfffcd",
+          "sessions": [
+            "answer_11a8f823_1"
+          ],
+          "text": "User already got their sister a beautiful necklace from Tiffany's last weekend, "
+        },
+        {
+          "id": "04f29cef-b733-4e43-ac75-1dfd1823dc39",
+          "sessions": [
+            "answer_11a8f823_2"
+          ],
+          "text": "User got their mom a customized photo album from Shutterfly for her anniversary,"
+        },
+        {
+          "id": "a9295da1-5d1e-4e9d-9cdd-5454bc6dc047",
+          "sessions": [
+            "answer_11a8f823_1"
+          ],
+          "text": "User is planning to create a family slideshow with a mix of recent and childhood"
+        },
+        {
+          "id": "f424ca5e-5b0e-4339-9550-c6c5e69ee606",
+          "sessions": [
+            "answer_11a8f823_2"
+          ],
+          "text": "User focused on their favorite family vacation memories when creating the photo "
+        },
+        {
+          "id": "a2795db6-ac55-4c39-b618-ce151ee23f9b",
+          "sessions": [
+            "answer_11a8f823_1"
+          ],
+          "text": "User is considering making a customized cake with a design or message that reson"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_213fd887",
+      "q_type": "temporal-reasoning",
+      "answer": "volleyball league",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 65.6,
+      "retrieve_s": 0.0,
+      "tagged": 36,
+      "top5": [
+        {
+          "id": "f459cc6c-afdd-4640-910d-98425a3164ec",
+          "sessions": [
+            "answer_53582e7e_2"
+          ],
+          "text": "User is looking for tips on how to find more charity events like the 5K run they"
+        },
+        {
+          "id": "0d7d8aae-d44f-480e-8e54-37dd252eff3b",
+          "sessions": [
+            "answer_53582e7e_2"
+          ],
+          "text": "User recently completed a charity 5K run for a local children's hospital and is "
+        },
+        {
+          "id": "2c9fbf54-2e69-47a0-bd0f-5652c6e8c0cb",
+          "sessions": [
+            "answer_53582e7e_2"
+          ],
+          "text": "User has been playing volleyball regularly and trying to get to the gym more oft"
+        },
+        {
+          "id": "977c6526-ec67-4b6b-a18e-639db41d3db5",
+          "sessions": [
+            "answer_53582e7e_2"
+          ],
+          "text": "Assistant suggested using online search, social media, local running stores, cha"
+        },
+        {
+          "id": "7bc7041c-7b6b-41ef-86b6-be57cf1c77b3",
+          "sessions": [
+            "answer_53582e7e_2"
+          ],
+          "text": "User is thinking of joining a tennis league in the spring, but hasn't made a fin"
+        }
+      ]
+    }
+  ]
+}

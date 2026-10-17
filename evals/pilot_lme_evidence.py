@@ -23,7 +23,7 @@ EMB_BASE = os.environ.get("PILOT_EMB_BASE", "http://127.0.0.1:1449/v1")
 EMB_KEY = os.environ.get("PILOT_EMB_KEY", "local-smoke")
 DATA = Path(__file__).resolve().parent / "datasets" / "longmemeval" / "longmemeval_oracle.json"
 OUT = Path(__file__).resolve().parent / "results"
-N = 5
+N = int(os.environ.get("PILOT_N", "50"))  # normative pass: first N in committed dataset order (fixed pre-run, no selection)
 CTX_LIMIT = 24000
 CHARS_PER_TOK = 4.0
 STORE = Path("/tmp/opencode") / f"mem0ev_{int(time.time())}"
@@ -36,7 +36,7 @@ def main() -> int:
     from mem0 import Memory
 
     data = json.loads(DATA.read_text())
-    questions = [next(x for x in data if x["question_type"] == want) for want in PICK]
+    questions = data[:N]
 
     results = []
     for qi, q in enumerate(questions):
@@ -99,6 +99,7 @@ def main() -> int:
     rs = sum(1 for r in results if r["substr_hit"]) / len(results)
     total_ing = sum(r["ingest_s"] for r in results)
     OUT.mkdir(exist_ok=True)
+    outname = f"pilot_evidence_n{len(results)}.json"
     out = {
         "provenance": {
             "model": MODEL, "server": BASE, "ctx": 32768, "embedder": EMB,
@@ -114,7 +115,7 @@ def main() -> int:
         "extrapolation_500q_h": round(total_ing / N * 500 / 3600, 1),
         "results": results,
     }
-    (OUT / "pilot_evidence_n5.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
+    (OUT / outname).write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"R@5 evidence (n={N}) = {r5:.2f} | substr = {rs:.2f} "
           f"| ingest {total_ing:.0f}s | 50q ~{out['extrapolation_50q_min']}min "
           f"| 500q ~{out['extrapolation_500q_h']}h")
