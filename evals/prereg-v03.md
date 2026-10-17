@@ -54,7 +54,8 @@ Reasoning base (independent, not anchored on Lumín's): full-500 had ~948 add-ca
 - evidence-R@5 @1200 (singles): expected 0.90–0.96 — empty collection = guaranteed miss, so R@5 ≈ 1 − empty_rate; the unmasked truth will be visibly LOWER than 0.992.
 - evidence-R@5 @2000: expected 0.99–1.00.
 - server continuity: no restart between (b1)/(b2) — confirmed (up since 21:38, both runs on the same process; only delta = max_tokens).
-- Masking-verdict rule (pre-committed): empty@1200 ≤2% → masking hypothesis REJECTED; ≥5% → CONFIRMED; 2–4% → PARTIAL (both effects).
+- Masking-verdict rule (pre-committed): empty@1200 ≤2% → masking hypothesis REJECTED; ≥5% → CONFIRMED; 2–4% → PARTIAL = hypothesis NEITHER confirmed NOR rejected; requires a third slice with different redundancy structure; NOT to be read as "partially works" (definition fixed pre-finish per Lumín).
+- DUAL COUNTER RULE (per Lumín): empty collections split into `of_which_truncation` (should drop to ~0 at 2000) vs `of_which_malformed` (expected ~1% remains, max_tokens does not cure it). Masking verdict is computed on the TRUNCATION SUBSET only — the malformed class must not contaminate the hypothesis test. Implementation: (b1) post-classifies parse errors from the run log by char offset (≥4000 = truncation-class); (b2) classifies live: parse failure with finish_reason=="length" → truncation-class, otherwise → malformed-class.
 
 ## RUN-START SNAPSHOT (fixed at launch, before results — full-500 run)
 - run_started: 2026-10-17T12:57Z; prereg bound expectation committed pre-start: 6f44afc

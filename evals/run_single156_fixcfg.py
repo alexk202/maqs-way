@@ -24,6 +24,7 @@ EMB = "text-embedding-nomic-embed-text-v1.5"
 STORE = f"/tmp/opencode/mem0single156_{int(time.time())}"
 N = 156  # 70 user + 56 assistant + 30 preference
 finish_reasons = Counter()
+parse_failures = Counter()  # dual counter per Lumín: truncation-class vs malformed-class
 
 
 def patch_llm_client(m):
@@ -33,7 +34,17 @@ def patch_llm_client(m):
     def wrapped(*a, **kw):
         resp = orig(*a, **kw)
         try:
-            finish_reasons[resp.choices[0].finish_reason] += 1
+            fr = resp.choices[0].finish_reason
+            finish_reasons[fr] += 1
+            content = resp.choices[0].message.content or ""
+            try:
+                json.loads(content)
+            except Exception:
+                # parse will fail downstream too — classify NOW by finish_reason
+                if fr == "length":
+                    parse_failures["truncation_class"] += 1
+                else:
+                    parse_failures["malformed_class"] += 1
         except Exception:
             finish_reasons["unknown"] += 1
         return resp
@@ -95,6 +106,7 @@ def main():
             "checkpoint": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "completed": len(results), "of": N,
             "finish_reasons": dict(finish_reasons),
+        "parse_failures": dict(parse_failures),
             "results": results,
         }, indent=2, ensure_ascii=False))
 
@@ -106,6 +118,7 @@ def main():
     print(f"empty collections: {empties}/{len(results)}")
     print(f"finish_reason: {dict(finish_reasons)} | length share: "
           f"{length_stops}/{total_calls} = {length_stops/max(1,total_calls)*100:.1f}%")
+    print(f"parse failures (dual counter): {dict(parse_failures)}")
     out = {
         "provenance": {
             "model": MODEL, "server": "http://127.0.0.1:8085/v1", "ctx": 32768,
@@ -120,6 +133,7 @@ def main():
         "R_at_5_evidence": r5,
         "empty_collections": empties,
         "finish_reasons": dict(finish_reasons),
+        "parse_failures": dict(parse_failures),
         "results": results,
     }
     (OUT / "pilot_evidence_single156_fixcfg.json").write_text(
