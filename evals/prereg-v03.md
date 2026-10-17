@@ -52,6 +52,15 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - expectation in one line: ожидаем ~[0.90,1.00], потому что oracle-подмножество содержит только свидетельские сессии, на 49/50 уже измерено 0.98, задача прогона — сузить CI, а не открыть новую метрику
 - snapshot written at: 4/500 completed, 4/4 hits, zero misses (labeled at-run-start, NOT posthoc — no result exists yet beyond this snapshot)
 
+## FINISH LABELS (pre-committed BEFORE the number, per Lumín 17.10)
+- report name: **full-500-bound-expectation-at-start-snapshot** — prereg: 6f44afc (before start; bound [0.90,1.00] under oracle-subset) + snapshot: bd2ca0d (at-run-start; t+10min; env-provenance only). Two labels, two times; neither pretends to be the other.
+- prereg_expectation: **present** — quality of the prereg does not depend on guessing right; it was checkable and before the number. Always.
+- outcome_vs_prereg: `within | outside` — to be filled at finish. NOT a verdict on the prereg.
+- if outside: explanation recorded pre-number (this block is that place).
+- band_width_note: band [0.90,1.00] spans 50 pts at n=500 — a hit is WEAK evidence, band_width_note mandatory, do not present as victory.
+- gpu-nondet note: reruns may differ at the third decimal (0.98 vs 0.99) — not a signal; no third-decimal comparisons between full-500 and stratified-50.
+- prereg_selection: verified (whole dataset in committed order — machine-checkable, Lumín confirmed).
+
 ## Required env provenance per number (no number without it)
 {model_id, quantization, context_len, runner, date, seeds, dataset_commit}
 
