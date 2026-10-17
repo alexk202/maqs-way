@@ -1,0 +1,21 @@
+{
+  "$id": "https://maqs.dev/schemas/conditions-0.3.0.json",
+  "title": "MAQS-Way measurement conditions block (mandatory for any measurement record)",
+  "version": "0.3.0",
+  "lesson": "Three times in two days (scope, gate_target_basis, haystack_condition) a measurement lacked an explicit conditions block. This schema makes it structural, not vigilance.",
+  "required": ["slice", "haystack", "n", "metric_type", "prereg_ref", "prereg_selection", "prereg_expectation"],
+  "fields": {
+    "slice": "which dataset slice (e.g. 'temporal-only first-50', 'stratified-50 13/13/8/7/6/3', 'full-500')",
+    "haystack": "haystack condition: 'oracle-subset' | 'full-haystack' | 'single-session'",
+    "n": "number of evaluated questions/items (int > 0)",
+    "metric_type": "e.g. 'evidence-session R@5' | 'answer-substring' | 'generation+judge' | 'temporal answer-accuracy'",
+    "prereg_ref": "path to the pre-registration entry (file#anchor)",
+    "prereg_selection": "verified | posthoc — did the run use the selection exactly as pre-registered?",
+    "prereg_expectation": "verified | mismatch | posthoc — was the numeric expectation interpretable under the run's conditions?",
+    "optional": ["prereg_mismatch_note", "statistical_note", "system_provenance"]
+  },
+  "prereg_selfconsistency": {
+    "rule": "A prereg expectation line MUST bind its range to its condition: 'expected <range> under <condition>'. A range without a bound condition is RED before the GPU is spent (pre-run gate, evals/check_conditions.py).",
+    "rationale": "prereg-internal contradiction (expected_haystack: oracle vs expected_range_basis: full-haystack) is catchable BEFORE the run — cheaper than a post-hoc label."
+  }
+}
