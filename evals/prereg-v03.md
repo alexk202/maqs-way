@@ -60,6 +60,7 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - band_width_note: band [0.90,1.00] spans 50 pts at n=500 — a hit is WEAK evidence, band_width_note mandatory, do not present as victory.
 - gpu-nondet note: reruns may differ at the third decimal (0.98 vs 0.99) — not a signal; no third-decimal comparisons between full-500 and stratified-50.
 - prereg_selection: verified (whole dataset in committed order — machine-checkable, Lumín confirmed).
+- OUTCOME (filled at finish 2026-10-17T20:22Z, run 12:57→20:22): evidence-R@5 = 0.992 (496/500), Wilson 95% CI [0.980, 0.997] → **outcome_vs_prereg: within** ([0.90, 1.00]); CI tightened exactly as pre-registered ([0.895,0.997]@n50 → [0.980,0.997]@n500). substr 0.184 — inside [0.10,0.30]. Cost: 53.4s/q, 7.4h wall (faster than 9h estimate). band_width_note stands: within-band hit = weak evidence, not a victory. gpu-nondet note stands: no third-decimal comparisons vs 0.98. Four misses named: "Manolo García" (assistant), "Revolution Hall" (assistant), "The Glass Menagerie" (user), "55-inch" (user). SIGNAL (2nd occurrence — no longer noise): named-entity answers (play title, person name, venue) now 2/4 misses across slices; hypothesis "rare named entities embed weakly" upgraded to investigate-next, not auto-fix. Results evidence: evals/results/pilot_evidence_n500.json.
 
 ## Required env provenance per number (no number without it)
 {model_id, quantization, context_len, runner, date, seeds, dataset_commit}
