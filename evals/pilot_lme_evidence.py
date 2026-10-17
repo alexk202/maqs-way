@@ -23,7 +23,28 @@ EMB_BASE = os.environ.get("PILOT_EMB_BASE", "http://127.0.0.1:1449/v1")
 EMB_KEY = os.environ.get("PILOT_EMB_KEY", "local-smoke")
 DATA = Path(__file__).resolve().parent / "datasets" / "longmemeval" / "longmemeval_oracle.json"
 OUT = Path(__file__).resolve().parent / "results"
-N = int(os.environ.get("PILOT_N", "50"))  # normative pass: first N in committed dataset order (fixed pre-run, no selection)
+N = int(os.environ.get("PILOT_N", "50"))
+MODE = os.environ.get("PILOT_MODE", "first50")  # first50 | stratified
+# stratified: largest-remainder allocation of N over dataset q_type
+# distribution, first-k-per-type in committed order (deterministic, pre-registered)
+
+
+def select_questions(data, n, mode):
+    if mode == "first50":
+        return data[:n]
+    from collections import Counter
+    dist = Counter(x["question_type"] for x in data)
+    alloc = {t: int(n * c / len(data)) for t, c in dist.items()}
+    rem = n - sum(alloc.values())
+    for t in sorted(dist, key=lambda t: (n * dist[t] / len(data)) % 1, reverse=True)[:rem]:
+        alloc[t] += 1
+    out, seen = [], Counter()
+    for x in data:
+        t = x["question_type"]
+        if seen[t] < alloc.get(t, 0):
+            out.append(x)
+            seen[t] += 1
+    return out
 CTX_LIMIT = 24000
 CHARS_PER_TOK = 4.0
 STORE = Path("/tmp/opencode") / f"mem0ev_{int(time.time())}"
@@ -36,7 +57,7 @@ def main() -> int:
     from mem0 import Memory
 
     data = json.loads(DATA.read_text())
-    questions = data[:N]
+    questions = select_questions(data, N, MODE)
 
     results = []
     for qi, q in enumerate(questions):
@@ -99,13 +120,14 @@ def main() -> int:
     rs = sum(1 for r in results if r["substr_hit"]) / len(results)
     total_ing = sum(r["ingest_s"] for r in results)
     OUT.mkdir(exist_ok=True)
-    outname = f"pilot_evidence_n{len(results)}.json"
+    outname = f"pilot_evidence_n{len(results)}{'_stratified' if MODE == 'stratified' else ''}.json"
     out = {
         "provenance": {
             "model": MODEL, "server": BASE, "ctx": 32768, "embedder": EMB,
             "mem0": "0724291b",
             "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
             "metric": "1a evidence-session retrieval R@5 (no generation)",
+            "selection": MODE,
             "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "n": N, "label": "n=5 pilot, NOT normative, single-point",
         },

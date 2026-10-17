@@ -1,0 +1,2429 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
+    "metric": "1a evidence-session retrieval R@5 (no generation)",
+    "selection": "stratified",
+    "date": "2026-10-17T07:36:13+00:00",
+    "n": 50,
+    "label": "n=5 pilot, NOT normative, single-point"
+  },
+  "R_at_5_evidence": 0.98,
+  "substr_rate": 0.16,
+  "ingest_total_s": 2899.1,
+  "extrapolation_50q_min": 48.3,
+  "extrapolation_500q_h": 8.1,
+  "results": [
+    {
+      "q_id": "gpt4_2655b836",
+      "q_type": "temporal-reasoning",
+      "answer": "GPS system not functioning correctly",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 66.7,
+      "retrieve_s": 0.0,
+      "tagged": 34,
+      "top5": [
+        {
+          "id": "7fa26a6d-1b6e-45b7-b1e6-b84f66ac7639",
+          "sessions": [
+            "answer_4be1b6b4_3"
+          ],
+          "text": "User recently had an issue with their car's GPS system on 3/22 and had to take i"
+        },
+        {
+          "id": "b65d2441-8d87-483a-8d79-f6ca951bc177",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is considering getting a ceramic coating, paint correction, or interior det"
+        },
+        {
+          "id": "a4d12742-8ddc-47f1-b847-e98dc7cf1f29",
+          "sessions": [
+            "answer_4be1b6b4_2"
+          ],
+          "text": "User is happy with their new car accessories and is thinking about getting a car"
+        },
+        {
+          "id": "e46fbbd0-e202-4a03-a2b2-bef2b6f0fd32",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is thinking of getting a car wax and detailing done before their trip to pr"
+        },
+        {
+          "id": "db6c104b-ab57-4df3-a1c0-aaae421c6dec",
+          "sessions": [
+            "answer_4be1b6b4_1"
+          ],
+          "text": "User is planning to get a car wax and detailing done before their trip to protec"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2487a7cb",
+      "q_type": "temporal-reasoning",
+      "answer": "'Data Analysis using Python' webinar",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 56.1,
+      "retrieve_s": 0.0,
+      "tagged": 23,
+      "top5": [
+        {
+          "id": "8c72a371-affd-41a8-b20a-c93193b50d66",
+          "sessions": [
+            "answer_1c6b85ea_1"
+          ],
+          "text": "User has been attending various workshops and lectures, including the workshop o"
+        },
+        {
+          "id": "43050355-cf75-44e6-9eb2-9df46b308969",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is considering using Tableau or Power BI to create a dashboard to track key"
+        },
+        {
+          "id": "960173b7-2b84-4be1-bb1c-3170f8e5233c",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User will also explore their Python APIs and documentation to see which one feel"
+        },
+        {
+          "id": "1bb2bad9-b6b7-46e7-bd4f-befa457b7cff",
+          "sessions": [
+            "answer_1c6b85ea_1"
+          ],
+          "text": "User is looking for online resources and courses that can help them improve thei"
+        },
+        {
+          "id": "6b13faa0-b1d0-425f-8965-efae97ef847b",
+          "sessions": [
+            "answer_1c6b85ea_2"
+          ],
+          "text": "User is thinking of using Python to connect to the data source and then create t"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_76048e76",
+      "q_type": "temporal-reasoning",
+      "answer": "bike",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 50.5,
+      "retrieve_s": 0.0,
+      "tagged": 21,
+      "top5": [
+        {
+          "id": "538c0c74-2546-4bc0-828f-9b50f0ba28a1",
+          "sessions": [
+            "answer_b535969f_1"
+          ],
+          "text": "User recently had to take their bike in for repairs, which made them realize how"
+        },
+        {
+          "id": "077db2de-bb2d-4307-8495-6ac44f4cd615",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "User's bike was repaired in mid-February due to gear issues, but it's been runni"
+        },
+        {
+          "id": "ce87a61d-440a-4207-8219-18d5a14984bd",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "The Kuat Transfer has a Pivot System that provides excellent bike protection, in"
+        },
+        {
+          "id": "18d7fe8a-aefa-429c-bd7a-c136e380b4b0",
+          "sessions": [
+            "answer_b535969f_2"
+          ],
+          "text": "User is considering a hitch-mounted bike rack for their Toyota Corolla, specific"
+        },
+        {
+          "id": "f8153908-be22-418b-a182-923555e97652",
+          "sessions": [
+            "answer_b535969f_1"
+          ],
+          "text": "User recently washed their Corolla on Monday, February 27th, after not doing so "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_2312f94c",
+      "q_type": "temporal-reasoning",
+      "answer": "Samsung Galaxy S22",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 81.8,
+      "retrieve_s": 0.0,
+      "tagged": 8,
+      "top5": [
+        {
+          "id": "ca3245d2-2d83-4997-8a23-df7f0f97c21e",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User recently got a new Samsung Galaxy S22 from Best Buy and is excited to captu"
+        },
+        {
+          "id": "5cee0da1-9a60-463f-8d87-3f33897cb3ff",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning to use their new phone to track fitness goals and capture stunn"
+        },
+        {
+          "id": "4740eff4-4f21-44cf-a209-10c736f3255a",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning to use a portable power bank, Anker PowerCore 20000, to keep de"
+        },
+        {
+          "id": "5218a82e-63af-4e50-8c0d-94b5198984ee",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning a trip to Hawaii and wants to ensure their new phone stays char"
+        },
+        {
+          "id": "77d48bea-3001-4df9-adda-2f97f671a1ef",
+          "sessions": [
+            "answer_5328c3c2_1"
+          ],
+          "text": "User is planning to visit the Haleakala National Park on Maui and wants to know "
+        }
+      ]
+    },
+    {
+      "q_id": "0bb5a684",
+      "q_type": "temporal-reasoning",
+      "answer": "7 days. 8 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 61.1,
+      "retrieve_s": 0.0,
+      "tagged": 23,
+      "top5": [
+        {
+          "id": "09779172-90e1-4bf2-a7f1-7cc4d70af608",
+          "sessions": [
+            "answer_e936197f_1"
+          ],
+          "text": "User attended a workshop on 'Effective Communication in the Workplace' on Januar"
+        },
+        {
+          "id": "d9aeee63-097c-46cf-aef7-67663af8eb1d",
+          "sessions": [
+            "answer_e936197f_1"
+          ],
+          "text": "User is reflecting on the workshop they attended on 'Effective Communication in "
+        },
+        {
+          "id": "cf95213d-e7b7-4bee-8ab5-958b901840b0",
+          "sessions": [
+            "answer_e936197f_2"
+          ],
+          "text": "User is preparing for an upcoming team meeting on January 17th and wants to prac"
+        },
+        {
+          "id": "cf812a7e-7d71-4a56-ae13-e628793360b0",
+          "sessions": [
+            "answer_e936197f_2"
+          ],
+          "text": "User is preparing for an upcoming team meeting and wants to make sure they're we"
+        },
+        {
+          "id": "378a7744-08ad-4f2b-9da4-95295b89de43",
+          "sessions": [
+            "answer_e936197f_1"
+          ],
+          "text": "User is preparing for an upcoming meeting with their team and wants to make sure"
+        }
+      ]
+    },
+    {
+      "q_id": "08f4fc43",
+      "q_type": "temporal-reasoning",
+      "answer": "30 days. 31 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 63.3,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "fbeaabbd-ff7a-4dfa-9e4d-ab3fa6205aa6",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was recommended to confirm the details of the soup kitchen before going, in"
+        },
+        {
+          "id": "ac1193b2-7ff0-4d4a-8a4f-b759d4fe407a",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was provided with information about the types of housing and shelter servic"
+        },
+        {
+          "id": "def93254-8605-4a45-aa58-d32ac838fc24",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was provided with information about the entrepreneurship training program p"
+        },
+        {
+          "id": "cbd82057-2011-4938-b0a3-f7fd2c35ffc2",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User is interested in learning more about the housing and shelter services provi"
+        },
+        {
+          "id": "9839cfef-842a-4c16-9d72-bb1f6cd570f9",
+          "sessions": [
+            "answer_6ea1541e_1"
+          ],
+          "text": "User was provided with information about the job training and education services"
+        }
+      ]
+    },
+    {
+      "q_id": "2c63a862",
+      "q_type": "temporal-reasoning",
+      "answer": "14 days. 15 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 71.7,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "592f15fe-2869-4551-a306-a95c8b0650d4",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User has been working with a real estate agent named Rachel to find a home that "
+        },
+        {
+          "id": "50d31e11-e9e8-4d7b-87c6-e48f01117edd",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User is considering making an offer on a house they saw on March 1st and is look"
+        },
+        {
+          "id": "6e646cce-a04e-4438-9308-fc260649f9e7",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User is planning to make an offer of $320,000 on the house they saw on March 1st"
+        },
+        {
+          "id": "28f405b4-2411-40ff-bd0b-be3985422ac2",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "Assistant wished the user good luck and reminded them to stay patient and flexib"
+        },
+        {
+          "id": "15944d75-cbe7-43c2-95e3-5263c2560970",
+          "sessions": [
+            "answer_d39b7977_2"
+          ],
+          "text": "User is considering neighborhoods within a 30-minute drive from their office in "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_385a5000",
+      "q_type": "temporal-reasoning",
+      "answer": "Tomatoes",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 62.1,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "64bf9372-efdf-47e5-8b2c-93c39630bdfe",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "A hybrid approach of individual stem ties and a twine grid can provide comprehen"
+        },
+        {
+          "id": "2e553c1b-db28-4557-88f3-7fb9d34b5a3f",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "User is using a mix of peat moss, vermiculite, and perlite for their potting soi"
+        },
+        {
+          "id": "a59ddffe-4266-4ef8-807b-3b37320e84db",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "A mix of peat moss, vermiculite, and perlite is a good starting point for seedli"
+        },
+        {
+          "id": "9ca3d8d7-29c7-4322-9b58-805b9369f2ff",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "User is thinking of using a combination of stakes and twine to provide support f"
+        },
+        {
+          "id": "1c55be5d-925d-4d5f-b2c6-a0f0f4c192e5",
+          "sessions": [
+            "answer_7a4a93f1_2"
+          ],
+          "text": "User is planning to transplant their seedlings, including marigolds, into larger"
+        }
+      ]
+    },
+    {
+      "q_id": "2a1811e2",
+      "q_type": "temporal-reasoning",
+      "answer": "21 days. 22 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 55.5,
+      "retrieve_s": 0.0,
+      "tagged": 23,
+      "top5": [
+        {
+          "id": "2f9afce2-40c1-4f77-9584-9783d86c0426",
+          "sessions": [
+            "answer_1cc3cd0c_2"
+          ],
+          "text": "User just got back from Sunday mass at St. Mary's Church on March 19th where Fat"
+        },
+        {
+          "id": "2bdae5dc-419f-4f49-ab80-3ae0884741fd",
+          "sessions": [
+            "answer_1cc3cd0c_1"
+          ],
+          "text": "User is interested in learning more about other Hindu festivals or traditions, s"
+        },
+        {
+          "id": "2baf5a42-cbbc-4998-b826-7c1eebbf0711",
+          "sessions": [
+            "answer_1cc3cd0c_1"
+          ],
+          "text": "User is looking for some information on Hindu festivals and wants to know more a"
+        },
+        {
+          "id": "ace0d962-5a63-4e9b-91a1-fc0523b4312f",
+          "sessions": [
+            "answer_1cc3cd0c_2"
+          ],
+          "text": "User caught up with their cousin Emma at St. Mary's Church last Sunday and they "
+        },
+        {
+          "id": "d86c91d2-4b79-45d2-999a-5b05cec64dfe",
+          "sessions": [
+            "answer_1cc3cd0c_1"
+          ],
+          "text": "User is happy to help with recipes for traditional Indian sweets like gujiyas or"
+        }
+      ]
+    },
+    {
+      "q_id": "bbf86515",
+      "q_type": "temporal-reasoning",
+      "answer": "4 days.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 64.3,
+      "retrieve_s": 0.0,
+      "tagged": 21,
+      "top5": [
+        {
+          "id": "ac05d164-d606-4a85-b64f-c692749fd01c",
+          "sessions": [
+            "answer_b3763b6b_2"
+          ],
+          "text": "User attended the 'Rack Fest' event on June 18th in the nearby city."
+        },
+        {
+          "id": "bd6ef8fd-2989-4e15-b984-f0d8606b9ad2",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User attended the 'Turbocharged Tuesdays' event at the local racing track on Jun"
+        },
+        {
+          "id": "0dfb6f1d-4077-4e95-b625-4d5526cb5a16",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User is looking for advice on how to optimize their car's performance for auto r"
+        },
+        {
+          "id": "2469a70d-525d-4b94-adf7-109f70e3cac9",
+          "sessions": [
+            "answer_b3763b6b_1"
+          ],
+          "text": "User attended the Holi celebration at their local temple on February 26th and ha"
+        },
+        {
+          "id": "cb105e03-5892-468c-976f-f898278270db",
+          "sessions": [
+            "answer_b3763b6b_2"
+          ],
+          "text": "User is looking for information on track day events in the area and is consideri"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_5dcc0aab",
+      "q_type": "temporal-reasoning",
+      "answer": "white Adidas sneakers",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 5,
+      "add_calls": 5,
+      "ingest_s": 151.2,
+      "retrieve_s": 0.0,
+      "tagged": 42,
+      "top5": [
+        {
+          "id": "90c3a457-faff-45ac-9b78-f0fd39fc6e82",
+          "sessions": [
+            "answer_099c1b6c_1"
+          ],
+          "text": "User is glad they finally got around to cleaning their white Adidas sneakers las"
+        },
+        {
+          "id": "abdde46e-d35d-4392-be99-465f088d6225",
+          "sessions": [
+            "answer_099c1b6c_3"
+          ],
+          "text": "User is looking for tips on how to maintain their brown leather dress shoes, inc"
+        },
+        {
+          "id": "f2b2e78d-b99e-4bec-a71c-a2ab975bdd7a",
+          "sessions": [
+            "answer_099c1b6c_3"
+          ],
+          "text": "User is looking for general tips on maintaining their running shoes, including c"
+        },
+        {
+          "id": "771dc84b-38a1-4f6f-a27e-d01890b54c5e",
+          "sessions": [
+            "answer_099c1b6c_4"
+          ],
+          "text": "User needs to remember to take their brown leather dress shoes to the cobbler to"
+        },
+        {
+          "id": "0e7b0089-84c6-473c-a793-59f925acd5d6",
+          "sessions": [
+            "answer_099c1b6c_4"
+          ],
+          "text": "User needs to remember to take their brown leather dress shoes to the cobbler th"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_0b2f1d21",
+      "q_type": "temporal-reasoning",
+      "answer": "The malfunction of the stand mixer",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 74.0,
+      "retrieve_s": 0.0,
+      "tagged": 10,
+      "top5": [
+        {
+          "id": "88190bd7-584e-48ce-98fd-2f540af6e66d",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User had to take their stand mixer to a repair shop last month and it took two w"
+        },
+        {
+          "id": "eb047a37-a104-40e9-864c-ea7e6e0347c7",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User got their stand mixer back from the repair shop and had to bake a few thing"
+        },
+        {
+          "id": "0b291ebb-dd4e-4abe-a53e-11f72e284150",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User is looking for some new recipes to try out, especially desserts, and wants "
+        },
+        {
+          "id": "9dd7c1b7-3110-4c29-9a4a-d89e83c761c7",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User is thinking of making some desserts for their dinner party and wants to use"
+        },
+        {
+          "id": "4446ed2d-3257-4e56-b01d-d72c6e062b15",
+          "sessions": [
+            "answer_c4e5d969_2"
+          ],
+          "text": "User is thinking of organizing a dinner party soon and wants to make sure they h"
+        }
+      ]
+    },
+    {
+      "q_id": "f0853d11",
+      "q_type": "temporal-reasoning",
+      "answer": "14 days. 8 days (including the last day) is also acceptable.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 70.5,
+      "retrieve_s": 0.0,
+      "tagged": 30,
+      "top5": [
+        {
+          "id": "8e0b2773-246a-4d88-b2df-403d3904c523",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User participated in the 'Walk for Hunger' 5K walk on February 21st and is looki"
+        },
+        {
+          "id": "a015df53-0bcc-4082-8a89-b86878f86306",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User volunteered at the Coastal Cleanup event on March 7th and is interested in "
+        },
+        {
+          "id": "12683175-ed40-4b10-8fef-986ff37ca97b",
+          "sessions": [
+            "answer_932ea3bf_2"
+          ],
+          "text": "User volunteered at the Coastal Cleanup event on March 7th and is interested in "
+        },
+        {
+          "id": "6f48aa7c-cf10-4135-994a-2b875f77d0cc",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User recently volunteered at the Coastal Cleanup event on March 7th and is excit"
+        },
+        {
+          "id": "17800a86-4f6a-4917-a325-452303c216ba",
+          "sessions": [
+            "answer_932ea3bf_1"
+          ],
+          "text": "User is interested in projects that promote awareness, education, and action to "
+        }
+      ]
+    },
+    {
+      "q_id": "0a995998",
+      "q_type": "multi-session",
+      "answer": 3,
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 91.1,
+      "retrieve_s": 0.0,
+      "tagged": 44,
+      "top5": [
+        {
+          "id": "1c2c630f-680d-420b-bcab-3934ce0fb1d8",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User is interested in learning more about how to decide what to keep and what to"
+        },
+        {
+          "id": "b4ad5899-c7aa-47dc-81a0-acf0915060e0",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User is considering creating a capsule wardrobe with a set number of items that "
+        },
+        {
+          "id": "150f6f95-d97b-4bd3-a0e0-64518b5aeece",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User has a bunch of clothes that they haven't worn in a while, including some wi"
+        },
+        {
+          "id": "a216f173-1131-4e23-870d-c49a72979df5",
+          "sessions": [
+            "answer_afa9873b_2"
+          ],
+          "text": "User is considering using the 'hanger trick' to help decide what to keep and wha"
+        },
+        {
+          "id": "bf3ce248-bd88-4848-8d52-13ae4dcff64a",
+          "sessions": [
+            "answer_afa9873b_3"
+          ],
+          "text": "User is looking for tips on how to store out-of-season clothes, including using "
+        }
+      ]
+    },
+    {
+      "q_id": "6d550036",
+      "q_type": "multi-session",
+      "answer": 2,
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 4,
+      "add_calls": 4,
+      "ingest_s": 107.0,
+      "retrieve_s": 0.0,
+      "tagged": 43,
+      "top5": [
+        {
+          "id": "cc564072-f6f0-4d9a-9deb-384211d444bf",
+          "sessions": [
+            "answer_ec904b3c_1"
+          ],
+          "text": "User is working on a project to analyze customer data and identify trends and pa"
+        },
+        {
+          "id": "414415d3-c51b-49f9-8020-ed8f4e446e74",
+          "sessions": [
+            "answer_ec904b3c_1"
+          ],
+          "text": "User is considering using k-means clustering but is unsure about the number of c"
+        },
+        {
+          "id": "a6362cae-bc21-4747-a9bd-1dabed7deee5",
+          "sessions": [
+            "answer_ec904b3c_4"
+          ],
+          "text": "User is looking for suggestions on metrics and data points to focus on, includin"
+        },
+        {
+          "id": "8b7b4223-03aa-467a-8768-6a95289e0145",
+          "sessions": [
+            "answer_ec904b3c_4"
+          ],
+          "text": "Assistant suggests brainstorming ideas for metrics and data points to focus on, "
+        },
+        {
+          "id": "cdf97fd0-4280-4bba-9fb1-c32cdeb2b7f1",
+          "sessions": [
+            "answer_ec904b3c_2"
+          ],
+          "text": "User is working on a solo project for their Data Mining class and is interested "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_59c863d7",
+      "q_type": "multi-session",
+      "answer": "I have worked on or bought five model kits. The scales of the models are: Revell F-15 Eagle (scale not mentioned), Tamiya 1/48 scale Spitfire Mk.V, 1/16 scale German Tiger I tank, 1/72 scale B-29 bomber, and 1/24 scale '69 Camaro.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 4,
+      "add_calls": 4,
+      "ingest_s": 104.6,
+      "retrieve_s": 0.0,
+      "tagged": 27,
+      "top5": [
+        {
+          "id": "adfc5de8-752e-408b-90cb-13a9e960955c",
+          "sessions": [
+            "answer_593bdffd_2"
+          ],
+          "text": "User is looking for advice on painting metal surfaces for a model kit, specifica"
+        },
+        {
+          "id": "e8bb5ac0-aa26-46e1-880f-c9867c2a87cc",
+          "sessions": [
+            "answer_593bdffd_4"
+          ],
+          "text": "User is interested in learning more about photo-etching and wire details for the"
+        },
+        {
+          "id": "65ba4ac5-c798-4ddb-b186-84124cfba081",
+          "sessions": [
+            "answer_593bdffd_1"
+          ],
+          "text": "User is looking for tips on weathering techniques for their model kits, specific"
+        },
+        {
+          "id": "ee758bef-6c13-4f2d-b7c6-01f158840723",
+          "sessions": [
+            "answer_593bdffd_4"
+          ],
+          "text": "User is planning to work on a 1/72 scale B-29 bomber model kit and is looking fo"
+        },
+        {
+          "id": "a4bdf4a9-8fd9-4b7a-ad70-72e22f896ff2",
+          "sessions": [
+            "answer_593bdffd_3"
+          ],
+          "text": "User is looking for tips on weathering techniques for their model tanks, specifi"
+        }
+      ]
+    },
+    {
+      "q_id": "b5ef892d",
+      "q_type": "multi-session",
+      "answer": "8 days.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 80.6,
+      "retrieve_s": 0.0,
+      "tagged": 34,
+      "top5": [
+        {
+          "id": "448172a5-022f-424f-bd7a-35e52937e93b",
+          "sessions": [
+            "answer_a8b4290f_1"
+          ],
+          "text": "User is planning a trip to the Rocky Mountains in Colorado and is interested in "
+        },
+        {
+          "id": "17e1003b-f7ad-4879-a98f-47a6440d73b7",
+          "sessions": [
+            "answer_a8b4290f_3"
+          ],
+          "text": "User is planning to drive the White Rim Road and camp overnight at Murphy Hogbac"
+        },
+        {
+          "id": "6f795364-fc15-4bd1-973c-7b0ea8b474e6",
+          "sessions": [
+            "answer_a8b4290f_1"
+          ],
+          "text": "User is planning to visit the Maroon Bells Scenic Trail, which is a 10-mile out-"
+        },
+        {
+          "id": "d1c77a9e-e8b2-4852-8bf6-1c36e413dad8",
+          "sessions": [
+            "answer_a8b4290f_2"
+          ],
+          "text": "User is planning a 10-day trek in New Zealand in November and will be hiking on "
+        },
+        {
+          "id": "83101010-d105-4dc4-b5d8-7f0a06e5355d",
+          "sessions": [
+            "answer_a8b4290f_3"
+          ],
+          "text": "User is planning a day trip to Canyonlands National Park's Island in the Sky Dis"
+        }
+      ]
+    },
+    {
+      "q_id": "e831120c",
+      "q_type": "multi-session",
+      "answer": "3.5 weeks",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 50.5,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "74b09e02-aa6b-404d-9334-831890f2e4dd",
+          "sessions": [
+            "answer_86c505e7_1"
+          ],
+          "text": "User has had some crazy movie binges lately, including watching all 22 Marvel Ci"
+        },
+        {
+          "id": "05c613ea-1ee0-4ceb-a293-420ee444012b",
+          "sessions": [
+            "answer_86c505e7_2"
+          ],
+          "text": "User has watched the following Marvel movies: Iron Man, The Incredible Hulk, Iro"
+        },
+        {
+          "id": "2ec6dbd1-61b8-4b4f-9ed0-ab8b748d5af5",
+          "sessions": [
+            "answer_86c505e7_2"
+          ],
+          "text": "User has watched the following movies: Star Wars: Episode IX - The Rise of Skywa"
+        },
+        {
+          "id": "ef433797-bc7e-4dca-8be7-535f98c0e91a",
+          "sessions": [
+            "answer_86c505e7_2"
+          ],
+          "text": "User is planning to watch all the Star Wars movies, including Rogue One and Solo"
+        },
+        {
+          "id": "379e9ecf-2861-4703-9c91-cddeaa1e26a8",
+          "sessions": [
+            "answer_86c505e7_1"
+          ],
+          "text": "User can add a column for the month they watched each movie to track their viewi"
+        }
+      ]
+    },
+    {
+      "q_id": "3a704032",
+      "q_type": "multi-session",
+      "answer": 3,
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 91.1,
+      "retrieve_s": 0.0,
+      "tagged": 15,
+      "top5": [
+        {
+          "id": "af809e24-a6af-4ced-9d26-0e49800009b1",
+          "sessions": [
+            "answer_c2204106_2"
+          ],
+          "text": "User has a peace lily plant that they got from the nursery two weeks ago along w"
+        },
+        {
+          "id": "b1afb6f0-e1cd-40e2-beae-66ed82759a6e",
+          "sessions": [
+            "answer_c2204106_2"
+          ],
+          "text": "User is misting their peace lily 1-2 times a week to provide extra humidity, but"
+        },
+        {
+          "id": "15caf41c-69a8-4092-8aed-31edfa5058e2",
+          "sessions": [
+            "answer_c2204106_1"
+          ],
+          "text": "User is considering repotting their snake plant, which they got from their siste"
+        },
+        {
+          "id": "5c7b2913-5c5c-4d58-9889-ee6aa83c6a07",
+          "sessions": [
+            "answer_c2204106_2"
+          ],
+          "text": "User should water their peace lily when the top 1-2 inches of the soil feel dry "
+        },
+        {
+          "id": "2be1d595-387e-4aa9-8eb6-20a33acc4b22",
+          "sessions": [
+            "answer_c2204106_2"
+          ],
+          "text": "User is using a mixture of water and fertilizer when watering their peace lily, "
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_d84a3211",
+      "q_type": "multi-session",
+      "answer": "$185",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 4,
+      "add_calls": 4,
+      "ingest_s": 135.5,
+      "retrieve_s": 0.0,
+      "tagged": 12,
+      "top5": [
+        {
+          "id": "1628ef4a-eb7d-47f0-9761-df65837b63cb",
+          "sessions": [
+            "answer_2880eb6c_3"
+          ],
+          "text": "User has been keeping track of their bike mileage and is currently at 347 miles "
+        },
+        {
+          "id": "9619048c-e8f8-4391-a525-6f6b0a7f9c36",
+          "sessions": [
+            "answer_2880eb6c_1"
+          ],
+          "text": "User has been keeping track of their bike mileage, and as of last week, they've "
+        },
+        {
+          "id": "bfc0c700-68ad-4473-9c15-1db36178e80c",
+          "sessions": [
+            "answer_2880eb6c_1"
+          ],
+          "text": "User is planning to get their bike tuned up again, as it's been a month since th"
+        },
+        {
+          "id": "31a95a16-289f-4092-9c26-854123de3af9",
+          "sessions": [
+            "answer_2880eb6c_3"
+          ],
+          "text": "User is planning a road trip to the mountains in June and wants to make sure the"
+        },
+        {
+          "id": "f7415a5b-9ee2-417e-b955-e78cfc7990cd",
+          "sessions": [
+            "answer_2880eb6c_1"
+          ],
+          "text": "User is looking to get some tips on how to properly clean their bike."
+        }
+      ]
+    },
+    {
+      "q_id": "aae3761f",
+      "q_type": "multi-session",
+      "answer": "15 hours for getting to the three destinations (or 30 hours for the round trip)",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 104.0,
+      "retrieve_s": 0.0,
+      "tagged": 19,
+      "top5": [
+        {
+          "id": "9e14f571-667d-46a2-8770-ff5e1c74db12",
+          "sessions": [
+            "answer_526354c8_1"
+          ],
+          "text": "User has had great experiences with coastal trips, including a recent trip to th"
+        },
+        {
+          "id": "0246f945-05d0-4f0b-9adc-3b0a6c06b774",
+          "sessions": [
+            "answer_526354c8_1"
+          ],
+          "text": "User is comfortable with the driving distance to Tybee Island and is planning to"
+        },
+        {
+          "id": "6bc2c624-a7f4-4603-bf51-d3c1c5cde9f5",
+          "sessions": [
+            "answer_526354c8_3"
+          ],
+          "text": "User is planning a road trip to visit national parks in the western United State"
+        },
+        {
+          "id": "3978bbdf-f151-48ca-8dde-1fec3553e973",
+          "sessions": [
+            "answer_526354c8_1"
+          ],
+          "text": "The driving distance from the Outer Banks to Tybee Island is around 7-8 hours, d"
+        },
+        {
+          "id": "566b6628-3298-488b-b20e-0b36ffdafa8f",
+          "sessions": [
+            "answer_526354c8_1"
+          ],
+          "text": "User is thinking of stopping at scenic spots along the way, including Wilmington"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_f2262a51",
+      "q_type": "multi-session",
+      "answer": "I visited three different doctors: a primary care physician, an ENT specialist, and a dermatologist.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 98.4,
+      "retrieve_s": 0.0,
+      "tagged": 22,
+      "top5": [
+        {
+          "id": "33a2127c-f3bb-4924-8a8c-f4f7768e0348",
+          "sessions": [
+            "answer_55a6940c_3"
+          ],
+          "text": "User is asking their doctor questions about the colonoscopy procedure, including"
+        },
+        {
+          "id": "4f403411-a60b-4c1a-bc40-65d7042409e4",
+          "sessions": [
+            "answer_55a6940c_2"
+          ],
+          "text": "User is taking proactive steps to address their health concerns, including sched"
+        },
+        {
+          "id": "391461b8-0f14-4655-91ed-fbc24ea9026c",
+          "sessions": [
+            "answer_55a6940c_2"
+          ],
+          "text": "User is planning to ask their healthcare providers about additional tests or exa"
+        },
+        {
+          "id": "5dbb922a-9cab-49bf-a19a-b475ec500bae",
+          "sessions": [
+            "answer_55a6940c_2"
+          ],
+          "text": "User is taking proactive steps to address their health concerns, including follo"
+        },
+        {
+          "id": "aceead86-5447-470f-a9d4-a5a0c30ffaa4",
+          "sessions": [
+            "answer_55a6940c_3"
+          ],
+          "text": "User is having issues with their nasal spray prescription from Dr. Patel and wan"
+        }
+      ]
+    },
+    {
+      "q_id": "dd2973ad",
+      "q_type": "multi-session",
+      "answer": "2 AM",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 64.1,
+      "retrieve_s": 0.0,
+      "tagged": 29,
+      "top5": [
+        {
+          "id": "c13be054-aea1-426e-a570-ea58fcaaf7dc",
+          "sessions": [
+            "answer_f9de4602_2"
+          ],
+          "text": "User had a doctor's appointment at 10 AM last Thursday and got their blood test "
+        },
+        {
+          "id": "bb0ed906-95a8-485b-980c-4190ad8b96f2",
+          "sessions": [
+            "answer_f9de4602_2"
+          ],
+          "text": "User is feeling exhausted after their doctor's appointment on Thursday and spent"
+        },
+        {
+          "id": "f8bd94b0-8a34-48af-8450-5b01f8c36046",
+          "sessions": [
+            "answer_f9de4602_1"
+          ],
+          "text": "User is feeling sluggish today and thinks it's because they didn't get to bed un"
+        },
+        {
+          "id": "4a5889ef-88a0-4a5b-b7dd-14b0c1470388",
+          "sessions": [
+            "answer_f9de4602_2"
+          ],
+          "text": "User is feeling sluggish today and thinks it's because they didn't get to bed un"
+        },
+        {
+          "id": "cbbf6b2d-7619-4c5b-8849-c72075276224",
+          "sessions": [
+            "answer_f9de4602_2"
+          ],
+          "text": "User has a yoga class in the evening on Tuesday and wants to make sure they get "
+        }
+      ]
+    },
+    {
+      "q_id": "c4a1ceb8",
+      "q_type": "multi-session",
+      "answer": 3,
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 4,
+      "add_calls": 4,
+      "ingest_s": 105.2,
+      "retrieve_s": 0.0,
+      "tagged": 32,
+      "top5": [
+        {
+          "id": "e5caf195-d9fe-4927-9865-6d5f84be28ba",
+          "sessions": [
+            "answer_56d02cab_3"
+          ],
+          "text": "User is looking for new cocktail recipes and wants to try making a Whiskey Sour "
+        },
+        {
+          "id": "ad9e0209-39db-4057-998c-f3a18ee33403",
+          "sessions": [
+            "answer_56d02cab_1"
+          ],
+          "text": "Assistant suggested several unusual mixers and flavor combinations for refreshin"
+        },
+        {
+          "id": "00d9c2a8-3c37-429c-8fe4-2b1128ae4d2c",
+          "sessions": [
+            "answer_56d02cab_1"
+          ],
+          "text": "User is interested in learning more about infused simple syrups and how to infus"
+        },
+        {
+          "id": "e3fcf27c-d63e-40e5-b766-0502c905ad5f",
+          "sessions": [
+            "answer_56d02cab_4"
+          ],
+          "text": "User learned how to make flavored simple syrups in their mixology class, where t"
+        },
+        {
+          "id": "01e1f26d-7d26-4dd5-976f-63aa97ffc511",
+          "sessions": [
+            "answer_56d02cab_4"
+          ],
+          "text": "Assistant suggested several mixers and garnishes that would complement the fresh"
+        }
+      ]
+    },
+    {
+      "q_id": "gpt4_a56e767c",
+      "q_type": "multi-session",
+      "answer": "I attended four movie festivals.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 114.8,
+      "retrieve_s": 0.0,
+      "tagged": 20,
+      "top5": [
+        {
+          "id": "a66a2d9a-51af-4028-bb55-32fcd7ab239a",
+          "sessions": [
+            "answer_cf9e3940_3"
+          ],
+          "text": "User is considering the role of film festivals in promoting social change and ra"
+        },
+        {
+          "id": "a3cd14c1-b5e1-481b-a939-05367d050c73",
+          "sessions": [
+            "answer_cf9e3940_1"
+          ],
+          "text": "Assistant suggests attending film festivals like Sundance, TIFF, and SXSW for th"
+        },
+        {
+          "id": "ad0f73d1-3663-48a2-9430-93de3a3cdfd1",
+          "sessions": [
+            "answer_cf9e3940_1"
+          ],
+          "text": "User had a great conversation with the director of 'The Weight of Water' after a"
+        },
+        {
+          "id": "3320703f-0c99-4e9f-b632-672c3066a247",
+          "sessions": [
+            "answer_cf9e3940_3"
+          ],
+          "text": "User is interested in learning more about cinematography and filmmaking, having "
+        },
+        {
+          "id": "52d975d4-8544-4aa2-b494-d1029f401abb",
+          "sessions": [
+            "answer_cf9e3940_1"
+          ],
+          "text": "User is interested in learning more about cinematography and filmmaking, having "
+        }
+      ]
+    },
+    {
+      "q_id": "6cb6f249",
+      "q_type": "multi-session",
+      "answer": "17 days",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 29.7,
+      "retrieve_s": 0.0,
+      "tagged": 12,
+      "top5": [
+        {
+          "id": "176f834a-3878-46f4-b2c2-3f041b637747",
+          "sessions": [
+            "answer_a4204937_2"
+          ],
+          "text": "User has been making an effort to cut down on social media usage, including taki"
+        },
+        {
+          "id": "32199cec-df65-4663-9f11-c681ca7dd38b",
+          "sessions": [
+            "answer_a4204937_1"
+          ],
+          "text": "User found alternative breaks, such as taking a short walk or meditating, to rep"
+        },
+        {
+          "id": "f9b8f2b4-e737-4e5f-ae17-706272d39979",
+          "sessions": [
+            "answer_a4204937_1"
+          ],
+          "text": "User set a goal to limit Instagram usage to 15 minutes a day, Monday to Friday, "
+        },
+        {
+          "id": "a03d02b0-5f11-4d61-a447-edf4dfe24e24",
+          "sessions": [
+            "answer_a4204937_1"
+          ],
+          "text": "User identified triggers for Instagram usage during work breaks, including bored"
+        },
+        {
+          "id": "f01754d7-0cbb-4663-b1db-473a6c40029e",
+          "sessions": [
+            "answer_a4204937_1"
+          ],
+          "text": "User used Moment to track and limit Instagram usage, setting a daily time limit "
+        }
+      ]
+    },
+    {
+      "q_id": "6a1eabeb",
+      "q_type": "knowledge-update",
+      "answer": "25 minutes and 50 seconds (or 25:50)",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 67.8,
+      "retrieve_s": 0.0,
+      "tagged": 8,
+      "top5": [
+        {
+          "id": "db586f92-becc-4249-a279-e3388df70401",
+          "sessions": [
+            "answer_a25d4a91_1"
+          ],
+          "text": "User is looking for tips on how to improve their endurance for soccer, as they h"
+        },
+        {
+          "id": "f55b65d1-0c19-4d53-aeac-bc09739476ab",
+          "sessions": [
+            "answer_a25d4a91_1"
+          ],
+          "text": "User has been reading books on mindfulness and self-improvement, including 'The "
+        },
+        {
+          "id": "5983c292-4c73-407b-bfc5-589a289e7d2d",
+          "sessions": [
+            "answer_a25d4a91_1"
+          ],
+          "text": "User has been focusing on strengthening their core and legs, which has helped wi"
+        },
+        {
+          "id": "5c7b702a-190f-4198-be50-694749c32d4c",
+          "sessions": [
+            "answer_a25d4a91_1"
+          ],
+          "text": "User is planning to start journaling daily, aiming for 10-15 minutes a day, and "
+        },
+        {
+          "id": "6ade90de-6ed3-4364-8b28-a313e20592b2",
+          "sessions": [
+            "answer_a25d4a91_1"
+          ],
+          "text": "User is considering signing up for a tennis tournament on May 6th, and is lookin"
+        }
+      ]
+    },
+    {
+      "q_id": "6aeb4375",
+      "q_type": "knowledge-update",
+      "answer": "four",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 56.6,
+      "retrieve_s": 0.0,
+      "tagged": 26,
+      "top5": [
+        {
+          "id": "f3f909c5-f9b4-425c-b00b-e53a752937bb",
+          "sessions": [
+            "answer_3f9693b7_1"
+          ],
+          "text": "Assistant responds to User's experiences with Korean restaurants, highlighting t"
+        },
+        {
+          "id": "f7dbea48-c02e-4cd9-8cb1-0e31eb496cc7",
+          "sessions": [
+            "answer_3f9693b7_1"
+          ],
+          "text": "User shares their experiences with different Korean restaurants, including one w"
+        },
+        {
+          "id": "ccc64f6e-8fa8-4a94-8ef0-704084acda08",
+          "sessions": [
+            "answer_3f9693b7_1"
+          ],
+          "text": "User asks for recommendations on popular Korean noodle dishes that can be tried "
+        },
+        {
+          "id": "36b5579e-6168-4a7e-b09d-7d600ecdaa34",
+          "sessions": [
+            "answer_3f9693b7_2"
+          ],
+          "text": "User asks for recommendations on popular Korean noodle dishes that can be tried "
+        },
+        {
+          "id": "b3fe15ed-dd0c-4df5-97fa-2516192d1a30",
+          "sessions": [
+            "answer_3f9693b7_1"
+          ],
+          "text": "Assistant recommends popular Korean BBQ dishes that are easy to make in large qu"
+        }
+      ]
+    },
+    {
+      "q_id": "830ce83f",
+      "q_type": "knowledge-update",
+      "answer": "the suburbs",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 51.8,
+      "retrieve_s": 0.0,
+      "tagged": 19,
+      "top5": [
+        {
+          "id": "05c8d906-72b4-435f-8847-0e7ae5703976",
+          "sessions": [
+            "answer_0b1a0942_1"
+          ],
+          "text": "User is considering visiting Chicago to meet up with Rachel, who recently moved "
+        },
+        {
+          "id": "0f3e72e9-f5f5-4477-9e76-848b201acce8",
+          "sessions": [
+            "answer_0b1a0942_1"
+          ],
+          "text": "User is looking for recommendations for good neighborhoods to stay in when visit"
+        },
+        {
+          "id": "7b37692b-4056-431a-9231-1f36018e1fd2",
+          "sessions": [
+            "answer_0b1a0942_1"
+          ],
+          "text": "User is considering staying in The Loop, River North, Lincoln Park, Lakeview, Lo"
+        },
+        {
+          "id": "8216b072-4877-4674-a9e4-ef12a016bca2",
+          "sessions": [
+            "answer_0b1a0942_1"
+          ],
+          "text": "User is looking for information about the best times to visit Florida beach town"
+        },
+        {
+          "id": "ddbbf689-c077-4aba-afd5-60f68af81006",
+          "sessions": [
+            "answer_0b1a0942_2"
+          ],
+          "text": "User is planning to explore Fort Myers Beach and its surroundings, including San"
+        }
+      ]
+    },
+    {
+      "q_id": "852ce960",
+      "q_type": "knowledge-update",
+      "answer": "$400,000",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 48.2,
+      "retrieve_s": 0.0,
+      "tagged": 21,
+      "top5": [
+        {
+          "id": "fa2b595a-a577-44bd-8b24-cc01e0ffe516",
+          "sessions": [
+            "answer_3a6f1e82_1"
+          ],
+          "text": "User requests an estimate of closing costs for their specific situation, includi"
+        },
+        {
+          "id": "cdccd386-9c10-4f27-b734-b0e53c4fae4e",
+          "sessions": [
+            "answer_3a6f1e82_1"
+          ],
+          "text": "User estimates their monthly mortgage payment, property taxes, and insurance pre"
+        },
+        {
+          "id": "f83b3111-efb9-44eb-a5d3-84ba3d58af26",
+          "sessions": [
+            "answer_3a6f1e82_1"
+          ],
+          "text": "Assistant provides a breakdown of estimated closing costs, including title insur"
+        },
+        {
+          "id": "118297ba-cda2-4e37-91ee-390eb7a20ae8",
+          "sessions": [
+            "answer_3a6f1e82_2"
+          ],
+          "text": "Assistant provides tips on what to focus on when reviewing the policy documents,"
+        },
+        {
+          "id": "41f9423c-1e48-4711-a2af-59782895c5b9",
+          "sessions": [
+            "answer_3a6f1e82_2"
+          ],
+          "text": "Assistant helps the user estimate closing costs, including title insurance, escr"
+        }
+      ]
+    },
+    {
+      "q_id": "945e3d21",
+      "q_type": "knowledge-update",
+      "answer": "Three times a week.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 55.0,
+      "retrieve_s": 0.0,
+      "tagged": 22,
+      "top5": [
+        {
+          "id": "1392f1f5-79ff-45db-bde1-cc02a547ee77",
+          "sessions": [
+            "answer_6a4f8626_1"
+          ],
+          "text": "User's yoga practice has been helping them feel more grounded and centered, espe"
+        },
+        {
+          "id": "4cd92807-99a2-4580-a231-beec87149c91",
+          "sessions": [
+            "answer_6a4f8626_1"
+          ],
+          "text": "User has been trying to prioritize self-care and has been doing yoga twice a wee"
+        },
+        {
+          "id": "ee6622ec-932e-465e-897e-8f5b058e154e",
+          "sessions": [
+            "answer_6a4f8626_1"
+          ],
+          "text": "User is considering using mindfulness apps and guided meditations to help manage"
+        },
+        {
+          "id": "005260ec-58c0-4da0-b0a5-72df75c6c831",
+          "sessions": [
+            "answer_6a4f8626_1"
+          ],
+          "text": "User is looking for stress-reducing apps and meditation techniques to help manag"
+        },
+        {
+          "id": "21157cc2-d5fc-4ae3-b5b0-6a63f8f9e9f6",
+          "sessions": [
+            "answer_6a4f8626_1"
+          ],
+          "text": "User is trying to educate themselves more about anxiety and depression and is lo"
+        }
+      ]
+    },
+    {
+      "q_id": "d7c942c3",
+      "q_type": "knowledge-update",
+      "answer": "Yes.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 44.6,
+      "retrieve_s": 0.0,
+      "tagged": 20,
+      "top5": [
+        {
+          "id": "85532f75-e19e-409b-be6b-2334b5502f18",
+          "sessions": [
+            "answer_eecb10d9_1"
+          ],
+          "text": "User is using a new grocery list app to keep track of ingredients."
+        },
+        {
+          "id": "18e941cc-4b15-4916-b33e-6f21a371d533",
+          "sessions": [
+            "answer_eecb10d9_2"
+          ],
+          "text": "User is adding onions and bell peppers to their grocery list."
+        },
+        {
+          "id": "93cc6548-117c-424e-af03-6e0df83e83aa",
+          "sessions": [
+            "answer_eecb10d9_2"
+          ],
+          "text": "User is thinking of trying out some new recipes with the cauliflower gnocchi the"
+        },
+        {
+          "id": "bb711d8d-1d7a-4500-b2cf-6fc159d8cfc4",
+          "sessions": [
+            "answer_eecb10d9_1"
+          ],
+          "text": "User thanked the assistant for the recipe and helpful tips."
+        },
+        {
+          "id": "999adb60-3f7d-4f32-a081-e9ca1c82e665",
+          "sessions": [
+            "answer_eecb10d9_2"
+          ],
+          "text": "Assistant provided tips for keeping fresh herbs like cilantro and parsley fresh "
+        }
+      ]
+    },
+    {
+      "q_id": "71315a70",
+      "q_type": "knowledge-update",
+      "answer": "10-12 hours",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 45.8,
+      "retrieve_s": 0.0,
+      "tagged": 17,
+      "top5": [
+        {
+          "id": "2c7312e7-1823-4b0a-acb6-8a8d0d827698",
+          "sessions": [
+            "answer_c44b9df4_2"
+          ],
+          "text": "User has already spent 10-12 hours on their abstract ocean sculpture and is exci"
+        },
+        {
+          "id": "99f7f4f3-e1ad-4272-90d5-ae7f426e0af0",
+          "sessions": [
+            "answer_c44b9df4_2"
+          ],
+          "text": "User is thinking of creating a series of sculptures inspired by the ocean and wa"
+        },
+        {
+          "id": "aeb02e17-58da-4589-9e24-7a9b0a49e98a",
+          "sessions": [
+            "answer_c44b9df4_2"
+          ],
+          "text": "User is thinking of incorporating found ocean objects, like sea glass or beach s"
+        },
+        {
+          "id": "6caca70c-6550-495b-abfd-e4a8b8b82945",
+          "sessions": [
+            "answer_c44b9df4_2"
+          ],
+          "text": "User is planning to create a series of sculptures inspired by the ocean and is l"
+        },
+        {
+          "id": "79577eb1-526a-4eef-80f5-0d5ecf1229f3",
+          "sessions": [
+            "answer_c44b9df4_1"
+          ],
+          "text": "User wants to create a series of sculptures inspired by the ocean and is looking"
+        }
+      ]
+    },
+    {
+      "q_id": "89941a93",
+      "q_type": "knowledge-update",
+      "answer": "4",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 54.9,
+      "retrieve_s": 0.0,
+      "tagged": 24,
+      "top5": [
+        {
+          "id": "16e60a20-71da-4a8f-a6e2-fc5c56d21d32",
+          "sessions": [
+            "answer_e1403127_2"
+          ],
+          "text": "User is planning to book accommodations with bike storage in advance to ensure t"
+        },
+        {
+          "id": "e652a285-7801-4310-be80-dd793838a6b7",
+          "sessions": [
+            "answer_e1403127_2"
+          ],
+          "text": "User is thinking of upgrading their road bike's wheels to carbon fiber wheels, c"
+        },
+        {
+          "id": "4a612aae-d453-4942-a66b-41f48a9b0887",
+          "sessions": [
+            "answer_e1403127_1"
+          ],
+          "text": "User is planning a century ride and wants to know if their current road bike is "
+        },
+        {
+          "id": "61ede412-224c-46d4-9386-73d3178eee6e",
+          "sessions": [
+            "answer_e1403127_1"
+          ],
+          "text": "User has been doing long rides on the weekends and has already done 2,000 miles "
+        },
+        {
+          "id": "a2564ff8-729a-4225-a16a-65f67eb5558b",
+          "sessions": [
+            "answer_e1403127_1"
+          ],
+          "text": "User is researching bike computers and GPS devices, including Garmin Edge series"
+        }
+      ]
+    },
+    {
+      "q_id": "8a2466db",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 26.0,
+      "retrieve_s": 0.0,
+      "tagged": 12,
+      "top5": [
+        {
+          "id": "cfba68f8-b8fa-4865-a2b6-9b8599146510",
+          "sessions": [
+            "answer_edb03329"
+          ],
+          "text": "User is trying to learn more about some advanced settings for video editing with"
+        },
+        {
+          "id": "79b17d3b-908c-4487-bd76-0c2166240075",
+          "sessions": [
+            "answer_edb03329"
+          ],
+          "text": "User is looking for best practices and general guidelines for color grading a vi"
+        },
+        {
+          "id": "89e74f11-230c-435d-9cf1-37050bce04d3",
+          "sessions": [
+            "answer_edb03329"
+          ],
+          "text": "User is looking for tips on how to use the Curves panel to create a cinematic lo"
+        },
+        {
+          "id": "1b077883-7064-4de0-8c21-94e3aee1acce",
+          "sessions": [
+            "answer_edb03329"
+          ],
+          "text": "User wants to know more about the Lumetri Color Panel and how to use it to creat"
+        },
+        {
+          "id": "b435aa6f-37e9-4f37-ac4c-24eabdaf5cf8",
+          "sessions": [
+            "answer_edb03329"
+          ],
+          "text": "User is looking for bike shops and tour operators along the route that offer bik"
+        }
+      ]
+    },
+    {
+      "q_id": "06878be2",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions of Sony-compatible accessories or high-quality photography gear that can enhance their photography experience. They may not prefer suggestions of other brands' equipment or low-quality gear.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 25.5,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "0b16cb93-6e3b-439d-9bc1-bc4ef9429184",
+          "sessions": [
+            "answer_555dfb94"
+          ],
+          "text": "User is looking for a camera bag that can fit a lot of accessories, including le"
+        },
+        {
+          "id": "cf9f7ae3-e0ab-4a74-8216-429b5851953b",
+          "sessions": [
+            "answer_555dfb94"
+          ],
+          "text": "User is considering the following camera bag options: Peak Design's Everyday Bac"
+        },
+        {
+          "id": "71149e46-6d88-43ee-a2a7-c5e3423fa933",
+          "sessions": [
+            "answer_555dfb94"
+          ],
+          "text": "User is considering the following features in a camera bag: comfort, durability,"
+        },
+        {
+          "id": "90fc70af-fdf4-4da8-bc9e-bac31729a074",
+          "sessions": [
+            "answer_555dfb94"
+          ],
+          "text": "User is looking for a camera bag that has a lot of pockets and compartments to o"
+        },
+        {
+          "id": "41a7a45e-3fcb-4868-aaf7-db9405c977b2",
+          "sessions": [
+            "answer_555dfb94"
+          ],
+          "text": "User is considering the following camera bag options: Think Tank Photo's Urban D"
+        }
+      ]
+    },
+    {
+      "q_id": "75832dbd",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions related to recent research papers, articles, or conferences that focus on artificial intelligence in healthcare, particularly those that involve deep learning for medical image analysis. They would not be interested in general AI topics or those unrelated to healthcare.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 40.1,
+      "retrieve_s": 0.0,
+      "tagged": 12,
+      "top5": [
+        {
+          "id": "96183b88-cd9a-444a-957b-982ad1704e6b",
+          "sessions": [
+            "answer_d87a6ef8"
+          ],
+          "text": "User is interested in exploring advanced topics in deep learning for medical ima"
+        },
+        {
+          "id": "5b474bd7-4c99-49c8-ab8c-345158f40e02",
+          "sessions": [
+            "answer_d87a6ef8"
+          ],
+          "text": "User is looking for research papers and articles on explainable AI in medical im"
+        },
+        {
+          "id": "94e5b3cd-693b-45b0-b1d4-f14ec7822482",
+          "sessions": [
+            "answer_d87a6ef8"
+          ],
+          "text": "User is looking for research papers and articles on explainable AI in medical im"
+        },
+        {
+          "id": "02ed00e3-9350-4595-b5ce-ecf448ed0a70",
+          "sessions": [
+            "answer_d87a6ef8"
+          ],
+          "text": "User is looking for research papers and articles on explainable AI in medical im"
+        },
+        {
+          "id": "b1354365-36c6-41f0-aa43-4ff2aa7bc5bb",
+          "sessions": [
+            "answer_d87a6ef8"
+          ],
+          "text": "User is looking for research papers and articles on explainable AI in medical im"
+        }
+      ]
+    },
+    {
+      "q_id": "7161e7e2",
+      "q_type": "single-session-assistant",
+      "answer": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 27.3,
+      "retrieve_s": 0.0,
+      "tagged": 12,
+      "top5": [
+        {
+          "id": "209dea5a-8ddc-40b2-9b39-5e3990946826",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "A shift rotation sheet for GM social media agents was created with 7 agents: Adm"
+        },
+        {
+          "id": "3062763e-f067-416a-8ef6-5c63bea211d1",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "The shift rotation sheet is for a week starting on Sunday and ending on Saturday"
+        },
+        {
+          "id": "30d92613-d596-4fa0-bf2f-aa1890bee11b",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "Sunday: Admon (8 am - 4 pm), Magdy (12 pm - 8 pm), Ehab (4 pm - 12 am), Sara (12"
+        },
+        {
+          "id": "616956d0-19b0-4ce7-b50b-70f5326fbe4e",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "The shift rotation sheet has 4 shifts: 8 am - 4 pm, 12 pm - 8 pm, 4 pm - 12 am, "
+        },
+        {
+          "id": "7b84e199-798c-4923-a6e5-cf16b8f7fbd9",
+          "sessions": [
+            "answer_sharegpt_5Lzox6N_0"
+          ],
+          "text": "The shift rotation sheet has the following schedule for the week:"
+        }
+      ]
+    },
+    {
+      "q_id": "c4f10528",
+      "q_type": "single-session-assistant",
+      "answer": "Miss Bee Providore",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 25.4,
+      "retrieve_s": 0.0,
+      "tagged": 16,
+      "top5": [
+        {
+          "id": "5c75de5b-a84f-4fe4-b04b-9a062560cc2e",
+          "sessions": [
+            "answer_ultrachat_234453"
+          ],
+          "text": "The tea plantations in Bandung, such as Malabar Tea Plantation and Puncak Tea Ga"
+        },
+        {
+          "id": "47de5738-0a06-406a-a602-9e1d7d206e0a",
+          "sessions": [
+            "answer_ultrachat_234453"
+          ],
+          "text": "User is planning a trip to Bandung and wants to know about unique shopping exper"
+        },
+        {
+          "id": "e9ccc8c3-adaa-42c2-8e51-c620f703344d",
+          "sessions": [
+            "answer_ultrachat_234453"
+          ],
+          "text": "Original Dutch Tea House is a colonial-style tea house located in the heart of B"
+        },
+        {
+          "id": "13471dc4-dbd8-4626-b03e-ac7efbca4aa7",
+          "sessions": [
+            "answer_ultrachat_234453"
+          ],
+          "text": "Pasar Baru is Bandung's oldest and largest traditional market, selling everythin"
+        },
+        {
+          "id": "5b3f2f8b-c2b1-4768-b318-f8e56761e955",
+          "sessions": [
+            "answer_ultrachat_234453"
+          ],
+          "text": "Bandung has several active and dormant volcanoes, including Tangkuban Perahu and"
+        }
+      ]
+    },
+    {
+      "q_id": "89527b6b",
+      "q_type": "single-session-assistant",
+      "answer": "The Plesiosaur had a blue scaly body.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 17.4,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "6fd8c2e0-a645-47b8-961b-fe35ff12b19f",
+          "sessions": [
+            "answer_sharegpt_YkWn1Ne_0"
+          ],
+          "text": "The Plesiosaur was a dinosaur that lived in the oceans with a long neck and powe"
+        },
+        {
+          "id": "f6f03114-363c-4c82-8cff-8045f8e608c5",
+          "sessions": [
+            "answer_sharegpt_YkWn1Ne_0"
+          ],
+          "text": "The Amazing Adventures of Dinosaurs is a children's book about dinosaurs that in"
+        },
+        {
+          "id": "36d1bc1a-5619-411c-9254-20120117f95c",
+          "sessions": [
+            "answer_sharegpt_YkWn1Ne_0"
+          ],
+          "text": "The Pterodactyl was a flying dinosaur with large wings and a sharp beak to catch"
+        },
+        {
+          "id": "4fb09289-ed59-4a2a-a68d-0e50454f1274",
+          "sessions": [
+            "answer_sharegpt_YkWn1Ne_0"
+          ],
+          "text": "The T-Rex was a giant carnivorous dinosaur with sharp teeth and strong jaws that"
+        },
+        {
+          "id": "7dbc464e-8e0d-4d75-ae04-2d2b1f2353a1",
+          "sessions": [
+            "answer_sharegpt_YkWn1Ne_0"
+          ],
+          "text": "User wants to pretend to be an author and write a children's book about dinosaur"
+        }
+      ]
+    },
+    {
+      "q_id": "e9327a54",
+      "q_type": "single-session-assistant",
+      "answer": "The Sugar Factory at Icon Park.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 13.1,
+      "retrieve_s": 0.0,
+      "tagged": 6,
+      "top5": [
+        {
+          "id": "7639ac80-240e-46c9-9f20-191139468325",
+          "sessions": [
+            "answer_ultrachat_480665"
+          ],
+          "text": "User asked for recommendations for a fun dessert spot in Orlando and was suggest"
+        },
+        {
+          "id": "2deeacd7-d43b-4567-8a19-1fc670aa7925",
+          "sessions": [
+            "answer_ultrachat_480665"
+          ],
+          "text": "User asked for family-friendly dining options in Orlando and was recommended Too"
+        },
+        {
+          "id": "af1bbdec-ad0e-4088-ad57-745058633ceb",
+          "sessions": [
+            "answer_ultrachat_480665"
+          ],
+          "text": "User asked for more recommendations for fun and unique things to do in Orlando a"
+        },
+        {
+          "id": "87b2f4a2-3fe0-4a97-8e18-6b51fde5e668",
+          "sessions": [
+            "answer_ultrachat_480665"
+          ],
+          "text": "User expressed interest in visiting all the dessert spots in one night and was a"
+        },
+        {
+          "id": "fe10a069-bff8-4270-a6fa-086c2996b172",
+          "sessions": [
+            "answer_ultrachat_480665"
+          ],
+          "text": "User asked for recommendations on family-friendly activities in Orlando and was "
+        }
+      ]
+    },
+    {
+      "q_id": "4c36ccef",
+      "q_type": "single-session-assistant",
+      "answer": "Roscioli",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 15.6,
+      "retrieve_s": 0.0,
+      "tagged": 9,
+      "top5": [
+        {
+          "id": "34433aaa-d547-4c47-815a-b180d633411a",
+          "sessions": [
+            "answer_ultrachat_448704"
+          ],
+          "text": "User asked for recommendations for authentic Italian restaurants in Rome and was"
+        },
+        {
+          "id": "7cb59dc6-1e0d-4cdd-9d81-9bd32bc3f567",
+          "sessions": [
+            "answer_ultrachat_448704"
+          ],
+          "text": "User asked which restaurant is best for a romantic dinner and was recommended Ro"
+        },
+        {
+          "id": "c3401c95-9ae9-4939-a675-52072d779855",
+          "sessions": [
+            "answer_ultrachat_448704"
+          ],
+          "text": "User asked for suggestions for a good gelato spot in Rome and was given a list o"
+        },
+        {
+          "id": "4d9762ac-7acd-4d90-b205-6243fc09a8ab",
+          "sessions": [
+            "answer_ultrachat_448704"
+          ],
+          "text": "User asked to make a reservation at Roscioli for tomorrow evening at 7:00 pm but"
+        },
+        {
+          "id": "0e0225a4-a467-441b-b390-b35f7c2f22a6",
+          "sessions": [
+            "answer_ultrachat_448704"
+          ],
+          "text": "User asked if it's possible to visit all dessert spots in one night and was advi"
+        }
+      ]
+    },
+    {
+      "q_id": "6ae235be",
+      "q_type": "single-session-assistant",
+      "answer": "Atmospheric distillation, fluid catalytic cracking (FCC), alkylation, and hydrotreating.",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 27.4,
+      "retrieve_s": 0.0,
+      "tagged": 18,
+      "top5": [
+        {
+          "id": "67938d4c-1a83-4862-bdb0-655d732d409c",
+          "sessions": [
+            "answer_sharegpt_IUWQYGQ_0"
+          ],
+          "text": "Assistant explained the refining processes at Lake Charles, Lemont, and Corpus C"
+        },
+        {
+          "id": "7d549e24-3fb3-484f-bb02-72edeebff4f6",
+          "sessions": [
+            "answer_sharegpt_IUWQYGQ_0"
+          ],
+          "text": "User asked for refining processes at 3 CITGO Refineries"
+        },
+        {
+          "id": "51637e79-e61b-4de5-9f6f-231127a914aa",
+          "sessions": [
+            "answer_sharegpt_IUWQYGQ_0"
+          ],
+          "text": "Assistant provided 6 more recommendations to increase refinery yield, including "
+        },
+        {
+          "id": "81f6a700-9a4d-45f7-b12a-c25ea733abf4",
+          "sessions": [
+            "answer_sharegpt_IUWQYGQ_0"
+          ],
+          "text": "Assistant provided 12 recommendations to increase refinery yield, including proc"
+        },
+        {
+          "id": "5b1f643a-f3b2-4f5d-97b3-0c6d6aa2396e",
+          "sessions": [
+            "answer_sharegpt_IUWQYGQ_0"
+          ],
+          "text": "Assistant provided 6 ways to improve yield for cat cracker, including optimizati"
+        }
+      ]
+    },
+    {
+      "q_id": "e47becba",
+      "q_type": "single-session-user",
+      "answer": "Business Administration",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 17.3,
+      "retrieve_s": 0.0,
+      "tagged": 11,
+      "top5": [
+        {
+          "id": "e4abc786-59f1-421f-8b23-39fde8ccc6f2",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is considering using a cooler bag to transport meal prep containers to work"
+        },
+        {
+          "id": "7b72e1cf-9e2c-4891-9c1c-bed2d7e1b088",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is looking for meal prep bags, portion control containers, and meal prep ut"
+        },
+        {
+          "id": "6bd0b337-c7f0-4908-8876-7ed4a3ec8fc0",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is considering implementing a budget and tracking expenses to stay on top o"
+        },
+        {
+          "id": "0c378342-f428-4771-9ab7-23698d258769",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User plans to try out Mint and Personal Capital to track finances and stay on to"
+        },
+        {
+          "id": "3ec904a3-5171-4867-b905-df1a8ac9d0be",
+          "sessions": [
+            "answer_280352e9"
+          ],
+          "text": "User is interested in meal prep as a way to save time and money, and is looking "
+        }
+      ]
+    },
+    {
+      "q_id": "118b2229",
+      "q_type": "single-session-user",
+      "answer": "45 minutes each way",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 11.5,
+      "retrieve_s": 0.0,
+      "tagged": 4,
+      "top5": [
+        {
+          "id": "685e30dd-fb12-443d-b99a-b927d2f01a24",
+          "sessions": [
+            "answer_40a90d51"
+          ],
+          "text": "User listens to audiobooks during their 45-minute daily commute, which helps the"
+        },
+        {
+          "id": "d66a89e7-9b4a-41be-90f0-1f5394aa76e0",
+          "sessions": [
+            "answer_40a90d51"
+          ],
+          "text": "User's note-taking strategy involves actively engaging with the material, proces"
+        },
+        {
+          "id": "5fc39ae3-1ba8-4697-8192-ce2579b2fd2a",
+          "sessions": [
+            "answer_40a90d51"
+          ],
+          "text": "User takes notes while listening to audiobooks, especially for non-fiction books"
+        },
+        {
+          "id": "39fc35a8-12ed-4e17-8289-5645a24eb8d6",
+          "sessions": [
+            "answer_40a90d51"
+          ],
+          "text": "User notices that audiobooks are more engaging and memorable than e-books, possi"
+        }
+      ]
+    },
+    {
+      "q_id": "51a45a95",
+      "q_type": "single-session-user",
+      "answer": "Target",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 25.9,
+      "retrieve_s": 0.0,
+      "tagged": 16,
+      "top5": [
+        {
+          "id": "273ad9cf-4cf1-4faa-b420-010be1c42926",
+          "sessions": [
+            "answer_d61669c7"
+          ],
+          "text": "User is using the Cartwheel app from Target to save money on household items and"
+        },
+        {
+          "id": "15a84fdd-f74b-48b4-8925-fbbcec0bfb28",
+          "sessions": [
+            "answer_d61669c7"
+          ],
+          "text": "User is using the Cartwheel app to save money on household items and has found i"
+        },
+        {
+          "id": "20401855-00d9-4978-b07a-05633fa2275f",
+          "sessions": [
+            "answer_d61669c7"
+          ],
+          "text": "User thinks the Cartwheel app is user-friendly and easy to navigate, but wishes "
+        },
+        {
+          "id": "1a1cb656-9fe1-4b35-85a5-7818ce45ba75",
+          "sessions": [
+            "answer_d61669c7"
+          ],
+          "text": "User suggests that Cartwheel add a feature to sort offers by expiration date to "
+        },
+        {
+          "id": "21ee522c-1f6b-491d-821e-86ea3c89168d",
+          "sessions": [
+            "answer_d61669c7"
+          ],
+          "text": "User thinks the notification system in the Cartwheel app is decent but sometimes"
+        }
+      ]
+    },
+    {
+      "q_id": "58bf7951",
+      "q_type": "single-session-user",
+      "answer": "The Glass Menagerie",
+      "evidence_hit": false,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 43.4,
+      "retrieve_s": 0.0,
+      "tagged": 0,
+      "top5": []
+    },
+    {
+      "q_id": "1e043500",
+      "q_type": "single-session-user",
+      "answer": "Summer Vibes",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 23.8,
+      "retrieve_s": 0.0,
+      "tagged": 14,
+      "top5": [
+        {
+          "id": "75207bab-2b1e-4813-9146-a8c7fc07eadf",
+          "sessions": [
+            "answer_3e012175"
+          ],
+          "text": "User is interested in discovering new music and artists and has been listening t"
+        },
+        {
+          "id": "c31305bc-b04f-47c8-97a6-81fe5d4adcb3",
+          "sessions": [
+            "answer_3e012175"
+          ],
+          "text": "User has been enjoying a lot of music and podcasts lately and is looking for rec"
+        },
+        {
+          "id": "8bc1da5a-df79-4110-8540-b484aaaf811f",
+          "sessions": [
+            "answer_3e012175"
+          ],
+          "text": "User has been enjoying a lot of music and podcasts lately and is looking for rec"
+        },
+        {
+          "id": "4a636051-5a2c-4f19-aaca-192ddc4fe4c3",
+          "sessions": [
+            "answer_3e012175"
+          ],
+          "text": "User has been trying to get back into playing the guitar and is looking for YouT"
+        },
+        {
+          "id": "a1fceb5d-6b8f-49e5-9b84-69852a6cba1d",
+          "sessions": [
+            "answer_3e012175"
+          ],
+          "text": "User is looking for online resources to help improve their guitar skills and has"
+        }
+      ]
+    },
+    {
+      "q_id": "c5e8278d",
+      "q_type": "single-session-user",
+      "answer": "Johnson",
+      "evidence_hit": true,
+      "substr_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 13.3,
+      "retrieve_s": 0.0,
+      "tagged": 5,
+      "top5": [
+        {
+          "id": "adc787ac-f505-414e-b84d-0fcc05174485",
+          "sessions": [
+            "answer_f6168136"
+          ],
+          "text": "User should update their social media profiles on Instagram, Twitter, and Linked"
+        },
+        {
+          "id": "4b5328f1-5066-4f1e-99b8-1bd83a781fd3",
+          "sessions": [
+            "answer_f6168136"
+          ],
+          "text": "User should update their credit card information with their new name by calling "
+        },
+        {
+          "id": "13d9c2ab-26d6-4962-88f6-e9f0e6aa5962",
+          "sessions": [
+            "answer_f6168136"
+          ],
+          "text": "User needs to update their credit report with the three major credit bureaus (Ex"
+        },
+        {
+          "id": "99090cb4-47d4-497a-a3bd-e4636a8535fc",
+          "sessions": [
+            "answer_f6168136"
+          ],
+          "text": "User was promoted to team lead around March 3, 2025, and feels happy but overwhe"
+        },
+        {
+          "id": "39aa618d-be81-40cb-ad6d-dfb3880fdff1",
+          "sessions": [
+            "answer_f6168136"
+          ],
+          "text": "User needs to update their address with their health insurance provider by calli"
+        }
+      ]
+    },
+    {
+      "q_id": "6ade9755",
+      "q_type": "single-session-user",
+      "answer": "Serenity Yoga",
+      "evidence_hit": true,
+      "substr_hit": true,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 16.0,
+      "retrieve_s": 0.0,
+      "tagged": 8,
+      "top5": [
+        {
+          "id": "596b023d-2547-4f3b-aafe-2d81d91b01c3",
+          "sessions": [
+            "answer_9398da02"
+          ],
+          "text": "User is looking for ways to cultivate patience and presence in their daily life "
+        },
+        {
+          "id": "6a15897f-3c0b-4282-a9e7-90973ec3bafa",
+          "sessions": [
+            "answer_9398da02"
+          ],
+          "text": "User is looking for healthy brunch spots near Serenity Yoga and was recommended "
+        },
+        {
+          "id": "1f8d297e-7bb4-4a32-876b-9efb2bd32c77",
+          "sessions": [
+            "answer_9398da02"
+          ],
+          "text": "User is using the Down Dog app for their home yoga practice and enjoys the vinya"
+        },
+        {
+          "id": "6e2ce6f6-1296-4d93-886e-f576ebd8e9cf",
+          "sessions": [
+            "answer_9398da02"
+          ],
+          "text": "User is planning a self-care day and wants to do a morning yoga practice at home"
+        },
+        {
+          "id": "9a22e9a7-64a9-47aa-8bbe-83ecb27fddda",
+          "sessions": [
+            "answer_9398da02"
+          ],
+          "text": "User has started a Sunday morning yoga and brunch routine with their best friend"
+        }
+      ]
+    }
+  ]
+}
