@@ -45,6 +45,17 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - evidence-R@5 expected [0.90, 1.00] under oracle-subset, full-500 in committed order, evidence-session metric 1a (tightens the Wilson CI of the 0.98/49-50 point from [0.895,0.997] to ~[0.97,0.995]; NOT answer-accuracy, NOT SPEC §3.2 gate)
 - substr-rate expected [0.10, 0.30] under oracle-subset (paraphrase lower bound, transparency only)
 
+## EXPECTED NUMBERS — (b1)/(b2) predictions (agent's own, recorded while (b1) in flight, ~20/156)
+Reasoning base (independent, not anchored on Lumín's): full-500 had ~948 add-calls, 82 parse errors ≈ 8.6% call-level failure. Parse errors are TWO classes: truncation (char offsets ~4500-5000+) and genuine malformation (incl. "Expecting value: line 1 column 1" = empty response — that class does NOT depend on max_tokens). Single sessions are SHORT → fewer facts → shorter outputs → LESS truncation-prone than the multi-session-heavy average.
+- length-share @1200 (singles): expected 3–8%, center ~5% — LOWER than Lumín's 5–9% center 7%: short single-session outputs truncate less.
+- length-share @2000: expected 0–1%, center ~0%.
+- empty collections @1200 (singles): expected 4–10% of 156 (6–15 questions) — each single add-call failure = empty collection, call-rate ≈ question-rate; the masking-hypothesis test: if measured ≈0.8% → redundancy-masking hypothesis WRONG; if ~5–9% → CONFIRMED.
+- empty collections @2000: expected 0–3%, center ~1% — the malformation/empty-response class persists at 2000 (it is not truncation); Lumín's ≈0 (0–1%) is slightly optimistic on this point.
+- evidence-R@5 @1200 (singles): expected 0.90–0.96 — empty collection = guaranteed miss, so R@5 ≈ 1 − empty_rate; the unmasked truth will be visibly LOWER than 0.992.
+- evidence-R@5 @2000: expected 0.99–1.00.
+- server continuity: no restart between (b1)/(b2) — confirmed (up since 21:38, both runs on the same process; only delta = max_tokens).
+- Masking-verdict rule (pre-committed): empty@1200 ≤2% → masking hypothesis REJECTED; ≥5% → CONFIRMED; 2–4% → PARTIAL (both effects).
+
 ## RUN-START SNAPSHOT (fixed at launch, before results — full-500 run)
 - run_started: 2026-10-17T12:57Z; prereg bound expectation committed pre-start: 6f44afc
 - canon_sha_at_launch: 6f44afc (script + this prereg = the code that runs)
