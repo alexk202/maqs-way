@@ -45,6 +45,13 @@ before launch; single-point calibration either way (normative only after ≥2 sy
 - evidence-R@5 expected [0.90, 1.00] under oracle-subset, full-500 in committed order, evidence-session metric 1a (tightens the Wilson CI of the 0.98/49-50 point from [0.895,0.997] to ~[0.97,0.995]; NOT answer-accuracy, NOT SPEC §3.2 gate)
 - substr-rate expected [0.10, 0.30] under oracle-subset (paraphrase lower bound, transparency only)
 
+## RUN-START SNAPSHOT (fixed at launch, before results — full-500 run)
+- run_started: 2026-10-17T12:57Z; prereg bound expectation committed pre-start: 6f44afc
+- canon_sha_at_launch: 6f44afc (script + this prereg = the code that runs)
+- runner env: GT1-Mega local, python 3.12.2, jsonschema 4.23.0; llama-server :8085 Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf ctx 32768 Vulkan1; embedder nomic :1449; temperature 0 per request; **seeds: none controlled — GPU nondeterminism acknowledged** (temp-0 narrows but does not eliminate)
+- expectation in one line: ожидаем ~[0.90,1.00], потому что oracle-подмножество содержит только свидетельские сессии, на 49/50 уже измерено 0.98, задача прогона — сузить CI, а не открыть новую метрику
+- snapshot written at: 4/500 completed, 4/4 hits, zero misses (labeled at-run-start, NOT posthoc — no result exists yet beyond this snapshot)
+
 ## Required env provenance per number (no number without it)
 {model_id, quantization, context_len, runner, date, seeds, dataset_commit}
 
