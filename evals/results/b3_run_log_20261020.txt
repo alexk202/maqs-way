@@ -1,0 +1,330 @@
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+Error parsing extraction response: Expecting ',' delimiter: line 167 column 6 (char 7320)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 53 column 132 (char 7924)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 47 column 143 (char 7341)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 60 column 129 (char 7715)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting property name enclosed in double quotes: line 20 column 18 (char 2892)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 54 column 187 (char 8452)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 202 column 6 (char 7836)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[1/156] single-session-preferenc ev_hit=True mem=15 ingest=34s
+[2/156] single-session-preferenc ev_hit=False mem=0 ingest=75s
+[3/156] single-session-preferenc ev_hit=True mem=13 ingest=27s
+[4/156] single-session-preferenc ev_hit=True mem=4 ingest=15s
+[5/156] single-session-preferenc ev_hit=True mem=15 ingest=31s
+[6/156] single-session-preferenc ev_hit=True mem=20 ingest=43s
+[7/156] single-session-preferenc ev_hit=True mem=15 ingest=30s
+[8/156] single-session-preferenc ev_hit=True mem=26 ingest=53s
+[9/156] single-session-preferenc ev_hit=True mem=6 ingest=16s
+[10/156] single-session-preferenc ev_hit=True mem=33 ingest=67s
+[11/156] single-session-preferenc ev_hit=True mem=16 ingest=27s
+[12/156] single-session-preferenc ev_hit=True mem=11 ingest=21s
+[13/156] single-session-preferenc ev_hit=True mem=10 ingest=20s
+[14/156] single-session-preferenc ev_hit=True mem=6 ingest=19s
+[15/156] single-session-preferenc ev_hit=True mem=14 ingest=28s
+[16/156] single-session-preferenc ev_hit=True mem=8 ingest=26s
+[17/156] single-session-preferenc ev_hit=True mem=12 ingest=25s
+[18/156] single-session-preferenc ev_hit=True mem=6 ingest=17s
+[19/156] single-session-preferenc ev_hit=True mem=16 ingest=27s
+[20/156] single-session-preferenc ev_hit=False mem=0 ingest=77s
+[21/156] single-session-preferenc ev_hit=True mem=9 ingest=22s
+[22/156] single-session-preferenc ev_hit=True mem=46 ingest=77s
+[23/156] single-session-preferenc ev_hit=True mem=10 ingest=26s
+[24/156] single-session-preferenc ev_hit=True mem=19 ingest=45s
+[25/156] single-session-preferenc ev_hit=True mem=11 ingest=24s
+[26/156] single-session-preferenc ev_hit=True mem=11 ingest=24s
+[27/156] single-session-preferenc ev_hit=True mem=14 ingest=43s
+[28/156] single-session-preferenc ev_hit=True mem=14 ingest=30s
+[29/156] single-session-preferenc ev_hit=True mem=10 ingest=27s
+[30/156] single-session-preferenc ev_hit=True mem=14 ingest=31s
+[31/156] single-session-assistant ev_hit=True mem=13 ingest=22s
+[32/156] single-session-assistant ev_hit=True mem=11 ingest=22s
+[33/156] single-session-assistant ev_hit=True mem=13 ingest=20s
+[34/156] single-session-assistant ev_hit=True mem=5 ingest=12s
+[35/156] single-session-assistant ev_hit=True mem=31 ingest=38s
+[36/156] single-session-assistant ev_hit=True mem=18 ingest=28s
+[37/156] single-session-assistant ev_hit=True mem=5 ingest=10s
+[38/156] single-session-assistant ev_hit=True mem=24 ingest=32s
+[39/156] single-session-assistant ev_hit=True mem=8 ingest=12s
+[40/156] single-session-assistant ev_hit=True mem=9 ingest=13s
+[41/156] single-session-assistant ev_hit=True mem=12 ingest=19s
+[42/156] single-session-assistant ev_hit=True mem=17 ingest=28s
+[43/156] single-session-assistant ev_hit=True mem=11 ingest=18s
+[44/156] single-session-assistant ev_hit=True mem=21 ingest=35s
+[45/156] single-session-assistant ev_hit=True mem=14 ingest=21s
+[46/156] single-session-assistant ev_hit=True mem=8 ingest=17s
+[47/156] single-session-assistant ev_hit=True mem=9 ingest=16s
+[48/156] single-session-assistant ev_hit=False mem=0 ingest=67s
+[49/156] single-session-assistant ev_hit=True mem=14 ingest=22s
+[50/156] single-session-assistant ev_hit=True mem=30 ingest=48s
+[51/156] single-session-assistant ev_hit=True mem=10 ingest=19s
+[52/156] single-session-assistant ev_hit=True mem=14 ingest=20s
+[53/156] single-session-assistant ev_hit=True mem=21 ingest=45s
+[54/156] single-session-assistant ev_hit=True mem=14 ingest=31s
+[55/156] single-session-assistant ev_hit=False mem=0 ingest=69s
+[56/156] single-session-assistant ev_hit=True mem=3 ingest=7s
+[57/156] single-session-assistant ev_hit=True mem=5 ingest=10s
+[58/156] single-session-assistant ev_hit=True mem=8 ingest=24s
+[59/156] single-session-assistant ev_hit=True mem=12 ingest=21s
+[60/156] single-session-assistant ev_hit=True mem=21 ingest=31s
+[61/156] single-session-assistant ev_hit=True mem=10 ingest=15s
+[62/156] single-session-assistant ev_hit=True mem=8 ingest=28s
+[63/156] single-session-assistant ev_hit=True mem=21 ingest=31s
+[64/156] single-session-assistant ev_hit=True mem=11 ingest=16s
+[65/156] single-session-assistant ev_hit=True mem=16 ingest=21s
+[66/156] single-session-assistant ev_hit=False mem=0 ingest=63s
+[67/156] single-session-assistant ev_hit=True mem=13 ingest=33s
+[68/156] single-session-assistant ev_hit=False mem=0 ingest=72s
+[69/156] single-session-assistant ev_hit=True mem=28 ingest=39s
+[70/156] single-session-assistant ev_hit=True mem=8 ingest=17s
+[71/156] single-session-assistant ev_hit=True mem=9 ingest=19s
+[72/156] single-session-assistant ev_hit=True mem=9 ingest=17s
+[73/156] single-session-assistant ev_hit=True mem=9 ingest=19s
+[74/156] single-session-assistant ev_hit=False mem=0 ingest=29s
+[75/156] single-session-assistant ev_hit=True mem=11 ingest=29s
+[76/156] single-session-assistant ev_hit=False mem=0 ingest=68s
+[77/156] single-session-assistant ev_hit=True mem=15 ingest=26s
+[78/156] single-session-assistant ev_hit=True mem=10 ingest=14s
+[79/156] single-session-assistant ev_hit=True mem=18 ingest=31s
+[80/156] single-session-assistant ev_hit=True mem=11 ingest=21s
+[81/156] single-session-assistant ev_hit=True mem=9 ingest=18s
+[82/156] single-session-assistant ev_hit=True mem=13 ingest=23s
+[83/156] single-session-assistant ev_hit=True mem=15 ingest=23s
+[84/156] single-session-assistant ev_hit=True mem=21 ingest=31s
+[85/156] single-session-assistant ev_hit=True mem=8 ingest=18s
+[86/156] single-session-assistant ev_hit=True mem=20 ingest=31s
+[87/156] single-session-user      ev_hit=True mem=11 ingest=30s
+[88/156] single-session-user      ev_hit=False mem=0 ingest=71s
+[89/156] single-session-user      ev_hit=True mem=16 ingest=26s
+[90/156] single-session-user      ev_hit=True mem=20 ingest=38s
+[91/156] single-session-user      ev_hit=True mem=8 ingest=31s
+[92/156] single-session-user      ev_hit=True mem=9 ingest=16s
+[93/156] single-session-user      ev_hit=True mem=8 ingest=15s
+[94/156] single-session-user      ev_hit=True mem=18 ingest=40s
+[95/156] single-session-user      ev_hit=True mem=9 ingest=21s
+[96/156] single-session-user      ev_hit=True mem=17 ingest=33s
+[97/156] single-session-user      ev_hit=True mem=10 ingest=19s
+[98/156] single-session-user      ev_hit=True mem=20 ingest=44s
+[99/156] single-session-user      ev_hit=True mem=8 ingest=17s
+[100/156] single-session-user      ev_hit=True mem=10 ingest=23s
+[101/156] single-session-user      ev_hit=True mem=18 ingest=38s
+[102/156] single-session-user      ev_hit=True mem=13 ingest=38s
+[103/156] single-session-user      ev_hit=True mem=6 ingest=12s
+[104/156] single-session-user      ev_hit=True mem=11 ingest=21s
+[105/156] single-session-user      ev_hit=False mem=0 ingest=71s
+[106/156] single-session-user      ev_hit=True mem=14 ingest=31s
+[107/156] single-session-user      ev_hit=True mem=10 ingest=22s
+[108/156] single-session-user      ev_hit=True mem=7 ingest=41s
+[109/156] single-session-user      ev_hit=True mem=5 ingest=13s
+[110/156] single-session-user      ev_hit=True mem=14 ingest=25s
+[111/156] single-session-user      ev_hit=True mem=10 ingest=22s
+[112/156] single-session-user      ev_hit=True mem=13 ingest=26s
+[113/156] single-session-user      ev_hit=True mem=19 ingest=33s
+[114/156] single-session-user      ev_hit=True mem=9 ingest=21s
+[115/156] single-session-user      ev_hit=True mem=15 ingest=33s
+[116/156] single-session-user      ev_hit=True mem=12 ingest=26s
+[117/156] single-session-user      ev_hit=True mem=11 ingest=22s
+[118/156] single-session-user      ev_hit=True mem=16 ingest=29s
+[119/156] single-session-user      ev_hit=True mem=5 ingest=15s
+[120/156] single-session-user      ev_hit=True mem=14 ingest=21s
+[121/156] single-session-user      ev_hit=True mem=11 ingest=19s
+[122/156] single-session-user      ev_hit=True mem=11 ingest=22s
+[123/156] single-session-user      ev_hit=True mem=9 ingest=20s
+[124/156] single-session-user      ev_hit=True mem=13 ingest=24s
+[125/156] single-session-user      ev_hit=True mem=6 ingest=14s
+[126/156] single-session-user      ev_hit=True mem=11 ingest=26s
+[127/156] single-session-user      ev_hit=True mem=10 ingest=44s
+[128/156] single-session-user      ev_hit=True mem=10 ingest=23s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 182 column 6 (char 7807)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[129/156] single-session-user      ev_hit=True mem=8 ingest=25s
+[130/156] single-session-user      ev_hit=True mem=14 ingest=27s
+[131/156] single-session-user      ev_hit=False mem=0 ingest=72s
+[132/156] single-session-user      ev_hit=True mem=9 ingest=19s
+[133/156] single-session-user      ev_hit=True mem=10 ingest=22s
+[134/156] single-session-user      ev_hit=True mem=16 ingest=27s
+[135/156] single-session-user      ev_hit=True mem=13 ingest=26s
+[136/156] single-session-user      ev_hit=True mem=21 ingest=36s
+[137/156] single-session-user      ev_hit=True mem=10 ingest=20s
+[138/156] single-session-user      ev_hit=True mem=9 ingest=20s
+[139/156] single-session-user      ev_hit=True mem=8 ingest=17s
+[140/156] single-session-user      ev_hit=True mem=10 ingest=21s
+[141/156] single-session-user      ev_hit=True mem=19 ingest=34s
+[142/156] single-session-user      ev_hit=True mem=9 ingest=18s
+[143/156] single-session-user      ev_hit=True mem=6 ingest=15s
+[144/156] single-session-user      ev_hit=True mem=10 ingest=24s
+[145/156] single-session-user      ev_hit=True mem=9 ingest=20s
+[146/156] single-session-user      ev_hit=True mem=11 ingest=19s
+[147/156] single-session-user      ev_hit=True mem=13 ingest=30s
+[148/156] single-session-user      ev_hit=True mem=17 ingest=30s
+[149/156] single-session-user      ev_hit=True mem=23 ingest=31s
+[150/156] single-session-user      ev_hit=True mem=8 ingest=18s
+[151/156] single-session-user      ev_hit=True mem=13 ingest=38s
+[152/156] single-session-user      ev_hit=True mem=13 ingest=27s
+[153/156] single-session-user      ev_hit=True mem=11 ingest=24s
+[154/156] single-session-user      ev_hit=True mem=10 ingest=17s
+[155/156] single-session-user      ev_hit=True mem=6 ingest=15s
+[156/156] single-session-user      ev_hit=True mem=15 ingest=24s
+
+evidence-R@5 = 0.929 (145/156)
+empty collections: 11/156
+finish_reason: {'stop': 147, 'length': 9} | length share: 9/156 = 5.8%
+parse failures (dual counter): {'truncation_class': 9, 'malformed_class': 4}
