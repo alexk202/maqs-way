@@ -41,5 +41,5 @@ extraction validly return empty?
   b4), после чего b4 подписывается.
 
 ## Signatures
-- [ ] owner sanction (name/date)
-- [ ] commit hash: ____
+- [x] owner sanction: Aleksandr Kossarev, 2026-10-20 (chat: «Делай коммит»)
+- [x] commit hash пакета: `c726775`; прогон отложен на 2026-10-21 (до/вместе с b4)
