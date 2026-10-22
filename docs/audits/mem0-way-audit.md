@@ -10,7 +10,7 @@
 
 | Way property | Verdict | One line |
 |---|---|---|
-| P4 Isolation | COVERED | Tenant filters before top-k, keys unspoofable via metadata |
+| P4 Isolation | STATIC IMPLEMENTATION EVIDENCE; BEHAVIORAL VERIFICATION PENDING | Tenant filters before top-k, keys unspoofable via metadata |
 | P2 Provenance | PARTIAL | Actor/role in history; no source ref, policy, or confidence on the record |
 | P3 Aging | PARTIAL | Opt-in expiration exists; decay is platform-only, not OSS |
 | P5 Deletability | PARTIAL | Delete clears the vector + writes history; history stays queryable, no tombstone |
@@ -19,14 +19,31 @@
 | P8 Measurability | GAP (in-tree) | `evaluation/` is an empty submodule, harness not vendored |
 | Logging (§3.4-like) | PARTIAL | Closest to an audit trail is SQLite history; no structured sink |
 
+> P4: reclassified to "static implementation evidence; behavioral
+> verification pending" (see "Done well", item 1).
+
 ## Done well (worth crediting)
 
 1. **Isolation (P4) — exemplary.** `mem0/memory/main.py:1471-1475` — `search/get_all`
    require a tenant filter (`user_id|agent_id|run_id`), else `ValueError`;
    filters go into the vector store `query_filter` before top-k
    (`qdrant.py:428-434`, over-fetch `max(limit*4,60)`); key spoofing via
-   `metadata` is cut off by `_strip_identity_keys()` (`main.py:138-162`). This is
-   exactly the "boundary proven by violation attempts" pattern that MAQS G1 requires.
+   `metadata` is cut off by `_strip_identity_keys()` (`main.py:138-162`).
+
+   Status reclassified following external reviewer feedback
+   (E. Mnemoverse, private correspondence, 2026-10). Static
+   evidence remains valid and credited: tenant filter logic
+   and identity-key stripping are present in the reviewed
+   code paths. However, the audit executed nothing (see
+   Method and Limitations); therefore no runtime results
+   exist for: (1) independently authenticated callers,
+   (2) wrong or omitted scope, (3) writes under read-only
+   credentials, (4) access after revocation. These four
+   case classes constitute the pending behavioral
+   verification scope. The original COVERED label
+   implied behavioral proof that was not performed —
+   marking error of the audit, not a finding against
+   the audited implementation.
 2. **History as audit trail.** SQLite `history` (`storage.py:150-191`) keeps
    `old/new_memory, event, actor_id, role, is_deleted` — mutation provenance is
    traceable, `created_at` survives update (`main.py:2072-2080`).
@@ -68,3 +85,12 @@
 
 - Show the report to Mem0 authors via issue, give them time to respond (plan, step 4).
 - Their corrections/responses go in as a second commit to this file, findings are not rewritten.
+
+## Changelog
+
+- 2026-10-23: P4 reclassified
+  from COVERED to "static implementation
+  evidence; behavioral verification pending" following
+  external reviewer feedback. No other verdicts changed.
+  Reviewer's label adopted verbatim and queued for the
+  MAQS glossary.
