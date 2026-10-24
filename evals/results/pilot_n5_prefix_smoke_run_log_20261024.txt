@@ -1,0 +1,13 @@
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[1/5] temporal-reasoning hit=False sessions=3 adds=3 ingest=83s retrieve=0.0s
+[2/5] multi-session hit=False sessions=3 adds=3 ingest=94s retrieve=0.0s
+[3/5] knowledge-update hit=False sessions=2 adds=2 ingest=53s retrieve=0.0s
+[4/5] single-session-user hit=False sessions=1 adds=1 ingest=28s retrieve=0.0s
+[5/5] single-session-assistant hit=False sessions=1 adds=1 ingest=19s retrieve=0.0s
+R@5 (n=5) = 0.00 | ingest total 277s | 50q ~46.1min | 500q ~7.7h
