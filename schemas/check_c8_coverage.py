@@ -4,7 +4,7 @@ Rule: every failure class observed in production must map to at least one
 Way rule (P1-P8) that REALLY EXISTS in maqs-way-standard.json. A class with
 zero coverage is a gap.
 
-Three states (Lumik: gate must tell them apart):
+Three states (council: gate must tell them apart):
 - covered: rules non-empty and all known  -> counts toward N/M
 - known gap: rules empty BUT marked known_gap with owner + closes_in
   (bridge tracker, e.g. C8 -> I11 -> package 1.6) -> reported, does not fail

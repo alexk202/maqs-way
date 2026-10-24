@@ -11,7 +11,7 @@ Three states (same stand as C8):
   -> reported, does not fail
 - uncovered: rules empty without marker, or unknown rule referenced -> RED
 
-Locks on non-principle rules (Lumik: three locks, no wildcards):
+Locks on non-principle rules (council: three locks, no wildcards):
 1. LEGIT_NONP is a closed versioned list in this script (like KNOWN_GAPS
    in the C8 gate) — adding a source is a code change, not silence.
 2. Only concrete sections (e.g. "LOG-3.4"), never bare wildcards

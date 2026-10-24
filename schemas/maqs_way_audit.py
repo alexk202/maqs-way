@@ -37,6 +37,7 @@ sys.path.insert(0, str(ROOT / "schemas"))
 
 import check_b_coverage
 import check_c8_coverage
+import check_name_policy
 import check_conformance
 import check_scoreboard
 import replay_vectors
@@ -158,6 +159,7 @@ def run_all(quiet=False):
         manifest_ok, manifest_total, declared_ok, manifest_red = check_conformance.check_manifest()
         b_rc = check_b_coverage.main()
         c8_rc = check_c8_coverage.main()
+        np_rc = check_name_policy.main()
         sb_ok, sb_total = check_scoreboard.check()
     manifest = json.loads(MANIFEST.read_text())
     declared_total = sum(1 for e in manifest if e.get("status") == "declared")
@@ -167,6 +169,7 @@ def run_all(quiet=False):
     gaps = collect_gaps()
     green = (schema_ok == schema_total and not manifest_red
              and not ns_bad and pin_ok and b_rc == 0 and c8_rc == 0
+             and np_rc == 0
              and rep_err == 0 and rep_total > 0 and rep_ok == rep_total
              and sb_ok == sb_total and sb_total > 0)
     vector_status = {}
@@ -189,6 +192,7 @@ def run_all(quiet=False):
         "coverage": {"b_gate": "green-with-gap" if b_rc == 0 else "RED",
                      "c8_gate": "green-with-gap" if c8_rc == 0 else "RED",
                      "gaps": gaps},
+        "name_policy": {"passed": 1 if np_rc == 0 else 0, "total": 1},
         "vector_status": vector_status,
         "verdict": "GATE GREEN" if green else "GATE RED",
         "_green": green,
@@ -199,10 +203,12 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="MAQS-Way audit CLI v0.1")
     ap.add_argument("command", nargs="?", default="all",
                     choices=["schema", "manifest", "lint", "coverage", "all",
-                             "namespaces", "pin", "replay", "scoreboard"])
+                             "namespaces", "pin", "replay", "scoreboard", "names"])
     ap.add_argument("--format", default="text", choices=["text", "json"])
     args = ap.parse_args(argv)
 
+    if args.command == "names":
+        return check_name_policy.main()
     if args.command == "schema":
         ok, total = check_conformance.check_schema()
         rc = 0 if ok == total else 1

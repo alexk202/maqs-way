@@ -10,7 +10,7 @@
 
 Every counter declares THREE independent literals (never glued):
 threshold N, window {type, size}, action. Threshold and window are
-independently tunable (precedent: Lumik's two-literal lesson).
+independently tunable (precedent: the council two-literal lesson).
 Window types: sliding (events within trailing size) | tumbling (fixed
 buckets). Every counter declares its equality-key field (signature):
 without a key, "identical" is undefined and the counter is

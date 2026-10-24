@@ -88,7 +88,7 @@ def check_fixture():
     classes = json.loads(FIXTURE.read_text())
     standard = json.loads(STANDARD.read_text())
     known_way = {p["id"] for p in standard["principles"]}
-    # Anchor: canon line must exist (Lumik: no canon line -> test establishes norm).
+    # Anchor: canon line must exist (council: no canon line -> test establishes norm).
     spec = SPEC.read_text()
     if "MAQS I13" not in spec:
         print("GATE RED — anchor missing: no 'MAQS I13' line in SPEC.md")
