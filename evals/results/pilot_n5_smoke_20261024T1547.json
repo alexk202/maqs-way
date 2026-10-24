@@ -1,0 +1,110 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
+    "date": "2026-10-24T15:47:41+00:00",
+    "n": 5,
+    "label": "n=5 pilot, NOT normative, single-point"
+  },
+  "R_at_5_evidence": 1.0,
+  "token_proxy_recall": 0.0,
+  "ingest_total_s": 266.2,
+  "extrapolation_50q_min": 44.4,
+  "extrapolation_500q_h": 7.4,
+  "results": [
+    {
+      "q_id": "gpt4_2655b836",
+      "q_type": "temporal-reasoning",
+      "answer": "GPS system not functioning correctly",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 72.5,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User recently had an issue with their car's GPS system on 3/22 and had to take it back to the dealership to get it fixed",
+        "User is considering getting a car wax and detailing done before their trip to protect their car's paint job and interior, and will look for reputable detailing services in their area",
+        "User is considering taking their car to a detailer and wants to know what to look for when choosing a detailer, including checking online reviews and asking about their experience and equipment",
+        "User is thinking of getting a car wax and detailing done before their trip to protect their car's paint job and interior",
+        "User is considering taking their car to a detailer and wants to know what to look for when choosing a detailer"
+      ]
+    },
+    {
+      "q_id": "0a995998",
+      "q_type": "multi-session",
+      "answer": 3,
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 93.3,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User is decluttering their closet and considering letting go of clothes that don't fit or are no longer worn, including some winter clothes that haven't been touched since the holidays",
+        "User is planning to store out-of-season clothes in boxes or bins and will free up space in their closet for the items they're currently using",
+        "User is considering letting go of clothes that don't fit or are no longer worn and will focus on keeping items that are in good condition and make them feel confident and happy",
+        "User needs help organizing their closet and decluttering their clothes, including a navy blue blazer that needs to be picked up from dry cleaning",
+        "User is planning to start with their short-sleeve shirts and will sort them into keep, donate, and discard piles based on their condition, style, and frequency of wear"
+      ]
+    },
+    {
+      "q_id": "6a1eabeb",
+      "q_type": "knowledge-update",
+      "answer": "25 minutes and 50 seconds (or 25:50)",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 53.5,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User is training for another charity 5K run coming up and is hoping to beat their personal best time of 25:50",
+        "User is planning to participate in a charity 5K run and is preparing physically, technically, and mentally",
+        "User is incorporating interval training, increasing weekly mileage, and focusing on proper breathing and pacing to improve their endurance for the 5K run",
+        "User is working on their strength training, including squats, lunges, deadlifts, and leg press, to improve their running performance",
+        "User is working on their strength training, including calf raises, step-ups, and deadlifts, to improve their running performance"
+      ]
+    },
+    {
+      "q_id": "e47becba",
+      "q_type": "single-session-user",
+      "answer": "Business Administration",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 28.3,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User is implementing a routine to stay organized and on top of tasks and responsibilities, including establishing a morning routine, prioritizing tasks, and creating a 'Stop Doing' list",
+        "User is using meal prep utensils, slow cookers, and food scales to help with meal prep",
+        "User is training for a charity 5K run and wants to improve their endurance, aiming to beat their personal best time of 25:50",
+        "User is using a meal prep planner, label maker, and cooler bag to help with meal prep",
+        "User is using tools like Todoist and Trello to stay organized and on top of tasks and responsibilities"
+      ]
+    },
+    {
+      "q_id": "7161e7e2",
+      "q_type": "single-session-assistant",
+      "answer": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 18.6,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "Shift rotation sheet for GM social media agents with 7 agents, 4 shifts, and 2 days off for every agent for a week starting on Sunday and ending on Saturday: Admon - 8 am - 4 pm, Magdy - 12 pm - 8 pm, Ehab - 4 pm - 12 am, Sara - 12 am - 8 am, Mostafa - 8 am - 4 pm, Nemr - 12 pm - 8 pm, Adam - 4 pm - 12 am",
+        "Assistant created a shift rotation sheet for GM social media agents with 7 agents, 4 shifts, and 2 days off for every agent for a week starting on Sunday and ending on Saturday",
+        "User asked for a shift rotation sheet for GM social media agents with 7 agents, 4 shifts, and 2 days off for every agent",
+        "User is looking for tips on creating a routine for their new job including establishing a morning routine and tracking expenses and reimbursements",
+        "User graduated with a degree in Business Administration which has helped in their new role"
+      ]
+    }
+  ]
+}

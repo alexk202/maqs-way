@@ -47,6 +47,10 @@ def evaluate(probe, outcome):
 def snapshot():
     r = subprocess.run(["git", "status", "--porcelain"], capture_output=True,
                        text=True, cwd=ROOT)
+    if r.returncode != 0:
+        # fail-closed: a vacuous "" == "" comparison would let probe2 pass
+        # even when git is unavailable (same class as the name-policy finding)
+        return None
     return r.stdout
 
 
@@ -98,13 +102,17 @@ def check_semantics():
 
     # Probe 2: P10 read-only on the live repo (tracked AND untracked).
     before = snapshot()
+    if before is None:
+        fails.append("probe2 git status unavailable (fail-closed)")
     for g in GATES:
         r = subprocess.run([sys.executable, str(ROOT / g)],
                            capture_output=True, text=True, cwd=ROOT)
         if r.returncode != 0:
             fails.append(f"probe2 gate failed live: {g}")
     after = snapshot()
-    if before != after:
+    if after is None:
+        fails.append("probe2 git status unavailable after gates (fail-closed)")
+    elif before != after:
         fails.append("probe2 auditor wrote to repo (tracked or untracked)")
 
     for f in fails:
