@@ -1,0 +1,28 @@
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[8cf51dda@1.1] stored=11 facts=[11] unique=[11] loop=False recall=-
+[8cf51dda@1.2] stored=5 facts=[5] unique=[5] loop=False recall=-
+[8cf51dda@1.3] stored=5 facts=[5] unique=[5] loop=False recall=-
+[cc539528@1.1] stored=18 facts=[18] unique=[18] loop=False recall=-
+[cc539528@1.2] stored=9 facts=[9] unique=[9] loop=False recall=-
+[cc539528@1.3] stored=9 facts=[9] unique=[9] loop=False recall=-
+[75832dbd@1.1] stored=5 facts=[5] unique=[5] loop=False recall=0.045
+[75832dbd@1.2] stored=4 facts=[4] unique=[4] loop=False recall=0.045
+[75832dbd@1.3] stored=3 facts=[3] unique=[3] loop=False recall=0.038
+[0a34ad58@1.1] stored=5 facts=[5] unique=[5] loop=False recall=0.062
+[0a34ad58@1.2] stored=7 facts=[7] unique=[7] loop=False recall=0.239
+[0a34ad58@1.3] stored=6 facts=[6] unique=[6] loop=False recall=0.124
+
+artifact: evals/results/reppenalty_probe.json
