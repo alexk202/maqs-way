@@ -26,7 +26,7 @@ from pathlib import Path
 from qdrant_client import QdrantClient
 
 DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
-G1_RES = Path("/home/aleksandr/Projects/MAQS_Way/evals/results/pilot_evidence_single156_g1.json")
+G1_RES = Path(__file__).resolve().parent / "results/pilot_evidence_single156_g1.json"
 OUT = Path(__file__).resolve().parent / "results"
 
 DQ = re.compile(r'"([^"\n]{3,80})"')
