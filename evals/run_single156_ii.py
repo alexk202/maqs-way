@@ -26,8 +26,8 @@ from qdrant_client import QdrantClient
 from b6_prompt import B6_VERBATIM
 from verbatim_v12 import classify_noise, norm, source_items
 
-DATA = Path("/home/aleksandr/Projects/MAQS_Way/evals/datasets/longmemeval/longmemeval_oracle.json")
-OUT = Path("/home/aleksandr/Projects/MAQS_Way/evals/results")
+DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
+OUT = Path(__file__).resolve().parent / "results"
 G1_RES = OUT / "pilot_evidence_single156_g1.json"
 KEY = open("/tmp/opencode/pilot8085.key").read().strip()
 MODEL = "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"

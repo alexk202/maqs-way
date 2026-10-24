@@ -20,8 +20,8 @@ os.environ.setdefault("MEM0_TELEMETRY", "False")
 from mem0 import Memory
 from qdrant_client import QdrantClient
 
-DATA = Path("/home/aleksandr/Projects/MAQS_Way/evals/datasets/longmemeval/longmemeval_oracle.json")
-OUT = Path("/home/aleksandr/Projects/MAQS_Way/evals/results")
+DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
+OUT = Path(__file__).resolve().parent / "results"
 G1_RES = OUT / "pilot_evidence_single156_g1.json"
 V11_RES = OUT / "verbatim_g1_v11.json"
 KEY = open("/tmp/opencode/pilot8085.key").read().strip()

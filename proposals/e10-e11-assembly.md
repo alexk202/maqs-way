@@ -78,7 +78,7 @@ Anchor: SPEC §2.4. Formulation lives here; closes_in: v0.2 canonization
 
 ## v0.2 candidates (NOT rejected, awaiting source — do not act on in v0.1)
 
-- Yasha's 3-level critical scheme (provenance → importance ≥ 0.85 → type list;
+- The reviewer's 3-level critical scheme (provenance → importance ≥ 0.85 → type list;
   WARN on importance ≥ 0.75 unlabeled). Activation condition: `importance`
   becomes a real model field with defined scale (requires canon change,
   owner signature). Revision: with v0.2 canonization.

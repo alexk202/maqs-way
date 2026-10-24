@@ -2,19 +2,19 @@
 """(verbatim v1.1) Council-corrected calibration metric (Обсуждение_23), posthoc.
 
 Fixes vs v1 (all council-mandated BEFORE any threshold):
-  1. Matching PRIMARY = case-insensitive + punctuation-normalized (Lumin #3:
+  1. Matching PRIMARY = case-insensitive + punctuation-normalized (council review point 3:
      v1 measured letter-case, not name preservation); exact-case recall reported apart.
-  2. Aggregation PRIMARY = MICRO (item-weighted; Lumin #1: v1's 0.241 was macro,
+  2. Aggregation PRIMARY = MICRO (item-weighted; council review point 1: v1's 0.241 was macro,
      775/4980=0.156 micro); macro reported as artifact line.
-  3. Entity dedup across classes (Klodik: titles+quoted double-registration counts once).
-  4. Composition-failure exclusion (Lumin #2 / Klodik: stored<5 -> not a verbatim
+  3. Entity dedup across classes (council: titles+quoted double-registration counts once).
+  4. Composition-failure exclusion (council review point 2 / council: stored<5 -> not a verbatim
      question; reported separately).
-  5. Regex fixes (Stasik/Prima: fix the cause): hyphenated TitleCase ("All-Purpose Flour"),
+  5. Regex fixes (council: fix the cause): hyphenated TitleCase ("All-Purpose Flour"),
      trailing punctuation/whitespace strips; UI/structure blocklist.
-  6. nums: raw verbatim recall AND digits-survive check (Lumin #6: "70%" ~ "70 percent"
+  6. nums: raw verbatim recall AND digits-survive check (council review point 6: "70%" ~ "70 percent"
      arithmetic vs defect).
-  7. Outputs the fixed PAIR PANEL proposal (Lumin #7: (ii) primary = paired comparison
-     on frozen panel, not global) + RANDOM-20 sample (Lumin #4: worst-only bias check).
+  7. Outputs the fixed PAIR PANEL proposal (council review point 7: (ii) primary = paired comparison
+     on frozen panel, not global) + RANDOM-20 sample (council review point 4: worst-only bias check).
 Posthoc-exploratory; NOT a guard; threshold fixed only in the (ii) prereg AFTER council.
 """
 import glob
@@ -25,9 +25,9 @@ from pathlib import Path
 
 from qdrant_client import QdrantClient
 
-DATA = Path("/home/aleksandr/Projects/MAQS_Way/evals/datasets/longmemeval/longmemeval_oracle.json")
+DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
 G1_RES = Path("/home/aleksandr/Projects/MAQS_Way/evals/results/pilot_evidence_single156_g1.json")
-OUT = Path("/home/aleksandr/Projects/MAQS_Way/evals/results")
+OUT = Path(__file__).resolve().parent / "results"
 
 DQ = re.compile(r'"([^"\n]{3,80})"')
 CQ = re.compile(r"\u201c([^\u201d\n]{3,80})\u201d")

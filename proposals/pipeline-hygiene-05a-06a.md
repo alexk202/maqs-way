@@ -30,7 +30,7 @@ Drift beyond tolerance → FLAG (advisory, visible, accumulated), not RED:
 no canon threshold exists, and RED-on-growth would punish legitimate work.
 RED only for: baseline missing/corrupt, or counter removed from tracking
 without explanation. Baseline changes only with the commit that explains
-the drift (Stasik rule).
+the drift (council rule).
 
 ## v0.2 candidates
 

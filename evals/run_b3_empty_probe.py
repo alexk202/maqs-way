@@ -22,8 +22,8 @@ from mem0 import Memory
 
 from b6_prompt import B6_VERBATIM
 
-DATA = Path("/home/aleksandr/Projects/MAQS_Way/evals/datasets/longmemeval/longmemeval_oracle.json")
-OUT = Path("/home/aleksandr/Projects/MAQS_Way/evals/results")
+DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
+OUT = Path(__file__).resolve().parent / "results"
 KEY = open("/tmp/opencode/pilot8085.key").read().strip()
 MODEL = "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
 EMB = "text-embedding-nomic-embed-text-v1.5"

@@ -43,7 +43,7 @@ use namespaced form (not bare) — lesson 1.6b.
 
 ## v0.2 candidates
 
-- Yasha's owners_registry/sla/fallback schema for paths (deferred: no canon
+- The reviewer's owners_registry/sla/fallback schema for paths (deferred: no canon
   source for sla scales in v0.1).
 - Tumbling catalog review; exception taxonomy import.
 

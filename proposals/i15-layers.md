@@ -59,7 +59,7 @@ never duplicates canon.
 ## v0.2 candidates
 
 - Heuristic layer assignment with declared confidence (deferred: inference
-  without source is RED in v0.1, cf. Yasha auto-levels precedent 1.5).
+  without source is RED in v0.1, cf. the reviewer's auto-levels precedent 1.5).
 - Tumbling review of zone expectations; semantic adequacy of expectations.
 
 ## v0.2 boundary

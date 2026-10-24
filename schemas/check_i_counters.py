@@ -171,7 +171,7 @@ def check_semantics():
     if rs == rt:
         fails.append("probe4 sliding/tumbling indistinguishable")
 
-    # Probe 5 (Stasik e): claimed success + empty work-sink -> B5-failure.
+    # Probe 5 (council e): claimed success + empty work-sink -> B5-failure.
     if b5_link(True, []) != "B5-failure":
         fails.append("probe5 claimed-success-without-work not flagged")
     if b5_link(True, ["job-1"]) != "ok":
