@@ -18,11 +18,13 @@ import urllib.request
 from pathlib import Path
 
 from qdrant_client import QdrantClient
+from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
+                          LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
 DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
 RESULTS = Path(__file__).resolve().parent / "results/pilot_evidence_n500.json"
 STORE = sorted(glob.glob("/tmp/opencode/mem0ev_*"))[-1]
-EMB = "http://127.0.0.1:1449/v1/embeddings"
+EMB = EMBED_BASE_URL + "/embeddings"
 
 
 def embed(text):

@@ -1,0 +1,43 @@
+# Eval-stand Python dependencies (reproducibility package, 2026-10-24).
+# Exact versions from the project stand venv that produced the committed
+# eval artifacts (b1..ii runs, October 2026). Pinned on purpose: mem0ai
+# minor versions change extraction behavior; results compare only within
+# the same environment (see evals/REPRODUCE.md).
+# Direct dependencies of the eval pipeline: mem0ai, openai, qdrant-client,
+# numpy (transitives pinned below for full reproducibility).
+annotated-types==0.8.0
+anyio==4.15.1
+backoff==2.2.1
+certifi==2026.7.22
+charset-normalizer==3.5.2
+distro==1.9.0
+grpcio==1.84.0
+h11==0.16.0
+h2==4.4.1
+hpack==4.2.0
+httpcore==1.0.9
+httpcore2==2.13.1
+httpx==0.28.1
+httpx2==2.13.1
+hyperframe==6.1.0
+idna==3.20
+jiter==0.17.0
+# mem0: exact upstream commit the stand ran on (detached clean checkout;
+# pip's file:// line replaced by a git pin; local tree verified unmodified)
+mem0ai @ git+https://github.com/mem0ai/mem0@0724291bd864cf807e88ee8981c8226644e8fb42
+numpy==2.5.4
+openai==3.32.0
+portalocker==3.2.0
+posthog==7.71.0
+protobuf==6.33.6
+pydantic==2.14.1
+pydantic_core==2.50.1
+pytz==2026.5
+qdrant-client==1.19.1
+requests==2.34.2
+sniffio==1.3.1
+SQLAlchemy==2.1.5
+truststore==0.10.5
+typing-inspection==0.4.4
+typing_extensions==4.16.0
+urllib3==2.8.0

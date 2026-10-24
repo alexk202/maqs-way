@@ -1,7 +1,7 @@
 """WP2 pilot SMOKE (synthetic, NOT a benchmark).
 
 5 hand-written facts -> Mem0@0724291 (Chroma embedded, temp dir) with
-Llama-3.1-8B (LM Studio :1449, temperature 0) + nomic-embed. Then 5 recall
+Llama-3.1-8B (LLM_BASE_URL, temperature 0) + nomic-embed. Then 5 recall
 probes. Any number below is connectivity smoke, NOT a calibration metric:
 real R@5/temporal/abstention need vendored LongMemEval/LoCoMo (missing).
 
@@ -12,15 +12,16 @@ import os
 import sys
 import time
 from datetime import datetime, timezone
+from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
+                          LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
-# Endpoints from env (keys NEVER in repo). Defaults = LM Studio loopback.
-LLM_BASE = os.environ.get("PILOT_LLM_BASE", "http://127.0.0.1:1449/v1")
-LLM_KEY = os.environ.get("PILOT_LLM_KEY", "local-smoke")
-LLM = os.environ.get("PILOT_LLM_MODEL",
-                      "lmstudio-community/meta-llama-3.1-8b-instruct")
-EMB_BASE = os.environ.get("PILOT_EMB_BASE", "http://127.0.0.1:1449/v1")
-EMB_KEY = os.environ.get("PILOT_EMB_KEY", "local-smoke")
-EMB = "text-embedding-nomic-embed-text-v1.5"
+# Endpoints via eval_config (env-overridable; see evals/REPRODUCE.md).
+LLM_BASE = LLM_BASE_URL
+LLM_KEY = LLM_API_KEY
+LLM = LLM_MODEL
+EMB_BASE = EMBED_BASE_URL
+EMB_KEY = EMBED_API_KEY
+EMB = EMBED_MODEL
 
 FACTS = [
     ("user_123", "My favourite programming language is Rust."),
@@ -39,6 +40,7 @@ PROBES = [
 
 
 def main() -> int:
+    os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
 
     # infer mode via env: PILOT_INFER=1 -> full LLM extraction pipeline
@@ -50,10 +52,10 @@ def main() -> int:
             "openai_base_url": LLM_BASE, "api_key": LLM_KEY}},
         "embedder": {"provider": "openai", "config": {
             "model": EMB, "openai_base_url": EMB_BASE, "api_key": EMB_KEY,
-            "embedding_dims": 768}},
+            "embedding_dims": EMBED_DIMS}},
         "vector_store": {"provider": "qdrant", "config": {
             "collection_name": "maqs_pilot_smoke",
-            "embedding_model_dims": 768,
+            "embedding_model_dims": EMBED_DIMS,
             "path": "/tmp/opencode/mem0qdrant"}},
         "version": "v1.1",
     }

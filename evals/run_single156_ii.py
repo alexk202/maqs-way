@@ -25,13 +25,15 @@ from qdrant_client import QdrantClient
 
 from b6_prompt import B6_VERBATIM
 from verbatim_v12 import classify_noise, norm, source_items
+from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
+                          LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
 DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
 OUT = Path(__file__).resolve().parent / "results"
 G1_RES = OUT / "pilot_evidence_single156_g1.json"
-KEY = open("/tmp/opencode/pilot8085.key").read().strip()
-MODEL = "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
-EMB = "text-embedding-nomic-embed-text-v1.5"
+KEY = LLM_API_KEY
+MODEL = LLM_MODEL
+EMB = EMBED_MODEL
 STORE = f"/tmp/opencode/mem0single156ii_{int(time.time())}"
 N = 156
 MAX_TOKENS = 2000  # g1/b2 exact
@@ -151,12 +153,12 @@ def main():
         cfg = {
             "llm": {"provider": "openai", "config": {
                 "model": MODEL, "temperature": 0, "max_tokens": MAX_TOKENS,
-                "openai_base_url": "http://127.0.0.1:8085/v1", "api_key": KEY}},
+                "openai_base_url": LLM_BASE_URL, "api_key": KEY}},
             "embedder": {"provider": "openai", "config": {
-                "model": EMB, "openai_base_url": "http://127.0.0.1:1449/v1",
-                "api_key": "local-smoke", "embedding_dims": 768}},
+                "model": EMB, "openai_base_url": EMBED_BASE_URL,
+                "api_key": EMBED_API_KEY, "embedding_dims": EMBED_DIMS}},
             "vector_store": {"provider": "qdrant", "config": {
-                "collection_name": f"s156ii_{qi}", "embedding_model_dims": 768,
+                "collection_name": f"s156ii_{qi}", "embedding_model_dims": EMBED_DIMS,
                 "path": f"{STORE}/q{qi}"}},
             "version": "v1.1",
         }
@@ -253,7 +255,7 @@ def main():
 
     out = {
         "provenance": {
-            "model": MODEL, "server": "http://127.0.0.1:8085/v1", "ctx": 32768,
+            "model": MODEL, "server": LLM_BASE_URL, "ctx": 32768,
             "seed": 42, "repeat_penalty": "server default 1.0 (treatment deferred post-(ii))",
             "embedder": EMB, "mem0": "0724291b",
             "config": f"(ii): g1 EXACT + prompt=B6_VERBATIM (b6_prompt.py sha256 {B6_SHA[:16]}…); "

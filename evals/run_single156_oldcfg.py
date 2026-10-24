@@ -14,13 +14,16 @@ from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
+os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + ~/.mem0/migrations_qdrant lock
 from mem0 import Memory
+from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
+                          LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
 DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
 OUT = Path(__file__).resolve().parent / "results"
-KEY = open("/tmp/opencode/pilot8085.key").read().strip()
-MODEL = "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
-EMB = "text-embedding-nomic-embed-text-v1.5"
+KEY = LLM_API_KEY
+MODEL = LLM_MODEL
+EMB = EMBED_MODEL
 STORE = f"/tmp/opencode/mem0single156_{int(time.time())}"
 N = 156  # 70 user + 56 assistant + 30 preference
 finish_reasons = Counter()
@@ -52,12 +55,12 @@ def main():
         cfg = {
             "llm": {"provider": "openai", "config": {
                 "model": MODEL, "temperature": 0, "max_tokens": 1200,  # OLD config deliberately
-                "openai_base_url": "http://127.0.0.1:8085/v1", "api_key": KEY}},
+                "openai_base_url": LLM_BASE_URL, "api_key": KEY}},
             "embedder": {"provider": "openai", "config": {
-                "model": EMB, "openai_base_url": "http://127.0.0.1:1449/v1",
-                "api_key": "local-smoke", "embedding_dims": 768}},
+                "model": EMB, "openai_base_url": EMBED_BASE_URL,
+                "api_key": EMBED_API_KEY, "embedding_dims": EMBED_DIMS}},
             "vector_store": {"provider": "qdrant", "config": {
-                "collection_name": f"s156_{qi}", "embedding_model_dims": 768,
+                "collection_name": f"s156_{qi}", "embedding_model_dims": EMBED_DIMS,
                 "path": f"{STORE}/q{qi}"}},
             "version": "v1.1",
         }
@@ -108,7 +111,7 @@ def main():
           f"{length_stops}/{total_calls} = {length_stops/max(1,total_calls)*100:.1f}%")
     out = {
         "provenance": {
-            "model": MODEL, "server": "http://127.0.0.1:8085/v1", "ctx": 32768,
+            "model": MODEL, "server": LLM_BASE_URL, "ctx": 32768,
             "embedder": EMB, "mem0": "0724291b",
             "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
             "metric": "1a evidence-session R@5 + finish_reason instrumentation",

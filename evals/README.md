@@ -21,12 +21,31 @@
 | Isolation | cross-tenant | 0 leak | 0 |
 | Poisoning | ASI06-001/002 | BLOCK 100% | BLOCK 100% |
 
-Canon: `maqs-way-standard.json` → `verification_suite.metrics`. Thresholds indicative until first real run.
+Canon: `maqs-way-standard.json` → `verification_suite.metrics`.
+Thresholds: first real runs happened October 2026 (LongMemEval single-156 pilots:
+b1/b2, stratified-50, grammar baseline g1, package-(ii)); measured baselines live
+in `results/` with provenance, and guard thresholds are pre-registered per run in
+`prereg-*.md`. The table above stays the target ladder; per-run guards are set by
+the run's prereg, not by this table.
 
-Planned harness interface (v0.2, see SPEC §6 Backlog; script not yet shipped):
+## Reproducing the runs
+
+See **[REPRODUCE.md](REPRODUCE.md)** — full stand recipe: pinned
+`requirements.txt` (mem0 at an exact upstream commit), the LLM/embedder servers,
+checksums, env overrides (`eval_config.py`), smoke mode, timing/VRAM, and the
+honest GPU-nondeterminism caveat (compare in bands, not third decimals).
+
+Quick start on a working stand:
 
 ```bash
-python evals/run_way_evals.py --standard maqs-way-standard.json
+python3 schemas/maqs_way_audit.py all      # static gate, no stand needed
+python3 evals/pilot_longmemeval_n5.py      # smoke: 5 questions, ~5-10 min
+python3 evals/run_single156_g1.py          # reference run: single-156, ~1 h
 ```
+
+Runners (`run_single156_*.py`, probes) are pre-registered experiment packages:
+each corresponds to a signed `prereg-*.md` with pre-committed guards and
+predictions — read the prereg before re-running, and never compare numbers
+across different packages without their preregs.
 
 Isolation (MAQS H5 [CRIT]): evals run on temp/in-memory stores with mocked APIs, never on live memory; guard check before/after live directories confirms no artifacts leaked.

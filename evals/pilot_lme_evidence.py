@@ -14,13 +14,15 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
+                          LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
-BASE = "http://127.0.0.1:8085/v1"
-KEY = os.environ["PILOT_LLM_KEY"]
-MODEL = "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
-EMB = "text-embedding-nomic-embed-text-v1.5"
-EMB_BASE = os.environ.get("PILOT_EMB_BASE", "http://127.0.0.1:1449/v1")
-EMB_KEY = os.environ.get("PILOT_EMB_KEY", "local-smoke")
+BASE = LLM_BASE_URL
+KEY = LLM_API_KEY
+MODEL = LLM_MODEL
+EMB = EMBED_MODEL
+EMB_BASE = EMBED_BASE_URL
+EMB_KEY = EMBED_API_KEY
 DATA = Path(__file__).resolve().parent / "datasets" / "longmemeval" / "longmemeval_oracle.json"
 OUT = Path(__file__).resolve().parent / "results"
 N = int(os.environ.get("PILOT_N", "50"))
@@ -54,6 +56,7 @@ PICK = ["temporal-reasoning", "multi-session", "knowledge-update",
 
 
 def main() -> int:
+    os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
 
     data = json.loads(DATA.read_text())
@@ -67,9 +70,9 @@ def main() -> int:
                 "openai_base_url": BASE, "api_key": KEY}},
             "embedder": {"provider": "openai", "config": {
                 "model": EMB, "openai_base_url": EMB_BASE, "api_key": EMB_KEY,
-                "embedding_dims": 768}},
+                "embedding_dims": EMBED_DIMS}},
             "vector_store": {"provider": "qdrant", "config": {
-                "collection_name": f"ev_{qi}", "embedding_model_dims": 768,
+                "collection_name": f"ev_{qi}", "embedding_model_dims": EMBED_DIMS,
                 "path": str(STORE / f"q{qi}")}},
             "version": "v1.1",
         }

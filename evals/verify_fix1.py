@@ -12,13 +12,17 @@ import time
 from collections import Counter
 from pathlib import Path
 
+import os
+os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + ~/.mem0/migrations_qdrant lock
 from mem0 import Memory
+from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
+                          LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
 DATA = Path(__file__).resolve().parent / "datasets/longmemeval/longmemeval_oracle.json"
 RESULTS = Path(__file__).resolve().parent / "results/pilot_evidence_n500.json"
-KEY = open("/tmp/opencode/pilot8085.key").read().strip()
-MODEL = "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf"
-EMB = "text-embedding-nomic-embed-text-v1.5"
+KEY = LLM_API_KEY
+MODEL = LLM_MODEL
+EMB = EMBED_MODEL
 STORE = f"/tmp/opencode/mem0verify_fix1_{int(time.time())}"  # fresh per run: stale lock class
 
 finish_reasons = Counter()
@@ -53,12 +57,12 @@ def main():
         cfg = {
             "llm": {"provider": "openai", "config": {
                 "model": MODEL, "temperature": 0, "max_tokens": 2000,  # fix ①: 1200→2000
-                "openai_base_url": "http://127.0.0.1:8085/v1", "api_key": KEY}},
+                "openai_base_url": LLM_BASE_URL, "api_key": KEY}},
             "embedder": {"provider": "openai", "config": {
-                "model": EMB, "openai_base_url": "http://127.0.0.1:1449/v1",
-                "api_key": "local-smoke", "embedding_dims": 768}},
+                "model": EMB, "openai_base_url": EMBED_BASE_URL,
+                "api_key": EMBED_API_KEY, "embedding_dims": EMBED_DIMS}},
             "vector_store": {"provider": "qdrant", "config": {
-                "collection_name": f"fix1_{qi_off}", "embedding_model_dims": 768,
+                "collection_name": f"fix1_{qi_off}", "embedding_model_dims": EMBED_DIMS,
                 "path": f"{STORE}/q{qi_off}"}},
             "version": "v1.1",
         }
