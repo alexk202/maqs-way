@@ -70,7 +70,8 @@ def patch(m, tag, penalty):
 
     def wrapped(*a, **kw):
         kw["response_format"] = G1_RF
-        kw["repeat_penalty"] = penalty  # THE probe delta
+        eb = kw.pop("extra_body", None) or {}
+        kw["extra_body"] = {**eb, "repeat_penalty": penalty}  # THE probe delta
         try:
             resp = orig(*a, **kw)
         except Exception:
