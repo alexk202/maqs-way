@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""(b2) per Lumín: single-session slice (156 q), FIX config (max_tokens 2000),
+"""(b2) per council: single-session slice (156 q), FIX config (max_tokens 2000),
 finish_reason counter ON — post-fix comparison against (b1) on the same base.
 
 Primary number: finish_reason=length share (systemic truncation, finally visible).
@@ -24,7 +24,7 @@ EMB = "text-embedding-nomic-embed-text-v1.5"
 STORE = f"/tmp/opencode/mem0single156_{int(time.time())}"
 N = 156  # 70 user + 56 assistant + 30 preference
 finish_reasons = Counter()
-parse_failures = Counter()  # dual counter per Lumín: truncation-class vs malformed-class
+parse_failures = Counter()  # dual counter per council: truncation-class vs malformed-class
 
 
 def patch_llm_client(m):
@@ -126,7 +126,7 @@ def main():
             "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
             "metric": "1a evidence-session R@5 + finish_reason instrumentation",
             "selection": "single-session-156 (70 user + 56 assistant + 30 preference), committed order",
-            "config": "FIX: max_tokens=2000 (fix ①, per Lumín order; only delta vs b1)",
+            "config": "FIX: max_tokens=2000 (fix ①, per council order; only delta vs b1)",
             "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "n": len(results), "label": "unmasked systemic measure, pre-fix",
         },

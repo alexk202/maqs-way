@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verification of fix ① (max_tokens 2000) on the 4 failed questions, per Lumín.
+"""Verification of fix ① (max_tokens 2000) on the 4 failed questions, per council.
 
 Instruments finish_reason == "length" with a permanent counter (monkeypatch on
 the OpenAI client inside mem0) — truncation becomes a FACT, not an inference.

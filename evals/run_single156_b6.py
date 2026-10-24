@@ -31,7 +31,7 @@ EMB = "text-embedding-nomic-embed-text-v1.5"
 STORE = f"/tmp/opencode/mem0single156b6_{int(time.time())}"
 N = 156  # 70 user + 56 assistant + 30 preference
 finish_reasons = Counter()
-parse_failures = Counter()  # dual counter per Lumín: truncation-class vs malformed-class
+parse_failures = Counter()  # dual counter per council: truncation-class vs malformed-class
 
 
 def patch_llm_client(m):

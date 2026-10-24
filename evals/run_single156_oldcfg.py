@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""(b1) per Lumín: single-session slice (156 q), OLD config (max_tokens 1200),
+"""(b1) per council: single-session slice (156 q), OLD config (max_tokens 1200),
 finish_reason counter ON — clean systemic truncation percent, unmasked.
 
 Primary number: finish_reason=length share (systemic truncation, finally visible).
@@ -113,7 +113,7 @@ def main():
             "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
             "metric": "1a evidence-session R@5 + finish_reason instrumentation",
             "selection": "single-session-156 (70 user + 56 assistant + 30 preference), committed order",
-            "config": "OLD: max_tokens=1200 (deliberate, pre-fix baseline per Lumín order)",
+            "config": "OLD: max_tokens=1200 (deliberate, pre-fix baseline per council order)",
             "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "n": len(results), "label": "unmasked systemic measure, pre-fix",
         },

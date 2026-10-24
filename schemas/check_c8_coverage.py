@@ -25,7 +25,7 @@ FIXTURE = ROOT / "schemas" / "c8_classes.json"
 STANDARD = ROOT / "maqs-way-standard.json"
 SPEC_MANIFEST = ROOT / "schemas" / "spec-manifest.json"
 
-# Closed whitelist (Prima control): ONLY these ids may be known gaps.
+# Closed whitelist (council control): ONLY these ids may be known gaps.
 # Any other class marked known_gap is a bypass attempt -> RED.
 # Bridge consolidation (package 1.6a): a gap entry WITH anchor rules is
 # BRIDGED (subject moved to the owning formulation), NOT covered and NOT

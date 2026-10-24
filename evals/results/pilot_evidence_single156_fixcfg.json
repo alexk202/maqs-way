@@ -8,7 +8,7 @@
     "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
     "metric": "1a evidence-session R@5 + finish_reason instrumentation",
     "selection": "single-session-156 (70 user + 56 assistant + 30 preference), committed order",
-    "config": "FIX: max_tokens=2000 (fix ①, per Lumín order; only delta vs b1)",
+    "config": "FIX: max_tokens=2000 (fix ①, per council order; only delta vs b1)",
     "date": "2026-10-17T20:54:47+00:00",
     "n": 156,
     "label": "unmasked systemic measure, pre-fix"

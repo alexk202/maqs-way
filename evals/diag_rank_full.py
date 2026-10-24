@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Rank diagnostic per Lumín round: misses to END of haystack + hit fragility.
+"""Rank diagnostic per council round: misses to END of haystack + hit fragility.
 
 1. Hits (496): distribution of first-evidence rank (1..5) from stored top5 —
    fragility check (many hits at rank 5 = 0.992 on the edge).
@@ -7,7 +7,7 @@
 3. Misses (4): FULL ranking of the question's collection (all extracted
    memories — oracle mode keeps only 7-31 facts per question), find first
    memory containing the answer substring → rank, or ABSENT (= extraction
-   never produced an answer-bearing fact — a mode outside Lumín's table).
+   never produced an answer-bearing fact — a mode outside the council's table).
 CPU only (embedder :1449 nomic + qdrant local).
 """
 import glob
@@ -96,7 +96,7 @@ def main():
             print(f"  {r['q_id'][:8]} {r['q_type'][:24]:24s} answer={ans[:30]!r:32s} "
                   f"-> ABSENT in all {cnt} memories  (EXTRACTION-side absence)")
     print("\nNote: oracle collections hold 7-31 extracted facts, so rank scale is 1..~31;")
-    print("Lumín's '>50/100' bracket cannot occur — the real split is RANKING (6-31) vs EXTRACTION-ABSENT.")
+    print("the council's '>50/100' bracket cannot occur — the real split is RANKING (6-31) vs EXTRACTION-ABSENT.")
 
 
 if __name__ == "__main__":

@@ -1,4 +1,4 @@
-"""Conditions gate (two outposts, per Lumín refinement 2026-10-17).
+"""Conditions gate (two outposts, per council refinement 2026-10-17).
 
 1. PRE-RUN (prereg self-consistency): every expectation line carrying a
    numeric range must bind it to a condition ('... under <condition>');

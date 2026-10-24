@@ -1,7 +1,7 @@
 # Pre-registration: Lock 4 probe — 11 b3-empty questions at b3 config
 
 Status: DRAFT → owner sanction → commit hash → run (~5–10 min). Diagnosis only.
-Purpose: answer Лумин's Lock 4 **before** b4: were the 11 empty questions in b3 limited
+Purpose: answer the council's Lock 4 **before** b4: were the 11 empty questions in b3 limited
 by the 2000-token wall (silent truncation: valid-but-empty/partial JSON), or did
 extraction validly return empty?
 
@@ -28,7 +28,7 @@ extraction validly return empty?
   delivery hypothesis; grammar-layer plan keeps its separate length guard.
 - **If all 11 reproduce empty with `stop` and short outputs** → "valid empty extraction"
   CONFIRMED; B6 prompt behavior is the mechanism; variant 4 (narrow verbatim) is the
-  mandatory next step (per Лумин's branch-1 reformulation in prereg-b4 §3).
+  mandatory next step (per the council's branch-1 reformulation in prereg-b4 §3).
 - **If empties do NOT reproduce** (any q returns memories>0) → nondeterminism/batch
   dependence is real; record it, b4 remains necessary, and no fix claims are made.
 - Mixed outcome → report per-question table; no aggregated hand-waving.
