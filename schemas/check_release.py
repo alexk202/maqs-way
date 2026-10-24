@@ -5,6 +5,9 @@ G0 canon integrity: H1/Status v0.2 (EN/RU), JSON version 0.2.0,
   from states/status_enum, old versions only in §7 history.
 G1/G2 (mirror + derivatives): MANUAL checklist boundary — stated, not
   pretended executable. See release report.
+Manual release-sync items (owner, together with the release):
+  - CITATION.cff: bump version + date-released to the release stamp
+    (free commit, same release window; never silently between releases).
 G3 verifiability: audit all GREEN + manifest count 12 + landscape file
   present with verified column (link liveness itself is owner-verified).
 G4 process purity: §7 carries the v0.1.4→v0.2 entry WITH the open-gap list.

@@ -1,7 +1,10 @@
 # This CITATION.cff file was generated with cffinit.
 # Visit https://bit.ly/cffinit to generate yours today!
+# Release-sync obligation: version + date-released are updated TOGETHER WITH
+# THE RELEASE in the release sync checklist (see schemas/check_release.py,
+# manual checklist boundary) -- never silently in between releases.
 cff-version: 1.2.0
-title: MAQS-Way — Common Path from Policies to Implementation for Long-Term AI Memory
+title: "MAQS-Way: common path from policies to implementation for long-term AI memory"
 message: If you use this software, please cite it using the metadata from this file.
 type: software
 authors:
