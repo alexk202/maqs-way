@@ -74,6 +74,9 @@ llama-server -m Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf -c 32768 -ngl 99 \
 | `EMBED_DIMS` | `768` | другая размерность |
 | `LLM_API_KEY` | содержимое `LLM_API_KEY_FILE`, иначе `local` | сервер с авторизацией |
 | `LLM_API_KEY_FILE` | `/tmp/opencode/pilot8085.key` | конвенция вашего стенда |
+
+Файл ключа **создавать не нужно**: если его нет (и не задан `LLM_API_KEY`),
+скрипты подставляют `local` — сервер без `--api-key` принимает любой bearer.
 | `EMBED_API_KEY` | `local-smoke` | эмбеддер с авторизацией |
 
 Один источник: `evals/eval_config.py` — все раннеры импортируют оттуда;
@@ -85,9 +88,12 @@ llama-server -m Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf -c 32768 -ngl 99 \
 # 1) статический гейт — стенда не требует вовсе:
 python3 schemas/maqs_way_audit.py all          # ждём: GATE GREEN
 
-# 2) smoke (5 стратифицированных вопросов, ~5–10 мин, НЕ метрика):
-python3 evals/pilot_longmemeval_n5.py           # ждём: 5 строк [n/5] и артефакт;
-                                               # критерий = полный проход, НЕ число R@5
+# 2) smoke (5 стратифицированных вопросов, ~5–10 мин):
+python3 evals/pilot_longmemeval_n5.py
+# ожидаем: 5 строк [n/5] + 'SMOKE VERDICT: evidence-R@5 (n=5) = 1.00 (stand OK)';
+# evidence 5/5 на рабочем стенде — осмысленный знак; token-proxy рядом —
+# вторичная диагностика, НЕ метрика (может быть 0/5, см. sec 0); артефакт
+# пишется таймстампным именем и ничего не затирает
 
 # 3) полный прогон (референсная конфигурация g1 — грамм-бейзлайн):
 python3 evals/run_single156_g1.py               # ~1 час, чекпоинт на каждый вопрос

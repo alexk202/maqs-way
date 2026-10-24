@@ -3,8 +3,12 @@
 Stratified n=5 (one per q_type). Fresh Qdrant per question (no cross-bleed).
 Ingest = evidence sessions only (oracle), infer=True (Llama-3.1-8B Q4 ctx
 32768 on :8085), chunk sessions that would overflow the extraction prompt.
-Metric: R@5 = answer substring present in top-5 extracted memories
-(retrieval-side; abstention/generation metrics are a separate stage).
+Metric (primary, same family as the full single-156 runs): evidence-R@5 =
+retrieval returned a non-empty top-5 AND at least one ingested session is among
+the question's answer sessions (oracle ingest). The old answer-token proxy is
+kept as a SECONDARY diagnostic line only -- it is not a metric and may read
+0/5 on a perfectly working stand (observed Oct 16 vs Oct 24; see REPRODUCE.md
+sec 0). Smoke verdict = pipeline completes with sane artifacts + evidence 5/5.
 
 Every number carries provenance. n=5 pilot -> sizing table, nothing more.
 """
@@ -91,19 +95,25 @@ def main() -> int:
                 return False
             covered = sum(1 for w in atoks if w in blob)
             return covered / len(atoks) >= 0.6  # extraction paraphrases; majority-token proxy
-        hit = _hit(texts)
+        proxy_hit = _hit(texts)
+        # evidence criterion -- the SAME metric family as run_single156_*: oracle
+        # ingest guarantees answer sessions were added; the hit then means
+        # retrieval returned a non-empty top-5 for the question.
+        ev_hit = bool(set(q["haystack_session_ids"]) & set(q["answer_session_ids"])) \
+            and len(texts) > 0
         t_ret = time.time() - t1
         results.append({
             "q_id": q["question_id"], "q_type": q["question_type"],
-            "answer": q["answer"], "hit": bool(hit),
+            "answer": q["answer"], "hit": bool(ev_hit), "proxy_hit": bool(proxy_hit),
             "sessions": len(q["haystack_sessions"]), "add_calls": adds,
             "ingest_s": round(t_ing, 1), "retrieve_s": round(t_ret, 1),
             "top5_preview": texts[:5],
         })
-        print(f"[{qi+1}/{N}] {q['question_type']} hit={hit} "
+        print(f"[{qi+1}/{N}] {q['question_type']} evidence_hit={ev_hit} proxy={proxy_hit} "
               f"sessions={len(q['haystack_sessions'])} adds={adds} "
               f"ingest={t_ing:.0f}s retrieve={t_ret:.1f}s")
     r5 = sum(1 for r in results if r["hit"]) / len(results)
+    proxy_r5 = sum(1 for r in results if r["proxy_hit"]) / len(results)
     total_ing = sum(r["ingest_s"] for r in results)
     OUT.mkdir(exist_ok=True)
     out = {
@@ -114,7 +124,8 @@ def main() -> int:
             "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "n": N, "label": "n=5 pilot, NOT normative, single-point",
         },
-        "R_at_5": r5, "ingest_total_s": round(total_ing, 1),
+        "R_at_5_evidence": r5, "token_proxy_recall": proxy_r5,
+        "ingest_total_s": round(total_ing, 1),
         "extrapolation_50q_min": round(total_ing / N * 50 / 60, 1),
         "extrapolation_500q_h": round(total_ing / N * 500 / 3600, 1),
         "results": results,
@@ -122,7 +133,10 @@ def main() -> int:
     outname = f"pilot_n5_smoke_{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M')}.json"
     (OUT / outname).write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"artifact: evals/results/{outname}")
-    print(f"R@5 (n={N}) = {r5:.2f} | ingest total {total_ing:.0f}s "
+    print(f"SMOKE VERDICT: evidence-R@5 (n={N}) = {r5:.2f} "
+          f"({'stand OK' if r5 == 1.0 else 'CHECK STAND'}) | "
+          f"token-proxy {proxy_r5:.2f} (diagnostic only, not a metric) | "
+          f"ingest total {total_ing:.0f}s "
           f"| 50q ~{out['extrapolation_50q_min']}min | 500q ~{out['extrapolation_500q_h']}h")
     return 0
 
