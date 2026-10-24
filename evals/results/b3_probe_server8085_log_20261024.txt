@@ -1,0 +1,301 @@
+0.00.064.016 I log_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.064.025 I device_info:
+0.00.064.779 I   - Vulkan0 : Intel(R) Arc(tm) Graphics (MTL) (47867 MiB, 33229 MiB free)
+0.00.065.059 I   - Vulkan1 : NVIDIA GeForce RTX 5060 Ti (16557 MiB, 13502 MiB free)
+0.00.065.065 I   - CPU     : Intel(R) Core(TM) Ultra 9 185H (63823 MiB, 63823 MiB free)
+0.00.065.101 I system_info: n_threads = 6 (n_threads_batch = 6) / 22 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX_VNNI = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.00.065.104 I srv          main: n_parallel is set to auto, using n_parallel = 4 and kv_unified = true
+0.00.065.130 I srv          init: running without SSL
+0.00.065.151 I srv          init: using 21 threads for HTTP server
+0.00.065.153 I srv          init: The UI is disabled
+0.00.065.153 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.065.277 I srv         start: binding port with default address family
+0.00.066.421 I srv          main: loading model
+0.00.066.430 I srv    load_model: loading model '/home/aleksandr/textgen-stable/user_data/models/Meta-Llama-3.1-8B-Instruct-GGUF/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf'
+0.00.066.456 I common_init_result: fitting params to device memory ...
+0.00.066.458 I common_init_result: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.03.151.937 W llama_context: n_ctx_seq (32768) < n_ctx_train (131072) -- the full capacity of the model will not be utilized
+0.03.302.265 W common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.04.600.310 I srv    load_model: initializing slots, n_slots = 4
+0.04.726.880 W common_speculative_init: no implementations specified for speculative decoding
+0.04.726.888 I slot   load_model: id  0 | task -1 | new slot, n_ctx = 32768
+0.04.726.891 I slot   load_model: id  1 | task -1 | new slot, n_ctx = 32768
+0.04.726.891 I slot   load_model: id  2 | task -1 | new slot, n_ctx = 32768
+0.04.726.892 I slot   load_model: id  3 | task -1 | new slot, n_ctx = 32768
+0.04.726.971 I srv    load_model: prompt cache is enabled, size limit: 8192 MiB
+0.04.726.973 I srv    load_model: use `--cache-ram 0` to disable the prompt cache
+0.04.726.973 I srv    load_model: for more info see https://github.com/ggml-org/llama.cpp/pull/16391
+0.04.726.996 I srv          init: idle slots will be saved to prompt cache and cleared upon starting a new task
+0.04.736.756 I init: chat template, example_format: '<|start_header_id|>system<|end_header_id|>
+
+Cutting Knowledge Date: December 2023
+Today Date: 24 Oct 2026
+
+You are a helpful assistant<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+Hello<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+Hi there<|eot_id|><|start_header_id|>user<|end_header_id|>
+
+How are you?<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+'
+0.04.738.776 I srv          init: init: chat template, thinking = 0
+0.04.738.789 I srv          main: model loaded
+0.04.738.792 I srv          main: server is listening on http://127.0.0.1:8085
+0.04.738.802 I srv  update_slots: all slots are idle
+0.33.515.936 I srv  params_from_: Chat format: peg-native
+0.33.515.997 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.33.515.999 I srv  get_availabl: updating prompt cache
+0.33.516.003 I srv          load:  - looking for better prompt, base f_keep = -1.000, sim = 0.000
+0.33.516.008 I srv        update:  - cache state: 0 prompts, 0.000 MiB (limits: 8192.000 MiB, 32768 tokens, 8589934592 est)
+0.33.516.009 I srv  get_availabl: prompt cache update took 0.01 ms
+0.33.516.058 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.34.056.689 I slot print_timing: id  3 | task 0 | 
+prompt eval time =     370.71 ms /    37 tokens (   10.02 ms per token,    99.81 tokens per second)
+       eval time =     169.89 ms /     2 tokens (   84.95 ms per token,    11.77 tokens per second)
+      total time =     540.61 ms /    39 tokens
+0.34.056.731 I slot      release: id  3 | task 0 | stop processing: n_tokens = 38, truncated = 0
+0.34.056.737 I srv  update_slots: all slots are idle
+0.39.274.657 I srv  params_from_: Chat format: peg-native
+0.39.274.732 I slot get_availabl: id  2 | task -1 | selected slot by LRU, t_last = -1
+0.39.274.732 I srv  get_availabl: updating prompt cache
+0.39.274.735 I srv          load:  - looking for better prompt, base f_keep = -1.000, sim = 0.000
+0.39.274.738 I srv        update:  - cache state: 0 prompts, 0.000 MiB (limits: 8192.000 MiB, 32768 tokens, 8589934592 est)
+0.39.274.739 I srv  get_availabl: prompt cache update took 0.01 ms
+0.39.274.787 I slot launch_slot_: id  2 | task 3 | processing task, is_child = 0
+0.39.274.788 I slot slot_save_an: id  3 | task -1 | saving idle slot to prompt cache
+0.39.274.840 W srv   prompt_save:  - saving prompt with length 38, total state size = 4.751 MiB (draft: 0.000 MiB)
+0.39.284.910 I slot prompt_clear: id  3 | task -1 | clearing prompt with 38 tokens
+0.39.284.944 I srv        update:  - cache state: 1 prompts, 4.751 MiB (limits: 8192.000 MiB, 32768 tokens, 65519 est)
+0.39.284.945 I srv        update:    - prompt 0x63750c6b94e0:      38 tokens, checkpoints:  0,     4.751 MiB
+0.42.544.804 I slot print_timing: id  2 | task 3 | prompt processing, n_tokens =   4096, progress = 0.35, t =   3.26 s / 1256.50 tokens per second
+0.43.752.039 I slot print_timing: id  2 | task 3 | prompt processing, n_tokens =   6144, progress = 0.53, t =   4.47 s / 1375.40 tokens per second
+0.45.266.686 I slot print_timing: id  2 | task 3 | prompt processing, n_tokens =   8192, progress = 0.70, t =   5.98 s / 1369.51 tokens per second
+0.46.983.997 I slot print_timing: id  2 | task 3 | prompt processing, n_tokens =  10240, progress = 0.88, t =   7.70 s / 1330.04 tokens per second
+0.52.076.505 I slot print_timing: id  2 | task 3 | n_decoded =    100, tg =  29.80 t/s
+0.55.105.774 I slot print_timing: id  2 | task 3 | n_decoded =    189, tg =  29.60 t/s
+0.58.138.214 I slot print_timing: id  2 | task 3 | n_decoded =    278, tg =  29.52 t/s
+1.01.170.033 I slot print_timing: id  2 | task 3 | n_decoded =    367, tg =  29.48 t/s
+1.04.180.328 I slot print_timing: id  2 | task 3 | n_decoded =    456, tg =  29.50 t/s
+1.07.212.423 I slot print_timing: id  2 | task 3 | n_decoded =    545, tg =  29.47 t/s
+1.10.215.973 I slot print_timing: id  2 | task 3 | n_decoded =    633, tg =  29.45 t/s
+1.13.220.889 I slot print_timing: id  2 | task 3 | n_decoded =    721, tg =  29.43 t/s
+1.16.249.057 I slot print_timing: id  2 | task 3 | n_decoded =    810, tg =  29.42 t/s
+1.19.281.804 I slot print_timing: id  2 | task 3 | n_decoded =    899, tg =  29.42 t/s
+1.19.553.215 I slot print_timing: id  2 | task 3 | 
+prompt eval time =    9435.76 ms / 11681 tokens (    0.81 ms per token,  1237.95 tokens per second)
+       eval time =   30832.48 ms /   907 tokens (   33.99 ms per token,    29.42 tokens per second)
+      total time =   40268.24 ms / 12588 tokens
+1.19.553.730 I slot      release: id  2 | task 3 | stop processing: n_tokens = 12587, truncated = 0
+1.19.553.738 I srv  update_slots: all slots are idle
+1.19.960.929 I srv  params_from_: Chat format: peg-native
+1.19.961.014 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.595 (> 0.100 thold), f_keep = 0.612
+1.19.961.088 I slot launch_slot_: id  2 | task 916 | processing task, is_child = 0
+1.23.313.623 I slot print_timing: id  2 | task 916 | prompt processing, n_tokens =   4096, progress = 0.91, t =   3.35 s / 1221.77 tokens per second
+1.28.322.521 I slot print_timing: id  2 | task 916 | n_decoded =    100, tg =  29.55 t/s
+1.31.341.122 I slot print_timing: id  2 | task 916 | n_decoded =    188, tg =  29.36 t/s
+1.34.356.822 I slot print_timing: id  2 | task 916 | n_decoded =    276, tg =  29.30 t/s
+1.37.367.661 I slot print_timing: id  2 | task 916 | n_decoded =    364, tg =  29.29 t/s
+1.40.369.056 I slot print_timing: id  2 | task 916 | n_decoded =    451, tg =  29.23 t/s
+1.43.382.907 I slot print_timing: id  2 | task 916 | n_decoded =    538, tg =  29.17 t/s
+1.46.399.924 I slot print_timing: id  2 | task 916 | n_decoded =    625, tg =  29.12 t/s
+1.49.420.616 I slot print_timing: id  2 | task 916 | n_decoded =    712, tg =  29.08 t/s
+1.52.423.636 I slot print_timing: id  2 | task 916 | n_decoded =    799, tg =  29.07 t/s
+1.55.449.924 I slot print_timing: id  2 | task 916 | n_decoded =    887, tg =  29.07 t/s
+1.58.461.580 I slot print_timing: id  2 | task 916 | n_decoded =    974, tg =  29.05 t/s
+2.01.470.514 I slot print_timing: id  2 | task 916 | n_decoded =   1061, tg =  29.04 t/s
+2.02.365.840 I slot print_timing: id  2 | task 916 | 
+prompt eval time =    4977.24 ms /  5255 tokens (    0.95 ms per token,  1055.81 tokens per second)
+       eval time =   37427.50 ms /  1087 tokens (   34.43 ms per token,    29.04 tokens per second)
+      total time =   42404.73 ms /  6342 tokens
+2.02.366.398 I slot      release: id  2 | task 916 | stop processing: n_tokens = 14050, truncated = 0
+2.02.366.412 I srv  update_slots: all slots are idle
+2.02.906.670 I srv  params_from_: Chat format: peg-native
+2.02.906.819 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.686 (> 0.100 thold), f_keep = 0.549
+2.02.906.880 I slot launch_slot_: id  2 | task 2006 | processing task, is_child = 0
+2.09.419.974 I slot print_timing: id  2 | task 2006 | n_decoded =    100, tg =  29.98 t/s
+2.12.452.088 I slot print_timing: id  2 | task 2006 | n_decoded =    190, tg =  29.84 t/s
+2.15.457.962 I slot print_timing: id  2 | task 2006 | n_decoded =    279, tg =  29.77 t/s
+2.16.952.034 I slot print_timing: id  2 | task 2006 | 
+prompt eval time =    3177.69 ms /  3530 tokens (    0.90 ms per token,  1110.87 tokens per second)
+       eval time =   10867.44 ms /   323 tokens (   33.65 ms per token,    29.72 tokens per second)
+      total time =   14045.13 ms /  3853 tokens
+2.16.952.551 I slot      release: id  2 | task 2006 | stop processing: n_tokens = 11562, truncated = 0
+2.16.952.565 I srv  update_slots: all slots are idle
+2.17.222.150 I srv  params_from_: Chat format: peg-native
+2.17.222.338 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.745 (> 0.100 thold), f_keep = 0.667
+2.17.222.397 I slot launch_slot_: id  2 | task 2331 | processing task, is_child = 0
+2.22.894.184 I slot print_timing: id  2 | task 2331 | n_decoded =    100, tg =  30.21 t/s
+2.25.898.896 I slot print_timing: id  2 | task 2331 | n_decoded =    190, tg =  30.09 t/s
+2.28.905.897 I slot print_timing: id  2 | task 2331 | n_decoded =    280, tg =  30.04 t/s
+2.31.919.767 I slot print_timing: id  2 | task 2331 | n_decoded =    370, tg =  29.99 t/s
+2.34.936.874 I slot print_timing: id  2 | task 2331 | n_decoded =    460, tg =  29.96 t/s
+2.37.956.433 I slot print_timing: id  2 | task 2331 | n_decoded =    550, tg =  29.94 t/s
+2.40.972.623 I slot print_timing: id  2 | task 2331 | n_decoded =    640, tg =  29.92 t/s
+2.43.977.466 I slot print_timing: id  2 | task 2331 | n_decoded =    729, tg =  29.89 t/s
+2.47.003.213 I slot print_timing: id  2 | task 2331 | n_decoded =    819, tg =  29.87 t/s
+2.50.003.596 I slot print_timing: id  2 | task 2331 | n_decoded =    908, tg =  29.85 t/s
+2.53.009.135 I slot print_timing: id  2 | task 2331 | n_decoded =    997, tg =  29.83 t/s
+2.56.035.784 I slot print_timing: id  2 | task 2331 | n_decoded =   1087, tg =  29.82 t/s
+2.59.053.441 I slot print_timing: id  2 | task 2331 | n_decoded =   1176, tg =  29.80 t/s
+3.02.083.355 I slot print_timing: id  2 | task 2331 | n_decoded =   1266, tg =  29.79 t/s
+3.05.105.940 I slot print_timing: id  2 | task 2331 | n_decoded =   1355, tg =  29.77 t/s
+3.08.133.027 I slot print_timing: id  2 | task 2331 | n_decoded =   1444, tg =  29.74 t/s
+3.11.133.400 I slot print_timing: id  2 | task 2331 | n_decoded =   1533, tg =  29.74 t/s
+3.14.152.768 I slot print_timing: id  2 | task 2331 | n_decoded =   1622, tg =  29.72 t/s
+3.17.169.981 I slot print_timing: id  2 | task 2331 | n_decoded =   1711, tg =  29.71 t/s
+3.20.187.933 I slot print_timing: id  2 | task 2331 | n_decoded =   1800, tg =  29.70 t/s
+3.23.209.215 I slot print_timing: id  2 | task 2331 | n_decoded =   1889, tg =  29.69 t/s
+3.26.239.548 I slot print_timing: id  2 | task 2331 | n_decoded =   1978, tg =  29.68 t/s
+3.26.986.741 I slot print_timing: id  2 | task 2331 | 
+prompt eval time =    2361.78 ms /  2643 tokens (    0.89 ms per token,  1119.07 tokens per second)
+       eval time =   67402.55 ms /  2000 tokens (   33.70 ms per token,    29.67 tokens per second)
+      total time =   69764.33 ms /  4643 tokens
+3.26.987.196 I slot      release: id  2 | task 2331 | stop processing: n_tokens = 12353, truncated = 0
+3.26.987.212 I srv  update_slots: all slots are idle
+3.27.118.640 I srv  params_from_: Chat format: peg-native
+3.27.118.778 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.784 (> 0.100 thold), f_keep = 0.624
+3.27.118.850 I slot launch_slot_: id  2 | task 4333 | processing task, is_child = 0
+3.32.331.403 I slot print_timing: id  2 | task 4333 | n_decoded =    100, tg =  30.20 t/s
+3.35.342.874 I slot print_timing: id  2 | task 4333 | n_decoded =    190, tg =  30.05 t/s
+3.38.366.054 I slot print_timing: id  2 | task 4333 | n_decoded =    281, tg =  30.07 t/s
+3.41.366.243 I slot print_timing: id  2 | task 4333 | n_decoded =    371, tg =  30.05 t/s
+3.44.372.079 I slot print_timing: id  2 | task 4333 | n_decoded =    461, tg =  30.03 t/s
+3.47.400.524 I slot print_timing: id  2 | task 4333 | n_decoded =    552, tg =  30.03 t/s
+3.49.001.282 I slot print_timing: id  2 | task 4333 | 
+prompt eval time =    1901.67 ms /  2129 tokens (    0.89 ms per token,  1119.54 tokens per second)
+       eval time =   19980.74 ms /   600 tokens (   33.30 ms per token,    30.03 tokens per second)
+      total time =   21882.41 ms /  2729 tokens
+3.49.001.714 I slot      release: id  2 | task 4333 | stop processing: n_tokens = 10434, truncated = 0
+3.49.001.725 I srv  update_slots: all slots are idle
+3.49.303.679 I srv  params_from_: Chat format: peg-native
+3.49.303.856 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.643 (> 0.100 thold), f_keep = 0.739
+3.49.303.926 I slot launch_slot_: id  2 | task 4935 | processing task, is_child = 0
+3.52.647.211 I slot print_timing: id  2 | task 4935 | prompt processing, n_tokens =   4096, progress = 0.98, t =   3.34 s / 1225.15 tokens per second
+3.56.596.772 I slot print_timing: id  2 | task 4935 | n_decoded =    100, tg =  29.64 t/s
+3.59.621.725 I slot print_timing: id  2 | task 4935 | n_decoded =    189, tg =  29.54 t/s
+4.02.635.143 I slot print_timing: id  2 | task 4935 | n_decoded =    277, tg =  29.43 t/s
+4.03.630.744 I slot print_timing: id  2 | task 4935 | 
+prompt eval time =    3919.07 ms /  4281 tokens (    0.92 ms per token,  1092.35 tokens per second)
+       eval time =   10407.72 ms /   306 tokens (   34.01 ms per token,    29.40 tokens per second)
+      total time =   14326.80 ms /  4587 tokens
+4.03.631.262 I slot      release: id  2 | task 4935 | stop processing: n_tokens = 12292, truncated = 0
+4.03.631.272 I srv  update_slots: all slots are idle
+4.03.902.492 I srv  params_from_: Chat format: peg-native
+4.03.902.607 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.732 (> 0.100 thold), f_keep = 0.627
+4.03.902.679 I slot launch_slot_: id  2 | task 5244 | processing task, is_child = 0
+4.09.735.838 I slot print_timing: id  2 | task 5244 | n_decoded =    100, tg =  30.33 t/s
+4.12.769.118 I slot print_timing: id  2 | task 5244 | n_decoded =    191, tg =  30.17 t/s
+4.15.784.211 I slot print_timing: id  2 | task 5244 | n_decoded =    281, tg =  30.07 t/s
+4.18.810.450 I slot print_timing: id  2 | task 5244 | n_decoded =    371, tg =  29.99 t/s
+4.21.818.448 I slot print_timing: id  2 | task 5244 | n_decoded =    461, tg =  29.97 t/s
+4.24.842.841 I slot print_timing: id  2 | task 5244 | n_decoded =    551, tg =  29.94 t/s
+4.25.111.338 I slot print_timing: id  2 | task 5244 | 
+prompt eval time =    2535.96 ms /  2826 tokens (    0.90 ms per token,  1114.37 tokens per second)
+       eval time =   18672.68 ms /   559 tokens (   33.40 ms per token,    29.94 tokens per second)
+      total time =   21208.64 ms /  3385 tokens
+4.25.111.829 I slot      release: id  2 | task 5244 | stop processing: n_tokens = 11092, truncated = 0
+4.25.111.840 I srv  update_slots: all slots are idle
+4.25.454.806 I srv  params_from_: Chat format: peg-native
+4.25.454.959 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.790 (> 0.100 thold), f_keep = 0.716
+4.25.455.014 I slot launch_slot_: id  2 | task 5805 | processing task, is_child = 0
+4.30.688.171 I slot print_timing: id  2 | task 5805 | n_decoded =    100, tg =  30.08 t/s
+4.33.714.189 I slot print_timing: id  2 | task 5805 | n_decoded =    191, tg =  30.08 t/s
+4.36.718.390 I slot print_timing: id  2 | task 5805 | n_decoded =    281, tg =  30.04 t/s
+4.39.750.067 I slot print_timing: id  2 | task 5805 | n_decoded =    372, tg =  30.03 t/s
+4.42.783.924 I slot print_timing: id  2 | task 5805 | n_decoded =    462, tg =  29.96 t/s
+4.44.622.473 I slot print_timing: id  2 | task 5805 | 
+prompt eval time =    1909.15 ms /  2111 tokens (    0.90 ms per token,  1105.73 tokens per second)
+       eval time =   17258.29 ms /   516 tokens (   33.45 ms per token,    29.90 tokens per second)
+      total time =   19167.44 ms /  2627 tokens
+4.44.622.929 I slot      release: id  2 | task 5805 | stop processing: n_tokens = 10566, truncated = 0
+4.44.622.941 I srv  update_slots: all slots are idle
+4.44.907.683 I srv  params_from_: Chat format: peg-native
+4.44.907.765 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.881 (> 0.100 thold), f_keep = 0.729
+4.44.907.822 I slot launch_slot_: id  2 | task 6323 | processing task, is_child = 0
+4.49.433.564 I slot print_timing: id  2 | task 6323 | n_decoded =    100, tg =  30.71 t/s
+4.52.449.313 I slot print_timing: id  2 | task 6323 | n_decoded =    191, tg =  30.45 t/s
+4.55.478.173 I slot print_timing: id  2 | task 6323 | n_decoded =    283, tg =  30.43 t/s
+4.57.828.033 I slot print_timing: id  2 | task 6323 | 
+prompt eval time =    1269.21 ms /  1041 tokens (    1.22 ms per token,   820.20 tokens per second)
+       eval time =   11650.99 ms /   354 tokens (   32.91 ms per token,    30.38 tokens per second)
+      total time =   12920.19 ms /  1395 tokens
+4.57.828.425 I slot      release: id  2 | task 6323 | stop processing: n_tokens = 9100, truncated = 0
+4.57.828.435 I srv  update_slots: all slots are idle
+4.58.122.897 I srv  params_from_: Chat format: peg-native
+4.58.123.078 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.702 (> 0.100 thold), f_keep = 0.856
+4.58.123.143 I slot launch_slot_: id  2 | task 6678 | processing task, is_child = 0
+5.04.401.290 I slot print_timing: id  2 | task 6678 | n_decoded =    100, tg =  30.17 t/s
+5.07.418.160 I slot print_timing: id  2 | task 6678 | n_decoded =    189, tg =  29.85 t/s
+5.10.434.119 I slot print_timing: id  2 | task 6678 | n_decoded =    278, tg =  29.74 t/s
+5.13.459.391 I slot print_timing: id  2 | task 6678 | n_decoded =    368, tg =  29.74 t/s
+5.16.482.740 I slot print_timing: id  2 | task 6678 | n_decoded =    458, tg =  29.75 t/s
+5.19.489.981 I slot print_timing: id  2 | task 6678 | n_decoded =    547, tg =  29.72 t/s
+5.22.497.595 I slot print_timing: id  2 | task 6678 | n_decoded =    636, tg =  29.70 t/s
+5.25.529.369 I slot print_timing: id  2 | task 6678 | n_decoded =    726, tg =  29.70 t/s
+5.28.550.154 I slot print_timing: id  2 | task 6678 | n_decoded =    815, tg =  29.68 t/s
+5.31.564.820 I slot print_timing: id  2 | task 6678 | n_decoded =    904, tg =  29.66 t/s
+5.34.577.566 I slot print_timing: id  2 | task 6678 | n_decoded =    992, tg =  29.62 t/s
+5.37.608.483 I slot print_timing: id  2 | task 6678 | n_decoded =   1081, tg =  29.60 t/s
+5.40.618.854 I slot print_timing: id  2 | task 6678 | n_decoded =   1169, tg =  29.57 t/s
+5.43.636.046 I slot print_timing: id  2 | task 6678 | n_decoded =   1257, tg =  29.54 t/s
+5.46.662.684 I slot print_timing: id  2 | task 6678 | n_decoded =   1346, tg =  29.53 t/s
+5.49.687.931 I slot print_timing: id  2 | task 6678 | n_decoded =   1435, tg =  29.53 t/s
+5.52.722.488 I slot print_timing: id  2 | task 6678 | n_decoded =   1524, tg =  29.51 t/s
+5.55.733.992 I slot print_timing: id  2 | task 6678 | n_decoded =   1612, tg =  29.50 t/s
+5.58.745.588 I slot print_timing: id  2 | task 6678 | n_decoded =   1700, tg =  29.48 t/s
+6.01.766.908 I slot print_timing: id  2 | task 6678 | n_decoded =   1788, tg =  29.47 t/s
+6.04.791.118 I slot print_timing: id  2 | task 6678 | n_decoded =   1876, tg =  29.45 t/s
+6.07.791.585 I slot print_timing: id  2 | task 6678 | n_decoded =   1963, tg =  29.43 t/s
+6.09.060.709 I slot print_timing: id  2 | task 6678 | 
+prompt eval time =    2963.88 ms /  3309 tokens (    0.90 ms per token,  1116.44 tokens per second)
+       eval time =   67973.67 ms /  2000 tokens (   33.99 ms per token,    29.42 tokens per second)
+      total time =   70937.55 ms /  5309 tokens
+6.09.061.205 I slot      release: id  2 | task 6678 | stop processing: n_tokens = 13101, truncated = 0
+6.09.061.220 I srv  update_slots: all slots are idle
+6.09.144.245 I srv  params_from_: Chat format: peg-native
+6.09.144.327 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.853 (> 0.100 thold), f_keep = 0.588
+6.09.144.391 I slot launch_slot_: id  2 | task 8680 | processing task, is_child = 0
+6.13.616.447 I slot print_timing: id  2 | task 8680 | n_decoded =    100, tg =  30.48 t/s
+6.16.630.885 I slot print_timing: id  2 | task 8680 | n_decoded =    191, tg =  30.34 t/s
+6.19.653.181 I slot print_timing: id  2 | task 8680 | n_decoded =    282, tg =  30.27 t/s
+6.22.582.510 I slot print_timing: id  2 | task 8680 | 
+prompt eval time =    1191.71 ms /  1328 tokens (    0.90 ms per token,  1114.37 tokens per second)
+       eval time =   12246.40 ms /   370 tokens (   33.10 ms per token,    30.21 tokens per second)
+      total time =   13438.10 ms /  1698 tokens
+6.22.582.908 I slot      release: id  2 | task 8680 | stop processing: n_tokens = 9403, truncated = 0
+6.22.582.918 I srv  update_slots: all slots are idle
+6.23.213.662 I srv  params_from_: Chat format: peg-native
+6.23.213.723 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.767 (> 0.100 thold), f_keep = 0.869
+6.23.213.763 I slot launch_slot_: id  2 | task 9051 | processing task, is_child = 0
+6.28.782.212 I slot print_timing: id  2 | task 9051 | n_decoded =    100, tg =  30.17 t/s
+6.31.802.422 I slot print_timing: id  2 | task 9051 | n_decoded =    190, tg =  29.99 t/s
+6.34.828.539 I slot print_timing: id  2 | task 9051 | n_decoded =    279, tg =  29.81 t/s
+6.37.857.099 I slot print_timing: id  2 | task 9051 | n_decoded =    369, tg =  29.78 t/s
+6.40.880.954 I slot print_timing: id  2 | task 9051 | n_decoded =    458, tg =  29.71 t/s
+6.43.886.411 I slot print_timing: id  2 | task 9051 | n_decoded =    547, tg =  29.70 t/s
+6.46.886.763 I slot print_timing: id  2 | task 9051 | n_decoded =    636, tg =  29.69 t/s
+6.49.910.206 I slot print_timing: id  2 | task 9051 | n_decoded =    725, tg =  29.66 t/s
+6.52.943.485 I slot print_timing: id  2 | task 9051 | n_decoded =    815, tg =  29.66 t/s
+6.54.285.981 I slot print_timing: id  2 | task 9051 | 
+prompt eval time =    2253.97 ms /  2476 tokens (    0.91 ms per token,  1098.51 tokens per second)
+       eval time =   28818.23 ms /   855 tokens (   33.71 ms per token,    29.67 tokens per second)
+      total time =   31072.20 ms /  3331 tokens
+6.54.286.467 I slot      release: id  2 | task 9051 | stop processing: n_tokens = 11503, truncated = 0
+6.54.286.479 I srv  update_slots: all slots are idle
+6.55.667.566 I srv  params_from_: Chat format: peg-native
+6.55.667.711 I slot get_availabl: id  2 | task -1 | selected slot by LCP similarity, sim_best = 0.684 (> 0.100 thold), f_keep = 0.670
+6.55.667.786 I slot launch_slot_: id  2 | task 9908 | processing task, is_child = 0
+7.02.216.120 I slot print_timing: id  2 | task 9908 | n_decoded =    100, tg =  30.03 t/s
+7.05.236.636 I slot print_timing: id  2 | task 9908 | n_decoded =    190, tg =  29.92 t/s
+7.08.244.202 I slot print_timing: id  2 | task 9908 | n_decoded =    279, tg =  29.81 t/s
+7.11.272.256 I slot print_timing: id  2 | task 9908 | n_decoded =    368, tg =  29.71 t/s
+7.14.283.178 I slot print_timing: id  2 | task 9908 | n_decoded =    457, tg =  29.68 t/s
+7.17.307.241 I slot print_timing: id  2 | task 9908 | n_decoded =    546, tg =  29.64 t/s
+7.19.630.275 I slot print_timing: id  2 | task 9908 | 
+prompt eval time =    3218.22 ms /  3560 tokens (    0.90 ms per token,  1106.20 tokens per second)
+       eval time =   20744.25 ms /   614 tokens (   33.79 ms per token,    29.60 tokens per second)
+      total time =   23962.47 ms /  4174 tokens
+7.19.630.782 I slot      release: id  2 | task 9908 | stop processing: n_tokens = 11881, truncated = 0
+7.19.630.794 I srv  update_slots: all slots are idle

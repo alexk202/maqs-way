@@ -1,0 +1,30 @@
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 242 column 6 (char 7967)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[1/13] 001be529 [b3_empty] mem=10 calls=1 fr=['stop'] chars=[3577]
+[2/13] 06878be2 [b3_empty] mem=21 calls=1 fr=['stop'] chars=[4449]
+[3/13] 118b2229 [b3_empty] mem=6 calls=1 fr=['stop'] chars=[1313]
+[4/13] 352ab8bd [b3_empty] mem=0 calls=1 fr=['length'] chars=[10326]
+[5/13] 4baee567 [b3_empty] mem=8 calls=1 fr=['stop'] chars=[2381]
+[6/13] 75f70248 [b3_empty] mem=6 calls=1 fr=['stop'] chars=[1304]
+[7/13] 7a8d0b71 [b3_empty] mem=11 calls=1 fr=['stop'] chars=[2262]
+[8/13] 8752c811 [b3_empty] mem=13 calls=1 fr=['stop'] chars=[2104]
+[9/13] 8cf51dda [b3_empty] mem=7 calls=1 fr=['stop'] chars=[1615]
+[10/13] af8d2e46 [b3_empty] mem=0 calls=1 fr=['length'] chars=[7980]
+[11/13] b759caee [b3_empty] mem=8 calls=1 fr=['stop'] chars=[1567]
+[12/13] 70b3e69b [control_b2empty_b3fixed] mem=16 calls=1 fr=['stop'] chars=[3867]
+[13/13] 76d63226 [control_b2empty_b3fixed] mem=11 calls=1 fr=['stop'] chars=[2418]
+
+finish_reasons={'stop': 11, 'length': 2} | length_stops=2 | chars>=7000=2

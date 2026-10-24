@@ -1,0 +1,204 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "dataset": "longmemeval_oracle.json (same slice), 11 b3-empty q_ids + 2 controls",
+    "config": "b3 config: max_tokens=2000 + B6_VERBATIM unchanged",
+    "determinism": "temperature=0; seed NOT pinned (server default) -> RE-MEASUREMENT, not a byte-exact reproduction of b3",
+    "date": "2026-10-24T08:39:24+00:00",
+    "label": "Lock 4 probe (diagnosis only; prereg-b3-empty-probe-amend-1)"
+  },
+  "finish_reasons": {
+    "stop": 11,
+    "length": 2
+  },
+  "length_stops": 2,
+  "responses_chars_ge_7000": 2,
+  "results": [
+    {
+      "q_id": "001be529",
+      "cohort": "b3_empty",
+      "memories": 10,
+      "ingest_s": 40.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3577
+        }
+      ]
+    },
+    {
+      "q_id": "06878be2",
+      "cohort": "b3_empty",
+      "memories": 21,
+      "ingest_s": 42.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4449
+        }
+      ]
+    },
+    {
+      "q_id": "118b2229",
+      "cohort": "b3_empty",
+      "memories": 6,
+      "ingest_s": 14.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1313
+        }
+      ]
+    },
+    {
+      "q_id": "352ab8bd",
+      "cohort": "b3_empty",
+      "memories": 0,
+      "ingest_s": 69.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "length",
+          "parse": "fail",
+          "chars": 10326
+        }
+      ]
+    },
+    {
+      "q_id": "4baee567",
+      "cohort": "b3_empty",
+      "memories": 8,
+      "ingest_s": 22.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2381
+        }
+      ]
+    },
+    {
+      "q_id": "75f70248",
+      "cohort": "b3_empty",
+      "memories": 6,
+      "ingest_s": 14.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1304
+        }
+      ]
+    },
+    {
+      "q_id": "7a8d0b71",
+      "cohort": "b3_empty",
+      "memories": 11,
+      "ingest_s": 21.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2262
+        }
+      ]
+    },
+    {
+      "q_id": "8752c811",
+      "cohort": "b3_empty",
+      "memories": 13,
+      "ingest_s": 19.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2104
+        }
+      ]
+    },
+    {
+      "q_id": "8cf51dda",
+      "cohort": "b3_empty",
+      "memories": 7,
+      "ingest_s": 13.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1615
+        }
+      ]
+    },
+    {
+      "q_id": "af8d2e46",
+      "cohort": "b3_empty",
+      "memories": 0,
+      "ingest_s": 71.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "length",
+          "parse": "fail",
+          "chars": 7980
+        }
+      ]
+    },
+    {
+      "q_id": "b759caee",
+      "cohort": "b3_empty",
+      "memories": 8,
+      "ingest_s": 13.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1567
+        }
+      ]
+    },
+    {
+      "q_id": "70b3e69b",
+      "cohort": "control_b2empty_b3fixed",
+      "memories": 16,
+      "ingest_s": 32.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3867
+        }
+      ]
+    },
+    {
+      "q_id": "76d63226",
+      "cohort": "control_b2empty_b3fixed",
+      "memories": 11,
+      "ingest_s": 24.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2418
+        }
+      ]
+    }
+  ]
+}
