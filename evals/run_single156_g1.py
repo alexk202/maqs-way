@@ -16,6 +16,10 @@ Eval logic byte-identical to (b2) run_single156_fixcfg.py except:
   1) response_format replacement (THE grammar delta);
   2) per-call instrumentation fr/parse/chars/facts/capped/links (observation only);
   3) composition report vs b2 artifact (council §11.3) + checkpoint/artifact names.
+Amend-1 (review-driven, pre-run): schema maxItems 40->31 (measured budget),
+additionalProperties:false, frame fields unique_texts/facts_at_900, mal = parse-fail
+at ANY fr except length, other_fail = exception/unknown, loop = facts >= 2*unique_texts,
+mirror composition flag g1 > 120% b2. Prereg: evals/prereg-g1.md + prereg-g1-amend-1.md.
 """
 import hashlib
 import json
@@ -41,16 +45,17 @@ MAX_TOKENS = 2000  # b2 exact — carried from (b2), NOT from b4
 B2_REF = OUT / "pilot_evidence_single156_fixcfg.json"
 
 G1_SCHEMA = {
-    "type": "object",
+    "type": "object", "additionalProperties": False,
     "properties": {
         "memory": {
             "type": "array",
-            "maxItems": 40,  # b2 natural max 39; 40 facts ~ 7200 chars ~ 1850 tok < 2000 wall
+            # amend-1: floor(1800 tok * 4.0 chars/tok / (190 avg + 40 json overhead)) = 31
+            "maxItems": 31,
             "items": {
-                "type": "object",
+                "type": "object", "additionalProperties": False,
                 "properties": {
                     "id": {"type": "string"},
-                    "text": {"type": "string", "maxLength": 900},  # prompt std: 100 words ~ 700 chars
+                    "text": {"type": "string", "maxLength": 900},  # measured max 435, prompt std ~700
                     "linked_memory_ids": {"type": "array", "items": {"type": "string"}, "maxItems": 10},
                 },
                 "required": ["id", "text"],
@@ -88,20 +93,26 @@ def patch_llm_client(m, qi):
             ALL_CALLS.append({"q": qi, "fr": fr, "parse": "n/a", "chars": 0,
                               "facts": None, "capped": None, "links_used": None})
             return resp
-        facts = capped = links_used = None
+        facts = capped = links_used = unique_texts = facts_at_maxlen = max_fact_chars = None
         try:
             d = json.loads(content)
             parse = "ok"
             mem = d.get("memory") if isinstance(d, dict) else None
             if isinstance(mem, list):
+                texts = [it.get("text", "") for it in mem if isinstance(it, dict)]
                 facts = len(mem)
                 capped = (facts == MAX_ITEMS)
                 links_used = sum(1 for it in mem
                                  if isinstance(it, dict) and it.get("linked_memory_ids"))
+                unique_texts = len(set(texts))
+                facts_at_maxlen = sum(1 for s in texts if len(s) == 900)
+                max_fact_chars = max((len(s) for s in texts), default=0)
         except Exception:
             parse = "fail"
         ALL_CALLS.append({"q": qi, "fr": fr, "parse": parse, "chars": len(content),
-                          "facts": facts, "capped": capped, "links_used": links_used})
+                          "facts": facts, "capped": capped, "links_used": links_used,
+                          "unique_texts": unique_texts, "facts_at_maxlen": facts_at_maxlen,
+                          "max_fact_chars": max_fact_chars})
         return resp
 
     client.chat.completions.create = wrapped
@@ -158,7 +169,9 @@ def main():
             "calls": len(q_calls),
             "call_frames": [
                 {"fr": c["fr"], "parse": c["parse"], "chars": c["chars"],
-                 "facts": c["facts"], "capped": c["capped"], "links_used": c["links_used"]}
+                 "facts": c["facts"], "capped": c["capped"], "links_used": c["links_used"],
+                 "unique_texts": c["unique_texts"], "facts_at_maxlen": c["facts_at_maxlen"],
+                 "max_fact_chars": c["max_fact_chars"]}
                 for c in q_calls
             ],
         })
@@ -182,27 +195,36 @@ def main():
     empties = sum(1 for r in results if r["memories"] == 0)
     total_calls = len(ALL_CALLS)
     fr_all = Counter(c["fr"] for c in ALL_CALLS)
-    mal = sum(1 for c in ALL_CALLS if c["parse"] == "fail" and c["fr"] == "stop")
+    # amend-1: mal = parse fail at ANY fr except length; other_fail = exception/unknown
+    mal = sum(1 for c in ALL_CALLS if c["parse"] == "fail" and c["fr"] != "length")
+    other_fail = sum(1 for c in ALL_CALLS if c["fr"] in ("exception", "unknown"))
     trunc = sum(1 for c in ALL_CALLS if c["fr"] == "length")
     capped_calls = sum(1 for c in ALL_CALLS if c["capped"])
+    loop_calls = sum(1 for c in ALL_CALLS
+                    if c["facts"] is not None and c["unique_texts"] is not None
+                    and c["facts"] >= 2 * c["unique_texts"])
+    facts_at_maxlen_total = sum(c["facts_at_maxlen"] or 0 for c in ALL_CALLS)
     links_total = sum(c["links_used"] or 0 for c in ALL_CALLS)
     facts_lens = sorted(c["chars"] for c in ALL_CALLS)
     total_mem = sum(r["memories"] for r in results)
 
-    # composition report vs b2 (council §11.3): per-question flags, review list
+    # composition report vs b2 (council §11.3 + amend-1 mirror): per-question flags
     comp_flags = []
     for r in results:
         b2m, b2hit = b2_mem.get(r["q_id"], (None, None))
         if b2m is None:
             continue
-        if (b2m > 0 and r["memories"] == 0) or (b2m and r["memories"] < 0.5 * b2m):
+        if (b2m > 0 and r["memories"] == 0) or (b2m and r["memories"] < 0.5 * b2m) \
+                or (b2m and r["memories"] > 1.2 * b2m):
             comp_flags.append({"q_id": r["q_id"], "b2_mem": b2m, "g1_mem": r["memories"],
                                "b2_hit": b2hit, "g1_hit": r["evidence_hit"]})
 
     print(f"\nevidence-R@5 = {r5:.3f} ({sum(1 for r in results if r['evidence_hit'])}/{len(results)})")
     print(f"empty collections: {empties}/{len(results)}")
     print(f"calls (wrapped): {total_calls} | finish_reason: {dict(fr_all)}")
-    print(f"mal (stop+parse-fail): {mal} | trunc (fr=length): {trunc} | capped (facts=={MAX_ITEMS}): {capped_calls}")
+    print(f"mal (parse-fail@any-fr-except-length): {mal} | other_fail: {other_fail} | "
+          f"trunc (fr=length): {trunc} | capped (facts=={MAX_ITEMS}): {capped_calls}")
+    print(f"loop frames (facts>=2x unique): {loop_calls} | facts at 900 (trunc-field): {facts_at_maxlen_total}")
     print(f"total stored memories: {total_mem} (b2 ref: {sum(v[0] for v in b2_mem.values())})")
     print(f"response chars p50/p99: {facts_lens[len(facts_lens)//2]}/"
           f"{facts_lens[int(len(facts_lens)*0.99)] if len(facts_lens) > 1 else '-'}")
@@ -221,14 +243,19 @@ def main():
                       f"(b2 exact) + response_format json_schema (schema sha256 {SCHEMA_SHA256[:16]}…)",
             "schema_sha256": SCHEMA_SHA256,
             "max_items": MAX_ITEMS,
+            "amend": "prereg-g1-amend-1 (maxItems 31, additionalProperties false, "
+                     "loop/trunc-field guards, mirror flags, mal wording)",
             "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "n": len(results), "label": "neutrality-control-not-fix, prereg-g1",
         },
         "R_at_5_evidence": r5,
         "empty_collections": empties,
         "mal_calls": mal,
+        "other_fail_calls": other_fail,
         "trunc_calls": trunc,
         "capped_calls": capped_calls,
+        "loop_calls": loop_calls,
+        "facts_at_maxlen_total": facts_at_maxlen_total,
         "calls_total": total_calls,
         "finish_reasons": dict(fr_all),
         "total_memories": total_mem,
