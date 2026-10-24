@@ -30,7 +30,7 @@ the run's prereg, not by this table.
 
 ## Reproducing the runs
 
-See **[REPRODUCE.md](REPRODUCE.md)** — full stand recipe: pinned
+See **[REPRODUCE.md](REPRODUCE.md)** (EN, canonical; [RU mirror](REPRODUCE-RU.md)) — full stand recipe: pinned
 `requirements.txt` (mem0 at an exact upstream commit), the LLM/embedder servers,
 checksums, env overrides (`eval_config.py`), smoke mode, timing/VRAM, and the
 honest GPU-nondeterminism caveat (compare in bands, not third decimals).

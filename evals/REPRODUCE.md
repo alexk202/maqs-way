@@ -1,111 +1,153 @@
-# evals/REPRODUCE.md — стенд для воспроизведения прогонов
+# evals/REPRODUCE.md — the stand recipe for reproducing the runs
 
-Цель: на чистой машине, по этому файлу, без подсказок автора — довести smoke-прогон
-до конца. Критерий готовности принят 2026-10-24: smoke дошёл → стенд собран верно;
-полный прогон — потом и осознанно (~1 час GPU).
+Canonical version (English). Russian mirror: [REPRODUCE-RU.md](REPRODUCE-RU.md).
+Both are maintained in parallel; if they disagree, this file wins.
 
-## 0. Честная оговорка о воспроизводимости (читать до сравнения чисел)
+Goal: on a clean machine, from this file alone, without hints from the author —
+bring the smoke run to the end. The acceptance criterion (adopted 2026-10-24):
+smoke completes → the stand is assembled correctly; the full run comes after,
+deliberately (~1 hour of GPU).
 
-- **GPU даёт небольшой разброс даже при `--seed 42` и `temperature=0`** (Vulkan-
-  вычисления недетерминированы; канон проекта это признаёт — см. prereg-v03,
-  «GPU nondeterminism acknowledged»). Измерено на нашем стенде: при T=0
-  9 из 11 «пустых» вопросов не воспроизвелись между прогонами.
-- Поэтому **числа сравниваются полосами, а не до третьего знака**: чужой
-  R@5 = 0.981 против нашего 0.987 — это тот же результат; 0.929 против 0.987 —
-  это уже разница. Гварды пререгов задаёт сам проект; для внешнего сравнения
-  держите полосу ±0.01–0.02.
-- Полосы и классовые составы (mal/trunc/loop) переносимы между прогонами;
-  по-вопросные пересечения — НЕ интерпретируются (канон ветки,Oct 2026).
+## 0. Honest reproducibility caveat (read before comparing numbers)
 
-## 1. Аппаратное
+- **GPUs give a small variance even with `--seed 42` and `temperature=0`**
+  (Vulkan arithmetic is nondeterministic; the project canon acknowledges this —
+  see prereg-v03, "GPU nondeterminism acknowledged"). Measured on our stand:
+  at T=0, 9 of 11 "empty" questions did not reproduce between runs.
+- Therefore **numbers are compared in bands, not to the third decimal**: a
+  foreign R@5 = 0.981 against our 0.987 is the same result; 0.929 against
+  0.987 is a real difference. Guard thresholds belong to the project's preregs;
+  for external comparison keep a band of ±0.01–0.02.
+- Bands and class compositions (mal/trunc/loop) transfer between runs;
+  per-question intersections are NOT interpreted (branch canon, Oct 2026).
+- **A live example (from this very stand, recorded with an explanation)**: the
+  old n=5 smoke with an answer-token proxy (substring/token coverage of the
+  answer inside the top-5) scored 5/5 (Oct 16, pre-9177 build, ctx 16384, no
+  seed) and 0/5 (Oct 24, build 9177, ctx 32768, seed 42) — **an artifact of a
+  fragile n=5 proxy metric, not a stand regression**: the full single-156 slice
+  held evidence-R@5 = 0.994 the same day on the same servers. Lesson accepted:
+  the smoke now uses the same evidence-R@5 as the full run (expected value on
+  a working stand: 5/5); the old proxy stays as a secondary diagnostic line
+  and is NOT a metric.
 
-- GPU ≥ 12 GB VRAM (наш стенд: RTX 5060 Ti 16 GB, backend Vulkan);
-  живой расход: ~8.8 GB LLM-сервер + ~0.2 GB эмбеддер.
-- Время: smoke n=5 ~5–10 мин; полный single-156 ~53–66 мин (~24–40 с/вопрос).
+## 1. Hardware
 
-## 2. Python-окружение
+- GPU with ≥ 12 GB VRAM (our stand: RTX 5060 Ti 16 GB, Vulkan backend);
+  live consumption: ~8.8 GB for the LLM server + ~0.2 GB for the embedder.
+- Time: smoke n=5 ~5–10 min; full single-156 ~53–66 min (~24–40 s per question).
+
+## 2. Python environment
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt   # точные версии; mem0 — git-пин коммита
+pip install -r requirements.txt   # exact versions; mem0 is a git pin of a commit
 ```
 
-`requirements.txt` зафиксирован по венду стенда (34 пакета). mem0 установлен
-не из PyPI, а **точным коммитом upstream** `mem0ai/mem0@0724291b…` (чистый
-detached-чекаут, без локальных правок) — между релизами 2.2.x; это не опечатка.
+`requirements.txt` is frozen from the stand venv (34 packages). mem0 is
+installed NOT from PyPI but as **an exact upstream commit** of
+`mem0ai/mem0@0724291b…` (a clean detached checkout, no local modifications) —
+it sits between 2.2.x releases; this is intentional, not a mistake.
 
-## 3. LLM-сервер
+## 3. LLM server
 
-1. Соберите llama.cpp (наш билд: **9177, коммит 366c5e2a**, backend Vulkan).
-2. Скачайте модель: `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`,
-   файл `Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf`
+1. Build llama.cpp (our build: **9177, commit 366c5e2a**, Vulkan backend).
+2. Download the model: `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`, file
+   `Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf`
    (`https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF`),
-   размер 4 920 739 232 байта, **md5 `6eb593f3f5eee264d6c60c186ccc12e0`** — сверьте.
-3. Запуск (наш стенд; `--device` у вас может быть другим — проверьте
-   `llama-server --list-devices` и возьмите свой dGPU):
+   size 4,920,739,232 bytes, **md5 `6eb593f3f5eee264d6c60c186ccc12e0`** — verify it.
+3. Launch (our stand; your `--device` may differ — check
+   `llama-server --list-devices` and pick your discrete GPU):
 
 ```bash
 llama-server -m Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf -c 32768 -ngl 99 \
   --device Vulkan1 --host 127.0.0.1 --port 8085 --seed 42
 ```
 
-- `ctx 32768` и `--seed 42` — часть методологии, не менять.
-- Сервер запускается БЕЗ `--api-key` → любой bearer подходит (скрипты
-  подставляют `local` сами, см. §5).
-- Дефолт `repeat_penalty` этого билда = 1.0 (выключен) — прогоны идут на нём;
-  лечение loop-класса пенальти — отдельная тема ветки, в воспроизведение
-  базовых прогонов не входит.
+- `ctx 32768` and `--seed 42` are part of the methodology; do not change them.
+- The server runs WITHOUT `--api-key`, so any bearer token works (the scripts
+  substitute `local` themselves, see §5).
+- This build's default `repeat_penalty` is 1.0 (disabled) — the base runs use
+  it as-is; penalty-based loop treatment is a separate branch topic and is not
+  part of reproducing the base runs.
 
-## 4. Эмбеддер
+## 4. Embedder
 
-Любой OpenAI-совместимый embeddings-сервер с `nomic-embed-text-v1.5`
-(768 измерений). Наш стенд: LM Studio (`lms load text-embedding-nomic-embed-text-v1.5`,
-порт 1449). Подойдёт и llama-server с GGUF-версией nomic — важно только
-совпадение модели и размерности с переменными §5.
+Any OpenAI-compatible embeddings server with `nomic-embed-text-v1.5`
+(768 dimensions). Our stand: LM Studio
+(`lms load text-embedding-nomic-embed-text-v1.5`, port 1449). A llama-server
+with the GGUF build of nomic works too — what matters is that the model and
+dimensionality match the variables of §5.
 
-## 5. Переменные окружения (все с дефолтами стенда — можно не задавать)
+## 5. Environment variables (all default to the stand values — no need to set)
 
-| Переменная | Дефолт | Когда переопределять |
+| Variable | Default | When to override |
 |---|---|---|
-| `LLM_BASE_URL` | `http://127.0.0.1:8085/v1` | другой порт / Ollama / LM Studio |
-| `EMBED_BASE_URL` | `http://127.0.0.1:1449/v1` | другой эмбеддер-сервер |
-| `LLM_MODEL` | `Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf` | другое имя модели в API сервера |
-| `EMBED_MODEL` | `text-embedding-nomic-embed-text-v1.5` | другой эмбеддер |
-| `EMBED_DIMS` | `768` | другая размерность |
-| `LLM_API_KEY` | содержимое `LLM_API_KEY_FILE`, иначе `local` | сервер с авторизацией |
-| `LLM_API_KEY_FILE` | `/tmp/opencode/pilot8085.key` | конвенция вашего стенда |
+| `LLM_BASE_URL` | `http://127.0.0.1:8085/v1` | different port / Ollama / LM Studio |
+| `EMBED_BASE_URL` | `http://127.0.0.1:1449/v1` | different embedder server |
+| `LLM_MODEL` | `Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf` | different model name in your server's API |
+| `EMBED_MODEL` | `text-embedding-nomic-embed-text-v1.5` | different embedder |
+| `EMBED_DIMS` | `768` | different dimensionality |
+| `LLM_API_KEY` | contents of `LLM_API_KEY_FILE`, else `local` | server with authorization |
+| `LLM_API_KEY_FILE` | `/tmp/opencode/pilot8085.key` | your stand's convention |
+| `EMBED_API_KEY` | `local-smoke` | embedder with authorization |
 
-Файл ключа **создавать не нужно**: если его нет (и не задан `LLM_API_KEY`),
-скрипты подставляют `local` — сервер без `--api-key` принимает любой bearer.
-| `EMBED_API_KEY` | `local-smoke` | эмбеддер с авторизацией |
+There is **no need to create the key file**: if it is absent (and `LLM_API_KEY`
+is not set), the scripts substitute `local` — a server without `--api-key`
+accepts any bearer token.
 
-Один источник: `evals/eval_config.py` — все раннеры импортируют оттуда;
-литеральных адресов в коде прогонов больше нет.
+One source of truth: `evals/eval_config.py` — all runners import from it;
+there are no literal server addresses left in the run code.
 
-## 6. Порядок проверки стенда
+## 6. Stand verification order
 
 ```bash
-# 1) статический гейт — стенда не требует вовсе:
-python3 schemas/maqs_way_audit.py all          # ждём: GATE GREEN
+# 1) the static gate needs no stand at all:
+python3 schemas/maqs_way_audit.py all          # expect: GATE GREEN
 
-# 2) smoke (5 стратифицированных вопросов, ~5–10 мин):
+# 2) smoke (5 stratified questions, ~5–10 min):
 python3 evals/pilot_longmemeval_n5.py
-# ожидаем: 5 строк [n/5] + 'SMOKE VERDICT: evidence-R@5 (n=5) = 1.00 (stand OK)';
-# evidence 5/5 на рабочем стенде — осмысленный знак; token-proxy рядом —
-# вторичная диагностика, НЕ метрика (может быть 0/5, см. sec 0); артефакт
-# пишется таймстампным именем и ничего не затирает
+# expect: 5 lines [n/5] + 'SMOKE VERDICT: evidence-R@5 (n=5) = 1.00 (stand OK)';
+# evidence 5/5 on a working stand is a meaningful signal; the token-proxy next
+# to it is secondary diagnostics, NOT a metric (may read 0/5, see sec 0); the
+# artifact is written under a timestamped name and clobbers nothing
 
-# 3) полный прогон (референсная конфигурация g1 — грамм-бейзлайн):
-python3 evals/run_single156_g1.py               # ~1 час, чекпоинт на каждый вопрос
+# 3) the full run (the g1 reference configuration — grammar baseline):
+python3 evals/run_single156_g1.py              # ~1 hour, checkpoint per question
 ```
 
-Результаты пишутся в `evals/results/` (JSON с провенансом: модель, сервер,
-seed, дата). Исторические раннеры (`*_oldcfg/fixcfg/b6/b4/ii`) соответствуют
-пакетам пререгов `evals/prereg-*.md` — гонять их стоит только с пререгом.
+Results land in `evals/results/` (JSON with provenance: model, server, seed,
+date). The historical runners (`*_oldcfg/fixcfg/b6/b4/ii`) correspond to the
+pre-registered packages `evals/prereg-*.md` — run them only together with
+their prereg.
 
-## 7. Что НЕ входит в этот рецепт
+## 7. What is NOT part of this recipe
 
-- Постхок-анализ вербатим-метрики (`verbatim_*.py`) читает живые Qdrant-сторы
-  из `/tmp` — они эфемерны; после полного прогона стора живёт до перезагрузки.
-- Прогоны ветки B6 требуют тех же пререгов и санкций, что и у автора —
-  воспроизводятся числа, а не процесс принятия решений.
+- The posthoc verbatim-metric analysis (`verbatim_*.py`) reads live Qdrant
+  stores from `/tmp` — those are ephemeral; after a full run the store lives
+  until the next reboot.
+- The B6-branch runs require the same preregs and sanctions the author used —
+  what is reproducible is the numbers, not the decision process.
+
+## 8. Reporting a reproduction attempt
+
+An independent reproduction is the real test of this recipe, so a report
+is useful whether it succeeds or not.
+
+1. **Build the stand from this file only.** Please do not ask the author
+   for help along the way: every point where you had to ask would be a
+   gap in the recipe.
+2. **Log every point where you had to guess**, look something up
+   elsewhere, or deviate from the instructions (other OS, GPU, server,
+   model build, port). These notes are the most valuable part of the report.
+3. **Attach**:
+   - the `SMOKE VERDICT` line from `python3 evals/pilot_longmemeval_n5.py`;
+   - the output of `python3 schemas/maqs_way_audit.py all`;
+   - `pip freeze` from the environment you ran in;
+   - OS, GPU and VRAM, llama.cpp build, model file md5.
+4. **Open an issue** titled `Reproduction report: <your setup>`.
+   Failed or partial attempts are welcome: they are recorded the same way
+   as successful ones, never rewritten silently.
+
+A smoke result of `evidence-R@5 = 1.00` means the stand works. A lower
+value is not automatically a failure. Report it as-is, together with
+your deviation log.
