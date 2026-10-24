@@ -1,0 +1,16 @@
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[A] 8cf51dda: stored=15 (g1: 7) facts=[15] unique=[15]
+[A] 4fd1909e: stored=16 (g1: 31) facts=[16] unique=[16]
+[B] 8cf51dda: stored=12 (g1: 7) facts=[7, 12, 12] unique=[7, 12, 12] at900=[0, 0, 0]
+[B] cc539528: stored=20 (g1: 10) facts=[31, 31, 31] unique=[10, 20, 20] at900=[0, 0, 0]
+[B] e3fc4d6e: stored=18 (g1: 17) facts=[31, 31, 31] unique=[18, 8, 8] at900=[0, 0, 0]
+[B] 4fd1909e: stored=34 (g1: 31) facts=[6, 31, 31] unique=[6, 28, 28] at900=[0, 0, 0]
+
+artifact: evals/results/g1_probes.json

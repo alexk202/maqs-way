@@ -1,0 +1,229 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "seed": 42,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "config": "diagnostic probes per prereg-g1-probes.md; base g1 (max_tokens=2000, NO B6 prompt); Probe A: maxItems 60 (ONLY delta); Probe B: session split in half -> 2 adds into one store (maxItems 31)",
+    "date": "2026-10-24T12:14:32+00:00",
+    "label": "diagnostics-not-eval, prereg-g1-probes (Обсуждение_21)"
+  },
+  "probe_A_capped_completeness": [
+    {
+      "q_id": "8cf51dda",
+      "probe": "A_maxitems60",
+      "stored": 15,
+      "g1_stored": 7,
+      "ingest_s": 25.9,
+      "frames": [
+        {
+          "tag": "A:8cf51dda",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2914,
+          "facts": 15,
+          "unique_texts": 15,
+          "capped": false,
+          "facts_at_maxlen": 0,
+          "links_used": 0
+        }
+      ]
+    },
+    {
+      "q_id": "4fd1909e",
+      "probe": "A_maxitems60",
+      "stored": 16,
+      "g1_stored": 31,
+      "ingest_s": 24.0,
+      "frames": [
+        {
+          "tag": "A:4fd1909e",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2629,
+          "facts": 16,
+          "unique_texts": 16,
+          "capped": false,
+          "facts_at_maxlen": 0,
+          "links_used": 3
+        }
+      ]
+    }
+  ],
+  "probe_B_chunking_hypothesis": [
+    {
+      "q_id": "8cf51dda",
+      "probe": "B_chunked_half",
+      "stored": 12,
+      "g1_stored": 7,
+      "ingest_s": 30.6,
+      "n_calls": 2,
+      "frames": [
+        {
+          "tag": "B:8cf51dda:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1296,
+          "facts": 7,
+          "unique_texts": 7,
+          "capped": false,
+          "facts_at_maxlen": 0,
+          "links_used": 0
+        },
+        {
+          "tag": "B:8cf51dda:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2552,
+          "facts": 12,
+          "unique_texts": 12,
+          "capped": false,
+          "facts_at_maxlen": 0,
+          "links_used": 12
+        },
+        {
+          "tag": "B:8cf51dda:2",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2552,
+          "facts": 12,
+          "unique_texts": 12,
+          "capped": false,
+          "facts_at_maxlen": 0,
+          "links_used": 12
+        }
+      ]
+    },
+    {
+      "q_id": "cc539528",
+      "probe": "B_chunked_half",
+      "stored": 20,
+      "g1_stored": 10,
+      "ingest_s": 92.8,
+      "n_calls": 2,
+      "frames": [
+        {
+          "tag": "B:cc539528:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5743,
+          "facts": 31,
+          "unique_texts": 10,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 0
+        },
+        {
+          "tag": "B:cc539528:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5958,
+          "facts": 31,
+          "unique_texts": 20,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 29
+        },
+        {
+          "tag": "B:cc539528:2",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5958,
+          "facts": 31,
+          "unique_texts": 20,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 29
+        }
+      ]
+    },
+    {
+      "q_id": "e3fc4d6e",
+      "probe": "B_chunked_half",
+      "stored": 18,
+      "g1_stored": 17,
+      "ingest_s": 126.8,
+      "n_calls": 2,
+      "frames": [
+        {
+          "tag": "B:e3fc4d6e:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 7709,
+          "facts": 31,
+          "unique_texts": 18,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 29
+        },
+        {
+          "tag": "B:e3fc4d6e:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 8227,
+          "facts": 31,
+          "unique_texts": 8,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 31
+        },
+        {
+          "tag": "B:e3fc4d6e:2",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 8227,
+          "facts": 31,
+          "unique_texts": 8,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 31
+        }
+      ]
+    },
+    {
+      "q_id": "4fd1909e",
+      "probe": "B_chunked_half",
+      "stored": 34,
+      "g1_stored": 31,
+      "ingest_s": 58.1,
+      "n_calls": 2,
+      "frames": [
+        {
+          "tag": "B:4fd1909e:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1009,
+          "facts": 6,
+          "unique_texts": 6,
+          "capped": false,
+          "facts_at_maxlen": 0,
+          "links_used": 0
+        },
+        {
+          "tag": "B:4fd1909e:1",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5546,
+          "facts": 31,
+          "unique_texts": 28,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 31
+        },
+        {
+          "tag": "B:4fd1909e:2",
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5546,
+          "facts": 31,
+          "unique_texts": 28,
+          "capped": true,
+          "facts_at_maxlen": 0,
+          "links_used": 31
+        }
+      ]
+    }
+  ]
+}

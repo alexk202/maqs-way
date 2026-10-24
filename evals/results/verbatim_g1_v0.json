@@ -1,0 +1,2112 @@
+{
+  "provenance": {
+    "label": "posthoc-exploratory diagnostic, NOT a prereg'd guard",
+    "purpose": "verbatim-preservation measurement (B6-class visibility); R@5 saturated at 1.000",
+    "source": "g1 stores (/tmp/opencode/mem0single156g1_*), dataset sessions",
+    "extraction": "straight+curly quoted spans (3-80 chars, noise-guarded) + numeric tokens",
+    "date": "2026-10-24"
+  },
+  "aggregate": {
+    "questions_with_quoted": 87,
+    "quoted_recall_mean": 0.187,
+    "quoted_items_total": 519,
+    "quoted_items_missing": 454,
+    "nums_recall_mean": 0.224
+  },
+  "per_question": [
+    {
+      "q_id": "8a2466db",
+      "stored": 11,
+      "quoted_total": 13,
+      "quoted_missing": [
+        "shoulder",
+        "shoulder out",
+        "Shoulder",
+        "Reference",
+        "hump",
+        "shoulder in",
+        "Render and Replace",
+        "Color Match",
+        "toe in",
+        "Source",
+        "toe out",
+        "Toe"
+      ],
+      "quoted_recall": 0.077,
+      "nums_total": 16,
+      "nums_missing_count": 16,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "06878be2",
+      "stored": 13,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 36,
+      "nums_missing_count": 27,
+      "nums_recall": 0.25
+    },
+    {
+      "q_id": "75832dbd",
+      "stored": 5,
+      "quoted_total": 33,
+      "quoted_missing": [
+        "Visualizing Deep Neural Networks for Medical Image Analysis",
+        "Explanation Methods for Medical Image Analysis: A Systematic Review",
+        "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization",
+        "LIME: Local Interpretable Model-agnostic Explanations",
+        "Transfer Learning for Brain Tumor Segmentation using Deep Neural Networks",
+        "Attention-Gated Networks for Improving Ultrasound Image Segmentation",
+        "Multi-Modal Fusion with Deep Neural Networks for Medical Image Analysis",
+        "Explainable AI for Lung Nodule Detection in CT Scans",
+        "Visualizing Attention in Deep Neural Networks for Medical Image Analysis",
+        "Attention-based Deep Neural Networks for Medical Image Analysis",
+        "explainable U-Net,",
+        "Medical Image Synthesis using Generative Adversarial Networks: A Review",
+        "Visualizing and Understanding Convolutional Neural Networks",
+        "Saliency Maps for Medical Image Analysis: A Review",
+        "Multi-Modal Image Fusion for Breast Cancer Diagnosis using Deep Learning",
+        "Model Interpretability Techniques for Deep Neural Networks: A Survey",
+        "Explainable AI in Medical Imaging: Opportunities and Challenges",
+        "Domain Adaptation for Medical Image Analysis: A Survey",
+        "Explainable AI for Medical Image Analysis: A Review",
+        "SHAP Values: A Unified Approach to Explaining Model Predictions",
+        "Deep Learning for Medical Image Analysis: A Survey",
+        "Explainable AI for Breast Cancer Diagnosis using Mammography Images",
+        "Explainable AI in Medical Imaging: A Survey",
+        "Attention-based Saliency Maps for Medical Image Analysis",
+        "Fusion of Multi-Modal Medical Images using Deep Learning",
+        "Interpretable Deep Learning for Cardiac Image Segmentation",
+        "DeepLIFT: Deep Learning Important FeaTures",
+        "Saliency Maps for Brain Tumor Segmentation using Deep Neural Networks",
+        "Transfer Learning for Medical Image Analysis: A Review",
+        "Deep Learning for Medical Image Registration: A Survey",
+        "Deep Domain Adaptation for Medical Image Analysis",
+        "Adversarial Domain Adaptation for Medical Image Analysis",
+        "Deep Visualization: Understanding Images and Video using Deep Learning"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 16,
+      "nums_missing_count": 16,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "0edc2aef",
+      "stored": 9,
+      "quoted_total": 4,
+      "quoted_missing": [
+        "Winter Wonderland",
+        "rooms with a view",
+        "Summer Lovin'"
+      ],
+      "quoted_recall": 0.25,
+      "nums_total": 10,
+      "nums_missing_count": 8,
+      "nums_recall": 0.2
+    },
+    {
+      "q_id": "35a27287",
+      "stored": 10,
+      "quoted_total": 6,
+      "quoted_missing": [
+        "Spanish Conversation Practice.",
+        "international festival",
+        "diversity celebration,",
+        "language festival,",
+        "French Language Exchange",
+        "cultural exchange,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 6,
+      "nums_missing_count": 6,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "32260d93",
+      "stored": 10,
+      "quoted_total": 15,
+      "quoted_missing": [
+        "Comedy Goes Digital",
+        "The Comedian's Way",
+        "Story",
+        "The Comedy Bible",
+        "the inciting incident.",
+        "The Hidden Tools of Comedy",
+        "Kid Gorgeous",
+        "Building a Brand as a Comedian",
+        "Zen and the Art of Stand-Up Comedy",
+        "I'm Dying Up Here: Heartbreak and High Times in Stand-Up Comedy's Golden Era",
+        "Crush It!",
+        "Comedy Writing Secrets",
+        "Influencer: Building Your Personal Brand in the Age of Social Media",
+        "the ordinary world",
+        "And Here's the Kicker: Conversations with 21 Humor Writers on Their Craft"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 10,
+      "nums_missing_count": 10,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "195a1a1b",
+      "stored": 9,
+      "quoted_total": 10,
+      "quoted_missing": [
+        "Progressive Muscle Relaxation",
+        "Guided Sleep Meditation",
+        "Rainy Night",
+        "Relaxation Response",
+        "Sleep Meditation",
+        "Deep Sleep",
+        "Sleep Story: The Magical Forest",
+        "Loving-Kindness Meditation"
+      ],
+      "quoted_recall": 0.2,
+      "nums_total": 20,
+      "nums_missing_count": 20,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "afdc33df",
+      "stored": 11,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "warm",
+        "high"
+      ],
+      "quoted_recall": 0.333,
+      "nums_total": 17,
+      "nums_missing_count": 15,
+      "nums_recall": 0.118
+    },
+    {
+      "q_id": "caf03d32",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 17,
+      "nums_missing_count": 14,
+      "nums_recall": 0.176
+    },
+    {
+      "q_id": "54026fce",
+      "stored": 9,
+      "quoted_total": 10,
+      "quoted_missing": [
+        "Just to make sure I understand, you're saying that [paraphrase their comment]?",
+        "I was thinking,",
+        "What if we,",
+        "Has anyone considered",
+        "Are there any other perspectives on this that we haven't considered yet?",
+        "So, it sounds like there are a few concerns around [summarize the discussion]?",
+        "What do you think about this idea?",
+        "How do you think this could work for our team?",
+        "What are some potential benefits or challenges you see with this approach?"
+      ],
+      "quoted_recall": 0.1,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "06f04340",
+      "stored": 26,
+      "quoted_total": 1,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 6,
+      "nums_missing_count": 6,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "6b7dfb22",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 16,
+      "nums_missing_count": 14,
+      "nums_recall": 0.125
+    },
+    {
+      "q_id": "1a1907b4",
+      "stored": 13,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "White Lady,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 6,
+      "nums_missing_count": 5,
+      "nums_recall": 0.167
+    },
+    {
+      "q_id": "09d032c9",
+      "stored": 5,
+      "quoted_total": 4,
+      "quoted_missing": [
+        ", and 75",
+        ", 50",
+        ", 65",
+        ", 55"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 31,
+      "nums_missing_count": 28,
+      "nums_recall": 0.097
+    },
+    {
+      "q_id": "38146c39",
+      "stored": 4,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 7,
+      "nums_missing_count": 7,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "d24813b1",
+      "stored": 11,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "food grade.",
+        "culinary grade"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 25,
+      "nums_missing_count": 23,
+      "nums_recall": 0.08
+    },
+    {
+      "q_id": "57f827a0",
+      "stored": 6,
+      "quoted_total": 4,
+      "quoted_missing": [
+        "flush pulls,",
+        "Mid-Century Modern: Furniture of the 1950s",
+        "Eames Design: The Work of Charles and Ray Eames"
+      ],
+      "quoted_recall": 0.25,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "95228167",
+      "stored": 8,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "home",
+        "Blackbird"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 21,
+      "nums_missing_count": 21,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "505af2f5",
+      "stored": 16,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 5,
+      "nums_missing_count": 3,
+      "nums_recall": 0.4
+    },
+    {
+      "q_id": "75f70248",
+      "stored": 13,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "TV repair [your city/state]",
+        "TV repair near me"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 21,
+      "nums_missing_count": 20,
+      "nums_recall": 0.048
+    },
+    {
+      "q_id": "d6233ab6",
+      "stored": 6,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 12,
+      "nums_missing_count": 12,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "1da05512",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 15,
+      "nums_missing_count": 7,
+      "nums_recall": 0.533
+    },
+    {
+      "q_id": "fca70973",
+      "stored": 5,
+      "quoted_total": 19,
+      "quoted_missing": [
+        "Mummy Hot Dogs",
+        "Witch's Brew",
+        "Tickets",
+        "Graveyard Dirt Cups.",
+        "Hocus Pocus.",
+        "Graveyard Cake Pops.",
+        "tombstone",
+        "Flesh-Eating Zombie Fingers",
+        "graveyard dirt",
+        "VIP Experiences",
+        "Mummy's Revenge",
+        "The Nightmare Before Christmas",
+        "Mummy's Meatballs",
+        "brain",
+        "blood",
+        "VIP Experience with Gourmet Buffet and Behind-the-Scenes Tour",
+        "Zombie Brain Cupcakes",
+        "Bat Wing Chicken Tenders",
+        "Skeleton Keys Lime Bars."
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 5,
+      "nums_missing_count": 4,
+      "nums_recall": 0.2
+    },
+    {
+      "q_id": "b6025781",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 15,
+      "nums_missing_count": 15,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "a89d7624",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 8,
+      "nums_missing_count": 8,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "b0479f84",
+      "stored": 10,
+      "quoted_total": 10,
+      "quoted_missing": [
+        "Eco-Tourism Certification",
+        "Chasing Coral",
+        "Tourism Gold Standard",
+        "Tiger King",
+        "Planet Earth",
+        "Free Solo",
+        "Sustainable Tourism Award",
+        "Dynasties",
+        "Our Planet",
+        "canary in the coal mine"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 10,
+      "nums_missing_count": 10,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "1d4e3b97",
+      "stored": 16,
+      "quoted_total": 8,
+      "quoted_missing": [
+        "Bicycling",
+        "doored",
+        "Cycling",
+        "Bike,"
+      ],
+      "quoted_recall": 0.5,
+      "nums_total": 15,
+      "nums_missing_count": 9,
+      "nums_recall": 0.4
+    },
+    {
+      "q_id": "07b6f563",
+      "stored": 16,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "chee"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 3,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "1c0ddc50",
+      "stored": 4,
+      "quoted_total": 41,
+      "quoted_missing": [
+        "Anna Karenina principle",
+        "The Science of Sports",
+        "A People's History of the United States",
+        "The Witches: Salem, 1692",
+        "The Rise and Fall of the Third Reich",
+        "The Bad Show",
+        "The Men Who Built America",
+        "The Wrath of the Khans",
+        "The Real Wolfman",
+        "The Trust Engineers",
+        "The Untold History of the United States",
+        "Ghosts of the Ostfront",
+        "The World at War",
+        "Guns, Germs, and Steel,",
+        "Killers of the Flower Moon: The Osage Murders and the Birth of the FBI",
+        "Death and the Civil War",
+        "The Science of Dreams",
+        "The Salem Witch Trials",
+        "The Astor Place Riot",
+        "They Made a Tonic",
+        "The Short History of the Guillotine",
+        "axis of history",
+        "The Sepulveda",
+        "The Universe in a Glass of Wine",
+        "The Devil in the White City",
+        "The Apocalypse",
+        "The True Story of the Bridge on the River Kwai",
+        "The Donner Party",
+        "The Radium Girls",
+        "The Bloody Pit",
+        "How the Internet Works",
+        "The Dark Ages",
+        "lucky latitudes,",
+        "The American Peril",
+        "cradle of civilization.",
+        "The Immortal Life of Henrietta Lacks",
+        "Echoes",
+        "A Conversation with Buzz Aldrin"
+      ],
+      "quoted_recall": 0.073,
+      "nums_total": 26,
+      "nums_missing_count": 23,
+      "nums_recall": 0.115
+    },
+    {
+      "q_id": "0a34ad58",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 30,
+      "nums_missing_count": 25,
+      "nums_recall": 0.167
+    },
+    {
+      "q_id": "7161e7e2",
+      "stored": 16,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "8 am till 4 pm - 12 pm till 8 pm - 4 pm till 12 am - 12 am till 8 am"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 11,
+      "nums_missing_count": 8,
+      "nums_recall": 0.273
+    },
+    {
+      "q_id": "c4f10528",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "89527b6b",
+      "stored": 16,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "::title:: == ::description::"
+      ],
+      "quoted_recall": 0.5,
+      "nums_total": 4,
+      "nums_missing_count": 4,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "e9327a54",
+      "stored": 6,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "twisted farm food"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 1,
+      "nums_missing_count": 1,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "4c36ccef",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 4,
+      "nums_missing_count": 1,
+      "nums_recall": 0.75
+    },
+    {
+      "q_id": "6ae235be",
+      "stored": 12,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "7e00a6cb",
+      "stored": 5,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "Venice of the North,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "1903aded",
+      "stored": 13,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "ceb54acb",
+      "stored": 15,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "sexual compulsions."
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "f523d9fe",
+      "stored": 7,
+      "quoted_total": 4,
+      "quoted_missing": [
+        "Black List.",
+        "Sure, I can do that",
+        "thank you very much for agreeing to chat with me"
+      ],
+      "quoted_recall": 0.25,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "0e5e2d1a",
+      "stored": 14,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "fea54f57",
+      "stored": 17,
+      "quoted_total": 16,
+      "quoted_missing": [
+        "RTJ4",
+        "Future Nostalgia",
+        "The Slow Rush",
+        "After Hours",
+        "Punisher",
+        "hear",
+        "Hyperspace",
+        "Ghosts V: Together",
+        "Ghosts VI: Locusts",
+        "Honeymoon"
+      ],
+      "quoted_recall": 0.375,
+      "nums_total": 1,
+      "nums_missing_count": 1,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "cc539528",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "dc439ea3",
+      "stored": 17,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "18dcd5a5",
+      "stored": 6,
+      "quoted_total": 1,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 19,
+      "nums_missing_count": 18,
+      "nums_recall": 0.053
+    },
+    {
+      "q_id": "488d3006",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "58470ed2",
+      "stored": 12,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "the searchers,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "8cf51dda",
+      "stored": 7,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "1d4da289",
+      "stored": 16,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "8464fc84",
+      "stored": 21,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "8aef76bc",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "71a3fd6b",
+      "stored": 7,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 12,
+      "nums_missing_count": 3,
+      "nums_recall": 0.75
+    },
+    {
+      "q_id": "2bf43736",
+      "stored": 9,
+      "quoted_total": 5,
+      "quoted_missing": [
+        "The Active Purgative Way",
+        "Vocal Prayer and Meditation."
+      ],
+      "quoted_recall": 0.6,
+      "nums_total": 2,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "70b3e69b",
+      "stored": 16,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "the impostor,"
+      ],
+      "quoted_recall": 0.667,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "8752c811",
+      "stored": 6,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 1,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "3249768e",
+      "stored": 4,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 1,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "1b9b7252",
+      "stored": 5,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "The Body Scan Meditation.",
+        "The Mountain Meditation"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "1568498a",
+      "stored": 18,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "6222b6eb",
+      "stored": 12,
+      "quoted_total": 1,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 4,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "e8a79c70",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 4,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "d596882b",
+      "stored": 24,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "real Little Italy,",
+        "street food festivals,",
+        "food truck courts"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 1,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "e3fc4d6e",
+      "stored": 17,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 3,
+      "nums_missing_count": 2,
+      "nums_recall": 0.333
+    },
+    {
+      "q_id": "51b23612",
+      "stored": 16,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "truthiness",
+        "Nu, pogodi!"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 1,
+      "nums_missing_count": 1,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "3e321797",
+      "stored": 13,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 1,
+      "nums_recall": 0.5
+    },
+    {
+      "q_id": "e982271f",
+      "stored": 7,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "352ab8bd",
+      "stored": 5,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "Experimental Results"
+      ],
+      "quoted_recall": 0.5,
+      "nums_total": 9,
+      "nums_missing_count": 6,
+      "nums_recall": 0.333
+    },
+    {
+      "q_id": "fca762bc",
+      "stored": 4,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "7a8d0b71",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 5,
+      "nums_missing_count": 3,
+      "nums_recall": 0.4
+    },
+    {
+      "q_id": "a40e080f",
+      "stored": 15,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "Warriors"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 1,
+      "nums_missing_count": 1,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "8b9d4367",
+      "stored": 7,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "5809eb10",
+      "stored": 6,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "acknowledged"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 10,
+      "nums_missing_count": 8,
+      "nums_recall": 0.2
+    },
+    {
+      "q_id": "41275add",
+      "stored": 9,
+      "quoted_total": 4,
+      "quoted_missing": [
+        "How to Sit Properly at a Desk to Avoid Back Pain",
+        "10 Easy Ways to Improve Your Posture at Work",
+        "Office Ergonomics - Computer Workstation Ergonomics",
+        "5 Tips for Better Posture at Your Desk"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 2,
+      "nums_missing_count": 1,
+      "nums_recall": 0.5
+    },
+    {
+      "q_id": "4388e9dd",
+      "stored": 8,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "Right guys, settle down"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 1,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "4baee567",
+      "stored": 15,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 21,
+      "nums_missing_count": 8,
+      "nums_recall": 0.619
+    },
+    {
+      "q_id": "561fabcd",
+      "stored": 11,
+      "quoted_total": 5,
+      "quoted_missing": [
+        "hydralisk",
+        "Radialisk",
+        "radial",
+        "Irradiated Behemoth",
+        "Contaminated Colossus"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "b759caee",
+      "stored": 17,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "ac031881",
+      "stored": 13,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "Yes, this is security. What do you want."
+      ],
+      "quoted_recall": 0.667,
+      "nums_total": 5,
+      "nums_missing_count": 3,
+      "nums_recall": 0.4
+    },
+    {
+      "q_id": "28bcfaac",
+      "stored": 15,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "Music Theory For Dummies",
+        "The Jazz Theory Book"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "16c90bf4",
+      "stored": 5,
+      "quoted_total": 2,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 12,
+      "nums_missing_count": 12,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "c8f1aeed",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "eaca4986",
+      "stored": 16,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "c7cf7dfd",
+      "stored": 13,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 1,
+      "nums_missing_count": 1,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "e48988bc",
+      "stored": 15,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "1de5cff2",
+      "stored": 17,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "65240037",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 4,
+      "nums_missing_count": 4,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "778164c6",
+      "stored": 20,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "rice with chicken,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "e47becba",
+      "stored": 11,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "Q1 Expenses,",
+        "Travel Reimbursements,",
+        "Project XYZ Invoices."
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "118b2229",
+      "stored": 4,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "Quote",
+        "Share",
+        "Summary"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 6,
+      "nums_missing_count": 5,
+      "nums_recall": 0.167
+    },
+    {
+      "q_id": "51a45a95",
+      "stored": 15,
+      "quoted_total": 5,
+      "quoted_missing": [
+        "To-Use",
+        "Bonus Offers",
+        "high priority",
+        "favorite,"
+      ],
+      "quoted_recall": 0.2,
+      "nums_total": 3,
+      "nums_missing_count": 1,
+      "nums_recall": 0.667
+    },
+    {
+      "q_id": "58bf7951",
+      "stored": 13,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "acting classes for adults near me",
+        "acting studios in [your city/state]"
+      ],
+      "quoted_recall": 0.333,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "1e043500",
+      "stored": 9,
+      "quoted_total": 11,
+      "quoted_missing": [
+        "Release Radar",
+        "Lessons",
+        "New Music Mix",
+        "Browse",
+        "Moods",
+        "Rising",
+        "Mood",
+        "Discover Weekly",
+        "WeAreTheMusicMakers"
+      ],
+      "quoted_recall": 0.182,
+      "nums_total": 9,
+      "nums_missing_count": 8,
+      "nums_recall": 0.111
+    },
+    {
+      "q_id": "c5e8278d",
+      "stored": 6,
+      "quoted_total": 13,
+      "quoted_missing": [
+        "Edit Profile,",
+        "Edit Profile",
+        "Account Settings",
+        "My Account",
+        "Save Changes.",
+        "Change Address",
+        "Settings",
+        "icon, then",
+        "Update Address",
+        "and finally"
+      ],
+      "quoted_recall": 0.231,
+      "nums_total": 20,
+      "nums_missing_count": 17,
+      "nums_recall": 0.15
+    },
+    {
+      "q_id": "6ade9755",
+      "stored": 8,
+      "quoted_total": 7,
+      "quoted_missing": [
+        "organic,",
+        "healthy brunch near me",
+        "healthy brunch near [Serenity Yoga studio address]",
+        "gluten-free,",
+        "vegan,",
+        "whole foods",
+        "plant-based,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "6f9b354f",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 8,
+      "nums_missing_count": 8,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "58ef2f1c",
+      "stored": 7,
+      "quoted_total": 14,
+      "quoted_missing": [
+        "Hero Dog Awards",
+        "St. Jude Walk/Run to End Childhood Cancer",
+        "Relay For Life",
+        "Red Cross Gala",
+        "Youth of the Year Gala",
+        "EDF Gala",
+        "An Evening with Women",
+        "Love is in the Air",
+        "Noche de Niños",
+        "To the Rescue!",
+        "Summer Gala",
+        "Love to the Rescue",
+        "Sunset Hoedown"
+      ],
+      "quoted_recall": 0.071,
+      "nums_total": 11,
+      "nums_missing_count": 9,
+      "nums_recall": 0.182
+    },
+    {
+      "q_id": "f8c5f88b",
+      "stored": 7,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "dome date"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 11,
+      "nums_missing_count": 11,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "5d3d2817",
+      "stored": 6,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "7527f7e2",
+      "stored": 10,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "need.",
+        "want"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 12,
+      "nums_missing_count": 10,
+      "nums_recall": 0.167
+    },
+    {
+      "q_id": "c960da58",
+      "stored": 11,
+      "quoted_total": 32,
+      "quoted_missing": [
+        "Eggs",
+        "The New Soul",
+        "After the Storm",
+        "best live music venues in [your city]",
+        "Eye to Eye",
+        "Skinny Love",
+        "Midnight Moods",
+        "Morning Boost",
+        "Sad Songs",
+        "It Runs Through Me",
+        "Indie Music Fans",
+        "Neo-Soul Revival",
+        "Focus Flow",
+        "Sunset Vibes",
+        "Study Sessions",
+        "Yoga Flow",
+        "Indie Soul",
+        "Road Trip Radio",
+        "Happy Place",
+        "Chillout Corner",
+        "Frozen Lake",
+        "Cooking Beats",
+        "Girl",
+        "indie music venues in [your city]",
+        "Petal",
+        "Music Lovers",
+        "Soulful Voices",
+        "Aruarian Dance",
+        "Energize",
+        "Doomed"
+      ],
+      "quoted_recall": 0.062,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "3b6f954b",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 13,
+      "nums_missing_count": 9,
+      "nums_recall": 0.308
+    },
+    {
+      "q_id": "726462e0",
+      "stored": 11,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "Share your thoughts in the comments below!",
+        "swipe-up",
+        "Tag a friend who might find this helpful!"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "94f70d80",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "66f24dbb",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "ad7109d1",
+      "stored": 12,
+      "quoted_total": 5,
+      "quoted_missing": [
+        "About This Mac.",
+        "Power",
+        "System Report",
+        "battery report"
+      ],
+      "quoted_recall": 0.2,
+      "nums_total": 20,
+      "nums_missing_count": 15,
+      "nums_recall": 0.25
+    },
+    {
+      "q_id": "af8d2e46",
+      "stored": 8,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "nice to have."
+      ],
+      "quoted_recall": 0.5,
+      "nums_total": 8,
+      "nums_missing_count": 4,
+      "nums_recall": 0.5
+    },
+    {
+      "q_id": "dccbc061",
+      "stored": 10,
+      "quoted_total": 22,
+      "quoted_missing": [
+        "Quantum Computation in Microtubules: The Penrose-Hameroff 'Orch-OR' Model",
+        "Synchronicity: An Acausal Connecting Principle",
+        "The Field of Synchronicity",
+        "The Tibetan Book of the Dead",
+        "The Synchronicity Key: The Hidden Intelligence Guiding the Universe and You",
+        "The Global Consciousness Project: A Conversation with Roger Nelson",
+        "The Celestine Prophecy,",
+        "The Quantum Activist",
+        "tuning in",
+        "The Spontaneous Fulfillment of Desire",
+        "The Power of Now",
+        "Synchrodestiny,",
+        "Supernatural,",
+        "The Miracle of Mindfulness",
+        "entangled,",
+        "The Emperor's New Mind: Concerning Computers, Minds, and the Laws of Physics",
+        "The Global Consciousness Project: A Study of Collective Consciousness",
+        "Orchestrated Objective Reduction (Orch-OR) Theory of Consciousness",
+        "The Nature of Consciousness",
+        "Shadows of the Mind: A Search for the Missing Science of Consciousness",
+        "Fingerprints of the Gods"
+      ],
+      "quoted_recall": 0.045,
+      "nums_total": 6,
+      "nums_missing_count": 6,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "c8c3f81d",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 22,
+      "nums_missing_count": 20,
+      "nums_recall": 0.091
+    },
+    {
+      "q_id": "8ebdbe50",
+      "stored": 11,
+      "quoted_total": 10,
+      "quoted_missing": [
+        "Shows proficiency in data mining, predictive analytics, and data storytelling.",
+        "Data Science Council of America",
+        "Graduated,",
+        "Pursued",
+        "Certified Data Scientist",
+        "Certifications",
+        "Certified Analytics Professional",
+        "Earned,",
+        "International Institute for Analytics",
+        "Completed,"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 26,
+      "nums_missing_count": 26,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "6b168ec8",
+      "stored": 5,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 10,
+      "nums_missing_count": 10,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "75499fd8",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "21436231",
+      "stored": 13,
+      "quoted_total": 4,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 20,
+      "nums_missing_count": 15,
+      "nums_recall": 0.25
+    },
+    {
+      "q_id": "95bcc1c8",
+      "stored": 11,
+      "quoted_total": 5,
+      "quoted_missing": [
+        "Yes, And...",
+        "Speaking of relationships...",
+        "Freeze",
+        "Scenes from a Hat",
+        "But enough about love, let's talk about the real pain in my life..."
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "0862e8bf",
+      "stored": 16,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 6,
+      "nums_missing_count": 6,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "853b0a1d",
+      "stored": 3,
+      "quoted_total": 8,
+      "quoted_missing": [
+        "Acquisition Date",
+        "Story,",
+        "Notable Events",
+        "Notes",
+        "History of Ownership",
+        "Provenance",
+        "Description",
+        "Provenance/Story"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 1,
+      "nums_missing_count": 1,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "a06e4cfe",
+      "stored": 15,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 6,
+      "nums_missing_count": 5,
+      "nums_recall": 0.167
+    },
+    {
+      "q_id": "37d43f65",
+      "stored": 8,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "Power Saver"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 27,
+      "nums_missing_count": 15,
+      "nums_recall": 0.444
+    },
+    {
+      "q_id": "b86304ba",
+      "stored": 6,
+      "quoted_total": 6,
+      "quoted_missing": [
+        "The Annotated Mona Lisa: A Crash Course in Art History",
+        "Art 101",
+        "Gardner's Art Through the Ages",
+        "Art: A Visual History",
+        "The Story of Art"
+      ],
+      "quoted_recall": 0.167,
+      "nums_total": 3,
+      "nums_missing_count": 3,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "d52b4f67",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 11,
+      "nums_missing_count": 8,
+      "nums_recall": 0.273
+    },
+    {
+      "q_id": "25e5aa4f",
+      "stored": 5,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 27,
+      "nums_missing_count": 27,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "caf9ead2",
+      "stored": 11,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "best coffee shops near me",
+        "independent coffee shops in [your city/neighborhood]"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 3,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "8550ddae",
+      "stored": 9,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 9,
+      "nums_missing_count": 9,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "60d45044",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 12,
+      "nums_missing_count": 8,
+      "nums_recall": 0.333
+    },
+    {
+      "q_id": "3f1e9474",
+      "stored": 6,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "I'll never be able to do this,",
+        "I'll learn and grow from this experience."
+      ],
+      "quoted_recall": 0.333,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "86b68151",
+      "stored": 10,
+      "quoted_total": 9,
+      "quoted_missing": [
+        "currently reading,",
+        "style inspiration",
+        "hanger",
+        "fashion diary",
+        "traffic path",
+        "read,",
+        "winging it",
+        "wish list",
+        "want to read"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "577d4d32",
+      "stored": 13,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 6,
+      "nums_missing_count": 6,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "ec81a493",
+      "stored": 6,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 1,
+      "nums_missing_count": 0,
+      "nums_recall": 1.0
+    },
+    {
+      "q_id": "15745da0",
+      "stored": 8,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 5,
+      "nums_missing_count": 3,
+      "nums_recall": 0.4
+    },
+    {
+      "q_id": "e01b8e2f",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 14,
+      "nums_missing_count": 14,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "bc8a6e93",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 7,
+      "nums_missing_count": 7,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "ccb36322",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 2,
+      "nums_missing_count": 1,
+      "nums_recall": 0.5
+    },
+    {
+      "q_id": "001be529",
+      "stored": 16,
+      "quoted_total": 5,
+      "quoted_missing": [
+        "Ratings & Reviews",
+        "Rent Zestimate",
+        "Neighborhood Guide",
+        "Safety Score",
+        "Commute Time"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 13,
+      "nums_missing_count": 8,
+      "nums_recall": 0.385
+    },
+    {
+      "q_id": "b320f3f8",
+      "stored": 13,
+      "quoted_total": 10,
+      "quoted_missing": [
+        "first edition,",
+        "rare camera,",
+        "collectible camera",
+        "rare Pokémon card,",
+        "Pikachu Illustrator card,",
+        "Pokémon Illustrator promo",
+        "signed copy,",
+        "vintage camera,",
+        "rare book"
+      ],
+      "quoted_recall": 0.1,
+      "nums_total": 3,
+      "nums_missing_count": 2,
+      "nums_recall": 0.333
+    },
+    {
+      "q_id": "19b5f2b3",
+      "stored": 9,
+      "quoted_total": 4,
+      "quoted_missing": [
+        "annyeonghaseyo",
+        "gamsahamnida",
+        "Kyoto's Kitchen,",
+        "nightingale floors"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 14,
+      "nums_missing_count": 14,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "4fd1909e",
+      "stored": 31,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 11,
+      "nums_missing_count": 9,
+      "nums_recall": 0.182
+    },
+    {
+      "q_id": "545bd2b5",
+      "stored": 16,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "Your Time on Instagram",
+        "breaktime"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 10,
+      "nums_missing_count": 6,
+      "nums_recall": 0.4
+    },
+    {
+      "q_id": "8a137a7f",
+      "stored": 12,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "warm white,",
+        "soft white"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 0,
+      "nums_missing_count": 0,
+      "nums_recall": null
+    },
+    {
+      "q_id": "76d63226",
+      "stored": 5,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "Fifth Seasons"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 15,
+      "nums_missing_count": 13,
+      "nums_recall": 0.133
+    },
+    {
+      "q_id": "86f00804",
+      "stored": 10,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "no spoilers"
+      ],
+      "quoted_recall": 0.667,
+      "nums_total": 7,
+      "nums_missing_count": 7,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "8e9d538c",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 14,
+      "nums_missing_count": 12,
+      "nums_recall": 0.143
+    },
+    {
+      "q_id": "311778f1",
+      "stored": 10,
+      "quoted_total": 7,
+      "quoted_missing": [
+        "Account.",
+        "Cosmos",
+        "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow",
+        "Settings",
+        "Python Machine Learning",
+        "Viewing activity."
+      ],
+      "quoted_recall": 0.143,
+      "nums_total": 8,
+      "nums_missing_count": 6,
+      "nums_recall": 0.25
+    },
+    {
+      "q_id": "c19f7a0b",
+      "stored": 17,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 8,
+      "nums_missing_count": 4,
+      "nums_recall": 0.5
+    },
+    {
+      "q_id": "4100d0a0",
+      "stored": 7,
+      "quoted_total": 6,
+      "quoted_missing": [
+        "Celtic festival [your city/state]",
+        "Irish dance lessons near me",
+        "Irish music classes near me",
+        "Irish cultural events near me",
+        "Irish cultural center [your city/state]",
+        "Irish festivals [your city/state]"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 4,
+      "nums_missing_count": 4,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "29f2956b",
+      "stored": 6,
+      "quoted_total": 12,
+      "quoted_missing": [
+        "Twinkle, Twinkle, Little Star",
+        "Key to the Highway",
+        "Blowin' in the Wind",
+        "When the Saints Go Marching In",
+        "Mary Had a Little Lamb",
+        "Sitting on Top of the World",
+        "Oh, Susanna",
+        "Harmonica Boogie",
+        "Boom Boom",
+        "Sweet Home Chicago",
+        "Sweet Little Sixteen",
+        "Cross Road Blues"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 5,
+      "nums_missing_count": 5,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "1faac195",
+      "stored": 5,
+      "quoted_total": 12,
+      "quoted_missing": [
+        "Young Artist Showcase",
+        "Rhapsody in Blue",
+        "Theatre for Young Audiences",
+        "Symphony Safari",
+        "Peter and the Wolf",
+        "The Magic Tree House",
+        "The Wizard of Oz",
+        "Symphony Storytime",
+        "Petite Musique",
+        "Laurie Berkner"
+      ],
+      "quoted_recall": 0.167,
+      "nums_total": 12,
+      "nums_missing_count": 12,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "faba32e5",
+      "stored": 10,
+      "quoted_total": 1,
+      "quoted_missing": [
+        "packer brisket"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 17,
+      "nums_missing_count": 16,
+      "nums_recall": 0.059
+    },
+    {
+      "q_id": "f4f1d8a4",
+      "stored": 12,
+      "quoted_total": 2,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "c14c00dd",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 7,
+      "nums_missing_count": 7,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "36580ce8",
+      "stored": 11,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 15,
+      "nums_missing_count": 15,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "3d86fd0a",
+      "stored": 23,
+      "quoted_total": 3,
+      "quoted_missing": [
+        "Schedule coffee meeting",
+        "How We Met",
+        "Send article about [topic]"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "a82c026e",
+      "stored": 16,
+      "quoted_total": 2,
+      "quoted_missing": [
+        "snap-back"
+      ],
+      "quoted_recall": 0.5,
+      "nums_total": 18,
+      "nums_missing_count": 10,
+      "nums_recall": 0.444
+    },
+    {
+      "q_id": "0862e8bf",
+      "stored": 20,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 6,
+      "nums_missing_count": 6,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "15745da0",
+      "stored": 14,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 5,
+      "nums_missing_count": 4,
+      "nums_recall": 0.2
+    },
+    {
+      "q_id": "bc8a6e93",
+      "stored": 10,
+      "quoted_total": 0,
+      "quoted_missing": [],
+      "quoted_recall": null,
+      "nums_total": 7,
+      "nums_missing_count": 7,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "19b5f2b3",
+      "stored": 10,
+      "quoted_total": 4,
+      "quoted_missing": [
+        "annyeonghaseyo",
+        "gamsahamnida",
+        "Kyoto's Kitchen,",
+        "nightingale floors"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 14,
+      "nums_missing_count": 14,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "29f2956b",
+      "stored": 6,
+      "quoted_total": 12,
+      "quoted_missing": [
+        "Twinkle, Twinkle, Little Star",
+        "Key to the Highway",
+        "Blowin' in the Wind",
+        "When the Saints Go Marching In",
+        "Mary Had a Little Lamb",
+        "Sitting on Top of the World",
+        "Oh, Susanna",
+        "Harmonica Boogie",
+        "Boom Boom",
+        "Sweet Home Chicago",
+        "Sweet Little Sixteen",
+        "Cross Road Blues"
+      ],
+      "quoted_recall": 0.0,
+      "nums_total": 5,
+      "nums_missing_count": 5,
+      "nums_recall": 0.0
+    },
+    {
+      "q_id": "f4f1d8a4",
+      "stored": 10,
+      "quoted_total": 2,
+      "quoted_missing": [],
+      "quoted_recall": 1.0,
+      "nums_total": 2,
+      "nums_missing_count": 2,
+      "nums_recall": 0.0
+    }
+  ]
+}
