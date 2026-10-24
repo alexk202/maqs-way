@@ -1,0 +1,3405 @@
+{
+  "provenance": {
+    "label": "posthoc-exploratory calibration v1.2 (council-classified, Обсуждение_25)",
+    "changes": "full question_ids (six <base>/<_abs> collision pairs, 8-hex retired); noise classes N1-N8 per council manual pass; clean baseline; stratified pair panel 4/4/4 full ids",
+    "verification": "no full-id duplicates in dataset -> v1.1 aggregate counted 146 DISTINCT questions (no double-counting; reviewer '140 unique' reading corrected); '0.0.389' does not exist in artifact (rendering artifact on review side; JSON valid)",
+    "date": "2026-10-24T13:30:30+00:00"
+  },
+  "aggregate": {
+    "panel_questions": 142,
+    "clean_micro_recall": 0.177,
+    "clean_macro_recall": 0.275,
+    "clean_micro_nontrivial": 0.176,
+    "v11_raw_micro_for_reference": 0.168,
+    "noise_filtered_total": 381,
+    "noise_by_class": {
+      "N2_imperative": 117,
+      "N3_question_phrase": 137,
+      "N5_conj_fragment": 32,
+      "N7_academic_template": 3,
+      "N1_ui_stub": 69,
+      "N4_a_adjective": 22,
+      "N8_notation": 1
+    }
+  },
+  "pair_panel_stratified": [
+    "75832dbd",
+    "0a34ad58",
+    "1faac195",
+    "b0479f84",
+    "fca70973",
+    "311778f1",
+    "afdc33df",
+    "19b5f2b3",
+    "e47becba",
+    "58bf7951",
+    "3b6f954b",
+    "faba32e5"
+  ],
+  "per_question": [
+    {
+      "q_id": "8a2466db",
+      "stored": 11,
+      "n_signal": 58,
+      "signal_missing": [
+        "Adobe Premiere Pro",
+        "Source",
+        "Proxy Media",
+        "Toe",
+        "Shoulder",
+        "After Effects",
+        "Audio Clip Mixer",
+        "Shoulder Control",
+        "While Color Match",
+        "Color Match",
+        "Color Curve",
+        "LinkedIn Learning"
+      ],
+      "n_noise_filtered": 12,
+      "noise_classes": {
+        "N2_imperative": 5,
+        "N3_question_phrase": 7
+      },
+      "recall_clean": 0.138,
+      "n_nums": 7
+    },
+    {
+      "q_id": "06878be2",
+      "stored": 13,
+      "n_signal": 52,
+      "signal_missing": [
+        "Systematic Series",
+        "Godox V1",
+        "Guide Number",
+        "Hard Case",
+        "Profoto A1",
+        "High-Speed Sync",
+        "Build Quality",
+        "The Sony HVL-F60RM",
+        "Power Delivery",
+        "Nissin Di700A",
+        "Think Tank Photo Flash Pouch",
+        "Vello Flash Pouch"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N5_conj_fragment": 2
+      },
+      "recall_clean": 0.096,
+      "n_nums": 17
+    },
+    {
+      "q_id": "75832dbd",
+      "stored": 5,
+      "n_signal": 129,
+      "signal_missing": [
+        "Survey Papers",
+        "Understanding Images",
+        "Brain Segmentation",
+        "Generative Models",
+        "Federated Learning",
+        "Deep Learning for Medical Image Analysis: A Survey",
+        "International Symposium",
+        "Grand Challenge",
+        "Deep Visualization: Understanding Images and Video using Deep Learning",
+        "Clinical Workflows",
+        "Abdominal Organs Segmentation",
+        "Attention-Gated Networks"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N3_question_phrase": 1,
+        "N7_academic_template": 3
+      },
+      "recall_clean": 0.07,
+      "n_nums": 6
+    },
+    {
+      "q_id": "0edc2aef",
+      "stored": 9,
+      "n_signal": 42,
+      "signal_missing": [
+        "The Roof Garden",
+        "Dietary Restrictions",
+        "Luxury Getaway Package",
+        "Breakfast Menu",
+        "Winter Wonderland",
+        "Four Seasons Hotel Seattle",
+        "The Hyatt",
+        "Fireplace Rooms",
+        "The Alexis Hotel",
+        "Premium Waterfront Suites",
+        "Ordering Room Service",
+        "Space Needle Celebration Package"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.167,
+      "n_nums": 3
+    },
+    {
+      "q_id": "35a27287",
+      "stored": 10,
+      "n_signal": 44,
+      "signal_missing": [
+        "One Thing",
+        "World Language Day",
+        "Language Mastery",
+        "Black History Month",
+        "French Voices",
+        "Spanish Obsessed",
+        "Slow French",
+        "International Festivals",
+        "Heritage Months",
+        "Duolingo French Podcast",
+        "Community Organizations",
+        "Chinese New Year"
+      ],
+      "n_noise_filtered": 8,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N3_question_phrase": 4,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.273,
+      "n_nums": 0
+    },
+    {
+      "q_id": "32260d93",
+      "stored": 10,
+      "n_signal": 92,
+      "signal_missing": [
+        "Chris Mancini",
+        "While Burnham",
+        "Online Resources",
+        "And Here",
+        "External Hard Drive",
+        "The Comedy Network",
+        "Maria Bamford",
+        "Ali Wong",
+        "The Comedy Bureau",
+        "Homecoming King",
+        "Hasan Minhaj",
+        "The Stand-Up Comedy Academy"
+      ],
+      "n_noise_filtered": 8,
+      "noise_classes": {
+        "N1_ui_stub": 2,
+        "N2_imperative": 4,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.011,
+      "n_nums": 6
+    },
+    {
+      "q_id": "195a1a1b",
+      "stored": 9,
+      "n_signal": 44,
+      "signal_missing": [
+        "Using Guided Meditations",
+        "Rainy Night",
+        "Guided Meditations",
+        "Sleep Story: The Magical Forest",
+        "Andrew Weil",
+        "Relaxation Response",
+        "Progressive Muscle Relaxation",
+        "Core Work Hours",
+        "UCLA Mindful Awareness Research Center",
+        "Using Meditation Apps",
+        "Sleep Story",
+        "Help You Stay"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.136,
+      "n_nums": 0
+    },
+    {
+      "q_id": "afdc33df",
+      "stored": 11,
+      "n_signal": 74,
+      "signal_missing": [
+        "Regular Maintenance",
+        "Cashew Milk",
+        "Too Thin",
+        "Faucet Replacement Options",
+        "Almond Milk",
+        "Leak Location",
+        "Unsweetened Milk",
+        "Using Thickening Agents",
+        "Granite Repair Kit",
+        "Unpleasant Odors",
+        "Drawer Dividers",
+        "DIY Scratch Removal Methods"
+      ],
+      "n_noise_filtered": 10,
+      "noise_classes": {
+        "N1_ui_stub": 2,
+        "N2_imperative": 5,
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.027,
+      "n_nums": 0
+    },
+    {
+      "q_id": "caf03d32",
+      "stored": 9,
+      "n_signal": 47,
+      "signal_missing": [
+        "Vegan Options",
+        "Mexican Chicken Tacos",
+        "Hemp Yogurt",
+        "Breakfast Casserole",
+        "Comfort Food",
+        "Right Consistency",
+        "Cashew Yogurt",
+        "Global Inspirations",
+        "Vegetarian Recipes",
+        "More Ideas",
+        "Rice Dream",
+        "Butternut Squash Risotto"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.064,
+      "n_nums": 1
+    },
+    {
+      "q_id": "54026fce",
+      "stored": 9,
+      "n_signal": 10,
+      "signal_missing": [
+        "Online Team Activities",
+        "Collaborative Projects",
+        "Interest-Based Groups",
+        "Social Channels",
+        "Microsoft Teams",
+        "Has anyone considered",
+        "So, it sounds like there are a few concerns around [summarize the discussion]",
+        "I was thinking",
+        "Just to make sure I understand, you're saying that [paraphrase their comment]"
+      ],
+      "n_noise_filtered": 6,
+      "noise_classes": {
+        "N3_question_phrase": 6
+      },
+      "recall_clean": 0.1,
+      "n_nums": 0
+    },
+    {
+      "q_id": "06f04340",
+      "stored": 26,
+      "n_signal": 32,
+      "signal_missing": [
+        "Indian-Style Basil Chutney",
+        "Predatory Insects",
+        "Mint Chutney",
+        "Combine Basil",
+        "Understanding Neem Oil",
+        "Minty Yogurt Sauce",
+        "Herby Lemonade",
+        "Resistant Varieties",
+        "Mint Chimichurri",
+        "Other Natural Predators",
+        "Horticultural Oil",
+        "Middle Eastern-Style Salad"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.188,
+      "n_nums": 0
+    },
+    {
+      "q_id": "6b7dfb22",
+      "stored": 11,
+      "n_signal": 45,
+      "signal_missing": [
+        "Varying Pressure",
+        "Organize Your Supplies",
+        "Adjust Your Camera Settings",
+        "Edit Your Photos",
+        "Pricing Strategies",
+        "Soft Body",
+        "Spray Paint",
+        "Be Consistent",
+        "Skill Level",
+        "Mix Your Colors",
+        "Right Brushes",
+        "Find Your Peak Productivity Times"
+      ],
+      "n_noise_filtered": 16,
+      "noise_classes": {
+        "N1_ui_stub": 3,
+        "N2_imperative": 13
+      },
+      "recall_clean": 0.044,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1a1907b4",
+      "stored": 13,
+      "n_signal": 40,
+      "signal_missing": [
+        "Lemon Simple Syrup",
+        "Citrus-Flavored Simple Syrup Recommendations",
+        "Tom Collins",
+        "Fruit Slices",
+        "Garnish Picks",
+        "Garnish Trays",
+        "White Lady",
+        "Grapefruit Slice",
+        "Other Elements",
+        "White Grapefruit",
+        "Mint Simple Syrup",
+        "Grapefruit Simple Syrup Recipe"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.225,
+      "n_nums": 0
+    },
+    {
+      "q_id": "09d032c9",
+      "stored": 5,
+      "n_signal": 95,
+      "signal_missing": [
+        "Tech Pouch",
+        "Smart TV Features",
+        "Open-Box Models",
+        "Apple Watch",
+        "Intelligent Processor",
+        "Other Audio Enhancements",
+        "AI-Powered Image Enhancement",
+        "Android TV",
+        "Perfect Blacks",
+        "Wide Viewing Angles",
+        "Xbox Series X",
+        " 65"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.084,
+      "n_nums": 16
+    },
+    {
+      "q_id": "38146c39",
+      "stored": 4,
+      "n_signal": 10,
+      "signal_missing": [
+        "Caramel Cream Cheese Frosting",
+        "Recipe Suggestions",
+        "Demerara Cream Cheese Frosting",
+        "Incorporating Turbinado Sugar",
+        "Turbinado Sugar Cream Cheese Frosting",
+        "Muscovado Cream Cheese Frosting",
+        "Complementary Ingredients",
+        "Dried Cranberries"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.2,
+      "n_nums": 1
+    },
+    {
+      "q_id": "d24813b1",
+      "stored": 11,
+      "n_signal": 24,
+      "signal_missing": [
+        "Lavender-Infused Milk",
+        "Lemon Poppyseed Cake",
+        "Lemon-Ginger Cake",
+        "Lavender Extract",
+        "Longer Freshness",
+        "Lavender Syrup",
+        "Infused Sugar",
+        "Lavender Options",
+        "Incorporating Lavender",
+        "Lemon Chiffon Cake",
+        "Dried Lavender Buds",
+        "Chocolate Cake"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.083,
+      "n_nums": 1
+    },
+    {
+      "q_id": "57f827a0",
+      "stored": 6,
+      "n_signal": 46,
+      "signal_missing": [
+        "Ball Clock",
+        "Social Media",
+        "Eames Design",
+        "Nelson Bench",
+        "Recessed Pulls",
+        "Matte Finish",
+        "Eames Design: The Work of Charles and Ray Eames",
+        "Eames Storage Unit",
+        "Low Profile",
+        "Organic Shapes",
+        "Linear Pulls",
+        "Wood Accents"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.37,
+      "n_nums": 0
+    },
+    {
+      "q_id": "95228167",
+      "stored": 8,
+      "n_signal": 28,
+      "signal_missing": [
+        "Southern Rock",
+        "Gary Moore",
+        "Guns N",
+        "The Rolling Stones",
+        "Blackbird",
+        "Jimmy Page",
+        "The Who",
+        "Les Pauls",
+        "Led Zeppelin",
+        "Jeff Beck"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.643,
+      "n_nums": 4
+    },
+    {
+      "q_id": "505af2f5",
+      "stored": 16,
+      "n_signal": 41,
+      "signal_missing": [
+        "Trail Mix Granola Bites",
+        "Greek Yogurt Parfait",
+        "Avocado Toast",
+        "Veggie Sticks",
+        "Nuts Mix",
+        "Protein-Packed Muffins",
+        "Cocoa Crunch",
+        "Veggie Omelette",
+        "Cut Veggies",
+        "Overnight Oats",
+        "Cottage Cheese Cups",
+        "Fresh Fruit Cups"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "75f70248",
+      "stored": 13,
+      "n_signal": 22,
+      "signal_missing": [
+        "Miele Complete C3 Limited Edition",
+        "Sansevieria Trifasciata",
+        "TV repair [your city/state]",
+        "Air Watts",
+        "Rubber Plant",
+        "Hoover WindTunnel",
+        "Shark Navigator Lift-Away Professional",
+        "Dyson V11 Animal Cordless",
+        "Peace Lily",
+        "Flickering TV",
+        "Schultz Indoor Plant Food",
+        "TV repair near me"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.091,
+      "n_nums": 1
+    },
+    {
+      "q_id": "d6233ab6",
+      "stored": 6,
+      "n_signal": 42,
+      "signal_missing": [
+        "IBM Data Science Professional Certificate",
+        "Coursera IBM Data Science",
+        "Deep Learning Courses",
+        "Bridge Course",
+        "Seek Feedback",
+        "Stanford University",
+        "Machine Learning Course",
+        "Coursera Economics Courses",
+        "Review Program Requirements",
+        "Khan Academy Economics",
+        "Kaggle Learn",
+        "Review Core Topics"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 3
+      },
+      "recall_clean": 0.286,
+      "n_nums": 10
+    },
+    {
+      "q_id": "1da05512",
+      "stored": 9,
+      "n_signal": 68,
+      "signal_missing": [
+        "Password Protection",
+        "Prevention Systems",
+        "Secure Erase",
+        "Microsoft Active Directory",
+        "Hyper Backup",
+        "Hypertext Transfer Protocol Secure",
+        "For Small",
+        "Other Devices",
+        "Smart TVs",
+        "Active Directory",
+        "Medium-Sized Networks",
+        "Most NAS"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.221,
+      "n_nums": 6
+    },
+    {
+      "q_id": "fca70973",
+      "stored": 5,
+      "n_signal": 79,
+      "signal_missing": [
+        "Scary Farm",
+        "Online Booking",
+        "Halloween Character Dining",
+        "Mummy Hot Dogs",
+        "Berry Farm",
+        "Graveyard Dirt Cups",
+        "VIP Experiences",
+        "Important Notes",
+        "Mummy Meatball Subs",
+        "Flesh-Eating Zombie Fingers",
+        "Scary Farm Boo-fet",
+        "Carthay Circle Restaurant"
+      ],
+      "n_noise_filtered": 6,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 5
+      },
+      "recall_clean": 0.241,
+      "n_nums": 2
+    },
+    {
+      "q_id": "b6025781",
+      "stored": 10,
+      "n_signal": 27,
+      "signal_missing": [
+        "Classic Herbs",
+        "Cooking Time",
+        "Other Mix-ins",
+        "Lemon Rosemary",
+        "Spicy Kick",
+        "Mediterranean Style",
+        "Grilled Steak",
+        "Cinnamon Toast Crunch",
+        "Meal Prep Ideas",
+        "Other Delicious Options",
+        "Sweetness Level",
+        "Cheesy Delights"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.148,
+      "n_nums": 0
+    },
+    {
+      "q_id": "a89d7624",
+      "stored": 10,
+      "n_signal": 63,
+      "signal_missing": [
+        "Short Drive",
+        "This California-based",
+        "Red Rocks Food Trucks",
+        "The Ogden",
+        "While The Ship Rock Grille",
+        "The Black Keys",
+        "Indie Shuffle",
+        "Imagine Dragons",
+        "The Neighbourhood",
+        "Meeting Brandon Flowers",
+        "The Marquis Theater",
+        "The Fillmore Auditorium"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.19,
+      "n_nums": 1
+    },
+    {
+      "q_id": "b0479f84",
+      "stored": 10,
+      "n_signal": 107,
+      "signal_missing": [
+        "Support Policy Changes",
+        "Northern Hemisphere",
+        "Chabil Mar Resort",
+        "Belize Tourism Board",
+        "Running Wild",
+        "Indicator Species",
+        "Our Planet",
+        "The Cayman Islands",
+        "Reef Magic Cruises",
+        "Cayman Dive Lodge",
+        "Coral Reef Monitoring Program",
+        "World Wildlife Fund"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N2_imperative": 4,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.093,
+      "n_nums": 5
+    },
+    {
+      "q_id": "1d4e3b97",
+      "stored": 16,
+      "n_signal": 38,
+      "signal_missing": [
+        "On-Road Safety",
+        "Roc Loc Air",
+        "Municipal Bike Maps",
+        "Cycling",
+        "Bell Streak",
+        "American GPS",
+        "Bell Helmets",
+        "Pre-Ride Checks",
+        "Multi-Directional Impact Protection System",
+        "Online Cycling Forums",
+        "Trek Helmets",
+        "Garmin Express"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.316,
+      "n_nums": 5
+    },
+    {
+      "q_id": "07b6f563",
+      "stored": 16,
+      "n_signal": 18,
+      "signal_missing": [
+        "Best Buy",
+        "Urban Armor Gear",
+        "Multi-Device Charging",
+        "Brand Reputation",
+        "Wireless Charging Standard",
+        "While Qi",
+        "The OtterBox",
+        "Compact Design",
+        "Wireless Power Consortium",
+        "EC Technology",
+        "Safety Features"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.389,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1c0ddc50",
+      "stored": 4,
+      "n_signal": 151,
+      "signal_missing": [
+        "Robert Krulwich",
+        "Tim Ferriss",
+        "Eastern Front",
+        "The Devil in the White City",
+        "Poison Ring",
+        "Modern World",
+        "Phi Beta Kappa Award",
+        "Stuff Mom Never Told You",
+        "Steven Johnson",
+        "Stacy Schiff",
+        "Gareth Reynolds",
+        "The True Story of the Bridge on the River Kwai"
+      ],
+      "n_noise_filtered": 7,
+      "noise_classes": {
+        "N3_question_phrase": 7
+      },
+      "recall_clean": 0.053,
+      "n_nums": 7
+    },
+    {
+      "q_id": "0a34ad58",
+      "stored": 8,
+      "n_signal": 110,
+      "signal_missing": [
+        "Suica Card",
+        "Currency Exchange",
+        "Nikko National Park",
+        "Sushi Saito",
+        "Tsukiji Fish Market",
+        "EX Train",
+        "At Ueno Station",
+        "Keisei Limited Express",
+        "Comfortable Footwear",
+        "Many Japanese ATMs",
+        "JR Yamanote Line",
+        "At Shimbashi Station"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 2,
+        "N4_a_adjective": 1
+      },
+      "recall_clean": 0.055,
+      "n_nums": 5
+    },
+    {
+      "q_id": "7161e7e2",
+      "stored": 16,
+      "n_signal": 7,
+      "signal_missing": [
+        "8 am till 4 pm - 12 pm till 8 pm - 4 pm till 12 am - 12 am till 8 am",
+        "Afternoon Shift",
+        "Day Shift",
+        "Evening Shift",
+        "Night Shift"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.286,
+      "n_nums": 0
+    },
+    {
+      "q_id": "c4f10528",
+      "stored": 10,
+      "n_signal": 27,
+      "signal_missing": [
+        "Kawah Putih",
+        "Raa Cha Suki",
+        "Chef Afit",
+        "Puncak Tea Garden",
+        "This Japanese",
+        "Malabar Tea Plantation",
+        "Fried Chicken Burger",
+        "Yoghurt Granola Bowl",
+        "Tangkuban Perahu",
+        "Beef Rendang"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.63,
+      "n_nums": 0
+    },
+    {
+      "q_id": "89527b6b",
+      "stored": 16,
+      "n_signal": 17,
+      "signal_missing": [
+        "The Swimming Plesiosaur",
+        "The Flying Pterodactyl",
+        "The Cuddly Triceratops",
+        "Plesiosaur Image",
+        "Triceratops Image",
+        "A Triceratops",
+        "The Mighty T-Rex",
+        "Pterodactyl Image",
+        "A Pterodactyl",
+        "A Plesiosaur",
+        "T-Rex Image"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.353,
+      "n_nums": 0
+    },
+    {
+      "q_id": "e9327a54",
+      "stored": 6,
+      "n_signal": 70,
+      "signal_missing": [
+        "Lickety Splitz",
+        "A Tex-Mex",
+        "Daytona Beach",
+        "T-Rex Cafe",
+        "LEGOLAND Florida Resort",
+        "Animal Kingdom",
+        "The Whiskey",
+        "Better Than Sex",
+        "Uncle Julio",
+        "Pio Pio",
+        "The Pastry Studio",
+        "Wizarding World"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 1,
+        "N4_a_adjective": 2
+      },
+      "recall_clean": 0.114,
+      "n_nums": 0
+    },
+    {
+      "q_id": "4c36ccef",
+      "stored": 9,
+      "n_signal": 9,
+      "signal_missing": [
+        "Jewish Ghetto",
+        "Piazza Navona",
+        "Rome Cavalieri Hotel"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.667,
+      "n_nums": 1
+    },
+    {
+      "q_id": "6ae235be",
+      "stored": 12,
+      "n_signal": 7,
+      "signal_missing": [
+        "Lemont Refinery",
+        "Lake Charles Refinery",
+        "United States",
+        "Corpus Christi Refinery"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.429,
+      "n_nums": 0
+    },
+    {
+      "q_id": "7e00a6cb",
+      "stored": 5,
+      "n_signal": 18,
+      "signal_missing": [
+        "Venice of the North",
+        "Vincent Van Gogh",
+        "World War II",
+        "Amsterdam Noord"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.778,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1903aded",
+      "stored": 13,
+      "n_signal": 1,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "ceb54acb",
+      "stored": 15,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "f523d9fe",
+      "stored": 7,
+      "n_signal": 2,
+      "signal_missing": [
+        "Sure, I can do that"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.5,
+      "n_nums": 0
+    },
+    {
+      "q_id": "0e5e2d1a",
+      "stored": 14,
+      "n_signal": 2,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "fea54f57",
+      "stored": 17,
+      "n_signal": 40,
+      "signal_missing": [
+        "Ghosts V",
+        "Remi Wolf",
+        "Hyperspace",
+        "A Filipino-British",
+        "The Slow Rush",
+        "Taylor Swift",
+        "Kristian Matsson",
+        "After Hours",
+        "Punisher",
+        "Nine Inch Nails",
+        "Sam Beam",
+        "Beach Bunny"
+      ],
+      "n_noise_filtered": 6,
+      "noise_classes": {
+        "N3_question_phrase": 2,
+        "N4_a_adjective": 4
+      },
+      "recall_clean": 0.3,
+      "n_nums": 0
+    },
+    {
+      "q_id": "cc539528",
+      "stored": 10,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "dc439ea3",
+      "stored": 17,
+      "n_signal": 20,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "18dcd5a5",
+      "stored": 6,
+      "n_signal": 18,
+      "signal_missing": [
+        "Pressure Plate Puzzle",
+        "Damage Immunity",
+        "Magic Weapons",
+        "Siege Monster",
+        "Immutable Form",
+        "Magic Resistance",
+        "Mummy Rot",
+        "Armor Class",
+        "Skeletal Warriors",
+        "A Dexterity",
+        "Undead Fortitude",
+        "Condition Immunity"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.111,
+      "n_nums": 0
+    },
+    {
+      "q_id": "488d3006",
+      "stored": 8,
+      "n_signal": 3,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "58470ed2",
+      "stored": 12,
+      "n_signal": 3,
+      "signal_missing": [
+        "William Shakespeare"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.667,
+      "n_nums": 1
+    },
+    {
+      "q_id": "8cf51dda",
+      "stored": 7,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1d4da289",
+      "stored": 16,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "8464fc84",
+      "stored": 21,
+      "n_signal": 10,
+      "signal_missing": [
+        "The Last Judgment",
+        "Trevi Fountain",
+        "Catholic Church"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.7,
+      "n_nums": 1
+    },
+    {
+      "q_id": "8aef76bc",
+      "stored": 8,
+      "n_signal": 8,
+      "signal_missing": [
+        "Scrap Fabric Rag Rug",
+        "Mason Jar Wall Planter",
+        "Mod Podge",
+        "Forest Stewardship Council",
+        "These DIY",
+        "Newspaper Flower Vase"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.25,
+      "n_nums": 0
+    },
+    {
+      "q_id": "71a3fd6b",
+      "stored": 7,
+      "n_signal": 4,
+      "signal_missing": [
+        "Frankfurt Airport",
+        "Main Hauptbahnhof",
+        "Speyer Hauptbahnhof"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.25,
+      "n_nums": 0
+    },
+    {
+      "q_id": "2bf43736",
+      "stored": 9,
+      "n_signal": 11,
+      "signal_missing": [
+        "In Chapter",
+        "Our Father",
+        "The Active Purgative Way",
+        "Glory Be",
+        "Hail Mary"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.545,
+      "n_nums": 0
+    },
+    {
+      "q_id": "70b3e69b",
+      "stored": 16,
+      "n_signal": 4,
+      "signal_missing": [],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "8752c811",
+      "stored": 6,
+      "n_signal": 3,
+      "signal_missing": [
+        "American English",
+        "British English",
+        "North America"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "3249768e",
+      "stored": 4,
+      "n_signal": 11,
+      "signal_missing": [
+        "Pina Colada",
+        "Vodka Martini",
+        "Whiskey Sour",
+        "Share Prompt",
+        "Old Fashioned",
+        "Corpse Reviver",
+        "Bloody Mary"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.364,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1b9b7252",
+      "stored": 5,
+      "n_signal": 4,
+      "signal_missing": [
+        "The Mountain Meditation",
+        "The Body Scan Meditation",
+        "Mindfulness Exercises",
+        "UCLA Mindful Awareness Research Center"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1568498a",
+      "stored": 18,
+      "n_signal": 15,
+      "signal_missing": [
+        "Kg2 Bd5",
+        "Kg3 Be6",
+        "Rd3 Rh4",
+        "Rxe1 Nc6"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N8_notation": 1
+      },
+      "recall_clean": 0.733,
+      "n_nums": 0
+    },
+    {
+      "q_id": "6222b6eb",
+      "stored": 12,
+      "n_signal": 23,
+      "signal_missing": [
+        "Sentinel-2 Image Atmospheric Correction",
+        "French Space Agency",
+        "Second Simulation",
+        "Environmental Management",
+        "Water Research",
+        "Environmental Pollution",
+        "Solar Spectrum",
+        "Environmental Science",
+        "Environmental Research Letters",
+        "PLOS One",
+        "Sentinel-2 Level-1C",
+        "Environmental Monitoring"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.217,
+      "n_nums": 0
+    },
+    {
+      "q_id": "e8a79c70",
+      "stored": 9,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "d596882b",
+      "stored": 24,
+      "n_signal": 21,
+      "signal_missing": [
+        "Little Italy",
+        "Korean BBQ"
+      ],
+      "n_noise_filtered": 6,
+      "noise_classes": {
+        "N2_imperative": 3,
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.905,
+      "n_nums": 0
+    },
+    {
+      "q_id": "e3fc4d6e",
+      "stored": 17,
+      "n_signal": 41,
+      "signal_missing": [
+        "On December",
+        "President Biden",
+        "Overcoming New Challenges",
+        "Livermore Lab",
+        "Dedicated Pursuit",
+        "Expanding Knowledge"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.854,
+      "n_nums": 1
+    },
+    {
+      "q_id": "51b23612",
+      "stored": 16,
+      "n_signal": 11,
+      "signal_missing": [
+        "Tammany Hall",
+        "Stephen Colbert",
+        "Comedy Central",
+        "President Richard Nixon",
+        "Thomas Nast",
+        "Nu, pogodi",
+        "Soviet Union"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.364,
+      "n_nums": 1
+    },
+    {
+      "q_id": "3e321797",
+      "stored": 13,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "e982271f",
+      "stored": 7,
+      "n_signal": 16,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "352ab8bd",
+      "stored": 5,
+      "n_signal": 10,
+      "signal_missing": [
+        "Experimental Results",
+        "Active Training Modulation",
+        "Increasing Storm",
+        "Reviewer Confidence",
+        "Hardware-Aware Modular Training"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.5,
+      "n_nums": 1
+    },
+    {
+      "q_id": "fca762bc",
+      "stored": 4,
+      "n_signal": 3,
+      "signal_missing": [
+        "Cultural Differences",
+        "Language Barrier"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.333,
+      "n_nums": 0
+    },
+    {
+      "q_id": "7a8d0b71",
+      "stored": 8,
+      "n_signal": 23,
+      "signal_missing": [
+        "Influencer Content",
+        "Influencer Partnerships",
+        "Subject Line",
+        "Joining Us",
+        "Email Marketing Campaign Plan",
+        "Boost Your Wellness Practice",
+        "Influencer Marketing Campaign Plan",
+        "Thank You",
+        "Email List Building",
+        "The DHL Wellness Retreats Team",
+        "Influencer Engagement",
+        "These Simple Tips"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.304,
+      "n_nums": 2
+    },
+    {
+      "q_id": "a40e080f",
+      "stored": 15,
+      "n_signal": 3,
+      "signal_missing": [
+        "Ethisphere Institute",
+        "Warriors"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.333,
+      "n_nums": 1
+    },
+    {
+      "q_id": "8b9d4367",
+      "stored": 7,
+      "n_signal": 2,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "5809eb10",
+      "stored": 6,
+      "n_signal": 20,
+      "signal_missing": [
+        "New South Wales",
+        "Lessons Learned",
+        "Protecting Your Interests",
+        "Understanding Building Contracts",
+        "Seeking Legal Advice",
+        "Avoiding Legal Disputes",
+        "Construction Contracts",
+        "Case Summary",
+        "Building Code",
+        "The Significance",
+        "Safeguard Your Investment"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.45,
+      "n_nums": 4
+    },
+    {
+      "q_id": "41275add",
+      "stored": 9,
+      "n_signal": 13,
+      "signal_missing": [
+        "5 Tips for Better Posture at Your Desk",
+        "Mayo Clinic",
+        "Office Ergonomics",
+        "Harvard Health Publishing",
+        "Your Desk",
+        "Computer Workstation Ergonomics",
+        "Better Posture",
+        "Ohio State University Wexner Medical Center",
+        "Improve Your Posture",
+        "10 Easy Ways to Improve Your Posture at Work",
+        "How to Sit Properly at a Desk to Avoid Back Pain",
+        "Office Ergonomics - Computer Workstation Ergonomics"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N2_imperative": 2
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "4388e9dd",
+      "stored": 8,
+      "n_signal": 6,
+      "signal_missing": [
+        "STAFF ROOM",
+        "COMPUTING DEPARTMENT",
+        "Right guys, settle down"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.5,
+      "n_nums": 0
+    },
+    {
+      "q_id": "4baee567",
+      "stored": 15,
+      "n_signal": 27,
+      "signal_missing": [
+        "North America",
+        "Dallas Cowboys",
+        "Philadelphia Eagles",
+        "National Football Conference",
+        "New York Giants",
+        "The Philadelphia Eagles",
+        "The Buffalo Bills",
+        "TIAA Bank Field",
+        "The NFL",
+        "American Football Conference",
+        "Buffalo Bills",
+        "National Football League"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.444,
+      "n_nums": 6
+    },
+    {
+      "q_id": "561fabcd",
+      "stored": 11,
+      "n_signal": 10,
+      "signal_missing": [
+        "Contaminated Colossus",
+        "Irradiated Behemoth",
+        "Nova Gas",
+        "Radialisk",
+        "Glowing Goliath",
+        "Cosmic Cleanse",
+        "The AoE",
+        "Radiation Amplified",
+        "Black Ops"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.1,
+      "n_nums": 0
+    },
+    {
+      "q_id": "b759caee",
+      "stored": 17,
+      "n_signal": 4,
+      "signal_missing": [
+        "New York-based"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.75,
+      "n_nums": 0
+    },
+    {
+      "q_id": "ac031881",
+      "stored": 13,
+      "n_signal": 9,
+      "signal_missing": [
+        "Yes, this is security. What do you want",
+        "EXPERIMENT IN PROGRESS",
+        "EXAMINE FILE IN RECORDS FOR DETAILS",
+        "ABERRATION IN PREVIOUS ITERATION",
+        "Room LIV",
+        "Meeting Hall"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.333,
+      "n_nums": 0
+    },
+    {
+      "q_id": "28bcfaac",
+      "stored": 15,
+      "n_signal": 6,
+      "signal_missing": [
+        "Adam Neely",
+        "Music Theory For Dummies",
+        "Michael Pilhofer",
+        "The Jazz Theory Book",
+        "Rick Beato",
+        "Mark Levine"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "16c90bf4",
+      "stored": 5,
+      "n_signal": 5,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "c8f1aeed",
+      "stored": 8,
+      "n_signal": 7,
+      "signal_missing": [
+        "The EPA",
+        "In Pennsylvania",
+        "United States",
+        "Environmental Protection Agency",
+        "Environmental Protection"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.286,
+      "n_nums": 0
+    },
+    {
+      "q_id": "eaca4986",
+      "stored": 16,
+      "n_signal": 11,
+      "signal_missing": [
+        "G A B C D E",
+        "D C B A G",
+        "F E D C B A",
+        "C C",
+        "C D E E E D",
+        "C D E F G A",
+        "B A G F E D",
+        "G G A A B B",
+        "C D E F E D",
+        "G G G G A G"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N5_conj_fragment": 3
+      },
+      "recall_clean": 0.091,
+      "n_nums": 0
+    },
+    {
+      "q_id": "c7cf7dfd",
+      "stored": 13,
+      "n_signal": 20,
+      "signal_missing": [
+        "Indian Asia",
+        "The Art",
+        "Gota Patti",
+        "The Embroidery Resource Forum",
+        "Most Indian",
+        "The Block Printing Company",
+        "The Fabric",
+        "Dharma Trading Co",
+        "Margaret Halliday",
+        "Craft Village",
+        "Embroidery Network",
+        "The Embroidery Network"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.05,
+      "n_nums": 0
+    },
+    {
+      "q_id": "e48988bc",
+      "stored": 15,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1de5cff2",
+      "stored": 17,
+      "n_signal": 5,
+      "signal_missing": [
+        "This French",
+        "The RealReal",
+        "Vestiaire Collective"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N5_conj_fragment": 2
+      },
+      "recall_clean": 0.4,
+      "n_nums": 0
+    },
+    {
+      "q_id": "65240037",
+      "stored": 8,
+      "n_signal": 0,
+      "signal_missing": [],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": null,
+      "n_nums": 0
+    },
+    {
+      "q_id": "778164c6",
+      "stored": 20,
+      "n_signal": 11,
+      "signal_missing": [
+        "Jerk Chicken"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.909,
+      "n_nums": 0
+    },
+    {
+      "q_id": "e47becba",
+      "stored": 11,
+      "n_signal": 19,
+      "signal_missing": [
+        "Google Tasks",
+        "Project XYZ Invoices",
+        "Travel Reimbursements",
+        "Q1 Expenses",
+        "Stasher Bags",
+        "Google Drive",
+        "Business Administration",
+        "Clarity Money",
+        "You Need",
+        "Zoho Expense",
+        "Bees Wrap",
+        "Eisenhower Matrix"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.053,
+      "n_nums": 0
+    },
+    {
+      "q_id": "118b2229",
+      "stored": 4,
+      "n_signal": 51,
+      "signal_missing": [
+        "Graeme Simsion",
+        "Gone Girl",
+        "Naomi Alderman",
+        "The Three-Body Problem",
+        "Trojan War",
+        "Peter Kenny",
+        "Bahni Turpin",
+        "Quote",
+        "The Audible",
+        "Harry August",
+        "Adjoa Andoh",
+        "The Silent Patient"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 2
+      },
+      "recall_clean": 0.0,
+      "n_nums": 1
+    },
+    {
+      "q_id": "51a45a95",
+      "stored": 15,
+      "n_signal": 24,
+      "signal_missing": [
+        "Coupon Binder",
+        "Receipt Organization",
+        "Digital Receipts",
+        "Receipt Scanner",
+        "Coupon Organization",
+        "Store Loyalty Cards",
+        "Go Digital",
+        "Purge Regularly",
+        "You Need",
+        "Expense Manager",
+        "Genius Scan",
+        "Budgeting Tools"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N1_ui_stub": 2,
+        "N3_question_phrase": 2,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.083,
+      "n_nums": 4
+    },
+    {
+      "q_id": "58bf7951",
+      "stored": 13,
+      "n_signal": 19,
+      "signal_missing": [
+        "Social Media",
+        "Screen Actors Guild",
+        "Community Centers",
+        "Online Review Sites",
+        "Fettuccine Alfredo",
+        "Equity Association",
+        "Osso Buco",
+        "If Emily",
+        "Local Colleges",
+        "Spaghetti Bolognese",
+        "Google Maps",
+        "Google Reviews"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.105,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1e043500",
+      "stored": 9,
+      "n_signal": 63,
+      "signal_missing": [
+        "Advanced Channels",
+        "Tim Ferriss",
+        "Release Radar",
+        "Harvard Business Review",
+        "The Marketing Companion",
+        "The Growth Lab",
+        "Billy Gibbons",
+        "Guitar Tricks",
+        "Specialized Channels",
+        "Venue Websites",
+        "Michael Stelzner",
+        "HBR IdeaCast"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.143,
+      "n_nums": 6
+    },
+    {
+      "q_id": "c5e8278d",
+      "stored": 6,
+      "n_signal": 48,
+      "signal_missing": [
+        "Accurate Credit History",
+        "Have Documents Ready",
+        "View Profile",
+        "Profile Picture",
+        "Update Your Credit Report",
+        "Updating Your Facebook Profile",
+        "Your LinkedIn",
+        "Contact Each Credit Bureau",
+        "My Account",
+        "Last Name",
+        "Gather Required Documents",
+        "Processing Time"
+      ],
+      "n_noise_filtered": 7,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N3_question_phrase": 3,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.083,
+      "n_nums": 1
+    },
+    {
+      "q_id": "6ade9755",
+      "stored": 8,
+      "n_signal": 11,
+      "signal_missing": [
+        "Yoga Studio",
+        "Dylan Werner Yoga",
+        "Online Review Sites",
+        "Alo Moves",
+        "Yoga With Adriene",
+        "Google Search",
+        "Peloton Digital",
+        "Pocket Yoga",
+        "Asana Rebel"
+      ],
+      "n_noise_filtered": 9,
+      "noise_classes": {
+        "N2_imperative": 2,
+        "N3_question_phrase": 7
+      },
+      "recall_clean": 0.182,
+      "n_nums": 0
+    },
+    {
+      "q_id": "6f9b354f",
+      "stored": 8,
+      "n_signal": 37,
+      "signal_missing": [
+        "Sansevieria Trifasciata",
+        "The ZZ Plant",
+        "Ambient Lighting",
+        "Self-Watering Planter",
+        "Corner Office",
+        "Snake Plants",
+        "Lighting Direction",
+        "Energy Efficiency",
+        "Snake Plant",
+        "Cozy Nook",
+        "Chinese Evergreen",
+        "Natural Light"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.162,
+      "n_nums": 0
+    },
+    {
+      "q_id": "58ef2f1c",
+      "stored": 7,
+      "n_signal": 48,
+      "signal_missing": [
+        "Strut Your Mutt Event Details",
+        "Shriners Hospitals",
+        "Girls Clubs",
+        "The Environmental Defense Fund",
+        "Hospital Los Angeles",
+        "The American Cancer Society",
+        "Fun Walk",
+        "To the Rescue",
+        "Summer Gala",
+        "Jude Walk",
+        "Participating Organizations",
+        "Love to the Rescue"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 2,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.083,
+      "n_nums": 3
+    },
+    {
+      "q_id": "f8c5f88b",
+      "stored": 7,
+      "n_signal": 17,
+      "signal_missing": [
+        "Weather Underground",
+        "Leg Swings",
+        "Penn Championship",
+        "Core Exercises",
+        "Wrist Extensions",
+        "International Tennis Federation",
+        "Leg Exercises",
+        "Wilson US Open",
+        "Light Cardio",
+        "Dynamic Stretching",
+        "Tennis-Specific Drills",
+        "Neck Stretches"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 2
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "5d3d2817",
+      "stored": 6,
+      "n_signal": 34,
+      "signal_missing": [
+        "Team Collaboration",
+        "Task Creation",
+        "Steep Learning Curve",
+        "Microsoft Project",
+        "Variable Assignment",
+        "Conditional Logic",
+        "With ClickUp",
+        "Key Features",
+        "Google Sheets",
+        "Good Value",
+        "All-in-One Solution",
+        "Custom Field Updates"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.029,
+      "n_nums": 0
+    },
+    {
+      "q_id": "7527f7e2",
+      "stored": 10,
+      "n_signal": 17,
+      "signal_missing": [
+        "Neiman Marcus",
+        "Budgeting Tips",
+        "Grocery Shopping",
+        "You Need",
+        "Indian Recipes",
+        "Grocery IQ",
+        "Korean Recipes",
+        "Personal Capital",
+        "Gather Your Financial Information",
+        "Meal Planning",
+        "Fetch Rewards",
+        "Identify Your Income"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N2_imperative": 3,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.294,
+      "n_nums": 6
+    },
+    {
+      "q_id": "c960da58",
+      "stored": 11,
+      "n_signal": 72,
+      "signal_missing": [
+        "Music Blogs",
+        "Sad Songs",
+        "Bon Iver",
+        "Music Gateway",
+        "Chillout Corner",
+        "Study Sessions",
+        "Google Search",
+        "Eggs",
+        "A Swedish",
+        "Discover Weekly",
+        "Energize",
+        "YouTube Music"
+      ],
+      "n_noise_filtered": 10,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 1,
+        "N3_question_phrase": 2,
+        "N4_a_adjective": 6
+      },
+      "recall_clean": 0.056,
+      "n_nums": 0
+    },
+    {
+      "q_id": "3b6f954b",
+      "stored": 9,
+      "n_signal": 19,
+      "signal_missing": [
+        "Google Tasks",
+        "Pomodoro Technique",
+        "The Great Otway Fly Treetop Walk",
+        "Microsoft Outlook",
+        "While Google Calendar",
+        "Google Calendar",
+        "While Trello",
+        "Microsoft To Do",
+        "Bells Beach"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.526,
+      "n_nums": 8
+    },
+    {
+      "q_id": "726462e0",
+      "stored": 11,
+      "n_signal": 15,
+      "signal_missing": [
+        "Instagram Stories",
+        "Leverage Instagram",
+        "Tag a friend who might find this helpful",
+        "Buffer Analyze",
+        "Facebook Insights",
+        "Twitter Analytics",
+        "Twitter Chats",
+        "IG Live",
+        "Sprout Social",
+        "Share your thoughts in the comments below",
+        "Instagram Insights",
+        "Google Analytics"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.067,
+      "n_nums": 1
+    },
+    {
+      "q_id": "94f70d80",
+      "stored": 11,
+      "n_signal": 31,
+      "signal_missing": [
+        "IKEA Coffee Tables",
+        "Your Store Visits",
+        "Benchwright Coffee Table",
+        "Assembling IKEA Coffee Tables",
+        "LACK Coffee Table",
+        "Drawer Coffee Tables",
+        "Pottery Barn",
+        "Dawson Coffee Table",
+        "Storage Coffee Table",
+        "Wood Top",
+        "Some Specific Recommendations",
+        "Your IKEA Assembly Experience"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N1_ui_stub": 1
+      },
+      "recall_clean": 0.226,
+      "n_nums": 0
+    },
+    {
+      "q_id": "66f24dbb",
+      "stored": 11,
+      "n_signal": 3,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "ad7109d1",
+      "stored": 12,
+      "n_signal": 40,
+      "signal_missing": [
+        "Best Buy",
+        "Seagate Backup Plus",
+        "Power",
+        "Microsoft OneDrive",
+        "Software Tweaks",
+        "Mac Battery Health",
+        "Physical Inspection",
+        "On MacBooks",
+        "Samsung T5 Portable SSD",
+        "Good Habits",
+        "Western Digital My Passport",
+        "Google Drive"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.075,
+      "n_nums": 10
+    },
+    {
+      "q_id": "af8d2e46",
+      "stored": 8,
+      "n_signal": 8,
+      "signal_missing": [
+        "Carry-on Luggage",
+        "Checked Luggage",
+        "Transportation Security Administration",
+        "Determine What",
+        "Business Essentials",
+        "How Many Outfits",
+        "Packing Strategies"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.125,
+      "n_nums": 0
+    },
+    {
+      "q_id": "dccbc061",
+      "stored": 10,
+      "n_signal": 100,
+      "signal_missing": [
+        "Neural Synchrony",
+        "Orchestrated Objective Reduction",
+        "The Global Consciousness Project",
+        "Online Resources",
+        "John Bell",
+        "Global Consciousness",
+        "James Redfield",
+        "Gratitude Practice",
+        "The Field",
+        "Quantum Journaling",
+        "Quantum Physics",
+        "The Quantum Activist"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N2_imperative": 2,
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.04,
+      "n_nums": 7
+    },
+    {
+      "q_id": "c8c3f81d",
+      "stored": 8,
+      "n_signal": 46,
+      "signal_missing": [
+        "Nike Members Get",
+        "Nike Vaporfly Next",
+        "ASICS Gel-Nimbus",
+        "M Sport",
+        "Under Armour Slingshot",
+        "New Balance Fresh Foam",
+        "Their C9",
+        "Under Armour HOVR Phantom",
+        "ASICS Freedom ISO",
+        "New Nike Running Shoe Models",
+        "Academy Sports",
+        "Current Sales"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.109,
+      "n_nums": 11
+    },
+    {
+      "q_id": "8ebdbe50",
+      "stored": 11,
+      "n_signal": 53,
+      "signal_missing": [
+        "Completed",
+        "International Institute for Analytics",
+        "Student Support",
+        "Program Length",
+        "Graduate Outcomes",
+        "Supply Chain Management",
+        "Business Schools",
+        "Certified Data Scientist",
+        "Certified Analytics Professional",
+        "Best Online MBA Programs",
+        "Data Visualization",
+        "University Name"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 2,
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.094,
+      "n_nums": 11
+    },
+    {
+      "q_id": "6b168ec8",
+      "stored": 5,
+      "n_signal": 26,
+      "signal_missing": [
+        "Bike Locks",
+        "Best Bike",
+        "Kryptonite New York Fahgettaboudit",
+        "Carbon Fiber Wheels",
+        "Linka Lock",
+        "Roval CLX",
+        "Abus Granit X Plus",
+        "Long Rides",
+        "The Trek Emonda",
+        "Enve SES",
+        "Sold Secure",
+        "A GPS"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 1
+      },
+      "recall_clean": 0.192,
+      "n_nums": 0
+    },
+    {
+      "q_id": "75499fd8",
+      "stored": 9,
+      "n_signal": 45,
+      "signal_missing": [
+        "Collar Brands",
+        "Name Tag Recommendations",
+        "National Dog Walking Services",
+        "The Kong",
+        "Verify Insurance",
+        "Sensory Mats",
+        "Nylon Collars",
+        "Collar Types",
+        "Tricky Treat Ball",
+        "Golden Retrievers",
+        "Outward Hound Brick Puzzle",
+        "Leather Collars"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N2_imperative": 2
+      },
+      "recall_clean": 0.067,
+      "n_nums": 0
+    },
+    {
+      "q_id": "21436231",
+      "stored": 13,
+      "n_signal": 52,
+      "signal_missing": [
+        "The Big Horn River",
+        "Lake Trout",
+        "Streamer Fishing",
+        "The Arkansas River",
+        "South Platte River",
+        "Tailwater Fishing",
+        "Structural Features",
+        "Dry Fly Fishing",
+        "Grand River",
+        "Joseph River",
+        "Gary Reef",
+        "Original Floater"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 2
+      },
+      "recall_clean": 0.404,
+      "n_nums": 2
+    },
+    {
+      "q_id": "95bcc1c8",
+      "stored": 11,
+      "n_signal": 3,
+      "signal_missing": [
+        "But enough about love, let's talk about the real pain in my life",
+        "Scenes from a Hat",
+        "Yes, And"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 2,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "0862e8bf",
+      "stored": 16,
+      "n_signal": 30,
+      "signal_missing": [
+        "Recommended Probiotic Supplements",
+        "Colony-Forming Units",
+        "Clumping Clay Litters",
+        "Swheat Scoop Natural Cat Litter",
+        "Natural Litters",
+        "The AVMA",
+        "Feline Probiotic Supplement",
+        "Online Review Sites",
+        "Administering Probiotics",
+        "Other Considerations",
+        "American Veterinary Medical Association",
+        "Clay Cat Litter"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 2
+    },
+    {
+      "q_id": "853b0a1d",
+      "stored": 3,
+      "n_signal": 6,
+      "signal_missing": [
+        "Provenance/Story",
+        "Jewelry Tracker",
+        "Storage Location",
+        "World War II",
+        "Jewelry Inventory Spreadsheet",
+        "Style Era"
+      ],
+      "n_noise_filtered": 9,
+      "noise_classes": {
+        "N1_ui_stub": 9
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "a06e4cfe",
+      "stored": 15,
+      "n_signal": 22,
+      "signal_missing": [
+        "An Italian",
+        "Another French",
+        "London Dry Gin",
+        "Moscow Mule",
+        "Popular Mezcal Cocktails",
+        "Mezcal Negroni",
+        "Del Maguey",
+        "Understanding Mezcal",
+        "Old Fashioned",
+        "Siete Misterios",
+        "Mezcal Old Fashioned",
+        "Plymouth Gin"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N4_a_adjective": 1
+      },
+      "recall_clean": 0.409,
+      "n_nums": 0
+    },
+    {
+      "q_id": "37d43f65",
+      "stored": 8,
+      "n_signal": 20,
+      "signal_missing": [
+        "Best Buy",
+        "NVIDIA GTX",
+        "Power Saver",
+        "Disable Bluetooth",
+        "The NVIDIA GeForce RTX",
+        "Power-hungry RAM",
+        "NVIDIA GeForce RTX",
+        "Task Manager",
+        "Power Manager",
+        "Dell Inspiron",
+        "High Dynamic Range"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.45,
+      "n_nums": 11
+    },
+    {
+      "q_id": "b86304ba",
+      "stored": 6,
+      "n_signal": 44,
+      "signal_missing": [
+        "Gardner's Art Through the Ages",
+        "A Visual History",
+        "Keith Haring",
+        "Georgia O",
+        "Marilyn Stokstad",
+        "A Crash Course",
+        "Carol Strickland",
+        "Critical Acclaim",
+        "Art: A Visual History",
+        "Styles That May Be Undervalued",
+        "Modern Masters",
+        "The Metropolitan Museum"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N1_ui_stub": 1
+      },
+      "recall_clean": 0.045,
+      "n_nums": 0
+    },
+    {
+      "q_id": "d52b4f67",
+      "stored": 10,
+      "n_signal": 17,
+      "signal_missing": [
+        "Beauty Box",
+        "Lavender Face Mask Set",
+        "Lavender-Centric Home Spa Gift Set",
+        "Geranium Body",
+        "Lavender-Infused Skincare Tools",
+        "Skincare Box",
+        "Hand Cream",
+        "Sunday Riley",
+        "Customized Skincare Consultation",
+        "Lavender Bath Essence",
+        "Grand Ballroom",
+        "The Body Shop"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.235,
+      "n_nums": 10
+    },
+    {
+      "q_id": "25e5aa4f",
+      "stored": 5,
+      "n_signal": 29,
+      "signal_missing": [
+        "The Berkeley Data Science",
+        "Silicon Valley",
+        "West Coast",
+        "Stanford University",
+        "Stanford MS-DS Program",
+        "Heinz College",
+        "Carnegie Mellon",
+        "Financial Aid Office",
+        "The Carnegie Mellon Data Science",
+        "The Stanford Data Science",
+        "Carnegie Mellon University",
+        "Software Engineer"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.069,
+      "n_nums": 11
+    },
+    {
+      "q_id": "caf9ead2",
+      "stored": 11,
+      "n_signal": 11,
+      "signal_missing": [
+        "Intelligentsia Coffee",
+        "Online Search",
+        "Coffee Shop Apps",
+        "Coffee Shop Finder",
+        "La Colombe Coffee",
+        "Free Wi-Fi",
+        "Google Maps",
+        "Verve Coffee Roasters",
+        "Cafe Finder",
+        "Stumptown Coffee Roasters",
+        "Blue Bottle Coffee"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 2,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "8550ddae",
+      "stored": 9,
+      "n_signal": 24,
+      "signal_missing": [
+        "Small Hand Foods",
+        "Lavender Syrup Recipe",
+        "Fresh Thyme",
+        "New Western",
+        "New World Gin",
+        "The Botanist",
+        "A Scottish",
+        "Making Simple Syrup",
+        "American Craft Gin",
+        "Cucumber Basil Gimlet",
+        "Gin Mare",
+        "Commercial Simple Syrup Options"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N4_a_adjective": 5
+      },
+      "recall_clean": 0.125,
+      "n_nums": 0
+    },
+    {
+      "q_id": "60d45044",
+      "stored": 11,
+      "n_signal": 26,
+      "signal_missing": [
+        "Simple Japanese-Style Sauces",
+        "Minty Fresh Lemonade",
+        "Other Ideas",
+        "Mint Chutney",
+        "Grilled Eggplant",
+        "Grilled Vegetable Recipes",
+        "Lemon Marinade",
+        "Sesame Ginger Sauce",
+        "Grilled Chicken Recipes",
+        "Yakitori-Style Grilled Chicken",
+        "Mint Recipes",
+        "Basil Recipes"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 3,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "3f1e9474",
+      "stored": 6,
+      "n_signal": 23,
+      "signal_missing": [
+        "Charity Navigator",
+        "Industry-Specific Resources",
+        "American Cancer Society",
+        "Informational Interviews",
+        "Online Resources",
+        "Strong Interest Inventory",
+        "Communications Specialist",
+        "Career Explorer",
+        "Program Coordinator",
+        "Non-Profit Manager",
+        "Social Media Manager",
+        "I'll learn and grow from this experience"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.043,
+      "n_nums": 0
+    },
+    {
+      "q_id": "86b68151",
+      "stored": 10,
+      "n_signal": 1,
+      "signal_missing": [
+        "Modernize Your Living Room"
+      ],
+      "n_noise_filtered": 11,
+      "noise_classes": {
+        "N1_ui_stub": 5,
+        "N2_imperative": 1,
+        "N3_question_phrase": 5
+      },
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "577d4d32",
+      "stored": 13,
+      "n_signal": 51,
+      "signal_missing": [
+        "The Lumineers",
+        "Writing Style",
+        "The Ten Thousand Doors",
+        "Guns N",
+        "Helen Hoang",
+        "Aiden Bishop",
+        "Death Cab",
+        "The Family Upstairs",
+        "The Silent Patient",
+        "Evelyn Hardcastle",
+        "The Last Time I Lied",
+        "A New York Times Bestseller"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.059,
+      "n_nums": 2
+    },
+    {
+      "q_id": "ec81a493",
+      "stored": 6,
+      "n_signal": 16,
+      "signal_missing": [
+        "Record Crates",
+        "Vinyl Storage Solutions",
+        "Vinyl Storage Binders",
+        "Acrylic Poster Displays",
+        "Nielsen Frames",
+        "UO Rotating Record Display",
+        "LP Storage Cubes",
+        "Record Storage Shelves",
+        "Record Storage Crate",
+        "Record Storage Boxes",
+        "Conservation-Grade Framing",
+        "Poster Hangers"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 0
+    },
+    {
+      "q_id": "15745da0",
+      "stored": 8,
+      "n_signal": 21,
+      "signal_missing": [
+        "Displaying Your Marvel Cinematic Universe Figures",
+        "Other Display Ideas",
+        "Organizing Your Collection",
+        "Displaying Your Mondo Poster",
+        "Iron Man",
+        "Display Ideas",
+        "Display Options",
+        "Environmental Control",
+        "Museum Putty",
+        "Brownie Hawkeye",
+        "Storage Ideas",
+        "Displaying Your Brownie Hawkeye"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 2
+      },
+      "recall_clean": 0.19,
+      "n_nums": 2
+    },
+    {
+      "q_id": "e01b8e2f",
+      "stored": 10,
+      "n_signal": 106,
+      "signal_missing": [
+        "The Farmhouse",
+        "Mediterranean Europe",
+        "Greenwell Farms",
+        "Paniolo Horseback Adventures",
+        "Mauna Kea Visitor Information Station",
+        "Unique Experiences",
+        "Quick Bites",
+        "Kona Hostel",
+        "Outdoor Adventures",
+        "Art Deco",
+        "Hawaiian Food",
+        "Wailoa River State Recreation Area"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N4_a_adjective": 3
+      },
+      "recall_clean": 0.066,
+      "n_nums": 6
+    },
+    {
+      "q_id": "bc8a6e93",
+      "stored": 11,
+      "n_signal": 3,
+      "signal_missing": [],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 1.0,
+      "n_nums": 2
+    },
+    {
+      "q_id": "ccb36322",
+      "stored": 11,
+      "n_signal": 37,
+      "signal_missing": [
+        "Walk The Moon",
+        "Martin D-28",
+        "Rega Planar",
+        "The Black Keys",
+        "Pro-Ject Debut Carbon DC",
+        "Imagine Dragons",
+        "The Neighbourhood",
+        "Fender Vintage Modified Stratocaster",
+        "U-Turn Orbit",
+        "The Wombats",
+        "Marshall DSL20",
+        "The Xcerts"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.135,
+      "n_nums": 1
+    },
+    {
+      "q_id": "001be529",
+      "stored": 16,
+      "n_signal": 22,
+      "signal_missing": [
+        "Ratings & Reviews",
+        "Commute Time",
+        "Neighborhood Guide",
+        "Rent Zestimate",
+        "Affordable Housing Programs",
+        "Rent Jungle",
+        "Apartment Finder",
+        "Local Online Classifieds",
+        "Shared Housing",
+        "Safety Score",
+        "Street Name",
+        "Online Search Tools"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 3
+      },
+      "recall_clean": 0.091,
+      "n_nums": 5
+    },
+    {
+      "q_id": "b320f3f8",
+      "stored": 13,
+      "n_signal": 66,
+      "signal_missing": [
+        "Goldin Auctions",
+        "Peter Harrington Rare Books",
+        "Westlicht Photographica Auction",
+        "Card Kingdom",
+        "Sneaker Storage Bags",
+        "Underwood Watch Winder",
+        "Rapport Watch Display Cases",
+        "Pokémon Collector Communities",
+        "KEH Camera",
+        "Orbita Watch Winder",
+        "Thrift Stores",
+        "United States"
+      ],
+      "n_noise_filtered": 11,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 3,
+        "N3_question_phrase": 7
+      },
+      "recall_clean": 0.136,
+      "n_nums": 1
+    },
+    {
+      "q_id": "19b5f2b3",
+      "stored": 9,
+      "n_signal": 74,
+      "signal_missing": [
+        "Guesthouse Kiyomizu",
+        "Ginkaku-ji Temple",
+        "Silver Pavilion",
+        "Funaoka Onsen",
+        "Angkor Wat",
+        "Capsule Hotels",
+        "Myeong-dong Night Market",
+        "Kurama Onsen",
+        "Jinju Hoegwan",
+        "Arashiyama Bamboo Grove",
+        "Chiang Mai",
+        "East Asia"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.162,
+      "n_nums": 6
+    },
+    {
+      "q_id": "4fd1909e",
+      "stored": 31,
+      "n_signal": 16,
+      "signal_missing": [
+        "XPoNential Fest",
+        "Upcoming Shows",
+        "Rhode Island",
+        "Dan Reynolds",
+        "Past Show",
+        "Potential Show"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.625,
+      "n_nums": 0
+    },
+    {
+      "q_id": "545bd2b5",
+      "stored": 16,
+      "n_signal": 12,
+      "signal_missing": [
+        "On YouTube",
+        "Facebook Messenger",
+        "Your Time",
+        "On Facebook",
+        "Google Meet",
+        "Cold Turkey",
+        "Time Spent",
+        "Your Time on Instagram",
+        "Digital Wellbeing"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N2_imperative": 4,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.25,
+      "n_nums": 1
+    },
+    {
+      "q_id": "8a137a7f",
+      "stored": 12,
+      "n_signal": 53,
+      "signal_missing": [
+        "Linen Shades",
+        "Fabric Shades",
+        "Minimal Clutter",
+        "Google Home",
+        "Soft Music",
+        "Metal Floor Lamp",
+        "Reading Nook",
+        "Linen Shade Floor Lamp",
+        "Philips Hue White",
+        "App Requirements",
+        "Energy Efficiency",
+        "Philips LED Warm White"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N1_ui_stub": 2,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.094,
+      "n_nums": 0
+    },
+    {
+      "q_id": "76d63226",
+      "stored": 5,
+      "n_signal": 73,
+      "signal_missing": [
+        "National Geographic",
+        "Runs Windows",
+        "Star Trek",
+        "Cable Hiders",
+        "Castle Rock",
+        "YouTube Premium",
+        "Marvel Cinematic Universe",
+        "Flexible Cable Hiders",
+        "Andy Weir",
+        "Intel Core",
+        "Ancillary Justice",
+        "Magic Keyboard"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.151,
+      "n_nums": 3
+    },
+    {
+      "q_id": "86f00804",
+      "stored": 10,
+      "n_signal": 30,
+      "signal_missing": [
+        "Limited Choice",
+        "The Oprah",
+        "The Man Booker Prize",
+        "Avery Greer",
+        "Google Doc",
+        "Reese Witherspoon",
+        "The National Book Award",
+        "Hello Sunshine Book Club",
+        "The Pulitzer Prize",
+        "The New York Times Best Sellers",
+        "The Goodreads Choice Awards",
+        "Reading Challenge"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.333,
+      "n_nums": 0
+    },
+    {
+      "q_id": "8e9d538c",
+      "stored": 11,
+      "n_signal": 16,
+      "signal_missing": [
+        "General Size Guidelines",
+        "Extra Large",
+        "US H",
+        "Medium-Sized Toy",
+        "Amigurumi Hook Size",
+        "US E",
+        "Hand Circumference",
+        "Hook Size",
+        "Same Yarn",
+        "Fingerless Glove Tips",
+        "US I"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.312,
+      "n_nums": 0
+    },
+    {
+      "q_id": "311778f1",
+      "stored": 10,
+      "n_signal": 78,
+      "signal_missing": [
+        "Customer Behavior Analysis",
+        "Ian Goodfellow",
+        "Generative Models",
+        "Data Science",
+        "Machine Learning Mastery",
+        "High-Dimensional Data",
+        "Mobile Apps",
+        "Neural Style Transfer",
+        "Deep Visualization",
+        "Generative Adversarial Networks",
+        "Deep Learning Specialization",
+        "Netflix Viewing History"
+      ],
+      "n_noise_filtered": 5,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 4
+      },
+      "recall_clean": 0.205,
+      "n_nums": 1
+    },
+    {
+      "q_id": "c19f7a0b",
+      "stored": 17,
+      "n_signal": 26,
+      "signal_missing": [
+        "Other Recommendations",
+        "Batch Similar Tasks",
+        "For Advanced Learners",
+        "Sweet Potatoes",
+        "Apple Podcasts",
+        "Baked Chicken",
+        "Your Choice",
+        "The Eisenhower Matrix",
+        "Leave Buffer Time",
+        "Grilled Chicken",
+        "To-Do List",
+        "Prioritize Tasks"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 3
+      },
+      "recall_clean": 0.346,
+      "n_nums": 0
+    },
+    {
+      "q_id": "4100d0a0",
+      "stored": 7,
+      "n_signal": 25,
+      "signal_missing": [
+        "US Passport",
+        "The Irish",
+        "Community Colleges",
+        "Both Italian",
+        "The Irish Music School",
+        "European Union",
+        "Comhaltas Ceoltóirí",
+        "Online Resources",
+        "Local Resources",
+        "The US",
+        "Irish music classes near me",
+        "Celtic Festivals"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.08,
+      "n_nums": 0
+    },
+    {
+      "q_id": "29f2956b",
+      "stored": 6,
+      "n_signal": 103,
+      "signal_missing": [
+        "Sweet Home Chicago",
+        "Music Online",
+        "DAW Manufacturer Resources",
+        "Improvisation Resources",
+        "Online Resources",
+        "Jazz Theory Resources",
+        "Upgrading Your Guitar Setup",
+        "The Jazz Podcast",
+        "John Lee Hooker",
+        "Jazz Improvisation",
+        "Vintage Guitar",
+        "Most DAWs"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2
+      },
+      "recall_clean": 0.019,
+      "n_nums": 0
+    },
+    {
+      "q_id": "1faac195",
+      "stored": 5,
+      "n_signal": 109,
+      "signal_missing": [
+        "George Gershwin",
+        "South Platte River",
+        "West Coast",
+        "Universal Studios",
+        "Berry Farm",
+        "Ober Gatlinburg Ski Resort",
+        "Symphony Safari",
+        "African Savannah",
+        "Young Audiences",
+        "Mile High City",
+        "Denver Children",
+        "Navy Pier"
+      ],
+      "n_noise_filtered": 1,
+      "noise_classes": {
+        "N3_question_phrase": 1
+      },
+      "recall_clean": 0.138,
+      "n_nums": 0
+    },
+    {
+      "q_id": "faba32e5",
+      "stored": 10,
+      "n_signal": 19,
+      "signal_missing": [
+        "Outdoor Movie",
+        "Grilled Corn",
+        "Yard Yahtzee",
+        "Sidewalk Chalk Art",
+        "Roasted Vegetables",
+        "Collard Greens",
+        "Watermelon Salad",
+        "Water Balloon Toss",
+        "Grilling Essentials",
+        "Garlic Mashed Potatoes",
+        "Party Essentials",
+        "Lawn Darts"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.263,
+      "n_nums": 0
+    },
+    {
+      "q_id": "f4f1d8a4",
+      "stored": 12,
+      "n_signal": 14,
+      "signal_missing": [
+        "The Kitchn",
+        "Coffee Geek",
+        "Caramel Cream-Filled Choux Pastry Balls",
+        "The Coffee Confidential",
+        "Caramel Filled Croissants",
+        "Salted Caramel Tart",
+        "Caramel Apple Turnovers",
+        "Caramel Pecan Danish",
+        "Smitten Kitchen",
+        "Caramel Apple Croustade",
+        "Caramel Mille-Feuille",
+        "Caramel Chocolate"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.071,
+      "n_nums": 0
+    },
+    {
+      "q_id": "c14c00dd",
+      "stored": 11,
+      "n_signal": 26,
+      "signal_missing": [
+        "Professional Associations",
+        "Plant Nanny",
+        "Konjac Sponge",
+        "The Spruce",
+        "Trader Joe",
+        "The Body Shop Himalayan Salt Scrub",
+        "Dennis Gross Skincare",
+        "Kiko Exfoliating Gloves",
+        "Staying Motivated",
+        "Exfoliating Gloves",
+        "Hydro Coach",
+        "Bath Association"
+      ],
+      "n_noise_filtered": 4,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.077,
+      "n_nums": 0
+    },
+    {
+      "q_id": "36580ce8",
+      "stored": 11,
+      "n_signal": 17,
+      "signal_missing": [
+        "Whole Grain Goodness",
+        "Veggie Delights",
+        "Hip Flexor Stretch",
+        "Protein-rich Snacks",
+        "Quad Stretch",
+        "Exercise Regularly",
+        "Cat-Cow Stretch",
+        "Calf Stretch",
+        "Hamstring Stretch",
+        "Other Options",
+        "Flexibility Exercises",
+        "Shoulder Rolls"
+      ],
+      "n_noise_filtered": 7,
+      "noise_classes": {
+        "N2_imperative": 7
+      },
+      "recall_clean": 0.0,
+      "n_nums": 1
+    },
+    {
+      "q_id": "3d86fd0a",
+      "stored": 23,
+      "n_signal": 22,
+      "signal_missing": [
+        "Send article about [topic]",
+        "Emily Chen",
+        "John Smith",
+        "For Juan",
+        "For Sophia",
+        "For Alex",
+        "For Rachel",
+        "Mutual Friend",
+        "For Maria",
+        "Recent Contacts",
+        "Michael Brown",
+        "Train Commute"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N2_imperative": 1,
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.227,
+      "n_nums": 0
+    },
+    {
+      "q_id": "a82c026e",
+      "stored": 16,
+      "n_signal": 18,
+      "signal_missing": [
+        "EVGA SuperNOVA",
+        "AMD Radeon RX",
+        "Other Components",
+        "Intel Core",
+        "NVMe SSD",
+        "Corsair Hydro Series H115i RGB Platinum",
+        "WD Black SN750",
+        "Noctua NH-U14S TR4-SP3",
+        "This GPU",
+        "Fractal Design Meshify C",
+        "NVIDIA GeForce RTX",
+        "ASUS PRIME Z590-A"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N3_question_phrase": 2
+      },
+      "recall_clean": 0.056,
+      "n_nums": 2
+    },
+    {
+      "q_id": "0862e8bf_abs",
+      "stored": 20,
+      "n_signal": 30,
+      "signal_missing": [
+        "Recommended Probiotic Supplements",
+        "Colony-Forming Units",
+        "Clumping Clay Litters",
+        "Swheat Scoop Natural Cat Litter",
+        "Natural Litters",
+        "The AVMA",
+        "Feline Probiotic Supplement",
+        "Online Review Sites",
+        "Administering Probiotics",
+        "Other Considerations",
+        "American Veterinary Medical Association",
+        "Clay Cat Litter"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.2,
+      "n_nums": 2
+    },
+    {
+      "q_id": "15745da0_abs",
+      "stored": 14,
+      "n_signal": 21,
+      "signal_missing": [
+        "Displaying Your Marvel Cinematic Universe Figures",
+        "Other Display Ideas",
+        "Organizing Your Collection",
+        "Displaying Your Mondo Poster",
+        "Iron Man",
+        "Display Ideas",
+        "Display Options",
+        "Environmental Control",
+        "Museum Putty",
+        "Brownie Hawkeye",
+        "Storage Ideas",
+        "Displaying Your Brownie Hawkeye"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N1_ui_stub": 2
+      },
+      "recall_clean": 0.19,
+      "n_nums": 2
+    },
+    {
+      "q_id": "bc8a6e93_abs",
+      "stored": 10,
+      "n_signal": 3,
+      "signal_missing": [
+        "Lemon Curd Recipe",
+        "Bread Flour",
+        "All-Purpose Flour"
+      ],
+      "n_noise_filtered": 0,
+      "noise_classes": {},
+      "recall_clean": 0.0,
+      "n_nums": 2
+    },
+    {
+      "q_id": "19b5f2b3_abs",
+      "stored": 10,
+      "n_signal": 74,
+      "signal_missing": [
+        "Guesthouse Kiyomizu",
+        "Ginkaku-ji Temple",
+        "Silver Pavilion",
+        "Funaoka Onsen",
+        "Angkor Wat",
+        "Capsule Hotels",
+        "Myeong-dong Night Market",
+        "Kurama Onsen",
+        "Jinju Hoegwan",
+        "Arashiyama Bamboo Grove",
+        "Chiang Mai",
+        "East Asia"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N3_question_phrase": 3
+      },
+      "recall_clean": 0.122,
+      "n_nums": 6
+    },
+    {
+      "q_id": "29f2956b_abs",
+      "stored": 6,
+      "n_signal": 103,
+      "signal_missing": [
+        "Sweet Home Chicago",
+        "Music Online",
+        "DAW Manufacturer Resources",
+        "Improvisation Resources",
+        "Online Resources",
+        "Jazz Theory Resources",
+        "Upgrading Your Guitar Setup",
+        "The Jazz Podcast",
+        "John Lee Hooker",
+        "Jazz Improvisation",
+        "Vintage Guitar",
+        "Most DAWs"
+      ],
+      "n_noise_filtered": 3,
+      "noise_classes": {
+        "N1_ui_stub": 1,
+        "N2_imperative": 2
+      },
+      "recall_clean": 0.019,
+      "n_nums": 0
+    },
+    {
+      "q_id": "f4f1d8a4_abs",
+      "stored": 10,
+      "n_signal": 14,
+      "signal_missing": [
+        "The Kitchn",
+        "Coffee Geek",
+        "Caramel Cream-Filled Choux Pastry Balls",
+        "The Coffee Confidential",
+        "Caramel Filled Croissants",
+        "Salted Caramel Tart",
+        "Caramel Apple Turnovers",
+        "Caramel Pecan Danish",
+        "Smitten Kitchen",
+        "Caramel Apple Croustade",
+        "Caramel Mille-Feuille",
+        "Caramel Chocolate"
+      ],
+      "n_noise_filtered": 2,
+      "noise_classes": {
+        "N3_question_phrase": 1,
+        "N5_conj_fragment": 1
+      },
+      "recall_clean": 0.071,
+      "n_nums": 0
+    }
+  ]
+}
