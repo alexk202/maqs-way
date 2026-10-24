@@ -18,7 +18,7 @@ Server behavior is explicitly out of scope, not implicitly condemned.
 
 | Way property | Verdict | One line |
 |---|---|---|
-| P4 Isolation | COVERED (client-side) | Per-agent roots, symlink-resolved containment, fail-closed writes |
+| P4 Isolation | STATIC IMPLEMENTATION EVIDENCE; BEHAVIORAL VERIFICATION PENDING (client-side) | Per-agent roots, symlink-resolved containment, fail-closed writes |
 | P8 Measurability | COVERED (policy-heavy) | Deep unit/hook/e2e suites; no memory-quality benchmarks found |
 | P2 Provenance | PARTIAL | Git commits carry agent author; file bodies carry no source/confidence |
 | P1 Veracity | PARTIAL | Structural gates + read_only protection; no trust levels on content |
@@ -26,6 +26,11 @@ Server behavior is explicitly out of scope, not implicitly condemned.
 | B Write integrity | PARTIAL | Idempotent no-op commits, deduped pathspecs; lock bypass + quiet fallbacks |
 | P3 Aging | GAP | Budgets only (sizes/depth); no TTL/expiry/decay/supersede fields |
 | Logging | PARTIAL | Debug traces + push log; no structured memory audit ledger |
+
+> P4: verdict relabeled per the MAQS glossary terms (2026-10-24, external
+> reviewer feedback; precedent: maqs-way 469e237 for the Mem0 audit). This
+> audit executed nothing, so isolation is static implementation evidence
+> (file:line refs below); behavioral verification is pending.
 
 ## Done well (worth crediting)
 

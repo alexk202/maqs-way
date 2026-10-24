@@ -24,7 +24,7 @@
 
 ## Done well (worth crediting)
 
-1. **Isolation (P4) — exemplary.** `mem0/memory/main.py:1471-1475` — `search/get_all`
+1. **Isolation (P4) — static implementation evidence.** `mem0/memory/main.py:1471-1475` — `search/get_all`
    require a tenant filter (`user_id|agent_id|run_id`), else `ValueError`;
    filters go into the vector store `query_filter` before top-k
    (`qdrant.py:428-434`, over-fetch `max(limit*4,60)`); key spoofing via
