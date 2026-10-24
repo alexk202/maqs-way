@@ -1,0 +1,4680 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "seed": 42,
+    "repeat_penalty": "server default 1.0 (treatment deferred post-(ii))",
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "config": "(ii): g1 EXACT + prompt=B6_VERBATIM (b6_prompt.py sha256 73c485c1f17c7d3e…); schema sha256 7a371d7a4867173f…; max_tokens=2000",
+    "b6_prompt_sha256_file": "73c485c1f17c7d3e9a7d5818a639e593b88924a0ada19e003c0d9e45e014fdd7",
+    "schema_sha256": "7a371d7a4867173fe02d0b9e003aeea204f60a6c0adb512b6b2b12d392992e9f",
+    "panel": "12 full ids frozen from verbatim_g1_v12.json (stratified 4/4/4)",
+    "metric": "verbatim v1.2 (N1-N8 council classification), FULL-facts primary, all-facts artifact line; R@5 non-regression",
+    "date": "2026-10-24T14:46:44+00:00",
+    "n": 156,
+    "label": "package-(ii) B6-over-grammar, prereg-ii"
+  },
+  "R_at_5_evidence": 0.9935897435897436,
+  "empty_collections": 1,
+  "mal_calls": 0,
+  "other_fail_calls": 0,
+  "trunc_calls": 1,
+  "capped_calls": 12,
+  "loop_calls": 11,
+  "facts_at_maxlen_total": 0,
+  "primary_panel": {
+    "mean_full": 0.204,
+    "threshold_P1": 0.32,
+    "members_above_own_base": 3,
+    "threshold_P2": 8,
+    "panel_complete": true,
+    "rows": [
+      {
+        "q_id": "75832dbd",
+        "base": 0.07,
+        "ii_recall": 0.023,
+        "ii_recall_all": 0.023,
+        "stored": 11
+      },
+      {
+        "q_id": "afdc33df",
+        "base": 0.027,
+        "ii_recall": 0.027,
+        "ii_recall_all": 0.027,
+        "stored": 15
+      },
+      {
+        "q_id": "fca70973",
+        "base": 0.241,
+        "ii_recall": 0.215,
+        "ii_recall_all": 0.215,
+        "stored": 9
+      },
+      {
+        "q_id": "b0479f84",
+        "base": 0.093,
+        "ii_recall": 0.178,
+        "ii_recall_all": 0.178,
+        "stored": 20
+      },
+      {
+        "q_id": "0a34ad58",
+        "base": 0.055,
+        "ii_recall": 0.036,
+        "ii_recall_all": 0.036,
+        "stored": 10
+      },
+      {
+        "q_id": "e47becba",
+        "base": 0.053,
+        "ii_recall": 0.053,
+        "ii_recall_all": 0.053,
+        "stored": 10
+      },
+      {
+        "q_id": "58bf7951",
+        "base": 0.105,
+        "ii_recall": 0.421,
+        "ii_recall_all": 0.421,
+        "stored": 31
+      },
+      {
+        "q_id": "3b6f954b",
+        "base": 0.526,
+        "ii_recall": 0.526,
+        "ii_recall_all": 0.526,
+        "stored": 11
+      },
+      {
+        "q_id": "19b5f2b3",
+        "base": 0.162,
+        "ii_recall": 0.149,
+        "ii_recall_all": 0.149,
+        "stored": 10
+      },
+      {
+        "q_id": "311778f1",
+        "base": 0.205,
+        "ii_recall": 0.128,
+        "ii_recall_all": 0.128,
+        "stored": 8
+      },
+      {
+        "q_id": "1faac195",
+        "base": 0.138,
+        "ii_recall": 0.119,
+        "ii_recall_all": 0.119,
+        "stored": 7
+      },
+      {
+        "q_id": "faba32e5",
+        "base": 0.263,
+        "ii_recall": 0.579,
+        "ii_recall_all": 0.579,
+        "stored": 12
+      }
+    ]
+  },
+  "sanity_global_clean_micro_full": 0.17,
+  "sanity_threshold": 0.35,
+  "global_clean_micro_all": null,
+  "nums_questions": 63,
+  "unpredicted": [
+    {
+      "obs": "trunc-field (facts at 900) = 0 DESPITE B6 fact-lengthening (predicted 0-6): the class did not appear at all; recall_full == recall_all for every panel member (no truncated facts exist)",
+      "class": "positive surprise"
+    },
+    {
+      "obs": "loop spread 2 -> 11 questions (all HIT): B6 verbosity feeds the array-fill-to-cap attractor at ~5x the predicted magnitude (0-3 predicted)",
+      "class": "flag-magnitude finding"
+    },
+    {
+      "obs": "capped spread 2 -> 12 questions: same attractor-pressure mechanism",
+      "class": "flag-magnitude finding"
+    },
+    {
+      "obs": "one fr=length wall (41275add) -> parse fail -> empty -> the single R@5 miss: the b3 death channel (length->wall->empty->miss) reopened for exactly one question under B6 verbosity at cap 2000",
+      "class": "b3-pattern miniature"
+    },
+    {
+      "obs": "nums posthoc 0.088 raw / 0.099 digits-survive vs g1 0.087/0.092 -- FLAT despite the prompt's explicit 'Numerically Precise' demand: the 8B model ignores verbatim instructions for numbers; nums handoff (<0.15) TRIGGERS",
+      "class": "capability-suspicion: B6-class may be model-capability limit, not prompt defect"
+    },
+    {
+      "obs": "links_used 285 (g1: 165): output-hygiene counter up with B6 example-driven prompt",
+      "class": "observation"
+    },
+    {
+      "obs": "panel members recall_full == recall_all everywhere; global clean micro (full) 0.170 vs base 0.175 -- B6 prompt produced NO net verbatim lift and depressed several panel members (75832dbd 0.070->0.023, 311778f1 0.205->0.128)",
+      "class": "primary-verdict evidence"
+    }
+  ],
+  "results": [
+    {
+      "q_id": "8a2466db",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 21.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1230,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 165
+        }
+      ],
+      "verbatim": {
+        "n_signal": 58,
+        "noise_filtered": 12,
+        "recall_full": 0.207,
+        "recall_all": 0.207,
+        "n_nums": 7
+      }
+    },
+    {
+      "q_id": "06878be2",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions of Sony-compatible accessories or high-quality photography gear that can enhance their photography experience. They may not prefer suggestions of other brands' equipment or low-quality gear.",
+      "evidence_hit": true,
+      "memories": 21,
+      "ingest_s": 35.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3541,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 21,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 146
+        }
+      ],
+      "verbatim": {
+        "n_signal": 52,
+        "noise_filtered": 2,
+        "recall_full": 0.096,
+        "recall_all": 0.096,
+        "n_nums": 17
+      }
+    },
+    {
+      "q_id": "75832dbd",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions related to recent research papers, articles, or conferences that focus on artificial intelligence in healthcare, particularly those that involve deep learning for medical image analysis. They would not be interested in general AI topics or those unrelated to healthcare.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 22.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2107,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 175
+        }
+      ],
+      "verbatim": {
+        "n_signal": 129,
+        "noise_filtered": 4,
+        "recall_full": 0.023,
+        "recall_all": 0.023,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "0edc2aef",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.",
+      "evidence_hit": true,
+      "memories": 21,
+      "ingest_s": 40.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4410,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 21,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 320
+        }
+      ],
+      "verbatim": {
+        "n_signal": 42,
+        "noise_filtered": 3,
+        "recall_full": 0.119,
+        "recall_all": 0.119,
+        "n_nums": 3
+      }
+    },
+    {
+      "q_id": "35a27287",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that suggest cultural events where they can practice their language skills, particularly Spanish and French. They would also appreciate if the event has a focus on language learning resources. They would not prefer events that do not provide opportunities for language practice or cultural exchange.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 23.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2285,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 174
+        }
+      ],
+      "verbatim": {
+        "n_signal": 44,
+        "noise_filtered": 8,
+        "recall_full": 0.068,
+        "recall_all": 0.068,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "32260d93",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer recommendations for stand-up comedy specials on Netflix, especially those that are known for their storytelling. They may not prefer recommendations for other genres or platforms.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 21.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2274,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 192
+        }
+      ],
+      "verbatim": {
+        "n_signal": 92,
+        "noise_filtered": 8,
+        "recall_full": 0.011,
+        "recall_all": 0.011,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "195a1a1b",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 30.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3225,
+          "facts": 18,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 131
+        }
+      ],
+      "verbatim": {
+        "n_signal": 44,
+        "noise_filtered": 5,
+        "recall_full": 0.136,
+        "recall_all": 0.136,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "afdc33df",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that acknowledge and build upon their existing efforts to organize their kitchen, such as utilizing their new utensil holder to keep countertops clutter-free. They would also appreciate tips that address their concern for maintaining their granite surface, particularly around the sink area. Preferred responses would provide practical and actionable steps to maintain cleanliness, leveraging the user's current tools and setup. They might not prefer generic or vague suggestions that do not take into account their specific kitchen setup or concerns.",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 27.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2586,
+          "facts": 15,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 126
+        }
+      ],
+      "verbatim": {
+        "n_signal": 74,
+        "noise_filtered": 10,
+        "recall_full": 0.027,
+        "recall_all": 0.027,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "caf03d32",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that provide tips and advice specifically tailored to their slow cooker experiences, utilizing their recent success with beef stew and interest in making yogurt in the slow cooker. They might not prefer general slow cooker recipes or advice unrelated to their specific experiences and interests.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 25.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2338,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 238
+        }
+      ],
+      "verbatim": {
+        "n_signal": 47,
+        "noise_filtered": 3,
+        "recall_full": 0.085,
+        "recall_all": 0.085,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "54026fce",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that acknowledge their desire for social interaction and collaboration while working remotely, utilizing their previous experiences with company initiatives and team collaborations. They might prefer suggestions of virtual team-building activities, regular check-ins, or joining interest-based groups within the company. The user may not prefer generic suggestions that do not take into account their specific work situation or previous attempts at staying connected with colleagues.",
+      "evidence_hit": true,
+      "memories": 7,
+      "ingest_s": 14.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1441,
+          "facts": 7,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 7,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 158
+        }
+      ],
+      "verbatim": {
+        "n_signal": 10,
+        "noise_filtered": 6,
+        "recall_full": 0.1,
+        "recall_all": 0.1,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "06f04340",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer dinner suggestions that incorporate their homegrown cherry tomatoes and herbs like basil and mint, highlighting recipes that showcase their garden produce. They might not prefer suggestions that do not utilize these specific ingredients or do not emphasize the use of homegrown elements.",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 13.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1090,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 131
+        }
+      ],
+      "verbatim": {
+        "n_signal": 32,
+        "noise_filtered": 3,
+        "recall_full": 0.094,
+        "recall_all": 0.094,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "6b7dfb22",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that build upon their existing sources of inspiration, such as revisiting Instagram art accounts or exploring new techniques from online tutorials. They might also appreciate suggestions that revisit previous themes they found enjoyable, like painting flowers. The user would not prefer generic or vague suggestions for finding inspiration, and would likely appreciate responses that utilize their recent 30-day painting challenge experience.",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 30.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3141,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 128
+        }
+      ],
+      "verbatim": {
+        "n_signal": 45,
+        "noise_filtered": 16,
+        "recall_full": 0.044,
+        "recall_all": 0.044,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1a1907b4",
+      "q_type": "single-session-preference",
+      "answer": "Considering their mixology class background, the user would prefer cocktail suggestions that build upon their existing skills and interests, such as creative variations of classic cocktails or innovative twists on familiar flavors. They might appreciate recommendations that incorporate their experience with refreshing summer drinks like Pimm's Cup. The user would not prefer overly simplistic or basic cocktail recipes, and may not be interested in suggestions that don't take into account their mixology class background.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 21.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2095,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 194
+        }
+      ],
+      "verbatim": {
+        "n_signal": 40,
+        "noise_filtered": 0,
+        "recall_full": 0.25,
+        "recall_all": 0.25,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "09d032c9",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that build upon their previous mention of purchasing a portable power bank, such as suggestions on how to optimize its use, like ensuring it's fully charged before use. They might also appreciate tips on utilizing battery-saving features on their phone. The user may not prefer responses that suggest alternative solutions or unrelated advice.",
+      "evidence_hit": true,
+      "memories": 7,
+      "ingest_s": 20.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1654,
+          "facts": 7,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 7,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 175
+        }
+      ],
+      "verbatim": {
+        "n_signal": 95,
+        "noise_filtered": 1,
+        "recall_full": 0.126,
+        "recall_all": 0.126,
+        "n_nums": 16
+      }
+    },
+    {
+      "q_id": "38146c39",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that build upon their previous experimentation with turbinado sugar, suggesting ingredients or techniques that complement its richer flavor. They might not prefer generic cookie-making advice or suggestions that don't take into account their existing use of turbinado sugar.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 24.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2380,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 165
+        }
+      ],
+      "verbatim": {
+        "n_signal": 10,
+        "noise_filtered": 1,
+        "recall_full": 0.2,
+        "recall_all": 0.2,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "d24813b1",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer baking suggestions that take into account their previous success with the lemon poppyseed cake, such as variations of that recipe or other desserts that share similar qualities. They might prefer suggestions that balance impressiveness with manageability, considering their previous experience. The user may not prefer overly complex or unfamiliar recipes, or suggestions that do not build upon their existing baking experience.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 23.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2121,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 320
+        }
+      ],
+      "verbatim": {
+        "n_signal": 24,
+        "noise_filtered": 4,
+        "recall_full": 0.083,
+        "recall_all": 0.083,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "57f827a0",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that take into account their existing plans to replace the bedroom dresser and their interest in mid-century modern style, suggesting furniture layouts that accommodate the new dresser and incorporate elements of this design aesthetic. They might not prefer general furniture arrangement tips or suggestions that do not consider their specific design preferences.",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 17.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1667,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 156
+        }
+      ],
+      "verbatim": {
+        "n_signal": 46,
+        "noise_filtered": 2,
+        "recall_full": 0.152,
+        "recall_all": 0.152,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "95228167",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that highlight the differences between Fender Stratocaster and Gibson Les Paul electric guitars, such as the feel of the neck, weight, and sound profile. They might not prefer general tips on buying an electric guitar or suggestions that do not take into account their current guitar and desired upgrade.",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 20.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2003,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 187
+        }
+      ],
+      "verbatim": {
+        "n_signal": 28,
+        "noise_filtered": 2,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 4
+      }
+    },
+    {
+      "q_id": "505af2f5",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that suggest variations on their existing almond milk, vanilla extract, and honey creamer recipe or new ideas that align with their goals of reducing sugar intake and saving money. They might not prefer responses that recommend commercial creamer products or recipes that are high in sugar or expensive.",
+      "evidence_hit": true,
+      "memories": 16,
+      "ingest_s": 37.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4080,
+          "facts": 16,
+          "capped": false,
+          "links_used": 10,
+          "unique_texts": 16,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 400
+        }
+      ],
+      "verbatim": {
+        "n_signal": 41,
+        "noise_filtered": 0,
+        "recall_full": 0.683,
+        "recall_all": 0.683,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "75f70248",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that consider the potential impact of their cat, Luna, and her shedding on their sneezing, as well as the recent deep clean of the living room and its possible effect on stirring up dust. They might not prefer responses that fail to take into account these specific details previously mentioned, such as generic suggestions or unrelated factors.",
+      "evidence_hit": true,
+      "memories": 20,
+      "ingest_s": 29.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2896,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 20,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 135
+        }
+      ],
+      "verbatim": {
+        "n_signal": 22,
+        "noise_filtered": 0,
+        "recall_full": 0.091,
+        "recall_all": 0.091,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "d6233ab6",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that draw upon their personal experiences and memories, specifically their positive high school experiences such as being part of the debate team and taking advanced placement courses. They would prefer suggestions that highlight the potential benefits of attending the reunion, such as reconnecting with old friends and revisiting favorite subjects like history and economics. The user might not prefer generic or vague responses that do not take into account their individual experiences and interests.",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 40.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5368,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 243
+        }
+      ],
+      "verbatim": {
+        "n_signal": 42,
+        "noise_filtered": 3,
+        "recall_full": 0.357,
+        "recall_all": 0.357,
+        "n_nums": 10
+      }
+    },
+    {
+      "q_id": "1da05512",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that take into account their current home network storage capacity issues and recent reliance on external hard drives, highlighting the potential benefits of a NAS device in addressing these specific needs. They might not prefer responses that ignore their current storage challenges or fail to consider their recent tech upgrades and priorities. Preferred responses would utilize the user's previous mentions of storage capacity issues and tech investments to inform their decision.",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 25.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2268,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 179
+        }
+      ],
+      "verbatim": {
+        "n_signal": 68,
+        "noise_filtered": 1,
+        "recall_full": 0.235,
+        "recall_all": 0.235,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "fca70973",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer theme park suggestions that cater to their interest in both thrill rides and special events, utilizing their previous experiences at Disneyland, Knott's Berry Farm, Six Flags Magic Mountain, and Universal Studios Hollywood as a reference point. They would also appreciate recommendations that highlight unique food experiences and nighttime shows. The user might not prefer suggestions that focus solely on one aspect of theme parks, such as only thrill rides or only family-friendly attractions, and may not be interested in parks that lack special events or unique dining options.",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 54.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 6495,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 324
+        }
+      ],
+      "verbatim": {
+        "n_signal": 79,
+        "noise_filtered": 6,
+        "recall_full": 0.215,
+        "recall_all": 0.215,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "b6025781",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that suggest healthy meal prep recipes, especially those that incorporate quinoa and roasted vegetables, and offer variations in protein sources. They might appreciate suggestions that build upon their existing preferences, such as new twists on chicken Caesar salads or turkey and avocado wraps. The user may not prefer responses that suggest unhealthy or high-calorie meal prep options, or those that deviate significantly from their established healthy eating habits.",
+      "evidence_hit": true,
+      "memories": 19,
+      "ingest_s": 37.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4155,
+          "facts": 19,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 19,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 239
+        }
+      ],
+      "verbatim": {
+        "n_signal": 27,
+        "noise_filtered": 0,
+        "recall_full": 0.593,
+        "recall_all": 0.593,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "a89d7624",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that take into account their previous experience in Denver, specifically their interest in live music and memorable encounter with Brandon Flowers. They might appreciate suggestions that revisit or build upon this experience, such as revisiting the same bar or exploring similar music venues in the area. The user may not prefer general tourist recommendations or activities unrelated to their interest in live music.",
+      "evidence_hit": true,
+      "memories": 19,
+      "ingest_s": 37.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3952,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 19,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 219
+        }
+      ],
+      "verbatim": {
+        "n_signal": 63,
+        "noise_filtered": 2,
+        "recall_full": 0.048,
+        "recall_all": 0.048,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "b0479f84",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer documentary recommendations that are similar in style and theme to 'Our Planet', 'Free Solo', and 'Tiger King', which they have previously enjoyed. They might not prefer recommendations of documentaries that are vastly different in tone or subject matter from these titles. The preferred response utilizes the user's previously mentioned viewing history to suggest documentaries that cater to their tastes.",
+      "evidence_hit": true,
+      "memories": 20,
+      "ingest_s": 37.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4262,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 20,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 230
+        }
+      ],
+      "verbatim": {
+        "n_signal": 107,
+        "noise_filtered": 5,
+        "recall_full": 0.178,
+        "recall_all": 0.178,
+        "n_nums": 5
+      }
+    },
+    {
+      "q_id": "1d4e3b97",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that reference specific details from their previous interactions, such as the replacement of the bike's chain and cassette, and the use of a new Garmin bike computer. They might prefer explanations that connect these details to the observed improvement in bike performance. The user may not prefer responses that fail to acknowledge these specific details or provide vague, general explanations for the improvement.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 24.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2523,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 173
+        }
+      ],
+      "verbatim": {
+        "n_signal": 38,
+        "noise_filtered": 2,
+        "recall_full": 0.132,
+        "recall_all": 0.132,
+        "n_nums": 5
+      }
+    },
+    {
+      "q_id": "07b6f563",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions of accessories that are compatible with an iPhone 13 Pro, such as high-quality screen protectors, durable cases, portable power banks, or phone wallet cases. They may not prefer suggestions of accessories that are not compatible with Apple products or do not enhance the functionality or protection of their phone.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 22.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2179,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 165
+        }
+      ],
+      "verbatim": {
+        "n_signal": 18,
+        "noise_filtered": 1,
+        "recall_full": 0.222,
+        "recall_all": 0.222,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1c0ddc50",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 24.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2556,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 258
+        }
+      ],
+      "verbatim": {
+        "n_signal": 151,
+        "noise_filtered": 7,
+        "recall_full": 0.066,
+        "recall_all": 0.066,
+        "n_nums": 7
+      }
+    },
+    {
+      "q_id": "0a34ad58",
+      "q_type": "single-session-preference",
+      "answer": "The user would prefer responses that utilize their existing resources, such as their Suica card and TripIt app, to provide personalized tips for navigating Tokyo's public transportation. They might not prefer general tips or recommendations that do not take into account their prior preparations.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 20.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1742,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 140
+        }
+      ],
+      "verbatim": {
+        "n_signal": 110,
+        "noise_filtered": 3,
+        "recall_full": 0.036,
+        "recall_all": 0.036,
+        "n_nums": 5
+      }
+    },
+    {
+      "q_id": "7161e7e2",
+      "q_type": "single-session-assistant",
+      "answer": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 24.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2457,
+          "facts": 15,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 155
+        }
+      ],
+      "verbatim": {
+        "n_signal": 7,
+        "noise_filtered": 0,
+        "recall_full": 0.286,
+        "recall_all": 0.286,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "c4f10528",
+      "q_type": "single-session-assistant",
+      "answer": "Miss Bee Providore",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 18.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1957,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 239
+        }
+      ],
+      "verbatim": {
+        "n_signal": 27,
+        "noise_filtered": 0,
+        "recall_full": 0.63,
+        "recall_all": 0.63,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "89527b6b",
+      "q_type": "single-session-assistant",
+      "answer": "The Plesiosaur had a blue scaly body.",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 21.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2253,
+          "facts": 15,
+          "capped": false,
+          "links_used": 4,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 123
+        }
+      ],
+      "verbatim": {
+        "n_signal": 17,
+        "noise_filtered": 1,
+        "recall_full": 0.647,
+        "recall_all": 0.647,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "e9327a54",
+      "q_type": "single-session-assistant",
+      "answer": "The Sugar Factory at Icon Park.",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 12.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1263,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 175
+        }
+      ],
+      "verbatim": {
+        "n_signal": 70,
+        "noise_filtered": 4,
+        "recall_full": 0.114,
+        "recall_all": 0.114,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "4c36ccef",
+      "q_type": "single-session-assistant",
+      "answer": "Roscioli",
+      "evidence_hit": true,
+      "memories": 31,
+      "ingest_s": 44.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4914,
+          "facts": 31,
+          "capped": true,
+          "links_used": 0,
+          "unique_texts": 31,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 157
+        }
+      ],
+      "verbatim": {
+        "n_signal": 9,
+        "noise_filtered": 0,
+        "recall_full": 1.0,
+        "recall_all": 1.0,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "6ae235be",
+      "q_type": "single-session-assistant",
+      "answer": "Atmospheric distillation, fluid catalytic cracking (FCC), alkylation, and hydrotreating.",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 17.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2042,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 286
+        }
+      ],
+      "verbatim": {
+        "n_signal": 7,
+        "noise_filtered": 0,
+        "recall_full": 0.143,
+        "recall_all": 0.143,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "7e00a6cb",
+      "q_type": "single-session-assistant",
+      "answer": "International Budget Hostel",
+      "evidence_hit": true,
+      "memories": 5,
+      "ingest_s": 10.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1106,
+          "facts": 5,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 5,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 356
+        }
+      ],
+      "verbatim": {
+        "n_signal": 18,
+        "noise_filtered": 0,
+        "recall_full": 0.778,
+        "recall_all": 0.778,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1903aded",
+      "q_type": "single-session-assistant",
+      "answer": "Transcriptionist.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 18.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2212,
+          "facts": 10,
+          "capped": false,
+          "links_used": 4,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 473
+        }
+      ],
+      "verbatim": {
+        "n_signal": 1,
+        "noise_filtered": 0,
+        "recall_full": 1.0,
+        "recall_all": 1.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "ceb54acb",
+      "q_type": "single-session-assistant",
+      "answer": "I suggested 'sexual fixations', 'problematic sexual behaviors', 'sexual impulsivity', and 'compulsive sexuality'.",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 12.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1366,
+          "facts": 8,
+          "capped": false,
+          "links_used": 2,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 160
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 1,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "f523d9fe",
+      "q_type": "single-session-assistant",
+      "answer": "Doc Martin",
+      "evidence_hit": true,
+      "memories": 7,
+      "ingest_s": 10.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1029,
+          "facts": 7,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 7,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 121
+        }
+      ],
+      "verbatim": {
+        "n_signal": 2,
+        "noise_filtered": 2,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "0e5e2d1a",
+      "q_type": "single-session-assistant",
+      "answer": "38 subjects",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 19.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2257,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 253
+        }
+      ],
+      "verbatim": {
+        "n_signal": 2,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "fea54f57",
+      "q_type": "single-session-assistant",
+      "answer": "Evolution",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 30.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3370,
+          "facts": 19,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 209
+        }
+      ],
+      "verbatim": {
+        "n_signal": 40,
+        "noise_filtered": 6,
+        "recall_full": 0.35,
+        "recall_all": 0.35,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "cc539528",
+      "q_type": "single-session-assistant",
+      "answer": "I recommended learning Ruby, Python, or PHP as a back-end programming language.",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 22.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2760,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 318
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 0,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "dc439ea3",
+      "q_type": "single-session-assistant",
+      "answer": "Hoop Dance",
+      "evidence_hit": true,
+      "memories": 20,
+      "ingest_s": 28.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3131,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 20,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 177
+        }
+      ],
+      "verbatim": {
+        "n_signal": 20,
+        "noise_filtered": 0,
+        "recall_full": 0.95,
+        "recall_all": 0.95,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "18dcd5a5",
+      "q_type": "single-session-assistant",
+      "answer": "4",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 25.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2872,
+          "facts": 18,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 152
+        }
+      ],
+      "verbatim": {
+        "n_signal": 18,
+        "noise_filtered": 0,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "488d3006",
+      "q_type": "single-session-assistant",
+      "answer": "The GR-90 trail.",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 17.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2009,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 250
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 1.0,
+        "recall_all": 1.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "58470ed2",
+      "q_type": "single-session-assistant",
+      "answer": "According to Borges, 'The Library is a sphere whose exact center is any one of its hexagons and whose circumference is inaccessible.'",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 17.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1971,
+          "facts": 10,
+          "capped": false,
+          "links_used": 8,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 167
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 2,
+        "recall_full": 0.667,
+        "recall_all": 0.667,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "8cf51dda",
+      "q_type": "single-session-assistant",
+      "answer": "The three objectives were: 1) to identify molecular subtypes of endometrial cancer, 2) to investigate their clinical and biological significance, and 3) to develop biomarkers for early detection and prognosis.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 18.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2074,
+          "facts": 13,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 153
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 0,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1d4da289",
+      "q_type": "single-session-assistant",
+      "answer": "I mentioned biometric authentication or one-time passwords (OTP) as examples of two-factor authentication methods.",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 24.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2918,
+          "facts": 18,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 204
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 1,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "8464fc84",
+      "q_type": "single-session-assistant",
+      "answer": "Roscioli",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 54.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5965,
+          "facts": 31,
+          "capped": true,
+          "links_used": 25,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 187
+        }
+      ],
+      "verbatim": {
+        "n_signal": 10,
+        "noise_filtered": 0,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "8aef76bc",
+      "q_type": "single-session-assistant",
+      "answer": "Mod Podge or another sealant",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 18.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2220,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 295
+        }
+      ],
+      "verbatim": {
+        "n_signal": 8,
+        "noise_filtered": 1,
+        "recall_full": 0.625,
+        "recall_all": 0.625,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "71a3fd6b",
+      "q_type": "single-session-assistant",
+      "answer": "+49 (0) 62 32 / 14 23 - 0",
+      "evidence_hit": true,
+      "memories": 17,
+      "ingest_s": 55.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5694,
+          "facts": 31,
+          "capped": true,
+          "links_used": 25,
+          "unique_texts": 17,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 197
+        }
+      ],
+      "verbatim": {
+        "n_signal": 4,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "2bf43736",
+      "q_type": "single-session-assistant",
+      "answer": "Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 23.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2323,
+          "facts": 10,
+          "capped": false,
+          "links_used": 9,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 181
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 2,
+        "recall_full": 0.818,
+        "recall_all": 0.818,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "70b3e69b",
+      "q_type": "single-session-assistant",
+      "answer": "Manolo García",
+      "evidence_hit": true,
+      "memories": 13,
+      "ingest_s": 28.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3126,
+          "facts": 13,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 13,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 219
+        }
+      ],
+      "verbatim": {
+        "n_signal": 4,
+        "noise_filtered": 2,
+        "recall_full": 1.0,
+        "recall_all": 1.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "8752c811",
+      "q_type": "single-session-assistant",
+      "answer": "The 27th parameter was 'Sound effects (e.g., ambient, diegetic, non-diegetic, etc.)'.",
+      "evidence_hit": true,
+      "memories": 14,
+      "ingest_s": 39.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4490,
+          "facts": 31,
+          "capped": true,
+          "links_used": 30,
+          "unique_texts": 14,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 128
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "3249768e",
+      "q_type": "single-session-assistant",
+      "answer": "Absinthe",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 11.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1148,
+          "facts": 6,
+          "capped": false,
+          "links_used": 4,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 176
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 0,
+        "recall_full": 0.364,
+        "recall_all": 0.364,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1b9b7252",
+      "q_type": "single-session-assistant",
+      "answer": "Mindful.org.",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 11.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1355,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 221
+        }
+      ],
+      "verbatim": {
+        "n_signal": 4,
+        "noise_filtered": 0,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1568498a",
+      "q_type": "single-session-assistant",
+      "answer": "28. Kg3",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 19.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1220,
+          "facts": 7,
+          "capped": false,
+          "links_used": 6,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 402
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 16,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "6222b6eb",
+      "q_type": "single-session-assistant",
+      "answer": "The 6S algorithm is implemented in the SIAC_GEE tool.",
+      "evidence_hit": true,
+      "memories": 5,
+      "ingest_s": 9.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 755,
+          "facts": 5,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 5,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 84
+        }
+      ],
+      "verbatim": {
+        "n_signal": 23,
+        "noise_filtered": 1,
+        "recall_full": 0.087,
+        "recall_all": 0.087,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "e8a79c70",
+      "q_type": "single-session-assistant",
+      "answer": "2-3 eggs",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 17.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1848,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 232
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 0,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "d596882b",
+      "q_type": "single-session-assistant",
+      "answer": "By Chloe",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 15.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1748,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 280
+        }
+      ],
+      "verbatim": {
+        "n_signal": 21,
+        "noise_filtered": 6,
+        "recall_full": 0.81,
+        "recall_all": 0.81,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "e3fc4d6e",
+      "q_type": "single-session-assistant",
+      "answer": "Dr. Arati Prabhakar",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 49.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5923,
+          "facts": 31,
+          "capped": true,
+          "links_used": 30,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 207
+        }
+      ],
+      "verbatim": {
+        "n_signal": 41,
+        "noise_filtered": 1,
+        "recall_full": 0.439,
+        "recall_all": 0.439,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "51b23612",
+      "q_type": "single-session-assistant",
+      "answer": "Nu, pogodi!",
+      "evidence_hit": true,
+      "memories": 13,
+      "ingest_s": 20.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2324,
+          "facts": 13,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 13,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 177
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 1,
+        "recall_full": 0.364,
+        "recall_all": 0.364,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "3e321797",
+      "q_type": "single-session-assistant",
+      "answer": "10 minutes",
+      "evidence_hit": true,
+      "memories": 5,
+      "ingest_s": 36.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4392,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 5,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 200
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 1,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "e982271f",
+      "q_type": "single-session-assistant",
+      "answer": "Revolution Hall",
+      "evidence_hit": true,
+      "memories": 31,
+      "ingest_s": 35.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4034,
+          "facts": 31,
+          "capped": true,
+          "links_used": 0,
+          "unique_texts": 31,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 97
+        }
+      ],
+      "verbatim": {
+        "n_signal": 16,
+        "noise_filtered": 0,
+        "recall_full": 0.562,
+        "recall_all": 0.562,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "352ab8bd",
+      "q_type": "single-session-assistant",
+      "answer": "The average improvement in framerate was approximately 20% when using the Hardware-Aware Modular Training (HAMT) agent.",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 14.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1564,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 267
+        }
+      ],
+      "verbatim": {
+        "n_signal": 10,
+        "noise_filtered": 0,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "fca762bc",
+      "q_type": "single-session-assistant",
+      "answer": "Memrise",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 17.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2081,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 172
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 0.333,
+        "recall_all": 0.333,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "7a8d0b71",
+      "q_type": "single-session-assistant",
+      "answer": "$2,000",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 20.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2370,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 158
+        }
+      ],
+      "verbatim": {
+        "n_signal": 23,
+        "noise_filtered": 0,
+        "recall_full": 0.087,
+        "recall_all": 0.087,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "a40e080f",
+      "q_type": "single-session-assistant",
+      "answer": "Patagonia and Southwest Airlines.",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 21.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2609,
+          "facts": 15,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 250
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 0.333,
+        "recall_all": 0.333,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "8b9d4367",
+      "q_type": "single-session-assistant",
+      "answer": "Jaipur Rugs",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 16.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2023,
+          "facts": 8,
+          "capped": false,
+          "links_used": 7,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 275
+        }
+      ],
+      "verbatim": {
+        "n_signal": 2,
+        "noise_filtered": 0,
+        "recall_full": 1.0,
+        "recall_all": 1.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "5809eb10",
+      "q_type": "single-session-assistant",
+      "answer": "2014.",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 17.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1872,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 195
+        }
+      ],
+      "verbatim": {
+        "n_signal": 20,
+        "noise_filtered": 3,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 4
+      }
+    },
+    {
+      "q_id": "41275add",
+      "q_type": "single-session-assistant",
+      "answer": "The video is 'How to Sit Properly at a Desk to Avoid Back Pain' and the link is https://www.youtube.com/watch?v=UfOvNlX9Hh0.",
+      "evidence_hit": false,
+      "memories": 0,
+      "ingest_s": 67.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "length",
+          "parse": "fail",
+          "chars": 7309,
+          "facts": null,
+          "capped": null,
+          "links_used": null,
+          "unique_texts": null,
+          "facts_at_maxlen": null,
+          "max_fact_chars": null
+        }
+      ],
+      "verbatim": {
+        "n_signal": 13,
+        "noise_filtered": 2,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "4388e9dd",
+      "q_type": "single-session-assistant",
+      "answer": "Andy was wearing an untidy, stained white shirt.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 32.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3877,
+          "facts": 16,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 196
+        }
+      ],
+      "verbatim": {
+        "n_signal": 6,
+        "noise_filtered": 0,
+        "recall_full": 0.5,
+        "recall_all": 0.5,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "4baee567",
+      "q_type": "single-session-assistant",
+      "answer": "The Chiefs played the Jaguars 12 times at Arrowhead Stadium.",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 35.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4018,
+          "facts": 18,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 220
+        }
+      ],
+      "verbatim": {
+        "n_signal": 27,
+        "noise_filtered": 1,
+        "recall_full": 0.778,
+        "recall_all": 0.778,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "561fabcd",
+      "q_type": "single-session-assistant",
+      "answer": "Fissionator.",
+      "evidence_hit": true,
+      "memories": 16,
+      "ingest_s": 31.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3454,
+          "facts": 16,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 16,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 188
+        }
+      ],
+      "verbatim": {
+        "n_signal": 10,
+        "noise_filtered": 2,
+        "recall_full": 0.1,
+        "recall_all": 0.1,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "b759caee",
+      "q_type": "single-session-assistant",
+      "answer": "@jessica_poole_jewellery",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 21.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2585,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 250
+        }
+      ],
+      "verbatim": {
+        "n_signal": 4,
+        "noise_filtered": 0,
+        "recall_full": 0.75,
+        "recall_all": 0.75,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "ac031881",
+      "q_type": "single-session-assistant",
+      "answer": "The designation on your jumpsuit was 'LIV'.",
+      "evidence_hit": true,
+      "memories": 17,
+      "ingest_s": 29.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3130,
+          "facts": 17,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 17,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 188
+        }
+      ],
+      "verbatim": {
+        "n_signal": 9,
+        "noise_filtered": 2,
+        "recall_full": 0.556,
+        "recall_all": 0.556,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "28bcfaac",
+      "q_type": "single-session-assistant",
+      "answer": "MusicTheory.net",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 50.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 6376,
+          "facts": 31,
+          "capped": true,
+          "links_used": 30,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 166
+        }
+      ],
+      "verbatim": {
+        "n_signal": 6,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "16c90bf4",
+      "q_type": "single-session-assistant",
+      "answer": "I recommended using a Pilsner or Lager for the recipe.",
+      "evidence_hit": true,
+      "memories": 19,
+      "ingest_s": 26.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2759,
+          "facts": 19,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 19,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 165
+        }
+      ],
+      "verbatim": {
+        "n_signal": 5,
+        "noise_filtered": 0,
+        "recall_full": 1.0,
+        "recall_all": 1.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "c8f1aeed",
+      "q_type": "single-session-assistant",
+      "answer": "Pennsylvania",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 16.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1952,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 200
+        }
+      ],
+      "verbatim": {
+        "n_signal": 7,
+        "noise_filtered": 0,
+        "recall_full": 0.429,
+        "recall_all": 0.429,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "eaca4986",
+      "q_type": "single-session-assistant",
+      "answer": "C D E F G A B A G F E D C",
+      "evidence_hit": true,
+      "memories": 7,
+      "ingest_s": 14.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1623,
+          "facts": 7,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 7,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 247
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 3,
+        "recall_full": 0.091,
+        "recall_all": 0.091,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "c7cf7dfd",
+      "q_type": "single-session-assistant",
+      "answer": "Nostalgia",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 21.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2623,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 202
+        }
+      ],
+      "verbatim": {
+        "n_signal": 20,
+        "noise_filtered": 0,
+        "recall_full": 0.05,
+        "recall_all": 0.05,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "e48988bc",
+      "q_type": "single-session-assistant",
+      "answer": "Patagonia",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 15.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2053,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 270
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 0,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1de5cff2",
+      "q_type": "single-session-assistant",
+      "answer": "Veja",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 21.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2854,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 296
+        }
+      ],
+      "verbatim": {
+        "n_signal": 5,
+        "noise_filtered": 2,
+        "recall_full": 0.4,
+        "recall_all": 0.4,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "65240037",
+      "q_type": "single-session-assistant",
+      "answer": "The recommended ratio is 1:10, meaning one part tea tree oil to ten parts carrier oil.",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 22.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2606,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 211
+        }
+      ],
+      "verbatim": {
+        "n_signal": 0,
+        "noise_filtered": 1,
+        "recall_full": null,
+        "recall_all": null,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "778164c6",
+      "q_type": "single-session-assistant",
+      "answer": "Grilled Snapper with Mango Salsa",
+      "evidence_hit": true,
+      "memories": 26,
+      "ingest_s": 49.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5362,
+          "facts": 31,
+          "capped": true,
+          "links_used": 27,
+          "unique_texts": 26,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 175
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 1,
+        "recall_full": 0.909,
+        "recall_all": 0.909,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "e47becba",
+      "q_type": "single-session-user",
+      "answer": "Business Administration",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 21.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2091,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 177
+        }
+      ],
+      "verbatim": {
+        "n_signal": 19,
+        "noise_filtered": 1,
+        "recall_full": 0.053,
+        "recall_all": 0.053,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "118b2229",
+      "q_type": "single-session-user",
+      "answer": "45 minutes each way",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 39.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4621,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 169
+        }
+      ],
+      "verbatim": {
+        "n_signal": 51,
+        "noise_filtered": 2,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "51a45a95",
+      "q_type": "single-session-user",
+      "answer": "Target",
+      "evidence_hit": true,
+      "memories": 14,
+      "ingest_s": 33.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3513,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 14,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 163
+        }
+      ],
+      "verbatim": {
+        "n_signal": 24,
+        "noise_filtered": 5,
+        "recall_full": 0.083,
+        "recall_all": 0.083,
+        "n_nums": 4
+      }
+    },
+    {
+      "q_id": "58bf7951",
+      "q_type": "single-session-user",
+      "answer": "The Glass Menagerie",
+      "evidence_hit": true,
+      "memories": 31,
+      "ingest_s": 42.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5090,
+          "facts": 31,
+          "capped": true,
+          "links_used": 0,
+          "unique_texts": 31,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 180
+        }
+      ],
+      "verbatim": {
+        "n_signal": 19,
+        "noise_filtered": 3,
+        "recall_full": 0.421,
+        "recall_all": 0.421,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1e043500",
+      "q_type": "single-session-user",
+      "answer": "Summer Vibes",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 45.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4407,
+          "facts": 31,
+          "capped": true,
+          "links_used": 25,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 100
+        }
+      ],
+      "verbatim": {
+        "n_signal": 63,
+        "noise_filtered": 2,
+        "recall_full": 0.048,
+        "recall_all": 0.048,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "c5e8278d",
+      "q_type": "single-session-user",
+      "answer": "Johnson",
+      "evidence_hit": true,
+      "memories": 13,
+      "ingest_s": 24.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2528,
+          "facts": 13,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 13,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 181
+        }
+      ],
+      "verbatim": {
+        "n_signal": 48,
+        "noise_filtered": 7,
+        "recall_full": 0.104,
+        "recall_all": 0.104,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "6ade9755",
+      "q_type": "single-session-user",
+      "answer": "Serenity Yoga",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 14.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1502,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 167
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 9,
+        "recall_full": 0.182,
+        "recall_all": 0.182,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "6f9b354f",
+      "q_type": "single-session-user",
+      "answer": "a lighter shade of gray",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 20.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2037,
+          "facts": 10,
+          "capped": false,
+          "links_used": 1,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 144
+        }
+      ],
+      "verbatim": {
+        "n_signal": 37,
+        "noise_filtered": 2,
+        "recall_full": 0.189,
+        "recall_all": 0.189,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "58ef2f1c",
+      "q_type": "single-session-user",
+      "answer": "February 14th",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 20.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2138,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 202
+        }
+      ],
+      "verbatim": {
+        "n_signal": 48,
+        "noise_filtered": 3,
+        "recall_full": 0.083,
+        "recall_all": 0.083,
+        "n_nums": 3
+      }
+    },
+    {
+      "q_id": "f8c5f88b",
+      "q_type": "single-session-user",
+      "answer": "the sports store downtown",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 20.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2115,
+          "facts": 9,
+          "capped": false,
+          "links_used": 3,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 181
+        }
+      ],
+      "verbatim": {
+        "n_signal": 17,
+        "noise_filtered": 2,
+        "recall_full": 0.059,
+        "recall_all": 0.059,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "5d3d2817",
+      "q_type": "single-session-user",
+      "answer": "Marketing specialist at a small startup",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 19.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1981,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 211
+        }
+      ],
+      "verbatim": {
+        "n_signal": 34,
+        "noise_filtered": 3,
+        "recall_full": 0.235,
+        "recall_all": 0.235,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "7527f7e2",
+      "q_type": "single-session-user",
+      "answer": "$800",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 20.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2112,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 162
+        }
+      ],
+      "verbatim": {
+        "n_signal": 17,
+        "noise_filtered": 5,
+        "recall_full": 0.294,
+        "recall_all": 0.294,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "c960da58",
+      "q_type": "single-session-user",
+      "answer": "20",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 16.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1502,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 135
+        }
+      ],
+      "verbatim": {
+        "n_signal": 72,
+        "noise_filtered": 10,
+        "recall_full": 0.042,
+        "recall_all": 0.042,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "3b6f954b",
+      "q_type": "single-session-user",
+      "answer": "University of Melbourne in Australia",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 20.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2016,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 177
+        }
+      ],
+      "verbatim": {
+        "n_signal": 19,
+        "noise_filtered": 1,
+        "recall_full": 0.526,
+        "recall_all": 0.526,
+        "n_nums": 8
+      }
+    },
+    {
+      "q_id": "726462e0",
+      "q_type": "single-session-user",
+      "answer": "10%",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 34.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3645,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 171
+        }
+      ],
+      "verbatim": {
+        "n_signal": 15,
+        "noise_filtered": 4,
+        "recall_full": 0.333,
+        "recall_all": 0.333,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "94f70d80",
+      "q_type": "single-session-user",
+      "answer": "4 hours",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 18.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1915,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 158
+        }
+      ],
+      "verbatim": {
+        "n_signal": 31,
+        "noise_filtered": 1,
+        "recall_full": 0.161,
+        "recall_all": 0.161,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "66f24dbb",
+      "q_type": "single-session-user",
+      "answer": "a yellow dress",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 12.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1168,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 205
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 0.667,
+        "recall_all": 0.667,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "ad7109d1",
+      "q_type": "single-session-user",
+      "answer": "500 Mbps",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 20.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1927,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 145
+        }
+      ],
+      "verbatim": {
+        "n_signal": 40,
+        "noise_filtered": 4,
+        "recall_full": 0.05,
+        "recall_all": 0.05,
+        "n_nums": 10
+      }
+    },
+    {
+      "q_id": "af8d2e46",
+      "q_type": "single-session-user",
+      "answer": "7",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 14.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1405,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 195
+        }
+      ],
+      "verbatim": {
+        "n_signal": 8,
+        "noise_filtered": 5,
+        "recall_full": 0.125,
+        "recall_all": 0.125,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "dccbc061",
+      "q_type": "single-session-user",
+      "answer": "A staunch atheist",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 20.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1901,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 159
+        }
+      ],
+      "verbatim": {
+        "n_signal": 100,
+        "noise_filtered": 5,
+        "recall_full": 0.03,
+        "recall_all": 0.03,
+        "n_nums": 7
+      }
+    },
+    {
+      "q_id": "c8c3f81d",
+      "q_type": "single-session-user",
+      "answer": "Nike",
+      "evidence_hit": true,
+      "memories": 5,
+      "ingest_s": 12.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1177,
+          "facts": 5,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 5,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 168
+        }
+      ],
+      "verbatim": {
+        "n_signal": 46,
+        "noise_filtered": 2,
+        "recall_full": 0.087,
+        "recall_all": 0.087,
+        "n_nums": 11
+      }
+    },
+    {
+      "q_id": "8ebdbe50",
+      "q_type": "single-session-user",
+      "answer": "Data Science",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 37.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4262,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 157
+        }
+      ],
+      "verbatim": {
+        "n_signal": 53,
+        "noise_filtered": 3,
+        "recall_full": 0.132,
+        "recall_all": 0.132,
+        "n_nums": 11
+      }
+    },
+    {
+      "q_id": "6b168ec8",
+      "q_type": "single-session-user",
+      "answer": "three",
+      "evidence_hit": true,
+      "memories": 5,
+      "ingest_s": 13.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1130,
+          "facts": 5,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 5,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 197
+        }
+      ],
+      "verbatim": {
+        "n_signal": 26,
+        "noise_filtered": 2,
+        "recall_full": 0.154,
+        "recall_all": 0.154,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "75499fd8",
+      "q_type": "single-session-user",
+      "answer": "Golden Retriever",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 17.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1611,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 119
+        }
+      ],
+      "verbatim": {
+        "n_signal": 45,
+        "noise_filtered": 2,
+        "recall_full": 0.067,
+        "recall_all": 0.067,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "21436231",
+      "q_type": "single-session-user",
+      "answer": "12",
+      "evidence_hit": true,
+      "memories": 5,
+      "ingest_s": 13.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1120,
+          "facts": 5,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 5,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 271
+        }
+      ],
+      "verbatim": {
+        "n_signal": 52,
+        "noise_filtered": 2,
+        "recall_full": 0.269,
+        "recall_all": 0.269,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "95bcc1c8",
+      "q_type": "single-session-user",
+      "answer": "10",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 21.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2049,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 149
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 3,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "0862e8bf",
+      "q_type": "single-session-user",
+      "answer": "Luna",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 33.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3629,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 148
+        }
+      ],
+      "verbatim": {
+        "n_signal": 30,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "853b0a1d",
+      "q_type": "single-session-user",
+      "answer": "18",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 21.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2424,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 268
+        }
+      ],
+      "verbatim": {
+        "n_signal": 6,
+        "noise_filtered": 9,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "a06e4cfe",
+      "q_type": "single-session-user",
+      "answer": "3:1",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 21.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2197,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 327
+        }
+      ],
+      "verbatim": {
+        "n_signal": 22,
+        "noise_filtered": 1,
+        "recall_full": 0.091,
+        "recall_all": 0.091,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "37d43f65",
+      "q_type": "single-session-user",
+      "answer": "16GB",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 23.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2194,
+          "facts": 11,
+          "capped": false,
+          "links_used": 2,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 175
+        }
+      ],
+      "verbatim": {
+        "n_signal": 20,
+        "noise_filtered": 1,
+        "recall_full": 0.25,
+        "recall_all": 0.25,
+        "n_nums": 11
+      }
+    },
+    {
+      "q_id": "b86304ba",
+      "q_type": "single-session-user",
+      "answer": "The painting is worth triple what I paid for it.",
+      "evidence_hit": true,
+      "memories": 7,
+      "ingest_s": 57.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 6973,
+          "facts": 31,
+          "capped": true,
+          "links_used": 0,
+          "unique_texts": 7,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 161
+        }
+      ],
+      "verbatim": {
+        "n_signal": 44,
+        "noise_filtered": 1,
+        "recall_full": 0.136,
+        "recall_all": 0.136,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "d52b4f67",
+      "q_type": "single-session-user",
+      "answer": "The Grand Ballroom",
+      "evidence_hit": true,
+      "memories": 20,
+      "ingest_s": 32.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3579,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 20,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 201
+        }
+      ],
+      "verbatim": {
+        "n_signal": 17,
+        "noise_filtered": 0,
+        "recall_full": 0.294,
+        "recall_all": 0.294,
+        "n_nums": 10
+      }
+    },
+    {
+      "q_id": "25e5aa4f",
+      "q_type": "single-session-user",
+      "answer": "University of California, Los Angeles (UCLA)",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 16.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1419,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 209
+        }
+      ],
+      "verbatim": {
+        "n_signal": 29,
+        "noise_filtered": 1,
+        "recall_full": 0.103,
+        "recall_all": 0.103,
+        "n_nums": 11
+      }
+    },
+    {
+      "q_id": "caf9ead2",
+      "q_type": "single-session-user",
+      "answer": "5 hours",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 19.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2128,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 176
+        }
+      ],
+      "verbatim": {
+        "n_signal": 11,
+        "noise_filtered": 4,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "8550ddae",
+      "q_type": "single-session-user",
+      "answer": "lavender gin fizz",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 13.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1094,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 167
+        }
+      ],
+      "verbatim": {
+        "n_signal": 24,
+        "noise_filtered": 5,
+        "recall_full": 0.042,
+        "recall_all": 0.042,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "60d45044",
+      "q_type": "single-session-user",
+      "answer": "Japanese short-grain rice",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 18.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1758,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 172
+        }
+      ],
+      "verbatim": {
+        "n_signal": 26,
+        "noise_filtered": 5,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "3f1e9474",
+      "q_type": "single-session-user",
+      "answer": "Sarah",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 23.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2284,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 210
+        }
+      ],
+      "verbatim": {
+        "n_signal": 23,
+        "noise_filtered": 3,
+        "recall_full": 0.043,
+        "recall_all": 0.043,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "86b68151",
+      "q_type": "single-session-user",
+      "answer": "IKEA",
+      "evidence_hit": true,
+      "memories": 18,
+      "ingest_s": 47.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 5341,
+          "facts": 31,
+          "capped": true,
+          "links_used": 0,
+          "unique_texts": 18,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 199
+        }
+      ],
+      "verbatim": {
+        "n_signal": 1,
+        "noise_filtered": 11,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "577d4d32",
+      "q_type": "single-session-user",
+      "answer": "7 pm",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 13.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1159,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 156
+        }
+      ],
+      "verbatim": {
+        "n_signal": 51,
+        "noise_filtered": 0,
+        "recall_full": 0.078,
+        "recall_all": 0.078,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "ec81a493",
+      "q_type": "single-session-user",
+      "answer": "500",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 22.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2471,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 203
+        }
+      ],
+      "verbatim": {
+        "n_signal": 16,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "15745da0",
+      "q_type": "single-session-user",
+      "answer": "three months",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 25.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2501,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 168
+        }
+      ],
+      "verbatim": {
+        "n_signal": 21,
+        "noise_filtered": 2,
+        "recall_full": 0.286,
+        "recall_all": 0.286,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "e01b8e2f",
+      "q_type": "single-session-user",
+      "answer": "Hawaii",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 41.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 4218,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 135
+        }
+      ],
+      "verbatim": {
+        "n_signal": 106,
+        "noise_filtered": 3,
+        "recall_full": 0.047,
+        "recall_all": 0.047,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "bc8a6e93",
+      "q_type": "single-session-user",
+      "answer": "a lemon blueberry cake",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 16.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1413,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 222
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "ccb36322",
+      "q_type": "single-session-user",
+      "answer": "Spotify",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 19.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2087,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 182
+        }
+      ],
+      "verbatim": {
+        "n_signal": 37,
+        "noise_filtered": 0,
+        "recall_full": 0.054,
+        "recall_all": 0.054,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "001be529",
+      "q_type": "single-session-user",
+      "answer": "over a year",
+      "evidence_hit": true,
+      "memories": 16,
+      "ingest_s": 34.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3601,
+          "facts": 16,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 16,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 208
+        }
+      ],
+      "verbatim": {
+        "n_signal": 22,
+        "noise_filtered": 4,
+        "recall_full": 0.091,
+        "recall_all": 0.091,
+        "n_nums": 5
+      }
+    },
+    {
+      "q_id": "b320f3f8",
+      "q_type": "single-session-user",
+      "answer": "a blue Snaggletooth",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 15.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1278,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 147
+        }
+      ],
+      "verbatim": {
+        "n_signal": 66,
+        "noise_filtered": 11,
+        "recall_full": 0.076,
+        "recall_all": 0.076,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "19b5f2b3",
+      "q_type": "single-session-user",
+      "answer": "two weeks",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 21.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1913,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 159
+        }
+      ],
+      "verbatim": {
+        "n_signal": 74,
+        "noise_filtered": 3,
+        "recall_full": 0.149,
+        "recall_all": 0.149,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "4fd1909e",
+      "q_type": "single-session-user",
+      "answer": "Xfinity Center",
+      "evidence_hit": true,
+      "memories": 20,
+      "ingest_s": 31.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3486,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 20,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 172
+        }
+      ],
+      "verbatim": {
+        "n_signal": 16,
+        "noise_filtered": 1,
+        "recall_full": 0.625,
+        "recall_all": 0.625,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "545bd2b5",
+      "q_type": "single-session-user",
+      "answer": "2 hours",
+      "evidence_hit": true,
+      "memories": 16,
+      "ingest_s": 30.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3136,
+          "facts": 16,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 16,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 146
+        }
+      ],
+      "verbatim": {
+        "n_signal": 12,
+        "noise_filtered": 5,
+        "recall_full": 0.167,
+        "recall_all": 0.167,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "8a137a7f",
+      "q_type": "single-session-user",
+      "answer": "Philips LED bulb",
+      "evidence_hit": true,
+      "memories": 16,
+      "ingest_s": 25.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2449,
+          "facts": 16,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 16,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 150
+        }
+      ],
+      "verbatim": {
+        "n_signal": 53,
+        "noise_filtered": 4,
+        "recall_full": 0.094,
+        "recall_all": 0.094,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "76d63226",
+      "q_type": "single-session-user",
+      "answer": "55-inch",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 15.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1343,
+          "facts": 6,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 233
+        }
+      ],
+      "verbatim": {
+        "n_signal": 73,
+        "noise_filtered": 1,
+        "recall_full": 0.315,
+        "recall_all": 0.315,
+        "n_nums": 3
+      }
+    },
+    {
+      "q_id": "86f00804",
+      "q_type": "single-session-user",
+      "answer": "The Seven Husbands of Evelyn Hugo",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 19.6,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1877,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 146
+        }
+      ],
+      "verbatim": {
+        "n_signal": 30,
+        "noise_filtered": 2,
+        "recall_full": 0.2,
+        "recall_all": 0.2,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "8e9d538c",
+      "q_type": "single-session-user",
+      "answer": "17",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 20.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1865,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 161
+        }
+      ],
+      "verbatim": {
+        "n_signal": 16,
+        "noise_filtered": 2,
+        "recall_full": 0.438,
+        "recall_all": 0.438,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "311778f1",
+      "q_type": "single-session-user",
+      "answer": "10",
+      "evidence_hit": true,
+      "memories": 8,
+      "ingest_s": 16.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1622,
+          "facts": 8,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 8,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 161
+        }
+      ],
+      "verbatim": {
+        "n_signal": 78,
+        "noise_filtered": 5,
+        "recall_full": 0.128,
+        "recall_all": 0.128,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "c19f7a0b",
+      "q_type": "single-session-user",
+      "answer": "6:30 pm",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 21.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2328,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 268
+        }
+      ],
+      "verbatim": {
+        "n_signal": 26,
+        "noise_filtered": 3,
+        "recall_full": 0.346,
+        "recall_all": 0.346,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "4100d0a0",
+      "q_type": "single-session-user",
+      "answer": "A mix of Irish and Italian",
+      "evidence_hit": true,
+      "memories": 9,
+      "ingest_s": 18.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1900,
+          "facts": 9,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 9,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 159
+        }
+      ],
+      "verbatim": {
+        "n_signal": 25,
+        "noise_filtered": 1,
+        "recall_full": 0.08,
+        "recall_all": 0.08,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "29f2956b",
+      "q_type": "single-session-user",
+      "answer": "30 minutes",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 21.1,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2017,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 153
+        }
+      ],
+      "verbatim": {
+        "n_signal": 103,
+        "noise_filtered": 3,
+        "recall_full": 0.039,
+        "recall_all": 0.039,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "1faac195",
+      "q_type": "single-session-user",
+      "answer": "Denver",
+      "evidence_hit": true,
+      "memories": 7,
+      "ingest_s": 16.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1602,
+          "facts": 7,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 7,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 187
+        }
+      ],
+      "verbatim": {
+        "n_signal": 109,
+        "noise_filtered": 1,
+        "recall_full": 0.119,
+        "recall_all": 0.119,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "faba32e5",
+      "q_type": "single-session-user",
+      "answer": "24 hours",
+      "evidence_hit": true,
+      "memories": 12,
+      "ingest_s": 21.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1981,
+          "facts": 12,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 12,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 211
+        }
+      ],
+      "verbatim": {
+        "n_signal": 19,
+        "noise_filtered": 2,
+        "recall_full": 0.579,
+        "recall_all": 0.579,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "f4f1d8a4",
+      "q_type": "single-session-user",
+      "answer": "my sister",
+      "evidence_hit": true,
+      "memories": 16,
+      "ingest_s": 35.5,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3031,
+          "facts": 16,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 16,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 156
+        }
+      ],
+      "verbatim": {
+        "n_signal": 14,
+        "noise_filtered": 2,
+        "recall_full": 0.071,
+        "recall_all": 0.071,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "c14c00dd",
+      "q_type": "single-session-user",
+      "answer": "Trader Joe's",
+      "evidence_hit": true,
+      "memories": 6,
+      "ingest_s": 38.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3343,
+          "facts": 20,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 6,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 133
+        }
+      ],
+      "verbatim": {
+        "n_signal": 26,
+        "noise_filtered": 4,
+        "recall_full": 0.115,
+        "recall_all": 0.115,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "36580ce8",
+      "q_type": "single-session-user",
+      "answer": "bronchitis",
+      "evidence_hit": true,
+      "memories": 19,
+      "ingest_s": 41.3,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3798,
+          "facts": 21,
+          "capped": false,
+          "links_used": 2,
+          "unique_texts": 19,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 168
+        }
+      ],
+      "verbatim": {
+        "n_signal": 17,
+        "noise_filtered": 7,
+        "recall_full": 0.235,
+        "recall_all": 0.235,
+        "n_nums": 1
+      }
+    },
+    {
+      "q_id": "3d86fd0a",
+      "q_type": "single-session-user",
+      "answer": "a coffee shop in the city",
+      "evidence_hit": true,
+      "memories": 22,
+      "ingest_s": 28.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2824,
+          "facts": 22,
+          "capped": false,
+          "links_used": 14,
+          "unique_texts": 22,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 115
+        }
+      ],
+      "verbatim": {
+        "n_signal": 22,
+        "noise_filtered": 3,
+        "recall_full": 0.227,
+        "recall_all": 0.227,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "a82c026e",
+      "q_type": "single-session-user",
+      "answer": "Dark Souls 3 DLC",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 24.2,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2412,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 160
+        }
+      ],
+      "verbatim": {
+        "n_signal": 18,
+        "noise_filtered": 3,
+        "recall_full": 0.056,
+        "recall_all": 0.056,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "0862e8bf_abs",
+      "q_type": "single-session-user",
+      "answer": "You did not mention this information. You mentioned your cat Luna but not your hamster.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 35.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3503,
+          "facts": 21,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 145
+        }
+      ],
+      "verbatim": {
+        "n_signal": 30,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "15745da0_abs",
+      "q_type": "single-session-user",
+      "answer": "You did not mention this information. You mentioned collecting vintage cameras but not vintage films.",
+      "evidence_hit": true,
+      "memories": 15,
+      "ingest_s": 30.4,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 3088,
+          "facts": 15,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 15,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 169
+        }
+      ],
+      "verbatim": {
+        "n_signal": 21,
+        "noise_filtered": 2,
+        "recall_full": 0.143,
+        "recall_all": 0.143,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "bc8a6e93_abs",
+      "q_type": "single-session-user",
+      "answer": "You did not mention this information. You mentioned baking for your niece's birthday party but not your uncle's",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 25.7,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2250,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 150
+        }
+      ],
+      "verbatim": {
+        "n_signal": 3,
+        "noise_filtered": 0,
+        "recall_full": 0.0,
+        "recall_all": 0.0,
+        "n_nums": 2
+      }
+    },
+    {
+      "q_id": "19b5f2b3_abs",
+      "q_type": "single-session-user",
+      "answer": "You did not mention this information. You mentioned staying in Japan, but not in Korea.",
+      "evidence_hit": true,
+      "memories": 21,
+      "ingest_s": 35.8,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2926,
+          "facts": 21,
+          "capped": false,
+          "links_used": 17,
+          "unique_texts": 21,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 104
+        }
+      ],
+      "verbatim": {
+        "n_signal": 74,
+        "noise_filtered": 3,
+        "recall_full": 0.149,
+        "recall_all": 0.149,
+        "n_nums": 6
+      }
+    },
+    {
+      "q_id": "29f2956b_abs",
+      "q_type": "single-session-user",
+      "answer": "You did not mention this information. You mentioned practing guitar everyday, but not violin.",
+      "evidence_hit": true,
+      "memories": 10,
+      "ingest_s": 22.9,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 2073,
+          "facts": 10,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 10,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 153
+        }
+      ],
+      "verbatim": {
+        "n_signal": 103,
+        "noise_filtered": 3,
+        "recall_full": 0.039,
+        "recall_all": 0.039,
+        "n_nums": 0
+      }
+    },
+    {
+      "q_id": "f4f1d8a4_abs",
+      "q_type": "single-session-user",
+      "answer": "You did not mention this information. You mentioned receiving a birthday gift from your sister, but not your dad.",
+      "evidence_hit": true,
+      "memories": 11,
+      "ingest_s": 21.0,
+      "calls": 1,
+      "call_frames": [
+        {
+          "fr": "stop",
+          "parse": "ok",
+          "chars": 1679,
+          "facts": 11,
+          "capped": false,
+          "links_used": 0,
+          "unique_texts": 11,
+          "facts_at_maxlen": 0,
+          "max_fact_chars": 120
+        }
+      ],
+      "verbatim": {
+        "n_signal": 14,
+        "noise_filtered": 2,
+        "recall_full": 0.071,
+        "recall_all": 0.071,
+        "n_nums": 0
+      }
+    }
+  ]
+}
