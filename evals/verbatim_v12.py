@@ -68,7 +68,8 @@ INTERROG = ("can", "are", "is", "has", "have", "do", "does", "did", "should",
             "would", "could", "will", "what", "when", "where", "why", "how")
 ACADEMIC = ("review", "survey", "systematic review", "meta-analysis",
             "case study", "overview", "introduction", "analysis")
-CHESS_TOKEN = re.compile(r"^(?:[KQRBN][a-h]?[1-8]?x?[a-h]?[1-8]?|[a-h]x?[a-h]?[1-8]|[KQRBN])$")
+CHESS_TOKEN = re.compile(r"^(?:[KQRBN][a-h]?[1-8]?x?[a-h]?[1-8]?|[a-h]x?[a-h]?[1-8]|[KQRBN])$",
+                          re.IGNORECASE)
 
 
 def classify_noise(item):
