@@ -94,8 +94,111 @@ def wilson(p, n, z=1.96):
     return (round(max(0.0, center - half), 4), round(min(1.0, center + half), 4))
 
 
-@guarded()
-def main() -> int:
+def make_cfg(coll_name, store_path, hist_path):
+    """THE config of this run (full-500-iso); shared by the main run and the
+    mini-control so the control provably runs THIS run's config."""
+    return {
+        "llm": {"provider": "openai", "config": {
+            "model": MODEL, "temperature": 0, "max_tokens": 1200,
+            "openai_base_url": BASE, "api_key": KEY}},
+        "embedder": {"provider": "openai", "config": {
+            "model": EMB, "openai_base_url": EMB_BASE, "api_key": EMB_KEY,
+            "embedding_dims": EMBED_DIMS}},
+        "vector_store": {"provider": "qdrant", "config": {
+            "collection_name": coll_name, "embedding_model_dims": EMBED_DIMS,
+            "path": store_path}},
+        "history_db_path": hist_path,
+        "version": "v1.1",
+    }
+
+
+MINI5 = ["75832dbd", "0a34ad58", "1faac195", "b0479f84", "fca70973"]
+
+
+def run_mini_control() -> int:
+    """Prereg sec 3 mini-control: 5 panel-12 questions in THIS run's config,
+    two passes BEFORE the start, byte-identity of raw extraction outputs.
+    Divergence -> recorded, the main run is NOT blocked (aggregate conclusions
+    stand); per-question conclusions for full-500-iso become invalid."""
+    from mem0 import Memory
+    data = json.loads(DATA.read_text())
+    by8 = {q["question_id"].split("_")[-1]: q for q in data}
+    mini = [by8[h] for h in MINI5]
+
+    passes = []
+    for pi in range(2):
+        results = []
+        for qi, q in enumerate(mini):
+            cfg = make_cfg(f"mini_{pi}_{qi}", str(STORE / f"mini/pass{pi}/q{qi}"),
+                           temp_history_db(f"{STORE}/mini/pass{pi}/q{qi}"))
+            m = Memory.from_config(cfg)
+            calls_start = len(CALLS)
+            patch_llm_client(m, qi)
+            t0 = time.time()
+            for sess in q["haystack_sessions"]:
+                chars = sum(len(str(msg.get("content", ""))) for msg in sess)
+                chunks = max(1, int(chars / (CTX_LIMIT * CHARS_PER_TOK)) + 1)
+                size = max(1, len(sess) // chunks)
+                for ci in range(chunks):
+                    part = sess[ci * size:(ci + 1) * size] if chunks > 1 else sess
+                    if not part:
+                        continue
+                    m.add(part, user_id="u_pilot", infer=True)
+                    time.sleep(1)
+            try:
+                ga = m.get_all(filters={"user_id": "u_pilot"})
+                stored = sorted(it.get("memory", "") for it in ga.get("results", ga))
+            except Exception:
+                stored = []
+            qcalls = CALLS[calls_start:]
+            results.append({
+                "q_id": q["question_id"],
+                "frames": [{"fr": c["fr"], "parse": c["parse"], "chars": c["chars"],
+                            "facts": c["facts"]} for c in qcalls],
+                "raw_outputs": [c["raw"] for c in qcalls],
+                "stored_texts": stored,
+                "ingest_s": round(time.time() - t0, 1),
+            })
+            print(f"[mini pass {pi + 1}/2][{qi + 1}/5] {q['question_id'][:12]} "
+                  f"calls={len(qcalls)}", flush=True)
+            try:
+                m.vector_store.client.close()
+            except Exception:
+                pass
+            del m
+        passes.append(results)
+
+    per_q, ident = [], 0
+    for qi in range(len(mini)):
+        a, b = passes[0][qi], passes[1][qi]
+        ok = (a["raw_outputs"] == b["raw_outputs"] and
+              a["stored_texts"] == b["stored_texts"] and a["frames"] == b["frames"])
+        ident += ok
+        per_q.append({"q_id": a["q_id"], "byte_identical": ok,
+                      "raw_identical": a["raw_outputs"] == b["raw_outputs"],
+                      "stored_identical": a["stored_texts"] == b["stored_texts"],
+                      "frames_identical": a["frames"] == b["frames"]})
+    out = {
+        "provenance": {
+            "date": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+            "label": "full-500-iso mini-control (prereg sec 3): 5 panel-12 ids, "
+                     "THIS run's config via make_cfg, 2 passes before the start",
+            "question_ids": MINI5,
+            "rule": "divergence recorded, main run NOT blocked; per-question "
+                    "conclusions for full-500-iso invalid on divergence",
+        },
+        "identical": ident, "of": len(mini), "per_question": per_q,
+        "passes": passes,
+    }
+    (OUT / "full500iso_minicontrol.json").write_text(
+        json.dumps(out, indent=2, ensure_ascii=False))
+    print(f"MINI-CONTROL: {ident}/5 byte-identical "
+          f"({'IDENTICAL' if ident == len(mini) else 'DIVERGENCE RECORDED (non-blocking)'})",
+          flush=True)
+    return 0 if ident == len(mini) else 1
+
+
+def run_full500() -> int:
     os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
 
@@ -105,19 +208,8 @@ def main() -> int:
 
     results = []
     for qi, q in enumerate(questions):
-        cfg = {
-            "llm": {"provider": "openai", "config": {
-                "model": MODEL, "temperature": 0, "max_tokens": 1200,
-                "openai_base_url": BASE, "api_key": KEY}},
-            "embedder": {"provider": "openai", "config": {
-                "model": EMB, "openai_base_url": EMB_BASE, "api_key": EMB_KEY,
-                "embedding_dims": EMBED_DIMS}},
-            "vector_store": {"provider": "qdrant", "config": {
-                "collection_name": f"ev_{qi}", "embedding_model_dims": EMBED_DIMS,
-                "path": str(STORE / f"q{qi}")}},
-            "history_db_path": temp_history_db(f"{STORE}/q{qi}"),
-            "version": "v1.1",
-        }
+        cfg = make_cfg(f"ev_{qi}", str(STORE / f"q{qi}"),
+                       temp_history_db(f"{STORE}/q{qi}"))
         m = Memory.from_config(cfg)
         calls_start = len(CALLS)
         patch_llm_client(m, qi)
@@ -219,6 +311,13 @@ def main() -> int:
           f"substr = {rs:.3f} | empty = {empty} | total_tagged = {total_mem} | "
           f"mal = {mal} | ingest {total_ing:.0f}s", flush=True)
     return 0
+
+
+@guarded()
+def main() -> int:
+    if len(sys.argv) > 1 and sys.argv[1] == "mini":
+        return run_mini_control()
+    return run_full500()
 
 
 if __name__ == "__main__":
