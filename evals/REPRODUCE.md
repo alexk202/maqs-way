@@ -10,10 +10,14 @@ deliberately (~1 hour of GPU).
 
 ## 0. Honest reproducibility caveat (read before comparing numbers)
 
-- **GPUs give a small variance even with `--seed 42` and `temperature=0`**
-  (Vulkan arithmetic is nondeterministic; the project canon acknowledges this —
-  see prereg-v03, "GPU nondeterminism acknowledged"). Measured on our stand:
-  at T=0, 9 of 11 "empty" questions did not reproduce between runs.
+- **On the reference stand (same GPU/driver/llama.cpp build), with
+  per-question history isolation and seed 42, extraction output is
+  byte-identical within and across server restarts, attractor questions
+  included ([g1iso_determinism_check](results/g1iso_determinism_check.json),
+  [g1iso_attractors_crosscheck](results/g1iso_attractors_crosscheck.json)).
+  Earlier irreproducibility was caused by shared history tails (different
+  prompts), not GPU nondeterminism. Cross-stand determinism (other
+  GPU/driver/build) is untested: compare externally in bands.**
 - Therefore **numbers are compared in bands, not to the third decimal**: a
   foreign R@5 = 0.981 against our 0.987 is the same result; 0.929 against
   0.987 is a real difference. Guard thresholds belong to the project's preregs;

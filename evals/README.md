@@ -33,7 +33,9 @@ the run's prereg, not by this table.
 See **[REPRODUCE.md](REPRODUCE.md)** (EN, canonical; [RU mirror](REPRODUCE-RU.md)) — full stand recipe: pinned
 `requirements.txt` (mem0 at an exact upstream commit), the LLM/embedder servers,
 checksums, env overrides (`eval_config.py`), smoke mode, timing/VRAM, and the
-honest GPU-nondeterminism caveat (compare in bands, not third decimals).
+honest determinism boundary measured 2026-10-25 (reference-stand byte-identity,
+attractor questions included; earlier irreproducibility was history tails, not
+GPU; external comparisons in bands — sec 0).
 
 Quick start on a working stand:
 
