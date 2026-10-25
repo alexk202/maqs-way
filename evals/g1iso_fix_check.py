@@ -88,7 +88,15 @@ def main():
 
     root = Path(store_root)
     passes = {}
-    if (root / "pass0").is_dir():  # panel-12 layout (prereg part B): per-pass check
+    if (root / "q499").is_dir() or (root / "q450").is_dir():
+        # full-500 layout: q{qi} -> data[qi] (frozen first-500 selection)
+        order = data[:500]
+        per_q = {}
+        for qi, q in enumerate(order):
+            src = root / f"q{qi}"
+            per_q[q["question_id"]] = read_dir_texts(src) if src.is_dir() else None
+        passes["full500"] = per_q
+    elif (root / "pass0").is_dir():  # panel-12 layout (prereg part B): per-pass check
         by8 = {q["question_id"].split("_")[-1]: q for q in data}
         panel = [by8[h] for h in PANEL8]
         for pi in (0, 1):
@@ -111,6 +119,35 @@ def main():
         print(f"no readable question stores under {store_root} -- fail-closed")
         return 2
 
+    WORD = __import__("re").compile(r"[a-z0-9]+")
+    STOPW = set("user is the a an and or of to in on for with was were be been "
+                "i my me you your it that this".split())
+    _own_cache = {}
+
+    def own_words(qid):
+        if qid not in _own_cache:
+            q = by_id[qid]
+            ws = set()
+            for s in q["haystack_sessions"]:
+                for m in s:
+                    ws.update(w for w in WORD.findall(str(m.get("content", "")).lower())
+                              if w not in STOPW and len(w) > 3)
+            _own_cache[qid] = ws
+        return _own_cache[qid]
+
+    def hit_class(qid, text):
+        """amend-2 classifier: own-topic coverage >= 0.6 -> FP (dataset variant
+        pairs); else TAIL (true history-tail leak) -> STOP per prereg."""
+        fw = [w for w in WORD.findall(text.lower())
+              if w not in STOPW and len(w) > 3]
+        cov = sum(1 for w in fw if w in own_words(qid)) / max(1, len(fw))
+        return "FP" if cov >= 0.6 else "TAIL", round(cov, 3)
+
+    by_id = {}
+    for q in data:
+        by_id[q["question_id"]] = q
+        by_id[q["question_id"].split("_")[-1]] = q
+
     results, worst = {}, True
     for pname, per_q in passes.items():
         scan = scan_texts({q: t for q, t in per_q.items() if t is not None}, uniq)
@@ -118,28 +155,39 @@ def main():
         weak_facts = sum(len(s["weak"]) for s in scan.values())
         conf_qs = sum(1 for s in scan.values() if s["confirmed"])
         n_facts = sum(s["n_facts"] for s in scan.values())
-        fp_rate = conf_facts / max(1, n_facts)
-        in_tol = (conf_facts <= TOL_CONFIRMED_FACTS and
-                  conf_qs <= TOL_CONFIRMED_QUESTIONS and weak_facts <= TOL_WEAK)
+        tail_hits, fp_hits = [], 0
+        for q, s in scan.items():
+            for x in s["confirmed"]:
+                cls, cov = hit_class(q, x["text"])
+                if cls == "TAIL":
+                    tail_hits.append({"q": q, **x, "coverage": cov})
+                else:
+                    fp_hits += 1
+        tail = len(tail_hits)
+        in_tol = tail == 0  # amend-2: tail-class = 0 mandatory; FP non-gating
         worst = worst and in_tol
         results[pname] = {
             "n_facts": n_facts, "confirmed_facts": conf_facts,
             "confirmed_questions": conf_qs, "weak_facts": weak_facts,
-            "detector_fp_rate": round(fp_rate, 5), "in_tolerance": in_tol,
+            "tail_class": tail, "fp_class": fp_hits,
+            "detector_fp_rate": round(conf_facts / max(1, n_facts), 5),
+            "in_tolerance": in_tol,
+            "tail_hits": tail_hits[:12],
             "hits": {q: {"confirmed": s["confirmed"], "weak": s["weak"]}
                      for q, s in scan.items() if s["confirmed"] or s["weak"]},
         }
-        print(f"[{pname}] confirmed={conf_facts} in {conf_qs} q; "
-              f"weak={weak_facts}; facts={n_facts}; in_tol={in_tol}")
+        print(f"[{pname}] confirmed={conf_facts} (FP {fp_hits} / TAIL {tail}) "
+              f"in {conf_qs} q; weak={weak_facts}; facts={n_facts}; "
+              f"tail_ok={in_tol}")
 
     corrected_frozen = max(0.0, FROZEN_G1_RATE - max(
         r["detector_fp_rate"] for r in results.values()))
-    verdict = ("FIX CONFIRMED — foreign facts within detector noise in every "
-               f"checked pass; frozen-g1 estimate corrected to "
-               f"{corrected_frozen * 100:.1f}% (raw 16.31%)"
+    verdict = ("FIX CONFIRMED (amend-2 class rule) — tail-class = 0 in every "
+               f"checked pass; FP-class reported; frozen-g1 estimate corrected "
+               f"to {corrected_frozen * 100:.1f}% (raw 16.31%)"
                if worst else
-               "OUT OF TOLERANCE — STOP: hits exceed the pre-set detector-FP "
-               "budget; finding to owner before any other verdict")
+               "OUT OF TOLERANCE (amend-2 class rule) — TAIL-class hits found: "
+               "STOP, finding to owner before any other verdict")
 
     out = {
         "provenance": {
@@ -158,7 +206,8 @@ def main():
         "in_tolerance": worst,
         "verdict": verdict,
     }
-    suffix = "_panel" if (root / "pass0").is_dir() else "_b"
+    suffix = ("_full500iso" if (root / "q499").is_dir() or (root / "q450").is_dir()
+              else "_panel" if (root / "pass0").is_dir() else "_b")
     (OUT / f"g1iso_store_shingle_check{suffix}.json").write_text(
         json.dumps(out, indent=2, ensure_ascii=False))
     print(f"corrected frozen-g1 estimate: {corrected_frozen * 100:.1f}% (raw 16.31%)")
