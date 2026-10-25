@@ -1,0 +1,126 @@
+{
+  "provenance": {
+    "date": "2026-10-25T13:44:55+00:00",
+    "store": "/tmp/opencode/mem0single156g1iso_b_1792931561",
+    "metric": "verbatim v1.2 (frozen N1-N8 classes, import from verbatim_v12.py)",
+    "panel": "frozen pair_panel_stratified from verbatim_g1_v12.json (12 ids)",
+    "panel_base_mean": 0.162,
+    "shift_threshold": 0.03
+  },
+  "panel_mean_iso": 0.1663,
+  "panel_mean_frozen": 0.162,
+  "abs_delta": 0.0043,
+  "threshold_exceeded": false,
+  "verdict": "WITHIN TOLERANCE (|delta| = 0.0043 <= 0.03): annotate 'baseline within tolerance'; full-500 not re-run",
+  "members": [
+    {
+      "q_id": "75832dbd",
+      "n_signal_frozen": 129,
+      "n_signal_iso": 129,
+      "recall_frozen": 0.07,
+      "recall_iso": 0.062,
+      "stored_frozen": 5,
+      "stored_iso": 9
+    },
+    {
+      "q_id": "0a34ad58",
+      "n_signal_frozen": 110,
+      "n_signal_iso": 110,
+      "recall_frozen": 0.055,
+      "recall_iso": 0.045,
+      "stored_frozen": 8,
+      "stored_iso": 8
+    },
+    {
+      "q_id": "1faac195",
+      "n_signal_frozen": 109,
+      "n_signal_iso": 109,
+      "recall_frozen": 0.138,
+      "recall_iso": 0.073,
+      "stored_frozen": 5,
+      "stored_iso": 9
+    },
+    {
+      "q_id": "b0479f84",
+      "n_signal_frozen": 107,
+      "n_signal_iso": 107,
+      "recall_frozen": 0.093,
+      "recall_iso": 0.028,
+      "stored_frozen": 10,
+      "stored_iso": 5
+    },
+    {
+      "q_id": "fca70973",
+      "n_signal_frozen": 79,
+      "n_signal_iso": 79,
+      "recall_frozen": 0.241,
+      "recall_iso": 0.253,
+      "stored_frozen": 5,
+      "stored_iso": 20
+    },
+    {
+      "q_id": "311778f1",
+      "n_signal_frozen": 78,
+      "n_signal_iso": 78,
+      "recall_frozen": 0.205,
+      "recall_iso": 0.154,
+      "stored_frozen": 10,
+      "stored_iso": 9
+    },
+    {
+      "q_id": "afdc33df",
+      "n_signal_frozen": 74,
+      "n_signal_iso": 74,
+      "recall_frozen": 0.027,
+      "recall_iso": 0.297,
+      "stored_frozen": 11,
+      "stored_iso": 14
+    },
+    {
+      "q_id": "19b5f2b3",
+      "n_signal_frozen": 74,
+      "n_signal_iso": 74,
+      "recall_frozen": 0.162,
+      "recall_iso": 0.189,
+      "stored_frozen": 9,
+      "stored_iso": 5
+    },
+    {
+      "q_id": "e47becba",
+      "n_signal_frozen": 19,
+      "n_signal_iso": 19,
+      "recall_frozen": 0.053,
+      "recall_iso": 0.053,
+      "stored_frozen": 11,
+      "stored_iso": 13
+    },
+    {
+      "q_id": "58bf7951",
+      "n_signal_frozen": 19,
+      "n_signal_iso": 19,
+      "recall_frozen": 0.105,
+      "recall_iso": 0.316,
+      "stored_frozen": 13,
+      "stored_iso": 20
+    },
+    {
+      "q_id": "3b6f954b",
+      "n_signal_frozen": 19,
+      "n_signal_iso": 19,
+      "recall_frozen": 0.526,
+      "recall_iso": 0.263,
+      "stored_frozen": 9,
+      "stored_iso": 6
+    },
+    {
+      "q_id": "faba32e5",
+      "n_signal_frozen": 19,
+      "n_signal_iso": 19,
+      "recall_frozen": 0.263,
+      "recall_iso": 0.263,
+      "stored_frozen": 10,
+      "stored_iso": 5
+    }
+  ],
+  "global_micro_reference": 0.166
+}

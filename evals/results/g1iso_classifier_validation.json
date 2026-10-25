@@ -1,0 +1,257 @@
+{
+  "provenance": {
+    "date": "2026-10-25T13:44:48+00:00",
+    "rule": "amend-2 sec 2, pre-set tolerances (ex ante)",
+    "classifier": "own-haystack topic coverage of fact words (>3 chars, no stopwords); FP if >= 0.6",
+    "posthoc_marker": "amend-2 is POSTHOC per owner; this validation is the signing condition"
+  },
+  "runs": {
+    "frozen_g1": {
+      "raw_confirmed": 274,
+      "tail": 249,
+      "fp": 25,
+      "tail_hits": [
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User wants to bring up the idea of virtual coffee breaks in their next team meeting without making it sound like they're forcing the idea on",
+          "class": "TAIL",
+          "coverage": 0.412
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User was advised to discuss and agree with the team first before introducing virtual coffee breaks.",
+          "class": "TAIL",
+          "coverage": 0.2
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User enjoys working from home but misses social interactions and watercooler conversations with colleagues.",
+          "class": "TAIL",
+          "coverage": 0.1
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User wants to make sure they're not dominating the conversation and allowing everyone to share their thoughts.",
+          "class": "TAIL",
+          "coverage": 0.364
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User likes the idea of virtual coffee breaks and wants to make sure everyone in their team is comfortable with the idea.",
+          "class": "TAIL",
+          "coverage": 0.385
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User is looking for suggestions on how to socialize with colleagues while working from home.",
+          "class": "TAIL",
+          "coverage": 0.25
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User was suggested to frame the idea of virtual coffee breaks as a collaborative suggestion to encourage team buy-in.",
+          "class": "TAIL",
+          "coverage": 0.1
+        },
+        {
+          "q": "726462e0",
+          "foreign_q": "3b6f954b",
+          "text": "User has decided to try out Todoist for task management, as it is a popular and highly-rated tool that can help them break down larger proje",
+          "class": "TAIL",
+          "coverage": 0.429
+        },
+        {
+          "q": "94f70d80",
+          "foreign_q": "726462e0",
+          "text": "User is considering exploring other platforms like Instagram and Twitter to promote their writing services",
+          "class": "TAIL",
+          "coverage": 0.364
+        },
+        {
+          "q": "94f70d80",
+          "foreign_q": "726462e0",
+          "text": "User is thinking of creating a separate column in their content calendar to track engagement metrics like likes, comments, and shares",
+          "class": "TAIL",
+          "coverage": 0.214
+        },
+        {
+          "q": "66f24dbb",
+          "foreign_q": "94f70d80",
+          "text": "User is planning to check online reviews and ratings for coffee tables with storage to get a better sense of their quality and durability",
+          "class": "TAIL",
+          "coverage": 0.0
+        },
+        {
+          "q": "66f24dbb",
+          "foreign_q": "94f70d80",
+          "text": "User is looking for coffee tables with storage space and is considering both wood and glass top options",
+          "class": "TAIL",
+          "coverage": 0.0
+        }
+      ]
+    },
+    "g1_iso_a": {
+      "raw_confirmed": 278,
+      "tail": 252,
+      "fp": 26,
+      "tail_hits": [
+        {
+          "q": "195a1a1b",
+          "foreign_q": "32260d93",
+          "text": "User is looking for online resources and books on building a personal brand as a comedian and creating an online presence and was recommende",
+          "class": "TAIL",
+          "coverage": 0.167
+        },
+        {
+          "q": "195a1a1b",
+          "foreign_q": "32260d93",
+          "text": "User is considering attending a comedy writing workshop at a local writing center and was provided with benefits of attending the workshop.",
+          "class": "TAIL",
+          "coverage": 0.333
+        },
+        {
+          "q": "195a1a1b",
+          "foreign_q": "32260d93",
+          "text": "User is looking for tips on setting up a good home recording studio for comedy videos and was provided with lighting tips and recommendation",
+          "class": "TAIL",
+          "coverage": 0.385
+        },
+        {
+          "q": "195a1a1b",
+          "foreign_q": "32260d93",
+          "text": "User is seeking online resources and books on comedy writing and storytelling to improve their craft and was recommended The Comedy Writing ",
+          "class": "TAIL",
+          "coverage": 0.154
+        },
+        {
+          "q": "195a1a1b",
+          "foreign_q": "32260d93",
+          "text": "User is an aspiring stand-up comedian seeking advice on improving their craft and was recommended stand-up comedy specials on Netflix with s",
+          "class": "TAIL",
+          "coverage": 0.077
+        },
+        {
+          "q": "afdc33df",
+          "foreign_q": "195a1a1b",
+          "text": "User's most time-consuming tasks are working on their project, responding to emails, and attending meetings.",
+          "class": "TAIL",
+          "coverage": 0.455
+        },
+        {
+          "q": "afdc33df",
+          "foreign_q": "195a1a1b",
+          "text": "User has a project due soon and needs to finish a report and respond to some emails.",
+          "class": "TAIL",
+          "coverage": 0.125
+        },
+        {
+          "q": "afdc33df",
+          "foreign_q": "195a1a1b",
+          "text": "User prefers winding down by 9:30 pm to prepare for a good night's sleep.",
+          "class": "TAIL",
+          "coverage": 0.429
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User wants to bring up the idea of virtual coffee breaks in their next team meeting without making it sound like they're forcing the idea on",
+          "class": "TAIL",
+          "coverage": 0.412
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User is looking for suggestions on how to socialize with colleagues while working from home.",
+          "class": "TAIL",
+          "coverage": 0.25
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User likes the idea of virtual coffee breaks and wants to make sure everyone in their team is comfortable with the idea.",
+          "class": "TAIL",
+          "coverage": 0.385
+        },
+        {
+          "q": "06f04340",
+          "foreign_q": "54026fce",
+          "text": "User enjoys working from home but misses social interactions and watercooler conversations with colleagues.",
+          "class": "TAIL",
+          "coverage": 0.1
+        }
+      ]
+    },
+    "g1_iso_b": {
+      "raw_confirmed": 23,
+      "tail": 0,
+      "fp": 23,
+      "tail_hits": []
+    },
+    "panel_pass0": {
+      "raw_confirmed": 2,
+      "tail": 0,
+      "fp": 2,
+      "tail_hits": []
+    },
+    "panel_pass1": {
+      "raw_confirmed": 2,
+      "tail": 0,
+      "fp": 2,
+      "tail_hits": []
+    }
+  },
+  "verdicts": [
+    {
+      "check": "frozen_g1: tail 249 in [220,275]",
+      "ok": true
+    },
+    {
+      "check": "frozen_g1: FP share 1.49% <= 2.5%",
+      "ok": true
+    },
+    {
+      "check": "g1_iso_a: tail 252 in [220,280]",
+      "ok": true
+    },
+    {
+      "check": "g1_iso_a: FP share 1.54% <= 2.5%",
+      "ok": true
+    },
+    {
+      "check": "known example frozen_g1 06f04340<-54026fce (pos 10<-9): 7/7 tail",
+      "ok": true
+    },
+    {
+      "check": "known example g1_iso_a 195a1a1b<-32260d93 (pos 6<-5): 5/5 tail",
+      "ok": true
+    },
+    {
+      "check": "control g1_iso_b: tail = 0",
+      "ok": true
+    },
+    {
+      "check": "control panel_pass0: tail = 0",
+      "ok": true
+    },
+    {
+      "check": "control panel_pass1: tail = 0",
+      "ok": true
+    },
+    {
+      "check": "control g1_iso_a q0 (8a2466db): tail = 0",
+      "ok": true
+    }
+  ],
+  "observation_frozen_g1_q0": {
+    "hits": 1,
+    "tail": 0
+  },
+  "all_passed": true
+}
