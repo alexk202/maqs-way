@@ -20,6 +20,12 @@ deliberately (~1 hour of GPU).
   for external comparison keep a band of ±0.01–0.02.
 - Bands and class compositions (mal/trunc/loop) transfer between runs;
   per-question intersections are NOT interpreted (branch canon, Oct 2026).
+- **Confound discovered 2026-10-25**: every run before the H5 guard (`ffb5879`)
+  shared the live `~/.mem0/history.db` — a ≤10-message tail of the previous
+  question/run entered every extraction prompt, and extracted facts were written
+  to the live history store (forensics + measured impact:
+  `results/history_confound_forensics.md`; disclosure:
+  `results/history_confound_disclosure_note.md`).
 - **A live example (from this very stand, recorded with an explanation)**: the
   old n=5 smoke with an answer-token proxy (substring/token coverage of the
   answer inside the top-5) scored 5/5 (Oct 16, pre-9177 build, ctx 16384, no
