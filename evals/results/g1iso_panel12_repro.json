@@ -12,7 +12,7 @@
     "repeat_penalty": 1.0,
     "delta_vs_g1": "history_db_path -> temp store (H5, ffb5879)",
     "panel": "frozen verbatim_g1_v12 12 ids (4/4/4)",
-    "date": "2026-10-25T12:31:01+00:00",
+    "date": "2026-10-25T23:16:01+00:00",
     "label": "prereg-g1-iso part B (draft->signed->run)"
   },
   "identical_questions": 12,
@@ -151,7 +151,7 @@
           "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
         ],
         "evidence_hit": true,
-        "ingest_s": 18.3
+        "ingest_s": 18.2
       },
       {
         "q_id": "0a34ad58",
@@ -185,7 +185,7 @@
           "User should get to the tower early to avoid crowds and buy tickets online in advance."
         ],
         "evidence_hit": true,
-        "ingest_s": 17.2
+        "ingest_s": 17.1
       },
       {
         "q_id": "1faac195",
@@ -220,7 +220,7 @@
           "User is thinking of visiting their sister Emily in Denver and wants to know about kid-friendly attractions in the city."
         ],
         "evidence_hit": true,
-        "ingest_s": 21.7
+        "ingest_s": 21.6
       },
       {
         "q_id": "b0479f84",
@@ -251,7 +251,7 @@
           "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation."
         ],
         "evidence_hit": true,
-        "ingest_s": 12.5
+        "ingest_s": 12.3
       },
       {
         "q_id": "fca70973",
@@ -297,7 +297,7 @@
           "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
         ],
         "evidence_hit": true,
-        "ingest_s": 45.2
+        "ingest_s": 44.9
       },
       {
         "q_id": "311778f1",
@@ -305,34 +305,41 @@
           {
             "fr": "stop",
             "parse": "ok",
-            "chars": 4073,
-            "facts": 21,
+            "chars": 2681,
+            "facts": 16,
             "capped": false
           }
         ],
         "raw_outputs": [
-          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization tasks using machine learning.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using generative models and reinforcement learning for creating interactive visualizations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is interested in using generative models and reinforcement learning for creating interactive visualizations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"13\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"14\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"15\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"16\",\n      \"text\": \"User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"17\",\n      \"text\": \"User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"18\",\n      \"text\": \"User is interested in using generative models and reinforcement learning for creating interactive visualizations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"19\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"20\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use the Hugging Face Transformers library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the spaCy library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User wants to use the TensorFlow and PyTorch frameworks for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is interested in using the Stanford Natural Language Processing Group resources for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"13\",\n      \"text\": \"User wants to use the NLP Subreddit for discussing NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"14\",\n      \"text\": \"User is interested in reducing their screen time by 30 minutes a day.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"15\",\n      \"text\": \"User wants to use the Netflix screen time tracking feature to monitor their screen time.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
         ],
         "memory_texts": [
           "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
-          "User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.",
-          "User is interested in using generative models and reinforcement learning for creating interactive visualizations.",
-          "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
-          "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis."
+          "User is interested in natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+          "User is interested in reducing their screen time by 30 minutes a day.",
+          "User is interested in reducing their screen time, and plans to set goals and track progress.",
+          "User wants to use the Netflix screen time tracking feature to monitor their screen time."
         ],
         "stored_texts": [
           "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
-          "User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.",
-          "User is interested in using generative models and reinforcement learning for creating interactive visualizations.",
-          "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+          "User is interested in natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+          "User is interested in reducing their screen time by 30 minutes a day.",
+          "User is interested in reducing their screen time, and plans to set goals and track progress.",
+          "User is interested in using the AllenNLP library for NLP tasks.",
+          "User is interested in using the Stanford Natural Language Processing Group resources for NLP tasks.",
+          "User is interested in using the spaCy library for NLP tasks.",
           "User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.",
-          "User wants to automate data cleaning and data visualization tasks using machine learning.",
-          "User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.",
+          "User wants to automate data cleaning and data visualization, and make predictions on customer behavior.",
           "User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.",
-          "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis."
+          "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.",
+          "User wants to use the Hugging Face Transformers library for NLP tasks.",
+          "User wants to use the NLP Subreddit for discussing NLP tasks.",
+          "User wants to use the NLTK library for NLP tasks.",
+          "User wants to use the Netflix screen time tracking feature to monitor their screen time.",
+          "User wants to use the TensorFlow and PyTorch frameworks for NLP tasks."
         ],
         "evidence_hit": true,
-        "ingest_s": 35.8
+        "ingest_s": 26.7
       },
       {
         "q_id": "afdc33df",
@@ -372,7 +379,7 @@
           "User was given tips on how to repair or remove scratches on their granite countertop, including assessing the scratch, using baking soda and water, stone soap, mineral oil, or a granite repair kit, and preventing future scratches."
         ],
         "evidence_hit": true,
-        "ingest_s": 30.9
+        "ingest_s": 32.0
       },
       {
         "q_id": "19b5f2b3",
@@ -403,7 +410,7 @@
           "User is planning to visit the Demilitarized Zone (DMZ) between North and South Korea and is interested in taking a guided tour to the Joint Security Area, the Third Tunnel, and the Dora Observatory."
         ],
         "evidence_hit": true,
-        "ingest_s": 15.3
+        "ingest_s": 15.9
       },
       {
         "q_id": "e47becba",
@@ -442,7 +449,7 @@
           "User is trying to organize their life better and asked for task management app recommendations."
         ],
         "evidence_hit": true,
-        "ingest_s": 20.8
+        "ingest_s": 21.7
       },
       {
         "q_id": "58bf7951",
@@ -488,7 +495,7 @@
           "User's friend Emily is an aspiring actress and the lead actress reminded them of Emily"
         ],
         "evidence_hit": true,
-        "ingest_s": 29.8
+        "ingest_s": 30.9
       },
       {
         "q_id": "3b6f954b",
@@ -520,7 +527,7 @@
           "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat during a trip to the Great Ocean Road"
         ],
         "evidence_hit": true,
-        "ingest_s": 13.2
+        "ingest_s": 13.7
       },
       {
         "q_id": "faba32e5",
@@ -528,30 +535,35 @@
           {
             "fr": "stop",
             "parse": "ok",
-            "chars": 795,
-            "facts": 5,
+            "chars": 1613,
+            "facts": 10,
             "capped": false
           }
         ],
         "raw_outputs": [
-          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to ensure they have all necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User is considering making BBQ ribs and brisket for the party and wants to know how to get tender, melt-in-your-mouth texture\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User estimates they will need 40 pounds of ice for the coolers\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}"
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to ensure they have all necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User is considering making BBQ ribs and brisket for the party\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User wants to know how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Assistant recommends hickory, oak, mesquite, applewood, cherrywood, and pecan for smoking meats\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Assistant recommends baked beans, potato salad, grilled corn on the cob, roasted vegetables, mac and cheese, collard greens, cornbread, fried okra, garlic mashed potatoes, and watermelon salad as side dish options\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User decides to go with baked beans and potato salad as side dishes\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"User needs to get ice for the coolers and estimates 40 pounds of ice will be sufficient\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"Assistant recommends lawn games and activities such as cornhole, giant Jenga, badminton, volleyball, giant Twister, scavenger hunt, water balloon toss, lawn darts, outdoor movie, yard Yahtzee, sidewalk chalk art, and photobooth for the party\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"User is planning to set up lawn games and activities for the party\", \"linked_memory_ids\": []}\n  ]\n}"
         ],
         "memory_texts": [
-          "User estimates they will need 40 pounds of ice for the coolers",
-          "User is considering making BBQ ribs and brisket for the party and wants to know how to get tender, melt-in-your-mouth texture",
-          "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
-          "User is planning a BBQ party and wants to ensure they have all necessary supplies",
-          "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt"
+          "Assistant recommends baked beans, potato salad, grilled corn on the cob, roasted vegetables, mac and cheese, collard greens, cornbread, fried okra, garlic mashed potatoes, and watermelon salad as side dish options",
+          "Assistant recommends hickory, oak, mesquite, applewood, cherrywood, and pecan for smoking meats",
+          "User is considering making BBQ ribs and brisket for the party",
+          "User is looking for side dish ideas to pair with BBQ ribs and brisket",
+          "User is planning a BBQ party and wants to ensure they have all necessary supplies"
         ],
         "stored_texts": [
-          "User estimates they will need 40 pounds of ice for the coolers",
-          "User is considering making BBQ ribs and brisket for the party and wants to know how to get tender, melt-in-your-mouth texture",
-          "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
+          "Assistant recommends baked beans, potato salad, grilled corn on the cob, roasted vegetables, mac and cheese, collard greens, cornbread, fried okra, garlic mashed potatoes, and watermelon salad as side dish options",
+          "Assistant recommends hickory, oak, mesquite, applewood, cherrywood, and pecan for smoking meats",
+          "Assistant recommends lawn games and activities such as cornhole, giant Jenga, badminton, volleyball, giant Twister, scavenger hunt, water balloon toss, lawn darts, outdoor movie, yard Yahtzee, sidewalk chalk art, and photobooth for the party",
+          "User decides to go with baked beans and potato salad as side dishes",
+          "User is considering making BBQ ribs and brisket for the party",
+          "User is looking for side dish ideas to pair with BBQ ribs and brisket",
           "User is planning a BBQ party and wants to ensure they have all necessary supplies",
-          "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt"
+          "User is planning to set up lawn games and activities for the party",
+          "User needs to get ice for the coolers and estimates 40 pounds of ice will be sufficient",
+          "User wants to know how to choose the right type of wood for smoking meats"
         ],
         "evidence_hit": true,
-        "ingest_s": 10.4
+        "ingest_s": 17.7
       }
     ],
     [
@@ -588,7 +600,7 @@
           "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
         ],
         "evidence_hit": true,
-        "ingest_s": 18.2
+        "ingest_s": 18.7
       },
       {
         "q_id": "0a34ad58",
@@ -622,7 +634,7 @@
           "User should get to the tower early to avoid crowds and buy tickets online in advance."
         ],
         "evidence_hit": true,
-        "ingest_s": 17.2
+        "ingest_s": 19.0
       },
       {
         "q_id": "1faac195",
@@ -657,7 +669,7 @@
           "User is thinking of visiting their sister Emily in Denver and wants to know about kid-friendly attractions in the city."
         ],
         "evidence_hit": true,
-        "ingest_s": 21.8
+        "ingest_s": 23.9
       },
       {
         "q_id": "b0479f84",
@@ -688,7 +700,7 @@
           "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation."
         ],
         "evidence_hit": true,
-        "ingest_s": 12.5
+        "ingest_s": 13.8
       },
       {
         "q_id": "fca70973",
@@ -734,7 +746,7 @@
           "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
         ],
         "evidence_hit": true,
-        "ingest_s": 45.0
+        "ingest_s": 49.8
       },
       {
         "q_id": "311778f1",
@@ -742,34 +754,41 @@
           {
             "fr": "stop",
             "parse": "ok",
-            "chars": 4073,
-            "facts": 21,
+            "chars": 2681,
+            "facts": 16,
             "capped": false
           }
         ],
         "raw_outputs": [
-          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization tasks using machine learning.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using generative models and reinforcement learning for creating interactive visualizations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is interested in using generative models and reinforcement learning for creating interactive visualizations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"13\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"14\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"15\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"16\",\n      \"text\": \"User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"17\",\n      \"text\": \"User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"18\",\n      \"text\": \"User is interested in using generative models and reinforcement learning for creating interactive visualizations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"19\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"20\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use the Hugging Face Transformers library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the spaCy library for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User wants to use the TensorFlow and PyTorch frameworks for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is interested in using the Stanford Natural Language Processing Group resources for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"13\",\n      \"text\": \"User wants to use the NLP Subreddit for discussing NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"14\",\n      \"text\": \"User is interested in reducing their screen time by 30 minutes a day.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"15\",\n      \"text\": \"User wants to use the Netflix screen time tracking feature to monitor their screen time.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
         ],
         "memory_texts": [
           "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
-          "User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.",
-          "User is interested in using generative models and reinforcement learning for creating interactive visualizations.",
-          "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
-          "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis."
+          "User is interested in natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+          "User is interested in reducing their screen time by 30 minutes a day.",
+          "User is interested in reducing their screen time, and plans to set goals and track progress.",
+          "User wants to use the Netflix screen time tracking feature to monitor their screen time."
         ],
         "stored_texts": [
           "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
-          "User is interested in reducing their screen time, especially on Netflix, and wants to track their screen time using various methods.",
-          "User is interested in using generative models and reinforcement learning for creating interactive visualizations.",
-          "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+          "User is interested in natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+          "User is interested in reducing their screen time by 30 minutes a day.",
+          "User is interested in reducing their screen time, and plans to set goals and track progress.",
+          "User is interested in using the AllenNLP library for NLP tasks.",
+          "User is interested in using the Stanford Natural Language Processing Group resources for NLP tasks.",
+          "User is interested in using the spaCy library for NLP tasks.",
           "User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.",
-          "User wants to automate data cleaning and data visualization tasks using machine learning.",
-          "User wants to use deep learning for customer behavior data, such as churn prediction and customer segmentation.",
+          "User wants to automate data cleaning and data visualization, and make predictions on customer behavior.",
           "User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.",
-          "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis."
+          "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.",
+          "User wants to use the Hugging Face Transformers library for NLP tasks.",
+          "User wants to use the NLP Subreddit for discussing NLP tasks.",
+          "User wants to use the NLTK library for NLP tasks.",
+          "User wants to use the Netflix screen time tracking feature to monitor their screen time.",
+          "User wants to use the TensorFlow and PyTorch frameworks for NLP tasks."
         ],
         "evidence_hit": true,
-        "ingest_s": 35.8
+        "ingest_s": 29.7
       },
       {
         "q_id": "afdc33df",
@@ -809,7 +828,7 @@
           "User was given tips on how to repair or remove scratches on their granite countertop, including assessing the scratch, using baking soda and water, stone soap, mineral oil, or a granite repair kit, and preventing future scratches."
         ],
         "evidence_hit": true,
-        "ingest_s": 30.8
+        "ingest_s": 35.0
       },
       {
         "q_id": "19b5f2b3",
@@ -840,7 +859,7 @@
           "User is planning to visit the Demilitarized Zone (DMZ) between North and South Korea and is interested in taking a guided tour to the Joint Security Area, the Third Tunnel, and the Dora Observatory."
         ],
         "evidence_hit": true,
-        "ingest_s": 15.2
+        "ingest_s": 16.8
       },
       {
         "q_id": "e47becba",
@@ -879,7 +898,7 @@
           "User is trying to organize their life better and asked for task management app recommendations."
         ],
         "evidence_hit": true,
-        "ingest_s": 20.9
+        "ingest_s": 23.0
       },
       {
         "q_id": "58bf7951",
@@ -925,7 +944,7 @@
           "User's friend Emily is an aspiring actress and the lead actress reminded them of Emily"
         ],
         "evidence_hit": true,
-        "ingest_s": 30.0
+        "ingest_s": 32.5
       },
       {
         "q_id": "3b6f954b",
@@ -957,7 +976,7 @@
           "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat during a trip to the Great Ocean Road"
         ],
         "evidence_hit": true,
-        "ingest_s": 13.2
+        "ingest_s": 14.5
       },
       {
         "q_id": "faba32e5",
@@ -965,30 +984,35 @@
           {
             "fr": "stop",
             "parse": "ok",
-            "chars": 795,
-            "facts": 5,
+            "chars": 1613,
+            "facts": 10,
             "capped": false
           }
         ],
         "raw_outputs": [
-          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to ensure they have all necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User is considering making BBQ ribs and brisket for the party and wants to know how to get tender, melt-in-your-mouth texture\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User estimates they will need 40 pounds of ice for the coolers\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}"
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to ensure they have all necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User is considering making BBQ ribs and brisket for the party\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User wants to know how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Assistant recommends hickory, oak, mesquite, applewood, cherrywood, and pecan for smoking meats\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Assistant recommends baked beans, potato salad, grilled corn on the cob, roasted vegetables, mac and cheese, collard greens, cornbread, fried okra, garlic mashed potatoes, and watermelon salad as side dish options\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User decides to go with baked beans and potato salad as side dishes\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"User needs to get ice for the coolers and estimates 40 pounds of ice will be sufficient\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"Assistant recommends lawn games and activities such as cornhole, giant Jenga, badminton, volleyball, giant Twister, scavenger hunt, water balloon toss, lawn darts, outdoor movie, yard Yahtzee, sidewalk chalk art, and photobooth for the party\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"User is planning to set up lawn games and activities for the party\", \"linked_memory_ids\": []}\n  ]\n}"
         ],
         "memory_texts": [
-          "User estimates they will need 40 pounds of ice for the coolers",
-          "User is considering making BBQ ribs and brisket for the party and wants to know how to get tender, melt-in-your-mouth texture",
-          "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
-          "User is planning a BBQ party and wants to ensure they have all necessary supplies",
-          "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt"
+          "Assistant recommends baked beans, potato salad, grilled corn on the cob, roasted vegetables, mac and cheese, collard greens, cornbread, fried okra, garlic mashed potatoes, and watermelon salad as side dish options",
+          "Assistant recommends hickory, oak, mesquite, applewood, cherrywood, and pecan for smoking meats",
+          "User is considering making BBQ ribs and brisket for the party",
+          "User is looking for side dish ideas to pair with BBQ ribs and brisket",
+          "User is planning a BBQ party and wants to ensure they have all necessary supplies"
         ],
         "stored_texts": [
-          "User estimates they will need 40 pounds of ice for the coolers",
-          "User is considering making BBQ ribs and brisket for the party and wants to know how to get tender, melt-in-your-mouth texture",
-          "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
+          "Assistant recommends baked beans, potato salad, grilled corn on the cob, roasted vegetables, mac and cheese, collard greens, cornbread, fried okra, garlic mashed potatoes, and watermelon salad as side dish options",
+          "Assistant recommends hickory, oak, mesquite, applewood, cherrywood, and pecan for smoking meats",
+          "Assistant recommends lawn games and activities such as cornhole, giant Jenga, badminton, volleyball, giant Twister, scavenger hunt, water balloon toss, lawn darts, outdoor movie, yard Yahtzee, sidewalk chalk art, and photobooth for the party",
+          "User decides to go with baked beans and potato salad as side dishes",
+          "User is considering making BBQ ribs and brisket for the party",
+          "User is looking for side dish ideas to pair with BBQ ribs and brisket",
           "User is planning a BBQ party and wants to ensure they have all necessary supplies",
-          "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt"
+          "User is planning to set up lawn games and activities for the party",
+          "User needs to get ice for the coolers and estimates 40 pounds of ice will be sufficient",
+          "User wants to know how to choose the right type of wood for smoking meats"
         ],
         "evidence_hit": true,
-        "ingest_s": 10.4
+        "ingest_s": 19.6
       }
     ]
   ]

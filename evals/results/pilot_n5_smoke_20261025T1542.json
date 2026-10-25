@@ -1,0 +1,110 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "dataset": "xiaowu0162/longmemeval-cleaned longmemeval_oracle.json",
+    "date": "2026-10-25T15:42:06+00:00",
+    "n": 5,
+    "label": "n=5 pilot, NOT normative, single-point"
+  },
+  "R_at_5_evidence": 1.0,
+  "token_proxy_recall": 0.0,
+  "ingest_total_s": 288.7,
+  "extrapolation_50q_min": 48.1,
+  "extrapolation_500q_h": 8.0,
+  "results": [
+    {
+      "q_id": "gpt4_2655b836",
+      "q_type": "temporal-reasoning",
+      "answer": "GPS system not functioning correctly",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 91.5,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User had their car serviced for the first time on March 15th and it was a great experience",
+        "User is thinking of getting their car detailed soon",
+        "User is considering using local car wash and detailing shops, mobile detailing services, or DIY detailing to get their car waxed and detailed",
+        "User is happy with their new car accessories and they have added a nice touch to their car",
+        "User is thinking of getting a car wax and detailing done before their trip to protect their car's paint job and interior"
+      ]
+    },
+    {
+      "q_id": "0a995998",
+      "q_type": "multi-session",
+      "answer": 3,
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 3,
+      "add_calls": 3,
+      "ingest_s": 81.5,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User is considering their recent purchases and how to integrate them into their wardrobe.",
+        "User has a lot of clothes that they haven't worn in a while, including some winter clothes that they haven't touched since the holidays.",
+        "User is thinking about how to integrate their new purchases into their wardrobe, including styling them with existing items and identifying gaps in their wardrobe.",
+        "Assistant suggested using boxes to store out-of-season clothes, labeling and categorizing, and choosing the right storage containers.",
+        "Assistant provided tips on how to declutter and organize a closet, including taking everything out, sorting into piles, and considering the 80/20 rule."
+      ]
+    },
+    {
+      "q_id": "6a1eabeb",
+      "q_type": "knowledge-update",
+      "answer": "25 minutes and 50 seconds (or 25:50)",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 2,
+      "add_calls": 2,
+      "ingest_s": 69.4,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "User is training for a charity 5K run and aims to beat their personal best time of 25:50",
+        "User will visualize themselves crossing the finish line in under 25:50 and focus on positive self-talk",
+        "User will incorporate interval training, strength training, and long runs into their training plan to improve endurance and beat personal best time",
+        "User will incorporate long runs of 6-8 kilometers to adapt to demands of running continuously",
+        "User will focus on proper breathing and pacing to stay relaxed and focused during runs"
+      ]
+    },
+    {
+      "q_id": "e47becba",
+      "q_type": "single-session-user",
+      "answer": "Business Administration",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 20.5,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "Assistant provided tips on creating a routine for the user's new job, including establishing a morning routine, prioritizing tasks, and taking breaks.",
+        "User is looking for tips on creating a routine for their new job.",
+        "Assistant provided tips on saving money on everyday expenses, including meal planning, shopping sales, and using coupons.",
+        "Assistant recommended meal prep containers and tools, including glass containers, BPA-free plastic containers, and meal prep bags.",
+        "Assistant recommended Mint and Personal Capital for personal expense tracking."
+      ]
+    },
+    {
+      "q_id": "7161e7e2",
+      "q_type": "single-session-assistant",
+      "answer": "Admon was assigned to the 8 am - 4 pm (Day Shift) on Sundays.",
+      "hit": true,
+      "proxy_hit": false,
+      "sessions": 1,
+      "add_calls": 1,
+      "ingest_s": 25.8,
+      "retrieve_s": 0.0,
+      "top5_preview": [
+        "The shift rotation sheet for GM social media agents with 7 agents, 4 shifts, and 2 days off for every agent for a week starting on Sunday and ending on Saturday is as follows:",
+        "A shift rotation sheet for GM social media agents was created with 7 agents: Admon, Magdy, Ehab, Sara, Mostafa, Nemr, and Adam.",
+        "The shift rotation sheet is for a 1-week period, starting on Sunday and ending on Saturday.",
+        "Sunday: Admon (8 am - 4 pm), Magdy (12 pm - 8 pm), Ehab (4 pm - 12 am), Sara (12 am - 8 am)",
+        "The shift rotation sheet has 4 shifts: 8 am - 4 pm, 12 pm - 8 pm, 4 pm - 12 am, and 12 am - 8 am."
+      ]
+    }
+  ]
+}

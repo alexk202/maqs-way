@@ -1,0 +1,309 @@
+{
+  "provenance": {
+    "date": "2026-10-25T15:46:44+00:00",
+    "label": "full-500-iso mini-control (prereg sec 3): 5 panel-12 ids, THIS run's config via make_cfg, 2 passes before the start",
+    "question_ids": [
+      "75832dbd",
+      "0a34ad58",
+      "1faac195",
+      "b0479f84",
+      "fca70973"
+    ],
+    "rule": "divergence recorded, main run NOT blocked; per-question conclusions for full-500-iso invalid on divergence"
+  },
+  "identical": 5,
+  "of": 5,
+  "per_question": [
+    {
+      "q_id": "75832dbd",
+      "byte_identical": true,
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "0a34ad58",
+      "byte_identical": true,
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "1faac195",
+      "byte_identical": true,
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "b0479f84",
+      "byte_identical": true,
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "fca70973",
+      "byte_identical": true,
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    }
+  ],
+  "passes": [
+    [
+      {
+        "q_id": "75832dbd",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1901,
+            "facts": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"1\", \"text\": \"Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"2\", \"text\": \"Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"3\", \"text\": \"Deep learning models are being used in medical image analysis for tasks such as image segmentation, classification, and detection.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"4\", \"text\": \"Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"5\", \"text\": \"Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"6\", \"text\": \"Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"7\", \"text\": \"Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"8\", \"text\": \"Deep learning models are being used in medical image analysis for tasks such as image registration and synthesis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"9\", \"text\": \"Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Deep learning models are being used in medical image analysis for tasks such as image registration and synthesis.",
+          "Deep learning models are being used in medical image analysis for tasks such as image segmentation, classification, and detection.",
+          "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+          "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+          "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+          "Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+          "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+        ],
+        "ingest_s": 19.7
+      },
+      {
+        "q_id": "0a34ad58",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1549,
+            "facts": 6
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning to visit the Tokyo Tower and wants to know what to expect.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo, offering panoramic views of the city from its observation decks.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The tower stands at 332.6 meters (1,091 feet) tall, making it one of the tallest towers in the world, and its design is inspired by the Eiffel Tower but with a more modern and sleek twist.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The Tokyo Tower features various exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum, and you can also find souvenir shops and restaurants within the tower complex.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User wants to know what to do at the Tokyo Tower, and the assistant recommends taking the elevator or walking the stairs to the observation decks for stunning views, enjoying the views, learning about Tokyo, and relaxing within the tower complex.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"The assistant advises user to get to the Tokyo Tower early to beat the crowds, buy tickets online in advance to avoid long queues, dress comfortably, and bring snacks.\",\n      \"attributed_to\": \"assistant\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "The Tokyo Tower features various exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum, and you can also find souvenir shops and restaurants within the tower complex.",
+          "The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo, offering panoramic views of the city from its observation decks.",
+          "The assistant advises user to get to the Tokyo Tower early to beat the crowds, buy tickets online in advance to avoid long queues, dress comfortably, and bring snacks.",
+          "The tower stands at 332.6 meters (1,091 feet) tall, making it one of the tallest towers in the world, and its design is inspired by the Eiffel Tower but with a more modern and sleek twist.",
+          "User is planning to visit the Tokyo Tower and wants to know what to expect.",
+          "User wants to know what to do at the Tokyo Tower, and the assistant recommends taking the elevator or walking the stairs to the observation decks for stunning views, enjoying the views, learning about Tokyo, and relaxing within the tower complex."
+        ],
+        "ingest_s": 19.0
+      },
+      {
+        "q_id": "1faac195",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2735,
+            "facts": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User thinks the Denver Philharmonic Orchestra's Family Concerts series sounds perfect for Emma and asks for more information about the McNichols Civic Center Building where the concert is being held.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities such as stroller-friendliness, restrooms, and seating areas.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User asks if it's possible to grab lunch somewhere near the McNichols Civic Center Building after the concert, preferably somewhere with a play area or kid-friendly amenities.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"Assistant recommends several kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.\",\n      \"attributed_to\": \"assistant\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities such as stroller-friendliness, restrooms, and seating areas.",
+          "Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.",
+          "Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.",
+          "Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.",
+          "Assistant recommends several kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.",
+          "User asks if it's possible to grab lunch somewhere near the McNichols Civic Center Building after the concert, preferably somewhere with a play area or kid-friendly amenities.",
+          "User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.",
+          "User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.",
+          "User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city.",
+          "User thinks the Denver Philharmonic Orchestra's Family Concerts series sounds perfect for Emma and asks for more information about the McNichols Civic Center Building where the concert is being held."
+        ],
+        "ingest_s": 25.1
+      },
+      {
+        "q_id": "b0479f84",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2272,
+            "facts": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Belize Barrier Reef is a UNESCO World Heritage Site and a must-visit for snorkelers and divers, home to an incredible array of marine life.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User chooses Belize as their destination for eco-tourism, interested in snorkeling and diving in the Belize Barrier Reef.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"Belize offers eco-lodges and resorts that prioritize environmental sustainability, such as Hamanasi Adventure and Dive Resort.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is interested in learning more about wildlife and conservation in Belize, including the Belize Wildlife Conservation Society.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"Community-based tourism initiatives in Belize allow users to support local communities and learn about traditional Garifuna and Maya cultures.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is interested in sustainable tourism operators in Belize, such as ReefCI, which offers snorkeling and diving trips while supporting reef conservation efforts.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"National parks and protected areas in Belize, such as the Hol Chan Marine Reserve and Bacalar Chico National Park, protect the Belize Barrier Reef and its marine life.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is interested in certifications and awards for sustainable tourism in Belize, such as the Belize Tourism Board's 'Tourism Gold Standard' and the 'Eco-Tourism Certification' from the Belize Eco-Tourism Association.\",\n      \"attributed_to\": \"user\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.",
+          "Belize offers eco-lodges and resorts that prioritize environmental sustainability, such as Hamanasi Adventure and Dive Resort.",
+          "Community-based tourism initiatives in Belize allow users to support local communities and learn about traditional Garifuna and Maya cultures.",
+          "National parks and protected areas in Belize, such as the Hol Chan Marine Reserve and Bacalar Chico National Park, protect the Belize Barrier Reef and its marine life.",
+          "The Belize Barrier Reef is a UNESCO World Heritage Site and a must-visit for snorkelers and divers, home to an incredible array of marine life.",
+          "User chooses Belize as their destination for eco-tourism, interested in snorkeling and diving in the Belize Barrier Reef.",
+          "User is interested in certifications and awards for sustainable tourism in Belize, such as the Belize Tourism Board's 'Tourism Gold Standard' and the 'Eco-Tourism Certification' from the Belize Eco-Tourism Association.",
+          "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.",
+          "User is interested in learning more about wildlife and conservation in Belize, including the Belize Wildlife Conservation Society.",
+          "User is interested in sustainable tourism operators in Belize, such as ReefCI, which offers snorkeling and diving trips while supporting reef conservation efforts."
+        ],
+        "ingest_s": 22.9
+      },
+      {
+        "q_id": "fca70973",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1479,
+            "facts": 5
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a gourmet buffet, priority entry, front-of-line access, exclusive VIP lounge, private tour guide, commemorative photo, and special VIP gift.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, including the makeup and special effects department, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"Booking the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights is highly recommended, as VIP Experiences tend to sell out quickly, especially during peak seasons.\",\n      \"attributed_to\": \"assistant\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Booking the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights is highly recommended, as VIP Experiences tend to sell out quickly, especially during peak seasons.",
+          "The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, including the makeup and special effects department, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.",
+          "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.",
+          "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a gourmet buffet, priority entry, front-of-line access, exclusive VIP lounge, private tour guide, commemorative photo, and special VIP gift.",
+          "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
+        ],
+        "ingest_s": 15.7
+      }
+    ],
+    [
+      {
+        "q_id": "75832dbd",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1901,
+            "facts": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"1\", \"text\": \"Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"2\", \"text\": \"Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"3\", \"text\": \"Deep learning models are being used in medical image analysis for tasks such as image segmentation, classification, and detection.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"4\", \"text\": \"Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"5\", \"text\": \"Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"6\", \"text\": \"Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"7\", \"text\": \"Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"8\", \"text\": \"Deep learning models are being used in medical image analysis for tasks such as image registration and synthesis.\", \"attributed_to\": \"assistant\"},\n    {\"id\": \"9\", \"text\": \"Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.\", \"attributed_to\": \"assistant\"}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Deep learning models are being used in medical image analysis for tasks such as image registration and synthesis.",
+          "Deep learning models are being used in medical image analysis for tasks such as image segmentation, classification, and detection.",
+          "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+          "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+          "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+          "Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+          "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+        ],
+        "ingest_s": 19.5
+      },
+      {
+        "q_id": "0a34ad58",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1549,
+            "facts": 6
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning to visit the Tokyo Tower and wants to know what to expect.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo, offering panoramic views of the city from its observation decks.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The tower stands at 332.6 meters (1,091 feet) tall, making it one of the tallest towers in the world, and its design is inspired by the Eiffel Tower but with a more modern and sleek twist.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The Tokyo Tower features various exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum, and you can also find souvenir shops and restaurants within the tower complex.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User wants to know what to do at the Tokyo Tower, and the assistant recommends taking the elevator or walking the stairs to the observation decks for stunning views, enjoying the views, learning about Tokyo, and relaxing within the tower complex.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"The assistant advises user to get to the Tokyo Tower early to beat the crowds, buy tickets online in advance to avoid long queues, dress comfortably, and bring snacks.\",\n      \"attributed_to\": \"assistant\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "The Tokyo Tower features various exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum, and you can also find souvenir shops and restaurants within the tower complex.",
+          "The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo, offering panoramic views of the city from its observation decks.",
+          "The assistant advises user to get to the Tokyo Tower early to beat the crowds, buy tickets online in advance to avoid long queues, dress comfortably, and bring snacks.",
+          "The tower stands at 332.6 meters (1,091 feet) tall, making it one of the tallest towers in the world, and its design is inspired by the Eiffel Tower but with a more modern and sleek twist.",
+          "User is planning to visit the Tokyo Tower and wants to know what to expect.",
+          "User wants to know what to do at the Tokyo Tower, and the assistant recommends taking the elevator or walking the stairs to the observation decks for stunning views, enjoying the views, learning about Tokyo, and relaxing within the tower complex."
+        ],
+        "ingest_s": 19.1
+      },
+      {
+        "q_id": "1faac195",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2735,
+            "facts": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User thinks the Denver Philharmonic Orchestra's Family Concerts series sounds perfect for Emma and asks for more information about the McNichols Civic Center Building where the concert is being held.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities such as stroller-friendliness, restrooms, and seating areas.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User asks if it's possible to grab lunch somewhere near the McNichols Civic Center Building after the concert, preferably somewhere with a play area or kid-friendly amenities.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"Assistant recommends several kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.\",\n      \"attributed_to\": \"assistant\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities such as stroller-friendliness, restrooms, and seating areas.",
+          "Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.",
+          "Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.",
+          "Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.",
+          "Assistant recommends several kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.",
+          "User asks if it's possible to grab lunch somewhere near the McNichols Civic Center Building after the concert, preferably somewhere with a play area or kid-friendly amenities.",
+          "User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.",
+          "User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.",
+          "User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city.",
+          "User thinks the Denver Philharmonic Orchestra's Family Concerts series sounds perfect for Emma and asks for more information about the McNichols Civic Center Building where the concert is being held."
+        ],
+        "ingest_s": 25.2
+      },
+      {
+        "q_id": "b0479f84",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2272,
+            "facts": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Belize Barrier Reef is a UNESCO World Heritage Site and a must-visit for snorkelers and divers, home to an incredible array of marine life.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User chooses Belize as their destination for eco-tourism, interested in snorkeling and diving in the Belize Barrier Reef.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"Belize offers eco-lodges and resorts that prioritize environmental sustainability, such as Hamanasi Adventure and Dive Resort.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is interested in learning more about wildlife and conservation in Belize, including the Belize Wildlife Conservation Society.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"Community-based tourism initiatives in Belize allow users to support local communities and learn about traditional Garifuna and Maya cultures.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is interested in sustainable tourism operators in Belize, such as ReefCI, which offers snorkeling and diving trips while supporting reef conservation efforts.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"National parks and protected areas in Belize, such as the Hol Chan Marine Reserve and Bacalar Chico National Park, protect the Belize Barrier Reef and its marine life.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is interested in certifications and awards for sustainable tourism in Belize, such as the Belize Tourism Board's 'Tourism Gold Standard' and the 'Eco-Tourism Certification' from the Belize Eco-Tourism Association.\",\n      \"attributed_to\": \"user\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.",
+          "Belize offers eco-lodges and resorts that prioritize environmental sustainability, such as Hamanasi Adventure and Dive Resort.",
+          "Community-based tourism initiatives in Belize allow users to support local communities and learn about traditional Garifuna and Maya cultures.",
+          "National parks and protected areas in Belize, such as the Hol Chan Marine Reserve and Bacalar Chico National Park, protect the Belize Barrier Reef and its marine life.",
+          "The Belize Barrier Reef is a UNESCO World Heritage Site and a must-visit for snorkelers and divers, home to an incredible array of marine life.",
+          "User chooses Belize as their destination for eco-tourism, interested in snorkeling and diving in the Belize Barrier Reef.",
+          "User is interested in certifications and awards for sustainable tourism in Belize, such as the Belize Tourism Board's 'Tourism Gold Standard' and the 'Eco-Tourism Certification' from the Belize Eco-Tourism Association.",
+          "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.",
+          "User is interested in learning more about wildlife and conservation in Belize, including the Belize Wildlife Conservation Society.",
+          "User is interested in sustainable tourism operators in Belize, such as ReefCI, which offers snorkeling and diving trips while supporting reef conservation efforts."
+        ],
+        "ingest_s": 22.9
+      },
+      {
+        "q_id": "fca70973",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1479,
+            "facts": 5
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights.\",\n      \"attributed_to\": \"user\"\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a gourmet buffet, priority entry, front-of-line access, exclusive VIP lounge, private tour guide, commemorative photo, and special VIP gift.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, including the makeup and special effects department, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.\",\n      \"attributed_to\": \"assistant\"\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"Booking the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights is highly recommended, as VIP Experiences tend to sell out quickly, especially during peak seasons.\",\n      \"attributed_to\": \"assistant\"\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Booking the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights is highly recommended, as VIP Experiences tend to sell out quickly, especially during peak seasons.",
+          "The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, including the makeup and special effects department, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.",
+          "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.",
+          "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a gourmet buffet, priority entry, front-of-line access, exclusive VIP lounge, private tour guide, commemorative photo, and special VIP gift.",
+          "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
+        ],
+        "ingest_s": 15.6
+      }
+    ]
+  ]
+}

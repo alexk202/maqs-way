@@ -1,0 +1,11 @@
+{
+ "window": "full-500-iso run window (before-run, 2026-10-25T18:01:36+02:00)",
+ "os": "7.0.0-38-generic, Linux Mint 22.3",
+ "gpu": "NVIDIA GeForce RTX 5060 Ti, 595.99.02",
+ "llama_build": "see server log",
+ "llama_flags": "-c 32768 -ngl 99 --device Vulkan1 --port 8085 --seed 42, model Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+ "model_md5": "6eb593f3f5eee264d6c60c186ccc12e0 (verified 2026-10-25)",
+ "runner": "evals/run_full500_iso.py sha256 2d736148c158a89338bbc8cc92f9fa81cd5f8e0d7b66721099f940a05764c822",
+ "repo_head": "5d1ac93f876342686a3269a2f38b64aa78d12c31",
+ "controls_before": {"mini": "5/5 byte-identical", "panel12": "12/12 within, 12/12 vs 25.10 reference", "attractors": "9/9 within, 9/9 vs 25.10 reference"}
+}

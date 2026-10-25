@@ -1,0 +1,1058 @@
+[H5 isolation guard] snapshot: 3 roots, 5 files (before __main__.main)
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+Error parsing extraction response: Expecting ',' delimiter: line 38 column 119 (char 4880)
+[1/500] temporal-reasoning evidence_hit=True substr=False ingest=87s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[2/500] temporal-reasoning evidence_hit=True substr=False ingest=29s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[3/500] temporal-reasoning evidence_hit=True substr=True ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[4/500] temporal-reasoning evidence_hit=True substr=True ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[5/500] temporal-reasoning evidence_hit=True substr=False ingest=37s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[6/500] temporal-reasoning evidence_hit=True substr=False ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[7/500] temporal-reasoning evidence_hit=True substr=False ingest=45s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[8/500] temporal-reasoning evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[9/500] temporal-reasoning evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[10/500] temporal-reasoning evidence_hit=True substr=False ingest=69s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[11/500] temporal-reasoning evidence_hit=True substr=True ingest=157s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[12/500] temporal-reasoning evidence_hit=True substr=False ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 108 column 6 (char 5110)
+[13/500] temporal-reasoning evidence_hit=True substr=False ingest=69s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[14/500] temporal-reasoning evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[15/500] temporal-reasoning evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[16/500] temporal-reasoning evidence_hit=True substr=False ingest=172s calls=6 fr={'stop': 6}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[17/500] temporal-reasoning evidence_hit=True substr=False ingest=38s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[18/500] temporal-reasoning evidence_hit=True substr=False ingest=45s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[19/500] temporal-reasoning evidence_hit=True substr=True ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[20/500] temporal-reasoning evidence_hit=True substr=False ingest=66s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[21/500] temporal-reasoning evidence_hit=True substr=False ingest=122s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[22/500] temporal-reasoning evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[23/500] temporal-reasoning evidence_hit=True substr=False ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[24/500] temporal-reasoning evidence_hit=True substr=True ingest=66s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[25/500] temporal-reasoning evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[26/500] temporal-reasoning evidence_hit=True substr=False ingest=42s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[27/500] temporal-reasoning evidence_hit=True substr=False ingest=53s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[28/500] temporal-reasoning evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[29/500] temporal-reasoning evidence_hit=True substr=False ingest=58s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[30/500] temporal-reasoning evidence_hit=True substr=True ingest=85s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[31/500] temporal-reasoning evidence_hit=True substr=False ingest=78s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[32/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[33/500] temporal-reasoning evidence_hit=True substr=True ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[34/500] temporal-reasoning evidence_hit=True substr=False ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[35/500] temporal-reasoning evidence_hit=True substr=False ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[36/500] temporal-reasoning evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[37/500] temporal-reasoning evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[38/500] temporal-reasoning evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[39/500] temporal-reasoning evidence_hit=True substr=False ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[40/500] temporal-reasoning evidence_hit=True substr=False ingest=42s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[41/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[42/500] temporal-reasoning evidence_hit=True substr=False ingest=77s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[43/500] temporal-reasoning evidence_hit=True substr=False ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[44/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 24 column 214 (char 4984)
+[45/500] temporal-reasoning evidence_hit=True substr=True ingest=97s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[46/500] temporal-reasoning evidence_hit=True substr=False ingest=38s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[47/500] temporal-reasoning evidence_hit=True substr=False ingest=44s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[48/500] temporal-reasoning evidence_hit=True substr=False ingest=66s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[49/500] temporal-reasoning evidence_hit=True substr=False ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[50/500] temporal-reasoning evidence_hit=True substr=False ingest=38s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[51/500] temporal-reasoning evidence_hit=True substr=True ingest=48s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[52/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[53/500] temporal-reasoning evidence_hit=True substr=True ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[54/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[55/500] temporal-reasoning evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[56/500] temporal-reasoning evidence_hit=True substr=False ingest=41s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[57/500] temporal-reasoning evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[58/500] temporal-reasoning evidence_hit=True substr=False ingest=53s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[59/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[60/500] temporal-reasoning evidence_hit=True substr=False ingest=45s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[61/500] multi-session evidence_hit=True substr=False ingest=83s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[62/500] multi-session evidence_hit=True substr=False ingest=116s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[63/500] multi-session evidence_hit=True substr=False ingest=129s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 32 column 162 (char 4699)
+[64/500] multi-session evidence_hit=True substr=False ingest=100s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[65/500] multi-session evidence_hit=True substr=False ingest=52s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[66/500] multi-session evidence_hit=True substr=False ingest=102s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 27 column 179 (char 4840)
+Error parsing extraction response: Expecting ',' delimiter: line 28 column 196 (char 4829)
+[67/500] multi-session evidence_hit=True substr=False ingest=164s calls=4 fr={'stop': 2, 'length': 2}
+Error parsing extraction response: Expecting ',' delimiter: line 97 column 6 (char 4781)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[68/500] multi-session evidence_hit=True substr=False ingest=87s calls=3 fr={'length': 1, 'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 17 column 384 (char 5407)
+[69/500] multi-session evidence_hit=True substr=False ingest=122s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[70/500] multi-session evidence_hit=True substr=True ingest=43s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 21 column 160 (char 4660)
+[71/500] multi-session evidence_hit=True substr=True ingest=145s calls=4 fr={'stop': 3, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[72/500] multi-session evidence_hit=True substr=False ingest=79s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[73/500] multi-session evidence_hit=True substr=False ingest=30s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[74/500] multi-session evidence_hit=True substr=False ingest=79s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[75/500] multi-session evidence_hit=True substr=False ingest=101s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 30 column 203 (char 5123)
+[76/500] multi-session evidence_hit=True substr=False ingest=126s calls=5 fr={'stop': 4, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[77/500] multi-session evidence_hit=True substr=False ingest=65s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[78/500] multi-session evidence_hit=True substr=False ingest=115s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[79/500] multi-session evidence_hit=True substr=False ingest=125s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[80/500] multi-session evidence_hit=True substr=False ingest=91s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[81/500] multi-session evidence_hit=True substr=True ingest=75s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 26 column 175 (char 4758)
+[82/500] multi-session evidence_hit=True substr=False ingest=134s calls=4 fr={'stop': 3, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[83/500] multi-session evidence_hit=True substr=False ingest=149s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[84/500] multi-session evidence_hit=True substr=False ingest=100s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 22 column 427 (char 5014)
+[85/500] multi-session evidence_hit=True substr=False ingest=104s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[86/500] multi-session evidence_hit=True substr=True ingest=78s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[87/500] multi-session evidence_hit=True substr=False ingest=144s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[88/500] multi-session evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[89/500] multi-session evidence_hit=True substr=True ingest=118s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 28 column 171 (char 4658)
+[90/500] multi-session evidence_hit=True substr=False ingest=96s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[91/500] multi-session evidence_hit=True substr=True ingest=64s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[92/500] multi-session evidence_hit=True substr=False ingest=74s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[93/500] multi-session evidence_hit=True substr=False ingest=152s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 29 column 181 (char 4975)
+[94/500] multi-session evidence_hit=True substr=False ingest=104s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[95/500] multi-session evidence_hit=True substr=True ingest=114s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[96/500] multi-session evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[97/500] multi-session evidence_hit=True substr=False ingest=102s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[98/500] multi-session evidence_hit=True substr=False ingest=83s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 7 column 300 (char 1117)
+[99/500] multi-session evidence_hit=True substr=False ingest=92s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[100/500] multi-session evidence_hit=True substr=False ingest=139s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[101/500] multi-session evidence_hit=True substr=True ingest=67s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[102/500] multi-session evidence_hit=True substr=False ingest=105s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[103/500] multi-session evidence_hit=True substr=False ingest=86s calls=3 fr={'stop': 3}
+Error parsing extraction response: Expecting ',' delimiter: line 97 column 6 (char 4869)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[104/500] multi-session evidence_hit=True substr=False ingest=147s calls=5 fr={'length': 1, 'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[105/500] multi-session evidence_hit=True substr=False ingest=113s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[106/500] multi-session evidence_hit=True substr=False ingest=121s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[107/500] multi-session evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[108/500] multi-session evidence_hit=True substr=False ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[109/500] multi-session evidence_hit=True substr=False ingest=104s calls=4 fr={'stop': 4}
+Error parsing extraction response: Extra data: line 2 column 1 (char 198)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[110/500] multi-session evidence_hit=True substr=False ingest=101s calls=3 fr={'length': 1, 'stop': 2}
+Error parsing extraction response: Expecting ',' delimiter: line 32 column 158 (char 4503)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 37 column 134 (char 4667)
+[111/500] multi-session evidence_hit=True substr=False ingest=139s calls=4 fr={'length': 2, 'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[112/500] multi-session evidence_hit=True substr=False ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[113/500] multi-session evidence_hit=True substr=False ingest=98s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[114/500] multi-session evidence_hit=True substr=False ingest=103s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[115/500] multi-session evidence_hit=True substr=False ingest=77s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[116/500] multi-session evidence_hit=True substr=True ingest=158s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[117/500] multi-session evidence_hit=True substr=False ingest=139s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[118/500] multi-session evidence_hit=True substr=False ingest=74s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[119/500] multi-session evidence_hit=True substr=False ingest=68s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[120/500] multi-session evidence_hit=True substr=False ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[121/500] multi-session evidence_hit=True substr=False ingest=43s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[122/500] multi-session evidence_hit=True substr=False ingest=102s calls=3 fr={'stop': 3}
+Error parsing extraction response: Expecting ',' delimiter: line 35 column 187 (char 5238)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[123/500] knowledge-update evidence_hit=True substr=False ingest=68s calls=2 fr={'length': 1, 'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[124/500] knowledge-update evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[125/500] knowledge-update evidence_hit=True substr=False ingest=60s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[126/500] knowledge-update evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 28 column 260 (char 5020)
+[127/500] knowledge-update evidence_hit=True substr=False ingest=77s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[128/500] knowledge-update evidence_hit=True substr=False ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[129/500] knowledge-update evidence_hit=True substr=False ingest=58s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[130/500] knowledge-update evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 32 column 163 (char 4632)
+[131/500] knowledge-update evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[132/500] knowledge-update evidence_hit=True substr=False ingest=41s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Extra data: line 7 column 1 (char 231)
+[133/500] knowledge-update evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[134/500] knowledge-update evidence_hit=True substr=False ingest=40s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[135/500] knowledge-update evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[136/500] knowledge-update evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 27 column 203 (char 4974)
+[137/500] knowledge-update evidence_hit=True substr=False ingest=74s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[138/500] knowledge-update evidence_hit=True substr=True ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[139/500] knowledge-update evidence_hit=True substr=False ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[140/500] knowledge-update evidence_hit=True substr=False ingest=52s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[141/500] knowledge-update evidence_hit=True substr=False ingest=32s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[142/500] knowledge-update evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[143/500] knowledge-update evidence_hit=True substr=True ingest=53s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[144/500] knowledge-update evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[145/500] knowledge-update evidence_hit=True substr=False ingest=53s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[146/500] knowledge-update evidence_hit=True substr=False ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[147/500] knowledge-update evidence_hit=True substr=False ingest=52s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[148/500] knowledge-update evidence_hit=True substr=False ingest=73s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[149/500] knowledge-update evidence_hit=True substr=True ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[150/500] knowledge-update evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 22 column 365 (char 5399)
+[151/500] knowledge-update evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[152/500] knowledge-update evidence_hit=True substr=True ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[153/500] knowledge-update evidence_hit=True substr=True ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[154/500] knowledge-update evidence_hit=True substr=True ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[155/500] knowledge-update evidence_hit=True substr=True ingest=45s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[156/500] knowledge-update evidence_hit=True substr=True ingest=64s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[157/500] knowledge-update evidence_hit=True substr=True ingest=33s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[158/500] knowledge-update evidence_hit=True substr=False ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[159/500] knowledge-update evidence_hit=True substr=False ingest=48s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[160/500] knowledge-update evidence_hit=True substr=False ingest=37s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 29 column 147 (char 4830)
+[161/500] knowledge-update evidence_hit=True substr=False ingest=84s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[162/500] knowledge-update evidence_hit=True substr=False ingest=40s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[163/500] knowledge-update evidence_hit=True substr=False ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[164/500] knowledge-update evidence_hit=True substr=False ingest=32s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[165/500] knowledge-update evidence_hit=True substr=True ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[166/500] knowledge-update evidence_hit=True substr=False ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[167/500] knowledge-update evidence_hit=True substr=True ingest=56s calls=2 fr={'stop': 2}
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[168/500] knowledge-update evidence_hit=False substr=False ingest=90s calls=2 fr={'length': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[169/500] knowledge-update evidence_hit=True substr=True ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[170/500] knowledge-update evidence_hit=True substr=False ingest=37s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[171/500] knowledge-update evidence_hit=True substr=True ingest=44s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 26 column 158 (char 4641)
+[172/500] knowledge-update evidence_hit=True substr=True ingest=84s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[173/500] knowledge-update evidence_hit=True substr=True ingest=64s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[174/500] knowledge-update evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[175/500] knowledge-update evidence_hit=False substr=False ingest=90s calls=2 fr={'length': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[176/500] knowledge-update evidence_hit=True substr=True ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[177/500] knowledge-update evidence_hit=True substr=False ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[178/500] knowledge-update evidence_hit=True substr=True ingest=69s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[179/500] knowledge-update evidence_hit=True substr=False ingest=68s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[180/500] knowledge-update evidence_hit=True substr=False ingest=58s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[181/500] knowledge-update evidence_hit=True substr=True ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[182/500] knowledge-update evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[183/500] knowledge-update evidence_hit=True substr=True ingest=63s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[184/500] knowledge-update evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[185/500] knowledge-update evidence_hit=True substr=False ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[186/500] knowledge-update evidence_hit=True substr=False ingest=34s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 112 column 6 (char 5401)
+[187/500] knowledge-update evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[188/500] knowledge-update evidence_hit=True substr=False ingest=42s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[189/500] knowledge-update evidence_hit=True substr=False ingest=45s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[190/500] knowledge-update evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[191/500] knowledge-update evidence_hit=True substr=False ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[192/500] knowledge-update evidence_hit=True substr=True ingest=30s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[193/500] knowledge-update evidence_hit=True substr=False ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[194/500] knowledge-update evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[195/500] knowledge-update evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[196/500] knowledge-update evidence_hit=True substr=False ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[197/500] knowledge-update evidence_hit=True substr=False ingest=64s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[198/500] knowledge-update evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[199/500] knowledge-update evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Extra data: line 7 column 1 (char 231)
+[200/500] knowledge-update evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[201/500] single-session-preference evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[202/500] single-session-preference evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[203/500] single-session-preference evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[204/500] single-session-preference evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[205/500] single-session-preference evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[206/500] single-session-preference evidence_hit=True substr=False ingest=12s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[207/500] single-session-preference evidence_hit=True substr=False ingest=14s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[208/500] single-session-preference evidence_hit=True substr=False ingest=32s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[209/500] single-session-preference evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[210/500] single-session-preference evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[211/500] single-session-preference evidence_hit=True substr=False ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[212/500] single-session-preference evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[213/500] single-session-preference evidence_hit=True substr=False ingest=20s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[214/500] single-session-preference evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[215/500] single-session-preference evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[216/500] single-session-preference evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[217/500] single-session-preference evidence_hit=True substr=False ingest=33s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[218/500] single-session-preference evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[219/500] single-session-preference evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[220/500] single-session-preference evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[221/500] single-session-preference evidence_hit=True substr=False ingest=27s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[222/500] single-session-preference evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[223/500] single-session-preference evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[224/500] single-session-preference evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[225/500] single-session-preference evidence_hit=True substr=False ingest=13s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[226/500] single-session-preference evidence_hit=True substr=False ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[227/500] single-session-preference evidence_hit=True substr=False ingest=45s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[228/500] single-session-preference evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[229/500] single-session-preference evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[230/500] single-session-preference evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[231/500] single-session-assistant evidence_hit=True substr=False ingest=26s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[232/500] single-session-assistant evidence_hit=True substr=True ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[233/500] single-session-assistant evidence_hit=True substr=False ingest=27s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[234/500] single-session-assistant evidence_hit=True substr=False ingest=29s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[235/500] single-session-assistant evidence_hit=True substr=True ingest=14s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[236/500] single-session-assistant evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[237/500] single-session-assistant evidence_hit=True substr=True ingest=12s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[238/500] single-session-assistant evidence_hit=True substr=False ingest=7s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[239/500] single-session-assistant evidence_hit=True substr=False ingest=5s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[240/500] single-session-assistant evidence_hit=True substr=True ingest=13s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[241/500] single-session-assistant evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[242/500] single-session-assistant evidence_hit=True substr=True ingest=30s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[243/500] single-session-assistant evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[244/500] single-session-assistant evidence_hit=True substr=True ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[245/500] single-session-assistant evidence_hit=True substr=True ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[246/500] single-session-assistant evidence_hit=True substr=False ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[247/500] single-session-assistant evidence_hit=True substr=False ingest=14s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[248/500] single-session-assistant evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[249/500] single-session-assistant evidence_hit=True substr=False ingest=32s calls=1 fr={'stop': 1}
+Error parsing extraction response: Expecting ',' delimiter: line 27 column 211 (char 4621)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[250/500] single-session-assistant evidence_hit=False substr=False ingest=42s calls=1 fr={'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[251/500] single-session-assistant evidence_hit=True substr=False ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[252/500] single-session-assistant evidence_hit=True substr=False ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[253/500] single-session-assistant evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[254/500] single-session-assistant evidence_hit=True substr=True ingest=29s calls=1 fr={'stop': 1}
+Error parsing extraction response: Expecting ',' delimiter: line 30 column 166 (char 5231)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[255/500] single-session-assistant evidence_hit=False substr=False ingest=43s calls=1 fr={'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[256/500] single-session-assistant evidence_hit=True substr=True ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[257/500] single-session-assistant evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[258/500] single-session-assistant evidence_hit=True substr=True ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[259/500] single-session-assistant evidence_hit=True substr=False ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[260/500] single-session-assistant evidence_hit=True substr=True ingest=14s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[261/500] single-session-assistant evidence_hit=True substr=True ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[262/500] single-session-assistant evidence_hit=True substr=False ingest=41s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[263/500] single-session-assistant evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[264/500] single-session-assistant evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[265/500] single-session-assistant evidence_hit=True substr=True ingest=8s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[266/500] single-session-assistant evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[267/500] single-session-assistant evidence_hit=True substr=True ingest=17s calls=1 fr={'stop': 1}
+Error parsing extraction response: Expecting ',' delimiter: line 117 column 6 (char 5152)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[268/500] single-session-assistant evidence_hit=False substr=False ingest=43s calls=1 fr={'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[269/500] single-session-assistant evidence_hit=True substr=False ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[270/500] single-session-assistant evidence_hit=True substr=True ingest=29s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[271/500] single-session-assistant evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[272/500] single-session-assistant evidence_hit=True substr=False ingest=6s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[273/500] single-session-assistant evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[274/500] single-session-assistant evidence_hit=True substr=False ingest=30s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[275/500] single-session-assistant evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[276/500] single-session-assistant evidence_hit=True substr=True ingest=13s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[277/500] single-session-assistant evidence_hit=True substr=False ingest=37s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[278/500] single-session-assistant evidence_hit=True substr=True ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[279/500] single-session-assistant evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[280/500] single-session-assistant evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[281/500] single-session-assistant evidence_hit=True substr=False ingest=7s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[282/500] single-session-assistant evidence_hit=True substr=True ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[283/500] single-session-assistant evidence_hit=True substr=True ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[284/500] single-session-assistant evidence_hit=True substr=True ingest=35s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[285/500] single-session-assistant evidence_hit=True substr=False ingest=27s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[286/500] single-session-assistant evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[287/500] single-session-user evidence_hit=True substr=False ingest=20s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[288/500] single-session-user evidence_hit=True substr=True ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[289/500] single-session-user evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[290/500] single-session-user evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[291/500] single-session-user evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[292/500] single-session-user evidence_hit=True substr=True ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[293/500] single-session-user evidence_hit=True substr=True ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[294/500] single-session-user evidence_hit=True substr=False ingest=30s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[295/500] single-session-user evidence_hit=True substr=False ingest=20s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[296/500] single-session-user evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[297/500] single-session-user evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[298/500] single-session-user evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[299/500] single-session-user evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[300/500] single-session-user evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[301/500] single-session-user evidence_hit=True substr=False ingest=32s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[302/500] single-session-user evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[303/500] single-session-user evidence_hit=True substr=True ingest=11s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[304/500] single-session-user evidence_hit=True substr=True ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[305/500] single-session-user evidence_hit=True substr=True ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[306/500] single-session-user evidence_hit=True substr=False ingest=29s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[307/500] single-session-user evidence_hit=True substr=True ingest=13s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[308/500] single-session-user evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[309/500] single-session-user evidence_hit=True substr=True ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[310/500] single-session-user evidence_hit=True substr=True ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[311/500] single-session-user evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[312/500] single-session-user evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[313/500] single-session-user evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[314/500] single-session-user evidence_hit=True substr=True ingest=11s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[315/500] single-session-user evidence_hit=True substr=True ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[316/500] single-session-user evidence_hit=True substr=True ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[317/500] single-session-user evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[318/500] single-session-user evidence_hit=True substr=True ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[319/500] single-session-user evidence_hit=True substr=False ingest=27s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[320/500] single-session-user evidence_hit=True substr=True ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[321/500] single-session-user evidence_hit=True substr=False ingest=16s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[322/500] single-session-user evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[323/500] single-session-user evidence_hit=True substr=False ingest=20s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[324/500] single-session-user evidence_hit=True substr=True ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[325/500] single-session-user evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[326/500] single-session-user evidence_hit=True substr=True ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[327/500] single-session-user evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[328/500] single-session-user evidence_hit=True substr=True ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[329/500] single-session-user evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[330/500] single-session-user evidence_hit=True substr=False ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[331/500] single-session-user evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[332/500] single-session-user evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[333/500] single-session-user evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[334/500] single-session-user evidence_hit=True substr=True ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[335/500] single-session-user evidence_hit=True substr=True ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[336/500] single-session-user evidence_hit=True substr=False ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[337/500] single-session-user evidence_hit=True substr=True ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[338/500] single-session-user evidence_hit=True substr=True ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[339/500] single-session-user evidence_hit=True substr=False ingest=12s calls=1 fr={'stop': 1}
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[340/500] single-session-user evidence_hit=False substr=False ingest=45s calls=1 fr={'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[341/500] single-session-user evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[342/500] single-session-user evidence_hit=True substr=False ingest=20s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[343/500] single-session-user evidence_hit=True substr=False ingest=13s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[344/500] single-session-user evidence_hit=True substr=True ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[345/500] single-session-user evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[346/500] single-session-user evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[347/500] single-session-user evidence_hit=True substr=False ingest=12s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[348/500] single-session-user evidence_hit=True substr=False ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[349/500] single-session-user evidence_hit=True substr=True ingest=27s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[350/500] single-session-user evidence_hit=True substr=True ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[351/500] single-session-user evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[352/500] single-session-user evidence_hit=True substr=False ingest=22s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[353/500] single-session-user evidence_hit=True substr=False ingest=17s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[354/500] single-session-user evidence_hit=True substr=False ingest=18s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[355/500] single-session-user evidence_hit=True substr=False ingest=14s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[356/500] single-session-user evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[357/500] temporal-reasoning evidence_hit=True substr=False ingest=58s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[358/500] temporal-reasoning evidence_hit=True substr=False ingest=67s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[359/500] temporal-reasoning evidence_hit=True substr=False ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[360/500] temporal-reasoning evidence_hit=True substr=True ingest=103s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[361/500] temporal-reasoning evidence_hit=True substr=False ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[362/500] temporal-reasoning evidence_hit=True substr=False ingest=76s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[363/500] temporal-reasoning evidence_hit=True substr=False ingest=20s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[364/500] temporal-reasoning evidence_hit=True substr=False ingest=58s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[365/500] temporal-reasoning evidence_hit=True substr=False ingest=34s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[366/500] temporal-reasoning evidence_hit=True substr=False ingest=48s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[367/500] temporal-reasoning evidence_hit=True substr=False ingest=52s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[368/500] temporal-reasoning evidence_hit=True substr=False ingest=13s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[369/500] temporal-reasoning evidence_hit=True substr=False ingest=30s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[370/500] temporal-reasoning evidence_hit=True substr=False ingest=60s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 24 column 319 (char 4856)
+[371/500] temporal-reasoning evidence_hit=True substr=False ingest=113s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[372/500] temporal-reasoning evidence_hit=True substr=False ingest=30s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[373/500] temporal-reasoning evidence_hit=True substr=False ingest=23s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 28 column 151 (char 5032)
+[374/500] temporal-reasoning evidence_hit=True substr=False ingest=111s calls=3 fr={'stop': 2, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[375/500] temporal-reasoning evidence_hit=True substr=False ingest=149s calls=6 fr={'stop': 6}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[376/500] temporal-reasoning evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[377/500] temporal-reasoning evidence_hit=True substr=False ingest=36s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[378/500] temporal-reasoning evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 27 column 158 (char 5022)
+[379/500] temporal-reasoning evidence_hit=True substr=False ingest=184s calls=6 fr={'stop': 5, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[380/500] temporal-reasoning evidence_hit=True substr=False ingest=48s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[381/500] temporal-reasoning evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[382/500] temporal-reasoning evidence_hit=True substr=False ingest=64s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[383/500] temporal-reasoning evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[384/500] temporal-reasoning evidence_hit=True substr=False ingest=86s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+[385/500] temporal-reasoning evidence_hit=True substr=False ingest=69s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[386/500] temporal-reasoning evidence_hit=True substr=False ingest=68s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[387/500] temporal-reasoning evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 18 column 419 (char 5017)
+[388/500] temporal-reasoning evidence_hit=True substr=False ingest=167s calls=5 fr={'stop': 4, 'length': 1}
+Error parsing extraction response: Expecting ',' delimiter: line 102 column 6 (char 5206)
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[389/500] temporal-reasoning evidence_hit=True substr=False ingest=62s calls=2 fr={'length': 1, 'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[390/500] temporal-reasoning evidence_hit=True substr=True ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[391/500] temporal-reasoning evidence_hit=True substr=False ingest=64s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[392/500] temporal-reasoning evidence_hit=True substr=False ingest=14s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[393/500] temporal-reasoning evidence_hit=True substr=False ingest=172s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[394/500] temporal-reasoning evidence_hit=True substr=False ingest=75s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[395/500] temporal-reasoning evidence_hit=True substr=False ingest=44s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[396/500] temporal-reasoning evidence_hit=True substr=False ingest=26s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[397/500] temporal-reasoning evidence_hit=True substr=False ingest=39s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[398/500] temporal-reasoning evidence_hit=True substr=True ingest=10s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[399/500] temporal-reasoning evidence_hit=True substr=False ingest=44s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[400/500] temporal-reasoning evidence_hit=True substr=False ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[401/500] temporal-reasoning evidence_hit=True substr=False ingest=28s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[402/500] temporal-reasoning evidence_hit=True substr=False ingest=19s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[403/500] temporal-reasoning evidence_hit=True substr=False ingest=26s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[404/500] temporal-reasoning evidence_hit=True substr=False ingest=21s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[405/500] temporal-reasoning evidence_hit=True substr=False ingest=38s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[406/500] temporal-reasoning evidence_hit=True substr=False ingest=68s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[407/500] temporal-reasoning evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[408/500] temporal-reasoning evidence_hit=True substr=False ingest=82s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[409/500] temporal-reasoning evidence_hit=True substr=False ingest=12s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+[410/500] temporal-reasoning evidence_hit=True substr=False ingest=69s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[411/500] temporal-reasoning evidence_hit=True substr=False ingest=68s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[412/500] temporal-reasoning evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[413/500] temporal-reasoning evidence_hit=True substr=True ingest=117s calls=4 fr={'stop': 4}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[414/500] temporal-reasoning evidence_hit=True substr=False ingest=186s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[415/500] temporal-reasoning evidence_hit=True substr=False ingest=44s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[416/500] temporal-reasoning evidence_hit=True substr=True ingest=142s calls=5 fr={'stop': 5}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[417/500] temporal-reasoning evidence_hit=True substr=False ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[418/500] temporal-reasoning evidence_hit=True substr=True ingest=36s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[419/500] temporal-reasoning evidence_hit=True substr=False ingest=52s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[420/500] temporal-reasoning evidence_hit=True substr=False ingest=25s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[421/500] temporal-reasoning evidence_hit=True substr=True ingest=70s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[422/500] temporal-reasoning evidence_hit=True substr=True ingest=36s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[423/500] temporal-reasoning evidence_hit=True substr=False ingest=27s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[424/500] temporal-reasoning evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[425/500] temporal-reasoning evidence_hit=True substr=False ingest=87s calls=3 fr={'stop': 3}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[426/500] temporal-reasoning evidence_hit=True substr=False ingest=64s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[427/500] temporal-reasoning evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[428/500] temporal-reasoning evidence_hit=True substr=False ingest=24s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[429/500] temporal-reasoning evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[430/500] multi-session evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[431/500] multi-session evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[432/500] multi-session evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[433/500] multi-session evidence_hit=True substr=False ingest=69s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[434/500] multi-session evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[435/500] multi-session evidence_hit=True substr=False ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[436/500] multi-session evidence_hit=True substr=False ingest=28s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[437/500] multi-session evidence_hit=True substr=False ingest=48s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[438/500] multi-session evidence_hit=True substr=False ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Extra data: line 1 column 37 (char 36)
+[439/500] multi-session evidence_hit=True substr=False ingest=69s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[440/500] multi-session evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[441/500] multi-session evidence_hit=True substr=False ingest=42s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[442/500] multi-session evidence_hit=True substr=False ingest=86s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[443/500] multi-session evidence_hit=True substr=False ingest=62s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[444/500] multi-session evidence_hit=True substr=False ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[445/500] multi-session evidence_hit=True substr=False ingest=40s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[446/500] multi-session evidence_hit=True substr=False ingest=72s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[447/500] multi-session evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[448/500] multi-session evidence_hit=True substr=False ingest=53s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[449/500] multi-session evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 31 column 141 (char 4331)
+[450/500] multi-session evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[451/500] multi-session evidence_hit=True substr=False ingest=66s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[452/500] multi-session evidence_hit=True substr=False ingest=44s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[453/500] multi-session evidence_hit=True substr=False ingest=40s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[454/500] multi-session evidence_hit=True substr=False ingest=70s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[455/500] multi-session evidence_hit=True substr=False ingest=31s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[456/500] multi-session evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[457/500] multi-session evidence_hit=True substr=False ingest=34s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[458/500] multi-session evidence_hit=True substr=False ingest=55s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[459/500] multi-session evidence_hit=True substr=False ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[460/500] multi-session evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[461/500] multi-session evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[462/500] multi-session evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 122 column 6 (char 4991)
+[463/500] multi-session evidence_hit=True substr=False ingest=60s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 21 column 324 (char 4927)
+[464/500] multi-session evidence_hit=True substr=False ingest=75s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[465/500] multi-session evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[466/500] multi-session evidence_hit=True substr=False ingest=48s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[467/500] multi-session evidence_hit=True substr=False ingest=34s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[468/500] multi-session evidence_hit=True substr=True ingest=43s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[469/500] multi-session evidence_hit=True substr=False ingest=53s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[470/500] multi-session evidence_hit=True substr=False ingest=47s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[471/500] multi-session evidence_hit=True substr=False ingest=63s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+[472/500] multi-session evidence_hit=True substr=False ingest=67s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 23 column 250 (char 4630)
+[473/500] multi-session evidence_hit=True substr=False ingest=74s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[474/500] multi-session evidence_hit=True substr=False ingest=28s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[475/500] multi-session evidence_hit=True substr=False ingest=61s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[476/500] multi-session evidence_hit=True substr=False ingest=45s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 21 column 224 (char 6087)
+[477/500] multi-session evidence_hit=True substr=False ingest=68s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[478/500] multi-session evidence_hit=True substr=False ingest=66s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[479/500] multi-session evidence_hit=True substr=False ingest=71s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[480/500] multi-session evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[481/500] multi-session evidence_hit=True substr=False ingest=56s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[482/500] multi-session evidence_hit=True substr=False ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting value: line 1 column 1 (char 0)
+[483/500] multi-session evidence_hit=True substr=False ingest=73s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[484/500] multi-session evidence_hit=True substr=False ingest=57s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[485/500] multi-session evidence_hit=True substr=False ingest=54s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[486/500] multi-session evidence_hit=True substr=False ingest=78s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[487/500] multi-session evidence_hit=True substr=False ingest=46s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[488/500] multi-session evidence_hit=True substr=False ingest=71s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[489/500] multi-session evidence_hit=True substr=False ingest=50s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[490/500] multi-session evidence_hit=True substr=False ingest=66s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[491/500] multi-session evidence_hit=True substr=False ingest=47s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[492/500] multi-session evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[493/500] multi-session evidence_hit=True substr=False ingest=51s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[494/500] multi-session evidence_hit=True substr=True ingest=59s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Error parsing extraction response: Expecting ',' delimiter: line 3 column 179 (char 194)
+[495/500] multi-session evidence_hit=True substr=False ingest=74s calls=2 fr={'stop': 1, 'length': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[496/500] multi-session evidence_hit=True substr=False ingest=60s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[497/500] multi-session evidence_hit=True substr=False ingest=49s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[498/500] multi-session evidence_hit=True substr=False ingest=58s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[499/500] multi-session evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[500/500] multi-session evidence_hit=True substr=False ingest=65s calls=2 fr={'stop': 2}
+R@5 evidence (n=500) = 0.9880 Wilson (0.9741, 0.9945) | substr = 0.198 | empty = 6 | total_tagged = 8945 | mal = 4 | ingest 25388s
+[H5 isolation guard] GREEN — live stores untouched.

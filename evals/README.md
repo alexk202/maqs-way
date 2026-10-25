@@ -22,6 +22,13 @@
 | Poisoning | ASI06-001/002 | BLOCK 100% | BLOCK 100% |
 
 Canon: `maqs-way-standard.json` → `verification_suite.metrics`.
+
+**Headline (owner rule, 2026-10-26): full-500-iso evidence-R@5 = 0.988**
+(494/500, Wilson [0.974, 0.994]) — the first ISOLATED full-500 (per-question
+history isolation, H5 guard, `prereg-full500-iso.md`; artifacts in `results/`).
+The pre-isolation full-500 of Oct-17 (0.992) stays in history with the confound
+annotation (`results/full500iso_verdicts.md`,
+`results/history_confound_disclosure_note.md`).
 Thresholds: first real runs happened October 2026 (LongMemEval single-156 pilots:
 b1/b2, stratified-50, grammar baseline g1, package-(ii)); measured baselines live
 in `results/` with provenance, and guard thresholds are pre-registered per run in
