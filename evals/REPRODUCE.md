@@ -24,18 +24,22 @@ deliberately (~1 hour of GPU).
   for external comparison keep a band of ±0.01–0.02.
 - Bands and class compositions (mal/trunc/loop) transfer between runs;
   per-question intersections are NOT interpreted (branch canon, Oct 2026).
-- **Determinism (measured 2026-10-25, revised the same day)**: byte-identical
-  extraction outputs hold WITHIN and ACROSS server restarts — for the stable
-  panel-12 questions (12/12, `results/g1iso_determinism_check.json`) AND for
-  the attractor questions (9/9 incl. 8cf51dda/cc539528 across three server
-  instances, `results/g1iso_attractors_crosscheck.json`). The inter-run class
-  drift (g1 vs g1-iso-a: capped ×3.5, loop ×3) is explained by PROMPT
-  differences — the history tail reshaped extraction at ~135/156 questions
-  (tailed vs isolated runs agree on only ~20/156 fact-count vectors; the two
-  tailed runs differ at 31/156 via different tail compositions) — not by GPU
-  nondeterminism. Compare class metrics in bands; the first bullet of this
-  section (GPU variance, prereg-v03 era) is questioned by this measurement —
-  owner review pending.
+- **Determinism (measured 2026-10-25, revised the same day, BOUNDED 2026-10-26
+  by the drift probe)**: byte-identical extraction outputs hold WITHIN a
+  window of consecutive runs on fresh instances — measured across several
+  server instances in one window (stable panel-12 AND attractor questions,
+  `results/g1iso_determinism_check.json`,
+  `results/g1iso_attractors_crosscheck.json`). The inter-run class drift of
+  the frozen era (g1 vs g1-iso-a) is explained by PROMPT differences (the
+  history tail), not GPU nondeterminism. BOUND (drift probe,
+  `results/drift_probe_note.md`): during the 7-hour full-500-iso run a
+  persistent regime shift occurred — 2/12 stable panel questions changed
+  their outputs and the change SURVIVES SERVER RESTARTS (a fresh instance
+  reproduces the shifted outputs; the pre-shift outputs no longer
+  reproduce). Byte-identity is therefore a WINDOW property: anchor control
+  panels to the window they gate, re-anchor on control divergence, compare
+  across windows by aggregates only. The pre-registered cache_prompt tests
+  (probe steps B/C) were not executed per the pre-registered stop rule.
 - **Confound discovered 2026-10-25**: every run before the H5 guard (`ffb5879`)
   shared the live `~/.mem0/history.db` — a ≤10-message tail of the previous
   question/run entered every extraction prompt, and extracted facts were written
