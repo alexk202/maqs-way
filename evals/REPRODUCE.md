@@ -20,6 +20,13 @@ deliberately (~1 hour of GPU).
   for external comparison keep a band of ±0.01–0.02.
 - Bands and class compositions (mal/trunc/loop) transfer between runs;
   per-question intersections are NOT interpreted (branch canon, Oct 2026).
+- **Determinism (measured 2026-10-25)**: byte-identical extraction outputs hold
+  WITHIN and ACROSS server restarts for the stable panel-12 questions (12/12 in
+  every comparison, seed 42, T=0; `results/g1iso_determinism_check.json`). The
+  class metrics loop/capped/links still drift BETWEEN full runs (g1 vs its
+  same-config replicate g1-iso-a: capped ×3.5, loop ×3, links +50%) — the drift
+  concentrates in metastable attractor questions that the panel excludes by
+  design, so compare class metrics in bands, never by single-run point values.
 - **Confound discovered 2026-10-25**: every run before the H5 guard (`ffb5879`)
   shared the live `~/.mem0/history.db` — a ≤10-message tail of the previous
   question/run entered every extraction prompt, and extracted facts were written

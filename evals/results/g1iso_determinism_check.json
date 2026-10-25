@@ -1,0 +1,13 @@
+{
+  "provenance": {
+    "date": "2026-10-25",
+    "experiment": "owner-sanctioned determinism check: panel-12 -> server restart -> panel-12",
+    "servers": "A = llama-server started 15:44 local; B = fresh process started 16:05 local (same binary, model md5 6eb593f3..., ctx 32768, seed 42, Vulkan1)",
+    "caveat": "the panel-12 EXCLUDES loop/comp-failure questions by design (verbatim_v12 pair-panel rule), so it tests the STABLE questions only"
+  },
+  "within_A": 12,
+  "within_B": 12,
+  "cross_instance_raw_identical": 12,
+  "cross_instance_stored_identical": 12,
+  "verdict": "byte-identity holds WITHIN and ACROSS server restarts for the stable panel questions; the owner's hypothesized 'only within one instance' line is NOT confirmed as written; the g1 vs g1-iso-a class drift (capped x3.5, loop x3, links +50% at identical prompts) concentrates in metastable attractor questions excluded from the panel -> class metrics compared in bands"
+}
