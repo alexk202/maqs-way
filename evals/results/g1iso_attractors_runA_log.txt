@@ -1,0 +1,41 @@
+[H5 isolation guard] snapshot: 3 roots, 5 files (before __main__.main)
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+[pass 1/2][1/9] 8cf51dda (attractor_loop) calls=1 ingest=17s facts=[9]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][2/9] cc539528 (attractor_loop) calls=1 ingest=20s facts=[10]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][3/9] 118b2229 (attractor_compfail) calls=1 ingest=9s facts=[5]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][4/9] 853b0a1d (attractor_compfail) calls=1 ingest=9s facts=[3]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][5/9] e8a79c70 (attractor_compfail) calls=1 ingest=13s facts=[6]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][6/9] e48988bc (attractor_compfail) calls=1 ingest=9s facts=[6]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][7/9] 4fd1909e (attractor_capped_clean) calls=1 ingest=25s facts=[18]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][8/9] 75832dbd (control_stable) calls=1 ingest=18s facts=[10]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][9/9] e47becba (control_stable) calls=1 ingest=21s facts=[13]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][1/9] 8cf51dda (attractor_loop) calls=1 ingest=13s facts=[9]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][2/9] cc539528 (attractor_loop) calls=1 ingest=20s facts=[10]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][3/9] 118b2229 (attractor_compfail) calls=1 ingest=9s facts=[5]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][4/9] 853b0a1d (attractor_compfail) calls=1 ingest=9s facts=[3]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][5/9] e8a79c70 (attractor_compfail) calls=1 ingest=13s facts=[6]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][6/9] e48988bc (attractor_compfail) calls=1 ingest=9s facts=[6]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][7/9] 4fd1909e (attractor_capped_clean) calls=1 ingest=25s facts=[18]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][8/9] 75832dbd (control_stable) calls=1 ingest=18s facts=[10]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][9/9] e47becba (control_stable) calls=1 ingest=21s facts=[13]
+ATTRACTORS REPRO (within-instance): all 9/9, attractors 7/7, controls 2/2
+[H5 isolation guard] GREEN — live stores untouched.

@@ -1,0 +1,124 @@
+{
+  "provenance": {
+    "date": "2026-10-25",
+    "experiment": "owner-sanctioned attractor determinism check: 6 loop/comp-fail attractors (verbatim-panel exclusion set) + clean-capped 4fd1909e + 2 stable controls; 2 passes per instance; 2 fresh server instances + comparison vs g1-iso-b's earlier instance",
+    "config": "g1-iso-b exact (per-question history isolation, schema 31, cap 2000, T=0, server seed 42)"
+  },
+  "within_instA": 9,
+  "within_instB": 9,
+  "cross_instance": [
+    {
+      "q_id": "8cf51dda",
+      "kind": "attractor_loop",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "cc539528",
+      "kind": "attractor_loop",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "118b2229",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "853b0a1d",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "e8a79c70",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "e48988bc",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "4fd1909e",
+      "kind": "attractor_capped_clean",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "75832dbd",
+      "kind": "control_stable",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    },
+    {
+      "q_id": "e47becba",
+      "kind": "control_stable",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true
+    }
+  ],
+  "vs_g1iso_b_instance": [
+    {
+      "q_id": "8cf51dda",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "cc539528",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "118b2229",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "853b0a1d",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "e8a79c70",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "e48988bc",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "4fd1909e",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "75832dbd",
+      "stored_identical_to_g1iso_b": true
+    },
+    {
+      "q_id": "e47becba",
+      "stored_identical_to_g1iso_b": true
+    }
+  ],
+  "three_way_facts_analysis": {
+    "agreement_g1_vs_iso_a_both_tailed": 125,
+    "agreement_iso_a_vs_iso_b": 20,
+    "agreement_g1_vs_iso_b": 21,
+    "capped": {
+      "g1": 2,
+      "iso_a": 7,
+      "iso_b": 3
+    },
+    "reading": "the model+server is byte-deterministic at fixed prompts (attractors included); the tailed runs differ from the isolated one at ~135/156 questions' fact counts -- the history tail RESHAPED extraction globally, not marginally; the two tailed runs differ at 31/156 (different tail composition: q0 fundamentally empty-vs-foreign, tie-pick differences elsewhere) -- explaining the capped/loop class drift WITHOUT any GPU nondeterminism"
+  },
+  "verdict": "byte-identity confirmed within and ACROSS server instances INCLUDING the attractor questions; the historical inter-run class drift is attributed to history-tail prompt differences, not GPU; the older 'GPU nondeterminism' caveat (REPRODUDE sec 0 first bullet, prereg-v03 era) is questioned by this measurement -- owner review requested"
+}

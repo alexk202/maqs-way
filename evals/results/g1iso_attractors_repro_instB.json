@@ -1,0 +1,765 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8085/v1",
+    "ctx": 32768,
+    "seed": 42,
+    "schema_sha256": "7a371d7a4867173fe02d0b9e003aeea204f60a6c0adb512b6b2b12d392992e9f",
+    "max_items": 31,
+    "max_tokens": 2000,
+    "repeat_penalty": 1.0,
+    "isolation": "per-question history (g1-iso-b config)",
+    "date": "2026-10-25T14:37:26+00:00",
+    "label": "attractor determinism check (owner-sanctioned follow-up)",
+    "question_set": [
+      {
+        "q8": "8cf51dda",
+        "kind": "attractor_loop"
+      },
+      {
+        "q8": "cc539528",
+        "kind": "attractor_loop"
+      },
+      {
+        "q8": "118b2229",
+        "kind": "attractor_compfail"
+      },
+      {
+        "q8": "853b0a1d",
+        "kind": "attractor_compfail"
+      },
+      {
+        "q8": "e8a79c70",
+        "kind": "attractor_compfail"
+      },
+      {
+        "q8": "e48988bc",
+        "kind": "attractor_compfail"
+      },
+      {
+        "q8": "4fd1909e",
+        "kind": "attractor_capped_clean"
+      },
+      {
+        "q8": "75832dbd",
+        "kind": "control_stable"
+      },
+      {
+        "q8": "e47becba",
+        "kind": "control_stable"
+      }
+    ]
+  },
+  "identical_all": 9,
+  "of": 9,
+  "identical_attractors": 7,
+  "of_attractors": 7,
+  "identical_controls": 2,
+  "of_controls": 2,
+  "per_question": [
+    {
+      "q_id": "8cf51dda",
+      "kind": "attractor_loop",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        9
+      ],
+      "facts_p2": [
+        9
+      ],
+      "unique_p1": [
+        9
+      ],
+      "unique_p2": [
+        9
+      ]
+    },
+    {
+      "q_id": "cc539528",
+      "kind": "attractor_loop",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        10
+      ],
+      "facts_p2": [
+        10
+      ],
+      "unique_p1": [
+        10
+      ],
+      "unique_p2": [
+        10
+      ]
+    },
+    {
+      "q_id": "118b2229",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        5
+      ],
+      "facts_p2": [
+        5
+      ],
+      "unique_p1": [
+        5
+      ],
+      "unique_p2": [
+        5
+      ]
+    },
+    {
+      "q_id": "853b0a1d",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        3
+      ],
+      "facts_p2": [
+        3
+      ],
+      "unique_p1": [
+        3
+      ],
+      "unique_p2": [
+        3
+      ]
+    },
+    {
+      "q_id": "e8a79c70",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        6
+      ],
+      "facts_p2": [
+        6
+      ],
+      "unique_p1": [
+        6
+      ],
+      "unique_p2": [
+        6
+      ]
+    },
+    {
+      "q_id": "e48988bc",
+      "kind": "attractor_compfail",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        6
+      ],
+      "facts_p2": [
+        6
+      ],
+      "unique_p1": [
+        6
+      ],
+      "unique_p2": [
+        6
+      ]
+    },
+    {
+      "q_id": "4fd1909e",
+      "kind": "attractor_capped_clean",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        18
+      ],
+      "facts_p2": [
+        18
+      ],
+      "unique_p1": [
+        18
+      ],
+      "unique_p2": [
+        18
+      ]
+    },
+    {
+      "q_id": "75832dbd",
+      "kind": "control_stable",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        10
+      ],
+      "facts_p2": [
+        10
+      ],
+      "unique_p1": [
+        9
+      ],
+      "unique_p2": [
+        9
+      ]
+    },
+    {
+      "q_id": "e47becba",
+      "kind": "control_stable",
+      "raw_identical": true,
+      "stored_identical": true,
+      "frames_identical": true,
+      "byte_identical": true,
+      "facts_p1": [
+        13
+      ],
+      "facts_p2": [
+        13
+      ],
+      "unique_p1": [
+        13
+      ],
+      "unique_p2": [
+        13
+      ]
+    }
+  ],
+  "passes": [
+    [
+      {
+        "q_id": "8cf51dda",
+        "kind": "attractor_loop",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1650,
+            "facts": 9,
+            "capped": false,
+            "unique": 9
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is writing a grants aim page on molecular subtypes and endometrial cancer\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Endometrial cancer is the most common gynecological malignancy in developed countries and its incidence is increasing worldwide\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"The survival rate for advanced stages of endometrial cancer remains poor despite advances in surgical and radiation therapy\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User aims to identify and characterize molecular subtypes of endometrial cancer and investigate their clinical and biological significance\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User will perform comprehensive genomic and transcriptomic analysis of endometrial cancer samples using next-generation sequencing technologies\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User will use unsupervised and supervised machine learning approaches to identify molecular subtypes of endometrial cancer\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User will develop biomarkers for the early detection and prognosis of endometrial cancer based on the identified molecular subtypes\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"The proposed research will provide new insights into the molecular mechanisms underlying the development and progression of endometrial cancer\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"The research aims to improve diagnosis and treatment of endometrial cancer by identifying novel molecular subtypes and developing biomarkers\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Endometrial cancer is the most common gynecological malignancy in developed countries and its incidence is increasing worldwide",
+          "The proposed research will provide new insights into the molecular mechanisms underlying the development and progression of endometrial cancer",
+          "The research aims to improve diagnosis and treatment of endometrial cancer by identifying novel molecular subtypes and developing biomarkers",
+          "The survival rate for advanced stages of endometrial cancer remains poor despite advances in surgical and radiation therapy",
+          "User aims to identify and characterize molecular subtypes of endometrial cancer and investigate their clinical and biological significance",
+          "User is writing a grants aim page on molecular subtypes and endometrial cancer",
+          "User will develop biomarkers for the early detection and prognosis of endometrial cancer based on the identified molecular subtypes",
+          "User will perform comprehensive genomic and transcriptomic analysis of endometrial cancer samples using next-generation sequencing technologies",
+          "User will use unsupervised and supervised machine learning approaches to identify molecular subtypes of endometrial cancer"
+        ],
+        "ingest_s": 17.3
+      },
+      {
+        "q_id": "cc539528",
+        "kind": "attractor_loop",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2610,
+            "facts": 10,
+            "capped": false,
+            "unique": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Front-end web development involves creating the user interface and designing the visual elements of a website or an application that users interact with.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Back-end web development refers to the server-side of web development, including programming and database management that goes on behind the scenes.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"Front-end developers are responsible for creating the visual elements and designing the user interface of a website or application, while back-end developers handle the server-side programming that powers the functionality of the website or application.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Front-end and back-end development require different skill sets, but there is some overlap between the two, with knowledge of programming languages like HTML, CSS, and JavaScript being essential for both.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Being a full-stack developer means having skills and experience in both front-end and back-end development, which can be an advantage in some ways, but also requires constantly keeping up with the latest technology and trends in both areas.\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"To become a full-stack developer, start with the basics of web development, including HTML, CSS, and JavaScript, and then learn a back-end programming language, such as Ruby, Python, or PHP, and build projects that incorporate both front-end and back-end development.\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"Staying up-to-date with new technologies and trends in web development is crucial for full-stack developers, and joining online communities or attending meetups can be helpful for networking and learning from others.\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"Codecademy, FreeCodeCamp, and Udemy are recommended resources for learning front-end development, while NodeSchool, Udacity, and Coursera are recommended for back-end development.\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"Front-end and back-end development are essential for building a successful web application, with front-end developers focusing on the user-facing part and back-end developers handling the behind-the-scenes functionality.\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"Becoming a full-stack developer requires time and practice, but with dedication and the right resources, it is possible to master both front-end and back-end development.\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Back-end web development refers to the server-side of web development, including programming and database management that goes on behind the scenes.",
+          "Becoming a full-stack developer requires time and practice, but with dedication and the right resources, it is possible to master both front-end and back-end development.",
+          "Being a full-stack developer means having skills and experience in both front-end and back-end development, which can be an advantage in some ways, but also requires constantly keeping up with the latest technology and trends in both areas.",
+          "Codecademy, FreeCodeCamp, and Udemy are recommended resources for learning front-end development, while NodeSchool, Udacity, and Coursera are recommended for back-end development.",
+          "Front-end and back-end development are essential for building a successful web application, with front-end developers focusing on the user-facing part and back-end developers handling the behind-the-scenes functionality.",
+          "Front-end and back-end development require different skill sets, but there is some overlap between the two, with knowledge of programming languages like HTML, CSS, and JavaScript being essential for both.",
+          "Front-end developers are responsible for creating the visual elements and designing the user interface of a website or application, while back-end developers handle the server-side programming that powers the functionality of the website or application.",
+          "Front-end web development involves creating the user interface and designing the visual elements of a website or an application that users interact with.",
+          "Staying up-to-date with new technologies and trends in web development is crucial for full-stack developers, and joining online communities or attending meetups can be helpful for networking and learning from others.",
+          "To become a full-stack developer, start with the basics of web development, including HTML, CSS, and JavaScript, and then learn a back-end programming language, such as Ruby, Python, or PHP, and build projects that incorporate both front-end and back-end development."
+        ],
+        "ingest_s": 20.0
+      },
+      {
+        "q_id": "118b2229",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 839,
+            "facts": 5,
+            "capped": false,
+            "unique": 5
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User listens to audiobooks during daily commutes, which take 45 minutes each way, and finds them more engaging and memorable than e-books\"},\n    {\"id\": \"1\", \"text\": \"User takes notes while listening to audiobooks, especially non-fiction books with valuable insights or information, to reinforce learning and retention\"},\n    {\"id\": \"2\", \"text\": \"User notices that audiobooks improve retention and recall due to dual coding, emotional connection, pacing and rhythm, and multitasking\"},\n    {\"id\": \"3\", \"text\": \"User's note-taking strategy involves actively engaging with material, processing information deeply, identifying key takeaways, and reviewing and reflecting on notes\"},\n    {\"id\": \"4\", \"text\": \"User's observation date is October 25, 2026, and current date is also October 25, 2026\"}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User listens to audiobooks during daily commutes, which take 45 minutes each way, and finds them more engaging and memorable than e-books",
+          "User notices that audiobooks improve retention and recall due to dual coding, emotional connection, pacing and rhythm, and multitasking",
+          "User takes notes while listening to audiobooks, especially non-fiction books with valuable insights or information, to reinforce learning and retention",
+          "User's note-taking strategy involves actively engaging with material, processing information deeply, identifying key takeaways, and reviewing and reflecting on notes",
+          "User's observation date is October 25, 2026, and current date is also October 25, 2026"
+        ],
+        "ingest_s": 9.5
+      },
+      {
+        "q_id": "853b0a1d",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 776,
+            "facts": 3,
+            "capped": false,
+            "unique": 3
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User has a silver necklace given by her grandma on her 18th birthday, which she lost at a friend's house during a sleepover two months ago, and is still hoping to find it\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User's parents gave her pearl earrings when she graduated from high school, which she associates with good luck and important milestones, and wore on the day of her stats final three weeks ago\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User borrowed a gold chain with a tiny diamond cross pendant from her mom, which she needs to ask her mom about the small silver clasp she used to fix the chain\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User borrowed a gold chain with a tiny diamond cross pendant from her mom, which she needs to ask her mom about the small silver clasp she used to fix the chain",
+          "User has a silver necklace given by her grandma on her 18th birthday, which she lost at a friend's house during a sleepover two months ago, and is still hoping to find it",
+          "User's parents gave her pearl earrings when she graduated from high school, which she associates with good luck and important milestones, and wore on the day of her stats final three weeks ago"
+        ],
+        "ingest_s": 8.9
+      },
+      {
+        "q_id": "e8a79c70",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1340,
+            "facts": 6,
+            "capped": false,
+            "unique": 6
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"A classic French omelette requires 2-3 eggs, a pinch of salt, 1 tablespoon of unsalted butter, and 1 tablespoon of finely chopped herbs (optional) to make\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"To make a French omelette, whisk the eggs with a pinch of salt until the mixture is well combined, then heat a nonstick skillet over medium-high heat and add 1 tablespoon of unsalted butter\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"The steps to make a French omelette include whisking the eggs, heating the skillet, adding butter, pouring in the egg mixture, letting it cook, folding the omelette, and serving it immediately\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"To make a French omelette fluffy and light, whisk the eggs well, use a nonstick skillet, keep the heat medium-high, don't overfill the omelette, fold it gently, and serve immediately\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Some recommended fillings for a classic French omelette include cheese, ham, mushrooms, spinach, tomatoes, and herbs\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Some popular filling combinations for a French omelette include ham and cheese, mushroom and cheese, spinach and feta, tomato and basil, and smoked salmon and dill\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "A classic French omelette requires 2-3 eggs, a pinch of salt, 1 tablespoon of unsalted butter, and 1 tablespoon of finely chopped herbs (optional) to make",
+          "Some popular filling combinations for a French omelette include ham and cheese, mushroom and cheese, spinach and feta, tomato and basil, and smoked salmon and dill",
+          "Some recommended fillings for a classic French omelette include cheese, ham, mushrooms, spinach, tomatoes, and herbs",
+          "The steps to make a French omelette include whisking the eggs, heating the skillet, adding butter, pouring in the egg mixture, letting it cook, folding the omelette, and serving it immediately",
+          "To make a French omelette fluffy and light, whisk the eggs well, use a nonstick skillet, keep the heat medium-high, don't overfill the omelette, fold it gently, and serve immediately",
+          "To make a French omelette, whisk the eggs with a pinch of salt until the mixture is well combined, then heat a nonstick skillet over medium-high heat and add 1 tablespoon of unsalted butter"
+        ],
+        "ingest_s": 12.7
+      },
+      {
+        "q_id": "e48988bc",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1290,
+            "facts": 6,
+            "capped": false,
+            "unique": 6
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User asked about the company's environmentally responsible supply chain practices\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Assistant explained common practices for environmentally responsible supply chains, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User requested an example of a company that has successfully implemented environmentally responsible practices in its supply chain\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Assistant provided Patagonia as an example of a company that has implemented environmentally responsible practices, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User praised Patagonia for its commitment to sustainability and environmental responsibility in its supply chain\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Assistant agreed with the user that more companies should follow Patagonia's lead and prioritize sustainability in their supply chain practices\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Assistant agreed with the user that more companies should follow Patagonia's lead and prioritize sustainability in their supply chain practices",
+          "Assistant explained common practices for environmentally responsible supply chains, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations",
+          "Assistant provided Patagonia as an example of a company that has implemented environmentally responsible practices, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations",
+          "User asked about the company's environmentally responsible supply chain practices",
+          "User praised Patagonia for its commitment to sustainability and environmental responsibility in its supply chain",
+          "User requested an example of a company that has successfully implemented environmentally responsible practices in its supply chain"
+        ],
+        "ingest_s": 9.4
+      },
+      {
+        "q_id": "4fd1909e",
+        "kind": "attractor_capped_clean",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2784,
+            "facts": 18,
+            "capped": false,
+            "unique": 18
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning their summer concert schedule and wants to keep track of upcoming shows.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User has tickets to see the Jonas Brothers at the TD Garden on July 17th and The Lumineers at the House of Blues on August 20th.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering attending a music festival in Rhode Island but hasn't looked into tickets yet.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User attended an Imagine Dragons concert at the Xfinity Center on June 15th and enjoyed it.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User is thinking about volunteering at another music festival in the area.\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is open to traveling within a few hours of Boston and is not picky about the festival type.\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User had a great experience volunteering at the Harvard Athletic Complex last month and would like to do something similar.\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"User is interested in volunteering at the XPoNential Music Festival in Camden, NJ on July 26-28.\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"User is also interested in volunteering at the Green River Festival in Greenfield, MA on July 12-14.\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"User is considering volunteering at the Levitate Music and Arts Festival in Marshfield, MA on July 10-12.\", \"linked_memory_ids\": []},\n    {\"id\": \"10\", \"text\": \"User is looking for information on volunteer opportunities and application processes for each festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"11\", \"text\": \"User is interested in learning more about the atmosphere, lineup, and activities at each festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"12\", \"text\": \"User is considering the perks and volunteer roles available at each festival when deciding which one to volunteer at.\", \"linked_memory_ids\": []},\n    {\"id\": \"13\", \"text\": \"User is thinking about the relaxed and family-friendly atmosphere at the XPoNential Music Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"14\", \"text\": \"User is considering the variety of volunteer roles available at the XPoNential Music Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"15\", \"text\": \"User is interested in the lineup and activities at the Green River Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"16\", \"text\": \"User is considering the volunteer application process and perks at the Levitate Music and Arts Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"17\", \"text\": \"User is thinking about the atmosphere and activities at the Levitate Music and Arts Festival.\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User attended an Imagine Dragons concert at the Xfinity Center on June 15th and enjoyed it.",
+          "User had a great experience volunteering at the Harvard Athletic Complex last month and would like to do something similar.",
+          "User has tickets to see the Jonas Brothers at the TD Garden on July 17th and The Lumineers at the House of Blues on August 20th.",
+          "User is also interested in volunteering at the Green River Festival in Greenfield, MA on July 12-14.",
+          "User is considering attending a music festival in Rhode Island but hasn't looked into tickets yet.",
+          "User is considering the perks and volunteer roles available at each festival when deciding which one to volunteer at.",
+          "User is considering the variety of volunteer roles available at the XPoNential Music Festival.",
+          "User is considering the volunteer application process and perks at the Levitate Music and Arts Festival.",
+          "User is considering volunteering at the Levitate Music and Arts Festival in Marshfield, MA on July 10-12.",
+          "User is interested in learning more about the atmosphere, lineup, and activities at each festival.",
+          "User is interested in the lineup and activities at the Green River Festival.",
+          "User is interested in volunteering at the XPoNential Music Festival in Camden, NJ on July 26-28.",
+          "User is looking for information on volunteer opportunities and application processes for each festival.",
+          "User is open to traveling within a few hours of Boston and is not picky about the festival type.",
+          "User is planning their summer concert schedule and wants to keep track of upcoming shows.",
+          "User is thinking about the atmosphere and activities at the Levitate Music and Arts Festival.",
+          "User is thinking about the relaxed and family-friendly atmosphere at the XPoNential Music Festival.",
+          "User is thinking about volunteering at another music festival in the area."
+        ],
+        "ingest_s": 24.9
+      },
+      {
+        "q_id": "75832dbd",
+        "kind": "control_stable",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1886,
+            "facts": 10,
+            "capped": false,
+            "unique": 9
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.",
+          "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+          "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+          "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+          "Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+          "Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.",
+          "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+        ],
+        "ingest_s": 18.1
+      },
+      {
+        "q_id": "e47becba",
+        "kind": "control_stable",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2034,
+            "facts": 13,
+            "capped": false,
+            "unique": 13
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for tips on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User is considering Todoist and Trello for task management.",
+          "User is considering implementing a system to track personal expenses.",
+          "User is considering using a cooler bag for transporting meal prep containers.",
+          "User is considering using a slow cooker and food scale for meal prep.",
+          "User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.",
+          "User is interested in meal prep as a way to save time and money.",
+          "User is looking for a meal prep planner and label maker.",
+          "User is looking for meal prep bags, portion control containers, and meal prep utensils.",
+          "User is looking for recommendations for meal prep containers and tools.",
+          "User is looking for tips on creating a routine for their new job.",
+          "User is looking for tips on saving money on everyday expenses like groceries and household items.",
+          "User is thinking of trying out Mint and Personal Capital for personal expense tracking.",
+          "User is trying to organize their life better and asked for task management app recommendations."
+        ],
+        "ingest_s": 20.8
+      }
+    ],
+    [
+      {
+        "q_id": "8cf51dda",
+        "kind": "attractor_loop",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1650,
+            "facts": 9,
+            "capped": false,
+            "unique": 9
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is writing a grants aim page on molecular subtypes and endometrial cancer\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Endometrial cancer is the most common gynecological malignancy in developed countries and its incidence is increasing worldwide\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"The survival rate for advanced stages of endometrial cancer remains poor despite advances in surgical and radiation therapy\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User aims to identify and characterize molecular subtypes of endometrial cancer and investigate their clinical and biological significance\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User will perform comprehensive genomic and transcriptomic analysis of endometrial cancer samples using next-generation sequencing technologies\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User will use unsupervised and supervised machine learning approaches to identify molecular subtypes of endometrial cancer\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User will develop biomarkers for the early detection and prognosis of endometrial cancer based on the identified molecular subtypes\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"The proposed research will provide new insights into the molecular mechanisms underlying the development and progression of endometrial cancer\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"The research aims to improve diagnosis and treatment of endometrial cancer by identifying novel molecular subtypes and developing biomarkers\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Endometrial cancer is the most common gynecological malignancy in developed countries and its incidence is increasing worldwide",
+          "The proposed research will provide new insights into the molecular mechanisms underlying the development and progression of endometrial cancer",
+          "The research aims to improve diagnosis and treatment of endometrial cancer by identifying novel molecular subtypes and developing biomarkers",
+          "The survival rate for advanced stages of endometrial cancer remains poor despite advances in surgical and radiation therapy",
+          "User aims to identify and characterize molecular subtypes of endometrial cancer and investigate their clinical and biological significance",
+          "User is writing a grants aim page on molecular subtypes and endometrial cancer",
+          "User will develop biomarkers for the early detection and prognosis of endometrial cancer based on the identified molecular subtypes",
+          "User will perform comprehensive genomic and transcriptomic analysis of endometrial cancer samples using next-generation sequencing technologies",
+          "User will use unsupervised and supervised machine learning approaches to identify molecular subtypes of endometrial cancer"
+        ],
+        "ingest_s": 12.8
+      },
+      {
+        "q_id": "cc539528",
+        "kind": "attractor_loop",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2610,
+            "facts": 10,
+            "capped": false,
+            "unique": 10
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Front-end web development involves creating the user interface and designing the visual elements of a website or an application that users interact with.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Back-end web development refers to the server-side of web development, including programming and database management that goes on behind the scenes.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"Front-end developers are responsible for creating the visual elements and designing the user interface of a website or application, while back-end developers handle the server-side programming that powers the functionality of the website or application.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Front-end and back-end development require different skill sets, but there is some overlap between the two, with knowledge of programming languages like HTML, CSS, and JavaScript being essential for both.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Being a full-stack developer means having skills and experience in both front-end and back-end development, which can be an advantage in some ways, but also requires constantly keeping up with the latest technology and trends in both areas.\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"To become a full-stack developer, start with the basics of web development, including HTML, CSS, and JavaScript, and then learn a back-end programming language, such as Ruby, Python, or PHP, and build projects that incorporate both front-end and back-end development.\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"Staying up-to-date with new technologies and trends in web development is crucial for full-stack developers, and joining online communities or attending meetups can be helpful for networking and learning from others.\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"Codecademy, FreeCodeCamp, and Udemy are recommended resources for learning front-end development, while NodeSchool, Udacity, and Coursera are recommended for back-end development.\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"Front-end and back-end development are essential for building a successful web application, with front-end developers focusing on the user-facing part and back-end developers handling the behind-the-scenes functionality.\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"Becoming a full-stack developer requires time and practice, but with dedication and the right resources, it is possible to master both front-end and back-end development.\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Back-end web development refers to the server-side of web development, including programming and database management that goes on behind the scenes.",
+          "Becoming a full-stack developer requires time and practice, but with dedication and the right resources, it is possible to master both front-end and back-end development.",
+          "Being a full-stack developer means having skills and experience in both front-end and back-end development, which can be an advantage in some ways, but also requires constantly keeping up with the latest technology and trends in both areas.",
+          "Codecademy, FreeCodeCamp, and Udemy are recommended resources for learning front-end development, while NodeSchool, Udacity, and Coursera are recommended for back-end development.",
+          "Front-end and back-end development are essential for building a successful web application, with front-end developers focusing on the user-facing part and back-end developers handling the behind-the-scenes functionality.",
+          "Front-end and back-end development require different skill sets, but there is some overlap between the two, with knowledge of programming languages like HTML, CSS, and JavaScript being essential for both.",
+          "Front-end developers are responsible for creating the visual elements and designing the user interface of a website or application, while back-end developers handle the server-side programming that powers the functionality of the website or application.",
+          "Front-end web development involves creating the user interface and designing the visual elements of a website or an application that users interact with.",
+          "Staying up-to-date with new technologies and trends in web development is crucial for full-stack developers, and joining online communities or attending meetups can be helpful for networking and learning from others.",
+          "To become a full-stack developer, start with the basics of web development, including HTML, CSS, and JavaScript, and then learn a back-end programming language, such as Ruby, Python, or PHP, and build projects that incorporate both front-end and back-end development."
+        ],
+        "ingest_s": 19.9
+      },
+      {
+        "q_id": "118b2229",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 839,
+            "facts": 5,
+            "capped": false,
+            "unique": 5
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User listens to audiobooks during daily commutes, which take 45 minutes each way, and finds them more engaging and memorable than e-books\"},\n    {\"id\": \"1\", \"text\": \"User takes notes while listening to audiobooks, especially non-fiction books with valuable insights or information, to reinforce learning and retention\"},\n    {\"id\": \"2\", \"text\": \"User notices that audiobooks improve retention and recall due to dual coding, emotional connection, pacing and rhythm, and multitasking\"},\n    {\"id\": \"3\", \"text\": \"User's note-taking strategy involves actively engaging with material, processing information deeply, identifying key takeaways, and reviewing and reflecting on notes\"},\n    {\"id\": \"4\", \"text\": \"User's observation date is October 25, 2026, and current date is also October 25, 2026\"}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User listens to audiobooks during daily commutes, which take 45 minutes each way, and finds them more engaging and memorable than e-books",
+          "User notices that audiobooks improve retention and recall due to dual coding, emotional connection, pacing and rhythm, and multitasking",
+          "User takes notes while listening to audiobooks, especially non-fiction books with valuable insights or information, to reinforce learning and retention",
+          "User's note-taking strategy involves actively engaging with material, processing information deeply, identifying key takeaways, and reviewing and reflecting on notes",
+          "User's observation date is October 25, 2026, and current date is also October 25, 2026"
+        ],
+        "ingest_s": 9.5
+      },
+      {
+        "q_id": "853b0a1d",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 776,
+            "facts": 3,
+            "capped": false,
+            "unique": 3
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User has a silver necklace given by her grandma on her 18th birthday, which she lost at a friend's house during a sleepover two months ago, and is still hoping to find it\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User's parents gave her pearl earrings when she graduated from high school, which she associates with good luck and important milestones, and wore on the day of her stats final three weeks ago\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User borrowed a gold chain with a tiny diamond cross pendant from her mom, which she needs to ask her mom about the small silver clasp she used to fix the chain\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User borrowed a gold chain with a tiny diamond cross pendant from her mom, which she needs to ask her mom about the small silver clasp she used to fix the chain",
+          "User has a silver necklace given by her grandma on her 18th birthday, which she lost at a friend's house during a sleepover two months ago, and is still hoping to find it",
+          "User's parents gave her pearl earrings when she graduated from high school, which she associates with good luck and important milestones, and wore on the day of her stats final three weeks ago"
+        ],
+        "ingest_s": 8.9
+      },
+      {
+        "q_id": "e8a79c70",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1340,
+            "facts": 6,
+            "capped": false,
+            "unique": 6
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"A classic French omelette requires 2-3 eggs, a pinch of salt, 1 tablespoon of unsalted butter, and 1 tablespoon of finely chopped herbs (optional) to make\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"To make a French omelette, whisk the eggs with a pinch of salt until the mixture is well combined, then heat a nonstick skillet over medium-high heat and add 1 tablespoon of unsalted butter\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"The steps to make a French omelette include whisking the eggs, heating the skillet, adding butter, pouring in the egg mixture, letting it cook, folding the omelette, and serving it immediately\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"To make a French omelette fluffy and light, whisk the eggs well, use a nonstick skillet, keep the heat medium-high, don't overfill the omelette, fold it gently, and serve immediately\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Some recommended fillings for a classic French omelette include cheese, ham, mushrooms, spinach, tomatoes, and herbs\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Some popular filling combinations for a French omelette include ham and cheese, mushroom and cheese, spinach and feta, tomato and basil, and smoked salmon and dill\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "A classic French omelette requires 2-3 eggs, a pinch of salt, 1 tablespoon of unsalted butter, and 1 tablespoon of finely chopped herbs (optional) to make",
+          "Some popular filling combinations for a French omelette include ham and cheese, mushroom and cheese, spinach and feta, tomato and basil, and smoked salmon and dill",
+          "Some recommended fillings for a classic French omelette include cheese, ham, mushrooms, spinach, tomatoes, and herbs",
+          "The steps to make a French omelette include whisking the eggs, heating the skillet, adding butter, pouring in the egg mixture, letting it cook, folding the omelette, and serving it immediately",
+          "To make a French omelette fluffy and light, whisk the eggs well, use a nonstick skillet, keep the heat medium-high, don't overfill the omelette, fold it gently, and serve immediately",
+          "To make a French omelette, whisk the eggs with a pinch of salt until the mixture is well combined, then heat a nonstick skillet over medium-high heat and add 1 tablespoon of unsalted butter"
+        ],
+        "ingest_s": 12.9
+      },
+      {
+        "q_id": "e48988bc",
+        "kind": "attractor_compfail",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1290,
+            "facts": 6,
+            "capped": false,
+            "unique": 6
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User asked about the company's environmentally responsible supply chain practices\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Assistant explained common practices for environmentally responsible supply chains, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User requested an example of a company that has successfully implemented environmentally responsible practices in its supply chain\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Assistant provided Patagonia as an example of a company that has implemented environmentally responsible practices, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User praised Patagonia for its commitment to sustainability and environmental responsibility in its supply chain\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Assistant agreed with the user that more companies should follow Patagonia's lead and prioritize sustainability in their supply chain practices\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Assistant agreed with the user that more companies should follow Patagonia's lead and prioritize sustainability in their supply chain practices",
+          "Assistant explained common practices for environmentally responsible supply chains, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations",
+          "Assistant provided Patagonia as an example of a company that has implemented environmentally responsible practices, including sustainable sourcing, green transportation, packaging optimization, waste reduction, and compliance with environmental regulations",
+          "User asked about the company's environmentally responsible supply chain practices",
+          "User praised Patagonia for its commitment to sustainability and environmental responsibility in its supply chain",
+          "User requested an example of a company that has successfully implemented environmentally responsible practices in its supply chain"
+        ],
+        "ingest_s": 9.4
+      },
+      {
+        "q_id": "4fd1909e",
+        "kind": "attractor_capped_clean",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2784,
+            "facts": 18,
+            "capped": false,
+            "unique": 18
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning their summer concert schedule and wants to keep track of upcoming shows.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User has tickets to see the Jonas Brothers at the TD Garden on July 17th and The Lumineers at the House of Blues on August 20th.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering attending a music festival in Rhode Island but hasn't looked into tickets yet.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User attended an Imagine Dragons concert at the Xfinity Center on June 15th and enjoyed it.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User is thinking about volunteering at another music festival in the area.\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is open to traveling within a few hours of Boston and is not picky about the festival type.\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User had a great experience volunteering at the Harvard Athletic Complex last month and would like to do something similar.\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"User is interested in volunteering at the XPoNential Music Festival in Camden, NJ on July 26-28.\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"User is also interested in volunteering at the Green River Festival in Greenfield, MA on July 12-14.\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"User is considering volunteering at the Levitate Music and Arts Festival in Marshfield, MA on July 10-12.\", \"linked_memory_ids\": []},\n    {\"id\": \"10\", \"text\": \"User is looking for information on volunteer opportunities and application processes for each festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"11\", \"text\": \"User is interested in learning more about the atmosphere, lineup, and activities at each festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"12\", \"text\": \"User is considering the perks and volunteer roles available at each festival when deciding which one to volunteer at.\", \"linked_memory_ids\": []},\n    {\"id\": \"13\", \"text\": \"User is thinking about the relaxed and family-friendly atmosphere at the XPoNential Music Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"14\", \"text\": \"User is considering the variety of volunteer roles available at the XPoNential Music Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"15\", \"text\": \"User is interested in the lineup and activities at the Green River Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"16\", \"text\": \"User is considering the volunteer application process and perks at the Levitate Music and Arts Festival.\", \"linked_memory_ids\": []},\n    {\"id\": \"17\", \"text\": \"User is thinking about the atmosphere and activities at the Levitate Music and Arts Festival.\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User attended an Imagine Dragons concert at the Xfinity Center on June 15th and enjoyed it.",
+          "User had a great experience volunteering at the Harvard Athletic Complex last month and would like to do something similar.",
+          "User has tickets to see the Jonas Brothers at the TD Garden on July 17th and The Lumineers at the House of Blues on August 20th.",
+          "User is also interested in volunteering at the Green River Festival in Greenfield, MA on July 12-14.",
+          "User is considering attending a music festival in Rhode Island but hasn't looked into tickets yet.",
+          "User is considering the perks and volunteer roles available at each festival when deciding which one to volunteer at.",
+          "User is considering the variety of volunteer roles available at the XPoNential Music Festival.",
+          "User is considering the volunteer application process and perks at the Levitate Music and Arts Festival.",
+          "User is considering volunteering at the Levitate Music and Arts Festival in Marshfield, MA on July 10-12.",
+          "User is interested in learning more about the atmosphere, lineup, and activities at each festival.",
+          "User is interested in the lineup and activities at the Green River Festival.",
+          "User is interested in volunteering at the XPoNential Music Festival in Camden, NJ on July 26-28.",
+          "User is looking for information on volunteer opportunities and application processes for each festival.",
+          "User is open to traveling within a few hours of Boston and is not picky about the festival type.",
+          "User is planning their summer concert schedule and wants to keep track of upcoming shows.",
+          "User is thinking about the atmosphere and activities at the Levitate Music and Arts Festival.",
+          "User is thinking about the relaxed and family-friendly atmosphere at the XPoNential Music Festival.",
+          "User is thinking about volunteering at another music festival in the area."
+        ],
+        "ingest_s": 25.0
+      },
+      {
+        "q_id": "75832dbd",
+        "kind": "control_stable",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 1886,
+            "facts": 10,
+            "capped": false,
+            "unique": 9
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []}\n  ]\n}"
+        ],
+        "stored_texts": [
+          "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.",
+          "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+          "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+          "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+          "Model interpretability techniques are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+          "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+          "Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.",
+          "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+        ],
+        "ingest_s": 18.0
+      },
+      {
+        "q_id": "e47becba",
+        "kind": "control_stable",
+        "frames": [
+          {
+            "fr": "stop",
+            "parse": "ok",
+            "chars": 2034,
+            "facts": 13,
+            "capped": false,
+            "unique": 13
+          }
+        ],
+        "raw_outputs": [
+          "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for tips on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+        ],
+        "stored_texts": [
+          "User is considering Todoist and Trello for task management.",
+          "User is considering implementing a system to track personal expenses.",
+          "User is considering using a cooler bag for transporting meal prep containers.",
+          "User is considering using a slow cooker and food scale for meal prep.",
+          "User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.",
+          "User is interested in meal prep as a way to save time and money.",
+          "User is looking for a meal prep planner and label maker.",
+          "User is looking for meal prep bags, portion control containers, and meal prep utensils.",
+          "User is looking for recommendations for meal prep containers and tools.",
+          "User is looking for tips on creating a routine for their new job.",
+          "User is looking for tips on saving money on everyday expenses like groceries and household items.",
+          "User is thinking of trying out Mint and Personal Capital for personal expense tracking.",
+          "User is trying to organize their life better and asked for task management app recommendations."
+        ],
+        "ingest_s": 20.7
+      }
+    ]
+  ]
+}
