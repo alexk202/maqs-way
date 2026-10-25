@@ -1,0 +1,1318 @@
+{
+  "provenance": {
+    "date": "2026-10-25T13:23:01+00:00",
+    "store": "/tmp/opencode/mem0single156g1iso_b_1792931561",
+    "detector": "identical to history_confound_forensics (unique 5-word shingles; confirmed >=2, weak ==1)",
+    "tolerance": {
+      "confirmed_facts": 5,
+      "confirmed_questions": 5,
+      "weak": 20
+    },
+    "frozen_g1_reference": {
+      "confirmed": 274,
+      "facts": 1680,
+      "rate": 0.1631
+    }
+  },
+  "passes": {
+    "single156": {
+      "n_facts": 1460,
+      "confirmed_facts": 23,
+      "confirmed_questions": 21,
+      "weak_facts": 123,
+      "detector_fp_rate": 0.01575,
+      "in_tolerance": false,
+      "hits": {
+        "8a2466db": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The user wants to know more about the Lumetri Color Panel and how to use it for color grading.",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "how to use it for"
+            }
+          ]
+        },
+        "06878be2": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is looking for a camera bag that can fit their Sony camera and a few lenses, with a budget of around $100-$200.",
+              "foreign_q": "gpt4_f49edff3",
+              "n_shingles": 1,
+              "example": "budget of around 100 200"
+            },
+            {
+              "text": "User is looking for a camera bag that is specifically designed for travel, with a focus on comfort and durability.",
+              "foreign_q": "69fee5aa",
+              "n_shingles": 1,
+              "example": "that is specifically designed for"
+            }
+          ]
+        },
+        "75832dbd": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "the decision making process of"
+            },
+            {
+              "text": "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+              "foreign_q": "a1cc6108",
+              "n_shingles": 1,
+              "example": "a rapidly growing field with"
+            },
+            {
+              "text": "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "is being used to improve"
+            },
+            {
+              "text": "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection",
+              "foreign_q": "60472f9c",
+              "n_shingles": 1,
+              "example": "used in medical image analysis"
+            },
+            {
+              "text": "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "is being used to improve"
+            },
+            {
+              "text": "Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.",
+              "foreign_q": "10d9b85a",
+              "n_shingles": 1,
+              "example": "to understand the importance of"
+            }
+          ]
+        },
+        "35a27287": {
+          "confirmed": [
+            {
+              "text": "User should be open-minded and willing to try different language exchange partners or events until they find one that works for them.",
+              "foreign_q": "0db4c65d",
+              "n_shingles": 3,
+              "example": "be open minded and willing"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User can find language exchange partners or events by using online platforms like Conversation Exchange, Tandem, and HelloTalk, or by attend",
+              "foreign_q": "gpt4_93f6379c",
+              "n_shingles": 1,
+              "example": "can find language exchange partners"
+            }
+          ]
+        },
+        "32260d93": {
+          "confirmed": [
+            {
+              "text": "User is approaching the workshop with an open mind, a willingness to learn, and a positive attitude, and is prepared to ask questions, share",
+              "foreign_q": "a1eacc2a",
+              "n_shingles": 2,
+              "example": "share their work and receive"
+            }
+          ],
+          "weak": []
+        },
+        "195a1a1b": {
+          "confirmed": [
+            {
+              "text": "User found the 'Body Scan' meditation to be a great way to cultivate awareness and relaxation in their body, letting go of tension and disco",
+              "foreign_q": "577d4d32",
+              "n_shingles": 3,
+              "example": "found the body scan meditation"
+            }
+          ],
+          "weak": []
+        },
+        "54026fce": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Assistant suggests using non-verbal cues, paraphrasing, and summarizing to encourage team members to share their thoughts and opinions.",
+              "foreign_q": "0bb5a684",
+              "n_shingles": 1,
+              "example": "to encourage team members to"
+            }
+          ]
+        },
+        "6b7dfb22": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is using the Pomodoro Technique to work in focused intervals and taking breaks to stay energized",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "using the pomodoro technique to"
+            }
+          ]
+        },
+        "1a1907b4": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is planning to use a combination of grapefruit and other citrus fruits to create a unique and delicious simple syrup",
+              "foreign_q": "gpt4_59c863d7",
+              "n_shingles": 1,
+              "example": "to use a combination of"
+            }
+          ]
+        },
+        "38146c39": {
+          "confirmed": [
+            {
+              "text": "Turbinado sugar adds a richer flavor to carrot cake and can be used in combination with other sugars to balance out the flavor.",
+              "foreign_q": "3c1045c8",
+              "n_shingles": 2,
+              "example": "can be used in combination"
+            }
+          ],
+          "weak": [
+            {
+              "text": "Muscovado sugar has a stronger, more intense flavor than turbinado sugar and can be used to add a deeper flavor to the cream cheese frosting",
+              "foreign_q": "d23cf73b",
+              "n_shingles": 1,
+              "example": "and can be used to"
+            }
+          ]
+        },
+        "d24813b1": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is planning to use a combination of white and brown sugar, room temperature butter, and a higher ratio of chocolate chips to dough to a",
+              "foreign_q": "gpt4_59c863d7",
+              "n_shingles": 1,
+              "example": "to use a combination of"
+            },
+            {
+              "text": "User is planning to serve a lemon lavender pound cake at a birthday party and is looking for tips on how to store it.",
+              "foreign_q": "gpt4_ab202e7f",
+              "n_shingles": 1,
+              "example": "on how to store it"
+            }
+          ]
+        },
+        "57f827a0": {
+          "confirmed": [
+            {
+              "text": "User was recommended the following websites and designers for mid-century modern design inspiration: Design Within Reach, West Elm, Crate & ",
+              "foreign_q": "1a8a66a6",
+              "n_shingles": 2,
+              "example": "charles and ray eames eero"
+            },
+            {
+              "text": "User was informed that mid-century modern dressers are characterized by clean lines, minimal ornamentation, organic shapes, tapered legs, lo",
+              "foreign_q": "1a8a66a6",
+              "n_shingles": 2,
+              "example": "characterized by clean lines minimal"
+            }
+          ],
+          "weak": []
+        },
+        "95228167": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The coil-tap or coil-splitting feature can provide brighter tones, warmth and sustain, and a wider range of tonal options, making it suitabl",
+              "foreign_q": "gpt4_18c2b244",
+              "n_shingles": 1,
+              "example": "and a wider range of"
+            }
+          ]
+        },
+        "505af2f5": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is looking for healthy breakfast ideas that can be made in advance, including chia seed pudding and cottage cheese with fresh fruit",
+              "foreign_q": "d682f1a2",
+              "n_shingles": 1,
+              "example": "can be made in advance"
+            },
+            {
+              "text": "User is interested in making overnight oats with rolled oats, milk, and nuts or seeds for a quick and easy breakfast",
+              "foreign_q": "c4ea545c",
+              "n_shingles": 1,
+              "example": "with rolled oats milk and"
+            },
+            {
+              "text": "User wants to try making a veggie omelette with eggs, bell peppers, onions, and mushrooms for a protein-packed breakfast",
+              "foreign_q": "1192316e",
+              "n_shingles": 1,
+              "example": "for a protein packed breakfast"
+            },
+            {
+              "text": "User is looking for healthy snack options to curb their afternoon sweet cravings, including fresh fruits, nuts, and seeds",
+              "foreign_q": "2788b940",
+              "n_shingles": 1,
+              "example": "healthy snack options to curb"
+            },
+            {
+              "text": "User is considering making a breakfast burrito with scrambled eggs, black beans, cheese, and salsa, then wrapping in a whole-grain tortilla",
+              "foreign_q": "d23cf73b",
+              "n_shingles": 1,
+              "example": "with scrambled eggs black beans"
+            }
+          ]
+        },
+        "75f70248": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User will use a well-draining potting mix to complement the planter with good drainage",
+              "foreign_q": "3a704032",
+              "n_shingles": 1,
+              "example": "well draining potting mix to"
+            },
+            {
+              "text": "User will fertilize the plant once a month during the growing season and skip fertilizing during the dormant season",
+              "foreign_q": "3a704032",
+              "n_shingles": 1,
+              "example": "and skip fertilizing during the"
+            },
+            {
+              "text": "User will use a balanced fertilizer with a N-P-K ratio of 20-20-20 for healthy growth and development",
+              "foreign_q": "3a704032",
+              "n_shingles": 1,
+              "example": "a balanced fertilizer with a"
+            }
+          ]
+        },
+        "d6233ab6": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering a career in Data Science and wants to assess their foundation in math and statistics.",
+              "foreign_q": "d01c6aa8",
+              "n_shingles": 1,
+              "example": "a career in data science"
+            },
+            {
+              "text": "User is considering majoring in Economics and wants to prepare for the program by learning online resources and courses.",
+              "foreign_q": "67e0d0f2",
+              "n_shingles": 1,
+              "example": "prepare for the program by"
+            }
+          ]
+        },
+        "b6025781": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering adding protein sources like grilled chicken, turkey breast, or tofu to their meal prep for added variety and nutrition",
+              "foreign_q": "d682f1a2",
+              "n_shingles": 1,
+              "example": "adding protein sources like grilled"
+            }
+          ]
+        },
+        "a89d7624": {
+          "confirmed": [
+            {
+              "text": "The Ship Rock Grille's patio is a great spot to relax and get ready for the concert",
+              "foreign_q": "aae3761f",
+              "n_shingles": 2,
+              "example": "a great spot to relax"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User is considering getting dinner at The Ship Rock Grille before the concert and is looking for a table with a view of the stage",
+              "foreign_q": "91b15a6e",
+              "n_shingles": 1,
+              "example": "and is looking for a"
+            },
+            {
+              "text": "User is planning to grab dinner at The Ship Rock Grille before the concert and is looking for a table with a view of the stage",
+              "foreign_q": "91b15a6e",
+              "n_shingles": 1,
+              "example": "and is looking for a"
+            },
+            {
+              "text": "User is planning to get dinner at The Ship Rock Grille before the concert and is looking for a table with a view of the stage",
+              "foreign_q": "91b15a6e",
+              "n_shingles": 1,
+              "example": "and is looking for a"
+            }
+          ]
+        },
+        "1d4e3b97": {
+          "confirmed": [
+            {
+              "text": "User is planning to get a new bike helmet to replace their old one and is considering Specialized helmets.",
+              "foreign_q": "a9f6b44c",
+              "n_shingles": 2,
+              "example": "planning to get a new"
+            }
+          ],
+          "weak": []
+        },
+        "07b6f563": {
+          "confirmed": [
+            {
+              "text": "Wireless charging power banks are convenient and easy to use, but may be more expensive than traditional power banks",
+              "foreign_q": "129d1232",
+              "n_shingles": 2,
+              "example": "may be more expensive than"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User is looking for a wireless charging power bank with a high capacity and multiple USB ports to charge multiple devices at once",
+              "foreign_q": "gpt4_7ddcf75f",
+              "n_shingles": 1,
+              "example": "and multiple usb ports to"
+            }
+          ]
+        },
+        "0a34ad58": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo.",
+              "foreign_q": "gpt4_d31cdae3",
+              "n_shingles": 1,
+              "example": "is an iconic landmark and"
+            }
+          ]
+        },
+        "fea54f57": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in checking out the up-and-coming artists, and asks about good indie folk bands lately.",
+              "foreign_q": "bf659f65",
+              "n_shingles": 1,
+              "example": "interested in checking out the"
+            },
+            {
+              "text": "User has already listened to 'Folklore' and 'Fetch the Bolt Cutters' and enjoyed them, and is interested in checking out the other recommend",
+              "foreign_q": "bf659f65",
+              "n_shingles": 1,
+              "example": "interested in checking out the"
+            }
+          ]
+        },
+        "cc539528": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Staying up-to-date with new technologies and trends in web development is crucial for full-stack developers, and joining online communities ",
+              "foreign_q": "gpt4_731e37d7",
+              "n_shingles": 1,
+              "example": "for networking and learning from"
+            }
+          ]
+        },
+        "dc439ea3": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User expresses interest in attending a powwow and asks for recommendations on the best powwows to attend",
+              "foreign_q": "gpt4_88806d6e",
+              "n_shingles": 1,
+              "example": "for recommendations on the best"
+            }
+          ]
+        },
+        "8464fc84": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Pickpocketing can be an issue in Rome, especially in crowded areas, so visitors should keep an eye on their belongings and watch out for sus",
+              "foreign_q": "fea54f57",
+              "n_shingles": 1,
+              "example": "should keep an eye on"
+            }
+          ]
+        },
+        "70b3e69b": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The struggle for Catalan independence has inspired many writers and musicians to create works that explore themes of identity, nationalism, ",
+              "foreign_q": "gpt4_4ef30696",
+              "n_shingles": 1,
+              "example": "that explore themes of identity"
+            }
+          ]
+        },
+        "e8a79c70": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "To make a French omelette, whisk the eggs with a pinch of salt until the mixture is well combined, then heat a nonstick skillet over medium-",
+              "foreign_q": "d23cf73b",
+              "n_shingles": 1,
+              "example": "and add 1 tablespoon of"
+            }
+          ]
+        },
+        "e3fc4d6e": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The U.S. national laboratories were created to solve complex problems like climate change and nuclear deterrence, and this achievement is a ",
+              "foreign_q": "gpt4_a56e767c",
+              "n_shingles": 1,
+              "example": "is a testament to their"
+            }
+          ]
+        },
+        "51b23612": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Political humor can sometimes reinforce stereotypes by relying on offensive or insensitive depictions of certain groups, but it can also be ",
+              "foreign_q": "gpt4_ec93e27f",
+              "n_shingles": 1,
+              "example": "but it can also be"
+            }
+          ]
+        },
+        "3e321797": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Cucumber can be used to reduce swelling and soothe skin under the eyes",
+              "foreign_q": "311778f1",
+              "n_shingles": 1,
+              "example": "can be used to reduce"
+            },
+            {
+              "text": "Tea bags can be used to reduce inflammation and swelling under the eyes",
+              "foreign_q": "311778f1",
+              "n_shingles": 1,
+              "example": "can be used to reduce"
+            }
+          ]
+        },
+        "ac031881": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Assistant searches for file 53 in the records to see if they can find more information about the aberration mentioned on the clipboard",
+              "foreign_q": "1cea1afa",
+              "n_shingles": 1,
+              "example": "they can find more information"
+            }
+          ]
+        },
+        "28bcfaac": {
+          "confirmed": [
+            {
+              "text": "User is excited to learn music theory and improve their playing, hoping to take their skills to the next level",
+              "foreign_q": "gpt4_194be4b3",
+              "n_shingles": 3,
+              "example": "to take their skills to"
+            }
+          ],
+          "weak": []
+        },
+        "c7cf7dfd": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User asked for recommendations on where to find high-quality materials and tools for traditional Indian embroidery and tailoring techniques",
+              "foreign_q": "gpt4_15e38248",
+              "n_shingles": 1,
+              "example": "recommendations on where to find"
+            },
+            {
+              "text": "Assistant recommended online communities and forums such as 'Embroidery Network', 'The Embroidery Resource Forum', 'Reddit', and 'Craftsy' f",
+              "foreign_q": "8a2466db",
+              "n_shingles": 1,
+              "example": "communities and forums such as"
+            }
+          ]
+        },
+        "65240037": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Tea tree oil can be used to treat scars and dark spots on the skin by reducing inflammation and improving skin healing",
+              "foreign_q": "00ca467f",
+              "n_shingles": 1,
+              "example": "by reducing inflammation and improving"
+            }
+          ]
+        },
+        "51a45a95": {
+          "confirmed": [
+            {
+              "text": "User thinks the Cartwheel app's social features, such as the ability to share offers with friends and family, are a great way to stay connec",
+              "foreign_q": "54026fce",
+              "n_shingles": 2,
+              "example": "great way to stay connected"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User has been using the Cartwheel app for a few weeks and has saved around $20 total on various household items, including coffee creamer an",
+              "foreign_q": "gpt4_f2262a51",
+              "n_shingles": 1,
+              "example": "it s a great tool"
+            },
+            {
+              "text": "User prefers to receive customizable notifications from Cartwheel, with options to select specific categories or expiration dates",
+              "foreign_q": "gpt4_18c2b244",
+              "n_shingles": 1,
+              "example": "specific categories or expiration dates"
+            }
+          ]
+        },
+        "c5e8278d": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User should be aware of the verification process, credit limit and terms, card replacement, automatic payments, and credit score when updati",
+              "foreign_q": "gpt4_5438fa52",
+              "n_shingles": 1,
+              "example": "should be aware of the"
+            }
+          ]
+        },
+        "6ade9755": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User has become more energized and focused throughout the day since starting their home practice with Down Dog",
+              "foreign_q": "gpt4_2c50253f",
+              "n_shingles": 1,
+              "example": "focused throughout the day since"
+            }
+          ]
+        },
+        "6f9b354f": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering the Snake Plant (Sansevieria Trifasciata) and the ZZ Plant (Zamioculcas zamiifolia) for low-light areas and wants to kno",
+              "foreign_q": "3a704032",
+              "n_shingles": 1,
+              "example": "snake plant sansevieria trifasciata and"
+            },
+            {
+              "text": "User is looking for recommendations on indoor plants that can thrive in low-light conditions and has recently added a vase with fresh greene",
+              "foreign_q": "gpt4_d84a3211",
+              "n_shingles": 1,
+              "example": "in low light conditions and"
+            },
+            {
+              "text": "User wants to incorporate some greenery, maybe a small herb garden or a vase with fresh flowers, to bring in a touch of nature and freshness",
+              "foreign_q": "86b68151",
+              "n_shingles": 1,
+              "example": "vase with fresh flowers to"
+            }
+          ]
+        },
+        "f8c5f88b": {
+          "confirmed": [
+            {
+              "text": "User asked for exercises to strengthen their core and legs for tennis and was provided with 12 exercises including planks, Russian twists, l",
+              "foreign_q": "gpt4_7a0daae1",
+              "n_shingles": 3,
+              "example": "planks russian twists leg raises"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User asked for the weather forecast for this weekend and was advised to check online weather websites, use a weather app, tune into local ne",
+              "foreign_q": "a9f6b44c",
+              "n_shingles": 1,
+              "example": "tune into local news or"
+            },
+            {
+              "text": "User is planning to buy new tennis balls this weekend and was advised to check out popular brands and types of tennis balls including Wilson",
+              "foreign_q": "099778bb",
+              "n_shingles": 1,
+              "example": "to consider factors such as"
+            },
+            {
+              "text": "User asked if they should get a tennis ball machine to practice their shots and was advised to consider factors such as cost, space and stor",
+              "foreign_q": "099778bb",
+              "n_shingles": 1,
+              "example": "to consider factors such as"
+            }
+          ]
+        },
+        "7527f7e2": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering using the Mint app to track their expenses and create a budget.",
+              "foreign_q": "25e5aa4f",
+              "n_shingles": 1,
+              "example": "expenses and create a budget"
+            },
+            {
+              "text": "User is planning to start meal prepping with one or two meals per week and will gradually increase as they become more comfortable with the ",
+              "foreign_q": "gpt4_2ba83207",
+              "n_shingles": 1,
+              "example": "planning to start meal prepping"
+            }
+          ]
+        },
+        "c960da58": {
+          "confirmed": [
+            {
+              "text": "User is joining online forums and social media groups to connect with other vinyl enthusiasts and trade recommendations",
+              "foreign_q": "a89d7624",
+              "n_shingles": 2,
+              "example": "social media groups to connect"
+            }
+          ],
+          "weak": []
+        },
+        "3b6f954b": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat during a trip to the Great Ocean Road",
+              "foreign_q": "gpt4_59c863d7",
+              "n_shingles": 1,
+              "example": "during a trip to the"
+            }
+          ]
+        },
+        "726462e0": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering using third-party tools like Hootsuite or Buffer to supplement native analytics",
+              "foreign_q": "d851d5ba",
+              "n_shingles": 1,
+              "example": "tools like hootsuite or buffer"
+            },
+            {
+              "text": "User is thinking of creating a content calendar to promote their blog and writing services",
+              "foreign_q": "gpt4_93f6379c",
+              "n_shingles": 1,
+              "example": "creating a content calendar to"
+            }
+          ]
+        },
+        "94f70d80": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is planning to check online reviews and ratings for the coffee tables they're interested in to get a better sense of their quality and ",
+              "foreign_q": "618f13b2",
+              "n_shingles": 1,
+              "example": "to check online reviews and"
+            },
+            {
+              "text": "User is considering the pros and cons of IKEA's coffee tables with storage, including price, design, and quality",
+              "foreign_q": "2c63a862",
+              "n_shingles": 1,
+              "example": "considering the pros and cons"
+            },
+            {
+              "text": "User is considering the pros and cons of glass and wood tops for their coffee table, including scratch resistance and fingerprint visibility",
+              "foreign_q": "2c63a862",
+              "n_shingles": 1,
+              "example": "considering the pros and cons"
+            }
+          ]
+        },
+        "66f24dbb": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is planning to get a gift for their best friend's baby, but the specific gift is not mentioned",
+              "foreign_q": "d905b33f",
+              "n_shingles": 1,
+              "example": "to get a gift for"
+            }
+          ]
+        },
+        "ad7109d1": {
+          "confirmed": [
+            {
+              "text": "User is considering purchasing an external hard drive to back up their important files, photos, and videos.",
+              "foreign_q": "37d43f65",
+              "n_shingles": 2,
+              "example": "external hard drive to back"
+            }
+          ],
+          "weak": []
+        },
+        "af8d2e46": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is using travel-sized toiletry bottles to save space and weight in luggage",
+              "foreign_q": "gpt4_4cd9eba1",
+              "n_shingles": 1,
+              "example": "save space and weight in"
+            },
+            {
+              "text": "User brought 7 shirts and 5 pairs of shorts on a trip to Costa Rica but only wore 3 shirts and 2 shorts",
+              "foreign_q": "gpt4_cd90e484",
+              "n_shingles": 1,
+              "example": "a trip to costa rica"
+            }
+          ]
+        },
+        "dccbc061": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in exploring the idea that synchronicities could help them develop a greater sense of connection to the universe and to o",
+              "foreign_q": "gpt4_7abb270c",
+              "n_shingles": 1,
+              "example": "interested in exploring the idea"
+            },
+            {
+              "text": "User is interested in exploring the idea that synchronicities could help them develop a greater sense of trust and faith in the universe, an",
+              "foreign_q": "gpt4_7abb270c",
+              "n_shingles": 1,
+              "example": "interested in exploring the idea"
+            }
+          ]
+        },
+        "c8c3f81d": {
+          "confirmed": [
+            {
+              "text": "User is planning to check prices and compare them to the original retail price to ensure they're getting a good deal on their new Nike runni",
+              "foreign_q": "bc149d6b",
+              "n_shingles": 2,
+              "example": "to ensure they re getting"
+            }
+          ],
+          "weak": []
+        },
+        "8ebdbe50": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering University of Florida and Arizona State University for their Master's degree in Business Administration",
+              "foreign_q": "c18a7dc8",
+              "n_shingles": 1,
+              "example": "s degree in business administration"
+            }
+          ]
+        },
+        "95bcc1c8": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User has been trying to incorporate more improv into their daily life, including conversations with friends and family, to be more present a",
+              "foreign_q": "gpt4_2487a7cb",
+              "n_shingles": 1,
+              "example": "with friends and family to"
+            }
+          ]
+        },
+        "0862e8bf": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User's cat's litter box has been getting stinky and they are looking for a new litter that is easy to clean and odor-free",
+              "foreign_q": "b5ef892d",
+              "n_shingles": 1,
+              "example": "is easy to clean and"
+            }
+          ]
+        },
+        "a06e4cfe": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User was provided with a recipe for a Mezcal Gimlet, which combines mezcal, lime juice, simple syrup, and honey syrup to create a smoky and ",
+              "foreign_q": "157a136e",
+              "n_shingles": 1,
+              "example": "with a recipe for a"
+            },
+            {
+              "text": "User was suggested to chill and dilute the mixture to allow the flavors to meld together and create a silky texture",
+              "foreign_q": "603deb26",
+              "n_shingles": 1,
+              "example": "to chill and dilute the"
+            },
+            {
+              "text": "User was advised to use fresh ingredients, such as fresh cucumber and basil, to ensure the best flavor and texture",
+              "foreign_q": "d24813b1",
+              "n_shingles": 1,
+              "example": "ensure the best flavor and"
+            }
+          ]
+        },
+        "b86304ba": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Assistant congratulated user on their flea market find and discussed the importance of taking good care of the artwork, including getting it",
+              "foreign_q": "9d25d4e0",
+              "n_shingles": 1,
+              "example": "taking good care of the"
+            }
+          ]
+        },
+        "d52b4f67": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User will ask Emily for advice on finding the perfect gift for his mom",
+              "foreign_q": "b01defab",
+              "n_shingles": 1,
+              "example": "advice on finding the perfect"
+            },
+            {
+              "text": "User wants to get a gift for his mom that is within his budget of $100",
+              "foreign_q": "d905b33f",
+              "n_shingles": 1,
+              "example": "to get a gift for"
+            },
+            {
+              "text": "User wants to get a gift for his mom that will help her maintain her radiant glow",
+              "foreign_q": "d905b33f",
+              "n_shingles": 1,
+              "example": "to get a gift for"
+            }
+          ]
+        },
+        "caf9ead2": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering taking breaks and grabbing a cup of coffee at one of the local shops they've been wanting to try",
+              "foreign_q": "gpt4_f49edff3",
+              "n_shingles": 1,
+              "example": "they ve been wanting to"
+            },
+            {
+              "text": "User is considering using the gym or fitness center at their apartment complex to stay active and healthy",
+              "foreign_q": "gpt4_0a05b494",
+              "n_shingles": 1,
+              "example": "to stay active and healthy"
+            },
+            {
+              "text": "User is making an effort to prioritize their health and fitness, including taking the stairs instead of the elevator",
+              "foreign_q": "7a8d0b71",
+              "n_shingles": 1,
+              "example": "to prioritize their health and"
+            },
+            {
+              "text": "User is looking for coffee shop recommendations near their new apartment in the city, about 20 minutes away from their old place",
+              "foreign_q": "830ce83f",
+              "n_shingles": 1,
+              "example": "new apartment in the city"
+            }
+          ]
+        },
+        "8550ddae": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User has been experimenting with different gin brands and is considering trying Hendrick's or The Botanist for their summer dinner party.",
+              "foreign_q": "603deb26",
+              "n_shingles": 1,
+              "example": "with different gin brands and"
+            },
+            {
+              "text": "User is planning a summer dinner party and wants to create a signature cocktail featuring fresh herbs from their garden.",
+              "foreign_q": "gpt4_2f8be40d",
+              "n_shingles": 1,
+              "example": "create a signature cocktail featuring"
+            }
+          ]
+        },
+        "60d45044": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User asked for tips to prevent onigiri from drying out, including using short-grain rice, adding a moisture-rich ingredient, and storing the",
+              "foreign_q": "6071bd76",
+              "n_shingles": 1,
+              "example": "storing them in the refrigerator"
+            }
+          ]
+        },
+        "86b68151": {
+          "confirmed": [
+            {
+              "text": "User recently rearranged the furniture in their living room to create more space and it made a huge difference",
+              "foreign_q": "gpt4_74aed68e",
+              "n_shingles": 2,
+              "example": "and it made a huge"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User is trying to get more organized and wants to declutter and organize their closet",
+              "foreign_q": "gpt4_2487a7cb",
+              "n_shingles": 1,
+              "example": "to get more organized and"
+            }
+          ]
+        },
+        "ec81a493": {
+          "confirmed": [
+            {
+              "text": "User wants to add a touch of nostalgia to the shelf by displaying their vintage camera next to the clock and poster.",
+              "foreign_q": "01493427",
+              "n_shingles": 2,
+              "example": "add a touch of nostalgia"
+            }
+          ],
+          "weak": []
+        },
+        "15745da0": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User has a large collection of vinyl records, including a rare 1978 pressing of Fleetwood Mac's Rumours, and wants to display them nicely.",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            },
+            {
+              "text": "User has a large collection of posters and art prints, including a new poster from Mondo featuring an illustration of the Hogwarts castle fr",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            },
+            {
+              "text": "User has a large collection of vintage cameras, including a rare 1978 pressing of Fleetwood Mac's Rumours, and wants to display them nicely.",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            },
+            {
+              "text": "User has a large collection of Funko POP! figures, including the entire set of Marvel Cinematic Universe figures, and wants to display them ",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            }
+          ]
+        },
+        "e01b8e2f": {
+          "confirmed": [
+            {
+              "text": "User is planning a trip to Hawaii and considering destinations for both solo travelers and families.",
+              "foreign_q": "gpt4_2312f94c",
+              "n_shingles": 2,
+              "example": "planning a trip to hawaii"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User enjoys watching sports documentaries on Netflix with strong storytelling, especially performances like Daniel Day-Lewis in 'There Will ",
+              "foreign_q": "32260d93",
+              "n_shingles": 1,
+              "example": "on netflix with strong storytelling"
+            },
+            {
+              "text": "User is looking for lunch recommendations in Hilo and wants to try some local specialties like laulau and kalua pig.",
+              "foreign_q": "45dc21b6",
+              "n_shingles": 1,
+              "example": "to try some local specialties"
+            }
+          ]
+        },
+        "bc8a6e93": {
+          "confirmed": [
+            {
+              "text": "User recommends using honey in combination with other sweeteners, like granulated sugar, to balance out the flavor and texture of lemon dess",
+              "foreign_q": "38146c39",
+              "n_shingles": 2,
+              "example": "granulated sugar to balance out"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User believes that the rich, caramel-like flavor of honey pairs well with the brightness of lemon, creating a harmonious flavor profile.",
+              "foreign_q": "38146c39",
+              "n_shingles": 1,
+              "example": "creating a harmonious flavor profile"
+            },
+            {
+              "text": "User found that using honey in combination with granulated sugar in lemon curd resulted in a well-balanced flavor and texture.",
+              "foreign_q": "38146c39",
+              "n_shingles": 1,
+              "example": "in combination with granulated sugar"
+            }
+          ]
+        },
+        "ccb36322": {
+          "confirmed": [
+            {
+              "text": "User is looking for recommendations on local bands and up-and-coming acts to support the local music scene",
+              "foreign_q": "5c40ec5b",
+              "n_shingles": 2,
+              "example": "for recommendations on local bands"
+            }
+          ],
+          "weak": []
+        },
+        "b320f3f8": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User wants to maintain a consistent temperature and humidity to prevent damage to their sneakers over time",
+              "foreign_q": "gpt4_194be4b3",
+              "n_shingles": 1,
+              "example": "humidity to prevent damage to"
+            }
+          ]
+        },
+        "545bd2b5": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User will start with simple shapes and patterns and experiment with different tools and techniques.",
+              "foreign_q": "gpt4_21adecb5",
+              "n_shingles": 1,
+              "example": "and experiment with different tools"
+            }
+          ]
+        },
+        "8a137a7f": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is considering getting warm white bulbs for their kitchen to create a cozy and inviting atmosphere.",
+              "foreign_q": "gpt4_2f8be40d",
+              "n_shingles": 1,
+              "example": "to create a cozy and"
+            }
+          ]
+        },
+        "86f00804": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User enjoys reading 'The Seven Husbands of Evelyn Hugo' and is devouring it, finding it hard to put down.",
+              "foreign_q": "b01defab",
+              "n_shingles": 1,
+              "example": "reading the seven husbands of"
+            },
+            {
+              "text": "User is considering joining the Book of the Month Club to discover new authors and genres and is weighing the pros and cons of the subscript",
+              "foreign_q": "0db4c65d",
+              "n_shingles": 1,
+              "example": "to discover new authors and"
+            }
+          ]
+        },
+        "311778f1": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+              "foreign_q": "c2ac3c61",
+              "n_shingles": 1,
+              "example": "using natural language processing and"
+            }
+          ]
+        },
+        "c19f7a0b": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is planning to try out the French Pod 101 podcast for language learning.",
+              "foreign_q": "c6853660",
+              "n_shingles": 1,
+              "example": "to try out the french"
+            },
+            {
+              "text": "User is planning to try out new recipes for dinner this week and is looking for simple and quick meal ideas.",
+              "foreign_q": "36b9f61e",
+              "n_shingles": 1,
+              "example": "to try out new recipes"
+            },
+            {
+              "text": "User is planning to try out the French for Reading podcast for language learning.",
+              "foreign_q": "c6853660",
+              "n_shingles": 1,
+              "example": "to try out the french"
+            }
+          ]
+        },
+        "4100d0a0": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User will have access to behind-the-scenes information about Irish music and dance, including stories and legends behind traditional Irish s",
+              "foreign_q": "bf659f65",
+              "n_shingles": 1,
+              "example": "access to behind the scenes"
+            },
+            {
+              "text": "User will gain a deeper understanding of the cultural significance of Irish music and dance, including their importance in social gatherings",
+              "foreign_q": "2ce6a0f2",
+              "n_shingles": 1,
+              "example": "deeper understanding of the cultural"
+            },
+            {
+              "text": "User will have access to additional resources, such as lectures, workshops, or events, that focus on Irish history, literature, or culture.",
+              "foreign_q": "35a27287",
+              "n_shingles": 1,
+              "example": "or events that focus on"
+            },
+            {
+              "text": "User will learn about the historical context of Irish music and dance, including the social and cultural significance of different instrumen",
+              "foreign_q": "gpt4_7abb270c",
+              "n_shingles": 1,
+              "example": "learn about the historical context"
+            }
+          ]
+        },
+        "29f2956b": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Tube amps are known for their warm, rich tone and natural compression, but require regular maintenance and can be prone to noise and hum.",
+              "foreign_q": "gpt4_385a5000",
+              "n_shingles": 1,
+              "example": "and can be prone to"
+            }
+          ]
+        },
+        "1faac195": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in the Denver Philharmonic Orchestra's Family Concerts series and wants to know if they have any upcoming performances th",
+              "foreign_q": "0edc2aef",
+              "n_shingles": 1,
+              "example": "to know if they have"
+            }
+          ]
+        },
+        "faba32e5": {
+          "confirmed": [
+            {
+              "text": "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt",
+              "foreign_q": "gpt4_7ca326fa",
+              "n_shingles": 3,
+              "example": "outdoor games and activities for"
+            },
+            {
+              "text": "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
+              "foreign_q": "8979f9ec",
+              "n_shingles": 2,
+              "example": "side dish recommendations to pair"
+            }
+          ],
+          "weak": []
+        },
+        "36580ce8": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is planning to start a journal to track their progress and reflect on their thoughts and feelings, and is considering using a tradition",
+              "foreign_q": "2b8f3739",
+              "n_shingles": 1,
+              "example": "to track their progress and"
+            },
+            {
+              "text": "User is considering starting a journal to track their progress and reflect on their thoughts and feelings",
+              "foreign_q": "2b8f3739",
+              "n_shingles": 1,
+              "example": "to track their progress and"
+            }
+          ]
+        },
+        "a82c026e": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is curious about the assistant's gaming setup, but the assistant is an AI and doesn't have a physical body or play games.",
+              "foreign_q": "0ea62687",
+              "n_shingles": 1,
+              "example": "have a physical body or"
+            }
+          ]
+        },
+        "0862e8bf_abs": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User's cat's litter box has been getting stinky and they are looking for a new litter that is easy to clean and odor-free",
+              "foreign_q": "b5ef892d",
+              "n_shingles": 1,
+              "example": "is easy to clean and"
+            }
+          ]
+        },
+        "15745da0_abs": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User has a large collection of vinyl records, including a rare 1978 pressing of Fleetwood Mac's Rumours, and wants to display them nicely.",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            },
+            {
+              "text": "User has a large collection of Funko POP! figures, including the entire set of Marvel Cinematic Universe figures, and wants to display them ",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            },
+            {
+              "text": "User has a large collection of vintage cameras, including a rare 1978 pressing of Fleetwood Mac's Rumours, and wants to display them nicely.",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            },
+            {
+              "text": "User has a large collection of posters and art prints, including a new poster from Mondo featuring an illustration of the Hogwarts castle fr",
+              "foreign_q": "cc5ded98",
+              "n_shingles": 1,
+              "example": "has a large collection of"
+            }
+          ]
+        },
+        "bc8a6e93_abs": {
+          "confirmed": [
+            {
+              "text": "User recommends using honey in combination with other sweeteners, like granulated sugar, to balance out the flavor and texture of lemon dess",
+              "foreign_q": "38146c39",
+              "n_shingles": 2,
+              "example": "granulated sugar to balance out"
+            }
+          ],
+          "weak": [
+            {
+              "text": "User found that using honey in combination with granulated sugar in lemon curd resulted in a well-balanced flavor and texture.",
+              "foreign_q": "38146c39",
+              "n_shingles": 1,
+              "example": "in combination with granulated sugar"
+            },
+            {
+              "text": "User believes that the rich, caramel-like flavor of honey pairs well with the brightness of lemon, creating a harmonious flavor profile.",
+              "foreign_q": "38146c39",
+              "n_shingles": 1,
+              "example": "creating a harmonious flavor profile"
+            }
+          ]
+        },
+        "29f2956b_abs": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Tube amps are known for their warm, rich tone and natural compression, but require regular maintenance and can be prone to noise and hum.",
+              "foreign_q": "gpt4_385a5000",
+              "n_shingles": 1,
+              "example": "and can be prone to"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "corrected_frozen_g1_rate": 0.1473,
+  "in_tolerance": false,
+  "verdict": "OUT OF TOLERANCE — STOP: hits exceed the pre-set detector-FP budget; finding to owner before any other verdict"
+}

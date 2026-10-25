@@ -1,0 +1,326 @@
+[H5 isolation guard] snapshot: 3 roots, 5 files (before __main__.main)
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[1/156] single-session-preferenc ev_hit=True mem=6 ingest=15s calls=1 fr={'stop': 1}
+[2/156] single-session-preferenc ev_hit=True mem=5 ingest=14s calls=1 fr={'stop': 1}
+[3/156] single-session-preferenc ev_hit=True mem=9 ingest=18s calls=1 fr={'stop': 1}
+[4/156] single-session-preferenc ev_hit=True mem=5 ingest=13s calls=1 fr={'stop': 1}
+[5/156] single-session-preferenc ev_hit=True mem=6 ingest=16s calls=1 fr={'stop': 1}
+[6/156] single-session-preferenc ev_hit=True mem=5 ingest=11s calls=1 fr={'stop': 1}
+[7/156] single-session-preferenc ev_hit=True mem=6 ingest=15s calls=1 fr={'stop': 1}
+[8/156] single-session-preferenc ev_hit=True mem=14 ingest=31s calls=1 fr={'stop': 1}
+[9/156] single-session-preferenc ev_hit=True mem=6 ingest=16s calls=1 fr={'stop': 1}
+[10/156] single-session-preferenc ev_hit=True mem=15 ingest=26s calls=1 fr={'stop': 1}
+[11/156] single-session-preferenc ev_hit=True mem=7 ingest=15s calls=1 fr={'stop': 1}
+[12/156] single-session-preferenc ev_hit=True mem=10 ingest=16s calls=1 fr={'stop': 1}
+[13/156] single-session-preferenc ev_hit=True mem=9 ingest=20s calls=1 fr={'stop': 1}
+[14/156] single-session-preferenc ev_hit=True mem=5 ingest=17s calls=1 fr={'stop': 1}
+[15/156] single-session-preferenc ev_hit=True mem=7 ingest=17s calls=1 fr={'stop': 1}
+[16/156] single-session-preferenc ev_hit=True mem=10 ingest=24s calls=1 fr={'stop': 1}
+[17/156] single-session-preferenc ev_hit=True mem=12 ingest=30s calls=1 fr={'stop': 1}
+[18/156] single-session-preferenc ev_hit=True mem=7 ingest=17s calls=1 fr={'stop': 1}
+[19/156] single-session-preferenc ev_hit=True mem=16 ingest=24s calls=1 fr={'stop': 1}
+[20/156] single-session-preferenc ev_hit=True mem=9 ingest=14s calls=1 fr={'stop': 1}
+[21/156] single-session-preferenc ev_hit=True mem=9 ingest=18s calls=1 fr={'stop': 1}
+[22/156] single-session-preferenc ev_hit=True mem=9 ingest=19s calls=1 fr={'stop': 1}
+[23/156] single-session-preferenc ev_hit=True mem=20 ingest=45s calls=1 fr={'stop': 1}
+[24/156] single-session-preferenc ev_hit=True mem=16 ingest=37s calls=1 fr={'stop': 1}
+[25/156] single-session-preferenc ev_hit=True mem=16 ingest=34s calls=1 fr={'stop': 1}
+[26/156] single-session-preferenc ev_hit=True mem=5 ingest=13s calls=1 fr={'stop': 1}
+[27/156] single-session-preferenc ev_hit=True mem=7 ingest=36s calls=1 fr={'stop': 1}
+[28/156] single-session-preferenc ev_hit=True mem=11 ingest=21s calls=1 fr={'stop': 1}
+[29/156] single-session-preferenc ev_hit=True mem=6 ingest=14s calls=1 fr={'stop': 1}
+[30/156] single-session-preferenc ev_hit=True mem=8 ingest=17s calls=1 fr={'stop': 1}
+[31/156] single-session-assistant ev_hit=True mem=12 ingest=24s calls=1 fr={'stop': 1}
+[32/156] single-session-assistant ev_hit=True mem=10 ingest=16s calls=1 fr={'stop': 1}
+[33/156] single-session-assistant ev_hit=True mem=10 ingest=26s calls=1 fr={'stop': 1}
+[34/156] single-session-assistant ev_hit=True mem=14 ingest=58s calls=1 fr={'stop': 1}
+[35/156] single-session-assistant ev_hit=True mem=5 ingest=10s calls=1 fr={'stop': 1}
+[36/156] single-session-assistant ev_hit=True mem=12 ingest=20s calls=1 fr={'stop': 1}
+[37/156] single-session-assistant ev_hit=True mem=4 ingest=9s calls=1 fr={'stop': 1}
+[38/156] single-session-assistant ev_hit=True mem=2 ingest=6s calls=1 fr={'stop': 1}
+[39/156] single-session-assistant ev_hit=True mem=5 ingest=7s calls=1 fr={'stop': 1}
+[40/156] single-session-assistant ev_hit=True mem=9 ingest=12s calls=1 fr={'stop': 1}
+[41/156] single-session-assistant ev_hit=True mem=8 ingest=13s calls=1 fr={'stop': 1}
+[42/156] single-session-assistant ev_hit=True mem=12 ingest=25s calls=1 fr={'stop': 1}
+[43/156] single-session-assistant ev_hit=True mem=10 ingest=20s calls=1 fr={'stop': 1}
+[44/156] single-session-assistant ev_hit=True mem=15 ingest=30s calls=1 fr={'stop': 1}
+[45/156] single-session-assistant ev_hit=True mem=7 ingest=19s calls=1 fr={'stop': 1}
+[46/156] single-session-assistant ev_hit=True mem=10 ingest=17s calls=1 fr={'stop': 1}
+[47/156] single-session-assistant ev_hit=True mem=5 ingest=10s calls=1 fr={'stop': 1}
+[48/156] single-session-assistant ev_hit=True mem=9 ingest=13s calls=1 fr={'stop': 1}
+[49/156] single-session-assistant ev_hit=True mem=15 ingest=21s calls=1 fr={'stop': 1}
+[50/156] single-session-assistant ev_hit=True mem=21 ingest=34s calls=1 fr={'stop': 1}
+[51/156] single-session-assistant ev_hit=True mem=8 ingest=12s calls=1 fr={'stop': 1}
+[52/156] single-session-assistant ev_hit=True mem=7 ingest=12s calls=1 fr={'stop': 1}
+[53/156] single-session-assistant ev_hit=True mem=7 ingest=18s calls=1 fr={'stop': 1}
+[54/156] single-session-assistant ev_hit=True mem=7 ingest=16s calls=1 fr={'stop': 1}
+[55/156] single-session-assistant ev_hit=True mem=6 ingest=9s calls=1 fr={'stop': 1}
+[56/156] single-session-assistant ev_hit=True mem=4 ingest=8s calls=1 fr={'stop': 1}
+[57/156] single-session-assistant ev_hit=True mem=7 ingest=13s calls=1 fr={'stop': 1}
+[58/156] single-session-assistant ev_hit=True mem=6 ingest=15s calls=1 fr={'stop': 1}
+[59/156] single-session-assistant ev_hit=True mem=7 ingest=13s calls=1 fr={'stop': 1}
+[60/156] single-session-assistant ev_hit=True mem=6 ingest=13s calls=1 fr={'stop': 1}
+[61/156] single-session-assistant ev_hit=True mem=9 ingest=16s calls=1 fr={'stop': 1}
+[62/156] single-session-assistant ev_hit=True mem=13 ingest=23s calls=1 fr={'stop': 1}
+[63/156] single-session-assistant ev_hit=True mem=7 ingest=14s calls=1 fr={'stop': 1}
+[64/156] single-session-assistant ev_hit=True mem=17 ingest=22s calls=1 fr={'stop': 1}
+[65/156] single-session-assistant ev_hit=True mem=3 ingest=7s calls=1 fr={'stop': 1}
+[66/156] single-session-assistant ev_hit=True mem=1 ingest=4s calls=1 fr={'stop': 1}
+[67/156] single-session-assistant ev_hit=True mem=6 ingest=9s calls=1 fr={'stop': 1}
+[68/156] single-session-assistant ev_hit=True mem=18 ingest=56s calls=1 fr={'stop': 1}
+[69/156] single-session-assistant ev_hit=True mem=7 ingest=14s calls=1 fr={'stop': 1}
+[70/156] single-session-assistant ev_hit=True mem=9 ingest=20s calls=1 fr={'stop': 1}
+[71/156] single-session-assistant ev_hit=True mem=6 ingest=12s calls=1 fr={'stop': 1}
+[72/156] single-session-assistant ev_hit=True mem=2 ingest=5s calls=1 fr={'stop': 1}
+[73/156] single-session-assistant ev_hit=True mem=4 ingest=9s calls=1 fr={'stop': 1}
+[74/156] single-session-assistant ev_hit=True mem=18 ingest=29s calls=1 fr={'stop': 1}
+[75/156] single-session-assistant ev_hit=True mem=9 ingest=18s calls=1 fr={'stop': 1}
+[76/156] single-session-assistant ev_hit=True mem=8 ingest=12s calls=1 fr={'stop': 1}
+[77/156] single-session-assistant ev_hit=True mem=28 ingest=43s calls=1 fr={'stop': 1}
+[78/156] single-session-assistant ev_hit=True mem=13 ingest=18s calls=1 fr={'stop': 1}
+[79/156] single-session-assistant ev_hit=True mem=8 ingest=19s calls=1 fr={'stop': 1}
+[80/156] single-session-assistant ev_hit=True mem=10 ingest=19s calls=1 fr={'stop': 1}
+[81/156] single-session-assistant ev_hit=True mem=4 ingest=6s calls=1 fr={'stop': 1}
+[82/156] single-session-assistant ev_hit=True mem=11 ingest=21s calls=1 fr={'stop': 1}
+[83/156] single-session-assistant ev_hit=True mem=6 ingest=10s calls=1 fr={'stop': 1}
+[84/156] single-session-assistant ev_hit=True mem=13 ingest=20s calls=1 fr={'stop': 1}
+[85/156] single-session-assistant ev_hit=True mem=12 ingest=22s calls=1 fr={'stop': 1}
+[86/156] single-session-assistant ev_hit=True mem=11 ingest=16s calls=1 fr={'stop': 1}
+[87/156] single-session-user      ev_hit=True mem=13 ingest=22s calls=1 fr={'stop': 1}
+[88/156] single-session-user      ev_hit=True mem=5 ingest=10s calls=1 fr={'stop': 1}
+[89/156] single-session-user      ev_hit=True mem=16 ingest=28s calls=1 fr={'stop': 1}
+[90/156] single-session-user      ev_hit=True mem=20 ingest=31s calls=1 fr={'stop': 1}
+[91/156] single-session-user      ev_hit=True mem=5 ingest=11s calls=1 fr={'stop': 1}
+[92/156] single-session-user      ev_hit=True mem=14 ingest=30s calls=1 fr={'stop': 1}
+[93/156] single-session-user      ev_hit=True mem=9 ingest=16s calls=1 fr={'stop': 1}
+[94/156] single-session-user      ev_hit=True mem=11 ingest=27s calls=1 fr={'stop': 1}
+[95/156] single-session-user      ev_hit=True mem=6 ingest=15s calls=1 fr={'stop': 1}
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[96/156] single-session-user      ev_hit=True mem=10 ingest=22s calls=1 fr={'stop': 1}
+[97/156] single-session-user      ev_hit=True mem=5 ingest=13s calls=1 fr={'stop': 1}
+[98/156] single-session-user      ev_hit=True mem=12 ingest=22s calls=1 fr={'stop': 1}
+[99/156] single-session-user      ev_hit=True mem=8 ingest=16s calls=1 fr={'stop': 1}
+[100/156] single-session-user      ev_hit=True mem=6 ingest=14s calls=1 fr={'stop': 1}
+[101/156] single-session-user      ev_hit=True mem=21 ingest=32s calls=1 fr={'stop': 1}
+[102/156] single-session-user      ev_hit=True mem=9 ingest=18s calls=1 fr={'stop': 1}
+[103/156] single-session-user      ev_hit=True mem=6 ingest=10s calls=1 fr={'stop': 1}
+[104/156] single-session-user      ev_hit=True mem=7 ingest=15s calls=1 fr={'stop': 1}
+[105/156] single-session-user      ev_hit=True mem=11 ingest=17s calls=1 fr={'stop': 1}
+[106/156] single-session-user      ev_hit=True mem=10 ingest=27s calls=1 fr={'stop': 1}
+[107/156] single-session-user      ev_hit=True mem=5 ingest=12s calls=1 fr={'stop': 1}
+[108/156] single-session-user      ev_hit=True mem=10 ingest=21s calls=1 fr={'stop': 1}
+[109/156] single-session-user      ev_hit=True mem=5 ingest=12s calls=1 fr={'stop': 1}
+[110/156] single-session-user      ev_hit=True mem=3 ingest=8s calls=1 fr={'stop': 1}
+[111/156] single-session-user      ev_hit=True mem=10 ingest=20s calls=1 fr={'stop': 1}
+[112/156] single-session-user      ev_hit=True mem=5 ingest=12s calls=1 fr={'stop': 1}
+[113/156] single-session-user      ev_hit=True mem=8 ingest=14s calls=1 fr={'stop': 1}
+[114/156] single-session-user      ev_hit=True mem=3 ingest=9s calls=1 fr={'stop': 1}
+[115/156] single-session-user      ev_hit=True mem=21 ingest=40s calls=1 fr={'stop': 1}
+[116/156] single-session-user      ev_hit=True mem=11 ingest=21s calls=1 fr={'stop': 1}
+[117/156] single-session-user      ev_hit=True mem=11 ingest=23s calls=1 fr={'stop': 1}
+[118/156] single-session-user      ev_hit=True mem=17 ingest=26s calls=1 fr={'stop': 1}
+[119/156] single-session-user      ev_hit=True mem=5 ingest=14s calls=1 fr={'stop': 1}
+[120/156] single-session-user      ev_hit=True mem=17 ingest=25s calls=1 fr={'stop': 1}
+[121/156] single-session-user      ev_hit=True mem=10 ingest=20s calls=1 fr={'stop': 1}
+[122/156] single-session-user      ev_hit=True mem=6 ingest=14s calls=1 fr={'stop': 1}
+[123/156] single-session-user      ev_hit=True mem=5 ingest=13s calls=1 fr={'stop': 1}
+[124/156] single-session-user      ev_hit=True mem=13 ingest=20s calls=1 fr={'stop': 1}
+[125/156] single-session-user      ev_hit=True mem=8 ingest=15s calls=1 fr={'stop': 1}
+[126/156] single-session-user      ev_hit=True mem=11 ingest=21s calls=1 fr={'stop': 1}
+[127/156] single-session-user      ev_hit=True mem=12 ingest=26s calls=1 fr={'stop': 1}
+[128/156] single-session-user      ev_hit=True mem=10 ingest=21s calls=1 fr={'stop': 1}
+[129/156] single-session-user      ev_hit=True mem=5 ingest=16s calls=1 fr={'stop': 1}
+[130/156] single-session-user      ev_hit=True mem=16 ingest=28s calls=1 fr={'stop': 1}
+[131/156] single-session-user      ev_hit=True mem=16 ingest=36s calls=1 fr={'stop': 1}
+[132/156] single-session-user      ev_hit=True mem=11 ingest=17s calls=1 fr={'stop': 1}
+[133/156] single-session-user      ev_hit=True mem=5 ingest=15s calls=1 fr={'stop': 1}
+[134/156] single-session-user      ev_hit=True mem=18 ingest=25s calls=1 fr={'stop': 1}
+[135/156] single-session-user      ev_hit=True mem=8 ingest=16s calls=1 fr={'stop': 1}
+[136/156] single-session-user      ev_hit=True mem=7 ingest=13s calls=1 fr={'stop': 1}
+[137/156] single-session-user      ev_hit=True mem=8 ingest=20s calls=1 fr={'stop': 1}
+[138/156] single-session-user      ev_hit=True mem=8 ingest=19s calls=1 fr={'stop': 1}
+[139/156] single-session-user      ev_hit=True mem=6 ingest=12s calls=1 fr={'stop': 1}
+[140/156] single-session-user      ev_hit=True mem=9 ingest=36s calls=1 fr={'stop': 1}
+[141/156] single-session-user      ev_hit=True mem=18 ingest=30s calls=1 fr={'stop': 1}
+[142/156] single-session-user      ev_hit=True mem=14 ingest=30s calls=1 fr={'stop': 1}
+[143/156] single-session-user      ev_hit=True mem=6 ingest=14s calls=1 fr={'stop': 1}
+[144/156] single-session-user      ev_hit=True mem=9 ingest=22s calls=1 fr={'stop': 1}
+[145/156] single-session-user      ev_hit=True mem=5 ingest=11s calls=1 fr={'stop': 1}
+[146/156] single-session-user      ev_hit=True mem=11 ingest=20s calls=1 fr={'stop': 1}
+[147/156] single-session-user      ev_hit=True mem=10 ingest=18s calls=1 fr={'stop': 1}
+[148/156] single-session-user      ev_hit=True mem=9 ingest=19s calls=1 fr={'stop': 1}
+[149/156] single-session-user      ev_hit=True mem=7 ingest=13s calls=1 fr={'stop': 1}
+[150/156] single-session-user      ev_hit=True mem=8 ingest=20s calls=1 fr={'stop': 1}
+[151/156] single-session-user      ev_hit=True mem=8 ingest=14s calls=1 fr={'stop': 1}
+[152/156] single-session-user      ev_hit=True mem=12 ingest=26s calls=1 fr={'stop': 1}
+[153/156] single-session-user      ev_hit=True mem=5 ingest=13s calls=1 fr={'stop': 1}
+[154/156] single-session-user      ev_hit=True mem=5 ingest=15s calls=1 fr={'stop': 1}
+[155/156] single-session-user      ev_hit=True mem=6 ingest=14s calls=1 fr={'stop': 1}
+[156/156] single-session-user      ev_hit=True mem=11 ingest=20s calls=1 fr={'stop': 1}
+
+evidence-R@5 = 1.000 (156/156)
+empty collections: 0/156
+calls (wrapped): 156 | finish_reason: {'stop': 156}
+mal (parse-fail@any-fr-except-length): 0 | other_fail: 0 | trunc (fr=length): 0 | capped (facts==31): 3
+loop frames (facts>=2x unique): 3 | facts at 900 (trunc-field): 0
+total stored memories: 1460 (b2 ref: 1759)
+response chars p50/p99: 1753/6982
+links_used total (items with non-empty linked_memory_ids): 82
+composition flags vs b2 (review list): 57 -> ['06878be2', '195a1a1b', '54026fce', '38146c39', '57f827a0', '505af2f5', 'fca70973', 'b6025781', 'a89d7624', '1d4e3b97', '07b6f563', 'e9327a54', '1903aded', 'cc539528', '18dcd5a5', '488d3006', '58470ed2', '2bf43736', '1568498a', '51b23612', '3e321797', 'e982271f', '352ab8bd', '7a8d0b71', '41275add', '4baee567', '561fabcd', 'ac031881', '28bcfaac', 'eaca4986', 'e48988bc', '65240037', '778164c6', '118b2229', '1e043500', 'c5e8278d', '5d3d2817', '726462e0', '66f24dbb', 'af8d2e46', 'dccbc061', '75499fd8', 'a06e4cfe', '37d43f65', 'b86304ba', 'd52b4f67', '60d45044', 'ec81a493', 'e01b8e2f', 'bc8a6e93', 'ccb36322', '19b5f2b3', 'c19f7a0b', '4100d0a0', '3d86fd0a', '0862e8bf', '19b5f2b3']
+[H5 isolation guard] GREEN — live stores untouched.

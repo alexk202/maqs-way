@@ -1,0 +1,246 @@
+{
+  "provenance": {
+    "date": "2026-10-25T12:32:28+00:00",
+    "store": "/tmp/opencode/g1iso_panel12_1792930918",
+    "detector": "identical to history_confound_forensics (unique 5-word shingles; confirmed >=2, weak ==1)",
+    "tolerance": {
+      "confirmed_facts": 5,
+      "confirmed_questions": 5,
+      "weak": 20
+    },
+    "frozen_g1_reference": {
+      "confirmed": 274,
+      "facts": 1680,
+      "rate": 0.1631
+    }
+  },
+  "passes": {
+    "pass0": {
+      "n_facts": 123,
+      "confirmed_facts": 2,
+      "confirmed_questions": 1,
+      "weak_facts": 10,
+      "detector_fp_rate": 0.01626,
+      "in_tolerance": true,
+      "hits": {
+        "75832dbd": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "the decision making process of"
+            },
+            {
+              "text": "Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.",
+              "foreign_q": "10d9b85a",
+              "n_shingles": 1,
+              "example": "to understand the importance of"
+            },
+            {
+              "text": "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "is being used to improve"
+            },
+            {
+              "text": "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection",
+              "foreign_q": "60472f9c",
+              "n_shingles": 1,
+              "example": "used in medical image analysis"
+            },
+            {
+              "text": "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "is being used to improve"
+            },
+            {
+              "text": "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+              "foreign_q": "a1cc6108",
+              "n_shingles": 1,
+              "example": "a rapidly growing field with"
+            }
+          ]
+        },
+        "0a34ad58": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo.",
+              "foreign_q": "gpt4_d31cdae3",
+              "n_shingles": 1,
+              "example": "is an iconic landmark and"
+            }
+          ]
+        },
+        "1faac195": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in the Denver Philharmonic Orchestra's Family Concerts series and wants to know if they have any upcoming performances th",
+              "foreign_q": "0edc2aef",
+              "n_shingles": 1,
+              "example": "to know if they have"
+            }
+          ]
+        },
+        "311778f1": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+              "foreign_q": "c2ac3c61",
+              "n_shingles": 1,
+              "example": "using natural language processing and"
+            }
+          ]
+        },
+        "3b6f954b": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat during a trip to the Great Ocean Road",
+              "foreign_q": "gpt4_59c863d7",
+              "n_shingles": 1,
+              "example": "during a trip to the"
+            }
+          ]
+        },
+        "faba32e5": {
+          "confirmed": [
+            {
+              "text": "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
+              "foreign_q": "8979f9ec",
+              "n_shingles": 2,
+              "example": "side dish recommendations to pair"
+            },
+            {
+              "text": "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt",
+              "foreign_q": "gpt4_7ca326fa",
+              "n_shingles": 3,
+              "example": "outdoor games and activities for"
+            }
+          ],
+          "weak": []
+        }
+      }
+    },
+    "pass1": {
+      "n_facts": 123,
+      "confirmed_facts": 2,
+      "confirmed_questions": 1,
+      "weak_facts": 10,
+      "detector_fp_rate": 0.01626,
+      "in_tolerance": true,
+      "hits": {
+        "75832dbd": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "Visualization techniques are being used to understand the decision-making process of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "the decision making process of"
+            },
+            {
+              "text": "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection",
+              "foreign_q": "60472f9c",
+              "n_shingles": 1,
+              "example": "used in medical image analysis"
+            },
+            {
+              "text": "Visualization techniques are being used to understand the importance of input features for deep learning models in medical image analysis.",
+              "foreign_q": "10d9b85a",
+              "n_shingles": 1,
+              "example": "to understand the importance of"
+            },
+            {
+              "text": "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+              "foreign_q": "a1cc6108",
+              "n_shingles": 1,
+              "example": "a rapidly growing field with"
+            },
+            {
+              "text": "Explainable AI is being used to improve the trustworthiness and transparency of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "is being used to improve"
+            },
+            {
+              "text": "Explainable AI is being used to improve the accuracy and reliability of deep learning models in medical image analysis.",
+              "foreign_q": "184da446",
+              "n_shingles": 1,
+              "example": "is being used to improve"
+            }
+          ]
+        },
+        "0a34ad58": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "The Tokyo Tower is an iconic landmark and a must-visit attraction in Tokyo.",
+              "foreign_q": "gpt4_d31cdae3",
+              "n_shingles": 1,
+              "example": "is an iconic landmark and"
+            }
+          ]
+        },
+        "1faac195": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in the Denver Philharmonic Orchestra's Family Concerts series and wants to know if they have any upcoming performances th",
+              "foreign_q": "0edc2aef",
+              "n_shingles": 1,
+              "example": "to know if they have"
+            }
+          ]
+        },
+        "311778f1": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User is interested in using natural language processing and deep learning for tasks such as text summarization and sentiment analysis.",
+              "foreign_q": "c2ac3c61",
+              "n_shingles": 1,
+              "example": "using natural language processing and"
+            }
+          ]
+        },
+        "3b6f954b": {
+          "confirmed": [],
+          "weak": [
+            {
+              "text": "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat during a trip to the Great Ocean Road",
+              "foreign_q": "gpt4_59c863d7",
+              "n_shingles": 1,
+              "example": "during a trip to the"
+            }
+          ]
+        },
+        "faba32e5": {
+          "confirmed": [
+            {
+              "text": "User is looking for side dish recommendations to pair with BBQ ribs and brisket and decides on baked beans and potato salad",
+              "foreign_q": "8979f9ec",
+              "n_shingles": 2,
+              "example": "side dish recommendations to pair"
+            },
+            {
+              "text": "User is planning outdoor games and activities for the party, including lawn games, badminton, and a scavenger hunt",
+              "foreign_q": "gpt4_7ca326fa",
+              "n_shingles": 3,
+              "example": "outdoor games and activities for"
+            }
+          ],
+          "weak": []
+        }
+      }
+    }
+  },
+  "corrected_frozen_g1_rate": 0.1468,
+  "in_tolerance": true,
+  "verdict": "FIX CONFIRMED — foreign facts within detector noise in every checked pass; frozen-g1 estimate corrected to 14.7% (raw 16.31%)"
+}

@@ -103,6 +103,13 @@ def main():
             src = root / f"q{qi}"
             per_q[q["question_id"]] = read_dir_texts(src) if src.is_dir() else None
         passes["single156"] = per_q
+    # fail-closed: a store with no readable question dirs is a bad invocation,
+    # never a vacuous pass
+    n_readable = sum(1 for p in passes.values()
+                     for t in p.values() if t is not None and t)
+    if n_readable == 0:
+        print(f"no readable question stores under {store_root} -- fail-closed")
+        return 2
 
     results, worst = {}, True
     for pname, per_q in passes.items():

@@ -1,0 +1,53 @@
+[H5 isolation guard] snapshot: 3 roots, 5 files (before __main__.main)
+Failed to load spaCy lemma model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+Failed to load spaCy full model: spaCy is not installed. Install it with: pip install mem0ai[nlp]
+[pass 1/2][1/12] 75832dbd ev=True calls=1 ingest=18s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][2/12] 0a34ad58 ev=True calls=1 ingest=17s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][3/12] 1faac195 ev=True calls=1 ingest=22s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][4/12] b0479f84 ev=True calls=1 ingest=13s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][5/12] fca70973 ev=True calls=1 ingest=45s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][6/12] 311778f1 ev=True calls=1 ingest=36s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][7/12] afdc33df ev=True calls=1 ingest=31s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][8/12] 19b5f2b3 ev=True calls=1 ingest=15s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][9/12] e47becba ev=True calls=1 ingest=21s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][10/12] 58bf7951 ev=True calls=1 ingest=30s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][11/12] 3b6f954b ev=True calls=1 ingest=13s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 1/2][12/12] faba32e5 ev=True calls=1 ingest=10s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][1/12] 75832dbd ev=True calls=1 ingest=18s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][2/12] 0a34ad58 ev=True calls=1 ingest=17s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][3/12] 1faac195 ev=True calls=1 ingest=22s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][4/12] b0479f84 ev=True calls=1 ingest=13s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][5/12] fca70973 ev=True calls=1 ingest=45s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][6/12] 311778f1 ev=True calls=1 ingest=36s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][7/12] afdc33df ev=True calls=1 ingest=31s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][8/12] 19b5f2b3 ev=True calls=1 ingest=15s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][9/12] e47becba ev=True calls=1 ingest=21s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][10/12] 58bf7951 ev=True calls=1 ingest=30s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][11/12] 3b6f954b ev=True calls=1 ingest=13s
+fastembed not installed - BM25 keyword search disabled. Install it with: pip install "mem0ai[extras]"
+[pass 2/2][12/12] faba32e5 ev=True calls=1 ingest=10s
+PANEL REPRO: 12/12 byte-identical
+[H5 isolation guard] GREEN — live stores untouched.
