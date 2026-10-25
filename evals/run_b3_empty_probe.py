@@ -18,6 +18,7 @@ from pathlib import Path
 
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
+from isolation_guard import guarded, temp_history_db
 from mem0 import Memory
 
 from b6_prompt import B6_VERBATIM
@@ -68,6 +69,7 @@ def patch_llm_client(m, qi):
     client.chat.completions.create = wrapped
 
 
+@guarded()
 def main():
     data = json.loads(DATA.read_text())
     by_id = {q["question_id"][:8]: q for q in data}
@@ -89,6 +91,7 @@ def main():
             "vector_store": {"provider": "qdrant", "config": {
                 "collection_name": f"probe11_{qi}", "embedding_model_dims": EMBED_DIMS,
                 "path": f"{STORE}/q{qi}"}},
+            "history_db_path": temp_history_db(STORE),
             "version": "v1.1",
         }
         m = Memory.from_config(cfg)

@@ -48,4 +48,11 @@ each corresponds to a signed `prereg-*.md` with pre-committed guards and
 predictions — read the prereg before re-running, and never compare numbers
 across different packages without their preregs.
 
-Isolation (MAQS H5 [CRIT]): evals run on temp/in-memory stores with mocked APIs, never on live memory; guard check before/after live directories confirms no artifacts leaked.
+Isolation (MAQS H5 [CRIT]): every runner wraps `main()` in `@guarded()` from
+`evals/isolation_guard.py` — live roots (`~/.mem0`, qdrant defaults) are snapshotted
+before the run and verified after; divergence → RED + non-zero exit. The mem0
+history DB is redirected into the per-run temp store (mem0 v2.2.1 otherwise
+reads/writes the live `~/.mem0/history.db`, feeding a last-10-messages tail into
+the extraction prompt). SQLite compared by logical rows, never md5 (WAL
+checkpoint trap). The guard runs in EVERY run, built into the runner — details
+in REPRODUCE.md §6.

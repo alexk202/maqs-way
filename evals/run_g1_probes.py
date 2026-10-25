@@ -18,6 +18,7 @@ from pathlib import Path
 
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
+from isolation_guard import guarded, temp_history_db
 from mem0 import Memory
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
@@ -120,6 +121,7 @@ def make_mem(qi, max_items, probe_rf):
         "vector_store": {"provider": "qdrant", "config": {
             "collection_name": f"gp_{qi}", "embedding_model_dims": EMBED_DIMS,
             "path": f"{STORE}/q{qi}"}},
+        "history_db_path": temp_history_db(STORE),
         "version": "v1.1",
     }
     m = Memory.from_config(cfg)
@@ -178,6 +180,7 @@ def probe_b(by_id, g1_mem):
     return out
 
 
+@guarded()
 def main():
     data = json.loads(DATA.read_text())
     by_id = {q["question_id"][:8]: q for q in data}

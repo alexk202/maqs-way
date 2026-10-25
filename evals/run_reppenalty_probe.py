@@ -17,6 +17,7 @@ from pathlib import Path
 
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
+from isolation_guard import guarded, temp_history_db
 from mem0 import Memory
 from qdrant_client import QdrantClient
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
@@ -117,6 +118,7 @@ def run_q(q, tag, penalty, qi):
         "vector_store": {"provider": "qdrant", "config": {
             "collection_name": f"rp_{qi}", "embedding_model_dims": EMBED_DIMS,
             "path": f"{STORE}/q{qi}"}},
+        "history_db_path": temp_history_db(STORE),
         "version": "v1.1",
     }
     m = Memory.from_config(cfg)
@@ -157,6 +159,7 @@ def entity_recall(q, texts):
             "recall": round(1 - miss / len(items), 3)}
 
 
+@guarded()
 def main():
     data = json.loads(DATA.read_text())
     by_id8 = {}

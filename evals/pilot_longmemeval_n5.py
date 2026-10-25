@@ -20,6 +20,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
+from isolation_guard import guarded, temp_history_db
 
 BASE = LLM_BASE_URL
 KEY = LLM_API_KEY
@@ -40,6 +41,7 @@ PICK = ["temporal-reasoning", "multi-session", "knowledge-update",
         "single-session-user", "single-session-assistant"]
 
 
+@guarded()
 def main() -> int:
     os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
@@ -63,6 +65,7 @@ def main() -> int:
             "vector_store": {"provider": "qdrant", "config": {
                 "collection_name": coll, "embedding_model_dims": EMBED_DIMS,
                 "path": str(STORE / f"q{qi}")}},
+            "history_db_path": temp_history_db(STORE),
             "version": "v1.1",
         }
         m = Memory.from_config(cfg)

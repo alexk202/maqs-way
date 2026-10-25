@@ -14,6 +14,7 @@ import time
 from datetime import datetime, timezone
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
+from isolation_guard import guarded, temp_history_db
 
 # Endpoints via eval_config (env-overridable; see evals/REPRODUCE.md).
 LLM_BASE = LLM_BASE_URL
@@ -39,6 +40,7 @@ PROBES = [
 ]
 
 
+@guarded()
 def main() -> int:
     os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
@@ -57,6 +59,7 @@ def main() -> int:
             "collection_name": "maqs_pilot_smoke",
             "embedding_model_dims": EMBED_DIMS,
             "path": "/tmp/opencode/mem0qdrant"}},
+        "history_db_path": temp_history_db("/tmp/opencode/mem0qdrant_smoke"),
         "version": "v1.1",
     }
     print(json.dumps({"smoke": True, "benchmark": False,

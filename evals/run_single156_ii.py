@@ -20,6 +20,7 @@ from pathlib import Path
 
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
+from isolation_guard import guarded, temp_history_db
 from mem0 import Memory
 from qdrant_client import QdrantClient
 
@@ -142,6 +143,7 @@ def verbatim_of(q, texts):
     }
 
 
+@guarded()
 def main():
     data = json.loads(DATA.read_text())
     singles = [q for q in data if q["question_type"] in
@@ -160,6 +162,7 @@ def main():
             "vector_store": {"provider": "qdrant", "config": {
                 "collection_name": f"s156ii_{qi}", "embedding_model_dims": EMBED_DIMS,
                 "path": f"{STORE}/q{qi}"}},
+            "history_db_path": temp_history_db(STORE),
             "version": "v1.1",
         }
         m = Memory.from_config(cfg)

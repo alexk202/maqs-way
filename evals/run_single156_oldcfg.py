@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + ~/.mem0/migrations_qdrant lock
+from isolation_guard import guarded, temp_history_db
 from mem0 import Memory
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
@@ -44,6 +45,7 @@ def patch_llm_client(m):
     client.chat.completions.create = wrapped
 
 
+@guarded()
 def main():
     data = json.loads(DATA.read_text())
     singles = [q for q in data if q["question_type"] in
@@ -62,6 +64,7 @@ def main():
             "vector_store": {"provider": "qdrant", "config": {
                 "collection_name": f"s156_{qi}", "embedding_model_dims": EMBED_DIMS,
                 "path": f"{STORE}/q{qi}"}},
+            "history_db_path": temp_history_db(STORE),
             "version": "v1.1",
         }
         m = Memory.from_config(cfg)
