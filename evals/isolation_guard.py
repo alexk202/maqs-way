@@ -34,15 +34,22 @@ non-zero exit code (runners keep `sys.exit(main())`). The verify step runs
 even when the run body raises.
 
 HISTORY REDIRECT: runners must also pass "history_db_path" into their mem0
-config via temp_history_db(STORE) below. Without it mem0 v2.2.1 defaults to
-~/.mem0/history.db and BOTH WRITES every ingested session (SQLiteManager
-save_messages) and READS the last 10 messages of the same scope
+config via temp_history_db(<per-question store dir>) below. Without it mem0
+v2.2.1 defaults to ~/.mem0/history.db and BOTH WRITES every ingested session
+(SQLiteManager save_messages) and READS the last 10 messages of the same scope
 (get_last_messages -> "## Last k Messages" section of the extraction prompt).
 That bidirectional live-store contamination was discovered 2026-10-25 while
 building this guard: every pilot since Oct 16-17 appended raw haystack content
-to the live history db (7.4 MB / 22940 rows) and fed an uncontrolled tail of
-previous questions/runs into every extraction call. The redirect moves that
-channel into the per-run temp store; the guard proves the live dirs stay put.
+to the live history db (7.4 MB / 22940 rows of extracted-fact events; the raw
+messages themselves live under a 10-row-per-scope eviction cap) and fed an
+uncontrolled tail of previous questions/runs into every extraction call.
+GRANULARITY (owner decision 2026-10-25, after the g1-iso-a STOP): the redirect
+is PER QUESTION — temp_history_db(f"{STORE}/q{qi}") — so get_last_messages is
+empty for every extraction call. An earlier per-RUN variant (one history.db
+shared by all questions of a run) moved the channel off the live store but
+KEPT the within-run sliding tail; the g1-iso-a run exposed it (same 16.5%
+foreign-fact rate as frozen g1; see results/g1iso_a_note.md) and it was
+superseded within the same day. The guard itself is unchanged by granularity.
 
 Known limitation (honest): if a NON-eval process legitimately writes a live
 store while a run is in progress, the guard fires RED. On a machine where the
@@ -153,10 +160,12 @@ def verify(snap):
 
 
 def temp_history_db(store):
-    """history_db_path for a runner's mem0 config: inside the per-run temp
-    store (mkdir parents so sqlite3.connect never fails on a fresh store).
-    See H5 note in the module docstring: mem0 v2.2.1 otherwise defaults to
-    the live ~/.mem0/history.db and both reads and writes it during add()."""
+    """history_db_path for a runner's mem0 config: callers pass the
+    PER-QUESTION store dir (e.g. f"{STORE}/q{qi}") so every extraction call
+    sees an empty get_last_messages; mkdir parents so sqlite3.connect never
+    fails on a fresh store. See the H5 note in the module docstring: mem0
+    v2.2.1 otherwise defaults to the live ~/.mem0/history.db and both reads
+    and writes it during add()."""
     p = Path(store) / "history.db"
     p.parent.mkdir(parents=True, exist_ok=True)
     return str(p)

@@ -32,11 +32,14 @@ SHIFT_THRESHOLD = 0.03       # pre-set in prereg-g1-iso.md sec 3.3
 
 def main():
     import glob
-    cands = sorted(glob.glob("/tmp/opencode/mem0single156g1iso_*"))
-    if not cands:
-        print("no g1-iso store found")
-        return 2
-    store_root = cands[-1]
+    if len(sys.argv) > 1:
+        store_root = sys.argv[1]
+    else:
+        cands = sorted(glob.glob("/tmp/opencode/mem0single156g1iso_b_*"))
+        if not cands:
+            print("no g1-iso-b store found; pass the store root as argv[1]")
+            return 2
+        store_root = cands[-1]
     print(f"store: {store_root}")
 
     frozen = json.loads(FROZEN_V12.read_text())

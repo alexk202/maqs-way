@@ -117,7 +117,7 @@ def main():
                 "vector_store": {"provider": "qdrant", "config": {
                     "collection_name": f"p12_{pi}_{qi}", "embedding_model_dims": EMBED_DIMS,
                     "path": f"{STORE}/pass{pi}/q{qi}"}},
-                "history_db_path": temp_history_db(f"{STORE}/pass{pi}"),
+                "history_db_path": temp_history_db(f"{STORE}/pass{pi}/q{qi}"),
                 "version": "v1.1",
             }
             m = Memory.from_config(cfg)

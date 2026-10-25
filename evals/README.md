@@ -51,8 +51,10 @@ across different packages without their preregs.
 Isolation (MAQS H5 [CRIT]): every runner wraps `main()` in `@guarded()` from
 `evals/isolation_guard.py` — live roots (`~/.mem0`, qdrant defaults) are snapshotted
 before the run and verified after; divergence → RED + non-zero exit. The mem0
-history DB is redirected into the per-run temp store (mem0 v2.2.1 otherwise
-reads/writes the live `~/.mem0/history.db`, feeding a last-10-messages tail into
-the extraction prompt). SQLite compared by logical rows, never md5 (WAL
+history DB is redirected PER QUESTION into the temp store
+(`temp_history_db(f"{STORE}/q{qi}")`; mem0 v2.2.1 otherwise reads/writes the live
+`~/.mem0/history.db`, feeding a last-10-messages tail into the extraction prompt;
+the earlier per-run granularity kept the within-run tail — superseded 2026-10-25,
+see `results/g1iso_a_note.md`). SQLite compared by logical rows, never md5 (WAL
 checkpoint trap). The guard runs in EVERY run, built into the runner — details
 in REPRODUCE.md §6.

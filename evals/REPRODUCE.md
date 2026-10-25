@@ -129,15 +129,18 @@ periodically.
   (known checkpoint trap). The `-wal`/`-shm`/`-journal` side files are ignored
   as transient. Everything else is compared by sha256 of bytes. New or
   deleted files under a guarded root are divergences too.
-- **History redirect**: runners pass
-  `"history_db_path": temp_history_db(STORE)` in the mem0 config. Without it
-  mem0 v2.2.1 defaults its history DB to `~/.mem0/history.db` and BOTH writes
-  every ingested session into it AND feeds the last 10 messages of the same
-  scope into every extraction prompt ("## Last k Messages" section). All
-  runs before 2026-10-25 ran with that live contamination — the discovery and
-  its implications are disclosed in the commit history; the redirect moves the
-  channel into the per-run temp store, and the guard proves the live dirs
-  stay untouched.
+- **History redirect (PER QUESTION)**: runners pass
+  `"history_db_path": temp_history_db(f"{STORE}/q{qi}")` in the mem0 config —
+  one history DB per question, so `get_last_messages` is empty for every
+  extraction call. Without it mem0 v2.2.1 defaults its history DB to
+  `~/.mem0/history.db` and BOTH writes every ingested session into it AND feeds
+  the last 10 messages of the same scope into every extraction prompt
+  ("## Last k Messages" section). All runs before 2026-10-25 ran with that live
+  contamination (forensics: `results/history_confound_forensics.md`). The first
+  redirect variant (per-RUN, one temp history shared by all questions) kept the
+  within-run sliding tail — exposed by the g1-iso-a STOP on 2026-10-25
+  (`results/g1iso_a_note.md`) and superseded the same day; the guard itself is
+  unchanged by granularity.
 - **Self-test** (no stand needed):
   `python3 evals/isolation_guard.py selftest` — writes a probe file into
   `~/.mem0`, expects RED, removes it, expects GREEN again; exit 0 iff both hold.
