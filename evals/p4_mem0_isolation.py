@@ -10,10 +10,16 @@ runs, per scope key (user_id / agent_id / run_id):
     (search / get_all / history SQL) -- zero foreign expected;
   - hostile queries: query text == a foreign fact -- foreign=0 AND
     own_recall>0 (filter applied BEFORE top-k);
-controls (both must fire):
+controls (both must fire; an exception in a control is NOT a pass:
+  {"raised": "<type>", fired=false} -> passed=false with the
+  'control inconclusive' note):
   - shared-id (detector sanity);
-  - MUTATIONAL: Memory.search/get_all wrapped so the scope key drops out of
-    the filter construction -- the main scenario must turn red;
+  - MUTATIONAL at the VECTOR-STORE level: the instance's vector_store.search
+    and vector_store.list are wrapped so the scope key drops out of the
+    filter AFTER Memory's input validation (Memory.search/get_all are called
+    normally WITH the key; the wrapper strips the key at the store boundary,
+    simulating a store-layer filter-loss bug); the main scenario must go red
+    via leaks (search AND get_all paths), never via an exception;
 incident demo (NOT a mem0 verdict): one user, shared history db -- the tail
 channel shown; plus the run_id measurement (does a per-question run_id
 isolate the tail natively?);
@@ -38,6 +44,29 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from config_fingerprint import announce
 
+# H5 hygiene: mem0's defaults (history db AND the qdrant migrations lock
+# folder) live under ~/.mem0 -- this test redirects the whole mem0_dir into a
+# temp dir BEFORE mem0 is imported (mem0 reads MEM0_DIR at import/config
+# time). Without this, concurrent per-scenario qdrant-local instances fight
+# over the LIVE ~/.mem0/migrations_qdrant lock (observed: RuntimeError on
+# the second scenario; the live dir was verified untouched -- the lock check
+# fires before any write).
+_MEM0_TMP = Path("/tmp/opencode") / f"p4_mem0dir_{int(time.time())}"
+(_MEM0_TMP / "migrations_qdrant").mkdir(parents=True, exist_ok=True)
+os.environ["MEM0_DIR"] = str(_MEM0_TMP)
+# Oct-17 lesson: with telemetry ON, every Memory opens a second QdrantLocal
+# (the 'mem0migrations' store, mem0/memory/main.py:534) under
+# <mem0_dir>/migrations_qdrant -> the shared folder lock breaks the second
+# Memory instance. OFF = no migrations store at all.
+os.environ.setdefault("MEM0_TELEMETRY", "False")
+
+
+def _close(m):
+    try:
+        m.vector_store.client.close()
+    except Exception:
+        pass
+
 OUT = Path(__file__).resolve().parent / "results"
 DIMS = 768
 KEYS = ("user_id", "agent_id", "run_id")
@@ -45,27 +74,51 @@ FACTS_PER = 6
 
 FACT_SETS = {
     "user_id": {
-        "A": [f"uA fact {i}: marker-UA{i} likes teal-{i} stones" for i in range(FACTS_PER)],
-        "B": [f"uB fact {i}: marker-UB{i} prefers amber-{i} river" for i in range(FACTS_PER)],
-        "C": [f"uC fact {i}: marker-UC{i} collects cobalt-{i} glass" for i in range(FACTS_PER)],
+        "A": [f"user record: shared fact {i} of subject A: marker-UA{i} likes teal-{i} stones" for i in range(FACTS_PER)],
+        "B": [f"user record: shared fact {i} of subject B: marker-UB{i} prefers amber-{i} river" for i in range(FACTS_PER)],
+        "C": [f"user record: shared fact {i} of subject C: marker-UC{i} collects cobalt-{i} glass" for i in range(FACTS_PER)],
     },
     "agent_id": {
-        "A": [f"agA fact {i}: marker-GA{i} drives crimson-{i} coupe" for i in range(FACTS_PER)],
-        "B": [f"agB fact {i}: marker-GB{i} paints indigo-{i} murals" for i in range(FACTS_PER)],
-        "C": [f"agC fact {i}: marker-GC{i} bakes lemon-{i} cakes" for i in range(FACTS_PER)],
+        "A": [f"user record: shared fact {i} of subject A: marker-GA{i} drives crimson-{i} coupe" for i in range(FACTS_PER)],
+        "B": [f"user record: shared fact {i} of subject B: marker-GB{i} paints indigo-{i} murals" for i in range(FACTS_PER)],
+        "C": [f"user record: shared fact {i} of subject C: marker-GC{i} bakes lemon-{i} cakes" for i in range(FACTS_PER)],
     },
     "run_id": {
-        "A": [f"rnA fact {i}: marker-RA{i} plays olive-{i} guitars" for i in range(FACTS_PER)],
-        "B": [f"rnB fact {i}: marker-RB{i} studies jade-{i} minerals" for i in range(FACTS_PER)],
-        "C": [f"rnC fact {i}: marker-RC{i} sails copper-{i} boats" for i in range(FACTS_PER)],
+        "A": [f"user record: shared fact {i} of subject A: marker-RA{i} plays olive-{i} guitars" for i in range(FACTS_PER)],
+        "B": [f"user record: shared fact {i} of subject B: marker-RB{i} studies jade-{i} minerals" for i in range(FACTS_PER)],
+        "C": [f"user record: shared fact {i} of subject C: marker-RC{i} sails copper-{i} boats" for i in range(FACTS_PER)],
     },
 }
 
 
+# token-compositional deterministic embedding: each token hashes to a fixed
+# random vector; text embedding = normalized sum of token vectors. Same text
+# -> same vector (cosine 1.0); texts SHARING TOKENS get positive cosine
+# (~shared/total) -- required so the hostile-query own_recall expectation is
+# satisfiable (a foreign-fact query still recalls the user's own structurally
+# similar facts above the 0.1 similarity threshold); a pure full-text hash
+# makes different texts orthogonal and the expectation vacuously fails.
+_TOK_VEC = {}
+
+
 def _vec(text):
-    seed = int(hashlib.sha256(text.strip().lower().encode()).hexdigest()[:16], 16)
-    rng = random.Random(seed)
-    return [round(rng.uniform(-1, 1), 6) for _ in range(DIMS)]
+    import math as _math
+    toks = [t for t in text.strip().lower().split() if t]
+    if not toks:
+        toks = ["<empty>"]
+    v = [0.0] * DIMS
+    for t in toks:
+        if t not in _TOK_VEC:
+            seed = int(hashlib.sha256(("tok:" + t).encode()).hexdigest()[:16], 16)
+            # positive octant: any two texts sharing >=1 token get a cosine
+            # well above mem0's 0.1 similarity threshold; identical texts = 1.0.
+            # The isolation checks are string-marker based (not vector based),
+            # so global positive correlation does not weaken the test.
+            _TOK_VEC[t] = [random.Random(seed).uniform(0.5, 1.5) for _ in range(DIMS)]
+        tv = _TOK_VEC[t]
+        v = [a + b for a, b in zip(v, tv)]
+    n = _math.sqrt(sum(x * x for x in v)) or 1.0
+    return [round(x / n, 6) for x in v]
 
 
 class StubHandler(BaseHTTPRequestHandler):
@@ -122,7 +175,12 @@ def mem_cfg(stub_url, store_dir, hist_db):
 
 
 def markers_of(key, subject):
-    return [f"marker-{key[0].upper()}{subject}{i}" for i in range(FACTS_PER)]
+    """Markers EXTRACTED from the fact texts (not from a naming convention:
+    the first full run failed because the convention generated marker-AA*
+    for agent_id while the facts contain marker-GA* -- the detector was
+    blind for that key; harness bug, fixed by extraction)."""
+    import re as _re
+    return _re.findall(r"marker-\S+", " ".join(FACT_SETS[key][subject]))
 
 
 def foreign_in(key, text, own):
@@ -143,11 +201,15 @@ def history_rows(hist_db):
 
 
 def run_key_scenario(mem_cls, stub_url, root, key, facts, filters_of):
-    """Main + hostile for one scope key on a fresh store."""
+    """Main + hostile for one scope key on fresh stores. Storage channels
+    (search/get_all/hostile) run at infer=False. The MESSAGES channel runs
+    as a second pass with infer=True against the deterministic STUB chat
+    (returns '{"memory": []}'): mem0 only writes messages via save_messages
+    in the extraction pipeline -- at infer=False the messages table stays
+    empty and the channel check would be vacuous (first-run finding)."""
     store = root / f"{key}/store"
     hist = str(root / f"{key}/history.db")
     m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
-    # alternating writes
     order = []
     for i in range(FACTS_PER):
         for s in "ABC":
@@ -156,23 +218,20 @@ def run_key_scenario(mem_cls, stub_url, root, key, facts, filters_of):
         kw = {key: s}
         m.add([{"role": "user", "content": text}], infer=False, **kw)
     res = {"search_leaks": {}, "get_all_leaks": {}, "history_leaks": {},
-           "hostile": {}}
+           "hostile": {}, "own_counts": {}}
     for s in "ABC":
         flt = {key: s}
         got = m.get_all(filters=flt)
         items = got.get("results", got) if isinstance(got, dict) else got
         texts = [it.get("memory", "") for it in items]
         res["get_all_leaks"][s] = sum(1 for t in texts if foreign_in(key, t, s))
+        res["own_counts"][s] = len(texts)  # non-vacuousness diagnostic
         hits = 0
         for probe in facts[s][:3]:
             r = m.search(probe, filters=flt, top_k=5)
             rr = r.get("results", r) if isinstance(r, dict) else r
             hits += sum(1 for it in rr if foreign_in(key, it.get("memory", ""), s))
         res["search_leaks"][s] = hits
-        rows = history_rows(hist)
-        res["history_leaks"][s] = sum(
-            1 for sc, _, c in rows
-            if f"{key}={s}" in sc and foreign_in(key, c or "", s))
     # hostile: query == foreign fact text, under each subject
     for s in "ABC":
         other = "B" if s == "A" else "A"
@@ -185,58 +244,118 @@ def run_key_scenario(mem_cls, stub_url, root, key, facts, filters_of):
             "own_recall": sum(1 for t in texts if not foreign_in(key, t, s)
                               and any(mk in t for mk in markers_of(key, s))),
         }
+    _close(m)
+    # messages channel: infer=True on the stub chat (deterministic, no real LLM)
+    store2 = root / f"{key}/store_msg"
+    hist2 = str(root / f"{key}/history_msg.db")
+    m2 = mem_cls.from_config(mem_cfg(stub_url, str(store2), hist2))
+    for i in range(3):
+        for s in "ABC":
+            m2.add([{"role": "user", "content": facts[s][i]}], infer=True, **{key: s})
+    rows = history_rows(hist2)
+    for s in "ABC":
+        res["history_leaks"][s] = sum(
+            1 for sc, _, c in rows
+            if f"{key}={s}" in sc and foreign_in(key, c or "", s))
+    res["history_msg_rows_total"] = len(rows)  # non-vacuousness diagnostic
+    _close(m2)
     return res
 
 
 def run_mutation_control(mem_cls, stub_url, root, key, facts):
-    """(b) drop the scope key from filter construction -> main MUST go red."""
-    store = root / f"mut_{key}/store"
-    hist = str(root / f"mut_{key}/history.db")
-    m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
-    for i in range(FACTS_PER):
-        for s in "ABC":
-            m.add([{"role": "user", "content": facts[s][i]}], infer=False, **{key: s})
-    orig_search = type(m).search
-
-    def mutated_search(self, query, filters=None, **kw):
-        f = {k: v for k, v in (filters or {}).items() if k != key}
-        return orig_search(self, query, filters=f, **kw)
-
-    type(m).search = mutated_search
+    """(b) MUTATIONAL at the VECTOR-STORE level: wrap the instance's
+    vector_store.search / vector_store.list so the scope key drops from the
+    filter AFTER Memory's input validation (Memory.search/get_all are called
+    normally WITH the key; verified against pin 0724291b paths:
+    Memory.search -> _search_vector_store -> vector_store.search(...);
+    Memory.get_all -> vector_store.list(filters, top_k)). NOTE: search has a
+    similarity threshold (0.1 default) -- with the hash-stub embedder only
+    near-identical texts pass it, so the mutated search scenario plants
+    OVERLAPPING fact texts (same stem + subject marker): a foreign near-copy
+    passes the threshold and MUST appear in the mutated (unfiltered) results;
+    the un-mutated main store never sees it because the texts differ. The
+    control MUST go red via leaks, never via an exception (an exception ->
+    raised/inconclusive)."""
     try:
-        leaks = 0
-        for s in "ABC":
-            r = m.search(facts[s][0], filters={key: s}, top_k=5)
-            rr = r.get("results", r) if isinstance(r, dict) else r
-            leaks += sum(1 for it in rr if foreign_in(key, it.get("memory", ""), s))
-    finally:
-        type(m).search = orig_search
-    return {"leaks_detected": leaks, "fired": leaks > 0}
+        store = root / f"mut_{key}/store"
+        hist = str(root / f"mut_{key}/history.db")
+        m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
+        # ordinary disjoint facts for subject A (to have own items)
+        for i in range(3):
+            m.add([{"role": "user", "content": facts["A"][i]}], infer=False, **{key: "A"})
+        # OVERLAPPING near-copies: B's facts are near-identical to A's queries
+        for i in range(3):
+            m.add([{"role": "user", "content":
+                    f"{facts['A'][i]} (variant {markers_of(key, 'B')[i]})"}],
+                  infer=False, **{key: "B"})
+        vs = m.vector_store
+        orig_search, orig_list = vs.search, vs.list
+
+        def strip(f):
+            return {k: v for k, v in (f or {}).items() if k != key}
+
+        vs.search = lambda query, vectors, top_k=5, filters=None, **kw: \
+            orig_search(query, vectors, top_k=top_k, filters=strip(filters), **kw)
+        vs.list = lambda filters=None, top_k=100, **kw: \
+            orig_list(filters=strip(filters), top_k=top_k, **kw)
+        try:
+            search_leaks = get_all_leaks = 0
+            # NORMAL API calls with the key -- validation inside Memory runs
+            # first; the query is the EXACT stored foreign text (the hash-stub
+            # embedder gives similarity only to identical strings, and the
+            # 0.1 similarity threshold must pass for the leak to surface)
+            for i in range(3):
+                probe = f"{facts['A'][i]} (variant {markers_of(key, 'B')[i]})"
+                r = m.search(probe, filters={key: "A"}, top_k=5)
+                rr = r.get("results", r) if isinstance(r, dict) else r
+                search_leaks += sum(1 for it in rr
+                                    if foreign_in(key, it.get("memory", ""), "A"))
+            g = m.get_all(filters={key: "A"})
+            gg = g.get("results", g) if isinstance(g, dict) else g
+            get_all_leaks = sum(1 for it in gg
+                                if foreign_in(key, it.get("memory", ""), "A"))
+        finally:
+            vs.search, vs.list = orig_search, orig_list
+        _close(m)
+        return {"leaks_search": search_leaks, "leaks_get_all": get_all_leaks,
+                "fired": (search_leaks + get_all_leaks) > 0}
+    except Exception as e:
+        return {"raised": type(e).__name__, "detail": str(e)[:120],
+                "fired": False, "inconclusive": True}
 
 
 def run_shared_id_control(mem_cls, stub_url, root, key, facts):
-    """(a) all subjects under ONE shared key value -> detector must fire."""
-    store = root / f"shared_{key}/store"
-    hist = str(root / f"shared_{key}/history.db")
-    m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
-    shared = {key: "u_shared"}
-    for i in range(FACTS_PER):
-        for s in "ABC":
-            m.add([{"role": "user", "content": facts[s][i]}], infer=False, **shared)
-    flt = {key: "u_shared"}
-    got = m.get_all(filters=flt)
-    items = got.get("results", got) if isinstance(got, dict) else got
-    texts = [it.get("memory", "") for it in items]
-    leaks = sum(1 for t in texts if foreign_in(key, t, None))
-    r = m.search(facts["A"][0], filters=flt, top_k=5)
-    rr = r.get("results", r) if isinstance(r, dict) else r
-    sleaks = sum(1 for it in rr if foreign_in(key, it.get("memory", ""), None))
-    return {"get_all_cross_items": leaks, "search_cross_items": sleaks,
-            "fired": (leaks + sleaks) > 0}
+    """(a) all subjects under ONE shared key value -> detector must fire.
+    An exception -> {"raised": ...} / fired=false -> control inconclusive."""
+    try:
+        store = root / f"shared_{key}/store"
+        hist = str(root / f"shared_{key}/history.db")
+        m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
+        shared = {key: "u_shared"}
+        for i in range(FACTS_PER):
+            for s in "ABC":
+                m.add([{"role": "user", "content": facts[s][i]}], infer=False, **shared)
+        flt = {key: "u_shared"}
+        got = m.get_all(filters=flt)
+        items = got.get("results", got) if isinstance(got, dict) else got
+        texts = [it.get("memory", "") for it in items]
+        leaks = sum(1 for t in texts if foreign_in(key, t, None))
+        r = m.search(facts["A"][0], filters=flt, top_k=5)
+        rr = r.get("results", r) if isinstance(r, dict) else r
+        sleaks = sum(1 for it in rr if foreign_in(key, it.get("memory", ""), None))
+        _close(m)
+        return {"get_all_cross_items": leaks, "search_cross_items": sleaks,
+                "fired": (leaks + sleaks) > 0}
+    except Exception as e:
+        return {"raised": type(e).__name__, "detail": str(e)[:120],
+                "fired": False, "inconclusive": True}
 
 
 def run_incident_demo(mem_cls, stub_url, root):
-    """One user, SHARED history db -- the H5 channel; + run_id measurement."""
+    """One user, SHARED history db -- the H5 channel; + run_id measurement.
+    infer=True against the stub chat: the messages channel (save_messages)
+    only runs in mem0's extraction pipeline; the stub returns an empty
+    extraction deterministically -- no real LLM."""
     out = {}
     # (i) same scope, two sessions
     store = root / "demo_same/store"
@@ -244,8 +363,8 @@ def run_incident_demo(mem_cls, stub_url, root):
     m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
     sess1 = [{"role": "user", "content": f"demo s1 line {i} about kettles-{i}"} for i in range(8)]
     sess2 = [{"role": "user", "content": f"demo s2 line {i} about anchors-{i}"} for i in range(4)]
-    m.add(sess1, user_id="u_demo", infer=False)
-    m.add(sess2, user_id="u_demo", infer=False)
+    m.add(sess1, user_id="u_demo", infer=True)  # stub chat: empty extraction,
+    m.add(sess2, user_id="u_demo", infer=True)  # but save_messages WRITES (channel!)
     rows = history_rows(hist)
     demo_scope = [c for sc, _, c in rows if sc == "user_id=u_demo"]
     s1_seen = sum(1 for c in demo_scope if "kettles" in (c or ""))
@@ -256,13 +375,17 @@ def run_incident_demo(mem_cls, stub_url, root):
     store = root / "demo_runid/store"
     hist2 = str(root / "demo_runid/history.db")
     m2 = mem_cls.from_config(mem_cfg(stub_url, str(store), hist2))
-    m2.add(sess1, user_id="u_demo", run_id="q1", infer=False)
-    m2.add(sess2, user_id="u_demo", run_id="q2", infer=False)
+    m2.add(sess1, user_id="u_demo", run_id="q1", infer=True)
+    m2.add(sess2, user_id="u_demo", run_id="q2", infer=True)
     rows2 = history_rows(hist2)
-    q2_scope = [c for sc, _, c in rows2 if sc == "user_id=u_demo&run_id=q2"]
+    q2_scope = [c for sc, _, c in rows2 if "run_id=q2" in sc and "user_id=u_demo" in sc]
     q1_in_q2 = sum(1 for c in q2_scope if "kettles" in (c or ""))
-    out["run_id"] = {"q2_scope_rows": len(q2_scope), "s1_rows_leaked_into_q2": q1_in_q2,
-                     "run_id_isolates_tail": q1_in_q2 == 0}
+    q2_own = sum(1 for c in q2_scope if "anchors" in (c or ""))
+    out["run_id"] = {"q2_scope_rows": len(q2_scope), "q2_own_rows": q2_own,
+                     "s1_rows_leaked_into_q2": q1_in_q2,
+                     "run_id_isolates_tail": q1_in_q2 == 0 and q2_own > 0}
+    _close(m)
+    _close(m2)
     return out
 
 
@@ -295,10 +418,32 @@ def run_observed_behavior(mem_cls, stub_url, root):
         out["delete"]["record_gone_after"] = not any(it.get("id") == bid for it in it2)
     except Exception as e:
         out["delete"] = {"error": f"{type(e).__name__}: {e}"}
+    _close(m)
     return out
 
 
+def dry_mutation():
+    """Dry check WITHOUT a verdict report: run ONLY the mutational control
+    (user_id key) and print its outcome -- it must go red via leaks (> 0),
+    not via an exception (an exception = raised/inconclusive = fix first)."""
+    from mem0 import Memory
+    srv, stub_url = start_stub()
+    root = Path("/tmp/opencode") / f"p4_dry_{int(time.time())}"
+    root.mkdir(parents=True)
+    try:
+        out = run_mutation_control(Memory, stub_url, root, "user_id", FACT_SETS["user_id"])
+    finally:
+        srv.shutdown()
+    print(json.dumps(out, indent=2, ensure_ascii=False))
+    ok = out.get("fired") is True and "raised" not in out
+    print("DRY MUTATION: " + ("RED via leaks -- OK to proceed" if ok else
+                              "INCONCLUSIVE/EXCEPTION -- do not proceed"))
+    return 0 if ok else 1
+
+
 def main():
+    if len(sys.argv) > 1 and sys.argv[1] == "dry-mutation":
+        return dry_mutation()
     fp = announce({"runner": "evals/p4_mem0_isolation.py",
                    "llm": {"model": "stub-llm", "infer": "False (no generation)"},
                    "embedder": "stub (sha256-seeded 768-dim, deterministic)",
@@ -339,7 +484,9 @@ def main():
         h["foreign_count"] == 0 and h["own_recall"] > 0
         for key in KEYS for h in report["main"][key]["hostile"].values())
     controls_ok = all(report["controls"][k]["fired"] for k in report["controls"])
-    report["passed"] = bool(main_ok and controls_ok)
+    inconclusive = [k for k in report["controls"] if report["controls"][k].get("raised")]
+    report["control_inconclusive"] = inconclusive  # any -> passed false
+    report["passed"] = bool(main_ok and controls_ok and not inconclusive)
     import platform
     try:
         import subprocess
@@ -348,7 +495,7 @@ def main():
         pipmem = "\n".join(l for l in pipmem.splitlines() if "mem0" in l.lower())
     except Exception:
         pipmem = "unavailable"
-    report["environment"] = {"uname": os.uname().__dict__, "python": platform.python_version(),
+    report["environment"] = {"uname": " ".join(os.uname()), "python": platform.python_version(),
                              "pip_freeze_mem0": pipmem,
                              "stand": f"CPU-only, stub embedder, {platform.system()}"}
     (OUT / "p4_mem0_isolation_report.json").write_text(

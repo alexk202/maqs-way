@@ -1,0 +1,224 @@
+{
+  "provenance": {
+    "config_sha256": "c14f32c17c8c29cadbff47b3bc8d0685aa0d04a192d817ab1337a69c2d95a7de",
+    "config_effective": {
+      "runner": "evals/p4_mem0_isolation.py",
+      "llm": {
+        "model": "stub-llm",
+        "infer": "False (no generation)"
+      },
+      "embedder": "stub (sha256-seeded 768-dim, deterministic)",
+      "vector_store": "qdrant local, temp dir",
+      "history_db": "temp per scenario (H5 lesson)",
+      "mem0_version": "v1.1",
+      "scope_keys": [
+        "user_id",
+        "agent_id",
+        "run_id"
+      ],
+      "controls": [
+        "shared-id",
+        "mutational"
+      ],
+      "channels": [
+        "search",
+        "get_all",
+        "history_rows",
+        "hostile"
+      ],
+      "server": {
+        "n_ctx": null,
+        "slots_endpoint": "unavailable: URLError"
+      },
+      "model_file": {
+        "source": "not-set",
+        "md5": null
+      }
+    },
+    "mem0": "0724291b pin",
+    "date": "2026-10-26T09:02:07+00:00",
+    "design": "proposals/p4-mem0-behavioral-isolation.md v0.2"
+  },
+  "main": {
+    "user_id": {
+      "search_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "get_all_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "history_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "hostile": {
+        "A": {
+          "foreign_count": 0,
+          "own_recall": 5
+        },
+        "B": {
+          "foreign_count": 0,
+          "own_recall": 5
+        },
+        "C": {
+          "foreign_count": 0,
+          "own_recall": 5
+        }
+      },
+      "own_counts": {
+        "A": 6,
+        "B": 6,
+        "C": 6
+      },
+      "history_msg_rows_total": 9
+    },
+    "agent_id": {
+      "search_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "get_all_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "history_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "hostile": {
+        "A": {
+          "foreign_count": 0,
+          "own_recall": 5
+        },
+        "B": {
+          "foreign_count": 0,
+          "own_recall": 5
+        },
+        "C": {
+          "foreign_count": 0,
+          "own_recall": 5
+        }
+      },
+      "own_counts": {
+        "A": 6,
+        "B": 6,
+        "C": 6
+      },
+      "history_msg_rows_total": 9
+    },
+    "run_id": {
+      "search_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "get_all_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "history_leaks": {
+        "A": 0,
+        "B": 0,
+        "C": 0
+      },
+      "hostile": {
+        "A": {
+          "foreign_count": 0,
+          "own_recall": 5
+        },
+        "B": {
+          "foreign_count": 0,
+          "own_recall": 5
+        },
+        "C": {
+          "foreign_count": 0,
+          "own_recall": 5
+        }
+      },
+      "own_counts": {
+        "A": 6,
+        "B": 6,
+        "C": 6
+      },
+      "history_msg_rows_total": 9
+    }
+  },
+  "controls": {
+    "mutation_user_id": {
+      "leaks_search": 8,
+      "leaks_get_all": 3,
+      "fired": true
+    },
+    "shared_id_user_id": {
+      "get_all_cross_items": 18,
+      "search_cross_items": 5,
+      "fired": true
+    },
+    "mutation_agent_id": {
+      "leaks_search": 8,
+      "leaks_get_all": 3,
+      "fired": true
+    },
+    "shared_id_agent_id": {
+      "get_all_cross_items": 18,
+      "search_cross_items": 5,
+      "fired": true
+    },
+    "mutation_run_id": {
+      "leaks_search": 8,
+      "leaks_get_all": 3,
+      "fired": true
+    },
+    "shared_id_run_id": {
+      "get_all_cross_items": 18,
+      "search_cross_items": 5,
+      "fired": true
+    }
+  },
+  "incident_demo": {
+    "same_scope": {
+      "s1_rows_in_scope": 6,
+      "s2_rows_in_scope": 4,
+      "channel_shown": true
+    },
+    "run_id": {
+      "q2_scope_rows": 4,
+      "q2_own_rows": 4,
+      "s1_rows_leaked_into_q2": 0,
+      "run_id_isolates_tail": true
+    }
+  },
+  "observed_behavior": {
+    "foreign_memory_id": "c917ce55-a665-4a1a-8f9f-9856016a2de4",
+    "get": {
+      "returned": true,
+      "text_preview": "obsB marker-OB0 secret"
+    },
+    "update": {
+      "ok": true,
+      "raw": "{'message': 'Memory updated successfully!'}"
+    },
+    "delete": {
+      "ok": true,
+      "raw": "{'message': 'Memory deleted successfully!'}",
+      "record_gone_after": true
+    }
+  },
+  "control_inconclusive": [],
+  "passed": true,
+  "environment": {
+    "uname": "Linux aleksandr-GT1-Mega 7.0.0-38-generic #38~24.04.4-Ubuntu SMP PREEMPT_DYNAMIC Mon Sep 14 16:37:11 UTC 2 x86_64",
+    "python": "3.12.2",
+    "pip_freeze_mem0": "mem0ai @ file:///home/aleksandr/Projects/mem0-pilot",
+    "stand": "CPU-only, stub embedder, Linux"
+  }
+}
