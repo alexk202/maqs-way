@@ -15,6 +15,7 @@ from pathlib import Path
 import os
 os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + ~/.mem0/migrations_qdrant lock
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from mem0 import Memory
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
@@ -47,6 +48,7 @@ def patch_llm_client(m):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/verify_fix1.py", "max_tokens": 2000, "response_format": "mem0 default json_object (unenforced)", "add": "none", "selection": "b2 misses", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/verify_fix1.py")
     d = json.loads(RESULTS.read_text())
     misses = [r for r in d["results"] if not r["evidence_hit"]]
     data = json.loads(DATA.read_text())

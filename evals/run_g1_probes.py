@@ -19,6 +19,7 @@ from pathlib import Path
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from mem0 import Memory
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
@@ -182,6 +183,7 @@ def probe_b(by_id, g1_mem):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/run_g1_probes.py", "max_tokens": 2000, "response_format": "json_schema probe variants (maxItems 31/60)", "add": "none", "selection": "probe A/B fixed ids", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_g1_probes.py")
     data = json.loads(DATA.read_text())
     by_id = {q["question_id"][:8]: q for q in data}
     g1_mem = {}
@@ -204,6 +206,7 @@ def main():
         "probe_A_capped_completeness": a,
         "probe_B_chunking_hypothesis": b,
     }
+    out["provenance"].update(fp)
     (OUT / "g1_probes.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print("\nartifact: evals/results/g1_probes.json")
     return 0

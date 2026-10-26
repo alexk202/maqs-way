@@ -1,4 +1,4 @@
-# Paired per-question comparisons under confirmed byte-identity (v0.2, NOT canon)
+# Paired per-question comparisons under confirmed byte-identity (v0.4, NOT canon)
 
 > Status: **experimental, ONE stand** (the reference stand only). NOT
 > normative; NOT applied anywhere in this repo — the branch canon

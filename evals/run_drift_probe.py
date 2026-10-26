@@ -28,6 +28,7 @@ from pathlib import Path
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 
@@ -171,6 +172,7 @@ def replay_prefill(budget_s=1080, max_requests=110):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/run_drift_probe.py", "max_tokens": 2000, "response_format": "json_schema strict, schema_sha256 " + SCHEMA_SHA256[:16] + " (extractions); replay: mem0 default json_object", "add": "cache_prompt request variants [true, false]", "selection": "drift probe modes b/c", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_drift_probe.py")
     mode = sys.argv[1] if len(sys.argv) > 1 else "b"
     data = json.loads(DATA.read_text())
     by8 = {q["question_id"].split("_")[-1]: q for q in data}
@@ -202,6 +204,7 @@ def main():
         return 2
 
     suffix = "_b" if mode == "b" else "_c"
+    out["provenance"].update(fp)
     (OUT / f"drift_probe{suffix}.json").write_text(
         json.dumps(out, indent=2, ensure_ascii=False))
     print(json.dumps({k: (v if not isinstance(v, dict) else "…")

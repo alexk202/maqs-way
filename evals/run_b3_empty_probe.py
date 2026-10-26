@@ -19,6 +19,7 @@ from pathlib import Path
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from mem0 import Memory
 
 from b6_prompt import B6_VERBATIM
@@ -71,6 +72,7 @@ def patch_llm_client(m, qi):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/run_b3_empty_probe.py", "max_tokens": 2000, "response_format": "mem0 default json_object (unenforced)", "add": "B6_VERBATIM (prereg sha 73c485c1)", "selection": "b3-empty 11 + 2 controls", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_b3_empty_probe.py")
     data = json.loads(DATA.read_text())
     by_id = {q["question_id"][:8]: q for q in data}
     missing = [x for x in EMPTY_QIDS if x not in by_id]
@@ -140,6 +142,7 @@ def main():
         "responses_chars_ge_7000": near,
         "results": results,
     }
+    out["provenance"].update(fp)
     (OUT / "b3_probe_lock4.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"\nfinish_reasons={dict(fr_all)} | length_stops={walls} | chars>=7000={near}")
     return 0

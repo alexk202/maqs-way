@@ -21,6 +21,7 @@ from pathlib import Path
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 
 BASE = LLM_BASE_URL
 KEY = LLM_API_KEY
@@ -43,6 +44,7 @@ PICK = ["temporal-reasoning", "multi-session", "knowledge-update",
 
 @guarded()
 def main() -> int:
+    fp = announce({"runner": "evals/pilot_longmemeval_n5.py", "max_tokens": 1200, "response_format": "mem0 default json_object (unenforced)", "add": "none", "selection": "n5 stratified pick", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/pilot_longmemeval_n5.py")
     os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
 
@@ -134,6 +136,7 @@ def main() -> int:
         "results": results,
     }
     outname = f"pilot_n5_smoke_{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M')}.json"
+    out["provenance"].update(fp)
     (OUT / outname).write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"artifact: evals/results/{outname}")
     print(f"SMOKE VERDICT: evidence-R@5 (n={N}) = {r5:.2f} "

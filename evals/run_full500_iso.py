@@ -30,6 +30,7 @@ from pathlib import Path
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 
 BASE = LLM_BASE_URL
 KEY = LLM_API_KEY
@@ -305,6 +306,7 @@ def run_full500() -> int:
         "ingest_total_s": round(total_ing, 1),
         "results": results,
     }
+    out["provenance"].update(_FP)
     (OUT / "pilot_evidence_n500_iso.json").write_text(
         json.dumps(out, indent=2, ensure_ascii=False))
     print(f"R@5 evidence (n={N}) = {r5:.4f} Wilson {out['R_at_5_wilson_ci']} | "
@@ -315,6 +317,8 @@ def run_full500() -> int:
 
 @guarded()
 def main() -> int:
+    global _FP
+    _FP = announce({"runner": "evals/run_full500_iso.py", "max_tokens": 1200, "response_format": "mem0 default json_object (unenforced)", "add": "none", "selection": "first 500 committed order", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_full500_iso.py")
     if len(sys.argv) > 1 and sys.argv[1] == "mini":
         return run_mini_control()
     return run_full500()

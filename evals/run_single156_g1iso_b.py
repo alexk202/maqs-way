@@ -33,6 +33,7 @@ from pathlib import Path
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from mem0 import Memory
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
@@ -123,6 +124,7 @@ def patch_llm_client(m, qi):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/run_single156_g1iso_b.py", "max_tokens": 2000, "response_format": "json_schema strict, schema_sha256 " + SCHEMA_SHA256[:16], "add": "none", "selection": "single-156 committed order", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_single156_g1iso_b.py")
     data = json.loads(DATA.read_text())
     singles = [q for q in data if q["question_type"] in
                ("single-session-user", "single-session-assistant", "single-session-preference")]
@@ -269,6 +271,7 @@ def main():
         "composition_flags_vs_b2": comp_flags,
         "results": results,
     }
+    out["provenance"].update(fp)
     (OUT / "pilot_evidence_single156_g1iso_b.json").write_text(
         json.dumps(out, indent=2, ensure_ascii=False))
     return 0

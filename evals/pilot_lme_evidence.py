@@ -17,6 +17,7 @@ from pathlib import Path
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 
 BASE = LLM_BASE_URL
 KEY = LLM_API_KEY
@@ -58,6 +59,7 @@ PICK = ["temporal-reasoning", "multi-session", "knowledge-update",
 
 @guarded()
 def main() -> int:
+    fp = announce({"runner": "evals/pilot_lme_evidence.py", "max_tokens": 1200, "response_format": "mem0 default json_object (unenforced)", "add": "none", "selection": "PILOT_N/PILOT_MODE", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/pilot_lme_evidence.py")
     os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
 
@@ -151,6 +153,7 @@ def main() -> int:
         "extrapolation_500q_h": round(total_ing / N * 500 / 3600, 1),
         "results": results,
     }
+    out["provenance"].update(fp)
     (OUT / outname).write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print(f"R@5 evidence (n={N}) = {r5:.2f} | substr = {rs:.2f} "
           f"| ingest {total_ing:.0f}s | 50q ~{out['extrapolation_50q_min']}min "

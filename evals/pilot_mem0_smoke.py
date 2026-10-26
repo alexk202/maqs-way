@@ -15,6 +15,7 @@ from datetime import datetime, timezone
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
                           LLM_API_KEY, LLM_BASE_URL, LLM_MODEL)
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 
 # Endpoints via eval_config (env-overridable; see evals/REPRODUCE.md).
 LLM_BASE = LLM_BASE_URL
@@ -42,6 +43,7 @@ PROBES = [
 
 @guarded()
 def main() -> int:
+    fp = announce({"runner": "evals/pilot_mem0_smoke.py", "max_tokens": 200, "response_format": "mem0 default json_object (unenforced)", "add": "infer=env PILOT_INFER (default False)", "selection": "5 synthetic facts", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/pilot_mem0_smoke.py")
     os.environ.setdefault("MEM0_TELEMETRY", "False")  # Oct-17 lesson: PostHog noise + migrations_qdrant lock
     from mem0 import Memory
 
@@ -64,7 +66,7 @@ def main() -> int:
     }
     print(json.dumps({"smoke": True, "benchmark": False,
                       "model": LLM, "embedder": EMB,
-                      "mem0": "0724291b",
+                      "mem0": "0724291b", "config_sha256": fp["config_sha256"],
                       "ts": datetime.now(timezone.utc).isoformat(timespec="seconds")}))
     m = Memory.from_config(cfg)
     for uid, text in FACTS:

@@ -18,6 +18,7 @@ from pathlib import Path
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from mem0 import Memory
 from qdrant_client import QdrantClient
 from eval_config import (EMBED_API_KEY, EMBED_BASE_URL, EMBED_DIMS, EMBED_MODEL,
@@ -161,6 +162,7 @@ def entity_recall(q, texts):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/run_reppenalty_probe.py", "max_tokens": 2000, "response_format": "mem0 default json_object (unenforced)", "add": "repeat_penalty request variants [1.1, 1.2, 1.3]", "selection": "loop questions x penalties", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_reppenalty_probe.py")
     data = json.loads(DATA.read_text())
     by_id8 = {}
     for q in data:
@@ -200,6 +202,7 @@ def main():
         },
         "results": results,
     }
+    out["provenance"].update(fp)
     (OUT / "reppenalty_probe.json").write_text(json.dumps(out, indent=2, ensure_ascii=False))
     print("\nartifact: evals/results/reppenalty_probe.json")
     return 0

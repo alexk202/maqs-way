@@ -25,6 +25,7 @@ from pathlib import Path
 os.environ.setdefault("MEM0_TELEMETRY", "False")
 
 from isolation_guard import guarded, temp_history_db
+from config_fingerprint import announce
 from mem0 import Memory
 
 from b6_prompt import B6_VERBATIM
@@ -72,6 +73,7 @@ def patch_llm_client(m, qi):
 
 @guarded()
 def main():
+    fp = announce({"runner": "evals/run_single156_b4.py", "max_tokens": 4000, "response_format": "mem0 default json_object (unenforced)", "add": "B6_VERBATIM (prereg sha 73c485c1)", "selection": "single-156 committed order", "model": MODEL, "embedder": {"model": EMB, "dims": EMBED_DIMS}, "vector_store": "qdrant, fresh store per question", "history_db": "per-question temp (isolation)", "mem0_version": "v1.1"}, LLM_BASE_URL, label="evals/run_single156_b4.py")
     data = json.loads(DATA.read_text())
     singles = [q for q in data if q["question_type"] in
                ("single-session-user", "single-session-assistant", "single-session-preference")]
@@ -173,6 +175,7 @@ def main():
         "response_chars_p99": lens[int(len(lens)*0.99)] if len(lens) > 1 else None,
         "results": results,
     }
+    out["provenance"].update(fp)
     (OUT / "pilot_evidence_single156_b4.json").write_text(
         json.dumps(out, indent=2, ensure_ascii=False))
     return 0
