@@ -1,6 +1,6 @@
 {
   "provenance": {
-    "config_sha256": "c14f32c17c8c29cadbff47b3bc8d0685aa0d04a192d817ab1337a69c2d95a7de",
+    "config_sha256": "548343f61ef472f43e72e21a76e9cc5d3ced7c56ab8b1479fd468c2459ff3691",
     "config_effective": {
       "runner": "evals/p4_mem0_isolation.py",
       "llm": {
@@ -18,7 +18,8 @@
       ],
       "controls": [
         "shared-id",
-        "mutational"
+        "mutational",
+        "postfilter"
       ],
       "channels": [
         "search",
@@ -36,7 +37,7 @@
       }
     },
     "mem0": "0724291b pin",
-    "date": "2026-10-26T09:02:07+00:00",
+    "date": "2026-10-26T09:06:43+00:00",
     "design": "proposals/p4-mem0-behavioral-isolation.md v0.2"
   },
   "main": {
@@ -154,7 +155,7 @@
   },
   "controls": {
     "mutation_user_id": {
-      "leaks_search": 8,
+      "leaks_search": 9,
       "leaks_get_all": 3,
       "fired": true
     },
@@ -163,8 +164,14 @@
       "search_cross_items": 5,
       "fired": true
     },
+    "postfilter_user_id": {
+      "mutated_own_recall": 0,
+      "unmutated_own_recall": 3,
+      "unmutated_foreign": 0,
+      "fired": true
+    },
     "mutation_agent_id": {
-      "leaks_search": 8,
+      "leaks_search": 9,
       "leaks_get_all": 3,
       "fired": true
     },
@@ -173,14 +180,26 @@
       "search_cross_items": 5,
       "fired": true
     },
+    "postfilter_agent_id": {
+      "mutated_own_recall": 0,
+      "unmutated_own_recall": 3,
+      "unmutated_foreign": 0,
+      "fired": true
+    },
     "mutation_run_id": {
-      "leaks_search": 8,
+      "leaks_search": 9,
       "leaks_get_all": 3,
       "fired": true
     },
     "shared_id_run_id": {
       "get_all_cross_items": 18,
       "search_cross_items": 5,
+      "fired": true
+    },
+    "postfilter_run_id": {
+      "mutated_own_recall": 0,
+      "unmutated_own_recall": 3,
+      "unmutated_foreign": 0,
       "fired": true
     }
   },
@@ -198,7 +217,7 @@
     }
   },
   "observed_behavior": {
-    "foreign_memory_id": "c917ce55-a665-4a1a-8f9f-9856016a2de4",
+    "foreign_memory_id": "1b6c15c1-f506-4066-b4cc-06edc142f99b",
     "get": {
       "returned": true,
       "text_preview": "obsB marker-OB0 secret"

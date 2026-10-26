@@ -67,3 +67,11 @@ the earlier per-run granularity kept the within-run tail — superseded 2026-10-
 see `results/g1iso_a_note.md`). SQLite compared by logical rows, never md5 (WAL
 checkpoint trap). The guard runs in EVERY run, built into the runner — details
 in REPRODUCE.md §6.
+
+**mem0-native run_id isolation (measured 2026-10-26 by the P4 demo,
+not adopted yet)**: giving each `add()` a distinct `run_id` natively isolates
+the per-question history tail in mem0@0724291b (the messages/history scope is
+keyed by the sorted `user_id&run_id` pair — the q2 scope holds only its own
+rows). A candidate alternative/complement to the per-question history DB; the
+H5 guard stays regardless (it guards the live roots). See
+`results/p4_mem0_isolation_report.json` (incident demo) and REPRODUCE.md §6.

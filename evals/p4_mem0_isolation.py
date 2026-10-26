@@ -14,6 +14,9 @@ controls (both must fire; an exception in a control is NOT a pass:
   {"raised": "<type>", fired=false} -> passed=false with the
   'control inconclusive' note):
   - shared-id (detector sanity);
+  - POST-TOP-K-FILTER mutation (third control): vector_store.search
+    wrapped so the scope filter applies AFTER top-k; the hostile query
+    must yield own_recall=0 under the mutation and >0 unmutated;
   - MUTATIONAL at the VECTOR-STORE level: the instance's vector_store.search
     and vector_store.list are wrapped so the scope key drops out of the
     filter AFTER Memory's input validation (Memory.search/get_all are called
@@ -110,11 +113,16 @@ def _vec(text):
     for t in toks:
         if t not in _TOK_VEC:
             seed = int(hashlib.sha256(("tok:" + t).encode()).hexdigest()[:16], 16)
-            # positive octant: any two texts sharing >=1 token get a cosine
-            # well above mem0's 0.1 similarity threshold; identical texts = 1.0.
-            # The isolation checks are string-marker based (not vector based),
-            # so global positive correlation does not weaken the test.
-            _TOK_VEC[t] = [random.Random(seed).uniform(0.5, 1.5) for _ in range(DIMS)]
+            # ONE Random per token (a fresh Random(seed) PER ELEMENT yields the
+            # same first sample every time -> every token vector becomes a
+            # constant [x,x,...] direction -> all texts end up parallel +-1;
+            # that root bug produced the erratic own_recall earlier). Proper
+            # per-token directions give: shared-k-of-(m,n) cos ~ k/sqrt(mn)
+            # (7 of 12 -> ~0.58 > the 0.1 threshold for hostile own_recall);
+            # near-copy (12 of 14) ~ 0.9 >> different-fact ~0.58 (postfilter
+            # starvation ranking); identical texts 1.0 (mutation probes).
+            rng = random.Random(seed)
+            _TOK_VEC[t] = [rng.uniform(-1, 1) for _ in range(DIMS)]
         tv = _TOK_VEC[t]
         v = [a + b for a, b in zip(v, tv)]
     n = _math.sqrt(sum(x * x for x in v)) or 1.0
@@ -351,6 +359,73 @@ def run_shared_id_control(mem_cls, stub_url, root, key, facts):
                 "fired": False, "inconclusive": True}
 
 
+def run_postfilter_control(mem_cls, stub_url, root, key, facts):
+    """(c) POST-TOP-K FILTER mutation at the VECTOR-STORE level: wrap
+    vector_store.search so the scope filter is applied AFTER the top-k
+    selection (unfiltered top-k, then payload-filtered). The hostile query
+    (verbatim foreign fact text, 5 exact foreign copies stored so the
+    unfiltered top-k is fully occupied by foreign items) must yield
+    own_recall == 0 under the mutation (starved empty result), while the
+    UNMUTATED path on the same store must yield own_recall > 0 (the contrast
+    pair proves the discriminator). An exception -> raised/inconclusive."""
+    try:
+        store = root / f"postf_{key}/store"
+        hist = str(root / f"postf_{key}/history.db")
+        m = mem_cls.from_config(mem_cfg(stub_url, str(store), hist))
+        # subject A: 3 own facts; subject B: 5 DISTINCT near-copies of its
+        # fact[0] (base + 2 suffix tokens: cosine ~0.92 to the query, above
+        # A's own ~0.6 -- mem0's hash-dedup would collapse exact duplicates,
+        # so the copies differ slightly while all out-scoring A's items)
+        for i in range(3):
+            m.add([{"role": "user", "content": facts["A"][i]}], infer=False, **{key: "A"})
+        for n in range(5):
+            m.add([{"role": "user", "content": f"{facts['B'][0]} note {n}"}],
+                  infer=False, **{key: "B"})
+        vs = m.vector_store
+        orig_search = vs.search
+
+        def postfilter_search(query, vectors, top_k=5, filters=None, **kw):
+            # naive post-filter implementation: select the USER-REQUESTED
+            # top-k (5) WITHOUT the scope filter, then filter by payload.
+            # NOTE: mem0's real flow asks the store for internal_limit =
+            # max(4*top_k, 60) candidates -- which by itself mitigates naive
+            # starvation; this control simulates the pure class (filter
+            # strictly after the requested k) to prove the TEST detects it.
+            raw = orig_search(query, vectors, top_k=top_k, filters=None, **kw)
+            if not filters:
+                return raw
+            want = filters.get(key)
+            out = []
+            for r in raw[:5]:  # the user-requested k = 5
+                pl = getattr(r, "payload", None) or {}
+                if pl.get(key) == want:
+                    out.append(r)
+            return out
+
+        probe = facts["B"][0]  # hostile: verbatim foreign fact
+        vs.search = postfilter_search
+        try:
+            r = m.search(probe, filters={key: "A"}, top_k=5)
+            rr = r.get("results", r) if isinstance(r, dict) else r
+            texts = [it.get("memory", "") for it in rr]
+            mutated_own = sum(1 for t in texts if any(mk in t for mk in markers_of(key, "A")))
+        finally:
+            vs.search = orig_search
+        r2 = m.search(probe, filters={key: "A"}, top_k=5)
+        rr2 = r2.get("results", r2) if isinstance(r2, dict) else r2
+        texts2 = [it.get("memory", "") for it in rr2]
+        unmutated_own = sum(1 for t in texts2 if any(mk in t for mk in markers_of(key, "A")))
+        unmutated_foreign = sum(1 for t in texts2 if foreign_in(key, t, "A"))
+        _close(m)
+        return {"mutated_own_recall": mutated_own,
+                "unmutated_own_recall": unmutated_own,
+                "unmutated_foreign": unmutated_foreign,
+                "fired": mutated_own == 0 and unmutated_own > 0}
+    except Exception as e:
+        return {"raised": type(e).__name__, "detail": str(e)[:120],
+                "fired": False, "inconclusive": True}
+
+
 def run_incident_demo(mem_cls, stub_url, root):
     """One user, SHARED history db -- the H5 channel; + run_id measurement.
     infer=True against the stub chat: the messages channel (save_messages)
@@ -450,7 +525,7 @@ def main():
                    "vector_store": "qdrant local, temp dir",
                    "history_db": "temp per scenario (H5 lesson)",
                    "mem0_version": "v1.1", "scope_keys": list(KEYS),
-                   "controls": ["shared-id", "mutational"],
+                   "controls": ["shared-id", "mutational", "postfilter"],
                    "channels": ["search", "get_all", "history_rows", "hostile"]},
                   "http://127.0.0.1:1/v1", label="p4")  # no live LLM server; stub below
     from mem0 import Memory
@@ -469,6 +544,8 @@ def main():
             report["controls"][f"mutation_{key}"] = run_mutation_control(
                 Memory, stub_url, root, key, FACT_SETS[key])
             report["controls"][f"shared_id_{key}"] = run_shared_id_control(
+                Memory, stub_url, root, key, FACT_SETS[key])
+            report["controls"][f"postfilter_{key}"] = run_postfilter_control(
                 Memory, stub_url, root, key, FACT_SETS[key])
         report["incident_demo"] = run_incident_demo(Memory, stub_url, root)
         report["observed_behavior"] = run_observed_behavior(Memory, stub_url, root)

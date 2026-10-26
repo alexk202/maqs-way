@@ -161,6 +161,14 @@ periodically.
   within-run sliding tail — exposed by the g1-iso-a STOP on 2026-10-25
   (`results/g1iso_a_note.md`) and superseded the same day; the guard itself is
   unchanged by granularity.
+- **mem0-native alternative (measured, not adopted)**: the P4 incident demo
+  (2026-10-26, `results/p4_mem0_isolation_report.json`) measured that giving
+  each add a distinct `run_id` natively isolates the per-question history tail
+  (mem0 keys the messages/history scope by the alphabetically sorted
+  `user_id&run_id` pair: the q2 scope holds only its own rows, zero leaked
+  from q1). A candidate for the runner family as an alternative or complement
+  to the per-question history DB — the H5 guard stays either way (it guards
+  the LIVE roots; the choice of in-temp isolation mechanism is ours).
 - **Self-test** (no stand needed):
   `python3 evals/isolation_guard.py selftest` — writes a probe file into
   `~/.mem0`, expects RED, removes it, expects GREEN again; exit 0 iff both hold.
