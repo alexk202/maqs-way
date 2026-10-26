@@ -516,7 +516,33 @@ def dry_mutation():
     return 0 if ok else 1
 
 
+def stub_selfcheck():
+    """Pre-check (2026-10-26, council review): the stub must give different
+    documents NON-parallel vectors -- cos(different docs) must not be 1.0.
+    The 02e1c4c verdict run shipped a Random-per-element bug that made every
+    token vector a constant direction (all texts parallel, cosines +-1): the
+    hostile/filter-order discriminator was vacuous. This gate refuses to run
+    on such a degenerate stub."""
+    a = _vec("alpha beta gamma delta epsilon zeta")
+    b = _vec("one two three four five six")  # DISJOINT tokens: the stub is a
+    # bag-of-tokens -- same tokens in reverse order are identical, not different
+    c = sum(x * y for x, y in zip(a, b))
+    same = _vec("alpha beta gamma delta epsilon zeta")
+    self = sum(x * y for x, y in zip(a, same))
+    print(f"stub selfcheck: cos(different docs)={c:.4f} cos(same)={self:.4f}",
+          flush=True)
+    if abs(self - 1.0) > 1e-6:
+        print("DEGENERATE STUB: cos(same doc) != 1.0 -- refusing to run",
+              flush=True)
+        sys.exit(2)
+    if abs(c - 1.0) < 1e-3:
+        print("DEGENERATE STUB: different documents are parallel (cos ~ 1.0) "
+              "-- refusing to run", flush=True)
+        sys.exit(2)
+
+
 def main():
+    stub_selfcheck()  # unconditional pre-flight: refuse to run on a degenerate stub
     if len(sys.argv) > 1 and sys.argv[1] == "dry-mutation":
         return dry_mutation()
     fp = announce({"runner": "evals/p4_mem0_isolation.py",

@@ -101,6 +101,11 @@ not scope-guarded in mem0@0724291b -- recorded as an observed API contract (the
 scope guards live on the search/list paths), without any conclusion about defect;
 any future test design around by-ID scoping is a separate package.
 
+   **Formulation (2026-10-26, append-only, mirrors the evidence showcase):**
+   retrieval isolation — verified; authorization of ID-addressed operations
+   (get/update/delete) is outside mem0's contract and must be enforced by
+   the integrating application. No defect conclusion drawn.
+
 ## Honest boundaries of this audit
 
 - Nothing was executed: runtime behavior, real vector residue, metrics —
