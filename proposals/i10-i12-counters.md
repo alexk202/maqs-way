@@ -1,3 +1,5 @@
+Canonized in a6b1f02 (SPEC §3.4, v0.3). This file is the historical formulation; the normative text is in SPEC.
+
 # I10/I11/I12 Counter Formulation (v0.1, NOT canon)
 
 > Status: formulation proposal, package 1.6a. NOT normative until
