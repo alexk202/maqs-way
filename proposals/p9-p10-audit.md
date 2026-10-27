@@ -1,7 +1,7 @@
 # P9/P10 Audit Procedure Formulation (v0.1, NOT canon)
 
-> Status: formulation proposal, package 1.7a. NOT normative until v0.2
-> canonization with owner signature. P9/P10 are known gaps
+> Status: formulation proposal, package 1.7a. NOT normative until
+> canonization (target v0.3) with owner signature. P9/P10 are known gaps
 > (owner: 1.7a-formulation, closes_in: v0.2 canonization).
 > One-sidedness is DECLARED UPFRONT here, not implied: every P9 run
 > reports "negative = inconclusive; coverage NOT claimed".

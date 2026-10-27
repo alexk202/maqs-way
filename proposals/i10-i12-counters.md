@@ -1,7 +1,7 @@
 # I10/I11/I12 Counter Formulation (v0.1, NOT canon)
 
-> Status: formulation proposal, package 1.6a. NOT normative until v0.2
-> canonization with owner signature. In coverage fixtures all three items
+> Status: formulation proposal, package 1.6a. NOT normative until
+> canonization (target v0.3) with owner signature. In coverage fixtures all three items
 > are known gaps (owner: 1.6a-formulation, closes_in: v0.2 canonization).
 > The C8→I11 bridge lands here as CONSOLIDATION (subject moved to I11),
 > not closure: I11 stays a gap.

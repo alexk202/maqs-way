@@ -1,7 +1,7 @@
 # I15 Layer Taxonomy Formulation (v0.1, NOT canon)
 
-> Status: formulation proposal, package 1.6d. NOT normative until v0.2
-> canonization with owner signature. I15 is a known gap
+> Status: formulation proposal, package 1.6d. NOT normative until
+> canonization (target v0.3) with owner signature. I15 is a known gap
 > (owner: 1.6d-formulation, closes_in: v0.2 canonization).
 > Core rule: diagnose → layer → interpret. Never interpret without a layer.
 

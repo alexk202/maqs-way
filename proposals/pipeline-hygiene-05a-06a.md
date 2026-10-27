@@ -1,7 +1,7 @@
 # 0.5a/0.6a Pipeline Hygiene Formulation (v0.1, NOT canon)
 
-> Status: formulation proposal, package 1.7b. NOT normative until v0.2
-> canonization with owner signature. 0.5a/0.6a are known gaps
+> Status: formulation proposal, package 1.7b. NOT normative until
+> canonization (target v0.3) with owner signature. 0.5a/0.6a are known gaps
 > (owner: 1.7b-formulation, closes_in: v0.2 canonization).
 
 ## 0.5a — Dead code [CRIT]
