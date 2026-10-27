@@ -2,7 +2,7 @@
 
 **Status:** v0.2 — experimental minor (honest: open known gaps listed in §7), normative file name `SPEC.md`, revision date 2026-10-15
 **Author:** Aleksandr Kossarev
-**Relation to MAQS:** MAQS v1.6 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
+**Relation to MAQS:** MAQS v1.8.1 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
 **License note:** Sources referenced under their respective licenses. This spec is Apache-2.0.
 
 ## 0. Industry Diagnosis
@@ -253,7 +253,7 @@ Each Ed25519-signed receipt, replayable. Deletion_log zero PII.
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
-standard_version: MAQS 1.6 + Way 0.2
+standard_version: MAQS 1.8.1 + Way 0.2
 test_scenarios: LoCoMo/LongMemEval/MemoryAgentBench + negative + deletion lattice + restore drill + round-trip
 results: per-metric + per-invariance + limitations
 exceptions: documented per-item with justification
@@ -271,7 +271,7 @@ j3_guard: every fix closed with regression guard test; unexecuted test (silent s
 Each profile is subset of Way + refs to MAQS items.
 
 
-## 5. Mapping to MAQS v1.6
+## 5. Mapping to MAQS v1.8.1
 
 0 Map → 2.1 data model + provenance
 A Input validation → 2.4 Content-as-Data + OWASP ASI06

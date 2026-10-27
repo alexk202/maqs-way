@@ -5,7 +5,7 @@
   "version": "0.2.0",
   "license": "Apache-2.0",
   "description": "Three-layer standard: Principles / Architecture / Verification. Thresholds split into min_threshold (CI gate) and target_threshold (engineering goal). Includes semantic masking, temporal priority, hardened OTel. Release stamp v0.2.0; schema_version tracks the data model (frozen at way-v0.1.3, unchanged). Release stamp and model version are intentionally different (repo rule #4).",
-  "maqs_core_reference": "MAQS v1.6 (2026-10-09) remains audit core. Way items reference MAQS sections 0-J as implementation evidence.",
+  "maqs_core_reference": "MAQS v1.8.1 (2026-10-27) remains audit core. Way items reference MAQS sections 0-J as implementation evidence.",
   "attribution": "Sources referenced under their respective licenses: OMPS (Apache-2.0), AMSP (Apache-2.0), OAMP (MIT), Zep/Graphiti, MemoryOps, Tombstone",
   "principles": [
     {
