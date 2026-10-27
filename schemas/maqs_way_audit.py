@@ -52,10 +52,12 @@ PIN_VECTOR = ROOT / "conformance" / "invalid" / "005-shared-fact-visibility-leak
 # item refs cover actual usage: E6 (P1 mapping), F7 (invalid-002), G1 (G1 fixtures),
 # I11 (C8->I11 bridge, commit 7db1dd7), P9/P10 (audit_procedure.json rules,
 # v0.3 canonization step 7 -- MAQS §2 Steps P9/P10, owner amendment: no new
-# namespace token, MAQS-item anchors per the MAQS:I11 precedent).
+# namespace token, MAQS-item anchors per the MAQS:I11 precedent),
+# 0.5a/0.6a (pipeline_hygiene.json rules, v0.3 canonization step 8 -- MAQS
+# checklist items with criticality markers, same owner-amendment pattern).
 MAQS_VALID = {
     "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P",
-    "E6", "F1", "F7", "G1", "I11", "P9", "P10",
+    "E6", "F1", "F7", "G1", "I11", "P9", "P10", "0.5a", "0.6a",
 }
 
 # Closed LOG namespace map: rule suffix -> dotted path in maqs-way-standard.json.
