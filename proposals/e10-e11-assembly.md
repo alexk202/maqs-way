@@ -4,6 +4,7 @@
 > E10/E11 MUST NOT be cited as operative Way rules until canonization (target v0.3)
 > with owner signature. In coverage fixtures both items are known gaps
 > (owner: 1.5-formulation, closes_in: v0.3 canonization).
+> MAQS 1.8.1 extensions not yet reflected: none → v0.4.
 > Sanction: owner decision on v2 final (pending at build time).
 
 ## Glossary (frozen for v0.1-formulation; redefinition only via separate sanction)
@@ -73,15 +74,15 @@ The word "positioning" in SPEC §2.4 names the topic; it sets no norm
 (no subject/predicate/condition: no rule, no critical definition, no
 verification procedure required by MAQS E11 [IMP], Liu et al.,
 lost-in-the-middle). Word-as-rule mapping is rejected (rule #5).
-Anchor: SPEC §2.4. Formulation lives here; closes_in: v0.2 canonization
-(owner signature). E10 status: same bridge (formulation here, canonization v0.2).
+Anchor: SPEC §2.4. Formulation lives here; closes_in: v0.3 canonization
+(owner signature). E10 status: same bridge (formulation here, canonization v0.3).
 
 ## v0.2 candidates (NOT rejected, awaiting source — do not act on in v0.1)
 
 - The reviewer's 3-level critical scheme (provenance → importance ≥ 0.85 → type list;
   WARN on importance ≥ 0.75 unlabeled). Activation condition: `importance`
   becomes a real model field with defined scale (requires canon change,
-  owner signature). Revision: with v0.2 canonization.
+  owner signature). Revision: with v0.3 canonization.
 - General pin mechanism "vector field == canon path" (from 1.4): criterion ≥ 3 pins.
 
 ## v0.2 boundary
@@ -108,5 +109,5 @@ Beautiful numbers/labels without a canon source stay beautiful — and out.
 ## CLI integration point (documented, not implemented)
 
 Migration of this gate into `audit` (e.g. `assembly` subcommand) = separate
-package after v0.2 canonization, if the formulation survives review
+package after v0.3 canonization, if the formulation survives review
 (precedent: pin mechanism, package 1.4). CLI 1.4 untouched by package 1.5.
