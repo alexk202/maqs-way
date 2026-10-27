@@ -1,7 +1,7 @@
 # MAQS-Way — Common Path from Policies to Implementation
 
 **Status:** v0.2 — experimental minor path layer (open known gaps listed in SPEC §7)
-**Core:** MAQS v1.6 remains audit core: https://github.com/alexk202/memory-architecture-standard
+**Core:** MAQS v1.8.1 remains audit core: https://github.com/alexk202/memory-architecture-standard
 
 > **Formula:** MAQS = practical audit of architecture and typical failures (how to verify)
 > Way = common model + measurable criteria + lifecycle + reproducible verification (how to build)
@@ -13,7 +13,7 @@ MAQS checks that mechanism exists. Way proves it works.
 ## Why Way?
 
 - **Policy layer** is overcrowded: GDPR Art17, EU AI Act Art12/13/19, RBAC, governance docs
-- **Audit layer** exists: MAQS v1.6 — rare checklist backed by 20k+ tracebacks and production incidents
+- **Audit layer** exists: MAQS v1.8.1 — rare checklist backed by 20k+ tracebacks and production incidents
 - **Path layer** was missing: which tools, patterns, schemas to implement policy in memory architecture and how to prove it
 
 Without path, policies are written by lawyers, audits are done ad-hoc by engineers.
@@ -58,7 +58,7 @@ https://github.com/alexk202/maqs-way-evidence — derived from canon, nothing th
 
 ## Relation to MAQS
 
-- MAQS v1.6 = audit checklist you put on table, CRIT/IMP/REC verdict, backed by incidents
+- MAQS v1.8.1 = audit checklist you put on table, CRIT/IMP/REC verdict, backed by incidents
 - Way = governance contract that references MAQS sections 0-J as implementation evidence
 
 Two repos, one coordinate system. MAQS stays clean.

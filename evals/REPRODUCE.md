@@ -133,8 +133,8 @@ snapshotted at import time (the guard is imported before `from mem0 import
 Memory`, so import-time side effects are inside the guarded window), and after
 the run body the same roots are re-read and compared. Any divergence prints
 `[H5 isolation guard] RED` lines and forces exit code 1 — the verify step runs
-even if the run body raised. This is an H5 extension of the MAQS [Unreleased]
-line: the isolation guard executes in EVERY run, built into the runner, not
+even if the run body raised. This is an H5 extension of the MAQS 1.8
+line (it was in MAQS [Unreleased] when this guard was built): the isolation guard executes in EVERY run, built into the runner, not
 periodically.
 
 - **Guarded roots** (live stores = anything outside the per-run temp store):

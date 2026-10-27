@@ -1,4 +1,4 @@
-"""B write-integrity coverage gate (MAQS v1.6 B1-B6, Way package 1.2).
+"""B write-integrity coverage gate (MAQS v1.8.1 B1-B6, Way package 1.2).
 
 Rule: every MAQS write-integrity item must map to at least one Way rule
 that REALLY EXISTS — either a principle P1-P8 in maqs-way-standard.json

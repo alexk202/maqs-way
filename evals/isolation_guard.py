@@ -1,6 +1,7 @@
 """MAQS H5 [CRIT] isolation guard — built into every eval runner, runs in
-EVERY run (not periodically). Extends the H5 line from the MAQS [Unreleased]
-notes: evals must never touch the live memory stores on this machine, and the
+EVERY run (not periodically). Extends the H5 line from the MAQS 1.8
+notes (the expansion was in MAQS [Unreleased] when this guard was built):
+evals must never touch the live memory stores on this machine, and the
 promise "guard check before/after live directories" (README "Isolation") is
 enforced by code, not by convention.
 

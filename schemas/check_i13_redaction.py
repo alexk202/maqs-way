@@ -15,6 +15,11 @@ by check_no_real_secrets() below, not by agreement. H5 restated: committed liter
 are inert sentinels (never valid credentials, no scanner-validatable);
 no live stores are touched; temp only at runtime.
 
+Vector 'urlp_glued' (MAQS 1.8.1 sync): the path-embedded form glued into a
+URL path after an identifier (/bot<id>:AA.../getUpdates) — the prefix-adjacent
+context of the I13 1.8 expansion. Norm pre-exists in §3.4 ("credential-in-URL
+... in path"); the regexes carry no boundary anchors, the vector proves it.
+
 Integration contract (documented, NOT implemented — precedent 1.5):
   'audit secrets': no args; runs this gate; exit 0/1; text report to stdout.
   CLI 1.4 untouched by package 1.6b.
@@ -124,6 +129,7 @@ VEC = {
     "plain": 'api_key=sk-TEST-NOT-REAL-abc123 user=alice',
     "urlq": 'GET /x?token=sk-TEST-NOT-REAL-zzz&u=1',
     "urlp": 'call botTEST:AA999fasdf path /send',
+    "urlp_glued": 'GET https://api.example.org/botTEST:AA999fasdf/getUpdates HTTP/1.1',
     "allowed": 'tool_args_sanitized ok retrieval_count=3 policy_decision=BLOCK latency_ms=12',
 }
 
@@ -137,10 +143,12 @@ def check_semantics():
     if audit_sink(sink):
         fails.append("probe-a plaintext secret residue after emit")
 
-    # Probe (b): both credential-in-URL forms masked.
+    # Probe (b): both credential-in-URL forms masked, incl. the prefix-glued
+    # URL-path form (token after an identifier, no free-standing boundaries).
     sink = []
     emit(sink, VEC["urlq"])
     emit(sink, VEC["urlp"])
+    emit(sink, VEC["urlp_glued"])
     if audit_sink(sink):
         fails.append("probe-b credential-in-URL residue after emit")
 
@@ -178,7 +186,7 @@ def main() -> int:
         if check() != 0:
             print("GATE RED")
             return 1
-    print("SEMANTICS 4/4 (plain-block, url-both-forms, no-overredact, broken-caught)")
+    print("SEMANTICS 4/4 (plain-block, url-3-forms incl. prefix-glued, no-overredact, broken-caught)")
     print("GATE GREEN — I13 proven (norm pre-exists in §3.4)")
     return 0
 

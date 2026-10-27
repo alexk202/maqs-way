@@ -1,4 +1,4 @@
-"""C8 traceback-coverage gate (MAQS v1.6 C8, Way package).
+"""C8 traceback-coverage gate (MAQS v1.8.1 C8, Way package).
 
 Rule: every failure class observed in production must map to at least one
 Way rule (P1-P8) that REALLY EXISTS in maqs-way-standard.json. A class with
