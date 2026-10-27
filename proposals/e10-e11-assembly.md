@@ -1,9 +1,9 @@
 # E10/E11 Assembly Formulation (v0.1, NOT canon)
 
 > Status: formulation proposal, package 1.5. This document is NOT normative:
-> E10/E11 MUST NOT be cited as operative Way rules until v0.2 canonization
+> E10/E11 MUST NOT be cited as operative Way rules until canonization (target v0.3)
 > with owner signature. In coverage fixtures both items are known gaps
-> (owner: 1.5-formulation, closes_in: v0.2 canonization).
+> (owner: 1.5-formulation, closes_in: v0.3 canonization).
 > Sanction: owner decision on v2 final (pending at build time).
 
 ## Glossary (frozen for v0.1-formulation; redefinition only via separate sanction)
