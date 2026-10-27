@@ -1,3 +1,5 @@
+Canonized in cfa245a (SPEC §2.4, v0.3). This file is the historical formulation; the normative text is in SPEC.
+
 # E10/E11 Assembly Formulation (v0.1, NOT canon)
 
 > Status: formulation proposal, package 1.5. This document is NOT normative:
