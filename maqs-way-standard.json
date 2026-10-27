@@ -400,6 +400,18 @@
           "owner": "0.6a",
           "maqs": "0.6a [IMP]"
         }
+      },
+      "b4_write_atomicity": {
+        "note": "Write atomicity norms (MAQS B4, canonized v0.3, SPEC §2.5, owner signature 2026-10-27). Binds the §2.5 store contracts to a crash-observability property; failure observability remains with B5 (logging §3.4).",
+        "property": "after a crash at ANY point of a write sequence, a reader observes either the fully-old state or the fully-new state; mixed/partial state is never observable",
+        "multi_store": "transactional or compensable; with compensation an explicit in-progress intent record + post-crash recovery (roll back or complete) is REQUIRED; readers treat uncommitted writes as absent",
+        "single_file": "atomicity covers ALL state writes including append operations and compound file+state pairs; partial atomicity does not satisfy",
+        "append": "an interrupted append leaves the file as before the attempt (or completes) -- never a half-append as the observable final state",
+        "mechanism_neutral": "the requirement is on the property, not the mechanism; known mechanisms (database transaction; outbox/compensation; temp file -> fsync -> atomic rename -> directory fsync) are examples, not mandates",
+        "recovery": "recovery after a crash MUST run before new writes proceed; the recovery outcome is logged (B5 discipline, §3.4 -- reuse, no new events)",
+        "no_numeric_parameters": "the requirement is a crash-observability property; B4 declares no tunable numeric parameters",
+        "owner": "B4",
+        "maqs": "B4 [IMP]"
       }
     }
   },

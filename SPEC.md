@@ -265,6 +265,54 @@ audit), not the bare word.
 - **D8 incompatible embeddings (MAQS D8 [CRIT]):** dimension/language mismatch → explicit rejection with diagnostics, not a burst of warnings during search; re-index or migrate before mixed-model retrieval.
 - **H5 test isolation (MAQS H5 [CRIT]):** tests use temp/in-memory stores and mocked APIs, never write to live memory; isolation covers filesystem (no prod paths as defaults); guard check before/after confirms no test artifacts leaked.
 
+The write-atomicity requirement below is a policy extension setting
+(see `extensions.policy` in maqs-way-standard.json); it is not part of
+the core data model (`schema_version way-v0.1.3`, frozen). It binds the
+§2.5 store contracts to a crash-observability property; failure
+observability itself remains with B5 (logging, §3.4).
+
+**B4 — Write atomicity ([IMP], MAQS B4).** Writing to multiple stores
+(message + vector + index) is transactional or compensable: partial
+writes ("message saved, vector not") are excluded. Atomicity covers ALL
+state writes, including append operations and compound file+state
+pairs; partial atomicity does not satisfy this item.
+
+The requirement is on the PROPERTY, not on a mechanism: after a crash
+at ANY point of a write sequence, a reader observes either the
+fully-old state or the fully-new state — never a mixed or partial
+state. The choice of mechanism is NOT prescribed. Known mechanisms are
+examples, not requirements: a database transaction; an
+outbox/compensation scheme (an explicit in-progress intent record +
+post-crash recovery that rolls back or completes the interrupted
+write); for a single file — write to a temporary file, fsync, atomic
+rename, directory fsync. Appends are state writes: an interrupted
+append leaves the file exactly as before the attempt (or completes —
+never a half-append as the observable final state). A compound
+file+state pair is atomic as a unit: the file and its paired state flip
+together or not at all.
+
+An explicit in-progress state is part of the requirement wherever
+compensation is used: the intent record marks the write as underway so
+that recovery after a crash can either roll it back or complete it;
+readers treat uncommitted (in-progress) writes as absent. The
+in-progress marker is the mechanism's internal state — it does NOT add
+a lifecycle state to the data model (§2.1 enum unchanged). Recovery
+after a crash MUST run before new writes proceed; the recovery outcome
+is logged (B5 discipline, §3.4). Verification injects a crash at every
+point between write steps and reads the state after each crash — a
+check that cannot fail is not a check.
+
+B4 declares no tunable numeric parameters: the requirement is a
+crash-observability property.
+
+Glossary (frozen; redefinition only via separate sanction):
+`atomic` — after a crash at any point, a reader sees the old or the new
+state in full, never a mixture; `compensable` — an interrupted write is
+rolled back or completed by recovery; `in-progress (intent) record` —
+the mechanism's internal marker of an underway write, invisible to
+readers until commit; `compound file+state pair` — a file and its
+paired state flipped as one unit; `append` — a state write covered by
+atomicity like any other.
 
 ## 3. VERIFICATION Layer
 
@@ -670,6 +718,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
-- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3); P9/P10 canonized in §3.5 (owner signature 2026-10-27); audit procedure as policy extension, core data model unchanged (way-v0.1.3); 0.5a/0.6a canonized in §3.2 (owner signature 2026-10-27); pipeline hygiene as policy extension, core data model unchanged (way-v0.1.3); check_pipeline_hygiene was RED at v0.2 and v0.2.1 (check_release.py undeclared; baseline drift); not covered by the release gate at the time; fixed in 89a955c.
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3); P9/P10 canonized in §3.5 (owner signature 2026-10-27); audit procedure as policy extension, core data model unchanged (way-v0.1.3); 0.5a/0.6a canonized in §3.2 (owner signature 2026-10-27); pipeline hygiene as policy extension, core data model unchanged (way-v0.1.3); check_pipeline_hygiene was RED at v0.2 and v0.2.1 (check_release.py undeclared; baseline drift); not covered by the release gate at the time; fixed in 89a955c; B4 canonized in §2.5 (owner signature 2026-10-27); write atomicity as policy extension, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.
