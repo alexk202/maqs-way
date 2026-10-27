@@ -1,0 +1,1058 @@
+{
+  "provenance": {
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "server": "http://127.0.0.1:8087/v1",
+    "ctx": 32768,
+    "seed": 42,
+    "embedder": "text-embedding-nomic-embed-text-v1.5",
+    "mem0": "0724291b",
+    "schema_sha256": "7a371d7a4867173fe02d0b9e003aeea204f60a6c0adb512b6b2b12d392992e9f",
+    "max_items": 31,
+    "max_tokens": 2000,
+    "repeat_penalty": 1.0,
+    "delta_vs_g1": "history_db_path -> temp store (H5, ffb5879)",
+    "panel": "frozen verbatim_g1_v12 12 ids (4/4/4)",
+    "canary": "311778f1, faba32e5, e47becba (proposal v0.4)",
+    "stand": "stand-2 iGPU Vulkan0 (Intel Arc), prereg-stand2-igpu.md",
+    "date": "2026-10-27T13:44:05+00:00",
+    "label": "prereg-stand2-igpu (invocation A, passes 2)",
+    "config_sha256": "d5d2b3a60d3a4ec894452ca41054a0362ee78d536323c310ad0871e428fe710b",
+    "config_effective": {
+      "runner": "evals/run_stand2_panel12.py",
+      "max_tokens": 2000,
+      "response_format": "json_schema strict, schema_sha256 7a371d7a4867173f",
+      "add": "none",
+      "selection": "frozen panel-12 + canary (stand-2 iGPU)",
+      "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+      "embedder": {
+        "model": "text-embedding-nomic-embed-text-v1.5",
+        "dims": 768
+      },
+      "vector_store": "qdrant, fresh store per question",
+      "history_db": "per-question temp (isolation)",
+      "mem0_version": "v1.1",
+      "server": {
+        "n_ctx": 32768,
+        "seed": null,
+        "temperature_server": null,
+        "repeat_penalty_server": null,
+        "top_k_server": null,
+        "top_p_server": null
+      },
+      "model_file": {
+        "source": "MODEL_FILE",
+        "md5": "6eb593f3f5eee264d6c60c186ccc12e0"
+      }
+    }
+  },
+  "identical_questions": 12,
+  "of": 12,
+  "verdict_rule": "within-invocation check only (>=2 passes); the stand-2 criterion (pass1==pass2 back-to-back; pass3 after restart identical) is evaluated by stand2_compare.py over both invocation artifacts",
+  "per_question": [
+    {
+      "q_id": "75832dbd",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "0a34ad58",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "1faac195",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "b0479f84",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "fca70973",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "311778f1",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "afdc33df",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "19b5f2b3",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "e47becba",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "58bf7951",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "3b6f954b",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    },
+    {
+      "q_id": "faba32e5",
+      "raw_identical": true,
+      "memory_texts_identical": true,
+      "stored_texts_identical": true,
+      "frames_identical": true,
+      "byte_identical": true
+    }
+  ],
+  "passes": [
+    {
+      "header": {
+        "pass": 1,
+        "canary": {
+          "canary_fp": "e822be9c89f0a6d64854be2c1bc0e68ccb233dd2c97a8cd4824601e107454b18",
+          "canary_facts": {
+            "311778f1": 3,
+            "faba32e5": 3,
+            "e47becba": 3
+          },
+          "canary_raw": {
+            "311778f1": [
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+            ],
+            "faba32e5": [
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}"
+            ],
+            "e47becba": [
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}",
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for advice on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+            ]
+          }
+        },
+        "elapsed_s": 2692.6
+      },
+      "results": [
+        {
+          "q_id": "75832dbd",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 977,
+              "facts": 5,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Explainable AI is essential in medical image analysis to ensure that deep learning models are transparent, trustworthy, and fair.\", \"linked_memory_ids\": []}\n  ]\n}"
+          ],
+          "memory_texts": [
+            "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.",
+            "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+            "Explainable AI is essential in medical image analysis to ensure that deep learning models are transparent, trustworthy, and fair.",
+            "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+            "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+          ],
+          "stored_texts": [
+            "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.",
+            "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+            "Explainable AI is essential in medical image analysis to ensure that deep learning models are transparent, trustworthy, and fair.",
+            "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+            "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 145.1
+        },
+        {
+          "q_id": "0a34ad58",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1424,
+              "facts": 8,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning to visit the Tokyo Tower and wants to know what to expect.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The Tokyo Tower offers panoramic views of the city from its observation decks, standing at 332.6 meters tall.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User can expect to see exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The tower features shopping and dining options, including souvenir shops and restaurants.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User can take the elevator or walk the stairs to the observation decks for stunning views.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"The Tokyo Tower offers interactive exhibits and displays that teach about Tokyo's history, culture, and landmarks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User should get to the tower early to avoid crowds and buy tickets online in advance.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"The Tokyo Tower is an unforgettable experience that offers something for everyone.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "The Tokyo Tower is an unforgettable experience that offers something for everyone.",
+            "The Tokyo Tower offers interactive exhibits and displays that teach about Tokyo's history, culture, and landmarks.",
+            "The Tokyo Tower offers panoramic views of the city from its observation decks, standing at 332.6 meters tall.",
+            "User is planning to visit the Tokyo Tower and wants to know what to expect.",
+            "User should get to the tower early to avoid crowds and buy tickets online in advance."
+          ],
+          "stored_texts": [
+            "The Tokyo Tower is an unforgettable experience that offers something for everyone.",
+            "The Tokyo Tower offers interactive exhibits and displays that teach about Tokyo's history, culture, and landmarks.",
+            "The Tokyo Tower offers panoramic views of the city from its observation decks, standing at 332.6 meters tall.",
+            "The tower features shopping and dining options, including souvenir shops and restaurants.",
+            "User can expect to see exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum.",
+            "User can take the elevator or walk the stairs to the observation decks for stunning views.",
+            "User is planning to visit the Tokyo Tower and wants to know what to expect.",
+            "User should get to the tower early to avoid crowds and buy tickets online in advance."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 211.2
+        },
+        {
+          "q_id": "1faac195",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2481,
+              "facts": 10,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User chooses the 'Musical Storytime' concert at the McNichols Civic Center Building as a suitable event for Emma.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User asks about grabbing lunch somewhere near the McNichols Civic Center Building after the concert.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"Assistant recommends kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.",
+            "User chooses the 'Musical Storytime' concert at the McNichols Civic Center Building as a suitable event for Emma.",
+            "User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.",
+            "User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.",
+            "User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city."
+          ],
+          "stored_texts": [
+            "Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities.",
+            "Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.",
+            "Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.",
+            "Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.",
+            "Assistant recommends kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.",
+            "User asks about grabbing lunch somewhere near the McNichols Civic Center Building after the concert.",
+            "User chooses the 'Musical Storytime' concert at the McNichols Civic Center Building as a suitable event for Emma.",
+            "User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.",
+            "User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.",
+            "User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 179.3
+        },
+        {
+          "q_id": "b0479f84",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2084,
+              "facts": 9,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Belize Barrier Reef, the largest barrier reef in the Northern Hemisphere, is a UNESCO World Heritage Site and a must-visit for snorkelers and divers.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering visiting Belize for snorkeling and diving, and is interested in learning more about the eco-tourism opportunities available.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"Belize offers a unique blend of natural beauty, cultural richness, and conservation efforts, making it an excellent destination for eco-tourism.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for eco-friendly tour operators and accommodations in Belize that support sustainable tourism practices and benefit the local community and the environment.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"Belize has a number of national parks and protected areas, including the Hol Chan Marine Reserve and the Bacalar Chico National Park, which protect the southern part of the Belize Barrier Reef.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is interested in learning more about the certifications and awards that some tour operators and accommodations in Belize have received for their sustainable tourism practices.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"Belize is an excellent destination for eco-tourism, offering a unique blend of natural beauty, cultural richness, and conservation efforts.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.",
+            "Belize is an excellent destination for eco-tourism, offering a unique blend of natural beauty, cultural richness, and conservation efforts.",
+            "The Belize Barrier Reef, the largest barrier reef in the Northern Hemisphere, is a UNESCO World Heritage Site and a must-visit for snorkelers and divers.",
+            "User is considering visiting Belize for snorkeling and diving, and is interested in learning more about the eco-tourism opportunities available.",
+            "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation."
+          ],
+          "stored_texts": [
+            "Belize has a number of national parks and protected areas, including the Hol Chan Marine Reserve and the Bacalar Chico National Park, which protect the southern part of the Belize Barrier Reef.",
+            "Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.",
+            "Belize is an excellent destination for eco-tourism, offering a unique blend of natural beauty, cultural richness, and conservation efforts.",
+            "Belize offers a unique blend of natural beauty, cultural richness, and conservation efforts, making it an excellent destination for eco-tourism.",
+            "The Belize Barrier Reef, the largest barrier reef in the Northern Hemisphere, is a UNESCO World Heritage Site and a must-visit for snorkelers and divers.",
+            "User is considering visiting Belize for snorkeling and diving, and is interested in learning more about the eco-tourism opportunities available.",
+            "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.",
+            "User is interested in learning more about the certifications and awards that some tour operators and accommodations in Belize have received for their sustainable tourism practices.",
+            "User is looking for eco-friendly tour operators and accommodations in Belize that support sustainable tourism practices and benefit the local community and the environment."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 180.1
+        },
+        {
+          "q_id": "fca70973",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2105,
+              "facts": 7,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The VIP Experience's Gourmet Buffet at Halloween Horror Nights includes a lavish buffet featuring a wide range of dishes, including savory meats, seafood, vegetarian options, and decadent desserts.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, getting up close and personal with the creative process behind the mazes, scare zones, and attractions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a 1-hour tour of the event's behind-the-scenes areas, including the makeup and special effects departments, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights also includes a private tour guide to escort the user through the event, providing insider knowledge and ensuring they make the most of their time.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a unique and unforgettable experience that combines the best of Halloween Horror Nights with exclusive behind-the-scenes access.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, getting up close and personal with the creative process behind the mazes, scare zones, and attractions.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights also includes a private tour guide to escort the user through the event, providing insider knowledge and ensuring they make the most of their time.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a 1-hour tour of the event's behind-the-scenes areas, including the makeup and special effects departments, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.",
+            "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
+          ],
+          "stored_texts": [
+            "The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, getting up close and personal with the creative process behind the mazes, scare zones, and attractions.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights also includes a private tour guide to escort the user through the event, providing insider knowledge and ensuring they make the most of their time.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a 1-hour tour of the event's behind-the-scenes areas, including the makeup and special effects departments, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a unique and unforgettable experience that combines the best of Halloween Horror Nights with exclusive behind-the-scenes access.",
+            "The VIP Experience's Gourmet Buffet at Halloween Horror Nights includes a lavish buffet featuring a wide range of dishes, including savory meats, seafood, vegetarian options, and decadent desserts.",
+            "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 166.5
+        },
+        {
+          "q_id": "311778f1",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2151,
+              "facts": 11,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
+            "User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.",
+            "User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.",
+            "User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.",
+            "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis."
+          ],
+          "stored_texts": [
+            "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
+            "User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.",
+            "User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.",
+            "User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.",
+            "User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.",
+            "User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.",
+            "User wants to automate data cleaning and data visualization, and make predictions on customer behavior.",
+            "User wants to use attention mechanisms and sequence-to-sequence models for text summarization.",
+            "User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.",
+            "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.",
+            "User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 180.4
+        },
+        {
+          "q_id": "afdc33df",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2012,
+              "facts": 6,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is having issues with their garbage disposal and wants to clean it or replace it. The assistant provided tips on cleaning and maintaining the disposal, including using baking soda and vinegar, ice and rock salt, and lemon juice and baking soda.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is looking for tips on organizing their kitchen utensils and maximizing the space in their utensil holder. The assistant suggested purging and categorizing utensils, assigning a home for each group, using dividers, and storing frequently used items front and center.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is experiencing issues with their granite countertop and wants to repair or remove scratches. The assistant provided tips on assessing the scratch, using DIY methods to remove shallow scratches, and considering professional repair options for deeper scratches.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is having issues with their kitchen faucet and wants to fix the leak or replace it. The assistant suggested identifying the source of the leak, using DIY methods to fix the leak, and considering professional repair options if the leak persists.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in making yogurt in their slow cooker and wants to know more about using different types of milk. The assistant provided information on popular non-dairy milk options, including almond milk, soy milk, coconut milk, and oat milk.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for information on thickening agents and how to use them in non-dairy yogurt alternatives. The assistant provided information on popular thickening agents, including tapioca starch, pectin, agar agar, guar gum, and xanthan gum.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is experiencing issues with their granite countertop and wants to repair or remove scratches. The assistant provided tips on assessing the scratch, using DIY methods to remove shallow scratches, and considering professional repair options for deeper scratches.",
+            "User is having issues with their garbage disposal and wants to clean it or replace it. The assistant provided tips on cleaning and maintaining the disposal, including using baking soda and vinegar, ice and rock salt, and lemon juice and baking soda.",
+            "User is having issues with their kitchen faucet and wants to fix the leak or replace it. The assistant suggested identifying the source of the leak, using DIY methods to fix the leak, and considering professional repair options if the leak persists.",
+            "User is looking for information on thickening agents and how to use them in non-dairy yogurt alternatives. The assistant provided information on popular thickening agents, including tapioca starch, pectin, agar agar, guar gum, and xanthan gum.",
+            "User is looking for tips on organizing their kitchen utensils and maximizing the space in their utensil holder. The assistant suggested purging and categorizing utensils, assigning a home for each group, using dividers, and storing frequently used items front and center."
+          ],
+          "stored_texts": [
+            "User is experiencing issues with their granite countertop and wants to repair or remove scratches. The assistant provided tips on assessing the scratch, using DIY methods to remove shallow scratches, and considering professional repair options for deeper scratches.",
+            "User is having issues with their garbage disposal and wants to clean it or replace it. The assistant provided tips on cleaning and maintaining the disposal, including using baking soda and vinegar, ice and rock salt, and lemon juice and baking soda.",
+            "User is having issues with their kitchen faucet and wants to fix the leak or replace it. The assistant suggested identifying the source of the leak, using DIY methods to fix the leak, and considering professional repair options if the leak persists.",
+            "User is interested in making yogurt in their slow cooker and wants to know more about using different types of milk. The assistant provided information on popular non-dairy milk options, including almond milk, soy milk, coconut milk, and oat milk.",
+            "User is looking for information on thickening agents and how to use them in non-dairy yogurt alternatives. The assistant provided information on popular thickening agents, including tapioca starch, pectin, agar agar, guar gum, and xanthan gum.",
+            "User is looking for tips on organizing their kitchen utensils and maximizing the space in their utensil holder. The assistant suggested purging and categorizing utensils, assigning a home for each group, using dividers, and storing frequently used items front and center."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 209.0
+        },
+        {
+          "q_id": "19b5f2b3",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1358,
+              "facts": 5,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning a trip to Asia and considering visiting Japan, specifically Kyoto, to see must-see attractions like Fushimi Inari Shrine, Kinkaku-ji Temple, and Arashiyama Bamboo Grove.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User has already visited Fushimi Inari Shrine in Japan and is looking for budget-friendly accommodations in Kyoto, recommending guesthouses and hostels like Guesthouse Kiyomizu and Nijo Guest House.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is considering visiting onsen (hot springs) in the Kyoto area, recommending Kurama Onsen, Yunessun, and Funaoka Onsen for a relaxing experience.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is planning to visit South Korea and is interested in trying must-try dishes like bibimbap, jeyuk bokkeum, and tteokbokki, as well as visiting attractions like Gwangjang Market and Myeong-dong Night Market.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is considering visiting the Demilitarized Zone (DMZ) between North and South Korea, recommending guided tours and attractions like the Joint Security Area, the Third Tunnel, and the Dora Observatory.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User has already visited Fushimi Inari Shrine in Japan and is looking for budget-friendly accommodations in Kyoto, recommending guesthouses and hostels like Guesthouse Kiyomizu and Nijo Guest House.",
+            "User is considering visiting onsen (hot springs) in the Kyoto area, recommending Kurama Onsen, Yunessun, and Funaoka Onsen for a relaxing experience.",
+            "User is considering visiting the Demilitarized Zone (DMZ) between North and South Korea, recommending guided tours and attractions like the Joint Security Area, the Third Tunnel, and the Dora Observatory.",
+            "User is planning a trip to Asia and considering visiting Japan, specifically Kyoto, to see must-see attractions like Fushimi Inari Shrine, Kinkaku-ji Temple, and Arashiyama Bamboo Grove.",
+            "User is planning to visit South Korea and is interested in trying must-try dishes like bibimbap, jeyuk bokkeum, and tteokbokki, as well as visiting attractions like Gwangjang Market and Myeong-dong Night Market."
+          ],
+          "stored_texts": [
+            "User has already visited Fushimi Inari Shrine in Japan and is looking for budget-friendly accommodations in Kyoto, recommending guesthouses and hostels like Guesthouse Kiyomizu and Nijo Guest House.",
+            "User is considering visiting onsen (hot springs) in the Kyoto area, recommending Kurama Onsen, Yunessun, and Funaoka Onsen for a relaxing experience.",
+            "User is considering visiting the Demilitarized Zone (DMZ) between North and South Korea, recommending guided tours and attractions like the Joint Security Area, the Third Tunnel, and the Dora Observatory.",
+            "User is planning a trip to Asia and considering visiting Japan, specifically Kyoto, to see must-see attractions like Fushimi Inari Shrine, Kinkaku-ji Temple, and Arashiyama Bamboo Grove.",
+            "User is planning to visit South Korea and is interested in trying must-try dishes like bibimbap, jeyuk bokkeum, and tteokbokki, as well as visiting attractions like Gwangjang Market and Myeong-dong Night Market."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 153.0
+        },
+        {
+          "q_id": "e47becba",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2036,
+              "facts": 13,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for advice on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is considering Todoist and Trello for task management.",
+            "User is considering using a cooler bag for transporting meal prep containers.",
+            "User is looking for advice on creating a routine for their new job.",
+            "User is looking for meal prep bags, portion control containers, and meal prep utensils.",
+            "User is trying to organize their life better and asked for task management app recommendations."
+          ],
+          "stored_texts": [
+            "User is considering Todoist and Trello for task management.",
+            "User is considering implementing a system to track personal expenses.",
+            "User is considering using a cooler bag for transporting meal prep containers.",
+            "User is considering using a slow cooker and food scale for meal prep.",
+            "User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.",
+            "User is interested in meal prep as a way to save time and money.",
+            "User is looking for a meal prep planner and label maker.",
+            "User is looking for advice on creating a routine for their new job.",
+            "User is looking for meal prep bags, portion control containers, and meal prep utensils.",
+            "User is looking for recommendations for meal prep containers and tools.",
+            "User is looking for tips on saving money on everyday expenses like groceries and household items.",
+            "User is thinking of trying out Mint and Personal Capital for personal expense tracking.",
+            "User is trying to organize their life better and asked for task management app recommendations."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 186.0
+        },
+        {
+          "q_id": "58bf7951",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 3579,
+              "facts": 20,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is looking for local Italian restaurants and has recently tried a new place downtown\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User recommends checking online review sites, asking around, social media, local food guides, and Italian cultural organizations for recommendations\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is interested in trying popular Italian dishes like pasta, pizza, risotto, and osso buco\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User recently attended a play at the local community theater and was impressed by the lead actress's performance\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User's friend Emily is an aspiring actress and the lead actress reminded User of Emily\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is considering getting Emily to audition for a role at the community theater\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User has been thinking of taking acting classes to improve their skills, especially after a recent audition for 'The Crucible' didn't go well\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"User is interested in focusing on scene study and character development in acting classes\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"User has struggled with getting into character and making performances feel authentic, and wants to work on that in acting classes\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"User wants to improve their scene study and character development skills to create more believable performances\", \"linked_memory_ids\": []},\n    {\"id\": \"10\", \"text\": \"User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions\", \"linked_memory_ids\": []},\n    {\"id\": \"11\", \"text\": \"User wants to focus on scene study and character development to improve their performances and create more authentic characters\", \"linked_memory_ids\": []},\n    {\"id\": \"12\", \"text\": \"User is interested in learning how to analyze scripts, develop a character's backstory, and create a believable performance\", \"linked_memory_ids\": []},\n    {\"id\": \"13\", \"text\": \"User wants to work on their character development skills to create a rich, nuanced, and authentic character\", \"linked_memory_ids\": []},\n    {\"id\": \"14\", \"text\": \"User is considering taking acting classes to improve their scene study and character development skills\", \"linked_memory_ids\": []},\n    {\"id\": \"15\", \"text\": \"User wants to learn how to create a character's physicality, voice, and mannerisms, and develop a character's emotional life and inner world\", \"linked_memory_ids\": []},\n    {\"id\": \"16\", \"text\": \"User is interested in learning how to make bold choices and take risks in their performances, and find the humanity and relatability in their character\", \"linked_memory_ids\": []},\n    {\"id\": \"17\", \"text\": \"User wants to improve their scene study and character development skills to create more believable performances and become a more confident actor\", \"linked_memory_ids\": []},\n    {\"id\": \"18\", \"text\": \"User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions, and wants to focus on scene study and character development\", \"linked_memory_ids\": []},\n    {\"id\": \"19\", \"text\": \"User wants to learn how to analyze scripts, develop a character's backstory, and create a believable performance, and is interested in focusing on scene study and character development in acting classes\", \"linked_memory_ids\": []}\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User has been thinking of taking acting classes to improve their skills, especially after a recent audition for 'The Crucible' didn't go well",
+            "User is considering getting Emily to audition for a role at the community theater",
+            "User is considering taking acting classes to improve their scene study and character development skills",
+            "User is interested in focusing on scene study and character development in acting classes",
+            "User recently attended a play at the local community theater and was impressed by the lead actress's performance"
+          ],
+          "stored_texts": [
+            "User has been thinking of taking acting classes to improve their skills, especially after a recent audition for 'The Crucible' didn't go well",
+            "User has struggled with getting into character and making performances feel authentic, and wants to work on that in acting classes",
+            "User is considering getting Emily to audition for a role at the community theater",
+            "User is considering taking acting classes to improve their scene study and character development skills",
+            "User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions",
+            "User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions, and wants to focus on scene study and character development",
+            "User is interested in focusing on scene study and character development in acting classes",
+            "User is interested in learning how to analyze scripts, develop a character's backstory, and create a believable performance",
+            "User is interested in learning how to make bold choices and take risks in their performances, and find the humanity and relatability in their character",
+            "User is interested in trying popular Italian dishes like pasta, pizza, risotto, and osso buco",
+            "User is looking for local Italian restaurants and has recently tried a new place downtown",
+            "User recently attended a play at the local community theater and was impressed by the lead actress's performance",
+            "User recommends checking online review sites, asking around, social media, local food guides, and Italian cultural organizations for recommendations",
+            "User wants to focus on scene study and character development to improve their performances and create more authentic characters",
+            "User wants to improve their scene study and character development skills to create more believable performances",
+            "User wants to improve their scene study and character development skills to create more believable performances and become a more confident actor",
+            "User wants to learn how to analyze scripts, develop a character's backstory, and create a believable performance, and is interested in focusing on scene study and character development in acting classes",
+            "User wants to learn how to create a character's physicality, voice, and mannerisms, and develop a character's emotional life and inner world",
+            "User wants to work on their character development skills to create a rich, nuanced, and authentic character",
+            "User's friend Emily is an aspiring actress and the lead actress reminded User of Emily"
+          ],
+          "evidence_hit": true,
+          "ingest_s": 187.5
+        },
+        {
+          "q_id": "3b6f954b",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1382,
+              "facts": 7,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is looking for advice on how to stay organized with their assignments and part-time job\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering using Todoist for task management to break down larger projects into smaller tasks\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is planning a trip to the Great Ocean Road in Australia and is looking for recommendations\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The Great Ocean Road is a 243-kilometer stretch of coastal road in Australia that offers breathtaking views of the ocean, cliffs, beaches, and rainforests\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"The Great Ocean Road is known for its scenic drives, rock formations, beaches, and wildlife, including koalas, kangaroos, and other native Australian animals\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User has fond memories of visiting the Great Ocean Road during their study abroad program at the University of Melbourne\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "The Great Ocean Road is a 243-kilometer stretch of coastal road in Australia that offers breathtaking views of the ocean, cliffs, beaches, and rainforests",
+            "The Great Ocean Road is known for its scenic drives, rock formations, beaches, and wildlife, including koalas, kangaroos, and other native Australian animals",
+            "User has fond memories of visiting the Great Ocean Road during their study abroad program at the University of Melbourne",
+            "User is looking for advice on how to stay organized with their assignments and part-time job",
+            "User is planning a trip to the Great Ocean Road in Australia and is looking for recommendations"
+          ],
+          "stored_texts": [
+            "The Great Ocean Road is a 243-kilometer stretch of coastal road in Australia that offers breathtaking views of the ocean, cliffs, beaches, and rainforests",
+            "The Great Ocean Road is known for its scenic drives, rock formations, beaches, and wildlife, including koalas, kangaroos, and other native Australian animals",
+            "User has fond memories of visiting the Great Ocean Road during their study abroad program at the University of Melbourne",
+            "User is considering using Todoist for task management to break down larger projects into smaller tasks",
+            "User is looking for advice on how to stay organized with their assignments and part-time job",
+            "User is planning a trip to the Great Ocean Road in Australia and is looking for recommendations",
+            "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat"
+          ],
+          "evidence_hit": true,
+          "ingest_s": 129.8
+        },
+        {
+          "q_id": "faba32e5",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1003,
+              "facts": 6,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture",
+            "User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad",
+            "User is planning a BBQ party and wants to make sure they have all the necessary supplies",
+            "User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough",
+            "User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful"
+          ],
+          "stored_texts": [
+            "User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture",
+            "User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt",
+            "User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad",
+            "User is planning a BBQ party and wants to make sure they have all the necessary supplies",
+            "User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough",
+            "User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful"
+          ],
+          "evidence_hit": true,
+          "ingest_s": 133.5
+        }
+      ]
+    },
+    {
+      "header": {
+        "pass": 2,
+        "canary": {
+          "canary_fp": "15f3c9e9eb8978582d095c9796336e127daff07d92850833a684b05b11b269af",
+          "canary_facts": {
+            "311778f1": 6,
+            "faba32e5": 6,
+            "e47becba": 6
+          },
+          "canary_raw": {
+            "311778f1": [
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}",
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for advice on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"1\", \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"2\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"3\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"4\", \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"5\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"6\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"6\"]},\n    {\"id\": \"7\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"8\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"9\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"10\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"10\"]},\n    {\"id\": \"11\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"11\"]},\n    {\"id\": \"12\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"12\"]},\n    {\"id\": \"13\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"13\"]},\n    {\"id\": \"14\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"14\"]},\n    {\"id\": \"15\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"15\"]},\n    {\"id\": \"16\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"16\"]},\n    {\"id\": \"17\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"17\"]},\n    {\"id\": \"18\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"18\"]},\n    {\"id\": \"19\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"19\"]},\n    {\"id\": \"20\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"20\"]},\n    {\"id\": \"21\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"21\"]},\n    {\"id\": \"22\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"22\"]},\n    {\"id\": \"23\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"23\"]},\n    {\"id\": \"24\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"24\"]},\n    {\"id\": \"25\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"25\"]},\n    {\"id\": \"26\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"26\"]},\n    {\"id\": \"27\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"27\"]},\n    {\"id\": \"28\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"28\"]},\n    {\"id\": \"29\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"29\"]},\n    {\"id\": \"30\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"30\"]}\n\n  ]\n}"
+            ],
+            "faba32e5": [
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}",
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for advice on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"1\", \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"2\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"3\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"4\", \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"5\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"6\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"6\"]},\n    {\"id\": \"7\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"8\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"9\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"10\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"10\"]},\n    {\"id\": \"11\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"11\"]},\n    {\"id\": \"12\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"12\"]},\n    {\"id\": \"13\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"13\"]},\n    {\"id\": \"14\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"14\"]},\n    {\"id\": \"15\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"15\"]},\n    {\"id\": \"16\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"16\"]},\n    {\"id\": \"17\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"17\"]},\n    {\"id\": \"18\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"18\"]},\n    {\"id\": \"19\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"19\"]},\n    {\"id\": \"20\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"20\"]},\n    {\"id\": \"21\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"21\"]},\n    {\"id\": \"22\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"22\"]},\n    {\"id\": \"23\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"23\"]},\n    {\"id\": \"24\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"24\"]},\n    {\"id\": \"25\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"25\"]},\n    {\"id\": \"26\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"26\"]},\n    {\"id\": \"27\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"27\"]},\n    {\"id\": \"28\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"28\"]},\n    {\"id\": \"29\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"29\"]},\n    {\"id\": \"30\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"30\"]}\n\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"2\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"3\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"6\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"7\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"8\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"9\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"10\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"11\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"12\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"13\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"14\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"15\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"16\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"17\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"18\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"19\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"20\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"21\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"22\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"23\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"24\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"25\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"26\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"27\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"28\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"29\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"30\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]}]\n}"
+            ],
+            "e47becba": [
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}",
+              "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for advice on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"1\", \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"2\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"3\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"4\", \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"5\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"6\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"6\"]},\n    {\"id\": \"7\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"8\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"9\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"10\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"10\"]},\n    {\"id\": \"11\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"11\"]},\n    {\"id\": \"12\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"12\"]},\n    {\"id\": \"13\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"13\"]},\n    {\"id\": \"14\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"14\"]},\n    {\"id\": \"15\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"15\"]},\n    {\"id\": \"16\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"16\"]},\n    {\"id\": \"17\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"17\"]},\n    {\"id\": \"18\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"18\"]},\n    {\"id\": \"19\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"19\"]},\n    {\"id\": \"20\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"20\"]},\n    {\"id\": \"21\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"21\"]},\n    {\"id\": \"22\", \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"22\"]},\n    {\"id\": \"23\", \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\", \"linked_memory_ids\": [\"23\"]},\n    {\"id\": \"24\", \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\", \"linked_memory_ids\": [\"24\"]},\n    {\"id\": \"25\", \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\", \"linked_memory_ids\": [\"25\"]},\n    {\"id\": \"26\", \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\", \"linked_memory_ids\": [\"26\"]},\n    {\"id\": \"27\", \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\", \"linked_memory_ids\": [\"27\"]},\n    {\"id\": \"28\", \"text\": \"User is interested in automating the process of creating visualizations for customer behavior data, such as churn prediction and customer segmentation.\", \"linked_memory_ids\": [\"28\"]},\n    {\"id\": \"29\", \"text\": \"User is interested in using deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\", \"linked_memory_ids\": [\"29\"]},\n    {\"id\": \"30\", \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\", \"linked_memory_ids\": [\"30\"]}\n\n  ]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"2\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"3\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"6\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"7\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"8\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"9\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"10\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"11\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"12\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"13\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"14\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"15\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"16\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"17\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"18\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"19\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"20\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"21\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"22\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"23\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"24\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"25\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to choose the right type of wood for smoking meats\", \"linked_memory_ids\": [\"1\"]},\n    {\"id\": \"26\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": [\"2\"]},\n    {\"id\": \"27\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"28\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": [\"5\"]},\n    {\"id\": \"29\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": [\"4\"]},\n    {\"id\": \"30\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies for a successful backyard BBQ\", \"linked_memory_ids\": [\"0\"]}]\n}",
+              "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"1\", \"text\": \"User is considering Todoist and Trello for task management.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"2\", \"text\": \"User is looking for advice on creating a routine for their new job.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"3\", \"text\": \"User is considering implementing a system to track personal expenses.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"4\", \"text\": \"User is looking for a meal prep planner and label maker.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"5\", \"text\": \"User is interested in meal prep as a way to save time and money.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"6\", \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"7\", \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"8\", \"text\": \"User is looking for recommendations for meal prep containers and tools.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"9\", \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\", \"linked_memory_ids\": [\"0\"]},\n    {\"id\": \"10\", \"text\": \"User is considering implementing a system to track personal expenses and is looking for recommendations for personal expense tracking apps or tools.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"11\", \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\", \"linked_memory_ids\": [\"10\"]},\n    {\"id\": \"12\", \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"13\", \"text\": \"User is looking for recommendations for meal prep containers and tools.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"14\", \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"15\", \"text\": \"User is considering implementing a system to track personal expenses and is looking for recommendations for personal expense tracking apps or tools.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"16\", \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\", \"linked_memory_ids\": [\"15\"]},\n    {\"id\": \"17\", \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"18\", \"text\": \"User is looking for recommendations for meal prep containers and tools.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"19\", \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"20\", \"text\": \"User is considering implementing a system to track personal expenses and is looking for recommendations for personal expense tracking apps or tools.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"21\", \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\", \"linked_memory_ids\": [\"20\"]},\n    {\"id\": \"22\", \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"23\", \"text\": \"User is looking for recommendations for meal prep containers and tools.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"24\", \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"25\", \"text\": \"User is considering implementing a system to track personal expenses and is looking for recommendations for personal expense tracking apps or tools.\", \"linked_memory_ids\": [\"3\"]},\n    {\"id\": \"26\", \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\", \"linked_memory_ids\": [\"25\"]},\n    {\"id\": \"27\", \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\", \"linked_memory_ids\": [\"7\"]},\n    {\"id\": \"28\", \"text\": \"User is looking for recommendations for meal prep containers and tools.\", \"linked_memory_ids\": [\"8\"]},\n    {\"id\": \"29\", \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\", \"linked_memory_ids\": [\"9\"]},\n    {\"id\": \"30\", \"text\": \"User is considering implementing a system to track personal expenses and is looking for recommendations for personal expense tracking apps or tools.\", \"linked_memory_ids\": [\"3\"]}\n  ]\n}"
+            ]
+          }
+        },
+        "elapsed_s": 3116.7
+      },
+      "results": [
+        {
+          "q_id": "75832dbd",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 977,
+              "facts": 5,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"Explainable AI is essential in medical image analysis to ensure that deep learning models are transparent, trustworthy, and fair.\", \"linked_memory_ids\": []}\n  ]\n}"
+          ],
+          "memory_texts": [
+            "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.",
+            "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+            "Explainable AI is essential in medical image analysis to ensure that deep learning models are transparent, trustworthy, and fair.",
+            "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+            "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+          ],
+          "stored_texts": [
+            "Deep learning models are being used in medical image analysis for various tasks, including image segmentation, classification, and detection.",
+            "Explainable AI in medical image analysis is a rapidly growing field, with various techniques and applications.",
+            "Explainable AI is essential in medical image analysis to ensure that deep learning models are transparent, trustworthy, and fair.",
+            "Model interpretability techniques, such as LIME and SHAP values, are being used to explain the predictions of deep learning models in medical image analysis.",
+            "Visualization techniques, such as saliency maps and attention mechanisms, are being used to understand deep learning models in medical image analysis."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 147.1
+        },
+        {
+          "q_id": "0a34ad58",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1424,
+              "facts": 8,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning to visit the Tokyo Tower and wants to know what to expect.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The Tokyo Tower offers panoramic views of the city from its observation decks, standing at 332.6 meters tall.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User can expect to see exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The tower features shopping and dining options, including souvenir shops and restaurants.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User can take the elevator or walk the stairs to the observation decks for stunning views.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"The Tokyo Tower offers interactive exhibits and displays that teach about Tokyo's history, culture, and landmarks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User should get to the tower early to avoid crowds and buy tickets online in advance.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"The Tokyo Tower is an unforgettable experience that offers something for everyone.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "The Tokyo Tower is an unforgettable experience that offers something for everyone.",
+            "The Tokyo Tower offers interactive exhibits and displays that teach about Tokyo's history, culture, and landmarks.",
+            "The Tokyo Tower offers panoramic views of the city from its observation decks, standing at 332.6 meters tall.",
+            "User is planning to visit the Tokyo Tower and wants to know what to expect.",
+            "User should get to the tower early to avoid crowds and buy tickets online in advance."
+          ],
+          "stored_texts": [
+            "The Tokyo Tower is an unforgettable experience that offers something for everyone.",
+            "The Tokyo Tower offers interactive exhibits and displays that teach about Tokyo's history, culture, and landmarks.",
+            "The Tokyo Tower offers panoramic views of the city from its observation decks, standing at 332.6 meters tall.",
+            "The tower features shopping and dining options, including souvenir shops and restaurants.",
+            "User can expect to see exhibitions and displays, including a wax museum, a pirate-themed play area, and a Guinness World Records museum.",
+            "User can take the elevator or walk the stairs to the observation decks for stunning views.",
+            "User is planning to visit the Tokyo Tower and wants to know what to expect.",
+            "User should get to the tower early to avoid crowds and buy tickets online in advance."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 211.5
+        },
+        {
+          "q_id": "1faac195",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2481,
+              "facts": 10,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User chooses the 'Musical Storytime' concert at the McNichols Civic Center Building as a suitable event for Emma.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User asks about grabbing lunch somewhere near the McNichols Civic Center Building after the concert.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"Assistant recommends kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.",
+            "User chooses the 'Musical Storytime' concert at the McNichols Civic Center Building as a suitable event for Emma.",
+            "User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.",
+            "User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.",
+            "User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city."
+          ],
+          "stored_texts": [
+            "Assistant provides information about the McNichols Civic Center Building, including its location, accessibility, and kid-friendly amenities.",
+            "Assistant recommends kid-friendly attractions in Denver, including the Denver Zoo, Children's Museum of Denver, Denver Museum of Nature & Science, Denver Art Museum, Washington Park, Denver Botanic Gardens, Elitch Gardens Theme and Water Park, and Wings Over the Rockies Air and Space Museum.",
+            "Assistant recommends kid-friendly attractions in various cities, including Orlando, Washington D.C., New York City, Chicago, Indianapolis, Gatlinburg, San Antonio, Anaheim, and San Francisco.",
+            "Assistant recommends kid-friendly performances or events in Denver, including the Denver Philharmonic Orchestra's Family Concerts series, the Colorado Symphony, the Denver Center for the Performing Arts, the Boettcher Concert Hall, and the Denver Young Artists Orchestra.",
+            "Assistant recommends kid-friendly restaurants and cafes near the McNichols Civic Center Building, including The Denver Central Market, The Kitchen Denver, Modern Market, The Delectable Egg, and My Kid's Eye View.",
+            "User asks about grabbing lunch somewhere near the McNichols Civic Center Building after the concert.",
+            "User chooses the 'Musical Storytime' concert at the McNichols Civic Center Building as a suitable event for Emma.",
+            "User is looking for kid-friendly performances or events in Denver that might interest their niece Emma, who is taking piano lessons.",
+            "User is planning a road trip with their family and needs recommendations for kid-friendly attractions in different cities.",
+            "User is thinking of visiting their sister Emily in Denver and asks for kid-friendly attractions in the city."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 179.0
+        },
+        {
+          "q_id": "b0479f84",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2084,
+              "facts": 9,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Belize Barrier Reef, the largest barrier reef in the Northern Hemisphere, is a UNESCO World Heritage Site and a must-visit for snorkelers and divers.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering visiting Belize for snorkeling and diving, and is interested in learning more about the eco-tourism opportunities available.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"Belize offers a unique blend of natural beauty, cultural richness, and conservation efforts, making it an excellent destination for eco-tourism.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for eco-friendly tour operators and accommodations in Belize that support sustainable tourism practices and benefit the local community and the environment.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"Belize has a number of national parks and protected areas, including the Hol Chan Marine Reserve and the Bacalar Chico National Park, which protect the southern part of the Belize Barrier Reef.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is interested in learning more about the certifications and awards that some tour operators and accommodations in Belize have received for their sustainable tourism practices.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"Belize is an excellent destination for eco-tourism, offering a unique blend of natural beauty, cultural richness, and conservation efforts.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.",
+            "Belize is an excellent destination for eco-tourism, offering a unique blend of natural beauty, cultural richness, and conservation efforts.",
+            "The Belize Barrier Reef, the largest barrier reef in the Northern Hemisphere, is a UNESCO World Heritage Site and a must-visit for snorkelers and divers.",
+            "User is considering visiting Belize for snorkeling and diving, and is interested in learning more about the eco-tourism opportunities available.",
+            "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation."
+          ],
+          "stored_texts": [
+            "Belize has a number of national parks and protected areas, including the Hol Chan Marine Reserve and the Bacalar Chico National Park, which protect the southern part of the Belize Barrier Reef.",
+            "Belize is a popular destination for eco-tourism, with a strong focus on sustainable tourism and coral reef conservation.",
+            "Belize is an excellent destination for eco-tourism, offering a unique blend of natural beauty, cultural richness, and conservation efforts.",
+            "Belize offers a unique blend of natural beauty, cultural richness, and conservation efforts, making it an excellent destination for eco-tourism.",
+            "The Belize Barrier Reef, the largest barrier reef in the Northern Hemisphere, is a UNESCO World Heritage Site and a must-visit for snorkelers and divers.",
+            "User is considering visiting Belize for snorkeling and diving, and is interested in learning more about the eco-tourism opportunities available.",
+            "User is interested in learning more about eco-tourism and responsible travel that focuses on coral reef conservation.",
+            "User is interested in learning more about the certifications and awards that some tour operators and accommodations in Belize have received for their sustainable tourism practices.",
+            "User is looking for eco-friendly tour operators and accommodations in Belize that support sustainable tourism practices and benefit the local community and the environment."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 180.5
+        },
+        {
+          "q_id": "fca70973",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2105,
+              "facts": 7,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"The VIP Experience's Gourmet Buffet at Halloween Horror Nights includes a lavish buffet featuring a wide range of dishes, including savory meats, seafood, vegetarian options, and decadent desserts.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, getting up close and personal with the creative process behind the mazes, scare zones, and attractions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a 1-hour tour of the event's behind-the-scenes areas, including the makeup and special effects departments, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights also includes a private tour guide to escort the user through the event, providing insider knowledge and ensuring they make the most of their time.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a unique and unforgettable experience that combines the best of Halloween Horror Nights with exclusive behind-the-scenes access.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, getting up close and personal with the creative process behind the mazes, scare zones, and attractions.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights also includes a private tour guide to escort the user through the event, providing insider knowledge and ensuring they make the most of their time.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a 1-hour tour of the event's behind-the-scenes areas, including the makeup and special effects departments, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.",
+            "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
+          ],
+          "stored_texts": [
+            "The Behind-the-Scenes Tour at Halloween Horror Nights provides a unique opportunity to explore the inner workings of the event, getting up close and personal with the creative process behind the mazes, scare zones, and attractions.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights also includes a private tour guide to escort the user through the event, providing insider knowledge and ensuring they make the most of their time.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights can be booked online or by calling the Universal Studios Hollywood VIP Experience team directly.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a 1-hour tour of the event's behind-the-scenes areas, including the makeup and special effects departments, maze design and construction, scare zone design and development, costume and prop design, and backstage areas.",
+            "The VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour package at Halloween Horror Nights includes a unique and unforgettable experience that combines the best of Halloween Horror Nights with exclusive behind-the-scenes access.",
+            "The VIP Experience's Gourmet Buffet at Halloween Horror Nights includes a lavish buffet featuring a wide range of dishes, including savory meats, seafood, vegetarian options, and decadent desserts.",
+            "User is interested in the VIP Experience's Gourmet Buffet and Behind-the-Scenes Tour at Halloween Horror Nights."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 166.6
+        },
+        {
+          "q_id": "311778f1",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2151,
+              "facts": 11,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User wants to automate data cleaning and data visualization, and make predictions on customer behavior.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User wants to use attention mechanisms and sequence-to-sequence models for text summarization.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
+            "User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.",
+            "User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.",
+            "User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.",
+            "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis."
+          ],
+          "stored_texts": [
+            "User is interested in applying machine learning to their work projects, especially in automating tasks and making predictions.",
+            "User is interested in natural language processing and deep learning for tasks like text summarization and sentiment analysis.",
+            "User is interested in reducing their screen time, and plans to set goals and track progress to achieve this.",
+            "User is interested in using convolutional neural networks (CNNs) and recurrent neural networks (RNNs) for sentiment analysis.",
+            "User is interested in using the AllenNLP library for NLP tasks, and wants to explore the NLP Subreddit for resources and knowledge.",
+            "User is interested in using transformer models, such as BERT, RoBERTa, and XLNet, for NLP tasks.",
+            "User wants to automate data cleaning and data visualization, and make predictions on customer behavior.",
+            "User wants to use attention mechanisms and sequence-to-sequence models for text summarization.",
+            "User wants to use deep learning for interactive visualizations, such as scatter plots, bar charts, and heatmaps.",
+            "User wants to use deep learning for natural language processing tasks, such as text summarization and sentiment analysis.",
+            "User wants to use the NLTK and spaCy libraries for NLP tasks, and is interested in exploring the Hugging Face Transformers library."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 180.0
+        },
+        {
+          "q_id": "afdc33df",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2012,
+              "facts": 6,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is having issues with their garbage disposal and wants to clean it or replace it. The assistant provided tips on cleaning and maintaining the disposal, including using baking soda and vinegar, ice and rock salt, and lemon juice and baking soda.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is looking for tips on organizing their kitchen utensils and maximizing the space in their utensil holder. The assistant suggested purging and categorizing utensils, assigning a home for each group, using dividers, and storing frequently used items front and center.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is experiencing issues with their granite countertop and wants to repair or remove scratches. The assistant provided tips on assessing the scratch, using DIY methods to remove shallow scratches, and considering professional repair options for deeper scratches.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is having issues with their kitchen faucet and wants to fix the leak or replace it. The assistant suggested identifying the source of the leak, using DIY methods to fix the leak, and considering professional repair options if the leak persists.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is interested in making yogurt in their slow cooker and wants to know more about using different types of milk. The assistant provided information on popular non-dairy milk options, including almond milk, soy milk, coconut milk, and oat milk.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for information on thickening agents and how to use them in non-dairy yogurt alternatives. The assistant provided information on popular thickening agents, including tapioca starch, pectin, agar agar, guar gum, and xanthan gum.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is experiencing issues with their granite countertop and wants to repair or remove scratches. The assistant provided tips on assessing the scratch, using DIY methods to remove shallow scratches, and considering professional repair options for deeper scratches.",
+            "User is having issues with their garbage disposal and wants to clean it or replace it. The assistant provided tips on cleaning and maintaining the disposal, including using baking soda and vinegar, ice and rock salt, and lemon juice and baking soda.",
+            "User is having issues with their kitchen faucet and wants to fix the leak or replace it. The assistant suggested identifying the source of the leak, using DIY methods to fix the leak, and considering professional repair options if the leak persists.",
+            "User is looking for information on thickening agents and how to use them in non-dairy yogurt alternatives. The assistant provided information on popular thickening agents, including tapioca starch, pectin, agar agar, guar gum, and xanthan gum.",
+            "User is looking for tips on organizing their kitchen utensils and maximizing the space in their utensil holder. The assistant suggested purging and categorizing utensils, assigning a home for each group, using dividers, and storing frequently used items front and center."
+          ],
+          "stored_texts": [
+            "User is experiencing issues with their granite countertop and wants to repair or remove scratches. The assistant provided tips on assessing the scratch, using DIY methods to remove shallow scratches, and considering professional repair options for deeper scratches.",
+            "User is having issues with their garbage disposal and wants to clean it or replace it. The assistant provided tips on cleaning and maintaining the disposal, including using baking soda and vinegar, ice and rock salt, and lemon juice and baking soda.",
+            "User is having issues with their kitchen faucet and wants to fix the leak or replace it. The assistant suggested identifying the source of the leak, using DIY methods to fix the leak, and considering professional repair options if the leak persists.",
+            "User is interested in making yogurt in their slow cooker and wants to know more about using different types of milk. The assistant provided information on popular non-dairy milk options, including almond milk, soy milk, coconut milk, and oat milk.",
+            "User is looking for information on thickening agents and how to use them in non-dairy yogurt alternatives. The assistant provided information on popular thickening agents, including tapioca starch, pectin, agar agar, guar gum, and xanthan gum.",
+            "User is looking for tips on organizing their kitchen utensils and maximizing the space in their utensil holder. The assistant suggested purging and categorizing utensils, assigning a home for each group, using dividers, and storing frequently used items front and center."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 208.9
+        },
+        {
+          "q_id": "19b5f2b3",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1358,
+              "facts": 5,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is planning a trip to Asia and considering visiting Japan, specifically Kyoto, to see must-see attractions like Fushimi Inari Shrine, Kinkaku-ji Temple, and Arashiyama Bamboo Grove.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User has already visited Fushimi Inari Shrine in Japan and is looking for budget-friendly accommodations in Kyoto, recommending guesthouses and hostels like Guesthouse Kiyomizu and Nijo Guest House.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is considering visiting onsen (hot springs) in the Kyoto area, recommending Kurama Onsen, Yunessun, and Funaoka Onsen for a relaxing experience.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is planning to visit South Korea and is interested in trying must-try dishes like bibimbap, jeyuk bokkeum, and tteokbokki, as well as visiting attractions like Gwangjang Market and Myeong-dong Night Market.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is considering visiting the Demilitarized Zone (DMZ) between North and South Korea, recommending guided tours and attractions like the Joint Security Area, the Third Tunnel, and the Dora Observatory.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User has already visited Fushimi Inari Shrine in Japan and is looking for budget-friendly accommodations in Kyoto, recommending guesthouses and hostels like Guesthouse Kiyomizu and Nijo Guest House.",
+            "User is considering visiting onsen (hot springs) in the Kyoto area, recommending Kurama Onsen, Yunessun, and Funaoka Onsen for a relaxing experience.",
+            "User is considering visiting the Demilitarized Zone (DMZ) between North and South Korea, recommending guided tours and attractions like the Joint Security Area, the Third Tunnel, and the Dora Observatory.",
+            "User is planning a trip to Asia and considering visiting Japan, specifically Kyoto, to see must-see attractions like Fushimi Inari Shrine, Kinkaku-ji Temple, and Arashiyama Bamboo Grove.",
+            "User is planning to visit South Korea and is interested in trying must-try dishes like bibimbap, jeyuk bokkeum, and tteokbokki, as well as visiting attractions like Gwangjang Market and Myeong-dong Night Market."
+          ],
+          "stored_texts": [
+            "User has already visited Fushimi Inari Shrine in Japan and is looking for budget-friendly accommodations in Kyoto, recommending guesthouses and hostels like Guesthouse Kiyomizu and Nijo Guest House.",
+            "User is considering visiting onsen (hot springs) in the Kyoto area, recommending Kurama Onsen, Yunessun, and Funaoka Onsen for a relaxing experience.",
+            "User is considering visiting the Demilitarized Zone (DMZ) between North and South Korea, recommending guided tours and attractions like the Joint Security Area, the Third Tunnel, and the Dora Observatory.",
+            "User is planning a trip to Asia and considering visiting Japan, specifically Kyoto, to see must-see attractions like Fushimi Inari Shrine, Kinkaku-ji Temple, and Arashiyama Bamboo Grove.",
+            "User is planning to visit South Korea and is interested in trying must-try dishes like bibimbap, jeyuk bokkeum, and tteokbokki, as well as visiting attractions like Gwangjang Market and Myeong-dong Night Market."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 152.7
+        },
+        {
+          "q_id": "e47becba",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 2036,
+              "facts": 13,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is trying to organize their life better and asked for task management app recommendations.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering Todoist and Trello for task management.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is looking for advice on creating a routine for their new job.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"User is considering implementing a system to track personal expenses.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"User is thinking of trying out Mint and Personal Capital for personal expense tracking.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User is looking for tips on saving money on everyday expenses like groceries and household items.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User is interested in meal prep as a way to save time and money.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"7\",\n      \"text\": \"User is looking for recommendations for meal prep containers and tools.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"8\",\n      \"text\": \"User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"9\",\n      \"text\": \"User is looking for meal prep bags, portion control containers, and meal prep utensils.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"10\",\n      \"text\": \"User is considering using a slow cooker and food scale for meal prep.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"11\",\n      \"text\": \"User is looking for a meal prep planner and label maker.\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"12\",\n      \"text\": \"User is considering using a cooler bag for transporting meal prep containers.\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is considering Todoist and Trello for task management.",
+            "User is considering using a cooler bag for transporting meal prep containers.",
+            "User is looking for advice on creating a routine for their new job.",
+            "User is looking for meal prep bags, portion control containers, and meal prep utensils.",
+            "User is trying to organize their life better and asked for task management app recommendations."
+          ],
+          "stored_texts": [
+            "User is considering Todoist and Trello for task management.",
+            "User is considering implementing a system to track personal expenses.",
+            "User is considering using a cooler bag for transporting meal prep containers.",
+            "User is considering using a slow cooker and food scale for meal prep.",
+            "User is considering using glass containers, BPA-free plastic containers, or mason jars for meal prep.",
+            "User is interested in meal prep as a way to save time and money.",
+            "User is looking for a meal prep planner and label maker.",
+            "User is looking for advice on creating a routine for their new job.",
+            "User is looking for meal prep bags, portion control containers, and meal prep utensils.",
+            "User is looking for recommendations for meal prep containers and tools.",
+            "User is looking for tips on saving money on everyday expenses like groceries and household items.",
+            "User is thinking of trying out Mint and Personal Capital for personal expense tracking.",
+            "User is trying to organize their life better and asked for task management app recommendations."
+          ],
+          "evidence_hit": true,
+          "ingest_s": 186.6
+        },
+        {
+          "q_id": "58bf7951",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 3579,
+              "facts": 20,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is looking for local Italian restaurants and has recently tried a new place downtown\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User recommends checking online review sites, asking around, social media, local food guides, and Italian cultural organizations for recommendations\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is interested in trying popular Italian dishes like pasta, pizza, risotto, and osso buco\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User recently attended a play at the local community theater and was impressed by the lead actress's performance\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User's friend Emily is an aspiring actress and the lead actress reminded User of Emily\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is considering getting Emily to audition for a role at the community theater\", \"linked_memory_ids\": []},\n    {\"id\": \"6\", \"text\": \"User has been thinking of taking acting classes to improve their skills, especially after a recent audition for 'The Crucible' didn't go well\", \"linked_memory_ids\": []},\n    {\"id\": \"7\", \"text\": \"User is interested in focusing on scene study and character development in acting classes\", \"linked_memory_ids\": []},\n    {\"id\": \"8\", \"text\": \"User has struggled with getting into character and making performances feel authentic, and wants to work on that in acting classes\", \"linked_memory_ids\": []},\n    {\"id\": \"9\", \"text\": \"User wants to improve their scene study and character development skills to create more believable performances\", \"linked_memory_ids\": []},\n    {\"id\": \"10\", \"text\": \"User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions\", \"linked_memory_ids\": []},\n    {\"id\": \"11\", \"text\": \"User wants to focus on scene study and character development to improve their performances and create more authentic characters\", \"linked_memory_ids\": []},\n    {\"id\": \"12\", \"text\": \"User is interested in learning how to analyze scripts, develop a character's backstory, and create a believable performance\", \"linked_memory_ids\": []},\n    {\"id\": \"13\", \"text\": \"User wants to work on their character development skills to create a rich, nuanced, and authentic character\", \"linked_memory_ids\": []},\n    {\"id\": \"14\", \"text\": \"User is considering taking acting classes to improve their scene study and character development skills\", \"linked_memory_ids\": []},\n    {\"id\": \"15\", \"text\": \"User wants to learn how to create a character's physicality, voice, and mannerisms, and develop a character's emotional life and inner world\", \"linked_memory_ids\": []},\n    {\"id\": \"16\", \"text\": \"User is interested in learning how to make bold choices and take risks in their performances, and find the humanity and relatability in their character\", \"linked_memory_ids\": []},\n    {\"id\": \"17\", \"text\": \"User wants to improve their scene study and character development skills to create more believable performances and become a more confident actor\", \"linked_memory_ids\": []},\n    {\"id\": \"18\", \"text\": \"User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions, and wants to focus on scene study and character development\", \"linked_memory_ids\": []},\n    {\"id\": \"19\", \"text\": \"User wants to learn how to analyze scripts, develop a character's backstory, and create a believable performance, and is interested in focusing on scene study and character development in acting classes\", \"linked_memory_ids\": []}\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User has been thinking of taking acting classes to improve their skills, especially after a recent audition for 'The Crucible' didn't go well",
+            "User is considering getting Emily to audition for a role at the community theater",
+            "User is considering taking acting classes to improve their scene study and character development skills",
+            "User is interested in focusing on scene study and character development in acting classes",
+            "User recently attended a play at the local community theater and was impressed by the lead actress's performance"
+          ],
+          "stored_texts": [
+            "User has been thinking of taking acting classes to improve their skills, especially after a recent audition for 'The Crucible' didn't go well",
+            "User has struggled with getting into character and making performances feel authentic, and wants to work on that in acting classes",
+            "User is considering getting Emily to audition for a role at the community theater",
+            "User is considering taking acting classes to improve their scene study and character development skills",
+            "User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions",
+            "User is considering taking acting classes to refine their skills, gain confidence, and prepare for future auditions, and wants to focus on scene study and character development",
+            "User is interested in focusing on scene study and character development in acting classes",
+            "User is interested in learning how to analyze scripts, develop a character's backstory, and create a believable performance",
+            "User is interested in learning how to make bold choices and take risks in their performances, and find the humanity and relatability in their character",
+            "User is interested in trying popular Italian dishes like pasta, pizza, risotto, and osso buco",
+            "User is looking for local Italian restaurants and has recently tried a new place downtown",
+            "User recently attended a play at the local community theater and was impressed by the lead actress's performance",
+            "User recommends checking online review sites, asking around, social media, local food guides, and Italian cultural organizations for recommendations",
+            "User wants to focus on scene study and character development to improve their performances and create more authentic characters",
+            "User wants to improve their scene study and character development skills to create more believable performances",
+            "User wants to improve their scene study and character development skills to create more believable performances and become a more confident actor",
+            "User wants to learn how to analyze scripts, develop a character's backstory, and create a believable performance, and is interested in focusing on scene study and character development in acting classes",
+            "User wants to learn how to create a character's physicality, voice, and mannerisms, and develop a character's emotional life and inner world",
+            "User wants to work on their character development skills to create a rich, nuanced, and authentic character",
+            "User's friend Emily is an aspiring actress and the lead actress reminded User of Emily"
+          ],
+          "evidence_hit": true,
+          "ingest_s": 187.2
+        },
+        {
+          "q_id": "3b6f954b",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1382,
+              "facts": 7,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\n      \"id\": \"0\",\n      \"text\": \"User is looking for advice on how to stay organized with their assignments and part-time job\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"1\",\n      \"text\": \"User is considering using Todoist for task management to break down larger projects into smaller tasks\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"2\",\n      \"text\": \"User is planning a trip to the Great Ocean Road in Australia and is looking for recommendations\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"3\",\n      \"text\": \"The Great Ocean Road is a 243-kilometer stretch of coastal road in Australia that offers breathtaking views of the ocean, cliffs, beaches, and rainforests\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"4\",\n      \"text\": \"The Great Ocean Road is known for its scenic drives, rock formations, beaches, and wildlife, including koalas, kangaroos, and other native Australian animals\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"5\",\n      \"text\": \"User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat\",\n      \"linked_memory_ids\": []\n    },\n    {\n      \"id\": \"6\",\n      \"text\": \"User has fond memories of visiting the Great Ocean Road during their study abroad program at the University of Melbourne\",\n      \"linked_memory_ids\": []\n    }\n  ]\n}"
+          ],
+          "memory_texts": [
+            "The Great Ocean Road is a 243-kilometer stretch of coastal road in Australia that offers breathtaking views of the ocean, cliffs, beaches, and rainforests",
+            "The Great Ocean Road is known for its scenic drives, rock formations, beaches, and wildlife, including koalas, kangaroos, and other native Australian animals",
+            "User has fond memories of visiting the Great Ocean Road during their study abroad program at the University of Melbourne",
+            "User is looking for advice on how to stay organized with their assignments and part-time job",
+            "User is planning a trip to the Great Ocean Road in Australia and is looking for recommendations"
+          ],
+          "stored_texts": [
+            "The Great Ocean Road is a 243-kilometer stretch of coastal road in Australia that offers breathtaking views of the ocean, cliffs, beaches, and rainforests",
+            "The Great Ocean Road is known for its scenic drives, rock formations, beaches, and wildlife, including koalas, kangaroos, and other native Australian animals",
+            "User has fond memories of visiting the Great Ocean Road during their study abroad program at the University of Melbourne",
+            "User is considering using Todoist for task management to break down larger projects into smaller tasks",
+            "User is looking for advice on how to stay organized with their assignments and part-time job",
+            "User is planning a trip to the Great Ocean Road in Australia and is looking for recommendations",
+            "User recommends stopping by the Kennett River Koala Walk to spot koalas in their natural habitat"
+          ],
+          "evidence_hit": true,
+          "ingest_s": 129.9
+        },
+        {
+          "q_id": "faba32e5",
+          "frames": [
+            {
+              "fr": "stop",
+              "parse": "ok",
+              "chars": 1003,
+              "facts": 6,
+              "capped": false
+            }
+          ],
+          "raw_outputs": [
+            "{\n  \"memory\": [\n    {\"id\": \"0\", \"text\": \"User is planning a BBQ party and wants to make sure they have all the necessary supplies\", \"linked_memory_ids\": []},\n    {\"id\": \"1\", \"text\": \"User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful\", \"linked_memory_ids\": []},\n    {\"id\": \"2\", \"text\": \"User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture\", \"linked_memory_ids\": []},\n    {\"id\": \"3\", \"text\": \"User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad\", \"linked_memory_ids\": []},\n    {\"id\": \"4\", \"text\": \"User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough\", \"linked_memory_ids\": []},\n    {\"id\": \"5\", \"text\": \"User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt\", \"linked_memory_ids\": []}\n  ]\n}"
+          ],
+          "memory_texts": [
+            "User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture",
+            "User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad",
+            "User is planning a BBQ party and wants to make sure they have all the necessary supplies",
+            "User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough",
+            "User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful"
+          ],
+          "stored_texts": [
+            "User is considering making brisket for their party and wants to know how to achieve a tender and delicious texture",
+            "User is looking for fun outdoor games and activities to set up for their guests, and is considering lawn games, badminton, and a scavenger hunt",
+            "User is looking for side dish ideas to pair with BBQ ribs and brisket, and is considering baked beans and potato salad",
+            "User is planning a BBQ party and wants to make sure they have all the necessary supplies",
+            "User needs to get ice for their coolers and is estimating 40 pounds of ice will be enough",
+            "User wants to make BBQ ribs for their party and is looking for tips on how to get them tender and flavorful"
+          ],
+          "evidence_hit": true,
+          "ingest_s": 133.6
+        }
+      ]
+    }
+  ]
+}
