@@ -1,7 +1,7 @@
 {
   "$id": "https://maqs.dev/schemas/scoreboard-0.2.1.json",
   "title": "MAQS-Way audit scoreboard — system x principle verdicts (declared)",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "note": "Machine-readable form of docs/audits/*.md summary tables. Every row is static-reading evidence (executed:false, declared) until WP2 measures it. Update discipline: append-only per audit (new row with SHA+date; old rows never rewritten, corrections as second rows). Verdicts COVERED/PARTIAL/GAP/NOT_AUDITED; NOT_AUDITED requires a scope note as evidence.",
   "columns": ["system", "repo", "sha", "audited", "principle", "verdict", "executed", "one_line", "evidence"],
   "rows": [

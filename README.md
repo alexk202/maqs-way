@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23688834.svg)](https://doi.org/10.5281/zenodo.23688834)
 
-**Status:** v0.2.1 — evidence release (canon unchanged from v0.2; open known gaps listed in SPEC §7)
+**Status:** v0.3 — canonization release (all 12 known gaps from v0.2 closed; open known gaps: none)
 **Core:** MAQS v1.8.1 remains audit core: https://github.com/alexk202/memory-architecture-standard
 
 > **Formula:** MAQS = practical audit of architecture and typical failures (how to verify)
@@ -44,9 +44,9 @@ Without path, policies are written by lawyers, audits are done ad-hoc by enginee
 ## Repo structure
 
 ```
-SPEC.md — main spec v0.2.1 EN
-SPEC-RU.md — RU version v0.2.1
-maqs-way-standard.json — machine-readable v0.2.1 (8 principles P1-P8)
+SPEC.md — main spec v0.3 EN
+SPEC-RU.md — RU version v0.3
+maqs-way-standard.json — machine-readable v0.3.0 (8 principles P1-P8)
 conformance/ — valid/invalid vectors + manifest.json
 evals/ — how to run LoCoMo/LongMemEval
 docs/ — mapping to MAQS, landscape, outreach drafts, articles
@@ -74,7 +74,7 @@ python -m json.tool maqs-way-standard.json
 cat conformance/manifest.json
 ```
 
-> Audit CLI v0.1 ships (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) — run `python3 schemas/maqs_way_audit.py all`. `data_model.$ref` is active (`schemas/memory-item.schema.json` landed, gate green). Executable behavioral harness — planned, v0.3 (see SPEC §6 Backlog). `schema_version` (`omps-0.1.0+way-v0.1.3`) pins the data model, not the release (v0.2.1): the model is frozen since v0.1.3, the release grows — by design.
+> Audit CLI v0.1 ships (`schemas/maqs_way_audit.py`: schema + manifest + lint + coverage, namespaces, canon-pin) — run `python3 schemas/maqs_way_audit.py all`. `data_model.$ref` is active (`schemas/memory-item.schema.json` landed, gate green). Executable behavioral harness — planned, v0.4 (see SPEC §6 Backlog). `schema_version` (`omps-0.1.0+way-v0.1.3`) pins the data model, not the release (v0.2.1): the model is frozen since v0.1.3, the release grows — by design.
 
 See `docs/articles/devto-draft.md` for the first DevTo article (v0.1.4).
 v0.2 article (live): https://dev.to/aleksandr_kossarev_e23623/maqs-way-v02-shipping-a-standard-with-open-gaps-and-naming-them-5cef

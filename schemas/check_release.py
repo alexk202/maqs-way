@@ -38,7 +38,10 @@ Integration point: manual release gate (G0-G5/G6), invoked by the
 release procedure; deliberately NOT wired into maqs_way_audit all
 (release-only). Declared standalone (0.5a, v0.3 step 8).
 
-Run: python3 schemas/check_release.py [--target 0.2.1]
+Run: python3 schemas/check_release.py [--target 0.3] [--prev 0.2.1]
+Target forms: SPEC/§7/tag display form ("0.3" -> SPEC "v0.3", §7 "v0.2.1 →
+v0.3"); the JSON stamp is the full three-part form (two-part targets get
+".0" appended: 0.3 -> JSON 0.3.0) per the release version convention.
 Exit 0 = releasable, 1 = red.
 """
 import argparse
@@ -50,6 +53,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_TARGET = "0.2.1"
+
+
+def _json_stamp(target: str) -> str:
+    """Target -> JSON version stamp per the release version convention:
+    two-part targets are the display form (0.3 -> SPEC v0.3) and the JSON
+    carries the full stamp (0.3.0); three-part targets pass through."""
+    return target + ".0" if target.count(".") == 1 else target
 
 
 def _prev_stamp(target: str) -> str:
@@ -85,8 +95,9 @@ def check_g0(target, prev, prev_display):
     if f"# MAQS-Way v{target} " not in ru or f"**Статус:** v{target}" not in ru:
         ok = fail(f"G0 RU stamps (H1/Status v{target})")
     std = json.loads((ROOT / "maqs-way-standard.json").read_text())
-    if std.get("version") != target:
-        ok = fail(f"G0 JSON version {target}")
+    json_stamp = _json_stamp(target)
+    if std.get("version") != json_stamp:
+        ok = fail(f"G0 JSON version {json_stamp}")
     blob = spec + ru + json.dumps(std)
     if "way-v0.1.3" not in blob:
         ok = fail("G0 schema_version frozen marker missing")
@@ -104,7 +115,7 @@ def check_g0(target, prev, prev_display):
             if tok in pre_history:
                 ok = fail(f"G0 stale {tok!r} outside §7 in {name}")
     if ok:
-        print(f"G0 ok (stamps v{target} / JSON {target} / model frozen / masked absent)")
+        print(f"G0 ok (stamps v{target} / JSON {json_stamp} / model frozen / masked absent)")
     return ok
 
 
