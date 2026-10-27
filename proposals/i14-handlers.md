@@ -1,3 +1,5 @@
+Canonized in da40be8 (SPEC §3.4, v0.3). This file is the historical formulation; the normative text is in SPEC.
+
 # I14 Handler Registry Formulation (v0.1, NOT canon)
 
 > Status: formulation proposal, package 1.6c. NOT normative until
