@@ -1,7 +1,7 @@
 """I15 layer gate (MAQS I15 [REC], Way package 1.6d).
 
-Formulation lives in proposals/i15-layers.md (NOT canon).
-I15 is a known gap (owner: 1.6d-formulation, closes_in: v0.2 canonization).
+Formulation lives in proposals/i15-layers.md (historical only;
+normative text is in SPEC §3.4, canonized v0.3, owner signature 2026-10-27).
 
 Core correction (review round): identify() READS the declared layer,
 it does NOT infer it. Inferring a layer is a label without source -> RED.
@@ -28,7 +28,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "schemas" / "i_layers.json"
 
-KNOWN_GAPS = {"I15"}
+# Closed whitelist: ONLY these ids may be known gaps. I15 closed by v0.3
+# canonization (SPEC §3.4, owner signature 2026-10-27, layer-field
+# amendment); a known_gap true entry is now a BYPASS attempt.
+KNOWN_GAPS = set()
+
+# Rule namespaces for covered entries (mirror of check_c8_coverage.py).
+MAQS_VALID = {
+    "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P",
+    "E6", "F1", "F7", "G1", "I11",
+}
+LEGIT_NONP = {"LOG-3.4": "logging"}
+
 LAYERS = {"persistent", "session", "transient"}
 
 EXPECT = {
@@ -69,22 +80,32 @@ def check_fixture():
     if set(doc.get("layers", [])) != LAYERS:
         print("GATE RED — taxonomy is not exactly {persistent, session, transient}")
         return 1
-    if not item.get("known_gap") or item.get("id") not in KNOWN_GAPS:
-        if item.get("known_gap"):
+    if item.get("known_gap"):
+        if item.get("id") not in KNOWN_GAPS:
             print(f"BYPASS ATTEMPT (known_gap not in whitelist): {item.get('id')}")
-        else:
-            print("UNCOVERED (no owner)")
+            print("GATE RED")
+            return 1
+        if not (item.get("owner") and item.get("closes_in") and item.get("formulation")):
+            print("GATE RED — gap malformed (owner/closes_in/formulation required)")
+            return 1
+        form = item["formulation"].split("#")[0]
+        if not (ROOT / form).exists():
+            print("GATE RED — orphan formulation ref")
+            return 1
+        print(f"KNOWN GAP: I15 (maqs I15 [REC]) -> owner {item['owner']}, "
+              f"closes in {item['closes_in']}")
+        return 0
+    # Covered branch (canonized v0.3): rules must resolve to real anchors.
+    rules = item.get("rules", [])
+    standard = json.loads((ROOT / "maqs-way-standard.json").read_text())
+    known_way = {p["id"] for p in standard["principles"]}
+    bad = [r for r in rules if r not in known_way and r not in LEGIT_NONP
+           and not (r.startswith("MAQS:") and r[5:] in MAQS_VALID)]
+    if bad:
+        print(f"UNKNOWN RULES in {item.get('id')}: {', '.join(bad)}")
         print("GATE RED")
         return 1
-    if not (item.get("owner") and item.get("closes_in") and item.get("formulation")):
-        print("GATE RED — gap malformed (owner/closes_in/formulation required)")
-        return 1
-    form = item["formulation"].split("#")[0]
-    if not (ROOT / form).exists():
-        print("GATE RED — orphan formulation ref")
-        return 1
-    print(f"KNOWN GAP: I15 (maqs I15 [REC]) -> owner {item['owner']}, "
-          f"closes in {item['closes_in']}")
+    print("COVERED: I15 (canonized v0.3 → SPEC §3.4)")
     return 0
 
 
@@ -136,9 +157,9 @@ def main() -> int:
         print("GATE RED — declared read path broken")
         print("GATE RED")
         return 1
-    print("KNOWN GAP I15 stands (formulation, canonization v0.2)")
+    print("COVERED 1/1 + KNOWN GAPS 0 (I15 canonized v0.3 → SPEC §3.4)")
     print("SEMANTICS: read-not-infer enforced; unknown loud; expectations bound")
-    print("GATE GREEN with known gap (advisory I15 reported-not-failing)")
+    print("GATE GREEN (I15 [REC] advisory — reported-not-failing)")
     return 0
 
 

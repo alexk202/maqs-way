@@ -231,6 +231,18 @@
         "declared": true,
         "required": false,
         "note": "explicit label with provenance (source: owner or authorized process); declared, not inferred; no automatic importance inference (F8 ceiling is a restriction, not a model field)"
+      },
+      "layer": {
+        "enum": [
+          "persistent",
+          "session",
+          "transient"
+        ],
+        "declared": true,
+        "required": false,
+        "absent_means": "unknown",
+        "owner": "I15",
+        "note": "declared, not inferred; absence means unknown (honest diagnostic state, never a guess); no silent default substitution"
       }
     },
     "policy": {
@@ -321,6 +333,24 @@
         "completeness": "NOT claimed, NOT gated; declared catalog, growth by explicit change (commit) only, each new class with source (incident/audit) and owner",
         "owner": "I14",
         "maqs": "I14 [REC]"
+      },
+      "i15_layers": {
+        "layers_enum": [
+          "persistent",
+          "session",
+          "transient"
+        ],
+        "taxonomy": "closed enum; cardinality 3, owner I15; extension only by a new owner decision",
+        "assignment": "declared field on query/record (extensions.fields.layer), set at creation by the request creator; identify() reads, never infers; inference without source = RED; no declaration -> unknown, never a guess; silent default substitution = level substitution (B5-family)",
+        "expectations": {
+          "persistent": "verbatim-or-degradation",
+          "session": "noise-expected",
+          "transient": "bonus-not-evidence"
+        },
+        "unknown": "honest diagnostic state, NOT a fourth layer; suspend judgment (no degradation verdict, no success verdict; abstention counted toward verification_suite.metrics.abstention_rate -- reuse); loud diagnostic event (LOG-3.4), non-blocking ([REC] advisory, cf. I14)",
+        "orthogonality": "layer = lifetime class (this enum) ≠ scope = grouping boundary (data_model.scope_enum -- reference) ≠ retention = storage duration (§2.2); class never derived from duration and vice versa; I15 references, never duplicates",
+        "owner": "I15",
+        "maqs": "I15 [REC]"
       }
     }
   },

@@ -3,13 +3,12 @@
     "id": "I15",
     "requirement": "Layer-aware diagnostics: establish which memory layer a query addresses (persistent/session/transient) before interpreting the answer; expectations are layer-conditional.",
     "maqs": "I15 [REC]",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["LOG-3.4"],
+    "known_gap": false,
     "owner": "1.6d-formulation (proposals/i15-layers.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
-    "anchor": "No layer construct in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/i15-layers.md",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.4 Logging (I15 layer taxonomy), canonized v0.3 (owner signature 2026-10-27)",
+    "formulation": "proposals/i15-layers.md"
   },
   "layers": [
     "persistent",
@@ -17,7 +16,7 @@
     "transient"
   ],
   "taxonomy": "closed enum; extension by owner decision only",
-  "assignment": "declared field on query/record; inference rejected in v0.1",
+  "assignment": "declared field on query/record; inference without source rejected",
   "expectations": {
     "persistent": "verbatim expected; deviation = degradation signal",
     "session": "noise expected, not degradation",

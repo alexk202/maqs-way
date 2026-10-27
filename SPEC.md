@@ -447,6 +447,75 @@ reaction; `dead handler` — registered handler with no catalog class;
 `path-into-void` — escalation path whose target is not a declared
 recipient; `handled/probed` — coverage ratio, reported not gated.
 
+The memory-layer taxonomy below is a policy extension setting (see
+`extensions.policy` in maqs-way-standard.json); it is not part of the
+core data model (`schema_version way-v0.1.3`, frozen). It reuses the
+existing canon: `scope_enum` (grouping boundary, data model), retention
+(storage duration, §2.2), the `abstention_rate` metric
+(verification_suite) — referenced, never duplicated. The
+per-record/per-query `layer` is a profile extension field (see
+`extensions.fields` in maqs-way-standard.json; values `persistent` |
+`session` | `transient`; not required — absence means `unknown`).
+
+**I15 — Layer taxonomy ([REC], MAQS I15).** Diagnose → layer →
+interpret; never interpret without a layer. The layer enum is exactly
+{`persistent`, `session`, `transient`} (closed; cardinality 3, owner:
+I15; extension only by a new owner decision): `persistent` — long-lived
+memory store (§2.1 records); `session` — current conversation context;
+`transient` — ephemeral, no persistence guarantee. `unknown` is NOT a
+fourth layer — it is an honest diagnostic state (unclassifiable input is
+a fact).
+
+**I15 — Layer assignment (declared, not inferred).** Layer is a DECLARED
+property of the query/record (metadata set at creation by the request
+creator). `identify(query)` READS the declared layer; it does NOT infer
+it. Inferring a layer ("looks like session") is a label without source →
+RED. No declaration → `unknown`, never a guess. Silent default
+substitution (a quiet `session` for undeclared input) is a level
+substitution — silent-fail class (B5-family).
+
+**I15 — Expectations by layer (bound to the DECLARED layer, before
+interpretation).** `persistent`: verbatim recall expected; deviation is
+a degradation signal. `session`: noise/imperfection within one session
+is expected behavior, NOT degradation; do not raise alerts on
+session-scoped drift. `transient`: an exact answer is a bonus, never
+evidence — accuracy of a transient layer cannot certify memory health
+(absence-of-guarantee is not presence-of-guarantee). Invariant: applying
+one layer's expectations to another layer's answer is a reading error
+(false RED / false GREEN alike).
+
+**I15 — Unknown handling (fail-closed and loud).** `unknown` → suspend
+judgment: NO degradation verdict AND NO success verdict (abstention,
+counted toward the existing `abstention_rate` metric); conservative mode
++ explicit loud diagnostic event (LOG-3.4), non-blocking ([REC]
+advisory verdict model, cf. I14). The layer MUST NOT be guessed to
+unblock interpretation.
+
+**I15 — Orthogonality (three axes, no dual ownership).** `layer` =
+lifetime CLASS (named enum above) — interpretation axis; `scope` =
+grouping BOUNDARY (`scope_enum`) — pool/ownership axis; `retention` =
+storage DURATION (parameter, §2.2) — time axis. Layer is a read-only
+diagnostic label: it owns no storage and sets no policy. Anti-confusion:
+scope "local-session" (access boundary) ≠ layer "session" (source
+context); layer `transient` vs short retention are both "about short" —
+divorced by kind (named class vs number); a class is never derived from
+a duration and vice versa. I15 references §2.2 where lifetime is
+defined; it never duplicates canon. I15 declares no tunable numeric
+parameters: the only number is the closed enum's cardinality (3,
+owner: I15; change = new owner decision).
+
+Deferred (v0.4 list): heuristic layer assignment with declared
+confidence (source-backed inference; inference without source remains
+RED); tumbling-window review of layer expectations; semantic adequacy
+of expectations.
+
+Glossary (frozen; redefinition only via separate sanction):
+`layer` — declared lifetime class (persistent/session/transient);
+`unknown` — honest diagnostic state, not a layer; `identify` — reads
+the declared layer, never infers; `expectation` — answer-quality rule
+bound to the DECLARED layer; `reading error` — applying one layer's
+expectation to another layer's answer.
+
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
@@ -506,6 +575,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
-- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3).
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.
