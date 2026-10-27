@@ -671,6 +671,50 @@ every one-sided run; `snapshot-run-verify` — the P10 procedure:
 snapshot (including untracked files) → run the gates → verify
 identical.
 
+### 3.6 Run determinism and comparability
+
+The run-comparability rules below are policy extension settings (see
+`extensions.policy` in maqs-way-standard.json); they are not part of the
+core data model (`schema_version way-v0.1.3`, frozen). They govern how
+evaluation runs of this project may be compared and how their evidence
+is aggregated.
+
+**Byte-identity conditions.** Two runs are comparable byte-for-byte only
+when produced on the SAME stand — same GPU, same driver, same inference
+build and flags, same model — with per-question history isolation and a
+fixed seed. Any of these differing puts the runs in different classes:
+byte comparison between them is not allowed.
+
+**Windows.** A window is a series of runs between MATCHING control
+panels; "matching" means byte identity of ALL panel outputs. A run
+belongs to a window only if it is bracketed by matching control panels
+BEFORE and AFTER it. A divergence is a window boundary: for a run next
+to a divergence the regime is unknown — it supports aggregate
+comparisons only.
+
+**Pairing.** Paired per-question comparisons are allowed ONLY within one
+stand and one window. Across stands and across windows — aggregate
+comparisons only. Fact-illustration: the iGPU panel outputs matched the
+RTX reference 0/12 byte-identically while evidence_hit held 12/12 — the
+same detection quality with different bytes; byte comparison across
+stands is meaningless, aggregate comparison is not.
+
+**Regime canary.** The canary is a diagnostic label printed in a run's
+report header, produced on a FRESH store; it marks the regime and does
+NOT unlock byte or per-question comparisons across windows or stands.
+The composition of the canary and of the control panel lives in the run
+artifacts, not in this canon.
+
+**Stand checklist.** Every prereg fixes the stand it runs on: OS, GPU
+driver version, inference build (llama.cpp) and launch flags, model
+md5, runner file hashes, CONFIG_SHA256 — recorded per prereg, so a
+future second stand can be compared field by field.
+
+The data behind the facts above lives in `evals/results/` (the stand2
+iGPU/RTX note, the determinism and attractor crosschecks, the drift
+probe note, the canary fix check); this canon cites the files, not
+their numbers.
+
 ## 4. Application Profiles
 
 - **Profile A: Personal Assistant**: scope user-portable, strict consent, evaluation LoCoMo+LongMemEval, deletion LOGICAL+PHYSICAL, conflict resolution User Wins
@@ -718,6 +762,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
-- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3); P9/P10 canonized in §3.5 (owner signature 2026-10-27); audit procedure as policy extension, core data model unchanged (way-v0.1.3); 0.5a/0.6a canonized in §3.2 (owner signature 2026-10-27); pipeline hygiene as policy extension, core data model unchanged (way-v0.1.3); check_pipeline_hygiene was RED at v0.2 and v0.2.1 (check_release.py undeclared; baseline drift); not covered by the release gate at the time; fixed in 89a955c; B4 canonized in §2.5 (owner signature 2026-10-27); write atomicity as policy extension, core data model unchanged (way-v0.1.3).
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3); P9/P10 canonized in §3.5 (owner signature 2026-10-27); audit procedure as policy extension, core data model unchanged (way-v0.1.3); 0.5a/0.6a canonized in §3.2 (owner signature 2026-10-27); pipeline hygiene as policy extension, core data model unchanged (way-v0.1.3); check_pipeline_hygiene was RED at v0.2 and v0.2.1 (check_release.py undeclared; baseline drift); not covered by the release gate at the time; fixed in 89a955c; B4 canonized in §2.5 (owner signature 2026-10-27); write atomicity as policy extension, core data model unchanged (way-v0.1.3); determinism rule canonized in §3.6 (owner signature 2026-10-27; second-stand reproduction); run comparability as policy extension, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.

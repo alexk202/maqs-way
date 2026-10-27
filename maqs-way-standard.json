@@ -412,6 +412,28 @@
         "no_numeric_parameters": "the requirement is a crash-observability property; B4 declares no tunable numeric parameters",
         "owner": "B4",
         "maqs": "B4 [IMP]"
+      },
+      "run_determinism": {
+        "note": "Run determinism and comparability norms (owner decision 2026-10-27 after second-stand reproduction; SPEC §3.6). Not a MAQS item; no fixture/gate by design. The seed value lives in preregs and artifacts, not in canon.",
+        "byte_identity": {
+          "same_stand": "same GPU, same driver, same inference build and flags, same model",
+          "isolation": "per-question history isolation",
+          "seed": "fixed seed (value per prereg/artifacts)",
+          "rule": "any condition differing -> different classes; byte comparison not allowed"
+        },
+        "window": "series of runs between MATCHING control panels; matching = byte identity of ALL panel outputs; membership requires matching brackets BEFORE and AFTER; divergence = boundary, regime unknown -> aggregates only",
+        "pairing": "per-question pairing ONLY within one stand and one window; across stands and across windows -- aggregates only",
+        "canary": "diagnostic label from a FRESH store; does NOT unlock byte or per-question comparisons across windows/stands; composition in run artifacts, not in canon",
+        "stand_checklist": [
+          "OS",
+          "GPU driver version",
+          "inference build (llama.cpp) and launch flags",
+          "model md5",
+          "runner file hashes",
+          "CONFIG_SHA256"
+        ],
+        "stand_checklist_note": "recorded per prereg",
+        "data_ref": "evals/results/ files cited by SPEC §3.6; numbers live in the artifacts, not in canon"
       }
     }
   },

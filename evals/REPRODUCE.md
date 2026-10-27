@@ -55,6 +55,7 @@ deliberately (~1 hour of GPU).
   the smoke now uses the same evidence-R@5 as the full run (expected value on
   a working stand: 5/5); the old proxy stays as a secondary diagnostic line
   and is NOT a metric.
+- Comparability rules (windows, pairing, canary): SPEC §3.6 (normative since v0.3).
 
 ## 1. Hardware
 
