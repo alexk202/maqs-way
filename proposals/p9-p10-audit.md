@@ -1,3 +1,5 @@
+Canonized in a3e3d46 (SPEC §3.5, v0.3). This file is the historical formulation; the normative text is in SPEC.
+
 # P9/P10 Audit Procedure Formulation (v0.1, NOT canon)
 
 > Status: formulation proposal, package 1.7a. NOT normative until
