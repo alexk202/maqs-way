@@ -1,4 +1,4 @@
-# Mapping MAQS v1.6 → MAQS-Way v0.2
+# Mapping MAQS v1.8.1 → MAQS-Way v0.2
 
 | MAQS Section | Typical failure | Way property | Verification |
 |---|---|---|---|
