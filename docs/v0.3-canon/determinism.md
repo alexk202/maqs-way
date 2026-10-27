@@ -1,3 +1,5 @@
+Signed by owner 2026-10-27 (file at 0214de1, no amendments); applied in <hash>
+
 # Детерминизм и сравнимость прогонов — текст на подпись (v0.3, шаг 10 из 11, часть А)
 
 Status: подготовлено для подписи владельца. Канон (SPEC.md, SPEC-RU.md,
