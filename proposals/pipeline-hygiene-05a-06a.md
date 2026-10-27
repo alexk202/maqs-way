@@ -1,3 +1,5 @@
+Canonized in 89a955c (SPEC §3.2, v0.3). This file is the historical formulation; the normative text is in SPEC.
+
 # 0.5a/0.6a Pipeline Hygiene Formulation (v0.1, NOT canon)
 
 > Status: formulation proposal, package 1.7b. NOT normative until
