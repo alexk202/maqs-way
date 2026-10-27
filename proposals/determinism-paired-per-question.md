@@ -1,3 +1,5 @@
+Canonized in 1aab4cb (SPEC §3.6, v0.3). This file is the historical formulation; the normative text is in SPEC.
+
 # Paired per-question comparisons under confirmed byte-identity (v0.5, NOT canon)
 
 > Status: **experimental, ONE stand** (the reference stand only). NOT

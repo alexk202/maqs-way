@@ -1,4 +1,4 @@
-Signed by owner 2026-10-27 (file at 0214de1, no amendments); applied in <hash>
+Signed by owner 2026-10-27 (file at 0214de1, no amendments); applied in 1aab4cb
 
 # Детерминизм и сравнимость прогонов — текст на подпись (v0.3, шаг 10 из 11, часть А)
 
