@@ -1,7 +1,7 @@
 """P9/P10 audit-procedure gate (Way package 1.7a).
 
-Formulation lives in proposals/p9-p10-audit.md (NOT canon).
-P9/P10 are known gaps (owner: 1.7a-formulation, closes_in: v0.2 canonization).
+Formulation lives in proposals/p9-p10-audit.md (historical only;
+normative text is in SPEC §3.5, canonized v0.3, owner signature 2026-10-27).
 
 P9: evaluate() is one-sided — positive = proof, negative = inconclusive
 (never pass). One-sidedness is declared upfront in every report.
@@ -23,7 +23,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "schemas" / "audit_procedure.json"
 
-KNOWN_GAPS = {"P9", "P10"}
+# Closed whitelist: ONLY these ids may be known gaps. P9/P10 closed by
+# v0.3 canonization (SPEC §3.5, owner signature 2026-10-27; rules
+# MAQS:P9/MAQS:P10 per owner amendment -- no new namespace token).
+KNOWN_GAPS = set()
+
+# Rule namespaces for covered entries: local mirror of maqs_way_audit.MAQS_VALID
+# (extended with P9/P10 in commit 3465361) + LOG-3.4 (existing token).
+MAQS_VALID = {
+    "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P",
+    "E6", "F1", "F7", "G1", "I11", "P9", "P10",
+}
+LEGIT_NONP = {"LOG-3.4": "logging"}
 
 GATES = [
     "schemas/check_conformance.py",
@@ -80,9 +91,16 @@ def check_fixture():
             print("GATE RED")
             return 1
         else:
-            print(f"UNCOVERED (no owner): {c['id']}")
-            print("GATE RED")
-            return 1
+            standard = json.loads((ROOT / "maqs-way-standard.json").read_text())
+            known_way = {p["id"] for p in standard["principles"]}
+            bad = [r for r in c.get("rules", [])
+                   if r not in known_way and r not in LEGIT_NONP
+                   and not (r.startswith("MAQS:") and r[5:] in MAQS_VALID)]
+            if bad:
+                print(f"UNKNOWN RULES in {c['id']}: {', '.join(bad)}")
+                print("GATE RED")
+                return 1
+            print(f"COVERED: {c['id']} (canonized v0.3 → SPEC §3.5)")
     return 0
 
 
@@ -126,10 +144,10 @@ def main() -> int:
     if check_semantics() != 0:
         print("GATE RED")
         return 1
-    print("COVERED 0/2 + KNOWN GAPS 2/2 (P9, P10 — formulation, canonization v0.2)")
+    print("COVERED 2/2 + KNOWN GAPS 0 (P9, P10 canonized v0.3 → SPEC §3.5)")
     print("ONE-SIDED declared upfront: negative = inconclusive; coverage NOT claimed")
     print("P10 read-only verified by fact (snapshot incl. untracked, identical)")
-    print("GATE GREEN with known gap(s) — see owners above")
+    print("GATE GREEN")
     return 0
 
 

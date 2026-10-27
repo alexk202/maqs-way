@@ -3,24 +3,22 @@
     "id": "P9",
     "requirement": "Controlled artifact experiment with one-sided probes (canary/decoy/echo): positive = proof, negative = inconclusive, never pass.",
     "maqs": "P9 (procedure step)",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["MAQS:P9"],
+    "known_gap": false,
     "owner": "1.7a-formulation (proposals/p9-p10-audit.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
-    "anchor": "No probe procedure in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/p9-p10-audit.md#p9--controlled-artifact-experiment-one-sided",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.5 Reporting (P9 controlled artifact experiment), canonized v0.3 (owner signature 2026-10-27)",
+    "formulation": "proposals/p9-p10-audit.md#p9--controlled-artifact-experiment-one-sided"
   },
   {
     "id": "P10",
     "requirement": "External auditor isolation: the auditor is read-only; verified by snapshot-run-verify including untracked files.",
     "maqs": "P10 (procedure step)",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["MAQS:P10"],
+    "known_gap": false,
     "owner": "1.7a-formulation (proposals/p9-p10-audit.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
-    "anchor": "No auditor-isolation procedure in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/p9-p10-audit.md#p10--external-auditor-isolation-read-only-verified-by-fact",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.5 Reporting (P10 external auditor isolation), canonized v0.3 (owner signature 2026-10-27)",
+    "formulation": "proposals/p9-p10-audit.md#p10--external-auditor-isolation-read-only-verified-by-fact"
   }
 ]

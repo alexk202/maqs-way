@@ -351,6 +351,31 @@
         "orthogonality": "layer = lifetime class (this enum) ≠ scope = grouping boundary (data_model.scope_enum -- reference) ≠ retention = storage duration (§2.2); class never derived from duration and vice versa; I15 references, never duplicates",
         "owner": "I15",
         "maqs": "I15 [REC]"
+      },
+      "audit_procedure": {
+        "note": "Audit procedure norms (MAQS §2 Steps P9/P10, canonized v0.3, SPEC §3.5, owner signature 2026-10-27). No tunable numeric parameters -- parameters are structural (probe outcomes, snapshot equality).",
+        "p9_one_sided": {
+          "positive": "proof of the tested property",
+          "negative": "inconclusive -- never pass, never clean, only 'not tested by this run'",
+          "report_line": "negative = inconclusive; coverage NOT claimed (mandatory in every P9 run, declared upfront)",
+          "mixing_with_coverage": "RED (level substitution: 'not detected' issued as 'clean')",
+          "setup": "new artifact of a different type, syntax verified independently before delivery, delivered without prior disclosure, result recorded; clean read = acceptance of the delivery channel",
+          "triad": {
+            "P9-a": "canary: unique data embedded mid-body, absent from all memory stores; reproduced in the report = proof of reading; absent = inconclusive",
+            "P9-b": "decoy: a plausible but false element that memory would expect; any mention = proof of confabulation",
+            "P9-c": "echo: a memory-true element absent from the artifact, thematically tempting; appearing = proof of supplementation (E12 violation); absent = inconclusive"
+          },
+          "grid": "combined grid gives diagnosis; a single probe gives only proof-or-silence",
+          "owner": "P9"
+        },
+        "p10_read_only": {
+          "environment": "no write-access to production stores; no shared runtime state (processes, caches, loaded embedding models); results written only to an external report",
+          "verified_by": "fact, not promise: snapshot the tree -> run the gates -> verify identical",
+          "untracked": "verification MUST include untracked files (git status --porcelain, not tracked-only); creating a new file IS a write",
+          "fail": "any write into the audited tree (modification OR new file) FAILS P10",
+          "boundary": "write access for the auditor out of scope (MAQS SUPP-EXT-01) -- declared boundary, not a defect",
+          "owner": "P10"
+        }
       }
     }
   },

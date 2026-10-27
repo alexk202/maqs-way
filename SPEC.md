@@ -527,6 +527,59 @@ residual_risks: open issues
 remediation_plan: priority order
 j3_guard: every fix closed with regression guard test; unexecuted test (silent skip, async without runner) = incomplete (MAQS J3)
 
+The audit-procedure requirements below are policy extension settings
+(see `extensions.policy` in maqs-way-standard.json); they are not part
+of the core data model (`schema_version way-v0.1.3`, frozen). No new
+data-model fields are introduced.
+
+**P9 — Controlled artifact experiment (one-sided; MAQS §2, Step P9).**
+When artifact–memory contamination is suspected: prepare a new artifact
+of a different type, verify its syntax independently before delivery,
+deliver it without prior disclosure, and record the result; a clean
+read constitutes acceptance of the delivery channel. Diagnostic triad
+P9-a / P9-b / P9-c: `canary` — unique data embedded mid-body, absent
+from all memory stores; reproduced in the report = proof of reading;
+absent = inconclusive. `decoy` — a plausible but false element that
+memory would expect; any mention = proof of confabulation. `echo` — a
+memory-true element absent from the artifact, thematically tempting;
+appearing = proof of supplementation (E12 violation); absent =
+inconclusive. All three probes are ONE-SIDED: a positive result is
+PROOF of the tested property; a negative result is INCONCLUSIVE —
+never pass, never "clean", only "not tested by this run". A silent
+canary proves nothing about the threat — only about the canary. The
+combined grid gives diagnosis; a single probe gives only
+proof-or-silence. Every P9 run reports the line "negative =
+inconclusive; coverage NOT claimed" — one-sidedness is declared
+upfront, never implied. Mixing a one-sided run with a coverage claim is
+RED (level substitution: "not detected" issued as "clean").
+
+**P10 — External auditor isolation (read-only, verified by fact; MAQS
+§2, Step P10).** Any automated or agent-driven audit runs from an
+environment that has NO write-access to production stores and shares NO
+runtime state (processes, caches, loaded embedding models) with the
+audited system; audit results are written only to an external report.
+Read-only is a DECLARED property, confirmed by fact, not by promise.
+Procedure: snapshot the tree → run the gates → verify identical.
+Verification MUST include untracked files (`git status --porcelain`,
+not tracked-only): creating a new file IS a write even if tracked
+files are untouched — otherwise false-safe. An audit step that writes
+into the audited tree (modification OR new file) FAILS P10. Write
+access for the auditor is out of scope (MAQS SUPP-EXT-01) — a declared
+boundary, not a defect.
+
+P9/P10 declare no tunable numeric parameters: their parameters are
+structural (probe outcomes, snapshot equality).
+
+Deferred (v0.4 list): P10 — lazy-initialization write paths (`mode=ro`
+alone is not isolation); P11 — agent audit discipline.
+
+Glossary (frozen; redefinition only via separate sanction):
+`one-sided` — evaluation where a positive result = proof and a negative
+result = inconclusive (never pass); `canary`/`decoy`/`echo` — the
+P9-a/b/c probes; `coverage NOT claimed` — mandatory report line of
+every one-sided run; `snapshot-run-verify` — the P10 procedure:
+snapshot (including untracked files) → run the gates → verify
+identical.
 
 ## 4. Application Profiles
 
@@ -575,6 +628,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
-- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3).
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3); P9/P10 canonized in §3.5 (owner signature 2026-10-27); audit procedure as policy extension, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.
