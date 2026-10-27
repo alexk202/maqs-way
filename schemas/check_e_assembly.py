@@ -1,7 +1,7 @@
 """E10/E11 assembly gate (MAQS E10 [REC] / E11 [IMP], Way package 1.5).
 
-Formulation lives in proposals/e10-e11-assembly.md (NOT canon).
-Both items are known gaps (owner: 1.5-formulation, closes_in: v0.2 canonization).
+Formulation lives in proposals/e10-e11-assembly.md (historical only;
+normative text is in SPEC §2.4, canonized v0.3, owner signature 2026-10-27).
 
 Executable without infra (pure functions on synthetic records):
 - cap: protect_request() DENYs beyond cap + emits cap_overflow (never silent evict)
@@ -26,7 +26,8 @@ FIXTURE = ROOT / "schemas" / "e_assembly.json"
 PROPOSAL = ROOT / "proposals" / "e10-e11-assembly.md"
 
 # Closed whitelist (C8 pattern): ONLY these ids may be known gaps.
-KNOWN_GAPS = {"E10", "E11"}
+# E10/E11 closed by v0.3 canonization (SPEC §2.4, owner signature 2026-10-27).
+KNOWN_GAPS = set()
 
 HEAD_TAIL = 0.15  # head/tail zones as share of context tokens (v0.1 default)
 
@@ -83,7 +84,7 @@ def check_fixture():
             if bad:
                 unknowns.append((c["id"], bad))
             else:
-                print(f"COVERED: {c['id']} (formulation canonized — remove gap marker)")
+                print(f"COVERED: {c['id']} (canonized v0.3 -> SPEC §2.4)")
             continue
         if not c.get("rules"):
             if (c["id"] in KNOWN_GAPS and c.get("known_gap")
@@ -162,9 +163,9 @@ def main() -> int:
     if rc != 0:
         print("GATE RED")
         return 1
-    print("COVERED 0/2 + KNOWN GAPS 2/2 (E10, E11 — formulation, canonization v0.2)")
+    print("COVERED 2/2 + KNOWN GAPS 0 (E10, E11 canonized v0.3 -> SPEC §2.4)")
     print("SEMANTICS 5/5 (cap-deny, unmarked-noop, middle-RED, coexist, auto-flag)")
-    print("GATE GREEN with known gap(s) — see owners above")
+    print("GATE GREEN")
     return 0
 
 

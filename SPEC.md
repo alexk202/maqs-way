@@ -194,6 +194,70 @@ Conflict resolution policy:
 - **F8 ceiling (MAQS F8):** records with `source.type=model_output` cannot receive importance above defined ceiling until confirmed by external source or user.
 - **E12 artifact precedence (MAQS E12):** current artifact retains factual precedence over memory; conflict stays observable, memory must not silently substitute or reconstruct the artifact representation.
 
+`alive` and `critical` are profile extension fields (see `extensions`
+in maqs-way-standard.json); they are not part of the core data model
+(`schema_version way-v0.1.3`, frozen).
+
+
+**E10 — Alive memory cap ([REC], MAQS E10).** The alive cap is
+per-scope-per-subject: the cap applies within each memory scope for each
+subject independently (scope anchor: `scope_enum` in
+maqs-way-standard.json), never globally. Effect: `alive: true` exempts
+the record from decay and summarization while the flag is set; it does
+NOT block deletion (retention = `"legal_hold"` governs that, see
+E10.alive_vs_hold below). Default overflow behavior: new protection is
+DENIED (fail-closed for protection), the event is logged as
+`cap_overflow {subject, scope, cap, attempted_id}`, and
+`escalate_after_denials` consecutive denials escalate to the owner
+(advisory, since E10 is [REC]). `escalate_after_denials` has no default
+and MUST be declared by every system that enables the cap. The system
+MUST NOT silently revoke existing protections and MUST NOT silently
+reject new ones: default-FIFO eviction leaves `alive: true` set while
+protection is actually gone — declaration outlives fact (silent-fail,
+class B5); a lying flag is worse than forgetfulness. Opt-in only:
+`overflow: evict_oldest` — explicit per-system configuration; each
+eviction event MUST be logged with record id and reason (no silence even
+opt-in). Opt-in explicitly redefines `alive` semantics (policy priority,
+not absolute protection) and therefore is not a lie. Cap violations are
+measurable (`alive_cap_overflow_rate`, P8 pattern) but non-blocking.
+
+
+**E10 — alive vs legal hold (orthogonality).** `legal_hold` and `alive`
+are orthogonal mechanisms: `legal_hold` (the existing retention value
+`"legal_hold"`) blocks deletion (governance-level, hard); `alive`
+protects against decay and summarization (significance-level, [REC]).
+A record may carry both at once; neither implies the other. Hold does
+not grant alive-protection and vice versa; removing one never removes
+the other. Check: `is_forgettable(r) = not r.alive and r.retention !=
+"legal_hold"`.
+
+
+**E11 — Declared critical labels ([IMP], MAQS E11).** Critical status is
+an explicit label with provenance (source: owner or authorized process).
+No automatic importance inference: `importance` in canon is an F8
+ceiling (a restriction), not a model field — no scale, no thresholds,
+no source. Unlabeled records are treated as non-critical (no
+reordering, no guessing); `unlabeled_ratio` is measured to keep the gap
+visible. Unmarked blocks produce an explicit log ("0 critical blocks"),
+never a silent pass-with-guessing.
+
+
+**E11 — Placement verification.** `E11.verify_placement(context)` is a
+structural audit (no LLM): every critical-labeled block MUST occupy head
+or tail zones (first / last `critical_zone_fraction` of assembled
+context tokens, default 0.15; owner: E11; calibration → v0.4 list);
+middle-zone critical placement = FAIL. Semantic adequacy of zone sizes —
+deferred (v0.4 list).
+
+
+Glossary (frozen; redefinition only via separate sanction):
+`alive`/`protected` — declared, not inferred; `critical` — explicit
+label with provenance (declared, not inferred); `head`/`tail zones` —
+first/last `critical_zone_fraction` of assembled context tokens;
+`unlabeled_ratio` — reported, not gated; "positioning" here means the
+placement procedure for critical blocks (head/tail zones + positional
+audit), not the bare word.
+
 ### 2.5 Resilience
 
 - Contracts between stores, versioned schemas/embeddings, idempotent migrations
@@ -309,5 +373,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.

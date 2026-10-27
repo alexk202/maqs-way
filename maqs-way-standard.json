@@ -213,6 +213,55 @@
       "secret"
     ]
   },
+  "extensions": {
+    "note": "Profile extension fields and policies (MAQS E10/E11, canonized v0.3, SPEC §2.4, owner signature 2026-10-27). Extensions are NOT part of the core data model (schema_version way-v0.1.3, frozen).",
+    "fields": {
+      "alive": {
+        "type": "bool",
+        "declared": true,
+        "required": false,
+        "note": "declared, not inferred; exempts record from decay and summarization while set; does NOT block deletion (retention legal_hold governs deletion)"
+      },
+      "critical": {
+        "type": "object",
+        "fields": [
+          "label",
+          "provenance"
+        ],
+        "declared": true,
+        "required": false,
+        "note": "explicit label with provenance (source: owner or authorized process); declared, not inferred; no automatic importance inference (F8 ceiling is a restriction, not a model field)"
+      }
+    },
+    "policy": {
+      "alive_cap": {
+        "scope": "per scope per subject",
+        "anchor": "data_model.scope_enum",
+        "item": "E10 [REC]",
+        "advisory": true
+      },
+      "overflow": {
+        "enum": [
+          "deny",
+          "evict_oldest"
+        ],
+        "default": "deny",
+        "note": "default deny = fail-closed for protection: new protection DENIED, event cap_overflow logged, escalate_after_denials consecutive denials escalate to owner; system MUST NOT silently revoke existing protections and MUST NOT silently reject new ones (silent-fail, class B5); evict_oldest is opt-in per system, each eviction logged with record id and reason"
+      },
+      "escalate_after_denials": {
+        "type": "integer",
+        "default": null,
+        "required_when": "alive_cap is enabled",
+        "note": "no default; MUST be declared by every system that enables the cap"
+      },
+      "critical_zone_fraction": {
+        "type": "number",
+        "default": 0.15,
+        "owner": "E11",
+        "note": "head/tail zones as share of assembled context tokens; semantic adequacy of zone sizes and calibration deferred to v0.4 list"
+      }
+    }
+  },
   "lifecycle": {
     "states": [
       "active",
@@ -406,6 +455,21 @@
         "target_threshold": 0,
         "operator": "==",
         "test": "after delete of shared fact, requestor cannot retrieve via semantic search"
+      },
+      "alive_cap_overflow_rate": {
+        "pattern": "P8",
+        "gate": "advisory",
+        "note": "alive-cap violations are measurable but non-blocking (E10 [REC])"
+      },
+      "unlabeled_ratio": {
+        "mode": "reported_not_gated",
+        "note": "measured to keep the unlabeled gap visible (E11 [IMP]); no reordering, no guessing"
+      },
+      "E11.verify_placement": {
+        "method": "structural_audit",
+        "llm": false,
+        "rule": "every critical-labeled block MUST occupy head or tail zones (critical_zone_fraction); middle-zone critical placement = FAIL",
+        "owner": "E11"
       }
     },
     "deletion_lattice": {
@@ -485,6 +549,24 @@
           "embedding_vector"
         ],
         "sanitization": "secret/PII filter before logging, same as Policy Broker; credential-in-URL (?token=..., bot<id>:AA... in path) masked by redactor before write (MAQS I13)"
+      }
+    },
+    "e10_e11_events": {
+      "cap_overflow": {
+        "fields": [
+          "subject",
+          "scope",
+          "cap",
+          "attempted_id"
+        ],
+        "note": "emitted when a protect request is DENIED by the alive cap (default overflow: deny)"
+      },
+      "eviction": {
+        "fields": [
+          "record_id",
+          "reason"
+        ],
+        "note": "every eviction event logged with record id and reason (opt-in overflow: evict_oldest; no silence even opt-in)"
       }
     }
   },
