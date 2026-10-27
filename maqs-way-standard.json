@@ -817,12 +817,14 @@
       "verification": "MAQS P6 test isolation"
     }
   },
-  "backlog_v0_2": [
-    "formal schemas/memory-item.schema.json extending OMPS",
-    "maqs-way audit CLI with conformance vectors (12 vectors)",
-    "identity_signature canonical JSON definition (JCS + Ed25519)",
-    "live verification of all 11 external links in docs/landscape.md",
-    "behavioral test for D9 golden set",
-    "embedding provenance inheritance enforcement"
+  "backlog": [
+    "deletion_marker in JSON data_model: confirm obsolete-by-separation (§2.1 note) or specify (open question, not silently dropped)",
+    "identity_signature: Ed25519 over canonical JSON -- full specification",
+    "operator role: full permission matrix for §2.3 (review, appeal, override boundaries)",
+    "executable behavioral harness (LoCoMo/LongMemEval runs) + D9 behavioral test",
+    "live verification of all 11 external links in docs/landscape.md + per-row verified column",
+    "P/V/E alignment for Architecture and Verification layers (§2, §3)",
+    "P4 verification on other memory systems",
+    "v0.4 candidates from the MAQS 1.8.1 sync (docs/v0.4-candidates-from-maqs-1.8.1.md, rows 1-13): 1 J3 j3_guard line refresh; 2 I13 masking requirement text (glued secrets, single mechanism, dependency-owned loggers); 3 B1 one semantic key per event; 4 D8 pinned axes + version-marker contract (no Way gate -- new package or known-gap entry); 5 I10 CRIT-zone warnings as failures incl. test runs + DEBUG-cap pre-filter; 6 I12 B-axis pin B2 (visibility without reaction); 7 I15 pinned timestamp format per store; 8 audit methodology §2.2 step 3 (reachability, per-instance schema, static-evidence labeling); 9 audit methodology §2.2 step 6 (separated criticality counting); 10 audit methodology §2.2 p.4 (inherited criticality); 11 P11 agent audit discipline; 12 P10 lazy-initialization write paths (mode=ro is not isolation); 13 0.5a invoked-but-unsatisfiable control"
   ]
 }
