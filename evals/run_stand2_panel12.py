@@ -8,7 +8,12 @@ with two additions requested by the owner's stand-2 task:
      each pass, the 3 canary questions (311778f1, faba32e5, e47becba) run
      through the SAME g1-iso extraction flow; the fingerprint (sha256 over
      the canonical JSON of their raw extraction outputs) is recorded in the
-     pass header of the artifact.
+     pass header of the artifact. FIX 2026-10-27 (owner-directed): each
+     canary run uses a FRESH store (canary_p{pi}/{h}) and the raw_outputs
+     are sliced per question -- the original tag canary_{h} reused the
+     previous pass's store/history within one invocation and the CALLS
+     filter accumulated all previous canary calls, so pass-2 fingerprints
+     differed from pass-1 without any regime shift (harness defect).
   2. CONFIGURABLE PASSES via env: STAND2_PASSES (default 2) and STAND2_OUT
      (default stand2_panel12_A.json). Invocation A: passes 1-2 back-to-back
      on one llama-server instance; server restart; invocation B: pass 3 on a
@@ -112,7 +117,11 @@ def patch_llm_client(m, pi, qi):
 
 
 def extract_one(q, tag):
-    """Full g1-iso extraction flow for one single-session question."""
+    """Full g1-iso extraction flow for one single-session question.
+    raw_outputs are SLICED to the calls made by THIS extract_one call
+    (harness defect fix 2026-10-27: the pass==-1 filter accumulated the
+    canary CALLS of every previous pass, corrupting pass-2+ fingerprints)."""
+    calls_start = len(CALLS)
     cfg = {
         "llm": {"provider": "openai", "config": {
             "model": MODEL, "temperature": 0, "max_tokens": MAX_TOKENS,
@@ -140,22 +149,33 @@ def extract_one(q, tag):
         pass
     del m
     return {"q_id": q["question_id"],
-            "raw_outputs": [c["raw"] for c in CALLS if c["pass"] == -1],
+            "raw_outputs": [c["raw"] for c in CALLS[calls_start:]],
             "stored_texts": stored}
 
 
-def canary_fingerprint(by8):
+def canary_fingerprint(by8, pi):
     """Run the 3 canary questions, fingerprint = sha256 over canonical JSON
-    of {q8: raw_outputs}."""
+    of {q8: raw_outputs}. EACH canary run gets a FRESH store path
+    (canary_p{pi}/{h}) and a fresh history db -- per-question isolation like
+    the panel questions (harness defect fix 2026-10-27: the tag
+    f"canary_{h}" without the pass index reused the previous pass's vector
+    store and history.db within one invocation)."""
     outs = {}
     for h in CANARY8:
-        c0 = len(CALLS)
-        r = extract_one(by8[h], f"canary_{h}")
+        r = extract_one(by8[h], f"canary_p{pi}_{h}")
         outs[h] = r["raw_outputs"]
     fp = hashlib.sha256(json.dumps(outs, sort_keys=True,
                                    ensure_ascii=False).encode()).hexdigest()
-    facts = {h: sum(1 for c in CALLS if c["pass"] == -1 and
-                    json.loads(c["raw"]).get("memory") is not None) for h in CANARY8}
+    facts = {}
+    for h in CANARY8:
+        n = 0
+        for raw in outs[h]:
+            try:
+                if json.loads(raw).get("memory") is not None:
+                    n += 1
+            except Exception:
+                pass
+        facts[h] = n
     return {"canary_fp": fp, "canary_facts": facts, "canary_raw": outs}
 
 
@@ -169,7 +189,7 @@ def main():
     passes = []
     for pi in range(N_PASSES):
         t_pass = time.time()
-        canary = canary_fingerprint(by8)
+        canary = canary_fingerprint(by8, pi)
         print(f"CANARY pass {pi + 1}: fp={canary['canary_fp'][:16]} "
               f"facts={canary['canary_facts']}", flush=True)
         results = []
