@@ -305,6 +305,22 @@
           "note": "recorded side-effects; claimed success + empty sink = B5-failure (claimed_events/performed_actions, pure function)",
           "owner": "I10"
         }
+      },
+      "i14_handler_registry": {
+        "reaction_required": "handler and/or escalation_path (at least one) for every probed exception class; detection without reaction is not coverage",
+        "recipients_enum": [
+          "owner",
+          "operator"
+        ],
+        "recipients_note": "reuses canon roles (operator block, SPEC §2.3); not a duplicate",
+        "path_target": "must terminate at a declared recipient; path-into-void = uncovered (same class as halt-without-alert, B5-family)",
+        "combination": "handler AND path simultaneously is LEGAL (handler + fallback-path = defense in depth); XOR-forbidding rejected",
+        "dictionary": "inherited from the class counters (I10-I12), not redefined: halt : escalate :: handler : path; counter classes carry reaction = counter (aggregate / halt+alert / escalate), no double ownership",
+        "verdict": "probe level STRICT (orphan class / dead handler / path-into-void = RED; a check that cannot fail is not a check); gate level advisory ([REC] reported-not-failing, findings named, never folded; '0 findings' and 'check not run' are distinguished states)",
+        "coverage_metric": "handled/probed, reported not gated; every orphan listed by name",
+        "completeness": "NOT claimed, NOT gated; declared catalog, growth by explicit change (commit) only, each new class with source (incident/audit) and owner",
+        "owner": "I14",
+        "maqs": "I14 [REC]"
       }
     }
   },

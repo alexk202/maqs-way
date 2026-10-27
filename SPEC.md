@@ -392,6 +392,61 @@ the halt alert, readable after halt; `halt` — stop of the own process;
 `escalate` — notification contract to external dependencies, repeatable
 on a declared schedule.
 
+Reaction requirements for probed exception classes below are policy
+extension settings (see `extensions.policy` in maqs-way-standard.json);
+they are not part of the core data model (`schema_version way-v0.1.3`,
+frozen). The recipient vocabulary reuses the canon roles `owner` and
+`operator`; no new data-model fields are introduced.
+
+**I14 — Handler registry ([REC], MAQS I14).** If an exception class is
+probed (caught and re-raised or logged) but has no registered handler or
+escalation path, the probe is incomplete — detection without reaction is
+not coverage. Every probed class MUST have a reaction: `handler` and/or
+`escalation_path` (at least one). A `handler` is a local reaction on the
+own-process side (halt-family, cf. I11); an `escalation_path` is
+owner/operator notification with degraded continuation (external side,
+escalate-family, cf. I12). A path MUST terminate at a declared recipient
+(`owner` or `operator`); a path-into-void is uncovered — same class as
+halt-without-alert (B5-family). Handler AND path simultaneously is
+LEGAL (handler + fallback-path = defense in depth); forbidding the
+combination is rejected. The dictionary is inherited from the class
+counters (I10–I12), not redefined: halt : escalate :: handler : path;
+counter classes listed in the registry carry reaction = counter
+(aggregate / halt+alert / escalate) — defined by the counter canon,
+referenced here, no double ownership.
+
+**I14 — Declared catalog.** The class catalog is a DECLARED list;
+completeness is NOT claimed and NOT gated. The report line "checked N
+declared classes; completeness NOT claimed" is mandatory; N is derived
+from the declared catalog (no independent default, owner: I14). Growth
+happens by explicit change (commit) only, never silently at runtime;
+each new class enters with a source (incident/audit) and an owner.
+
+**I14 — Verdict model (two levels, not a choice).** Probe level (unit):
+a catalog inconsistency is STRICT — orphan class (no reaction), dead
+handler (registered for no catalog class), path-into-void → RED; a check
+that cannot fail is not a check. Gate level (integration): [REC]
+findings are reported-not-failing — the aggregate gate is not blocked,
+but every finding MUST be NAMED in the report (never folded); [REC]
+governs BLOCKING, not verdict-ability. "0 findings" and "check not run"
+are distinguished states. Coverage ratio `handled/probed` is reported,
+not gated (owner: I14); every orphan is listed by name. The [REC]
+advisory status is carried in the REPORT, not in gate semantics. I14
+declares no tunable numeric parameters: the counts above are derived,
+reported values.
+
+Deferred (v0.4 list): owners_registry / SLA / fallback schema for
+escalation paths (no canon source for SLA scales); tumbling catalog
+review; exception taxonomy import.
+
+Glossary (frozen; redefinition only via separate sanction):
+`handler` — local reaction on the own-process side; `escalation_path` —
+owner/operator notification with degraded continuation, terminating at a
+declared recipient; `orphan class` — probed class with no registered
+reaction; `dead handler` — registered handler with no catalog class;
+`path-into-void` — escalation path whose target is not a declared
+recipient; `handled/probed` — coverage ratio, reported not gated.
+
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
@@ -451,6 +506,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
-- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3).
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.

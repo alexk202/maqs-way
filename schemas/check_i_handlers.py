@@ -1,7 +1,7 @@
 """I14 handler-registry gate (MAQS I14 [REC], Way package 1.6c).
 
-Formulation lives in proposals/i14-handlers.md (NOT canon).
-I14 is a known gap (owner: 1.6c-formulation, closes_in: v0.2 canonization).
+Formulation lives in proposals/i14-handlers.md (historical only;
+normative text is in SPEC §3.4, canonized v0.3, owner signature 2026-10-27).
 
 Verdict model (two levels):
 - probe level: inconsistency inside the declared catalog is STRICT
@@ -24,7 +24,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "schemas" / "i_handlers.json"
 
-KNOWN_GAPS = {"I14"}  # the item itself stays a gap until v0.2
+# Closed whitelist: ONLY these ids may be known gaps. I14 closed by v0.3
+# canonization (SPEC §3.4, owner signature 2026-10-27); a known_gap true
+# entry is now a BYPASS attempt.
+KNOWN_GAPS = set()
 
 
 def load():
@@ -71,7 +74,7 @@ def build_report(doc, findings):
     """Report MUST enumerate findings (probe e: silent swallow forbidden)."""
     return {
         "item": doc["item"]["id"],
-        "status": "known_gap",
+        "status": "canonized v0.3",
         "advisory": "I14 [REC] — reported-not-failing",
         "checked_classes": len(doc.get("classes", [])),
         "completeness_claimed": False,
@@ -130,8 +133,7 @@ def main() -> int:
         print("GATE RED — gate-swallow: report dropped a finding")
         print("GATE RED")
         return 1
-    print(f"KNOWN GAP: I14 (maqs I14 [REC]) -> owner {doc['item']['owner']}, "
-          f"closes in {doc['item']['closes_in']}")
+    print("COVERED: I14 (canonized v0.3 → SPEC §3.4)")
     print(f"REGISTRY checked {rep['checked_classes']} declared classes; "
           f"completeness NOT claimed")
     if findings:
@@ -140,7 +142,7 @@ def main() -> int:
         print(f"FINDINGS: {len(findings)} named above (not folded, not blocking)")
     else:
         print("FINDINGS: 0 (check ran — distinct from check-not-run)")
-    print("GATE GREEN with known gap (advisory I14 reported-not-failing)")
+    print("GATE GREEN (I14 [REC] advisory — reported-not-failing)")
     return 0
 
 
