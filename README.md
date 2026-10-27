@@ -1,5 +1,7 @@
 # MAQS-Way — Common Path from Policies to Implementation
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23688834.svg)](https://doi.org/10.5281/zenodo.23688834)
+
 **Status:** v0.2.1 — evidence release (canon unchanged from v0.2; open known gaps listed in SPEC §7)
 **Core:** MAQS v1.8.1 remains audit core: https://github.com/alexk202/memory-architecture-standard
 

@@ -13,6 +13,9 @@ G1/G2 (mirror + derivatives): MANUAL checklist boundary — stated, not
 Manual release-sync items (owner, together with the release):
   - CITATION.cff: bump version + date-released to the release stamp
     (free commit, same release window; never silently between releases).
+  - After the release is published: the new version's DOI from Zenodo goes
+    into CITATION.cff (doi field) and into the README DOI badge — separate
+    post-release commit; the release tag is never moved for it.
 G3 verifiability: audit all GREEN + manifest count 12 + landscape file
   present with verified column (link liveness itself is owner-verified).
 G4 process purity: §7 carries the v{prev}→v{target} entry WITH the
