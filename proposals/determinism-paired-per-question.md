@@ -179,3 +179,25 @@ stored + frames). Критерий prereg ВЫПОЛНЕН. Диагностич
 **Статус**: cross-stand воспроизведение зафиксировано; канонизация по-прежнему
 только решение владельца (status-строка вверху не меняется — append-only).
 
+---
+
+## v0.6 addendum (2026-10-27, owner-directed follow-up)
+
+v0.6 canary fingerprints p1/p2 differed due to store accumulation (harness
+defect), not a regime shift; fixed in `fc70e4f`. Each canary run now uses a
+fresh per-run store (`canary_p{pi}/{h}`) and raw_outputs are sliced per
+question. RTX-stand verification: two back-to-back canary runs give the same
+fingerprint `67c6baa8df0e3ae1…a750` (`evals/results/stand2_canary_fix_check.json`,
+commit-before-run `fc70e4f`). Runner sha256 with the fix:
+`b420f18d625c443f7024378ce3787ecd5f177bc15fcf36c0afbd71632d6b787a`.
+
+## v0.7 (2026-10-27): Accepted by owner 2026-10-27 after second-stand
+reproduction; applies to preregs from now on; normative text enters SPEC
+with release v0.3
+
+Граница применения: **same stand + same window only**. Cross-stand and
+cross-window comparisons — **aggregates only** (как в v0.4/v0.5), побайтные
+сравнения между стендами/окнами не интерпретируются. Факт сравнения выходов
+панели iGPU с RTX-эталоном (2026-10-25) записан в
+`evals/results/stand2_igpu_note.md` как факт без выводов: 0/12 побайтных
+совпадений raw против всех четырёх RTX-артефактов панели-12.

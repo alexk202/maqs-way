@@ -1,0 +1,44 @@
+{
+  "provenance": {
+    "date": "2026-10-27T15:16:00+00:00",
+    "purpose": "RTX-stand verification of the canary harness fix: fresh store per canary run, raw_outputs sliced per question; criterion = two back-to-back runs give the same fingerprint",
+    "runner": "evals/run_stand2_panel12.py (canary path, fixed 2026-10-27)",
+    "server": "http://127.0.0.1:8085/v1",
+    "model": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "canary": "311778f1, faba32e5, e47becba (proposal v0.4)"
+  },
+  "runs": [
+    {
+      "run": 1,
+      "canary_fp": "67c6baa8df0e3ae1bd4fd47ffe499c9df3487228945d40a52ef0a3739311a750",
+      "canary_facts": {
+        "311778f1": 1,
+        "faba32e5": 1,
+        "e47becba": 1
+      },
+      "elapsed_s": 67.5,
+      "raw_calls": {
+        "311778f1": 1,
+        "faba32e5": 1,
+        "e47becba": 1
+      }
+    },
+    {
+      "run": 2,
+      "canary_fp": "67c6baa8df0e3ae1bd4fd47ffe499c9df3487228945d40a52ef0a3739311a750",
+      "canary_facts": {
+        "311778f1": 1,
+        "faba32e5": 1,
+        "e47becba": 1
+      },
+      "elapsed_s": 67.5,
+      "raw_calls": {
+        "311778f1": 1,
+        "faba32e5": 1,
+        "e47becba": 1
+      }
+    }
+  ],
+  "all_same_fp": true,
+  "verdict": "canary fix VERIFIED on RTX stand: back-to-back runs give the same fingerprint"
+}
