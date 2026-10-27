@@ -3,10 +3,11 @@
     "id": "I10",
     "requirement": "Warning deduplication and noise budget: same warning N+ times per interval aggregated with counter; success-on-unperformed-work escalated as B5-class failure.",
     "maqs": "I10 [IMP]",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["LOG-3.4"],
+    "known_gap": false,
     "owner": "1.6a-formulation (proposals/i10-i12-counters.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.4 Logging (I10/I11/I12 counters), canonized v0.3 (owner signature 2026-10-27)",
     "declared": {
       "threshold": 3,
       "window": {
@@ -16,17 +17,17 @@
       "key": "warning text",
       "action": "aggregate"
     },
-    "formulation": "proposals/i10-i12-counters.md#i10--noise-budget-maqs-i10-imp",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "formulation": "proposals/i10-i12-counters.md#i10--noise-budget-maqs-i10-imp"
   },
   {
     "id": "I11",
     "requirement": "Recovery loop cause diagnosis: automatic restart only with diagnostic trace; N repetitions without diagnosis halt and alert, never restart eternally.",
     "maqs": "I11 [CRIT]",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["LOG-3.4", "MAQS:I11"],
+    "known_gap": false,
     "owner": "1.6a-formulation (proposals/i10-i12-counters.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.4 Logging (I10/I11/I12 counters), canonized v0.3 (owner signature 2026-10-27)",
     "declared": {
       "threshold": 3,
       "window": {
@@ -36,17 +37,17 @@
       "key": "exit code",
       "action": "halt+alert"
     },
-    "formulation": "proposals/i10-i12-counters.md#i11--recovery-loop-maqs-i11-crit",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "formulation": "proposals/i10-i12-counters.md#i11--recovery-loop-maqs-i11-crit"
   },
   {
     "id": "I12",
     "requirement": "Escalation budget: repeated same-signature dependency failure escalates after N occurrences, never polls indefinitely.",
     "maqs": "I12 [CRIT]",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["LOG-3.4"],
+    "known_gap": false,
     "owner": "1.6a-formulation (proposals/i10-i12-counters.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.4 Logging (I10/I11/I12 counters), canonized v0.3 (owner signature 2026-10-27)",
     "declared": {
       "threshold": 3,
       "window": {
@@ -57,7 +58,6 @@
       "action": "escalate"
     },
     "adjacent": "SPEC §2.3 appeal-escalation (vocabulary only, not covering)",
-    "formulation": "proposals/i10-i12-counters.md#i12--escalation-budget-maqs-i12-crit",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "formulation": "proposals/i10-i12-counters.md#i12--escalation-budget-maqs-i12-crit"
   }
 ]

@@ -80,10 +80,8 @@
       "MAQS:I11",
       "LOG-3.4"
     ],
-    "known_gap": true,
     "owner": "I11",
-    "closes_in": "1.6a (bridge) → v0.3 canonization (owner signature)",
-    "bridged_by": "proposals/i10-i12-counters.md + schemas/check_i_counters.py (package 1.6a)",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "closes_in": "canonized v0.3",
+    "bridged_by": "proposals/i10-i12-counters.md + schemas/check_i_counters.py (package 1.6a); closed by I11 canonization v0.3 (SPEC §3.4, owner signature 2026-10-27)"
   }
 ]

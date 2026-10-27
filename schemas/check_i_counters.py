@@ -1,7 +1,7 @@
 """I10/I11/I12 counter gate (Way package 1.6a).
 
-Formulation lives in proposals/i10-i12-counters.md (NOT canon).
-All three items are known gaps (owner: 1.6a-formulation, closes_in: v0.2).
+Formulation lives in proposals/i10-i12-counters.md (historical only;
+normative text is in SPEC §3.4, canonized v0.3, owner signature 2026-10-27).
 
 One mechanism: sliding/tumbling counter machines over synthetic event
 streams (no infra). Alert sink is a REAL file journal (temp dir, H5):
@@ -24,7 +24,18 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 FIXTURE = ROOT / "schemas" / "i_counters.json"
 
-KNOWN_GAPS = {"I10", "I11", "I12"}
+# Closed whitelist (C8 pattern): ONLY these ids may be known gaps.
+# I10/I11/I12 closed by v0.3 canonization (SPEC §3.4, owner signature
+# 2026-10-27; rules per owner amendment: LOG-3.4 anchors, I11 keeps MAQS:I11
+# for the C8 bridge).
+KNOWN_GAPS = set()
+
+# Rule namespaces for covered entries (mirror of check_c8_coverage.py).
+MAQS_VALID = {
+    "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P",
+    "E6", "F1", "F7", "G1", "I11",
+}
+LEGIT_NONP = {"LOG-3.4": "logging"}
 
 
 class Counter:
@@ -91,6 +102,8 @@ def b5_link(claimed_success, performed_sink):
 
 def check_fixture():
     classes = json.loads(FIXTURE.read_text())
+    standard = json.loads((ROOT / "maqs-way-standard.json").read_text())
+    known_way = {p["id"] for p in standard["principles"]}
     fixture_gaps = {c["id"] for c in classes if c.get("known_gap")}
     if fixture_gaps != KNOWN_GAPS:
         print("GATE RED — whitelist/fixture mismatch:")
@@ -122,9 +135,15 @@ def check_fixture():
             print("GATE RED")
             return 1
         else:
-            print(f"UNCOVERED (no owner): {c['id']}")
-            print("GATE RED")
-            return 1
+            rules = c.get("rules", [])
+            bad = [r for r in rules if r not in known_way
+                   and r not in LEGIT_NONP
+                   and not (r.startswith("MAQS:") and r[5:] in MAQS_VALID)]
+            if bad:
+                print(f"UNKNOWN RULES in {c['id']}: {', '.join(bad)}")
+                print("GATE RED")
+                return 1
+            print(f"COVERED: {c['id']} (canonized v0.3 → SPEC §3.4)")
     return 0
 
 
@@ -198,9 +217,9 @@ def main() -> int:
     if check_semantics() != 0:
         print("GATE RED")
         return 1
-    print("COVERED 0/3 + KNOWN GAPS 3/3 (I10, I11, I12 — formulation, canonization v0.2)")
+    print("COVERED 3/3 + KNOWN GAPS 0 (I10, I11, I12 canonized v0.3 → SPEC §3.4)")
     print("SEMANTICS 6/6 (halt, escalate, aggregate, sliding/tumbling, b5-link, repeat)")
-    print("GATE GREEN with known gap(s) — see owners above")
+    print("GATE GREEN")
     return 0
 
 

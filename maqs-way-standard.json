@@ -259,6 +259,52 @@
         "default": 0.15,
         "owner": "E11",
         "note": "head/tail zones as share of assembled context tokens; semantic adequacy of zone sizes and calibration deferred to v0.4 list"
+      },
+      "counters": {
+        "note": "Class counters (MAQS I10/I11/I12, canonized v0.3, SPEC §3.4, owner signature 2026-10-27). Every counter declares three independent literals (threshold, window {type, size}, action) and an equality key (signature); threshold and window are independently tunable. Alert journals and escalation entries reuse the existing logging infrastructure (hash-chained, retention per logging.retention).",
+        "window_types_enum": [
+          "sliding",
+          "tumbling"
+        ],
+        "window_type_default": "sliding",
+        "I10_noise_budget": {
+          "threshold": 3,
+          "window": {
+            "type": "sliding",
+            "size": "5m"
+          },
+          "equality_key": "warning text",
+          "action": "aggregate",
+          "owner": "I10"
+        },
+        "I11_recovery_loop": {
+          "threshold": 3,
+          "window": {
+            "type": "sliding",
+            "size": "10m"
+          },
+          "equality_key": "exit code",
+          "action": "halt+alert",
+          "alert_sink": "no default - MUST be declared; a REAL persistent store readable after halt (journal file / syslog); bare stderr/exit code do not satisfy (unreadable alert = silent-fail, class B5)",
+          "owner": "I11"
+        },
+        "I12_escalation_budget": {
+          "threshold": 3,
+          "window": {
+            "type": "sliding",
+            "size": "1h"
+          },
+          "equality_key": "dependency + error code",
+          "action": "escalate",
+          "escalate_repeat_schedule": "no default - MUST be declared; repeatable on a declared schedule, never busy-poll; escalation without a journal entry = B5-failure",
+          "owner": "I12"
+        },
+        "work_sink": {
+          "default": null,
+          "required_when": "the I10 B5-link check is applied",
+          "note": "recorded side-effects; claimed success + empty sink = B5-failure (claimed_events/performed_actions, pure function)",
+          "owner": "I10"
+        }
       }
     }
   },
@@ -567,6 +613,32 @@
           "reason"
         ],
         "note": "every eviction event logged with record id and reason (opt-in overflow: evict_oldest; no silence even opt-in)"
+      }
+    },
+    "i10_i11_i12_events": {
+      "warning_aggregated": {
+        "fields": [
+          "equality_key",
+          "count",
+          "window"
+        ],
+        "note": "one record + count after threshold; never emitted individually past the threshold (I10)"
+      },
+      "halt_alert": {
+        "fields": [
+          "signature",
+          "count",
+          "root_cause_trace"
+        ],
+        "note": "alert sink = persistent store readable after halt; verification reads the trace AFTER halt from the sink (I11)"
+      },
+      "escalated": {
+        "fields": [
+          "signature",
+          "count",
+          "schedule"
+        ],
+        "note": "repeatable on the declared schedule; journal entry mandatory (I12)"
       }
     }
   },

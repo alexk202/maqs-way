@@ -314,6 +314,84 @@ Each Ed25519-signed receipt, replayable. Deletion_log zero PII.
 - Tamper-evident: hash-chained, Ed25519, WORM lock for regulated tenants, retention 12 months default, 6 years configurable for regulated (source: EU AI Act Art12 says 6 months min, Way extends for regulated Profile B, documented). Note: committed before response returns adds latency cost ~5-15ms.
 - Sources referenced under their respective licenses.
 
+`threshold`, `window {type, size}`, `action` and the equality keys of
+the class counters below are policy extension settings (see
+`extensions.policy` in maqs-way-standard.json); they are not part of the
+core data model (`schema_version way-v0.1.3`, frozen). Alert journals
+and escalation entries reuse the existing logging infrastructure
+(hash-chained, retention per `logging.retention`); no new data-model
+fields are introduced.
+
+Every class counter declares THREE independent literals (never glued):
+threshold N, window {type, size}, action. Threshold and window are
+independently tunable. Window types: `sliding` (events within a trailing
+window) | `tumbling` (fixed buckets); `sliding` is the default window
+type, `tumbling` requires an explicit per-deployment declaration. Every
+counter declares its equality key (signature): without a key, "identical"
+is undefined and the counter is nondeterministic — such a counter is
+rejected.
+
+**I10 — Noise budget ([IMP], MAQS I10).** Declared parameters (owner:
+I10): `threshold` 3 (default), `window` {sliding, 5m} (defaults),
+equality key "warning text", `action` "aggregate". The same warning
+repeated N+ times per interval is aggregated with a counter — N
+identical warnings become one record + count, never emitted individually
+past the threshold; after N identical warnings, deduplicate or escalate
+to a different level. B5-link: claimed success on unperformed work is a
+B5-class failure, detected as a pure function of (claimed_events,
+performed_actions) over a declared `work_sink` (recorded side-effects;
+no default — MUST be declared when the check is applied, owner: I10);
+claimed success + empty sink → RED. I10 exists to prevent duplicate
+noise from masking false success.
+
+**I11 — Recovery loop ([CRIT], MAQS I11).** Declared parameters (owner:
+I11): `threshold` 3 (default), `window` {sliding, 10m} (defaults),
+equality key "exit code", `action` "halt+alert". Any automatic restart
+(systemd/supervisor/self-heal) must be accompanied by a diagnostic trace
+of the root cause. A recovery cycle without diagnosis is prohibited:
+after N repetitions without diagnosis — halt and alert, never eternal
+restart. Halt stops the OWN process; halt-without-alert is forbidden
+exactly like restart-without-diagnosis. The alert sink is a REAL
+persistent store (journal file / syslog; no default — MUST be declared,
+must be readable after halt, owner: I11), never bare stderr/exit code:
+stderr does not survive halt, exit code is visible to the parent only.
+An alert that cannot be read after halt is a silent-fail (class B5).
+Verification reads the trace AFTER halt from the sink.
+
+**I12 — Escalation budget ([CRIT], MAQS I12).** Declared parameters
+(owner: I12): `threshold` 3 (default), `window` {sliding, 1h}
+(defaults), equality key "dependency + error code", `action` "escalate".
+A repeated dependency failure with identical signature escalates after
+N occurrences (alert / halt / flagged degradation) — never polls
+indefinitely. Escalate targets EXTERNAL dependencies (no right to stop,
+voice only) and is REPEATABLE on a schedule — a notification contract,
+not a one-shot shout; the repeat schedule has no default and MUST be
+declared (owner: I12). Escalation without a journal entry is a
+B5-failure (same class as halt-without-alert). A system aware of a
+failure that does not escalate degrades silently.
+
+**Halt / escalate boundary.** Halt applies to the own process (right to
+stop = obligation to alert); escalate applies to external dependencies
+(no right to stop, voice only). On conflict (both conditions met): halt
+dominates (safety) + escalate the owner. A `flagged degradation` MUST be
+observable in the sink — otherwise the degradation is silent = B5.
+
+Adjacent, not covering: SPEC §2.3 (appeal-escalation + operator SLA)
+shares vocabulary only (different trigger, different mechanism); closing
+this gap with "already in §2.3" is rejected in advance.
+
+Deferred (v0.4 list): per-scope/per-subject counter partitioning (cf.
+E10 cap semantics); per-deployment tumbling-window adoption.
+
+Glossary (frozen; redefinition only via separate sanction):
+`policy triple` — threshold + window {type, size} + action, three
+independent literals, never glued; `equality key` (signature) — the
+declared field that defines "identical" events; `work_sink` — declared
+store of recorded side-effects; `alert sink` — persistent store holding
+the halt alert, readable after halt; `halt` — stop of the own process;
+`escalate` — notification contract to external dependencies, repeatable
+on a declared schedule.
+
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
@@ -373,6 +451,6 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.3 → v0.1.4 (2026-10-10):** schemas package landed (`schemas/memory-item.schema.json` + `schemas/check_conformance.py`, gate green); `data_model.$ref_status` provisional → active. Release stamps bumped; data model (`schema_version way-v0.1.3`), thresholds, algorithms, vectors unchanged — semantic diff empty by design.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
-- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3).
+- **v0.2.1 → v0.3 (in progress):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3).
 
 > Check not that the mechanism exists. Check that it works.

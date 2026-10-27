@@ -29,9 +29,12 @@ SPEC_MANIFEST = ROOT / "schemas" / "spec-manifest.json"
 # Any other class marked known_gap is a bypass attempt -> RED.
 # Bridge consolidation (package 1.6a): a gap entry WITH anchor rules is
 # BRIDGED (subject moved to the owning formulation), NOT covered and NOT
-# closed — I11 stays a gap until v0.2 canonization. Covered count MUST NOT
+# closed — I11 stayed a gap until v0.3 canonization. Covered count MUST NOT
 # absorb bridged entries (no false green).
-KNOWN_GAPS = {"recovery_loop_without_diagnosis"}
+# recovery_loop_without_diagnosis closed by I11 canonization v0.3
+# (SPEC §3.4, owner signature 2026-10-27) — whitelist emptied in the same
+# commit as the canonization (no silent unmarking).
+KNOWN_GAPS = set()
 
 # Local MAQS namespace mirror (CLI maqs_way_audit.py holds its own copy;
 # consolidate in 1.8. Extension only by commit, never silently.)
