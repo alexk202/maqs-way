@@ -16,6 +16,10 @@ Manual release-sync items (owner, together with the release):
   - After the release is published: the new version's DOI from Zenodo goes
     into CITATION.cff (doi field) and into the README DOI badge — separate
     post-release commit; the release tag is never moved for it.
+  - CITATION.cff validation (cffconvert) runs ONLY in an isolated
+    environment — `pipx run cffconvert --validate` (or a temporary venv);
+    never pip-install cffconvert into a project/dev environment (it
+    silently downgraded jsonschema there and broke the gates' imports).
 G3 verifiability: audit all GREEN + manifest count 12 + landscape file
   present with verified column (link liveness itself is owner-verified).
 G4 process purity: §7 carries the v{prev}→v{target} entry WITH the
