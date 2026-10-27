@@ -3,24 +3,22 @@
     "id": "0.5a",
     "requirement": "Dead-code detection: every tested feature is actually called in the production pipeline; green tests without a caller are false safety.",
     "maqs": "0.5a [CRIT]",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["MAQS:0.5a"],
+    "known_gap": false,
     "owner": "1.7b-formulation (proposals/pipeline-hygiene-05a-06a.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
-    "anchor": "No call-graph requirement in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/pipeline-hygiene-05a-06a.md#05a--dead-code-crit",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.2 Measurable quality (0.5a dead code), canonized v0.3 (owner signature 2026-10-27)",
+    "formulation": "proposals/pipeline-hygiene-05a-06a.md#05a--dead-code-crit"
   },
   {
     "id": "0.6a",
     "requirement": "Local baselines per store/context; anomalies defined relative to the system's own baseline, not universal numbers.",
     "maqs": "0.6a [IMP]",
-    "rules": [],
-    "known_gap": true,
+    "rules": ["MAQS:0.6a"],
+    "known_gap": false,
     "owner": "1.7b-formulation (proposals/pipeline-hygiene-05a-06a.md)",
-    "closes_in": "v0.3 canonization (owner signature)",
-    "anchor": "No baseline construct in canon v0.1.4 (verified by grep).",
-    "formulation": "proposals/pipeline-hygiene-05a-06a.md#06a--local-baselines-imp",
-    "retarget_note": "moved v0.2->v0.3 by release decision 1.8 (see SPEC §7), no silent rollover"
+    "closes_in": "canonized v0.3",
+    "anchor": "SPEC §3.2 Measurable quality (0.6a local baselines), canonized v0.3 (owner signature 2026-10-27)",
+    "formulation": "proposals/pipeline-hygiene-05a-06a.md#06a--local-baselines-imp"
   }
 ]

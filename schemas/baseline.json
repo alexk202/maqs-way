@@ -1,17 +1,17 @@
 {
   "provenance": {
-    "recorded_at_commit": "1.7b-package",
-    "recorded_date": "2026-10-15",
-    "note": "First local baseline (0.6a). Changes only with the commit that explains the drift."
+    "recorded_at_commit": "v0.3-step-8-package",
+    "recorded_date": "2026-10-27",
+    "note": "Baseline refresh (0.6a, v0.3 step 8): drift explained BY NAME in the canonization commit message (scripts +3: check_release 319c5e1, check_scoreboard 4926756, check_name_policy 4b3528d; proposals +2: determinism-paired-per-question af0654f, p4-mem0-behavioral-isolation 948c62c since the 1.7b snapshot e1ff492 of 2026-10-15). Changes only with the commit that explains the drift."
   },
   "tolerance": 0.1,
   "tolerance_note": "Declared ±10% per counter (owner-signed change only, rule #5 class counters). Drift beyond tolerance = FLAG advisory, not RED.",
   "counters": {
-    "schemas.check_scripts": 10,
+    "schemas.check_scripts": 13,
     "schemas.schema_json": 13,
     "conformance.vectors_valid": 3,
     "conformance.vectors_invalid": 9,
     "conformance.manifest_entries": 12,
-    "proposals.files": 7
+    "proposals.files": 9
   }
 }

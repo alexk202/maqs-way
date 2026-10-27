@@ -1,7 +1,8 @@
 """0.5a/0.6a pipeline-hygiene gate (Way package 1.7b).
 
-Formulation lives in proposals/pipeline-hygiene-05a-06a.md (NOT canon).
-0.5a/0.6a are known gaps (owner: 1.7b-formulation, closes_in: v0.2 canonization).
+Formulation lives in proposals/pipeline-hygiene-05a-06a.md (historical
+only; normative text is in SPEC §3.2, canonized v0.3, owner signature
+2026-10-27).
 
 0.5a (self-hosting): every schemas/check_*.py is either invoked from
 maqs_way_audit.py or listed in DECLARED_STANDALONE with a documented
@@ -28,7 +29,19 @@ FIXTURE = ROOT / "schemas" / "pipeline_hygiene.json"
 BASELINE = ROOT / "schemas" / "baseline.json"
 CLI = ROOT / "schemas" / "maqs_way_audit.py"
 
-KNOWN_GAPS = {"0.5a", "0.6a"}
+# Closed whitelist: ONLY these ids may be known gaps. 0.5a/0.6a closed by
+# v0.3 canonization (SPEC §3.2, owner signature 2026-10-27; rules
+# MAQS:0.5a/MAQS:0.6a via the existing MAQS: namespace, mirror of commit
+# fa75c88); a known_gap true entry is now a BYPASS attempt.
+KNOWN_GAPS = set()
+
+# Rule namespaces for covered entries: local mirror of maqs_way_audit.MAQS_VALID
+# (extended with 0.5a/0.6a in commit fa75c88) + LOG-3.4 (existing token).
+MAQS_VALID = {
+    "0", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "P",
+    "E6", "F1", "F7", "G1", "I11", "P9", "P10", "0.5a", "0.6a",
+}
+LEGIT_NONP = {"LOG-3.4": "logging"}
 
 # Closed list: script -> document carrying its integration point.
 DECLARED_STANDALONE = {
@@ -39,6 +52,7 @@ DECLARED_STANDALONE = {
     "check_i_layers.py": "proposals/i15-layers.md",
     "check_audit_procedure.py": "proposals/p9-p10-audit.md",
     "check_pipeline_hygiene.py": "proposals/pipeline-hygiene-05a-06a.md",
+    "check_release.py": "schemas/check_release.py",
 }
 
 
@@ -80,9 +94,16 @@ def check_fixture():
             print("GATE RED")
             return 1
         else:
-            print(f"UNCOVERED (no owner): {c['id']}")
-            print("GATE RED")
-            return 1
+            standard = json.loads((ROOT / "maqs-way-standard.json").read_text())
+            known_way = {p["id"] for p in standard["principles"]}
+            bad = [r for r in c.get("rules", [])
+                   if r not in known_way and r not in LEGIT_NONP
+                   and not (r.startswith("MAQS:") and r[5:] in MAQS_VALID)]
+            if bad:
+                print(f"UNKNOWN RULES in {c['id']}: {', '.join(bad)}")
+                print("GATE RED")
+                return 1
+            print(f"COVERED: {c['id']} (canonized v0.3 → SPEC §3.2)")
     return 0
 
 
@@ -145,9 +166,9 @@ def main() -> int:
     if rc != 0:
         print("GATE RED")
         return 1
-    print("COVERED 0/2 + KNOWN GAPS 2/2 (0.5a, 0.6a — formulation, canonization v0.2)")
+    print("COVERED 2/2 + KNOWN GAPS 0 (0.5a, 0.6a canonized v0.3 → SPEC §3.2)")
     print("SELF-HOSTING ok (wired or declared-with-point); drift = flag, not verdict")
-    print("GATE GREEN with known gap(s) — see owners above")
+    print("GATE GREEN")
     return 0
 
 

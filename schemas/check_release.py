@@ -26,6 +26,17 @@ G4 process purity: §7 carries the v{prev}→v{target} entry WITH the
   open-gap list.
 G5 honesty (added 1.8): no known gap list targets THIS release version
   without proven closure. Silence about gaps = false green.
+G6 hygiene-all-green (v0.3 step 8, owner amendment): runs ALL
+  schemas/check_*.py EXCEPT this script (no infinite self-run); each
+  script runs WITHOUT arguments; criterion = exit code (0 = pass,
+  including 'GREEN with advisory/known gap'; non-zero = RED); a script
+  that requires arguments or crashes = RED with its name, no silent
+  skips; the output lists every run script and its result -- a red gate
+  can no longer slip into a release unnoticed.
+
+Integration point: manual release gate (G0-G5/G6), invoked by the
+release procedure; deliberately NOT wired into maqs_way_audit all
+(release-only). Declared standalone (0.5a, v0.3 step 8).
 
 Run: python3 schemas/check_release.py [--target 0.2.1]
 Exit 0 = releasable, 1 = red.
@@ -33,6 +44,7 @@ Exit 0 = releasable, 1 = red.
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -146,8 +158,35 @@ def check_g5(target):
     return True
 
 
+def check_g6():
+    """G6 hygiene-all-green: run ALL schemas/check_*.py except this script.
+
+    Owner amendment (v0.3 step 8): self-exclusion (no infinite self-run);
+    scripts run WITHOUT arguments; criterion = exit code (0 = pass,
+    including 'GREEN with advisory/known gap'; non-zero = RED); a script
+    requiring arguments or crashing = RED with its name, no silent skips;
+    the output lists every run script and its result.
+    """
+    bad, ran = [], 0
+    for s in sorted((ROOT / "schemas").glob("check_*.py")):
+        if s.name == "check_release.py":
+            continue  # self-exclusion (owner amendment)
+        r = subprocess.run([sys.executable, str(s)], capture_output=True,
+                           text=True, cwd=ROOT)
+        ran += 1
+        status = "GREEN" if r.returncode == 0 else "RED"
+        print(f"G6 {status}: {s.name}")
+        if r.returncode != 0:
+            bad.append(s.name)
+    if bad:
+        print(f"GATE RED — G6 failing gates: {', '.join(bad)}")
+        return False
+    print(f"G6 ok ({ran} gates green, self-excluded: check_release.py)")
+    return True
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5)")
+    ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5/G6)")
     ap.add_argument("--target", default=DEFAULT_TARGET,
                     help="release stamp to verify (default: %(default)s)")
     ap.add_argument("--prev", default=None,
@@ -160,11 +199,12 @@ def main() -> int:
     results = [("G0", check_g0(target, prev, prev_display)),
                ("G3", check_g3()),
                ("G4", check_g4(target, prev_display)),
-               ("G5", check_g5(target))]
+               ("G5", check_g5(target)),
+               ("G6", check_g6())]
     print("G1/G2: MANUAL boundary (mirror + derivatives per release report)")
     if all(r for _, r in results):
         print(f"RELEASE GREEN — v{target} shippable "
-              f"(G0/G3/G4/G5 executable; G1/G2 manual)")
+              f"(G0/G3/G4/G5/G6 executable; G1/G2 manual)")
         return 0
     print("GATE RED")
     return 1

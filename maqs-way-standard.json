@@ -376,6 +376,30 @@
           "boundary": "write access for the auditor out of scope (MAQS SUPP-EXT-01) -- declared boundary, not a defect",
           "owner": "P10"
         }
+      },
+      "pipeline_hygiene": {
+        "note": "Pipeline hygiene norms (MAQS 0.5a/0.6a, canonized v0.3, SPEC §3.2, owner signature 2026-10-27). They discipline the verification apparatus: CI gates and the counters those gates report.",
+        "dead_code": {
+          "rule": "every verification script MUST be either invoked from the audit CLI (maqs_way_audit.py) or listed in the declared-standalone list with a documented integration point; uninvoked AND undocumented = dead -> RED",
+          "declared_standalone": "closed list; extension by explicit change (commit) only, never silently",
+          "self_hosting": "the hygiene gate scans its own repository, including itself; an unwired and unpointed gate flags itself",
+          "owner": "0.5a",
+          "maqs": "0.5a [CRIT]"
+        },
+        "baselines": {
+          "baseline_file": "schemas/baseline.json",
+          "counters": "namespaced counters with provenance (recording commit + date)",
+          "tolerance": 0.1,
+          "tolerance_note": "default ±10% per counter, owner 0.6a; tolerance changes are declared and owner-signed",
+          "drift": "beyond tolerance -> FLAG advisory (visible, accumulated), not RED",
+          "red_only": [
+            "baseline missing or corrupt",
+            "counter removed from tracking without explanation"
+          ],
+          "update_rule": "the baseline changes only with the commit that explains the drift",
+          "owner": "0.6a",
+          "maqs": "0.6a [IMP]"
+        }
       }
     }
   },
