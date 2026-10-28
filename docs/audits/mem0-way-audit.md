@@ -1,7 +1,7 @@
 # Way-audit of Mem0 OSS (MAQS-Way v0.2 application example)
 
 > Status: draft audit example, NOT part of the canon. Tone — help, not a roast.
-> Method: static code reading (no execution, no infra).
+> Method: static code reading (no execution, no infra). One behavioral run since (P4, 2026-10-26).
 > Audited code: `mem0ai/mem0` @ `0724291` (2026-10-14), shallow clone.
 > Auditor: MAQS-Way v0.2 (principles P1–P8 + write integrity B1–B6).
 > Rule: only facts from code/docs, with paths; whatever was not verified is stated as such.
@@ -10,7 +10,7 @@
 
 | Way property | Verdict | One line |
 |---|---|---|
-| P4 Isolation | VERIFIED on mem0@0724291b, Linux CPU-only stub stand (see Done well item 1 and the Observed behavior section; boundaries there) | Tenant filters before top-k, keys unspoofable via metadata |
+| P4 Isolation | Retrieval isolation VERIFIED on mem0@0724291b, Linux CPU-only stub stand (read paths, scope keys); case classes (1)(3)(4) not run, omitted scope static only — see Done well item 1 | Tenant filters before top-k, keys unspoofable via metadata |
 | P2 Provenance | PARTIAL | Actor/role in history; no source ref, policy, or confidence on the record |
 | P3 Aging | PARTIAL | Opt-in expiration exists; decay is platform-only, not OSS |
 | P5 Deletability | PARTIAL | Delete clears the vector + writes history; history stays queryable, no tombstone |
@@ -42,6 +42,10 @@
    (2) wrong or omitted scope, (3) writes under read-only
    credentials, (4) access after revocation. These four
    case classes constitute the pending behavioral
+   verification scope. The original COVERED label
+   implied behavioral proof that was not performed —
+   marking error of the audit, not a finding against
+   the audited implementation.
 
    **2026-10-26 (append-only): behavioral verification EXECUTED and PASSED**
    -- [evals/results/p4_mem0_isolation_report.json](../../evals/results/p4_mem0_isolation_report.json)
@@ -59,10 +63,19 @@
    infer=True against a deterministic stub chat (messages channel) with a
    stub embedder -- the extraction-prompt path with a REAL LLM was not
    exercised; the observed-behavior section below is outside this verdict.
-   verification scope. The original COVERED label
-   implied behavioral proof that was not performed —
-   marking error of the audit, not a finding against
-   the audited implementation.
+
+   **2026-10-28 (append-only): coverage of the four case classes.**
+   The 2026-10-26 run covers part of case class (2) only:
+   - (2) wrong scope on read paths — RUN: user_id/agent_id/run_id ×
+     search/get_all/history, zero foreign items, controls fired;
+   - (2) omitted scope — STATIC ONLY (ValueError on search/get_all,
+     main.py:1471-1475), not run;
+   - (1) independently authenticated callers — NOT RUN;
+   - (3) writes under read-only credentials — NOT RUN;
+   - (4) access after revocation — NOT RUN;
+   - by-ID get/update/delete on a foreign record succeed — observed,
+     see "Observed behavior", no defect conclusion.
+   The "verified" label applies to retrieval isolation on read paths only.
 2. **History as audit trail.** SQLite `history` (`storage.py:150-191`) keeps
    `old/new_memory, event, actor_id, role, is_deleted` — mutation provenance is
    traceable, `created_at` survives update (`main.py:2072-2080`).
@@ -110,6 +123,8 @@ any future test design around by-ID scoping is a separate package.
 
 - Nothing was executed: runtime behavior, real vector residue, metrics —
   not verified (that needs a bench, not reading).
+  (true of the 2026-10-23 static audit; the P4 run of 2026-10-26 is the
+  only execution since, scope as in Done well item 1)
 - Platform code (decay, linked_memory_ids) is only partly visible — verdicts
   cover OSS only.
 - Benchmarks live in an external submodule repo, not initialized: no claims
@@ -131,3 +146,4 @@ any future test design around by-ID scoping is a separate package.
 
 - 2026-10-26 (later same day, evidential split): the verdict run 02e1c4c used a DEGENERATE stub-embedder geometry (a Random-per-element bug made every token vector a constant direction -> all text vectors parallel, cosines +-1). The isolation counters of that run are string-marker based and remain valid (three keys x three channels = zero foreign; shared-id and mutational controls fired). The 'filter before top-k' conclusion, however, was NOT proven by 02e1c4c (under parallel geometry the hostile query discriminates nothing) -- it is established by the rerun d5e48dc with the fixed per-token stub and the added post-top-k control (mutated own recall 0 vs unmutated > 0 on all three keys). The 02e1c4c report artifact was overwritten by later runs; the original is in git history: `git show 02e1c4c:evals/results/p4_mem0_isolation_report.json`. The verified label rests on d5e48dc.
 - 2026-10-26: P4 behavioral verification EXECUTED (owner-sanctioned P4 test, passed): label updated append-only to "verified on mem0@0724291b, Linux CPU-only stub stand" with boundaries (stub embedder + stub chat; extraction path with a real LLM not exercised); Observed behavior section added (by-ID get/update/delete on a foreign record succeed -- API contract, facts only). The 2026-10-23 reclassification note above stays as history.
+- 2026-10-28: P4 summary label narrowed to retrieval isolation on read paths; four-case coverage map added; broken 10-23 sentence restored; no new runs.
