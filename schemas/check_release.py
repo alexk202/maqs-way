@@ -1,4 +1,4 @@
-"""Release gate (Way package 1.8): G0/G3/G4/G5 executable.
+"""Release gate (Way package 1.8): G0/G3/G4/G5/G6/G7 executable.
 
 TARGET-PARAMETERIZED (v0.2.1 release): the expected release stamp is passed
 with --target (default: the current release window, 0.2.1) instead of being
@@ -33,6 +33,22 @@ G6 hygiene-all-green (v0.3 step 8, owner amendment): runs ALL
   that requires arguments or crashes = RED with its name, no silent
   skips; the output lists every run script and its result -- a red gate
   can no longer slip into a release unnoticed.
+G7 forward refs to released versions (owner task 2026-10-29): in
+  SPEC.md and SPEC-RU.md outside §7, flags future-facing promises
+  pinned to a version <= the release target ("TODO v0.N",
+  "deferred to v0.N", "to be added in v0.N", "planned for v0.N",
+  "planned in v0.N", "closes in v0.N"; RU: "TODO v0.N",
+  "отложено до v0.N", "будет добавлено в v0.N",
+  "запланировано на/в v0.N") -- by the v0.4 release a promise addressed
+  to v0.2 points at an already-released version, i.e. a stale
+  reference. Version comparison is numeric (v0.2 <= v0.4).
+  Active from --target 0.4; for a lower target it prints a skip line
+  and does not affect the verdict (the v0.3 verdict stays
+  reproducible). Limitation: formulations WITHOUT the version marker
+  ("Normative thresholds in v0.2") are NOT caught by G7 -- they are
+  closed by the stale-refs inventory (docs/v0.4-canon/stale-refs.md),
+  not by this gate; the same applies to RU paraphrases outside the
+  pattern list ("перенесена в v0.N", "будет добавлен в v0.N").
 
 Integration point: manual release gate (G0-G5/G6), invoked by the
 release procedure; deliberately NOT wired into maqs_way_audit all
@@ -106,7 +122,9 @@ def check_g0(target, prev, prev_display):
         ok = fail("G0 masked present in states/status_enum")
     # Previous release stamps outside §7 history: only exact stamp forms
     # (H1/Status display forms + full three-part stamp) are stale markers;
-    # bare short-form prose references (e.g. 'deferred to v0.2') stay legal.
+    # bare short-form prose references (e.g. 'deferred to v0.2') stay legal
+    # for G0 -- the strict forward-ref check on those lives in G7 (active
+    # from target 0.4).
     stale = [f"# MAQS-Way v{prev_display} ", f"**Status:** v{prev_display} ",
              f"**Статус:** v{prev_display} ", f"v{prev}", prev]
     for name, text in (("SPEC.md", spec), ("SPEC-RU.md", ru)):
@@ -196,8 +214,57 @@ def check_g6():
     return True
 
 
+# G7 pattern list (owner task 2026-10-29, fixed formulations): the marker
+# phrase must be followed by the pinned version (captured in full, v0.N or
+# v0.N.P, for the numeric ref<=target comparison).
+_G7_RE = re.compile(
+    r"(?:TODO|deferred to|to be added in|planned for|planned in|closes in|"
+    r"отложено до|будет добавлено в|запланировано (?:на|в))"
+    r"\s+v(\d+(?:\.\d+)*)")
+
+
+def _ver_tuple(version: str):
+    """'0.2' -> (0, 2, 0); '0.2.1' -> (0, 2, 1). Numeric comparison only."""
+    parts = [int(p) for p in version.split(".")]
+    return tuple(parts + [0] * (3 - len(parts)))
+
+
+def check_g7(target, files=None):
+    """G7 forward refs to released versions: promises outside §7 addressed
+    to a version <= target are stale by the time target ships. Active from
+    target 0.4; below that, a skip line and no effect on the verdict.
+
+    files: iterable of (display_name, Path) scanned pairs; defaults to the
+    canon pair in ROOT. Overridable so the RED self-test can run G7 on a
+    temp copy of SPEC.md outside the repo (mechanics as in the evidence
+    repo negative-red/replay_red.py) without touching the canon.
+    """
+    if _ver_tuple(target) < (0, 4, 0):
+        print("G7 skipped (active from v0.4; v0.3 verdict stays reproducible)")
+        return True
+    if files is None:
+        files = (("SPEC.md", ROOT / "SPEC.md"),
+                 ("SPEC-RU.md", ROOT / "SPEC-RU.md"))
+    bad = []
+    for name, path in files:
+        text = path.read_text()
+        pre_history = text.split("## 7.")[0] if "## 7." in text else text
+        for lineno, line in enumerate(pre_history.splitlines(), 1):
+            for m in _G7_RE.finditer(line):
+                ref = _ver_tuple(m.group(1))
+                if ref <= _ver_tuple(target):
+                    bad.append((name, lineno, f"v{m.group(1)}", m.group(0).strip()))
+    if bad:
+        for name, lineno, ref, quote in bad:
+            print(f"GATE RED — G7 forward ref to released {ref} in "
+                  f"{name}:{lineno}: {quote}")
+        return False
+    print("G7 ok (no forward refs to released versions outside §7)")
+    return True
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5/G6)")
+    ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5/G6/G7)")
     ap.add_argument("--target", default=DEFAULT_TARGET,
                     help="release stamp to verify (default: %(default)s)")
     ap.add_argument("--prev", default=None,
@@ -211,11 +278,12 @@ def main() -> int:
                ("G3", check_g3()),
                ("G4", check_g4(target, prev_display)),
                ("G5", check_g5(target)),
-               ("G6", check_g6())]
+               ("G6", check_g6()),
+               ("G7", check_g7(target))]
     print("G1/G2: MANUAL boundary (mirror + derivatives per release report)")
     if all(r for _, r in results):
         print(f"RELEASE GREEN — v{target} shippable "
-              f"(G0/G3/G4/G5/G6 executable; G1/G2 manual)")
+              f"(G0/G3/G4/G5/G6/G7 executable; G1/G2 manual)")
         return 0
     print("GATE RED")
     return 1

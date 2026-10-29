@@ -112,7 +112,7 @@
         },
         "ed25519_signature": {
           "type": "string",
-          "description": "provisional until JCS RFC8785 defined in v0.2"
+          "description": "provisional until JCS RFC8785 defined in v0.4 (see SPEC §6 Backlog)"
         }
       }
     },
