@@ -689,7 +689,7 @@
       "ed25519_signature"
     ],
     "canonicalization_for_signature": {
-      "status": "TODO_v0.2 - identity_signature Ed25519 over canonical JSON to be defined; currently noted as gap",
+      "status": "deferred -- identity_signature Ed25519 over canonical JSON to be defined, tracked in the Backlog (SPEC §6); until defined, ed25519_signature is provisional",
       "proposed": "JCS RFC8785 canonical JSON + Ed25519",
       "note": "Until defined, ed25519_signature is provisional and must not be relied for tamper-evidence"
     },

@@ -39,16 +39,18 @@ G7 forward refs to released versions (owner task 2026-10-29): in
   "deferred to v0.N", "to be added in v0.N", "planned for v0.N",
   "planned in v0.N", "closes in v0.N"; RU: "TODO v0.N",
   "отложено до v0.N", "будет добавлено в v0.N",
-  "запланировано на/в v0.N") -- by the v0.4 release a promise addressed
-  to v0.2 points at an already-released version, i.e. a stale
-  reference. Version comparison is numeric (v0.2 <= v0.4).
+  "запланировано на/в v0.N"; RU extensions (owner amendment,
+  stale-refs application 2026-10-29): "перенесен/а/о в v0.N",
+  "будет добавлен/а/о в v0.N", "отложен/а/о до v0.N") -- by the v0.4
+  release a promise addressed to v0.2 points at an already-released
+  version, i.e. a stale reference. Version comparison is numeric
+  (v0.2 <= v0.4).
   Active from --target 0.4; for a lower target it prints a skip line
   and does not affect the verdict (the v0.3 verdict stays
   reproducible). Limitation: formulations WITHOUT the version marker
   ("Normative thresholds in v0.2") are NOT caught by G7 -- they are
   closed by the stale-refs inventory (docs/v0.4-canon/stale-refs.md),
-  not by this gate; the same applies to RU paraphrases outside the
-  pattern list ("перенесена в v0.N", "будет добавлен в v0.N").
+  not by this gate.
 
 Integration point: manual release gate (G0-G5/G6), invoked by the
 release procedure; deliberately NOT wired into maqs_way_audit all
@@ -214,12 +216,14 @@ def check_g6():
     return True
 
 
-# G7 pattern list (owner task 2026-10-29, fixed formulations): the marker
-# phrase must be followed by the pinned version (captured in full, v0.N or
-# v0.N.P, for the numeric ref<=target comparison).
+# G7 pattern list (owner task 2026-10-29, fixed formulations; RU
+# extensions per the stale-refs application amendment): the marker
+# phrase must be followed by the pinned version (captured in full, v0.N
+# or v0.N.P, for the numeric ref<=target comparison).
 _G7_RE = re.compile(
     r"(?:TODO|deferred to|to be added in|planned for|planned in|closes in|"
-    r"отложено до|будет добавлено в|запланировано (?:на|в))"
+    r"отложено до|будет добавлено в|запланировано (?:на|в)|"
+    r"перенесен[аоы]? в|будет добавлен[аоы]? в|отложен[аоы]? до)"
     r"\s+v(\d+(?:\.\d+)*)")
 
 

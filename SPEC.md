@@ -36,13 +36,13 @@ See `docs/landscape.md` for concrete artifacts and verification status of each l
 
 ## 1. PRINCIPLES Layer
 
-**Structure per principle (P/V/E pattern applied to this layer from v0.1.1; Architecture and Verification layers aligned to the same pattern in v0.2):**
+**Structure per principle (P/V/E pattern applied to this layer from v0.1.1; Architecture and Verification layers — P/V/E alignment deferred, see Backlog §6):**
 - Property (mandatory): what must hold
 - Verification (how to check): test, metric, negative scenario
 - Example (non-normative): hint
 - MAQS link + incident (showing lineage MAQS → Way)
 
-> Thresholds in this version are **indicative engineering targets, subject to revision after first real run**. Normative thresholds in v0.2.
+> Thresholds in this version are **indicative engineering targets, subject to revision after first real run**. Normative thresholds — deferred, see Backlog §6.
 
 ### P1 Veracity — memory is data, not instruction
 
@@ -54,7 +54,7 @@ See `docs/landscape.md` for concrete artifacts and verification status of each l
 ### P2 Provenance — every record traces back
 
 - **Property:** Each record carries who created, when, source ref+hash, policy_id/version, confidence, transformation history. Mutations append provenance, never replace origin.
-- **Verification:** Schema validation against OMPS memory-item.schema.json extended with OAMP §4.3 binding `source.agent_id == provenance.created_by.id` mandatory. `identity_signature` = Ed25519 over canonical JSON (specification deferred to v0.2, see Backlog §6.2).
+- **Verification:** Schema validation against OMPS memory-item.schema.json extended with OAMP §4.3 binding `source.agent_id == provenance.created_by.id` mandatory. `identity_signature` = Ed25519 over canonical JSON (specification deferred, see Backlog §6).
 - **Example:** OMPS provenance + OAMP agent_id, session_id, source_hash
 - **MAQS link:** B (write integrity), 0 Map. **Incident:** orphaned vectors without source after migration, impossible to audit.
 
@@ -148,7 +148,7 @@ Uses OMPS schema as canonical. `schema_version` field explains provenance. `stat
 **Data model notes:**
 - **schema_version:** `"omps-0.1.0+way-v0.1.3"` — `omps-0.1.0` base + `way-v0.1.3` extension, semver extension documented.
 - **status:** derived view from lifecycle events (§2.2), not a stored field — computed as projection of the latest lifecycle event per record.
-- **identity_signature:** removed from the live-record example; specification (Ed25519 over canonical JSON) deferred to v0.2 — see Backlog §6.2.
+- **identity_signature:** removed from the live-record example; specification (Ed25519 over canonical JSON) deferred — see Backlog §6.
 - **Scope notation:** accepts both `user.portable` and `user-portable` — canonical is `user-portable` (AMSP), mapping table in `docs/mapping-to-maqs.md`.
 - **visible_to:** array of `subject.id` for which the record is visible. Mechanism for semantic masking (§2.2): on deletion of a shared fact, the requestor is removed from `visible_to`; empty array → physical delete. `visible_to` absent = unrestricted within scope.
 - **Bitemporal vs retention:** `valid_at/invalid_at` = when fact true in world (Graphiti), `retention.valid_from/valid_to` = when we store it. Priority: world time for reasoning, retention time for lifecycle. See §2.2 *Temporal priority*.
@@ -168,7 +168,7 @@ If sole provenance: node deleted, else edge removed.
 
 Conflict resolution policy:
 - Personal Assistant: User Wins, new fact supersedes contested with link `supersedes`.
-- Enterprise: Policy Broker decides `decision: SAVE|PENDING_APPROVAL|BLOCK|DROP_LOW_UTILITY` + `mode: APPEND|UPDATE_EXISTING|MERGE_WITH_EXISTING` (two orthogonal fields). Broker decision is appealable: contested records may be escalated to human review; appeal outcome appends provenance, never silently overrides broker entry. Role of the reviewing human = `operator` (defined in §2.3; full operator permission matrix — TODO v0.2).
+- Enterprise: Policy Broker decides `decision: SAVE|PENDING_APPROVAL|BLOCK|DROP_LOW_UTILITY` + `mode: APPEND|UPDATE_EXISTING|MERGE_WITH_EXISTING` (two orthogonal fields). Broker decision is appealable: contested records may be escalated to human review; appeal outcome appends provenance, never silently overrides broker entry. Role of the reviewing human = `operator` (defined in §2.3; full operator permission matrix — deferred, see Backlog §6).
 - Ephemeral: no writes, so no contest.
 
 **Temporal priority.** When world time (`valid_at`/`invalid_at`) and retention time (`retention.valid_from`/`valid_to`) disagree, resolution follows the canonical algorithm in `maqs-way-standard.json` → `lifecycle.temporal_priority_algorithm` (5 steps) — not restated here to avoid desync. Summary:
@@ -182,7 +182,7 @@ Conflict resolution policy:
 
 - Scope model from AMSP formalized, canonical `user-portable` etc.
 - Policy Broker split: `decision: SAVE|PENDING_APPROVAL|BLOCK|DROP_LOW_UTILITY` + `mode: APPEND|UPDATE_EXISTING|MERGE_WITH_EXISTING` — orthogonal.
-- **operator role:** a human actor who reviews escalated/appealed broker decisions and contested records. May read contested records and confirm/override appeal outcomes; each action appends provenance. Full permission matrix — TODO v0.2.
+- **operator role:** a human actor who reviews escalated/appealed broker decisions and contested records. May read contested records and confirm/override appeal outcomes; each action appends provenance. Full permission matrix — deferred, see Backlog §6.
 - **operator SLA:** review within 72h for escalated/appealed decisions and contested records in Profile B (recommended, not a global normative requirement).
 - **G1 fixtures (required, MAQS G1 [CRIT]):** boundary proved by attempted violations, not filter presence: (1) independently authenticated callers A vs B, (2) wrong or omitted scope, (3) read-only caller attempting write → BLOCK, (4) access after membership revocation → BLOCK. Single-scope pass-through is not a boundary.
 
@@ -316,7 +316,7 @@ atomicity like any other.
 
 ## 3. VERIFICATION Layer
 
-**Structure:** P/V/E pattern applied to Principles layer (§1) from v0.1.1; Architecture and Verification layers aligned to the same pattern in v0.2.
+**Structure:** P/V/E pattern applied to Principles layer (§1) from v0.1.1; Architecture and Verification layers — P/V/E alignment deferred, see Backlog §6.
 
 ### 3.1 Separation P/V/E
 
@@ -343,7 +343,7 @@ Each item follows Property/Verification/Example (see §1 for the applied pattern
 
 
 All thresholds marked **indicative, subject to revision after first run on real system**; `min` = CI gate (below → fail pipeline), `target` = engineering goal. Canonical source: `maqs-way-standard.json` → `verification_suite.metrics`.
-† Knowledge update target from §1 P3 — not yet in JSON `metrics`, to be added in v0.2 (see §6).
+† Knowledge update target from §1 P3 — not yet in JSON `metrics`; deferred, see Backlog §6.
 § From JSON `verification_suite.negative_scenarios`, merged with its metric.
 
 The pipeline-hygiene rules below are policy extension settings (see
@@ -747,6 +747,7 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 2. Backlog v0.4 (per the v0.3 scope decision — deferred line by line; details and per-entry rationale in `docs/v0.4-candidates-from-maqs-1.8.1.md`):
    - From the v0.3 scope deferral: `deletion_marker` in JSON data_model (confirm obsolete-by-separation, §2.1 note, or specify); `identity_signature` Ed25519 over canonical JSON — full specification; `operator` role full permission matrix for §2.3; executable behavioral harness (LoCoMo/LongMemEval runs) + D9 behavioral test; live verification of all 11 external links in `docs/landscape.md` + per-row `verified: ✅/⏳/❌` column; P/V/E alignment for Architecture and Verification layers (§2, §3); P4 verification on other memory systems.
    - From the MAQS 1.8.1 sync (`docs/v0.4-candidates-from-maqs-1.8.1.md`, rows 1–13): 1 J3 `j3_guard` line refresh; 2 I13 masking requirement text (glued secrets, single mechanism, dependency-owned loggers); 3 B1 one semantic key per event; 4 D8 pinned axes + version-marker contract (no Way gate — new package or known-gap entry); 5 I10 CRIT-zone warnings as failures incl. test runs + DEBUG-cap pre-filter; 6 I12 B-axis pin B2 ("visibility without reaction"); 7 I15 pinned timestamp format per store; 8 audit methodology §2.2 step 3 (reachability, per-instance schema, static-evidence labeling); 9 audit methodology §2.2 step 6 (separated criticality counting); 10 audit methodology §2.2 p.4 (inherited criticality); 11 P11 agent audit discipline; 12 P10 lazy-initialization write paths (mode=ro is not isolation); 13 0.5a invoked-but-unsatisfiable control.
+   - From the stale-refs inventory (`docs/v0.4-canon/stale-refs.md`): normative thresholds for the §3.2 metrics (promotion from indicative to normative after a first real-system run); `knowledge_update` target metric in JSON `verification_suite.metrics` (§1 P3: LongMemEval updates / FactConsolidation, target ≥0.7).
 3. Open discussions with OMPS/AMSP/OAMP authors — propose MAQS as verification layer
 
 ## 7. Change Log
