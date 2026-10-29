@@ -7,6 +7,16 @@ canonical_url: https://github.com/alexk202/maqs-way
 
 # MAQS-Way: The Path Layer MAQS Was Missing
 
+**Update, 29 Oct 2026.** This article describes MAQS-Way v0.1.4 as published on 13 Oct. Where things stand now:
+
+-   MAQS-Way **v0.3** is released ([tag v0.3](https://github.com/alexk202/maqs-way/tree/v0.3), DOI [10.5281/zenodo.23698946](https://doi.org/10.5281/zenodo.23698946)). All 12 known gaps that v0.2 listed openly are closed, each by an owner-signed package. The data model is still frozen at `way-v0.1.3`.
+-   The MAQS checklist underneath is at **v1.8.1** (96 items); the text below refers to v1.6.
+-   Conformance vectors: 12 (the text below says 7).
+-   First measurements, with their limits: on Mem0 @0724291b, LongMemEval oracle split, first 500 questions — evidence-session R@5 = 0.988 (494/500), retrieval only, no answer generation. On the same Mem0 version, a behavioral isolation test (stub embedder and chat, CPU-only): retrieval isolation on read paths verified; authenticated callers, read-only writes and access after revocation not yet run.
+-   Executable behavioral harness: planned for v0.4.
+
+Evidence and artifacts: [maqs-way-evidence](https://github.com/alexk202/maqs-way-evidence).
+
 MAQS (Memory Architecture Quality Standard) became a rare artifact: an audit checklist for long-term memory in LLM assistants, backed by 20k+ tracebacks and production incidents. It tells you **how to verify that memory doesn't break**.
 
 But after external review `way.md` we realized: there's a gap between policies and implementation.
