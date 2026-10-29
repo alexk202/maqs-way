@@ -1,3 +1,5 @@
+Signed by owner 2026-10-29 (file at 525e8a9, sha256 81ee5054d6d6b6071db10a534ec0ed166fa3510ed5439c014d31fad31b139fdc); applied in be0e6c1
+
 Status: подготовлено для подписи владельца. Канон (SPEC.md, SPEC-RU.md,
 maqs-way-standard.json) и гейты этим файлом НЕ меняются.
 
