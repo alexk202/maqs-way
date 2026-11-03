@@ -2,7 +2,7 @@
 
 **Status:** v0.3 — canonization release (all 12 known gaps from v0.2 closed by owner-signed packages; open known gaps: none), normative file name `SPEC.md`, revision date 2026-10-27
 **Author:** Aleksandr Kossarev
-**Relation to MAQS:** MAQS v1.8.1 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
+**Relation to MAQS:** MAQS v1.9 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
 **License note:** Sources referenced under their respective licenses. This spec is Apache-2.0.
 
 ## 0. Industry Diagnosis
@@ -609,7 +609,7 @@ expectation to another layer's answer.
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
-standard_version: MAQS 1.8.1 + Way 0.3
+standard_version: MAQS 1.9 + Way 0.3
 test_scenarios: LoCoMo/LongMemEval/MemoryAgentBench + negative + deletion lattice + restore drill + round-trip
 results: per-metric + per-invariance + limitations
 exceptions: documented per-item with justification
@@ -724,7 +724,7 @@ their numbers.
 Each profile is subset of Way + refs to MAQS items.
 
 
-## 5. Mapping to MAQS v1.8.1
+## 5. Mapping to MAQS v1.9
 
 0 Map → 2.1 data model + provenance
 A Input validation → 2.4 Content-as-Data + OWASP ASI06
@@ -747,6 +747,7 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 2. Backlog v0.4 (per the v0.3 scope decision — deferred line by line; details and per-entry rationale in `docs/v0.4-candidates-from-maqs-1.8.1.md`):
    - From the v0.3 scope deferral: `deletion_marker` in JSON data_model (confirm obsolete-by-separation, §2.1 note, or specify); `identity_signature` Ed25519 over canonical JSON — full specification; `operator` role full permission matrix for §2.3; executable behavioral harness (LoCoMo/LongMemEval runs) + D9 behavioral test; live verification of all 11 external links in `docs/landscape.md` + per-row `verified: ✅/⏳/❌` column; P/V/E alignment for Architecture and Verification layers (§2, §3); P4 verification on other memory systems.
    - From the MAQS 1.8.1 sync (`docs/v0.4-candidates-from-maqs-1.8.1.md`, rows 1–13): 1 J3 `j3_guard` line refresh; 2 I13 masking requirement text (glued secrets, single mechanism, dependency-owned loggers); 3 B1 one semantic key per event; 4 D8 pinned axes + version-marker contract (no Way gate — new package or known-gap entry); 5 I10 CRIT-zone warnings as failures incl. test runs + DEBUG-cap pre-filter; 6 I12 B-axis pin B2 ("visibility without reaction"); 7 I15 pinned timestamp format per store; 8 audit methodology §2.2 step 3 (reachability, per-instance schema, static-evidence labeling); 9 audit methodology §2.2 step 6 (separated criticality counting); 10 audit methodology §2.2 p.4 (inherited criticality); 11 P11 agent audit discipline; 12 P10 lazy-initialization write paths (mode=ro is not isolation); 13 0.5a invoked-but-unsatisfiable control.
+   - From the MAQS 1.9 sync (same file, rows 14–17): 14 D10 similarity computation contract [CRIT] (no Way gate — new package or known-gap entry, same route as D8/row 4); 15 D11 scope isolation in shared retrieval index [IMP] (already implemented-and-documented on the Way side: evaluator check P4a, cheatsheets pattern-mem0-isolation / pattern-graphiti-invalidation, references/ref-langchain.py — fold the MAQS formulation into the P4 verification text); 16 C4 renamed to derived-representations sync + extended trigger set (content updates, identifier-schema migrations, set-difference verification, stamp invalidation); 17 A4 degraded extraction paths (mark, demote, exclude from derived structures).
    - From the stale-refs inventory (`docs/v0.4-canon/stale-refs.md`): normative thresholds for the §3.2 metrics (promotion from indicative to normative after a first real-system run); `knowledge_update` target metric in JSON `verification_suite.metrics` (§1 P3: LongMemEval updates / FactConsolidation, target ≥0.7).
 3. Open discussions with OMPS/AMSP/OAMP authors — propose MAQS as verification layer
 
