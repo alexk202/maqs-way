@@ -92,10 +92,13 @@ Way: https://github.com/alexk202/maqs-way
 
 ## Next
 
-- Freeze Way v0.1.3, publish conformance, run tombstone bench on your stack
+- Freeze Way v0.1.4, publish conformance, run tombstone bench on your stack
 - Open issues in OMPS/AMSP/OAMP/MemoryOps/Zep proposing MAQS-Way as verification layer (drafts in docs/outreach/)
 
 Check not that the mechanism exists. Check that it works.
+
+Author: Aleksandr Kossarev, Jõgeva, Estonia  
+https://github.com/alexk202/maqs-way
 
 ---
 *Draft for DevTo, tags: maqs, llm-memory, ai-governance, omps, amsp, oamp, graphiti, memoryops*
