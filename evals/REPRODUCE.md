@@ -231,3 +231,21 @@ is useful whether it succeeds or not.
 A smoke result of `evidence-R@5 = 1.00` means the stand works. A lower
 value is not automatically a failure. Report it as-is, together with
 your deviation log.
+
+### Recorded deviations (append-only)
+
+- **2026-11-09, independent P4 rerun — `OPENROUTER_API_KEY` silently
+  hijacks the chat-LLM client.** mem0's OpenAI LLM wrapper checks the
+  variable FIRST (`llms/openai.py:42-53`): when `OPENROUTER_API_KEY` is
+  exported, the harness config's `openai_base_url` is ignored and the
+  chat-LLM silently goes to OpenRouter — on the P4 stub stand that is
+  `400 'stub-llm is not a valid model ID'` on the first `infer=True` add
+  (`LLMError` from the extraction pipeline; the verdict run is VOID, not
+  red). The embedder has no such branch (`embeddings/openai.py` reads
+  `config.openai_base_url` directly), so the storage channels pass and
+  the failure lands mid-run, not at startup. Recipe: `env -u
+  OPENROUTER_API_KEY` before any eval runner on stands where the
+  variable is exported. From the rerun itself: attempt 1 VOID with the
+  400; attempt 2 with the variable unset reproduced the 2026-10-26
+  artifact 1:1 (`config_sha256 548343f6…` unchanged, `P4 PASSED`,
+  exit 0).
