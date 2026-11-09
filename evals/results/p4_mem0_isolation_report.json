@@ -37,7 +37,7 @@
       }
     },
     "mem0": "0724291b pin",
-    "date": "2026-10-26T09:50:24+00:00",
+    "date": "2026-11-09T11:21:00+00:00",
     "design": "proposals/p4-mem0-behavioral-isolation.md v0.2"
   },
   "main": {
@@ -217,7 +217,7 @@
     }
   },
   "observed_behavior": {
-    "foreign_memory_id": "6542d699-f76f-49ce-ada6-bc7480348e29",
+    "foreign_memory_id": "b66cdc53-c238-47ab-b832-4de14a985a3e",
     "get": {
       "returned": true,
       "text_preview": "obsB marker-OB0 secret"
@@ -235,9 +235,9 @@
   "control_inconclusive": [],
   "passed": true,
   "environment": {
-    "uname": "Linux aleksandr-GT1-Mega 7.0.0-38-generic #38~24.04.4-Ubuntu SMP PREEMPT_DYNAMIC Mon Sep 14 16:37:11 UTC 2 x86_64",
+    "uname": "Linux aleksandr-GT1-Mega 7.0.0-42-generic #42~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Oct 19 14:43:01 UTC 2 x86_64",
     "python": "3.12.2",
-    "pip_freeze_mem0": "mem0ai @ file:///home/aleksandr/Projects/mem0-pilot",
+    "pip_freeze_mem0": "mem0ai @ git+https://github.com/mem0ai/mem0@0724291bd864cf807e88ee8981c8226644e8fb42",
     "stand": "CPU-only, stub embedder, Linux"
   }
 }
