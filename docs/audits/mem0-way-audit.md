@@ -1,7 +1,7 @@
 # Way-audit of Mem0 OSS (MAQS-Way v0.2 application example)
 
 > Status: draft audit example, NOT part of the canon. Tone — help, not a roast.
-> Method: static code reading (no execution, no infra). One behavioral run since (P4, 2026-10-26).
+> Method: static code reading (no execution, no infra). One behavioral run since (P4, 2026-10-26, artifact at 93787c9), independently reproduced twice on 2026-11-09 — see evals/results/p4_rerun_log.md.
 > Audited code: `mem0ai/mem0` @ `0724291` (2026-10-14), shallow clone.
 > Auditor: MAQS-Way v0.2 (principles P1–P8 + write integrity B1–B6).
 > Rule: only facts from code/docs, with paths; whatever was not verified is stated as such.
@@ -106,7 +106,7 @@
 
 ## Observed behavior (facts only, no defect conclusion; outside the P4 verdict)
 
-From the P4 behavioral run (2026-10-26, `p4_mem0_isolation_report.json`, section
+From the P4 behavioral run (2026-10-26, `p4_mem0_isolation_report.json` at 93787c9, section
 `observed_behavior`): by-ID operations on a foreign subject's record succeed --
 `get(memory_id)` returns the record, `update(memory_id, ...)` succeeds,
 `delete(memory_id)` succeeds and the record is gone after. By-ID operations are
@@ -147,3 +147,4 @@ any future test design around by-ID scoping is a separate package.
 - 2026-10-26 (later same day, evidential split): the verdict run 02e1c4c used a DEGENERATE stub-embedder geometry (a Random-per-element bug made every token vector a constant direction -> all text vectors parallel, cosines +-1). The isolation counters of that run are string-marker based and remain valid (three keys x three channels = zero foreign; shared-id and mutational controls fired). The 'filter before top-k' conclusion, however, was NOT proven by 02e1c4c (under parallel geometry the hostile query discriminates nothing) -- it is established by the rerun d5e48dc with the fixed per-token stub and the added post-top-k control (mutated own recall 0 vs unmutated > 0 on all three keys). The 02e1c4c report artifact was overwritten by later runs; the original is in git history: `git show 02e1c4c:evals/results/p4_mem0_isolation_report.json`. The verified label rests on d5e48dc.
 - 2026-10-26: P4 behavioral verification EXECUTED (owner-sanctioned P4 test, passed): label updated append-only to "verified on mem0@0724291b, Linux CPU-only stub stand" with boundaries (stub embedder + stub chat; extraction path with a real LLM not exercised); Observed behavior section added (by-ID get/update/delete on a foreign record succeed -- API contract, facts only). The 2026-10-23 reclassification note above stays as history.
 - 2026-10-28: P4 summary label narrowed to retrieval isolation on read paths; four-case coverage map added; broken 10-23 sentence restored; no new runs.
+- 2026-11-09: P4 independently reproduced twice (11:21Z `978ceae`, 11:33Z `08622da` on a fresh venv), 1:1 against the 2026-10-26 verdict run — `config_sha256` and every verdict, counter and control unchanged; kernel and the mem0 install path differ. No label change, no new case classes covered. Runs listed in `evals/results/p4_rerun_log.md`; the 2026-10-26 artifact version is at `93787c9`.

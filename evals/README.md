@@ -74,4 +74,4 @@ the per-question history tail in mem0@0724291b (the messages/history scope is
 keyed by the sorted `user_id&run_id` pair — the q2 scope holds only its own
 rows). A candidate alternative/complement to the per-question history DB; the
 H5 guard stays regardless (it guards the live roots). See
-`results/p4_mem0_isolation_report.json` (incident demo) and REPRODUCE.md §6.
+`results/p4_mem0_isolation_report.json` (incident demo, artifact of that run at 93787c9; all runs listed in `results/p4_rerun_log.md`) and REPRODUCE.md §6.

@@ -163,7 +163,7 @@ periodically.
   (`results/g1iso_a_note.md`) and superseded the same day; the guard itself is
   unchanged by granularity.
 - **mem0-native alternative (measured, not adopted)**: the P4 incident demo
-  (2026-10-26, `results/p4_mem0_isolation_report.json`) measured that giving
+  (2026-10-26, `results/p4_mem0_isolation_report.json` at 93787c9) measured that giving
   each add a distinct `run_id` natively isolates the per-question history tail
   (mem0 keys the messages/history scope by the alphabetically sorted
   `user_id&run_id` pair: the q2 scope holds only its own rows, zero leaked

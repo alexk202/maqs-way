@@ -161,7 +161,7 @@ llama-server -m Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf -c 32768 -ngl 99 \
   (`results/g1iso_a_note.md`) и заменён в тот же день; сам гард от гранулярности
   не зависит.
 - **mem0-нативная альтернатива (измерено, не принято)**: демо инцидента P4
-  (2026-10-26, `results/p4_mem0_isolation_report.json`) замерило, что
+  (2026-10-26, `results/p4_mem0_isolation_report.json` на 93787c9) замерило, что
   назначение каждому add уникального `run_id` нативно изолирует
   per-question-хвост истории (mem0 ключует scope сообщений парой
   «user_id&run_id» с алфавитной сортировкой: в scope q2 — только его строки,
