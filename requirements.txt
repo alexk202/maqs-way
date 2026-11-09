@@ -22,6 +22,7 @@ httpx2==2.13.1
 hyperframe==6.1.0
 idna==3.20
 jiter==0.17.0
+jsonschema==4.26.0
 # mem0: exact upstream commit the stand ran on (detached clean checkout;
 # pip's file:// line replaced by a git pin; local tree verified unmodified)
 mem0ai @ git+https://github.com/mem0ai/mem0@0724291bd864cf807e88ee8981c8226644e8fb42
