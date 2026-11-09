@@ -37,7 +37,7 @@
       }
     },
     "mem0": "0724291b pin",
-    "date": "2026-11-09T11:21:00+00:00",
+    "date": "2026-11-09T11:33:59+00:00",
     "design": "proposals/p4-mem0-behavioral-isolation.md v0.2"
   },
   "main": {
@@ -217,7 +217,7 @@
     }
   },
   "observed_behavior": {
-    "foreign_memory_id": "b66cdc53-c238-47ab-b832-4de14a985a3e",
+    "foreign_memory_id": "7b86d74d-e7c1-4a7b-98d9-4dbe137265cb",
     "get": {
       "returned": true,
       "text_preview": "obsB marker-OB0 secret"
