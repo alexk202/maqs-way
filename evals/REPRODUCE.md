@@ -170,6 +170,10 @@ periodically.
   from q1). A candidate for the runner family as an alternative or complement
   to the per-question history DB — the H5 guard stays either way (it guards
   the LIVE roots; the choice of in-temp isolation mechanism is ours).
+- **P4 one-command reproduction**: the P4 isolation run reproduces in a
+  container without provider keys, the run itself executed with `--network
+  none` (network is needed once, for the image build); build and run commands
+  are in [`repro/README.md`](../repro/README.md).
 - **Self-test** (no stand needed):
   `python3 evals/isolation_guard.py selftest` — writes a probe file into
   `~/.mem0`, expects RED, removes it, expects GREEN again; exit 0 iff both hold.

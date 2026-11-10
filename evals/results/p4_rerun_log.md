@@ -22,6 +22,25 @@ and run 2 the only artifact fields that changed were `provenance.date`,
 `observed_behavior.foreign_memory_id` (a per-run UUID), `environment.uname` and
 `environment.pip_freeze_mem0`; every verdict, counter and control is identical.
 
+## Container reproductions
+
+Runs below were produced by `repro/` (Python 3.12.2, pinned base image digest,
+no network, no provider keys). Their artifacts are reproduction checks, not new
+verdicts, and are not committed: what is recorded is the comparison against the
+run-1 artifact.
+
+| # | Date (UTC) | Image digest | config_sha256 match | main/controls match | Wall clock |
+|---|---|---|---|---|---|
+| C1 | 2026-11-10T14:48:02Z | `sha256:5dc6f84b5e97bfb0c90abfb7c55f3cacc2cb6687c8f920b64a833a2219875997` | yes | yes | 3 s |
+| C2 | 2026-11-10T14:48:10Z | `sha256:5dc6f84b5e97bfb0c90abfb7c55f3cacc2cb6687c8f920b64a833a2219875997` | yes | yes | 2 s |
+
+Note on a field that reads oddly: `provenance.config_effective.mem0_version` is
+`v1.1`, which is mem0's own config `version` field (described upstream as "the
+version of the API"), not the package version. The package at the pinned commit
+`0724291b` is mem0ai 2.2.1, as `environment.pip_freeze_mem0` shows. The key name
+is part of the config fingerprint, so it is left as is; renaming it would change
+`config_sha256` and break comparability with runs 1-3.
+
 Earlier same-day runs of 2026-10-26 (`02e1c4c`, `d5e48dc`) and what the verified
 label rests on are recorded in the changelog of
 [`docs/audits/mem0-way-audit.md`](../../docs/audits/mem0-way-audit.md).
