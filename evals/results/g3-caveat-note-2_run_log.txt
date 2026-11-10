@@ -1,3 +1,12 @@
 
 === 2026-11-10T16:33:47+00:00 CALIBRATION g3-caveat-note-2 fixture_sha256=e7e8c7edb7a97c73 ===
 G-calib-arm ok=True calls={'B_note_off': 360}; G-floor ok=True selected=3; G-budget ok=True total=1790
+
+=== 2026-11-10T23:15:50+00:00 MAIN g3-caveat-note-2 fixture_sha256=e7e8c7edb7a97c73 ===
+A_note_on/k04: 114/117 rate=0.974359 wilson=[0.927317, 0.991242] truncated=0
+A_note_on/k06: 186/388 rate=0.479381 wilson=[0.430119, 0.529048] truncated=0
+A_note_on/k05: 208/390 rate=0.533333 wilson=[0.483736, 0.58228] truncated=46
+B_note_off/k04: 115/117 rate=0.982906 wilson=[0.93981, 0.9953] truncated=0
+B_note_off/k06: 203/388 rate=0.523196 wilson=[0.473515, 0.572422] truncated=0
+B_note_off/k05: 184/390 rate=0.471795 wilson=[0.422767, 0.521373] truncated=52
+stand same=True; overall=none_separated; wall clock 13239.2s
