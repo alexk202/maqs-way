@@ -29,8 +29,11 @@ by intuition.
 
 ## What would be needed to resolve the observed difference
 
-At the observed rates (0.060 against 0.1033), 95% Wilson intervals separate only
-at roughly 700 runs per arm, about 230 per cell against the 100 used here.
+At the observed rates (0.060 against 0.1033), separation of the 95% Wilson
+intervals is not monotonic in n, because match counts are integers: isolated
+values such as n = 605 separate while n = 610, 612, 614 and 642 do not. Stable
+separation begins at roughly 650 to 700 runs per arm, about 230 per cell against
+the 100 used here.
 
 Raising n after seeing the direction would be fitting the design to the result.
 The correct path is a new pre-registration with a new `fixture_id`, citing this
