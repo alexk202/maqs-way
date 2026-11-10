@@ -1,0 +1,14 @@
+
+=== 2026-11-10T15:27:40+00:00 CONTROLS g3-caveat-note fixture_sha256=97c45386fa6d47e5 ===
+G-arms ok; G-posctl rate=1.0 (min 0.8) ok=True; G-empty matches=0 ok=True
+mean generation 1.26s; main runs 600; expected main ~758.3s
+
+=== 2026-11-10T15:48:17+00:00 MAIN g3-caveat-note fixture_sha256=97c45386fa6d47e5 ===
+A_note_on/p1: 3/100 rate=0.03 wilson=[0.010255, 0.084519] truncated=0
+A_note_on/p2: 8/100 rate=0.08 wilson=[0.041093, 0.149981] truncated=0
+A_note_on/p3: 7/100 rate=0.07 wilson=[0.034319, 0.137495] truncated=0
+B_note_off/p1: 5/100 rate=0.05 wilson=[0.021544, 0.11175] truncated=0
+B_note_off/p2: 9/100 rate=0.09 wilson=[0.048073, 0.162262] truncated=0
+B_note_off/p3: 17/100 rate=0.17 wilson=[0.108936, 0.25548] truncated=0
+homogeneity ok=False; verdict=no_pooled_verdict
+wall clock 1193.0s
