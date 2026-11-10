@@ -10,10 +10,19 @@ means adding a fixture, not editing this runner.
 Usage (stand convention, evals/eval_config.py supplies the server):
     python3 evals/twoarm_runner.py evals/fixtures/<id>.json --controls
     python3 evals/twoarm_runner.py evals/fixtures/<id>.json --main
+    python3 evals/twoarm_runner.py evals/fixtures/<id>.json --dry-prompts
 
-Order of operations (pre-registration §8; not negotiable):
+twoarm-v2 adds two stages to the same runner (the v1 path is unchanged):
+    --calibrate   stage 1: every calibration.candidates entry, OFF arm only,
+                  calibration.runs_per_candidate runs; select probes by the
+                  fixture's selection_rule; derive n per probe by power_rule;
+                  check the budget; write <fixture_id>_calibration.json and STOP.
+    --main        stage 2 (v2): controls, then every selected probe in both
+                  arms, per-probe verdicts (no pooling), full artifact.
+
+Order of operations (pre-registration; not negotiable):
     runner written -> sha256 of prereg/fixture/schema/runner -> owner signature
-    -> commit -> --controls -> report throughput and STOP (G-budget) -> owner
+    -> commit -> --calibrate -> report throughput and STOP (G-budget) -> owner
     confirmation -> --main -> artifact.
 
 What --controls does: runs only fixture.controls cells (positive control and
@@ -53,8 +62,16 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FIXTURES = HERE / "fixtures"
-SCHEMA_PATH = FIXTURES / "fixture-schema.json"
+SCHEMAS = {
+    "twoarm-v1": FIXTURES / "fixture-schema.json",      # v1, left untouched
+    "twoarm-v2": FIXTURES / "fixture-schema-v2.json",
+}
+SCHEMA_PATH = SCHEMAS["twoarm-v1"]  # v1 default; v2 code uses schema_for()
 RESULTS = HERE / "results"
+
+# Actual client calls, per arm and per stage role; the calibration gate reads
+# this to prove the ON arm was never called during stage 1.
+_CALLS = {"by_arm": {}, "by_role": {}}
 
 # P8 lesson (2026-11-09): an exported provider variable can silently redirect
 # the client mid-run (mem0's OpenAI wrapper prefers OPENROUTER_API_KEY over the
@@ -88,11 +105,26 @@ def load_fixture(path):
         return json.load(fh)
 
 
-def validate_fixture(fixture, schema_path=SCHEMA_PATH):
+def schema_for(fixture):
+    """G-fixture dispatch: v1 fixtures keep validating against the v1 schema,
+    v2 fixtures against fixture-schema-v2.json. The v1 schema is not modified."""
+    version = fixture.get("fixture_version")
+    if version not in SCHEMAS:
+        raise SystemExit(f"unsupported fixture_version: {version!r} "
+                         f"(known: {sorted(SCHEMAS)})")
+    return SCHEMAS[version]
+
+
+def validate_fixture(fixture, schema_path=None):
     """G-fixture. Raises on invalid; the caller refuses to run."""
+    schema_path = schema_path or schema_for(fixture)
     with open(schema_path, encoding="utf-8") as fh:
         schema = json.load(fh)
     jsonschema.Draft202012Validator(schema).validate(fixture)
+
+
+def is_v2(fixture):
+    return fixture["fixture_version"] == "twoarm-v2"
 
 
 def arms_by_mode(fixture):
@@ -153,16 +185,17 @@ def build_prompt(fixture, arm, probe, records):
     }
 
 
-def check_arms(fixture):
-    """G-arms: for every offtopic probe the ON arm equals the OFF arm after
-    removing the note line, byte-for-byte, and the user turn is identical."""
+def check_arms(fixture, probes=None):
+    """G-arms: for every probe the ON arm equals the OFF arm after removing
+    the note line, byte-for-byte, and the user turn is identical. v1 passes no
+    probe list and uses the offtopic probes; v2 passes the selected probes."""
     on, off = arms_by_mode(fixture)
+    if probes is None:
+        probes = [p for p in fixture["probes"] if p["role"] == "offtopic"]
     note = fixture["mechanism"]["realization"] + "\n"
     rows = []
     ok = True
-    for probe in fixture["probes"]:
-        if probe["role"] != "offtopic":
-            continue
+    for probe in probes:
         a = build_prompt(fixture, on, probe, fixture["store"])
         b = build_prompt(fixture, off, probe, fixture["store"])
         a_sys = a["system"]
@@ -203,6 +236,7 @@ def main_cells(fixture):
             cells.append({
                 "cell_index": idx, "arm": arm["arm_id"],
                 "probe": probe["probe_id"],
+                "query": probe["query"],
                 "mechanism_on": arm["mechanism_on"],
                 "runs": runs, "store": "full",
                 "seeds": [1000 * idx + r for r in range(1, runs + 1)],
@@ -223,6 +257,7 @@ def control_cells(fixture):
         runs = c["runs"]
         out.append({
             "cell_index": idx, "arm": c["arm"], "probe": c["probe"],
+            "query": probe_by_id(fixture)[c["probe"]]["query"],
             "mechanism_on": any(a["arm_id"] == c["arm"] and a["mechanism_on"]
                                 for a in fixture["arms"]),
             "runs": runs,
@@ -338,8 +373,8 @@ def collect_config(fixture, fixture_path, cells):
         "fixture": {"path": str(fixture_path), "sha256": sha256_file(fixture_path),
                     "id": fixture["fixture_id"],
                     "version": fixture["fixture_version"],
-                    "schema_path": str(SCHEMA_PATH),
-                    "schema_sha256": sha256_file(SCHEMA_PATH)},
+                    "schema_path": str(schema_for(fixture)),
+                    "schema_sha256": sha256_file(schema_for(fixture))},
         "prereg": {"path": None, "sha256": None},
         "runner": {"path": str(Path(__file__).resolve()),
                    "sha256": sha256_file(Path(__file__).resolve())},
@@ -451,8 +486,11 @@ def wilson(k, n, confidence):
 def run_cell(client, fixture, cell, records, answers_sink=None, label=""):
     """Run one cell; optionally stream every answer to the JSONL sink."""
     on_arm = {"arm_id": cell["arm"], "mechanism_on": cell["mechanism_on"]}
-    probe = probe_by_id(fixture)[cell["probe"]]
+    probe = {"query": cell["query"]}
     prompt = build_prompt(fixture, on_arm, probe, records)
+    _CALLS["by_arm"][cell["arm"]] = _CALLS["by_arm"].get(cell["arm"], 0) + cell["runs"]
+    _CALLS["by_role"][cell.get("role", "main")] = \
+        _CALLS["by_role"].get(cell.get("role", "main"), 0) + cell["runs"]
     ci = fixture["scoring"]["primary"]["case_insensitive"]
     runs = []
     for run_index, seed in enumerate(cell["seeds"], start=1):
@@ -493,15 +531,490 @@ def run_cell(client, fixture, cell, records, answers_sink=None, label=""):
 
 
 # --------------------------------------------------------------------------
+# twoarm-v2: calibration stage, power rule, per-probe verdicts
+# --------------------------------------------------------------------------
+CONTINUITY_WINDOW = 200  # power_rule.continuity_requirement: [n, n + 200]
+
+
+def calibration_cells(fixture):
+    """Stage 1 cells: every candidate in fixture order, OFF arm only, its own
+    seed range (sampling.seed_scheme: 100000 + 1000*candidate_index + run)."""
+    cal = fixture["calibration"]
+    on = any(a["arm_id"] == cal["arm"] and a["mechanism_on"]
+             for a in fixture["arms"])
+    cells = []
+    for ci, cand in enumerate(cal["candidates"]):
+        runs = cal["runs_per_candidate"]
+        cells.append({
+            "cell_index": ci, "arm": cal["arm"], "probe": cand["probe_id"],
+            "query": cand["query"], "mechanism_on": on, "runs": runs,
+            "store": "full", "role": "calibration",
+            "seeds": [100000 + 1000 * ci + r for r in range(1, runs + 1)],
+        })
+    return cells
+
+
+def select_probes(fixture, cal_results):
+    """calibration.selection_rule, applied literally: rank by measured rate
+    descending, ties by probe_id ascending, take the top probes_selected that
+    clear base_rate_floor. No substitution after the fact."""
+    cal = fixture["calibration"]
+    floor = cal["base_rate_floor"]
+    qmap = {c["probe_id"]: c["query"] for c in cal["candidates"]}
+    ranked = sorted(cal_results, key=lambda r: (-r["rate"], r["probe"]))
+    ranking = [{"rank": i, "probe_id": r["probe"], "matches": r["matches"],
+                "runs": r["runs"], "rate": r["rate"],
+                "clears_floor": r["rate"] >= floor}
+               for i, r in enumerate(ranked, start=1)]
+    selected = []
+    for rank, r in enumerate(ranked, start=1):
+        if r["rate"] < floor:
+            continue
+        selected.append({"probe_id": r["probe"], "query": qmap[r["probe"]],
+                         "rank": rank, "matches": r["matches"], "runs": r["runs"],
+                         "rate": r["rate"]})
+    selected = selected[:cal["probes_selected"]]
+    return {"rule": cal["selection_rule"], "base_rate_floor": cal["base_rate_floor"],
+            "required": cal["probes_selected"], "ranking": ranking,
+            "selected": selected, "ok": len(selected) >= cal["probes_selected"]}
+
+
+def _separates(p_on, p_off, n, confidence):
+    """upper(Wilson(p_on)) < lower(Wilson(p_off)) at integer match counts."""
+    return (wilson(round(p_on * n), n, confidence)[1]
+            < wilson(round(p_off * n), n, confidence)[0])
+
+
+def compute_n(p_off, rule, confidence):
+    """power_rule: the smallest n per arm whose Wilson intervals separate at
+    the calibrated p_off and p_on = p_off - target_gap, and stay separated for
+    every n' in [n, n + 200] (integer counts are non-monotonic, see the pilot).
+    Returns None when no n <= n_cap_per_arm satisfies the rule."""
+    gap = rule["target_gap_pp"] / 100.0
+    cap = rule["n_cap_per_arm"]
+    p_on = p_off - gap
+    if p_on < 0:
+        return None
+    for n in range(2, cap + 1):
+        if all(_separates(p_on, p_off, m, confidence)
+               for m in range(n, n + CONTINUITY_WINDOW + 1)):
+            return n
+    return None
+
+
+def v2_main_cells(fixture, selection):
+    """Stage 2 cells: (arm, selected probe) in fixture arm order and selected
+    probe order; per-probe n from the power rule; seeds 1000*cell + run."""
+    cells = []
+    idx = 0
+    for arm in fixture["arms"]:
+        for sp in selection["selected"]:
+            n = sp["n"]
+            cells.append({
+                "cell_index": idx, "arm": arm["arm_id"],
+                "probe": sp["probe_id"], "query": sp["query"],
+                "mechanism_on": arm["mechanism_on"], "runs": n,
+                "store": "full", "role": "main",
+                "seeds": [1000 * idx + r for r in range(1, n + 1)],
+            })
+            idx += 1
+    return cells
+
+
+def v2_control_cells(fixture, selection):
+    """Controls continue the cell_index enumeration after the main cells, so
+    their seeds cannot collide with main seeds."""
+    start = 2 * len(selection["selected"])
+
+    def arm_on(aid):
+        return any(a["arm_id"] == aid and a["mechanism_on"]
+                   for a in fixture["arms"])
+
+    pc = fixture["controls"]["positive_control"]
+    es = fixture["controls"]["empty_store"]
+    specs = [("positive_control", pc["arm"], pc["query"], pc["runs"], "full"),
+             ("empty_store", es["arm"], selection["selected"][0]["query"],
+              es["runs"], "empty")]
+    out = []
+    for k, (role, arm, query, runs, store) in enumerate(specs):
+        idx = start + k
+        out.append({"cell_index": idx, "arm": arm, "probe": role,
+                    "query": query, "mechanism_on": arm_on(arm),
+                    "runs": runs, "store": store, "role": role,
+                    "seeds": [1000 * idx + r for r in range(1, runs + 1)]})
+    return out
+
+
+def stand_snapshot(cfg):
+    """Stand identity fields that must not change between the two stages."""
+    return {"base_url": cfg["server"]["base_url"],
+            "build_info": cfg["server"]["build_info"],
+            "model_sha256": cfg["model"]["sha256"],
+            "model_served": cfg["model"]["name_served"],
+            "n_ctx": cfg["context"]["n_ctx"],
+            "temperature": cfg["sampling"]["temperature"],
+            "top_p": cfg["sampling"]["top_p"],
+            "max_tokens": cfg["sampling"]["max_tokens"]}
+
+
+def cmd_calibrate(fixture, fixture_path):
+    print(f"G-fixture ok: {fixture_path} validates against {schema_for(fixture)}")
+    cells = calibration_cells(fixture)
+    cal_cfg = fixture["calibration"]
+    on, off = arms_by_mode(fixture)
+    pre = {"expected_arm": cal_cfg["arm"],
+           "cells_arm": sorted({c["arm"] for c in cells}),
+           "mechanism_on_in_cells": any(c["mechanism_on"] for c in cells)}
+    cfg = collect_config(fixture, fixture_path, cells)
+    missing = config_missing(cfg)
+    if missing:
+        print("G-config FAILED, missing fields: " + ", ".join(missing), file=sys.stderr)
+        return 3
+
+    client = make_client()
+    print(f"server: {LLM_BASE_URL} build={cfg['server']['build_info']} "
+          f"model={cfg['model']['name_served']} n_ctx={cfg['context']['n_ctx']}")
+    t0 = time.time()
+    results = []
+    for i, cell in enumerate(cells, start=1):
+        print(f"calibration {i}/{len(cells)}: {cell['probe']} "
+              f"arm={cell['arm']} runs={cell['runs']}", flush=True)
+        results.append(run_cell(client, fixture, cell, fixture["store"],
+                                label="calib "))
+    wall = round(time.time() - t0, 1)
+
+    calls = {k: dict(v) for k, v in _CALLS.items()}
+    on_arm_calls = calls["by_arm"].get(on["arm_id"], 0)
+    g_calib = {**pre, "calls_by_arm": calls["by_arm"],
+               "on_arm_calls": on_arm_calls,
+               "ok": on_arm_calls == 0 and set(calls["by_arm"]) <= {cal_cfg["arm"]}}
+    selection = select_probes(fixture, results)
+    confidence = fixture["decision_rule"]["confidence"]
+    for sp in selection["selected"]:
+        sp["n"] = compute_n(sp["rate"], fixture["power_rule"], confidence)
+    feasible = all(sp["n"] is not None for sp in selection["selected"])
+    total_main = sum(2 * sp["n"] for sp in selection["selected"]) if feasible else None
+    cap = fixture["power_rule"]["n_cap_per_arm"]
+    budget_max = fixture["budget"]["max_main_generations"]
+    budget_ok = bool(feasible) and total_main <= budget_max \
+        and all(sp["n"] <= cap for sp in selection["selected"])
+    durations = [a["duration_s"] for r in results for a in r["answers"]]
+    mean_s = sum(durations) / len(durations) if durations else 0.0
+    control_runs = fixture["controls"]["positive_control"]["runs"] \
+        + fixture["controls"]["empty_store"]["runs"]
+    expected_main_s = round(mean_s * (total_main + control_runs), 1) \
+        if feasible else None
+
+    payload = {
+        "created": datetime.now(tz=timezone.utc).isoformat(timespec="seconds"),
+        "stage": "calibration",
+        "fixture_id": fixture["fixture_id"],
+        "fixture_sha256": cfg["fixture"]["sha256"],
+        "schema_sha256": cfg["fixture"]["schema_sha256"],
+        "prereg_sha256": cfg["prereg"]["sha256"],
+        "runner_sha256": cfg["runner"]["sha256"],
+        "config": cfg,
+        "gates": {"G-fixture": "ok", "G-config": {"missing": []},
+                  "G-calib-arm": g_calib,
+                  "G-floor": {"ok": selection["ok"],
+                              "selected": len(selection["selected"]),
+                              "required": selection["required"]},
+                  "G-budget": {"ok": budget_ok,
+                               "total_main_generations": total_main,
+                               "max_main_generations": budget_max,
+                               "n_cap_per_arm": cap}},
+        "candidates": results,
+        "selection": selection,
+        "power": {"target_gap_pp": fixture["power_rule"]["target_gap_pp"],
+                  "method": fixture["power_rule"]["method"],
+                  "continuity_window": CONTINUITY_WINDOW,
+                  "n_cap_per_arm": cap,
+                  "per_probe": [{"probe_id": sp["probe_id"], "p_off": sp["rate"],
+                                 "p_on": round(sp["rate"]
+                                               - fixture["power_rule"]["target_gap_pp"] / 100.0, 6),
+                                 "n": sp["n"]} for sp in selection["selected"]],
+                  "total_main_generations": total_main},
+        "calls": calls,
+        "mean_generation_s": round(mean_s, 3),
+        "expected_main_s": expected_main_s,
+        "wall_clock_s": wall,
+    }
+    RESULTS.mkdir(exist_ok=True)
+    cal_path = RESULTS / f"{fixture['fixture_id']}_calibration.json"
+    cal_path.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    log = (f"\n=== {payload['created']} CALIBRATION {fixture['fixture_id']} "
+           f"fixture_sha256={cfg['fixture']['sha256'][:16]} ===\n"
+           f"G-calib-arm ok={g_calib['ok']} calls={calls['by_arm']}; "
+           f"G-floor ok={selection['ok']} selected={len(selection['selected'])}; "
+           f"G-budget ok={budget_ok} total={total_main}\n")
+    with open(RESULTS / f"{fixture['fixture_id']}_run_log.txt", "a") as fh:
+        fh.write(log)
+
+    print()
+    print(f"{'candidate':10s} {'runs':>5s} {'matches':>7s} {'rate':>7s}  Wilson 95%")
+    for r in selection["ranking"]:
+        print(f"{r['probe_id']:10s} {r['runs']:5d} {r['matches']:7d} "
+              f"{r['rate']:7.3f}  {[round(x, 4) for x in next(c['wilson'] for c in results if c['probe'] == r['probe_id'])]}"
+              f"  {'floor ok' if r['clears_floor'] else 'below floor'}")
+    print()
+    for sp in selection["selected"]:
+        print(f"selected {sp['probe_id']} rank={sp['rank']} rate={sp['rate']:.4f} "
+              f"n={sp['n']}")
+    print(f"total main generations (3 x 2 x n): {total_main} "
+          f"(budget {budget_max}, cap {cap}/arm)")
+    print(f"mean generation {mean_s:.2f}s; expected stage-2 duration "
+          f"{expected_main_s}s")
+    if not selection["ok"]:
+        print("G-floor FAILED: fewer than three candidates cleared "
+              f"{selection['base_rate_floor']}; main stage is NOT launched.",
+              file=sys.stderr)
+        return 8
+    if not feasible:
+        print("POWER RULE: no n <= cap satisfies continuous separation; main "
+              "stage is NOT launched.", file=sys.stderr)
+        return 9
+    if not budget_ok:
+        print("G-budget FAILED: computed total exceeds the budget; main stage "
+              "is NOT launched.", file=sys.stderr)
+        return 9
+    print("STOP (G-budget): main stage is NOT run without owner confirmation.")
+    return 0
+
+
+def cmd_main_v2(fixture, fixture_path):
+    print(f"G-fixture ok: {fixture_path} validates against {schema_for(fixture)}")
+    on, off = arms_by_mode(fixture)
+    cal_path = RESULTS / f"{fixture['fixture_id']}_calibration.json"
+    if not cal_path.is_file():
+        print(f"calibration evidence missing ({cal_path}); run --calibrate "
+              f"first", file=sys.stderr)
+        return 7
+    cal = json.loads(cal_path.read_text())
+    if cal.get("fixture_sha256") != sha256_file(fixture_path):
+        print("calibration evidence belongs to a different fixture sha256; "
+              "refusing to mix stages", file=sys.stderr)
+        return 7
+    gates = cal.get("gates", {})
+    if not (gates.get("G-floor", {}).get("ok")
+            and gates.get("G-budget", {}).get("ok")
+            and gates.get("G-calib-arm", {}).get("ok")):
+        print("calibration gates are not green in the stored evidence; run is "
+              "invalid", file=sys.stderr)
+        return 7
+    selection = cal["selection"]
+    qmap = {c["probe_id"]: c["query"]
+            for c in fixture["calibration"]["candidates"]}
+    for sp in selection["selected"]:
+        if qmap.get(sp["probe_id"]) != sp["query"] or not sp.get("n"):
+            print("calibration selection does not match the fixture candidates "
+                  "or lacks n; refusing to run", file=sys.stderr)
+            return 7
+
+    main = v2_main_cells(fixture, selection)
+    controls = v2_control_cells(fixture, selection)
+    cfg = collect_config(fixture, fixture_path, main + controls)
+    missing = config_missing(cfg)
+    if missing:
+        print("G-config FAILED, missing fields: " + ", ".join(missing), file=sys.stderr)
+        return 3
+    stand = {"calibration": stand_snapshot(cal["config"]),
+             "main": stand_snapshot(cfg)}
+    stand["same"] = stand["calibration"] == stand["main"]
+    if not stand["same"]:
+        diff = {k: [stand["calibration"].get(k), stand["main"].get(k)]
+                for k in stand["calibration"]
+                if stand["calibration"].get(k) != stand["main"].get(k)}
+        print(f"STAND CHANGED between stages: {diff}; run is invalid",
+              file=sys.stderr)
+        return 10
+
+    g_arms = check_arms(fixture, selection["selected"])
+    if not g_arms["ok"]:
+        print("G-arms FAILED: arms differ by more than the note block; run is "
+              "not valid", file=sys.stderr)
+        return 4
+
+    client = make_client()
+    print(f"server: {LLM_BASE_URL} build={cfg['server']['build_info']} "
+          f"model={cfg['model']['name_served']} n_ctx={cfg['context']['n_ctx']}")
+    t0 = time.time()
+    ctrl_out = []
+    for cell in controls:
+        print(f"control: {cell['role']} arm={cell['arm']} runs={cell['runs']}",
+              flush=True)
+        ctrl_out.append(run_cell(client, fixture, cell,
+                                 fixture["store"] if cell["store"] == "full" else [],
+                                 label="control "))
+    pos = next(c for c in ctrl_out if c["role"] == "positive_control")
+    emp = next(c for c in ctrl_out if c["role"] == "empty_store")
+    min_rate = fixture["controls"]["positive_control"]["min_rate"]
+    pos_ok = pos["rate"] >= min_rate
+    empty_ok = emp["matches"] == 0
+    if not pos_ok:
+        print(f"G-posctl FAILED: {pos['matches']}/{pos['runs']} < {min_rate}; "
+              f"pipeline is broken, run is VOID", file=sys.stderr)
+        return 5
+    if not empty_ok:
+        print(f"G-empty FAILED: {emp['matches']} matches with an empty store; "
+              f"run is invalid", file=sys.stderr)
+        return 6
+
+    answers_path = RESULTS / f"{fixture['fixture_id']}_answers.jsonl"
+    answers_path.write_text("")
+    cells_out = []
+    with open(answers_path, "a", encoding="utf-8") as sink:
+        for i, cell in enumerate(main, start=1):
+            print(f"cell {i}/{len(main)}: {cell['arm']}/{cell['probe']} "
+                  f"runs={cell['runs']}", flush=True)
+            res = run_cell(client, fixture, cell, fixture["store"],
+                           answers_sink=sink)
+            cells_out.append(res)
+            print(f"  -> {res['matches']}/{res['runs']} = {res['rate']:.3f} "
+                  f"wilson={res['wilson']} truncated={res['truncated']}",
+                  flush=True)
+    wall = round(time.time() - t0, 1)
+
+    per_probe = []
+    for sp in selection["selected"]:
+        a = next(c for c in cells_out if c["arm"] == on["arm_id"]
+                 and c["probe"] == sp["probe_id"])
+        b = next(c for c in cells_out if c["arm"] == off["arm_id"]
+                 and c["probe"] == sp["probe_id"])
+        separated = a["wilson"][1] < b["wilson"][0]
+        per_probe.append({
+            "probe_id": sp["probe_id"], "n": a["runs"],
+            "on": {"arm": on["arm_id"], "matches": a["matches"],
+                   "rate": a["rate"], "wilson": a["wilson"]},
+            "off": {"arm": off["arm_id"], "matches": b["matches"],
+                    "rate": b["rate"], "wilson": b["wilson"]},
+            "upper_on": a["wilson"][1], "lower_off": b["wilson"][0],
+            "separated": separated})
+    n_sep = sum(1 for v in per_probe if v["separated"])
+    if n_sep == len(per_probe):
+        overall = {"made": True, "code": "all_separated",
+                   "detail": fixture["decision_rule"]["overall_claim"]}
+    elif n_sep == 0:
+        overall = {"made": False, "code": "none_separated",
+                   "detail": "no probe separated; each per-probe verdict is "
+                             "overlap; no overall claim is made"}
+    else:
+        overall = {"made": False, "code": "partial",
+                   "detail": fixture["decision_rule"]["on_disagreement"]}
+
+    report = {
+        "provenance": {
+            "date": datetime.now(tz=timezone.utc).isoformat(timespec="seconds"),
+            "runner": "evals/twoarm_runner.py",
+            "fixture_id": fixture["fixture_id"],
+            "fixture_version": fixture["fixture_version"],
+            "prereg": cfg["prereg"],
+            "stages": "calibration + main recorded as one run",
+            "note": "statistical reproduction only; byte-level reproduction is "
+                    "impossible by design",
+        },
+        "config": cfg,
+        "config_stages": {"calibration": cal["config"], "main": cfg},
+        "stand_check": stand,
+        "calibration": {
+            "candidates": [{k: v for k, v in c.items() if k != "answers"}
+                           for c in cal["candidates"]],
+            "selection": cal["selection"], "power": cal["power"]},
+        "gates": {"G-fixture": "ok", "G-arms": g_arms,
+                  "G-config": {"missing": []},
+                  "G-calib-arm": gates["G-calib-arm"],
+                  "G-floor": gates["G-floor"], "G-budget": gates["G-budget"],
+                  "G-posctl": {"rate": pos["rate"], "min_rate": min_rate,
+                               "ok": pos_ok},
+                  "G-empty": {"matches": emp["matches"], "ok": empty_ok}},
+        "controls": [{k: v for k, v in c.items() if k != "answers"}
+                     for c in ctrl_out],
+        "cells": [{k: v for k, v in c.items()
+                   if k not in ("answers", "prompt_first_run")}
+                  for c in cells_out],
+        "prompts_first_run": {c["cell"]: c["prompt_first_run"] for c in cells_out},
+        "per_probe": per_probe,
+        "overall_claim": overall,
+        "subjective_paraphrase": None,
+        "total_wall_clock_s": wall,
+    }
+    (RESULTS / f"{fixture['fixture_id']}_report.json").write_text(
+        json.dumps(report, indent=2, ensure_ascii=False))
+    with open(RESULTS / f"{fixture['fixture_id']}_run_log.txt", "a") as fh:
+        fh.write(f"\n=== {report['provenance']['date']} MAIN {fixture['fixture_id']} "
+                 f"fixture_sha256={cfg['fixture']['sha256'][:16]} ===\n")
+        for c in cells_out:
+            fh.write(f"{c['cell']}: {c['matches']}/{c['runs']} rate={c['rate']} "
+                     f"wilson={c['wilson']} truncated={c['truncated']}\n")
+        fh.write(f"stand same={stand['same']}; overall={overall['code']}; "
+                 f"wall clock {wall}s\n")
+
+    print()
+    for v in per_probe:
+        print(f"{v['probe_id']}: ON {v['on']['matches']}/{v['n']}="
+              f"{v['on']['rate']:.3f} {v['on']['wilson']} vs OFF "
+              f"{v['off']['matches']}/{v['n']}={v['off']['rate']:.3f} "
+              f"{v['off']['wilson']} -> "
+              f"{'separated' if v['separated'] else 'overlap'}")
+    print(f"overall claim: {overall['code']} (made={overall['made']}) -- "
+          f"{overall['detail']}")
+    print(f"artifact: {RESULTS / (fixture['fixture_id'] + '_report.json')}")
+    return 0
+
+
+def cmd_dry_prompts(fixture):
+    """Print the prompts the runner would send (first run of each cell), with
+    no generation and no artifact. v1: the pilot fixture's main cells (used to
+    verify that the v1 path still builds the signed pilot prompts byte for
+    byte). v2: calibration prompts, plus main prompts when a calibration file
+    with a selection already exists."""
+    arms = {a["arm_id"]: a for a in fixture["arms"]}
+    entries = []
+    if is_v2(fixture):
+        cal = fixture["calibration"]
+        arm = arms[cal["arm"]]
+        for cand in cal["candidates"]:
+            p = build_prompt(fixture, arm, {"query": cand["query"]},
+                             fixture["store"])
+            entries.append({"stage": "calibration", "arm": arm["arm_id"],
+                            "probe": cand["probe_id"],
+                            "system": p["system"], "user": p["user"]})
+        cal_path = RESULTS / f"{fixture['fixture_id']}_calibration.json"
+        if cal_path.is_file():
+            sel = json.loads(cal_path.read_text())["selection"]
+            for arm in fixture["arms"]:
+                for sp in sel["selected"]:
+                    p = build_prompt(fixture, arm, {"query": sp["query"]},
+                                     fixture["store"])
+                    entries.append({"stage": "main", "arm": arm["arm_id"],
+                                    "probe": sp["probe_id"],
+                                    "system": p["system"], "user": p["user"]})
+        else:
+            print("note: no calibration file yet, main-stage prompts are not "
+                  "listed", file=sys.stderr)
+    else:
+        for cell in main_cells(fixture):
+            p = build_prompt(fixture, arms[cell["arm"]],
+                             {"query": cell["query"]}, fixture["store"])
+            entries.append({"stage": "main", "arm": cell["arm"],
+                            "probe": cell["probe"],
+                            "system": p["system"], "user": p["user"]})
+    print(json.dumps(entries, indent=2, ensure_ascii=False))
+    print(f"dry-prompts: {len(entries)} prompt(s); no generation, no artifacts",
+          file=sys.stderr)
+    return 0
+
+
+# --------------------------------------------------------------------------
 # modes
 # --------------------------------------------------------------------------
 def load_and_validate(fixture_path):
     fixture = load_fixture(fixture_path)
+    schema_path = schema_for(fixture)
     try:
-        validate_fixture(fixture)
+        validate_fixture(fixture, schema_path)
     except jsonschema.ValidationError as e:
         print(f"G-fixture FAILED: fixture does not validate against "
-              f"{SCHEMA_PATH}: {e.message}", file=sys.stderr)
+              f"{schema_path}: {e.message}", file=sys.stderr)
         raise SystemExit(2)
     return fixture
 
@@ -560,7 +1073,8 @@ def cmd_controls(fixture, fixture_path):
         "runner_sha256": cfg["runner"]["sha256"],
         "config": cfg,
         "gates": gates,
-        "cells": [{k: v for k, v in c.items() if k != "answers"} for c in out_cells],
+        "cells": [{k: v for k, v in c.items()
+                   if k not in ("answers", "query")} for c in out_cells],
         "answers": [{k: v for k, v in a.items() if k != "usage"}
                     for c in out_cells for a in c["answers"]],
         "mean_generation_s": round(mean_s, 3),
@@ -723,7 +1237,8 @@ def cmd_main(fixture, fixture_path):
                   "G-seed-example": seed_check},
         "controls": controls["cells"],
         "cells": [{k: v for k, v in c.items()
-                   if k not in ("answers", "prompt_first_run")} for c in cells_out],
+                   if k not in ("answers", "prompt_first_run", "query")}
+                  for c in cells_out],
         "prompts_first_run": {c["cell"]: c["prompt_first_run"] for c in cells_out},
         "arms": hom["arms"],
         "homogeneity": hom,
@@ -755,17 +1270,37 @@ def cmd_main(fixture, fixture_path):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("fixture", help="path to a twoarm-v1 fixture JSON")
+    ap.add_argument("fixture", help="path to a twoarm-v1 or twoarm-v2 fixture JSON")
     mode = ap.add_mutually_exclusive_group(required=True)
     mode.add_argument("--controls", action="store_true",
-                      help="run control cells only, then stop (G-budget)")
+                      help="v1: run control cells only, then stop (G-budget)")
     mode.add_argument("--main", action="store_true",
-                      help="run main cells after controls and write the artifact")
+                      help="run the main stage (v2 also runs controls first) "
+                           "and write the artifact")
+    mode.add_argument("--calibrate", action="store_true",
+                      help="v2 stage 1: calibration, probe selection, n, budget "
+                           "check, then stop (G-budget)")
+    mode.add_argument("--dry-prompts", action="store_true",
+                      help="print the prompts that would be sent; no generation")
     args = ap.parse_args(argv)
     fixture_path = Path(args.fixture)
     if not fixture_path.is_absolute():
         fixture_path = Path.cwd() / fixture_path
     fixture = load_and_validate(fixture_path)
+    if args.dry_prompts:
+        return cmd_dry_prompts(fixture)
+    if is_v2(fixture):
+        if args.calibrate:
+            return cmd_calibrate(fixture, fixture_path)
+        if args.main:
+            return cmd_main_v2(fixture, fixture_path)
+        print("twoarm-v2 fixtures have two stages: use --calibrate first, then "
+              "--main (controls run inside --main)", file=sys.stderr)
+        return 2
+    if args.calibrate:
+        print("--calibrate is a twoarm-v2 stage; this fixture is twoarm-v1",
+              file=sys.stderr)
+        return 2
     if args.controls:
         return cmd_controls(fixture, fixture_path)
     return cmd_main(fixture, fixture_path)

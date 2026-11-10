@@ -1,0 +1,481 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "maqs-way/evals/fixtures/fixture-schema-v2.json",
+  "title": "Two-arm comparative fixture (twoarm-v2)",
+  "description": "Declarative definition of one comparative experiment. v2 adds a calibration stage (base rate measured in the OFF arm only, so probe selection cannot be made on the outcome), a pre-registered power rule that derives the run size from the calibrated rate, and per-probe verdicts with no pooling. The runner is generic; adding an experiment means adding a fixture. A fixture is not a memory system: the store is this file, not a database. v1 fixtures keep validating against fixture-schema.json, which is left untouched.",
+  "type": "object",
+  "required": [
+    "fixture_version",
+    "fixture_id",
+    "pilot_reference",
+    "item_under_test",
+    "mechanism",
+    "prompt_assembly",
+    "store",
+    "calibration",
+    "arms",
+    "scoring",
+    "sampling",
+    "power_rule",
+    "budget",
+    "controls",
+    "decision_rule",
+    "honest_boundaries"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "fixture_version": {
+      "const": "twoarm-v2"
+    },
+    "fixture_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "item_under_test": {
+      "type": "object",
+      "required": [
+        "standard",
+        "standard_version",
+        "item",
+        "item_text"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "standard": {
+          "type": "string"
+        },
+        "standard_version": {
+          "type": "string"
+        },
+        "item": {
+          "type": "string"
+        },
+        "item_text": {
+          "type": "string"
+        },
+        "compliant_behavior": {
+          "type": "string",
+          "description": "What the item actually requires. Stated so it is visible whether any arm is compliant at all."
+        }
+      }
+    },
+    "mechanism": {
+      "type": "object",
+      "required": [
+        "name",
+        "description",
+        "realization",
+        "wording_origin",
+        "note_applies_on"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "realization": {
+          "type": "string",
+          "description": "Exact text or transformation applied in the ON arm."
+        },
+        "wording_origin": {
+          "type": "string",
+          "description": "Whose wording the realization is. Required so a test of a mechanism class is never mistaken for a test of someone's product."
+        },
+        "note_applies_on": {
+          "enum": [
+            "fallback_only",
+            "always"
+          ],
+          "description": "fallback_only: the mechanism fires only when no stored record is relevant, so probes with a relevant record run in one arm only."
+        }
+      }
+    },
+    "prompt_assembly": {
+      "type": "object",
+      "required": [
+        "mode",
+        "system",
+        "memory_header",
+        "record_format",
+        "note_position",
+        "context_isolation"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "chat"
+          ]
+        },
+        "system": {
+          "type": "string"
+        },
+        "memory_header": {
+          "type": "string"
+        },
+        "record_format": {
+          "type": "string",
+          "description": "Per-record line; {text} is substituted."
+        },
+        "note_position": {
+          "enum": [
+            "before_memory_header"
+          ]
+        },
+        "context_isolation": {
+          "const": "each generation is an independent request; no conversation, cache or state is carried between runs"
+        }
+      }
+    },
+    "store": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "record_id",
+          "text",
+          "marker",
+          "vocabulary"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "record_id": {
+            "type": "string"
+          },
+          "text": {
+            "type": "string"
+          },
+          "marker": {
+            "type": "string",
+            "description": "Unique token planted in the record; its appearance in an answer is objective evidence the record was used."
+          },
+          "vocabulary": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            },
+            "description": "Pre-registered distinctive words of this record. Closed before the run; matching is case-insensitive substring over this list only."
+          }
+        }
+      }
+    },
+    "arms": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": [
+          "arm_id",
+          "mechanism_on"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "arm_id": {
+            "type": "string"
+          },
+          "mechanism_on": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "scoring": {
+      "type": "object",
+      "required": [
+        "primary",
+        "secondary"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "type": "object",
+          "required": [
+            "rule",
+            "case_insensitive",
+            "unit"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "rule": {
+              "const": "marker_or_vocabulary_match"
+            },
+            "case_insensitive": {
+              "type": "boolean"
+            },
+            "unit": {
+              "const": "one run counts once if any record matched"
+            }
+          }
+        },
+        "secondary": {
+          "type": "object",
+          "required": [
+            "rule",
+            "subjective",
+            "reported_separately"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "rule": {
+              "const": "paraphrase_review"
+            },
+            "subjective": {
+              "const": true
+            },
+            "reported_separately": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "sampling": {
+      "type": "object",
+      "required": [
+        "temperature",
+        "top_p",
+        "max_tokens",
+        "seed_scheme",
+        "seed_example"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "temperature": {
+          "type": "number"
+        },
+        "top_p": {
+          "type": "number"
+        },
+        "max_tokens": {
+          "type": "integer"
+        },
+        "seed_scheme": {
+          "type": "string"
+        },
+        "seed_example": {
+          "type": "string"
+        }
+      }
+    },
+    "controls": {
+      "type": "object",
+      "required": [
+        "positive_control",
+        "empty_store"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "positive_control": {
+          "type": "object",
+          "required": [
+            "query",
+            "arm",
+            "runs",
+            "min_rate"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "query": {
+              "type": "string"
+            },
+            "arm": {
+              "type": "string"
+            },
+            "runs": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "min_rate": {
+              "type": "number"
+            }
+          }
+        },
+        "empty_store": {
+          "type": "object",
+          "required": [
+            "arm",
+            "runs",
+            "role"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "arm": {
+              "type": "string"
+            },
+            "runs": {
+              "type": "integer",
+              "minimum": 2
+            },
+            "role": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "decision_rule": {
+      "type": "object",
+      "required": [
+        "method",
+        "confidence",
+        "direction_definition",
+        "per_probe",
+        "overall_claim",
+        "on_disagreement",
+        "no_pooling"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "const": "per_probe_wilson_nonoverlap"
+        },
+        "confidence": {
+          "type": "number"
+        },
+        "direction_definition": {
+          "type": "string"
+        },
+        "per_probe": {
+          "type": "string"
+        },
+        "overall_claim": {
+          "type": "string"
+        },
+        "on_disagreement": {
+          "type": "string"
+        },
+        "no_pooling": {
+          "const": "Rates are never pooled across probes. The v1 pilot withheld its verdict because pooling required homogeneity that did not hold; per-probe verdicts remove the question."
+        }
+      }
+    },
+    "honest_boundaries": {
+      "type": "string"
+    },
+    "pilot_reference": {
+      "type": "object",
+      "required": [
+        "fixture_id",
+        "artifact",
+        "verdict",
+        "measured_rates"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "fixture_id": {
+          "type": "string"
+        },
+        "artifact": {
+          "type": "string"
+        },
+        "verdict": {
+          "type": "string"
+        },
+        "measured_rates": {
+          "type": "string"
+        },
+        "runner_version_note": {
+          "type": "string"
+        }
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "required": [
+        "arm",
+        "runs_per_candidate",
+        "candidates",
+        "selection_rule",
+        "base_rate_floor",
+        "probes_selected"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "arm": {
+          "type": "string",
+          "description": "Must be the OFF arm. Calibrating on the ON arm would select probes on the outcome."
+        },
+        "runs_per_candidate": {
+          "type": "integer",
+          "minimum": 10
+        },
+        "candidates": {
+          "type": "array",
+          "minItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "probe_id",
+              "query"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "probe_id": {
+                "type": "string"
+              },
+              "query": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "selection_rule": {
+          "type": "string"
+        },
+        "base_rate_floor": {
+          "type": "number"
+        },
+        "probes_selected": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "power_rule": {
+      "type": "object",
+      "required": [
+        "target_gap_pp",
+        "method",
+        "continuity_requirement",
+        "n_cap_per_arm"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "target_gap_pp": {
+          "type": "number"
+        },
+        "method": {
+          "const": "smallest_n_with_continuous_wilson_separation"
+        },
+        "continuity_requirement": {
+          "type": "string"
+        },
+        "n_cap_per_arm": {
+          "type": "integer"
+        }
+      }
+    },
+    "budget": {
+      "type": "object",
+      "required": [
+        "max_main_generations",
+        "on_exceed"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "max_main_generations": {
+          "type": "integer"
+        },
+        "on_exceed": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
