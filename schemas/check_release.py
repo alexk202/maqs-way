@@ -1,4 +1,4 @@
-"""Release gate (Way package 1.8): G0/G3/G4/G5/G6/G7 executable.
+"""Release gate (Way package 1.8): G0/G3/G4/G5/G6/G7/G8 executable.
 
 TARGET-PARAMETERIZED (v0.2.1 release): the expected release stamp is passed
 with --target (default: the current release window, 0.2.1) instead of being
@@ -51,6 +51,27 @@ G7 forward refs to released versions (owner task 2026-10-29): in
   ("Normative thresholds in v0.2") are NOT caught by G7 -- they are
   closed by the stale-refs inventory (docs/v0.4-canon/stale-refs.md),
   not by this gate.
+G8 single source for the declared MAQS version (owner task 2026-11-11):
+  the MAQS core version is declared ONCE, in maqs-way-standard.json
+  `maqs_core_reference`; every mention in the tracked version-bearing
+  files (G8_FILES: SPEC.md, SPEC-RU.md, maqs-way-standard.json,
+  docs/mapping-to-maqs.md, README.md) must equal it. The canon version
+  is extracted with `MAQS v?(\\d+\\.\\d+(?:\\.\\d+)?)` from that value;
+  a missing field or an unextractable version is GATE RED with an
+  explicit message (never a silent skip).
+  Exceptions (historical mentions), applied mechanically:
+   1. the occurrence sits inside backticks (a file name or path);
+   2. it is part of a sync phrase -- followed by the word `sync`
+      ("MAQS 1.8.1 sync") or, in the RU mirror, preceded by it
+      ("Из синхронизации MAQS 1.8.1");
+   3. it sits in the §7 Change Log (split on "## 7.", as G0/G7 do).
+  Standalone version tokens only: item ids such as "MAQS 0.5a" are not
+  version mentions (no lookahead match past a letter).
+  Active for ANY --target (unlike G7): it checks tree consistency, not
+  release readiness. Not reachable from G6 (check_release.py is
+  self-excluded there). Self-check of the three RED/GREEN shapes on
+  temp copies outside the repo: `--self-test` (mechanics as in the
+  evidence repo's negative-red/replay_red.py).
 
 Integration point: manual release gate (G0-G5/G6), invoked by the
 release procedure; deliberately NOT wired into maqs_way_audit all
@@ -267,27 +288,205 @@ def check_g7(target, files=None):
     return True
 
 
+# G8 (owner task 2026-11-11): single source for the declared MAQS version.
+# The tracked files whose MAQS mentions must agree with the canon field.
+G8_FILES = ("SPEC.md", "SPEC-RU.md", "maqs-way-standard.json",
+            "docs/mapping-to-maqs.md", "README.md")
+# A mention is a standalone version token: "MAQS 0.5a" is an item id, not a
+# version, so the match must not run into a letter or another dot.
+_G8_MENTION_RE = re.compile(r"MAQS v?(\d+\.\d+(?:\.\d+)?)(?![\w.])")
+_G8_SYNC_AFTER_RE = re.compile(r"\s+sync\b", re.I)
+# RU mirror of exception 2: the sync phrase precedes the version there
+# ("Из синхронизации MAQS 1.8.1 (...)"), same historical mention as the EN
+# "MAQS 1.8.1 sync".
+_G8_SYNC_BEFORE_RE = re.compile(r"(?:sync|синхронизаци\w*)\s*$", re.I)
+_G8_TICKS_RE = re.compile(r"`[^`]*`")
+
+
+def _g8_mentions(line):
+    """Yield (start, end, version) for standalone MAQS mentions on a line."""
+    for m in _G8_MENTION_RE.finditer(line):
+        yield m.start(), m.end(), m.group(1)
+
+
+def check_g8(files=None, canon_path=None):
+    """G8: every MAQS version mention equals maqs_core_reference.
+
+    files: iterable of (display_name, Path) pairs; defaults to G8_FILES in
+    ROOT. canon_path overrides the JSON carrying the single source. Both are
+    overridable so the self-test can run G8 on temp copies outside the repo
+    (mechanics as in the evidence repo negative-red/replay_red.py) without
+    touching the canon.
+    """
+    canon_path = Path(canon_path) if canon_path is not None \
+        else ROOT / "maqs-way-standard.json"
+    try:
+        std = json.loads(canon_path.read_text())
+    except (OSError, ValueError) as exc:
+        return fail(f"G8 source unreadable: {canon_path.name}: {exc}")
+    ref = std.get("maqs_core_reference") if isinstance(std, dict) else None
+    if not ref:
+        return fail("G8 source missing: maqs-way-standard.json has no "
+                    "maqs_core_reference field (single source of the "
+                    "declared MAQS version)")
+    src = _G8_MENTION_RE.search(str(ref))
+    if not src:
+        return fail("G8 source version not extractable: maqs_core_reference "
+                    f"carries no 'MAQS <version>' token ({str(ref)[:80]!r})")
+    canon_v = src.group(1)
+    canon_t = _ver_tuple(canon_v)
+    if files is None:
+        files = [(name, ROOT / name) for name in G8_FILES]
+    bad, seen = [], 0
+    for name, path in files:
+        text = Path(path).read_text()
+        pre_history = text.split("## 7.")[0] if "## 7." in text else text
+        for lineno, line in enumerate(pre_history.splitlines(), 1):
+            ticks = [s.span() for s in _G8_TICKS_RE.finditer(line)]
+            for start, end, ver in _g8_mentions(line):
+                if any(a <= start < b for a, b in ticks):
+                    continue  # exception 1: file name / path in backticks
+                if _G8_SYNC_AFTER_RE.match(line[end:]) or \
+                        _G8_SYNC_BEFORE_RE.search(line[:start]):
+                    continue  # exception 2: historical sync phrase
+                seen += 1
+                if _ver_tuple(ver) != canon_t:
+                    bad.append((name, lineno, line[start:end], canon_v))
+    if bad:
+        for name, lineno, found, cv in bad:
+            print(f"GATE RED — G8 MAQS version mismatch in {name}:{lineno}: "
+                  f"found {found}, canon declares MAQS v{cv} "
+                  f"(maqs-way-standard.json maqs_core_reference)")
+        return False
+    print(f"G8 ok ({seen} MAQS mentions across {len(files)} files equal "
+          f"MAQS v{canon_v}; single source: maqs_core_reference)")
+    return True
+
+
+_G8_SANDBOX_PATHS = ("SPEC.md", "SPEC-RU.md", "maqs-way-standard.json",
+                     "docs/mapping-to-maqs.md", "README.md",
+                     "schemas/check_release.py")
+
+
+def _g8_sandbox():
+    """Temp copy of the G8 inputs OUTSIDE the repo (canon never modified)."""
+    import shutil
+    import tempfile
+    root = Path(tempfile.mkdtemp(prefix="maqs_g8_")) / "canon"
+    for rel in _G8_SANDBOX_PATHS:
+        dst = root / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(ROOT / rel, dst)
+    return root
+
+
+def _g8_run(root):
+    r = subprocess.run([sys.executable, str(root / "schemas" / "check_release.py"),
+                        "--only", "g8", "--target", "0.3", "--prev", "0.2.1"],
+                       capture_output=True, text=True)
+    return r.returncode, r.stdout + r.stderr
+
+
+def self_test_g8() -> int:
+    """Three G8 shapes on temp copies outside the repo (exit 0 = all behave).
+
+    1. GREEN baseline (historical 'MAQS 1.8.1 sync' / RU mirror untouched):
+       exit 0, zero findings.
+    2. one substantive mention flipped to 'MAQS v1.8.1': exit 1, exactly one
+       mismatch line, with the file and line number.
+    3. JSON without maqs_core_reference: exit 1, explicit missing-source
+       message.
+    """
+    import shutil
+    ok = True
+
+    root = _g8_sandbox()
+    try:
+        rc, out = _g8_run(root)
+        hits = out.count("G8 MAQS version mismatch")
+        good = rc == 0 and hits == 0
+        print(f"SELF-TEST G8/1 historical sync mention untouched: "
+              f"{'PASS' if good else 'FAIL'} (exit {rc}, {hits} findings)")
+        ok &= good
+    finally:
+        shutil.rmtree(root.parent, ignore_errors=True)
+
+    root = _g8_sandbox()
+    try:
+        spec = root / "SPEC.md"
+        text = spec.read_text()
+        needle = "MAQS v1.9 remains technical audit core"
+        lineno = text[:text.index(needle)].count("\n") + 1
+        spec.write_text(text.replace(needle,
+                                     "MAQS v1.8.1 remains technical audit core",
+                                     1))
+        rc, out = _g8_run(root)
+        hits = out.count("G8 MAQS version mismatch")
+        named = f"in SPEC.md:{lineno}:" in out
+        good = rc == 1 and hits == 1 and named
+        print(f"SELF-TEST G8/2 one mention -> MAQS v1.8.1: "
+              f"{'PASS' if good else 'FAIL'} (exit {rc}, {hits} findings, "
+              f"SPEC.md:{lineno} named: {named})")
+        ok &= good
+    finally:
+        shutil.rmtree(root.parent, ignore_errors=True)
+
+    root = _g8_sandbox()
+    try:
+        std_path = root / "maqs-way-standard.json"
+        std = json.loads(std_path.read_text())
+        del std["maqs_core_reference"]
+        std_path.write_text(json.dumps(std, indent=2, ensure_ascii=False))
+        rc, out = _g8_run(root)
+        good = rc == 1 and "G8 source missing" in out and \
+            "maqs_core_reference" in out
+        print(f"SELF-TEST G8/3 JSON without maqs_core_reference: "
+              f"{'PASS' if good else 'FAIL'} (exit {rc}, "
+              f"{'missing-source message' if good else out.strip()[:160]})")
+        ok &= good
+    finally:
+        shutil.rmtree(root.parent, ignore_errors=True)
+
+    print("SELF-TEST G8: " + ("all three shapes behave" if ok else "FAILED"))
+    return 0 if ok else 1
+
+
 def main() -> int:
-    ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5/G6/G7)")
+    ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5/G6/G7/G8)")
     ap.add_argument("--target", default=DEFAULT_TARGET,
                     help="release stamp to verify (default: %(default)s)")
     ap.add_argument("--prev", default=None,
                     help="previous release stamp for the stale checks "
                          "(default: auto-decremented --target)")
+    ap.add_argument("--only", default=None,
+                    help="comma-separated gate subset to run (e.g. g8); "
+                         "default: all")
+    ap.add_argument("--self-test", action="store_true",
+                    help="run the G8 self-check on temp copies outside the repo")
     args = ap.parse_args()
+    if args.self_test:
+        return self_test_g8()
     target = args.target
     prev = args.prev if args.prev is not None else _prev_stamp(target)
     prev_display = _display(prev)
-    results = [("G0", check_g0(target, prev, prev_display)),
-               ("G3", check_g3()),
-               ("G4", check_g4(target, prev_display)),
-               ("G5", check_g5(target)),
-               ("G6", check_g6()),
-               ("G7", check_g7(target))]
+    results = []
+    gates = [("G0", lambda: check_g0(target, prev, prev_display)),
+             ("G3", check_g3),
+             ("G4", lambda: check_g4(target, prev_display)),
+             ("G5", lambda: check_g5(target)),
+             ("G6", check_g6),
+             ("G7", lambda: check_g7(target)),
+             ("G8", check_g8)]
+    if args.only:
+        want = {g.strip().upper() for g in args.only.split(",") if g.strip()}
+        gates = [(g, fn) for g, fn in gates if g in want]
+    for name, fn in gates:
+        results.append((name, fn()))
     print("G1/G2: MANUAL boundary (mirror + derivatives per release report)")
     if all(r for _, r in results):
+        gate_names = "/".join(g for g, _ in results)
         print(f"RELEASE GREEN — v{target} shippable "
-              f"(G0/G3/G4/G5/G6/G7 executable; G1/G2 manual)")
+              f"({gate_names} executable; G1/G2 manual)")
         return 0
     print("GATE RED")
     return 1
