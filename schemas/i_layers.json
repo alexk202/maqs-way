@@ -1,7 +1,8 @@
 {
   "item": {
     "id": "I15",
-    "requirement": "Layer-aware diagnostics: establish which memory layer a query addresses (persistent/session/transient) before interpreting the answer; expectations are layer-conditional.",
+    "requirement": "Layer-aware diagnostics: establish which memory layer a query addresses (persistent/session/transient) before interpreting the answer; expectations are layer-conditional. Layer-aware diagnostics require a pinned timestamp format per store: a mix of ISO-T local time and SQL-style UTC forces every consumer to carry a dual parser and shifts timestamps silently by the timezone offset.",
+    "sync": "MAQS 1.8.1 candidate 7 (docs/v0.4-candidates-from-maqs-1.8.1.md)",
     "maqs": "I15 [REC]",
     "rules": ["LOG-3.4"],
     "known_gap": false,

@@ -1,7 +1,8 @@
 [
   {
     "id": "I13",
-    "requirement": "Secret exposure guard: secrets must never appear in plain text in logs, error messages, or diagnostic output; masker/redactor applied before write, including credential-in-URL (query form and path-embedded form).",
+    "requirement": "Secret exposure guard: secrets must never appear in plain text in logs, error messages, or diagnostic output; masker/redactor applied before write, including credential-in-URL (query form and path-embedded form). Masking is verified against secrets adjacent to other characters, not only free-standing tokens (a token glued to a preceding identifier in a URL path). All output points are covered by a single mechanism installed at the handler level; per-channel point fixes do not satisfy the requirement. Output points include loggers owned by dependencies — HTTP clients, SDKs, drivers — which can write secrets before application code runs.",
+    "sync": "MAQS 1.8.1 candidate 2 (docs/v0.4-candidates-from-maqs-1.8.1.md)",
     "maqs": "I13 [CRIT]",
     "rules": ["LOG-3.4"],
     "entailment": "LOG-3.4 alone entails both classes: SPEC §3.4 single bullet carries secret/PII filter AND credential-in-URL (both forms); JSON logging.otel_mapping_hardened.*.sanitization carries the same single node. Proof recorded; P8 excluded (metrics-quality vs boundary-invariant).",
