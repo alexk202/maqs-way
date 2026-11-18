@@ -12,7 +12,8 @@
   },
   {
     "id": "P10",
-    "requirement": "External auditor isolation: the auditor is read-only; verified by snapshot-run-verify including untracked files.",
+    "requirement": "External auditor isolation: the auditor is read-only; verified by snapshot-run-verify including untracked files. Declaring read-only mode is not isolation: a dependency carrying a lazy-initialization write path (table creation, seed data) writes to the live store on first invocation even under mode=ro. Isolation is verified by the snapshot, not by the declared mode.",
+    "sync": "MAQS 1.8.1 candidate 12 (docs/v0.4-candidates-from-maqs-1.8.1.md)",
     "maqs": "P10 (procedure step)",
     "rules": ["MAQS:P10"],
     "known_gap": false,

@@ -1,7 +1,8 @@
 [
   {
     "id": "0.5a",
-    "requirement": "Dead-code detection: every tested feature is actually called in the production pipeline; green tests without a caller are false safety.",
+    "requirement": "Dead-code detection: every tested feature is actually called in the production pipeline; green tests without a caller are false safety. A production call site is not sufficient: the control must be able to fire under production configuration, so its trigger conditions must reference state that exists in production (columns, tables, flags, platform capabilities). An invoked-but-unsatisfiable control — a phantom schema, a silently absent platform dependency — is the same false safety signal as dead code. Verification: a negative live probe, or a trace of the trigger conditions against production state.",
+    "sync": "MAQS 1.8.1 candidate 13 (docs/v0.4-candidates-from-maqs-1.8.1.md)",
     "maqs": "0.5a [CRIT]",
     "rules": ["MAQS:0.5a"],
     "known_gap": false,
