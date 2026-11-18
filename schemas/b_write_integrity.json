@@ -1,7 +1,8 @@
 [
   {
     "id": "B1",
-    "requirement": "Writing is idempotent: repeated delivery of an event (retry, update duplication, double invocation) does not create a duplicate.",
+    "requirement": "Writing is idempotent: repeated delivery of an event (retry, update duplication, double invocation) does not create a duplicate. Application-level deduplication declares ONE semantic key per event, and that key is valid across ALL write paths: a second path keyed differently reintroduces the duplicate the first path prevents.",
+    "sync": "MAQS 1.8.1 candidate 3 (docs/v0.4-candidates-from-maqs-1.8.1.md)",
     "maqs": "B1 [CRIT]",
     "rules": [
       "P2"
