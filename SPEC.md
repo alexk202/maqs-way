@@ -1,8 +1,8 @@
-# MAQS-Way v0.3 — Common Path from Policies to Implementation for Long-Term AI Memory
+# MAQS-Way v0.4 — Common Path from Policies to Implementation for Long-Term AI Memory
 
-**Status:** v0.3 — canonization release (all 12 known gaps from v0.2 closed by owner-signed packages; open known gaps: none), normative file name `SPEC.md`, revision date 2026-10-27
+**Status:** v0.4 — sync and specification release (the two MAQS syncs folded into the canon, the four deferrals from the previous release closed, core reference moved to MAQS v1.10; open known gaps: the v0.5 list in §6), normative file name `SPEC.md`, revision date 2026-10-27
 **Author:** Aleksandr Kossarev
-**Relation to MAQS:** MAQS v1.9 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
+**Relation to MAQS:** MAQS v1.10 remains technical audit core (MAQS repo). Way is overlay: model + lifecycle + measurable verification.
 **License note:** Sources referenced under their respective licenses. This spec is Apache-2.0.
 
 ## 0. Industry Diagnosis
@@ -68,7 +68,7 @@ See `docs/landscape.md` for concrete artifacts and verification status of each l
 ### P4 Isolation — boundaries verified by negative tests
 
 - **Property:** Tenant/user/project/agent boundaries enforced, including vector search path, not just filter presence.
-- **Verification:** Negative test `cross_tenant_retrieval_returns_0` leak=0 (indicative). Includes vector path. Must cover embedding provenance. G1 requires 4 fixtures (§2.3): independent callers, wrong/omitted scope, read-only write attempt, access after revocation.
+- **Verification:** Negative test `cross_tenant_retrieval_returns_0` leak=0 (indicative). Includes vector path. Must cover embedding provenance. G1 requires 4 fixtures (§2.3): independent callers, wrong/omitted scope, read-only write attempt, access after revocation. Scope isolation in a shared retrieval index is part of this property: per-scope filtering is applied before the top-K cut, or the extraction window is proportionally oversized — selecting top-K globally and filtering afterwards lets other scopes' records consume the result window with no visible error (MAQS D11 [IMP]; Way side: evaluator check P4a, cheatsheets `pattern-mem0-isolation` / `pattern-graphiti-invalidation`). This is slot displacement, not cross-scope data access (G2), and it is verified structurally, not by observed hit rates.
 - **Example:** MemoryOps invariant #1 + AMSP scope model
 - **MAQS link:** G Isolation. **Incident:** search returned User A memory to User B because pgvector filter applied after top-k.
 
@@ -143,12 +143,12 @@ Uses OMPS schema as canonical. `schema_version` field explains provenance. `stat
 }
 ```
 
-**Note:** deletion_marker is NOT a field of a live record — it is a separate artifact governed by OMPS `deletion-marker.schema.json`, created only at deletion time and preserved in the governance tombstone (structure: `request_id, timestamp, scope, layer_counts, requestor, signature: ed25519:...`). Shown in P5 example for schema awareness only.
+**Note:** deletion_marker is NOT a field of a live record — it is a separate artifact governed by OMPS `deletion-marker.schema.json`, created only at deletion time and preserved in the governance tombstone (structure: `request_id, timestamp, scope, layer_counts, requestor, signature: ed25519:...`). Shown in P5 example for schema awareness only. The deferral recorded in the previous release is resolved by separation: a live record carries no `deletion_marker` field at all, the marker exists only as the separate artifact described above, and no core data-model field is introduced (`schema_version way-v0.1.3` unchanged).
 
 **Data model notes:**
 - **schema_version:** `"omps-0.1.0+way-v0.1.3"` — `omps-0.1.0` base + `way-v0.1.3` extension, semver extension documented.
 - **status:** derived view from lifecycle events (§2.2), not a stored field — computed as projection of the latest lifecycle event per record.
-- **identity_signature:** removed from the live-record example; specification (Ed25519 over canonical JSON) deferred — see Backlog §6.
+- **identity_signature:** removed from the live-record example; specification: Ed25519 over the JCS (RFC 8785) canonical serialization of the record's signed view — the record with `identity_signature`, the derived `status` and any transport metadata removed, every remaining field present in full. Field format: `ed25519:<base64url-signature>:<key_id>`, where `key_id` names the signing key in the deployment's key registry. Verification recomputes the canonical form, checks the signature against the registered key, and fails closed on an unknown key, a missing field or a canonicalization error — never degrading to "unverified but accepted". The signature binds content and provenance, not retrieval position or lifecycle state: re-signing is required on any content or provenance change and is never performed on a status transition. Scope of the claim: the signature is tamper-evidence for a record at rest, not proof of the truth of its content nor of the identity of the human behind the writing agent.
 - **Scope notation:** accepts both `user.portable` and `user-portable` — canonical is `user-portable` (AMSP), mapping table in `docs/mapping-to-maqs.md`.
 - **visible_to:** array of `subject.id` for which the record is visible. Mechanism for semantic masking (§2.2): on deletion of a shared fact, the requestor is removed from `visible_to`; empty array → physical delete. `visible_to` absent = unrestricted within scope.
 - **Bitemporal vs retention:** `valid_at/invalid_at` = when fact true in world (Graphiti), `retention.valid_from/valid_to` = when we store it. Priority: world time for reasoning, retention time for lifecycle. See §2.2 *Temporal priority*.
@@ -182,7 +182,7 @@ Conflict resolution policy:
 
 - Scope model from AMSP formalized, canonical `user-portable` etc.
 - Policy Broker split: `decision: SAVE|PENDING_APPROVAL|BLOCK|DROP_LOW_UTILITY` + `mode: APPEND|UPDATE_EXISTING|MERGE_WITH_EXISTING` — orthogonal.
-- **operator role:** a human actor who reviews escalated/appealed broker decisions and contested records. May read contested records and confirm/override appeal outcomes; each action appends provenance. Full permission matrix — deferred, see Backlog §6.
+- **operator role:** a human actor who reviews escalated/appealed broker decisions and contested records. May read contested records and confirm/override appeal outcomes; each action appends provenance. Full permission matrix (Profile B; anything not listed is denied by default): read a contested record together with its provenance — allowed, and only for records escalated to this operator; read records that are not contested — denied; confirm or override the outcome of an appeal — allowed; write or edit memory content — denied; delete a record — denied, deletion runs through the lifecycle (§2.2) and its governance tombstone; change policy, thresholds or scope definitions — denied; grant or revoke another actor's access — denied; export a contested record outside the review channel — denied. Every allowed action appends a provenance entry naming the operator and the appeal it answers; an allowed action performed without that entry is a policy violation, not a logging gap.
 - **operator SLA:** review within 72h for escalated/appealed decisions and contested records in Profile B (recommended, not a global normative requirement).
 - **G1 fixtures (required, MAQS G1 [CRIT]):** boundary proved by attempted violations, not filter presence: (1) independently authenticated callers A vs B, (2) wrong or omitted scope, (3) read-only caller attempting write → BLOCK, (4) access after membership revocation → BLOCK. Single-scope pass-through is not a boundary.
 
@@ -193,6 +193,7 @@ Conflict resolution policy:
 - Feedback guard: model_output → ingestion only via Extractor + secret/PII check
 - **F8 ceiling (MAQS F8):** records with `source.type=model_output` cannot receive importance above defined ceiling until confirmed by external source or user.
 - **E12 artifact precedence (MAQS E12):** current artifact retains factual precedence over memory; conflict stays observable, memory must not silently substitute or reconstruct the artifact representation.
+- **A4 degraded extraction (MAQS A4 [IMP]):** records produced by a degraded extraction path — fallback extractor, timeout, partial parse — are marked as such, demoted in ranking, and excluded from derived structures (summaries, graph edges, consolidated facts) until re-extracted. The marker is a profile extension field (see `extensions` in maqs-way-standard.json); the core data model (`schema_version way-v0.1.3`) is unchanged.
 
 `alive` and `critical` are profile extension fields (see `extensions`
 in maqs-way-standard.json); they are not part of the core data model
@@ -245,9 +246,9 @@ never a silent pass-with-guessing.
 **E11 — Placement verification.** `E11.verify_placement(context)` is a
 structural audit (no LLM): every critical-labeled block MUST occupy head
 or tail zones (first / last `critical_zone_fraction` of assembled
-context tokens, default 0.15; owner: E11; calibration → v0.4 list);
+context tokens, default 0.15; owner: E11; calibration deferred to the v0.5 list);
 middle-zone critical placement = FAIL. Semantic adequacy of zone sizes —
-deferred (v0.4 list).
+deferred to the v0.5 list.
 
 
 Glossary (frozen; redefinition only via separate sanction):
@@ -263,6 +264,7 @@ audit), not the bare word.
 - Contracts between stores, versioned schemas/embeddings, idempotent migrations
 - Embedding provenance: `embedding.derived_from_trust` inherits from source, embedding does NOT clean origin
 - **D8 incompatible embeddings (MAQS D8 [CRIT]):** dimension/language mismatch → explicit rejection with diagnostics, not a burst of warnings during search; re-index or migrate before mixed-model retrieval.
+- **C4 derived-representations sync (MAQS C4 [CRIT]):** every derived representation — vectors, re-embedded chunks, summaries, caches — is synchronized on content updates and on identifier-schema migrations, not only on deletion; synchronization is verified by set difference between the source and the derived store, and a migration stamp is invalidated by a schema change.
 - **H5 test isolation (MAQS H5 [CRIT]):** tests use temp/in-memory stores and mocked APIs, never write to live memory; isolation covers filesystem (no prod paths as defaults); guard check before/after confirms no test artifacts leaked.
 
 The write-atomicity requirement below is a policy extension setting
@@ -343,7 +345,8 @@ Each item follows Property/Verification/Example (see §1 for the applied pattern
 
 
 All thresholds marked **indicative, subject to revision after first run on real system**; `min` = CI gate (below → fail pipeline), `target` = engineering goal. Canonical source: `maqs-way-standard.json` → `verification_suite.metrics`.
-† Knowledge update target from §1 P3 — not yet in JSON `metrics`; deferred, see Backlog §6.
+† Knowledge update target from §1 P3, mirrored in JSON `metrics` as
+`knowledge_update` (target 0.7, no CI gate declared) since this release.
 § From JSON `verification_suite.negative_scenarios`, merged with its metric.
 
 The pipeline-hygiene rules below are policy extension settings (see
@@ -361,7 +364,13 @@ RED. The declared-standalone list is closed: extension happens by
 explicit change (commit) only, never silently. Self-hosting applies:
 the hygiene gate scans its own repository, including itself — an
 unwired and unpointed gate flags itself. A check that cannot fail is
-not a check. 0.5a declares no numeric parameters.
+not a check. A production call site is not sufficient: the control must be able to
+fire under production configuration, so its trigger conditions must
+reference state that exists in production (columns, tables, flags,
+platform capabilities). An invoked-but-unsatisfiable control — a phantom
+schema, a silently absent platform dependency — is the same false safety
+signal as dead code. Verification: a negative live probe, or a trace of
+the trigger conditions against production state. 0.5a declares no numeric parameters.
 
 **0.6a — Local baselines ([IMP], MAQS 0.6a).** Anomalies are defined
 relative to the system's own baseline, not universal numbers. The
@@ -374,11 +383,11 @@ would punish legitimate work. RED only for: baseline missing or corrupt,
 or a counter removed from tracking without explanation. The baseline
 changes only with the commit that explains the drift.
 
-Deferred (v0.4 list): 0.5a — invoked-but-unsatisfiable control (a
-production call site is not enough; the control must be able to fire
-under production configuration); golden canary corpus for P9; auditor
-certification checklist; canonical drift tolerances per store;
-aggregating standalone gates into the audit CLI.
+Deferred (v0.5 list, retargeted by this release decision — no silent
+rollover): golden canary corpus for P9; auditor certification checklist;
+canonical drift tolerances per store (no real-system run yet);
+aggregating standalone gates into the audit CLI. The 0.5a invoked-but-
+unsatisfiable control is closed in this release (above).
 
 Glossary (frozen; redefinition only via separate sanction):
 `declared-standalone` — a verification script not wired into the audit
@@ -470,8 +479,10 @@ Adjacent, not covering: SPEC §2.3 (appeal-escalation + operator SLA)
 shares vocabulary only (different trigger, different mechanism); closing
 this gap with "already in §2.3" is rejected in advance.
 
-Deferred (v0.4 list): per-scope/per-subject counter partitioning (cf.
-E10 cap semantics); per-deployment tumbling-window adoption.
+Deferred (v0.5 list, retargeted by this release decision — no silent
+rollover): per-scope/per-subject counter partitioning (cf. E10 cap
+semantics — a design decision, not a wording sync); per-deployment
+tumbling-window adoption.
 
 Glossary (frozen; redefinition only via separate sanction):
 `policy triple` — threshold + window {type, size} + action, three
@@ -525,9 +536,10 @@ advisory status is carried in the REPORT, not in gate semantics. I14
 declares no tunable numeric parameters: the counts above are derived,
 reported values.
 
-Deferred (v0.4 list): owners_registry / SLA / fallback schema for
-escalation paths (no canon source for SLA scales); tumbling catalog
-review; exception taxonomy import.
+Deferred (v0.5 list, retargeted by this release decision — no silent
+rollover): owners_registry / SLA / fallback schema for escalation paths
+(no canon source for SLA scales — inventing one in a sync release is not
+allowed); tumbling catalog review; exception taxonomy import.
 
 Glossary (frozen; redefinition only via separate sanction):
 `handler` — local reaction on the own-process side; `escalation_path` —
@@ -594,10 +606,11 @@ defined; it never duplicates canon. I15 declares no tunable numeric
 parameters: the only number is the closed enum's cardinality (3,
 owner: I15; change = new owner decision).
 
-Deferred (v0.4 list): heuristic layer assignment with declared
-confidence (source-backed inference; inference without source remains
-RED); tumbling-window review of layer expectations; semantic adequacy
-of expectations.
+Deferred (v0.5 list, retargeted by this release decision — no silent
+rollover): heuristic layer assignment with declared confidence (source-
+backed inference; inference without source remains RED — relaxing this
+is a design decision carrying risk); tumbling-window review of layer
+expectations; semantic adequacy of expectations.
 
 Glossary (frozen; redefinition only via separate sanction):
 `layer` — declared lifetime class (persistent/session/transient);
@@ -609,13 +622,13 @@ expectation to another layer's answer.
 ### 3.5 Reporting
 
 config: system config, embedding model version, policy version
-standard_version: MAQS 1.9 + Way 0.3
+standard_version: MAQS 1.10 + Way 0.4
 test_scenarios: LoCoMo/LongMemEval/MemoryAgentBench + negative + deletion lattice + restore drill + round-trip
 results: per-metric + per-invariance + limitations
 exceptions: documented per-item with justification
 residual_risks: open issues
 remediation_plan: priority order
-j3_guard: every fix closed with regression guard test; unexecuted test (silent skip, async without runner) = incomplete (MAQS J3)
+j3_guard: every fix closed with regression guard test; unexecuted test (silent skip, async without runner) = incomplete (MAQS J3). "Executed" means the verdict reached the scoring channel and cannot be silently ignored: exactly one verdict channel (a dual runner where each side ignores the other's result is a false green), deterministic execution (no races with background workers, no side effects on shared process state), the guard operating on schema and state produced by the real migration path, and assertions on behavior rather than on source text. Inherited criticality: a J3 failure is scored [CRIT] when the guarded incident belongs to a [CRIT] item and [IMP] otherwise (precedent: I10, warnings in [CRIT] zones)
 
 The audit-procedure requirements below are policy extension settings
 (see `extensions.policy` in maqs-way-standard.json); they are not part
@@ -653,15 +666,41 @@ Procedure: snapshot the tree → run the gates → verify identical.
 Verification MUST include untracked files (`git status --porcelain`,
 not tracked-only): creating a new file IS a write even if tracked
 files are untouched — otherwise false-safe. An audit step that writes
-into the audited tree (modification OR new file) FAILS P10. Write
+into the audited tree (modification OR new file) FAILS P10. A declared read-only mode is not isolation: a dependency carrying a
+lazy-initialization write path — table creation, seed data — writes to
+the live store on first invocation even under `mode=ro`. Isolation is
+established by the snapshot, not by the declared mode. Write
 access for the auditor is out of scope (MAQS SUPP-EXT-01) — a declared
 boundary, not a defect.
 
-P9/P10 declare no tunable numeric parameters: their parameters are
+**P11 — Agent audit discipline (MAQS §2.1, Step P11).** An auditing
+agent must not invoke any method of the audited system that has write
+side effects on live stores — including methods whose write is
+incidental (counters, caches, lazy initialization). Diagnostic probes
+run on file-level copies of the stores, never on the live ones. Any
+exception is justified in the report and verified by before/after
+counters on every affected store; an exception without counters is RED.
+
+**Audit evidence and criticality counting (MAQS §2.2, steps 3 and 6,
+item 4).** Evidence must establish that the claimed defect is reachable,
+not merely that a pattern is present: gate conditions — flags, callers,
+enclosing scopes, per-instance schema — are part of the evidence. Schema
+and key claims are verified per instance by querying the catalog, never
+inferred from naming. A verdict reached by reading alone is labeled
+"static implementation evidence". A verdict later found false is
+corrected in the same report, not in a separate note. Criticality is
+counted separately: failures and partial implementations never merge
+into one number, per-section codes reconcile to the totals without
+intersections, and the counting is reproducible by the reader. An item
+may state that its failure inherits the criticality of the item it
+protects; the auditor records the inherited level and names the
+protected item.
+
+P9/P10/P11 declare no tunable numeric parameters: their parameters are
 structural (probe outcomes, snapshot equality).
 
-Deferred (v0.4 list): P10 — lazy-initialization write paths (`mode=ro`
-alone is not isolation); P11 — agent audit discipline.
+Deferred list: none — both entries (P10 lazy-initialization write
+paths, P11 agent audit discipline) are closed in this release.
 
 Glossary (frozen; redefinition only via separate sanction):
 `one-sided` — evaluation where a positive result = proof and a negative
@@ -724,7 +763,7 @@ their numbers.
 Each profile is subset of Way + refs to MAQS items.
 
 
-## 5. Mapping to MAQS v1.9
+## 5. Mapping to MAQS v1.10
 
 0 Map → 2.1 data model + provenance
 A Input validation → 2.4 Content-as-Data + OWASP ASI06
@@ -743,9 +782,16 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 
 ## 6. Next Steps
 
-1. This file is `SPEC.md` v0.3 — normative file name, status release (all 12 known gaps from v0.2 closed in this release by owner-signed packages; open gaps: none).
-2. Backlog v0.4 (per the v0.3 scope decision — deferred line by line; details and per-entry rationale in `docs/v0.4-candidates-from-maqs-1.8.1.md`):
-   - From the v0.3 scope deferral: `deletion_marker` in JSON data_model (confirm obsolete-by-separation, §2.1 note, or specify); `identity_signature` Ed25519 over canonical JSON — full specification; `operator` role full permission matrix for §2.3; executable behavioral harness (LoCoMo/LongMemEval runs) + D9 behavioral test; live verification of all 11 external links in `docs/landscape.md` + per-row `verified: ✅/⏳/❌` column; P/V/E alignment for Architecture and Verification layers (§2, §3); P4 verification on other memory systems.
+1. This file is `SPEC.md` v0.4 — normative file name, status release (the two MAQS syncs and the four remaining deferrals closed in this release by an owner-signed canon commit; open gaps: the v0.5 list below).
+2. Backlog v0.5 (deferred line by line by this release decision — no silent rollover; details and per-entry rationale in `docs/v0.4-candidates-from-maqs-1.8.1.md` and `docs/v0.4-canon/`):
+   - Carried over to v0.5, not closed in this release: executable
+     behavioral harness (LoCoMo/LongMemEval runs) + D9 behavioral test; live
+     verification of all 11 external links in `docs/landscape.md` + per-row
+     `verified: ✅/⏳/❌` column; P/V/E alignment for the Architecture and
+     Verification layers (§2, §3); P4 verification on other memory systems.
+     Closed in this release: `deletion_marker` (resolved by separation,
+     §2.1), `identity_signature` (specified, §2.1), `operator` full
+     permission matrix (§2.3).
    - From the MAQS 1.8.1 sync (`docs/v0.4-candidates-from-maqs-1.8.1.md`, rows 1–13): 1 J3 `j3_guard` line refresh; 2 I13 masking requirement text (glued secrets, single mechanism, dependency-owned loggers); 3 B1 one semantic key per event; 4 D8 pinned axes + version-marker contract (no Way gate — new package or known-gap entry); 5 I10 CRIT-zone warnings as failures incl. test runs + DEBUG-cap pre-filter; 6 I12 B-axis pin B2 ("visibility without reaction"); 7 I15 pinned timestamp format per store; 8 audit methodology §2.2 step 3 (reachability, per-instance schema, static-evidence labeling); 9 audit methodology §2.2 step 6 (separated criticality counting); 10 audit methodology §2.2 p.4 (inherited criticality); 11 P11 agent audit discipline; 12 P10 lazy-initialization write paths (mode=ro is not isolation); 13 0.5a invoked-but-unsatisfiable control.
    - From the MAQS 1.9 sync (same file, rows 14–17): 14 D10 similarity computation contract [CRIT] (no Way gate — new package or known-gap entry, same route as D8/row 4); 15 D11 scope isolation in shared retrieval index [IMP] (already implemented-and-documented on the Way side: evaluator check P4a, cheatsheets pattern-mem0-isolation / pattern-graphiti-invalidation, references/ref-langchain.py — fold the MAQS formulation into the P4 verification text); 16 C4 renamed to derived-representations sync + extended trigger set (content updates, identifier-schema migrations, set-difference verification, stamp invalidation); 17 A4 degraded extraction paths (mark, demote, exclude from derived structures).
    - From the stale-refs inventory (`docs/v0.4-canon/stale-refs.md`): normative thresholds for the §3.2 metrics (promotion from indicative to normative after a first real-system run); `knowledge_update` target metric in JSON `verification_suite.metrics` (§1 P3: LongMemEval updates / FactConsolidation, target ≥0.7).
@@ -760,5 +806,31 @@ I7 diagnostic self-interrogation → supplementary signal, not evidence.
 - **v0.1.4 → v0.2 (2026-10-15, owner signature):** production ladder stage 1 closed — packages 1.1 (C8 gate) → 1.2 (B gate) → 1.3 (vectors 7→12) → 1.4 (audit CLI v0.1 + namespaces) → 1.5 (E10/E11 formulation) → 1.6a–d (I-counters/handlers/layers, I13 proven, C8 bridge consolidated) → 1.7a/b (audit procedure, pipeline hygiene) + LICENSE (Apache-2.0 sync). Closed in release: formulation+gates for all listed MAQS items. OPEN known gaps (retargeted v0.2→v0.3 by this release decision, no silent rollover): B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged across 1.1–1.7 — asserted fact). Release ships as honest minor WITH this list; silence about gaps would be false green.
 - **v0.2 → v0.2.1 (2026-10-27, owner signature):** evidence release — canon content unchanged from v0.2; the only canon-adjacent delta since v0.2 is the MAQS reference sync v1.6 → v1.8.1 (header relation line, §3.5 standard_version, §5 heading; `maqs_core_reference` in JSON; version references only — no formulation, threshold, or vector changes). The release fixes the evidence accumulated since v0.2 and provides an externally referenceable tag + DOI. Key evidence (numbers from repo files): full-500-iso headline evidence-R@5 = 0.988 (494/500, Wilson [0.974, 0.994]) — the FIRST isolated full-500 run (the 2026-10-17 pre-isolation 0.992 stays in history with the confound annotation); the shared-history confound (mem0) was found by the H5 [CRIT] guard, measured (14.8% genuine tail facts in the frozen g1 store, 249/1680 — extraction-channel contamination), and eliminated by per-question history isolation in all runners; P4 verified on mem0@0724291b (Linux CPU-only stub stand; boundary: the extraction-prompt path with a real LLM was not exercised); determinism boundary documented in REPRODUCE §0 (byte-identity is a window property on the reference stand; cross-stand untested — compare in bands); full reproduction recipe (evals/REPRODUCE.md); config fingerprint (CONFIG_SHA256) in all runners; prereg template v1.1. OPEN known gaps: unchanged 12 from v0.2, target v0.3 — B4 write atomicity (→§2.5), E10/E11 canonization, I10/I11/I12 canonization, I14, I15 canonization, P9/P10 canonization, 0.5a dead-code rule, 0.6a drift thresholds (12 total). `schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
 - **v0.2.1 → v0.3 (2026-10-27, owner signature):** E10/E11 canonized in §2.4 (owner signature 2026-10-27); fields as profile extensions, core data model unchanged (way-v0.1.3); I10/I11/I12 canonized in §3.4 (owner signature 2026-10-27); parameters as policy extensions, core data model unchanged (way-v0.1.3); I14 canonized in §3.4 (owner signature 2026-10-27); registry semantics as policy extension, core data model unchanged (way-v0.1.3); I15 canonized in §3.4 (owner signature 2026-10-27); layer taxonomy as policy extension, core data model unchanged (way-v0.1.3); P9/P10 canonized in §3.5 (owner signature 2026-10-27); audit procedure as policy extension, core data model unchanged (way-v0.1.3); 0.5a/0.6a canonized in §3.2 (owner signature 2026-10-27); pipeline hygiene as policy extension, core data model unchanged (way-v0.1.3); check_pipeline_hygiene was RED at v0.2 and v0.2.1 (check_release.py undeclared; baseline drift); not covered by the release gate at the time; fixed in 89a955c; B4 canonized in §2.5 (owner signature 2026-10-27); write atomicity as policy extension, core data model unchanged (way-v0.1.3); determinism rule canonized in §3.6 (owner signature 2026-10-27; second-stand reproduction); run comparability as policy extension, core data model unchanged (way-v0.1.3). Open known gaps: none (all 12 from v0.2 closed).
+
+- **v0.3 → v0.4 (2026-11-18, owner signature):** sync and specification
+release. MAQS formulations folded into the canon from the 1.8.1 and 1.9
+syncs (rows 1–3, 5–13, 15–17): j3_guard executed-verdict semantics with
+inherited criticality, I13 masking scope, B1 one semantic key across all
+write paths, I10 CRIT-zone warnings, I12 B2 pin, I15 pinned timestamp
+format, the audit-evidence and separated-criticality-counting block, P11
+agent audit discipline, P10 lazy-initialization write paths, 0.5a
+invoked-but-unsatisfiable control, D11 in the P4 verification line, C4
+derived-representations sync, A4 degraded extraction. Way's own v0.3
+deferrals closed: deletion_marker resolved by separation,
+identity_signature specified (Ed25519 over JCS RFC 8785 canonical JSON,
+scope of claim stated), operator full permission matrix with deny-by-
+default, knowledge_update mirrored into JSON metrics as the §3.2 table
+reads. Core reference MAQS v1.9 → v1.10 across all 11 tracked mentions
+(single source maqs_core_reference). All six references to a deferred
+v0.4 list revised: §3.2 and §3.5 closed, the four remaining lists
+retargeted entry by entry to v0.5 with a stated reason each - no silent
+rollover. Previously closed and unchanged here: B4, E10/E11,
+I10/I11/I12, I14, I15, P9/P10, 0.5a/0.6a (canonized v0.3, not reopened).
+OPEN known gaps, target v0.5: D8 pinned axes and D10 similarity
+computation contract (no Way coverage gate); normative thresholds for
+the §3.2 metrics (await a first real-system run); executable behavioral
+harness + D9 behavioral test; landscape link verification; P/V/E
+alignment; P4 on other memory systems; the retargeted deferred entries.
+`schema_version way-v0.1.3` FROZEN (model unchanged — asserted fact).
 
 > Check not that the mechanism exists. Check that it works.

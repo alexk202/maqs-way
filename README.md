@@ -2,8 +2,8 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23698946.svg)](https://doi.org/10.5281/zenodo.23698946)
 
-**Status:** v0.3 — canonization release (all 12 known gaps from v0.2 closed; open known gaps: none)
-**Core:** MAQS v1.9 remains audit core: https://github.com/alexk202/memory-architecture-standard
+**Status:** v0.4 — sync and specification release (the two MAQS syncs folded into the canon, the four deferrals from the previous release closed, core reference MAQS v1.10; open known gaps: the v0.5 list in SPEC §6)
+**Core:** MAQS v1.10 remains audit core: https://github.com/alexk202/memory-architecture-standard
 
 > **Formula:** MAQS = practical audit of architecture and typical failures (how to verify)
 > Way = common model + measurable criteria + lifecycle + reproducible verification (how to build)
@@ -15,7 +15,7 @@ MAQS checks that mechanism exists. Way proves it works.
 ## Why Way?
 
 - **Policy layer** is overcrowded: GDPR Art17, EU AI Act Art12/13/19, RBAC, governance docs
-- **Audit layer** exists: MAQS v1.9 — rare checklist backed by 20k+ tracebacks and production incidents
+- **Audit layer** exists: MAQS v1.10 — rare checklist backed by 20k+ tracebacks and production incidents
 - **Path layer** was missing: which tools, patterns, schemas to implement policy in memory architecture and how to prove it
 
 Without path, policies are written by lawyers, audits are done ad-hoc by engineers.
@@ -44,9 +44,9 @@ Without path, policies are written by lawyers, audits are done ad-hoc by enginee
 ## Repo structure
 
 ```
-SPEC.md — main spec v0.3 EN
-SPEC-RU.md — RU version v0.3
-maqs-way-standard.json — machine-readable v0.3.0 (8 principles P1-P8)
+SPEC.md — main spec v0.4 EN
+SPEC-RU.md — RU version v0.4
+maqs-way-standard.json — machine-readable v0.4.0 (8 principles P1-P8)
 conformance/ — valid/invalid vectors + manifest.json
 evals/ — how to run LoCoMo/LongMemEval
 docs/ — mapping to MAQS, landscape, outreach drafts, articles
@@ -60,7 +60,7 @@ https://github.com/alexk202/maqs-way-evidence — derived from canon, nothing th
 
 ## Relation to MAQS
 
-- MAQS v1.9 = audit checklist you put on table, CRIT/IMP/REC verdict, backed by incidents
+- MAQS v1.10 = audit checklist you put on table, CRIT/IMP/REC verdict, backed by incidents
 - Way = governance contract that references MAQS sections 0-J as implementation evidence
 
 Two repos, one coordinate system. MAQS stays clean.

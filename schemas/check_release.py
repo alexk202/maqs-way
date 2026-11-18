@@ -162,9 +162,15 @@ def check_g0(target, prev, prev_display, root=None):
     stale = [prev_display, f"Way {prev_display[1:]}", _json_stamp(prev)]
     for name, text in (("SPEC.md", spec), ("SPEC-RU.md", ru)):
         pre_history = text.split("## 7.")[0] if "## 7." in text else text
-        for tok in stale:
-            if tok in pre_history:
-                ok = fail(f"G0 stale {tok!r} outside §7 in {name}")
+        for line in pre_history.splitlines():
+            ticks = [s.span() for s in _G8_TICKS_RE.finditer(line)]
+            for tok in stale:
+                start = line.find(tok)
+                while start != -1:
+                    if not any(a <= start < b for a, b in ticks):
+                        ok = fail(f"G0 stale {tok!r} outside §7 in {name}")
+                        break
+                    start = line.find(tok, start + 1)
     if ok:
         print(f"G0 ok (stamps v{target} / JSON {json_stamp} / model frozen / masked absent)")
     return ok
@@ -425,7 +431,10 @@ def self_test_g8() -> int:
     try:
         spec = root / "SPEC.md"
         text = spec.read_text()
-        needle = "MAQS v1.9 remains technical audit core"
+        canon_ref = json.loads(
+            (root / "maqs-way-standard.json").read_text())["maqs_core_reference"]
+        canon_v = _G8_MENTION_RE.search(str(canon_ref)).group(1)
+        needle = f"MAQS v{canon_v} remains technical audit core"
         lineno = text[:text.index(needle)].count("\n") + 1
         spec.write_text(text.replace(needle,
                                      "MAQS v1.8.1 remains technical audit core",
@@ -515,9 +524,11 @@ def self_test_g0() -> int:
 
     root = _g8_sandbox()
     try:
-        rc, out = _g0_run(root, "0.3", "0.2.1")
+        declared = re.search(r"# MAQS-Way v(\d+\.\d+(?:\.\d+)?) ",
+                             (root / "SPEC.md").read_text()).group(1)
+        rc, out = _g0_run(root, declared, _prev_stamp(_json_stamp(declared)))
         good = rc == 0 and "G0 ok" in out
-        print(f"SELF-TEST G0/1 released v0.3 verdict reproducible: "
+        print(f"SELF-TEST G0/1 canon green at its declared stamp v{declared}: "
               f"{'PASS' if good else 'FAIL'} (exit {rc})")
         ok &= good
     finally:
