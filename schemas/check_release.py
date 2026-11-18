@@ -8,6 +8,12 @@ hard-coded per release. The previous stamp for the stale checks is derived
 G0 canon integrity: H1/Status v{target} (EN/RU), JSON version {target},
   schema_version frozen (way-v0.1.3 present, no bump), `masked` absent
   from states/status_enum, previous release stamps only in §7 history.
+  Stale markers (narrowed 2026-11-18): the display form ("v0.3"), the
+  standard_version report form ("Way 0.3") and the full three-part stamp
+  ("0.3.0"). The bare numeric form ("0.3") is NOT a marker -- it collides
+  with ordinary numbers in prose (§1 P8 "embedding similarity <0.3") and
+  would make the gate demand falsifying a threshold. `--self-test` covers
+  G8 and G0 on temp copies outside the repo.
 G1/G2 (mirror + derivatives): MANUAL checklist boundary — stated, not
   pretended executable. See release report.
 Manual release-sync items (owner, together with the release):
@@ -125,15 +131,16 @@ def fail(msg):
     return False
 
 
-def check_g0(target, prev, prev_display):
+def check_g0(target, prev, prev_display, root=None):
     ok = True
-    spec = (ROOT / "SPEC.md").read_text()
-    ru = (ROOT / "SPEC-RU.md").read_text()
+    root = Path(root) if root is not None else ROOT
+    spec = (root / "SPEC.md").read_text()
+    ru = (root / "SPEC-RU.md").read_text()
     if f"# MAQS-Way v{target} " not in spec or f"**Status:** v{target}" not in spec:
         ok = fail(f"G0 EN stamps (H1/Status v{target})")
     if f"# MAQS-Way v{target} " not in ru or f"**Статус:** v{target}" not in ru:
         ok = fail(f"G0 RU stamps (H1/Status v{target})")
-    std = json.loads((ROOT / "maqs-way-standard.json").read_text())
+    std = json.loads((root / "maqs-way-standard.json").read_text())
     json_stamp = _json_stamp(target)
     if std.get("version") != json_stamp:
         ok = fail(f"G0 JSON version {json_stamp}")
@@ -143,13 +150,16 @@ def check_g0(target, prev, prev_display):
     if re.search(r'"states"\s*:\s*\[[^\]]*masked', blob) or \
             re.search(r'"status_enum"\s*:\s*\[[^\]]*masked', blob):
         ok = fail("G0 masked present in states/status_enum")
-    # Previous release stamps outside §7 history: only exact stamp forms
-    # (H1/Status display forms + full three-part stamp) are stale markers;
-    # bare short-form prose references (e.g. 'deferred to v0.2') stay legal
-    # for G0 -- the strict forward-ref check on those lives in G7 (active
-    # from target 0.4).
-    stale = [f"# MAQS-Way v{prev_display} ", f"**Status:** v{prev_display} ",
-             f"**Статус:** v{prev_display} ", f"v{prev}", prev]
+    # Previous release stamps outside §7 history. Stale markers are the
+    # version-prefixed display form ("v0.3"), the standard_version report
+    # form ("Way 0.3") and the full three-part stamp ("0.3.0"). The bare
+    # numeric form ("0.3") is NOT a marker: it collides with ordinary
+    # numbers in prose (the §1 P8 threshold "embedding similarity <0.3"),
+    # which would force the gate to falsify a threshold at the v0.4
+    # release. Earlier revisions also prefixed prev_display with a second
+    # "v" ("vv0.3"), so the three stamp-form tokens never matched and the
+    # check ran on the bare numeric alone.
+    stale = [prev_display, f"Way {prev_display[1:]}", _json_stamp(prev)]
     for name, text in (("SPEC.md", spec), ("SPEC-RU.md", ru)):
         pre_history = text.split("## 7.")[0] if "## 7." in text else text
         for tok in stale:
@@ -451,6 +461,99 @@ def self_test_g8() -> int:
     return 0 if ok else 1
 
 
+def _g0_run(root, target, prev):
+    r = subprocess.run([sys.executable, str(root / "schemas" / "check_release.py"),
+                        "--only", "g0", "--target", target, "--prev", prev],
+                       capture_output=True, text=True)
+    return r.returncode, r.stdout + r.stderr
+
+
+def _g0_as_v04(root):
+    """Rewrite the sandbox canon into a v0.4-shaped one.
+
+    Stamps bumped, the standard_version report form bumped, and the §6
+    prose that legitimately refers to the v0.3 scope decision removed --
+    i.e. exactly the work a v0.4 release does. What stays untouched is the
+    §1 P8 threshold "<0.3": a bare number, not a stamp.
+    """
+    for rel, pairs in (
+        ("SPEC.md", (("# MAQS-Way v0.3 ", "# MAQS-Way v0.4 "),
+                     ("**Status:** v0.3", "**Status:** v0.4"),
+                     ("+ Way 0.3", "+ Way 0.4"))),
+        ("SPEC-RU.md", (("# MAQS-Way v0.3 ", "# MAQS-Way v0.4 "),
+                        ("**Статус:** v0.3", "**Статус:** v0.4"),
+                        ("+ Way 0.3", "+ Way 0.4"))),
+    ):
+        path = root / rel
+        text = path.read_text()
+        for old, new in pairs:
+            text = text.replace(old, new)
+        head, sep, history = text.partition("## 7.")
+        head = "\n".join(ln for ln in head.splitlines()
+                          if "v0.3" not in ln) + "\n"
+        path.write_text(head + sep + history)
+    std_path = root / "maqs-way-standard.json"
+    std = json.loads(std_path.read_text())
+    std["version"] = "0.4.0"
+    std_path.write_text(json.dumps(std, indent=2, ensure_ascii=False))
+
+
+def self_test_g0() -> int:
+    """Three G0 stale-marker shapes on temp copies outside the repo.
+
+    1. the released v0.3 verdict stays reproducible: target 0.3 / prev
+       0.2.1 is GREEN on the untouched canon.
+    2. a v0.4-shaped canon is GREEN at target 0.4 / prev 0.3 even though
+       the §1 P8 threshold "embedding similarity <0.3" still carries the
+       bare number -- the regression guard for the collision that made the
+       gate demand falsifying a threshold.
+    3. one standard_version form left at "Way 0.3" in that same canon:
+       exit 1, the token named, per file.
+    """
+    import shutil
+    ok = True
+
+    root = _g8_sandbox()
+    try:
+        rc, out = _g0_run(root, "0.3", "0.2.1")
+        good = rc == 0 and "G0 ok" in out
+        print(f"SELF-TEST G0/1 released v0.3 verdict reproducible: "
+              f"{'PASS' if good else 'FAIL'} (exit {rc})")
+        ok &= good
+    finally:
+        shutil.rmtree(root.parent, ignore_errors=True)
+
+    root = _g8_sandbox()
+    try:
+        _g0_as_v04(root)
+        threshold_kept = "<0.3" in (root / "SPEC.md").read_text()
+        rc, out = _g0_run(root, "0.4", "0.3")
+        good = rc == 0 and "G0 ok" in out and threshold_kept
+        print(f"SELF-TEST G0/2 threshold '<0.3' is not a stale stamp: "
+              f"{'PASS' if good else 'FAIL'} (exit {rc}, threshold kept: "
+              f"{threshold_kept})")
+        ok &= good
+    finally:
+        shutil.rmtree(root.parent, ignore_errors=True)
+
+    root = _g8_sandbox()
+    try:
+        _g0_as_v04(root)
+        spec = root / "SPEC.md"
+        spec.write_text(spec.read_text().replace("+ Way 0.4", "+ Way 0.3", 1))
+        rc, out = _g0_run(root, "0.4", "0.3")
+        named = "stale 'Way 0.3' outside §7 in SPEC.md" in out
+        good = rc == 1 and named
+        print(f"SELF-TEST G0/3 standard_version left at 'Way 0.3': "
+              f"{'PASS' if good else 'FAIL'} (exit {rc}, token named: {named})")
+        ok &= good
+    finally:
+        shutil.rmtree(root.parent, ignore_errors=True)
+
+    print("SELF-TEST G0: " + ("all three shapes behave" if ok else "FAILED"))
+    return 0 if ok else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="MAQS-Way release gate (G0/G3/G4/G5/G6/G7/G8)")
     ap.add_argument("--target", default=DEFAULT_TARGET,
@@ -462,10 +565,13 @@ def main() -> int:
                     help="comma-separated gate subset to run (e.g. g8); "
                          "default: all")
     ap.add_argument("--self-test", action="store_true",
-                    help="run the G8 self-check on temp copies outside the repo")
+                    help="run the G8 and G0 self-checks on temp copies "
+                         "outside the repo")
     args = ap.parse_args()
     if args.self_test:
-        return self_test_g8()
+        rc_g8 = self_test_g8()
+        rc_g0 = self_test_g0()
+        return rc_g8 or rc_g0
     target = args.target
     prev = args.prev if args.prev is not None else _prev_stamp(target)
     prev_display = _display(prev)
