@@ -11,7 +11,7 @@ authors:
   - family-names: Kossarev
     given-names: Aleksandr
 version: 0.4.0
-doi: 10.5281/zenodo.23698946
+doi: 10.5281/zenodo.24348945
 date-released: "2026-11-18"
 repository-code: https://github.com/alexk202/maqs-way
 license: Apache-2.0
