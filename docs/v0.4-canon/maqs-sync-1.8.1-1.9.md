@@ -23,7 +23,7 @@ SPEC-RU.md, maqs-way-standard.json) этим файлом НЕ меняется:
 применение — точная замена, а не поиск места по смыслу. Переносы строк
 внутри блоков значимы.
 
-Проверено до подписи: все 24 замены применяются по одному разу, и после их
+Проверено до подписи: все 29 замен применяются по одному разу, и после их
 применения `check_release.py --target 0.3 --prev 0.2.1` остаётся RELEASE
 GREEN, гигиена конвейера GATE GREEN, name_guard без утечек.
 
@@ -219,7 +219,7 @@ alone is not isolation); P11 — agent audit discipline.
 **На:**
 
 ```text
-Deferred list: none — both v0.4 entries (P10 lazy-initialization write
+Deferred list: none — both entries (P10 lazy-initialization write
 paths, P11 agent audit discipline) are closed in this release.
 ```
 
@@ -385,7 +385,7 @@ aggregating standalone gates into the audit CLI.
 **На:**
 
 ```text
-Deferred (v0.5 list, retargeted by the v0.4 release decision — no silent
+Deferred (v0.5 list, retargeted by this release decision — no silent
 rollover): golden canary corpus for P9; auditor certification checklist;
 canonical drift tolerances per store (no real-system run yet);
 aggregating standalone gates into the audit CLI. The 0.5a invoked-but-
@@ -409,7 +409,7 @@ unsatisfiable control is closed in this release (above).
 **На:**
 
 ```text
-Отложено (список v0.5, перенесено решением релиза v0.4 — без молчаливого
+Отложено (список v0.5, перенесено решением этого релиза — без молчаливого
 перекатывания): золотой корпус канареек для P9; чек-лист сертификации
 аудитора; канонические допуски дрейфа по хранилищам (прогона на реальной
 системе пока нет); агрегация standalone-гейтов в audit CLI. Вызванный-
@@ -430,7 +430,7 @@ E10 cap semantics); per-deployment tumbling-window adoption.
 **На:**
 
 ```text
-Deferred (v0.5 list, retargeted by the v0.4 release decision — no silent
+Deferred (v0.5 list, retargeted by this release decision — no silent
 rollover): per-scope/per-subject counter partitioning (cf. E10 cap
 semantics — a design decision, not a wording sync); per-deployment
 tumbling-window adoption.
@@ -450,7 +450,7 @@ tumbling-window adoption.
 **На:**
 
 ```text
-Отложено (список v0.5, перенесено решением релиза v0.4 — без молчаливого
+Отложено (список v0.5, перенесено решением этого релиза — без молчаливого
 перекатывания): per-scope/per-subject разбиение счётчиков (ср. семантика
 квоты E10 — проектное решение, а не синхронизация формулировки); переход
 деплойментов на tumbling-окна.
@@ -471,7 +471,7 @@ review; exception taxonomy import.
 **На:**
 
 ```text
-Deferred (v0.5 list, retargeted by the v0.4 release decision — no silent
+Deferred (v0.5 list, retargeted by this release decision — no silent
 rollover): owners_registry / SLA / fallback schema for escalation paths
 (no canon source for SLA scales — inventing one in a sync release is not
 allowed); tumbling catalog review; exception taxonomy import.
@@ -492,7 +492,7 @@ allowed); tumbling catalog review; exception taxonomy import.
 **На:**
 
 ```text
-Отложено (список v0.5, перенесено решением релиза v0.4 — без молчаливого
+Отложено (список v0.5, перенесено решением этого релиза — без молчаливого
 перекатывания): owners_registry / SLA / fallback-схема для путей
 эскалации (канонического источника шкал SLA нет — выдумывать его в
 релизе синхронизации нельзя); ревизия каталога tumbling; импорт
@@ -515,7 +515,7 @@ of expectations.
 **На:**
 
 ```text
-Deferred (v0.5 list, retargeted by the v0.4 release decision — no silent
+Deferred (v0.5 list, retargeted by this release decision — no silent
 rollover): heuristic layer assignment with declared confidence (source-
 backed inference; inference without source remains RED — relaxing this
 is a design decision carrying risk); tumbling-window review of layer
@@ -538,7 +538,7 @@ tumbling-ревизия ожиданий по слоям; семантическ
 **На:**
 
 ```text
-Отложено (список v0.5, перенесено решением релиза v0.4 — без молчаливого
+Отложено (список v0.5, перенесено решением этого релиза — без молчаливого
 перекатывания): эвристическое назначение слоя с объявленной уверенностью
 (вывод с источником; вывод без источника остаётся RED — смягчение этого
 правила проектное решение с риском); tumbling-ревизия ожиданий по слоям;
@@ -559,8 +559,88 @@ tumbling-ревизия ожиданий по слоям; семантическ
 **На:**
 
 ```text
-Отложенный список: пуст — оба пункта v0.4 (P10 пути записи с ленивой
+Отложенный список: пуст — оба пункта (P10 пути записи с ленивой
 инициализацией, P11 дисциплина агента-аудитора) закрыты этим релизом.
+```
+
+---
+
+## 25. §2.4, отложенная калибровка зон E11 (шестая ссылка, строчной буквой) — `SPEC.md`, источник: —
+
+**Заменить (в файле ровно одно вхождение):**
+
+```text
+owner: E11; calibration → v0.4 list);
+```
+
+**На:**
+
+```text
+owner: E11; calibration deferred to the v0.5 list);
+```
+
+---
+
+## 26. §2.4, семантическая адекватность размеров зон — `SPEC.md`, источник: —
+
+**Заменить (в файле ровно одно вхождение):**
+
+```text
+deferred (v0.4 list).
+```
+
+**На:**
+
+```text
+deferred to the v0.5 list.
+```
+
+---
+
+## 27. §2.4, отложенная калибровка зон E11 (шестая ссылка) — `SPEC-RU.md`, источник: —
+
+**Заменить (в файле ровно одно вхождение):**
+
+```text
+owner: E11; калибровка →
+```
+
+**На:**
+
+```text
+owner: E11; калибровка отложена в
+```
+
+---
+
+## 28. §2.4, список для калибровки зон — `SPEC-RU.md`, источник: —
+
+**Заменить (в файле ровно одно вхождение):**
+
+```text
+список v0.4); критический блок
+```
+
+**На:**
+
+```text
+список v0.5); критический блок
+```
+
+---
+
+## 29. §2.4, семантическая адекватность размеров зон — `SPEC-RU.md`, источник: —
+
+**Заменить (в файле ровно одно вхождение):**
+
+```text
+адекватность размеров зон — отложено (список v0.4).
+```
+
+**На:**
+
+```text
+адекватность размеров зон — отложено в список v0.5.
 ```
 
 ---

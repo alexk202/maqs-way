@@ -154,7 +154,7 @@ Shown in P5 example for schema awareness only.
 **На:**
 
 ```text
-Shown in P5 example for schema awareness only. The v0.3 deferral is resolved by separation: a live record carries no `deletion_marker` field at all, the marker exists only as the separate artifact described above, and no core data-model field is introduced (`schema_version way-v0.1.3` unchanged).
+Shown in P5 example for schema awareness only. The deferral recorded in the previous release is resolved by separation: a live record carries no `deletion_marker` field at all, the marker exists only as the separate artifact described above, and no core data-model field is introduced (`schema_version way-v0.1.3` unchanged).
 ```
 
 ---
@@ -170,7 +170,7 @@ Shown in P5 example for schema awareness only. The v0.3 deferral is resolved by 
 **На:**
 
 ```text
-Показан в примере P5 только для наглядности схемы. Отложенное решение v0.3 закрыто сепарацией: живая запись не несёт поля `deletion_marker` вовсе, маркер существует только как отдельный артефакт, описанный выше, и новых полей ядра модели данных не вводится (`schema_version way-v0.1.3` без изменений).
+Показан в примере P5 только для наглядности схемы. Отложенное решение предыдущего релиза закрыто сепарацией: живая запись не несёт поля `deletion_marker` вовсе, маркер существует только как отдельный артефакт, описанный выше, и новых полей ядра модели данных не вводится (`schema_version way-v0.1.3` без изменений).
 ```
 
 ---
@@ -211,7 +211,7 @@ Shown in P5 example for schema awareness only. The v0.3 deferral is resolved by 
 
 ```text
 † Knowledge update target from §1 P3, mirrored in JSON `metrics` as
-`knowledge_update` (target 0.7, no CI gate declared) since v0.4.
+`knowledge_update` (target 0.7, no CI gate declared) since this release.
 ```
 
 ---
@@ -227,7 +227,7 @@ Shown in P5 example for schema awareness only. The v0.3 deferral is resolved by 
 **На:**
 
 ```text
-† Target обновления знаний из §1 P3, с v0.4 отражён в JSON `metrics` как
+† Target обновления знаний из §1 P3, с этого релиза отражён в JSON `metrics` как
 `knowledge_update` (target 0.7, CI-гейт не объявлен).
 ```
 
